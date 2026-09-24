@@ -15,3 +15,6 @@ dist.zip
 Thumbs.db
 .vscode
 .idea
+
+.vercel
+.env*
