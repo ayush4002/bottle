@@ -49,18 +49,18 @@
     <div class="frapak-container header-nav-inner">
       
       <!-- Logo -->
-      <a href="#home" class="frapak-logo" onclick="window.navigateToPage('home')">
+      <a href="/" class="frapak-logo">
         <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="frapak-logo-img" />
       </a>
 
-      <!-- Exact Client Headers: Home - About - Products - Market - Custom Solutions - Contact -->
+      <!-- Exact Client Headers: Home - About - Products - Custom Solutions - Contact -->
       <ul class="frapak-nav-list">
-        <li><a href="#home" class="frapak-nav-link active" data-page="home" onclick="window.navigateToPage('home')">Home</a></li>
-        <li><a href="#about" class="frapak-nav-link" data-page="about" onclick="window.navigateToPage('about')">About</a></li>
-        <li><a href="#products" class="frapak-nav-link" data-page="products" onclick="window.navigateToPage('products')">Products</a></li>
-        <li><a href="#market" class="frapak-nav-link" data-page="market" onclick="window.navigateToPage('market')">Market</a></li>
-        <li><a href="#custom" class="frapak-nav-link" data-page="custom" onclick="window.navigateToPage('custom')">Custom Solutions</a></li>
-        <li><a href="#contact" class="frapak-nav-link" data-page="contact" onclick="window.navigateToPage('contact')">Contact</a></li>
+        <li><a href="/" class="frapak-nav-link <?= ($activePage ?? 'home') === 'home' ? 'active' : '' ?>">Home</a></li>
+        <li><a href="/about" class="frapak-nav-link <?= ($activePage ?? '') === 'about' ? 'active' : '' ?>">About</a></li>
+        <li><a href="/products" class="frapak-nav-link <?= ($activePage ?? '') === 'products' ? 'active' : '' ?>">Products</a></li>
+        <li><a href="/custom" class="frapak-nav-link <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>">Custom Solutions</a></li>
+        <li><a href="/sustainability" class="frapak-nav-link <?= ($activePage ?? '') === 'sustainability' ? 'active' : '' ?>">Sustainability</a></li>
+        <li><a href="/contact" class="frapak-nav-link <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>">Contact</a></li>
       </ul>
 
       <!-- Header Actions (Inquiry + Mobile Hamburger) -->
@@ -87,7 +87,7 @@
   <div class="frapak-mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="window.closeMobileMenu()"></div>
   <aside class="frapak-mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
     <div class="mobile-nav-header">
-      <a href="#home" class="mobile-nav-logo" onclick="window.navigateToPage('home'); window.closeMobileMenu();">
+      <a href="/" class="mobile-nav-logo" onclick="window.closeMobileMenu();">
         <img src="/logo_svg.svg" alt="TrueNorth Group Logo" />
       </a>
       <button class="mobile-nav-close-btn" onclick="window.closeMobileMenu()" aria-label="Close navigation menu">
@@ -108,27 +108,27 @@
 
     <!-- Mobile Navigation Links -->
     <nav class="mobile-nav-links">
-      <a href="#home" class="mobile-nav-item active" data-page="home" onclick="window.navigateToPage('home'); window.closeMobileMenu();">
+      <a href="/" class="mobile-nav-item <?= ($activePage ?? 'home') === 'home' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Home</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-      <a href="#about" class="mobile-nav-item" data-page="about" onclick="window.navigateToPage('about'); window.closeMobileMenu();">
+      <a href="/about" class="mobile-nav-item <?= ($activePage ?? '') === 'about' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>About</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-      <a href="#products" class="mobile-nav-item" data-page="products" onclick="window.navigateToPage('products'); window.closeMobileMenu();">
+      <a href="/products" class="mobile-nav-item <?= ($activePage ?? '') === 'products' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Products Catalogue</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-      <a href="#market" class="mobile-nav-item" data-page="market" onclick="window.navigateToPage('market'); window.closeMobileMenu();">
-        <span>Markets</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-      </a>
-      <a href="#custom" class="mobile-nav-item" data-page="custom" onclick="window.navigateToPage('custom'); window.closeMobileMenu();">
+      <a href="/custom" class="mobile-nav-item <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Custom Solutions</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-      <a href="#contact" class="mobile-nav-item" data-page="contact" onclick="window.navigateToPage('contact'); window.closeMobileMenu();">
+      <a href="/sustainability" class="mobile-nav-item <?= ($activePage ?? '') === 'sustainability' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
+        <span>Sustainability</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="/contact" class="mobile-nav-item <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Contact & Locations</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>

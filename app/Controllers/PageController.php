@@ -1,7 +1,7 @@
 <?php
 // ==========================================================================
 // TRUENORTH GROUP — PAGE CONTROLLER
-// Handles page rendering & view assembly for seamless single-page & multi-route navigation
+// Handles clean server-side PHP page rendering & dynamic database data loading
 // ==========================================================================
 
 require_once dirname(__DIR__, 2) . '/config/config.php';
@@ -9,8 +9,8 @@ require_once dirname(__DIR__) . '/Models/ProductModel.php';
 
 class PageController {
 
-    public static function renderPage($pageName = 'home') {
-        $allowedPages = ['home', 'products', 'about', 'contact', 'custom', 'sustainability', 'market'];
+    public static function renderPage($pageName = 'home', $params = []) {
+        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability'];
         
         if (!in_array($pageName, $allowedPages)) {
             $pageName = 'home';
@@ -19,24 +19,38 @@ class PageController {
         $company = ProductModel::getCompanyInfo();
         $categories = ProductModel::getCategories();
         $series = ProductModel::getSeries();
-        $skus = ProductModel::getSkus();
 
-        // Pass initial active page to views
-        $activePage = $pageName;
+        $activePage = $pageName === 'product_detail' ? 'products' : $pageName;
 
         // Render header layout
         require_once APP_PATH . '/Views/layouts/header.php';
         
-        // Render ALL view sections so client-side SPA router & hash navigation work 100% seamlessly
-        $views = ['home', 'products', 'about', 'custom', 'sustainability', 'contact'];
-        foreach ($views as $view) {
-            $file = APP_PATH . "/Views/pages/{$view}.php";
-            if (file_exists($file)) {
-                require_once $file;
-            }
+        // Render ONLY the specific page view requested via server-side PHP
+        $file = APP_PATH . "/Views/pages/{$pageName}.php";
+        if (file_exists($file)) {
+            require_once $file;
+        } else {
+            require_once APP_PATH . "/Views/pages/home.php";
         }
 
         // Render modals and footer layout
+        require_once APP_PATH . '/Views/layouts/modals.php';
+        require_once APP_PATH . '/Views/layouts/footer.php';
+    }
+
+    public static function renderProductDetail($skuId) {
+        $sku = ProductModel::getSkuById($skuId);
+        if (!$sku) {
+            header("Location: /products");
+            exit();
+        }
+
+        $company = ProductModel::getCompanyInfo();
+        $categories = ProductModel::getCategories();
+        $activePage = 'products';
+
+        require_once APP_PATH . '/Views/layouts/header.php';
+        require_once APP_PATH . '/Views/pages/product_detail.php';
         require_once APP_PATH . '/Views/layouts/modals.php';
         require_once APP_PATH . '/Views/layouts/footer.php';
     }

@@ -6,7 +6,7 @@
       
       <!-- Footer Brand Header (Logo & Description above accordions) -->
       <div class="footer-brand-header">
-        <a href="#home" class="footer-brand-logo-link" onclick="window.navigateToPage('home')">
+        <a href="/" class="footer-brand-logo-link">
           <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="footer-brand-logo" />
         </a>
         <p class="footer-brand-desc">
@@ -27,18 +27,18 @@
           </button>
           <div class="footer-accordion-panel" id="footer-panel-products" role="region" aria-labelledby="footer-header-products">
             <ul class="footer-link-list">
-              <li><a href="#products" onclick="window.goToCategory('PET Bottles')">PET Bottles</a></li>
-              <li><a href="#products" onclick="window.goToCategory('HDPE Bottles')">HDPE Bottles</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Caps')">Caps</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Pumps')">Pumps</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Finger Sprayer')">Finger Sprayer</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Trigger Sprayer')">Trigger Sprayer</a></li>
-              <li><a href="#products" onclick="window.goToCategory('PET Jars')">PET Jars</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Lids')">Lids</a></li>
-              <li><a href="#products" onclick="window.goToCategory('PP Jars')">PP Jars</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Mono material jar')">Mono Material Jar</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Foamer Pumps')">Foamer Pumps</a></li>
-              <li><a href="#products" onclick="window.goToCategory('Airless')">Airless</a></li>
+              <li><a href="/products?category=pet-bottles">PET Bottles</a></li>
+              <li><a href="/products?category=hdpe-bottles">HDPE Bottles</a></li>
+              <li><a href="/products?category=caps">Caps</a></li>
+              <li><a href="/products?category=pumps">Pumps</a></li>
+              <li><a href="/products?category=finger-sprayers">Finger Sprayer</a></li>
+              <li><a href="/products?category=trigger-sprayers">Trigger Sprayer</a></li>
+              <li><a href="/products?category=pet-jars">PET Jars</a></li>
+              <li><a href="/products?category=lids">Lids</a></li>
+              <li><a href="/products?category=pp-jars">PP Jars</a></li>
+              <li><a href="/products?category=mono-material-jars">Mono Material Jar</a></li>
+              <li><a href="/products?category=foamer-pumps">Foamer Pumps</a></li>
+              <li><a href="/products?category=airless">Airless</a></li>
             </ul>
           </div>
         </div>

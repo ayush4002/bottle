@@ -1,7 +1,7 @@
 <?php
 // ==========================================================================
 // TRUENORTH GROUP — STANDALONE PHP FRONT CONTROLLER & ROUTER
-// Handles clean URL routing, views, API dispatching & static assets
+// Handles clean URL routing, views, API dispatching & database models
 // ==========================================================================
 
 // PHP CLI server static file check
@@ -62,6 +62,19 @@ if ($path === 'api/search') {
     exit();
 }
 
+// Product Detail Route (e.g. /product?id=123 or /product/123)
+if ($path === 'product' || strpos($path, 'product/') === 0) {
+    $skuId = $_GET['id'] ?? null;
+    if (!$skuId && strpos($path, 'product/') === 0) {
+        $parts = explode('/', $path);
+        $skuId = end($parts);
+    }
+    if ($skuId) {
+        PageController::renderProductDetail($skuId);
+        exit();
+    }
+}
+
 // Page Routes
 $page = 'home';
 if (!empty($path)) {
@@ -70,7 +83,7 @@ if (!empty($path)) {
             $page = 'about';
             break;
         case 'products':
-        case 'product':
+        case 'catalogue':
             $page = 'products';
             break;
         case 'contact':
@@ -85,15 +98,11 @@ if (!empty($path)) {
         case 'rpet':
             $page = 'sustainability';
             break;
-        case 'market':
-        case 'markets':
-            $page = 'home'; // Renders home view with market anchor
-            break;
         default:
             $page = 'home';
             break;
     }
 }
 
-// Render selected page
+// Render selected PHP page
 PageController::renderPage($page);
