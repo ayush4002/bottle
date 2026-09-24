@@ -1,0 +1,745 @@
+{
+    "sku-agro-100ml-agro-short": {
+        "id": "sku-agro-100ml-agro-short",
+        "name": "100ml Agro Short Agro PET Bottle, 46 mm",
+        "fullTitle": "100ml Agro Short Agro PET Bottle, 46 mm",
+        "articleNo": "sku-agro-100ml-agro-short",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/brand_assets\/agro_bottles\/100ml_agro_short.png",
+        "images": [
+            "\/brand_assets\/agro_bottles\/100ml_agro_short.png",
+            "\/logo_svg.svg",
+            "\/logo_svg.svg",
+            "\/logo_svg.svg"
+        ],
+        "gallery": [
+            "\/brand_assets\/agro_bottles\/100ml_agro_short.png",
+            "\/logo_svg.svg",
+            "\/logo_svg.svg",
+            "\/logo_svg.svg"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "Heavy-duty 100ml Agro Short Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "description": "Heavy-duty 100ml Agro Short Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "100 ml",
+            "neck": "46 mm",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "10,000"
+        },
+        "updatedAt": "2026-09-14 11:58:04"
+    },
+    "PROD-1789375336-334": {
+        "id": "PROD-1789375336-334",
+        "name": "asdfghm",
+        "fullTitle": "asdfghm",
+        "articleNo": "AG10155",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "custom-solutions",
+        "serie": "Custom Solutions",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789375336_156.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789375336_156.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789375336_156.png"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "",
+        "description": "",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "100 ml",
+            "neck": "46 mm",
+            "material": "100% rPET \/ Food-Grade PET",
+            "weight": "",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 10:42:20"
+    },
+    "TN-SYNC-500": {
+        "id": "TN-SYNC-500",
+        "name": "SYNC TEST BOTTLE 500ML UPDATED",
+        "fullTitle": "SYNC TEST BOTTLE 500ML UPDATED",
+        "articleNo": "TN-SYNC-500",
+        "websiteNo": "TN-SYNC-500",
+        "categorySlug": "hdpe-bottles",
+        "categoryName": "HDPE bottles",
+        "seriesSlug": "sync-test-series",
+        "serie": "Sync Test Series",
+        "gender": "Unisex",
+        "regularPrice": 1299,
+        "salePrice": 899,
+        "stockQty": 0,
+        "stockStatus": "out_of_stock",
+        "status": "archived",
+        "isFeatured": true,
+        "image": "\/brand_assets\/pet_bottles\/100ml_boston_white.jpeg",
+        "images": [
+            "\/brand_assets\/pet_bottles\/100ml_boston_white.jpeg"
+        ],
+        "gallery": [
+            "\/brand_assets\/pet_bottles\/100ml_boston_white.jpeg"
+        ],
+        "video": null,
+        "sizes": [],
+        "shortDescription": "",
+        "description": "Test product for MySQL database synchronization verification.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "500ml",
+            "neck": "28\/410",
+            "material": "PET",
+            "weight": "N\/A",
+            "moq": "1,000 pcs"
+        },
+        "updatedAt": "2026-09-14 11:24:42"
+    },
+    "sku-agro-100ml-agro-long": {
+        "id": "sku-agro-100ml-agro-long",
+        "name": "100ml Agro Long Agro PET Bottle, 46 mm",
+        "fullTitle": "100ml Agro Long Agro PET Bottle, 46 mm",
+        "articleNo": "sku-agro-100ml-agro-long",
+        "websiteNo": "sku-agro-100ml-agro-long",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/brand_assets\/agro_bottles\/100ml_agro_long.png",
+        "images": [
+            "\/brand_assets\/agro_bottles\/100ml_agro_long.png"
+        ],
+        "gallery": [
+            "\/brand_assets\/agro_bottles\/100ml_agro_long.png"
+        ],
+        "video": null,
+        "sizes": [],
+        "shortDescription": "Heavy-duty 100ml Agro Long Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "description": "Heavy-duty 100ml Agro Long Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "100 ml",
+            "neck": "46 mm",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "10,000"
+        },
+        "updatedAt": "2026-09-14 11:24:42"
+    },
+    "sku-agro-250ml-agro": {
+        "id": "sku-agro-250ml-agro",
+        "name": "250ml Agro Agro PET Bottle, 46 mm",
+        "fullTitle": "250ml Agro Agro PET Bottle, 46 mm",
+        "articleNo": "sku-agro-250ml-agro",
+        "websiteNo": "sku-agro-250ml-agro",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/brand_assets\/agro_bottles\/250ml_agro.png",
+        "images": [
+            "\/brand_assets\/agro_bottles\/250ml_agro.png"
+        ],
+        "gallery": [
+            "\/brand_assets\/agro_bottles\/250ml_agro.png"
+        ],
+        "video": null,
+        "sizes": [],
+        "shortDescription": "Heavy-duty 250ml Agro Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "description": "Heavy-duty 250ml Agro Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250 ml",
+            "neck": "46 mm",
+            "material": "PET",
+            "weight": "27 g",
+            "moq": "10,000"
+        },
+        "updatedAt": "2026-09-14 11:24:42"
+    },
+    "sku-agro-500ml-agro": {
+        "id": "sku-agro-500ml-agro",
+        "name": "500ml Agro Agro PET Bottle, 46 mm",
+        "fullTitle": "500ml Agro Agro PET Bottle, 46 mm",
+        "articleNo": "sku-agro-500ml-agro",
+        "websiteNo": "sku-agro-500ml-agro",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/brand_assets\/agro_bottles\/500ml_agro.png",
+        "images": [
+            "\/brand_assets\/agro_bottles\/500ml_agro.png"
+        ],
+        "gallery": [
+            "\/brand_assets\/agro_bottles\/500ml_agro.png"
+        ],
+        "video": null,
+        "sizes": [],
+        "shortDescription": "Heavy-duty 500ml Agro Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "description": "Heavy-duty 500ml Agro Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "500 ml",
+            "neck": "46 mm",
+            "material": "PET",
+            "weight": "35 g",
+            "moq": "10,000"
+        },
+        "updatedAt": "2026-09-14 11:24:42"
+    },
+    "sku-agro-1000ml-agro-long": {
+        "id": "sku-agro-1000ml-agro-long",
+        "name": "1000ml Agro Long Agro PET Bottle, 46 mm",
+        "fullTitle": "1000ml Agro Long Agro PET Bottle, 46 mm",
+        "articleNo": "sku-agro-1000ml-agro-long",
+        "websiteNo": "sku-agro-1000ml-agro-long",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/brand_assets\/agro_bottles\/1000ml_agro_short.png",
+        "images": [
+            "\/brand_assets\/agro_bottles\/1000ml_agro_short.png"
+        ],
+        "gallery": [
+            "\/brand_assets\/agro_bottles\/1000ml_agro_short.png"
+        ],
+        "video": null,
+        "sizes": [],
+        "shortDescription": "Heavy-duty 1000ml Agro Long Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "description": "Heavy-duty 1000ml Agro Long Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "1000 ml",
+            "neck": "46 mm",
+            "material": "PET",
+            "weight": "65 g",
+            "moq": "10,000"
+        },
+        "updatedAt": "2026-09-14 11:24:42"
+    },
+    "PROD-1789378127-125": {
+        "id": "PROD-1789378127-125",
+        "name": "100ml bottle rubber",
+        "fullTitle": "100ml bottle rubber",
+        "articleNo": "RB-100",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "custom-solutions",
+        "serie": "Custom Solutions",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789378127_859.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789378127_859.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789378127_859.png"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "",
+        "description": "",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "100ml",
+            "neck": "15\/555",
+            "material": "100% rPET \/ Food-Grade PET",
+            "weight": "",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 11:28:47"
+    },
+    "PROD-1789378892-949": {
+        "id": "PROD-1789378892-949",
+        "name": "Upload Test Bottle 250ml",
+        "fullTitle": "Upload Test Bottle 250ml",
+        "articleNo": "TN-UPLOAD-TEST",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "boston-round-range",
+        "serie": "Boston Round Range",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/logo_svg.svg",
+        "images": [
+            "\/logo_svg.svg"
+        ],
+        "gallery": [
+            "\/logo_svg.svg"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "",
+        "description": "Test upload product via browser",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "100% rPET",
+            "weight": "",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 11:41:32"
+    },
+    "PROD-1789379208-297": {
+        "id": "PROD-1789379208-297",
+        "name": "99ml",
+        "fullTitle": "99ml",
+        "articleNo": "TN-PET-853",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "custom-solutions",
+        "serie": "Custom Solutions",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789379208_638.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789379208_638.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789379208_638.png"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "",
+        "description": "",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "",
+            "neck": "",
+            "material": "100% rPET \/ Food-Grade PET",
+            "weight": "",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 11:46:48"
+    },
+    "PROD-1789379759-519": {
+        "id": "PROD-1789379759-519",
+        "name": "99ml",
+        "fullTitle": "99ml",
+        "articleNo": "TN-PET-7491",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789379759_814.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789379759_814.png",
+            "\/public\/uploads\/products\/prod_1789379759_658.png",
+            "\/public\/uploads\/products\/prod_1789379759_850.png",
+            "\/public\/uploads\/products\/prod_1789379759_924.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789379759_814.png",
+            "\/public\/uploads\/products\/prod_1789379759_658.png",
+            "\/public\/uploads\/products\/prod_1789379759_850.png",
+            "\/public\/uploads\/products\/prod_1789379759_924.png"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "Precision engineered 250ml Primary Packaging Component manufactured in high-grade PET with 24\/410 neck finish.",
+        "description": "The Primary Packaging Component is a premium 250ml packaging solution engineered for exceptional durability, chemical compatibility, and shelf presence.\r\n\r\nKey Specifications & Attributes:\r\n- Volume Capacity: 250ml\r\n- Material Polymer: PET (100% Recyclable)\r\n- Neck Finish: 24\/410 tamper-evident closure standard\r\n- Quality Standard: Manufactured under Class 10,000 cleanroom conditions with ISO 9001 quality compliance.\r\n- Ideal Applications: Cosmetics, personal care serums, pharmaceutical formulations, and specialized liquids.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 11:55:59"
+    },
+    "PROD-1789379919-141": {
+        "id": "PROD-1789379919-141",
+        "name": "Test PET Bottle 500ml",
+        "fullTitle": "Test PET Bottle 500ml",
+        "articleNo": "TN-PET-6051",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/logo_svg.svg",
+        "images": [
+            "\/logo_svg.svg"
+        ],
+        "gallery": [
+            "\/logo_svg.svg"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "",
+        "description": "",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 11:58:39"
+    },
+    "PROD-1789380274-946": {
+        "id": "PROD-1789380274-946",
+        "name": "Test PET Bottle 500ml",
+        "fullTitle": "Test PET Bottle 500ml",
+        "articleNo": "TN-PET-6051",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789380274_437.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789380274_437.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789380274_437.png"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "Precision engineered 250ml Test PET Bottle 500ml manufactured in high-grade PET with 24\/410 neck finish.",
+        "description": "The Test PET Bottle 500ml is a premium 250ml packaging solution engineered for exceptional durability, chemical compatibility, and shelf presence.\r\n\r\nKey Specifications & Attributes:\r\n- Volume Capacity: 250ml\r\n- Material Polymer: PET (100% Recyclable)\r\n- Neck Finish: 24\/410 tamper-evident closure standard\r\n- Quality Standard: Manufactured under Class 10,000 cleanroom conditions with ISO 9001 quality compliance.\r\n- Ideal Applications: Cosmetics, personal care serums, pharmaceutical formulations, and specialized liquids.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 12:04:34"
+    },
+    "PROD-1789381202-239": {
+        "id": "PROD-1789381202-239",
+        "name": "1000ml Heavy Duty Agro PET Bottle",
+        "fullTitle": "1000ml Heavy Duty Agro PET Bottle",
+        "articleNo": "TN-PET-9675",
+        "websiteNo": "",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-pesticide-pet-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "published",
+        "isFeatured": false,
+        "image": "\/logo_svg.svg",
+        "images": [
+            "\/logo_svg.svg"
+        ],
+        "gallery": [
+            "\/logo_svg.svg"
+        ],
+        "video": "",
+        "sizes": [],
+        "shortDescription": "Precision engineered 1000ml (1L) 1000ml Heavy Duty Agro PET Bottle manufactured in high-grade rPET with 46mm Agro neck finish.",
+        "description": "The 1000ml Heavy Duty Agro PET Bottle is a premium 1000ml (1L) packaging solution engineered for exceptional durability, chemical compatibility, and shelf presence.\r\n\r\nKey Specifications & Attributes:\r\n- Volume Capacity: 1000ml (1L)\r\n- Material Polymer: rPET (100% Recyclable)\r\n- Neck Finish: 46mm Agro tamper-evident closure standard\r\n- Quality Standard: Manufactured under Class 10,000 cleanroom conditions with ISO 9001 quality compliance.\r\n- Ideal Applications: Cosmetics, personal care serums, pharmaceutical formulations, and specialized liquids.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "1000ml (1L)",
+            "neck": "46mm Agro",
+            "material": "rPET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 12:20:02"
+    },
+    "TN-PET-9675": {
+        "id": "TN-PET-9675",
+        "name": "1000ml Heavy Duty Agro PET Bottle",
+        "fullTitle": "1000ml Heavy Duty Agro PET Bottle",
+        "articleNo": "TN-PET-9675",
+        "websiteNo": "TN-PET-9675",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "archived",
+        "isFeatured": false,
+        "image": "\/logo_svg.svg",
+        "images": [
+            "\/logo_svg.svg"
+        ],
+        "gallery": [
+            "\/logo_svg.svg"
+        ],
+        "shortDescription": "Precision engineered 1000ml (1L) 1000ml Heavy Duty Agro PET Bottle manufactured in high-grade rPET with 46mm Agro neck finish.",
+        "description": "The 1000ml Heavy Duty Agro PET Bottle is a premium 1000ml (1L) packaging solution engineered for exceptional durability, chemical compatibility, and shelf presence.\r\n\r\nKey Specifications & Attributes:\r\n- Volume Capacity: 1000ml (1L)\r\n- Material Polymer: rPET (100% Recyclable)\r\n- Neck Finish: 46mm Agro tamper-evident closure standard\r\n- Quality Standard: Manufactured under Class 10,000 cleanroom conditions with ISO 9001 quality compliance.\r\n- Ideal Applications: Cosmetics, personal care serums, pharmaceutical formulations, and specialized liquids.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "1000ml (1L)",
+            "neck": "46mm Agro",
+            "material": "rPET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 16:09:38"
+    },
+    "TN-PET-6051": {
+        "id": "TN-PET-6051",
+        "name": "Test PET Bottle 500ml",
+        "fullTitle": "Test PET Bottle 500ml",
+        "articleNo": "TN-PET-6051",
+        "websiteNo": "TN-PET-6051",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "archived",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789380274_437.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789380274_437.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789380274_437.png"
+        ],
+        "shortDescription": "Precision engineered 250ml Test PET Bottle 500ml manufactured in high-grade PET with 24\/410 neck finish.",
+        "description": "The Test PET Bottle 500ml is a premium 250ml packaging solution engineered for exceptional durability, chemical compatibility, and shelf presence.\r\n\r\nKey Specifications & Attributes:\r\n- Volume Capacity: 250ml\r\n- Material Polymer: PET (100% Recyclable)\r\n- Neck Finish: 24\/410 tamper-evident closure standard\r\n- Quality Standard: Manufactured under Class 10,000 cleanroom conditions with ISO 9001 quality compliance.\r\n- Ideal Applications: Cosmetics, personal care serums, pharmaceutical formulations, and specialized liquids.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 16:10:08"
+    },
+    "TN-PET-853": {
+        "id": "TN-PET-853",
+        "name": "99ml",
+        "fullTitle": "99ml",
+        "articleNo": "TN-PET-853",
+        "websiteNo": "TN-PET-853",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "agro-bottles",
+        "serie": "Agro & Pesticide PET Bottles",
+        "gender": "Unisex",
+        "regularPrice": 12.5,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "archived",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789379208_638.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789379208_638.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789379208_638.png"
+        ],
+        "shortDescription": "Precision engineered 250ml Primary Packaging Component manufactured in high-grade PET with 24\/410 neck finish.",
+        "description": "The Primary Packaging Component is a premium 250ml packaging solution engineered for exceptional durability, chemical compatibility, and shelf presence.\r\n\r\nKey Specifications & Attributes:\r\n- Volume Capacity: 250ml\r\n- Material Polymer: PET (100% Recyclable)\r\n- Neck Finish: 24\/410 tamper-evident closure standard\r\n- Quality Standard: Manufactured under Class 10,000 cleanroom conditions with ISO 9001 quality compliance.\r\n- Ideal Applications: Cosmetics, personal care serums, pharmaceutical formulations, and specialized liquids.",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "PET",
+            "weight": "23 g",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 16:10:32"
+    },
+    "TN-UPLOAD-TEST": {
+        "id": "TN-UPLOAD-TEST",
+        "name": "Upload Test Bottle 250ml",
+        "fullTitle": "Upload Test Bottle 250ml",
+        "articleNo": "TN-UPLOAD-TEST",
+        "websiteNo": "TN-UPLOAD-TEST",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "boston-round-pet",
+        "serie": "Boston Round Range",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "archived",
+        "isFeatured": false,
+        "image": "\/logo_svg.svg",
+        "images": [
+            "\/logo_svg.svg"
+        ],
+        "gallery": [
+            "\/logo_svg.svg"
+        ],
+        "shortDescription": "",
+        "description": "Test upload product via browser",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "250ml",
+            "neck": "24\/410",
+            "material": "100% rPET",
+            "weight": "",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 16:15:44"
+    },
+    "RB-100": {
+        "id": "RB-100",
+        "name": "100ml bottle rubber",
+        "fullTitle": "100ml bottle rubber",
+        "articleNo": "RB-100",
+        "websiteNo": "RB-100",
+        "categorySlug": "pet-bottles",
+        "categoryName": "PET bottles",
+        "seriesSlug": "custom-solutions",
+        "serie": "Custom Solutions",
+        "gender": "Unisex",
+        "regularPrice": 0,
+        "salePrice": null,
+        "stockQty": 1000,
+        "stockStatus": "in_stock",
+        "status": "archived",
+        "isFeatured": false,
+        "image": "\/public\/uploads\/products\/prod_1789378127_859.png",
+        "images": [
+            "\/public\/uploads\/products\/prod_1789378127_859.png"
+        ],
+        "gallery": [
+            "\/public\/uploads\/products\/prod_1789378127_859.png"
+        ],
+        "shortDescription": "",
+        "description": "",
+        "seoTitle": "",
+        "seoDescription": "",
+        "specs": {
+            "capacity": "100ml",
+            "neck": "15\/555",
+            "material": "100% rPET \/ Food-Grade PET",
+            "weight": "",
+            "moq": "5,000 pcs"
+        },
+        "updatedAt": "2026-09-14 16:15:56"
+    }
+}

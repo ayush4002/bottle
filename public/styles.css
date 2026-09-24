@@ -1,0 +1,5814 @@
+/* ==========================================================================
+   PRODUCTION WEBSITE — EXACT FRAPAK B2B CORPORATE UI
+   Brand Colors: Primary Navy (#16273F) & Accent Gold (#B8892E)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --color-navy: #16273F;
+  --color-navy-dark: #0E1B2C;
+  --color-navy-light: #233C5E;
+  
+  --color-gold: #B8892E;
+  --color-gold-hover: #9E7422;
+  --color-gold-soft: rgba(184, 137, 46, 0.12);
+
+  --color-card-bar: #D0D7DE;
+  --color-rpet-bar: #8C9E8C;
+  
+  --color-white: #FFFFFF;
+  --color-off-white: #F8F9FA;
+  --color-footer-grey: #F0F2F5;
+  --color-border: #E1E4E8;
+  --color-border-dark: #CBD5E1;
+  --color-text-dark: #16273F;
+  --color-text-muted: #57606A;
+
+  --font-main: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --container-max: 1200px;
+
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  line-height: 1.55;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+body.menu-open,
+body.filters-open {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container */
+.frapak-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.frapak-section {
+  padding: 48px 0;
+}
+
+.frapak-section-grey {
+  background-color: var(--color-off-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 48px 0;
+}
+
+/* Section Title Block (Stacked Vertical Layout for Full-Width Titles) */
+.frapak-section-title-wrap {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.frapak-section-title-wrap::before,
+.frapak-section-title-wrap::after {
+  display: none;
+}
+
+.frapak-section-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  text-align: center;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.3;
+  display: block;
+}
+
+/* ==========================================================================
+   TOP UTILITY BAR & MAIN HEADER
+   ========================================================================== */
+.frapak-top-utility-bar {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Search Box */
+.frapak-search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  background: var(--color-white);
+  width: 350px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.frapak-search-box:focus-within {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px var(--color-gold-soft);
+}
+
+.frapak-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8125rem;
+  width: 100%;
+  color: var(--color-text-dark);
+}
+
+.frapak-search-box button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-full);
+  padding: 4px;
+}
+
+.search-results-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  display: none;
+  z-index: 1500;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-results-popover.open { display: block; }
+
+/* Language & Utilities */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+/* Main Navigation Bar */
+.frapak-main-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.header-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+
+/* Logo */
+.frapak-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--color-navy);
+  text-decoration: none;
+  height: 76px;
+  transition: transform 0.2s ease;
+}
+
+.frapak-logo:hover {
+  transform: scale(1.02);
+}
+
+.frapak-logo-img {
+  height: 70px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
+
+/* Menu Links */
+.frapak-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 22px;
+}
+
+.frapak-nav-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.frapak-nav-link:hover {
+  color: var(--color-gold);
+}
+
+.frapak-nav-link.active {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.frapak-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-gold);
+}
+
+/* Header Inquiry Button */
+.frapak-cart-inquiry-btn {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 11px 22px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 1px solid var(--color-navy);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(22, 39, 63, 0.15);
+}
+
+.frapak-cart-inquiry-btn:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(184, 137, 46, 0.25);
+}
+
+/* Header Actions Wrapper */
+.header-actions-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Mobile Hamburger Button */
+.frapak-mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  background: #F4F7FA;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 9px 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.frapak-mobile-menu-toggle:hover,
+.frapak-mobile-menu-toggle:active {
+  background: #E5EBF2;
+  border-color: var(--color-navy);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-navy);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.frapak-mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.frapak-mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.frapak-mobile-menu-toggle.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navigation Drawer & Backdrop */
+.frapak-mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 27, 44, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.frapak-mobile-nav-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.frapak-mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 86vw;
+  background: #ffffff;
+  z-index: 2250;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -6px 0 28px rgba(0,0,0,0.18);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.frapak-mobile-nav-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--color-border);
+  background: #FAFBFC;
+}
+
+.mobile-nav-logo img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.mobile-nav-close-btn {
+  background: transparent;
+  border: 1px solid #D0D7DE;
+  border-radius: var(--radius-full);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-navy);
+  transition: background 0.15s ease;
+}
+
+.mobile-nav-close-btn:active {
+  background: #E5EBF2;
+}
+
+.mobile-nav-search {
+  padding: 14px 18px;
+  border-bottom: 1px solid #F0F2F5;
+  position: relative;
+}
+
+.mobile-search-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #FAFBFC;
+  padding: 7px 12px;
+  transition: border-color 0.2s ease;
+}
+
+.mobile-search-input-wrap:focus-within {
+  border-color: var(--color-navy);
+  background: #ffffff;
+}
+
+.mobile-search-input-wrap input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 16px; /* Prevents iOS auto-zoom */
+  color: var(--color-navy);
+  outline: none;
+}
+
+.mobile-search-input-wrap button {
+  border: none;
+  background: none;
+  color: var(--color-navy);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  border-bottom: 1px solid #F6F8FA;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mobile-nav-item:active,
+.mobile-nav-item.active {
+  background: rgba(184, 137, 46, 0.08);
+  color: var(--color-gold);
+}
+
+.mobile-nav-item svg {
+  color: #A0AEC0;
+  transition: transform 0.15s ease;
+}
+
+.mobile-nav-item:active svg {
+  transform: translateX(3px);
+  color: var(--color-gold);
+}
+
+.mobile-nav-footer {
+  margin-top: auto;
+  padding: 18px;
+  border-top: 1px solid var(--color-border);
+  background: #FAFBFC;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-nav-inquiry-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-nav-cert-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   HERO BANNER ("Our packaging experts")
+   ========================================================================== */
+.frapak-hero-banner {
+  position: relative;
+  background-color: var(--color-navy);
+  background-image: linear-gradient(rgba(22, 39, 63, 0.88), rgba(22, 39, 63, 0.96)), url('/factory.webp');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  padding: 76px 0;
+}
+
+.hero-content-box {
+  max-width: 660px;
+}
+
+.hero-badge-tag {
+  display: inline-block;
+  background: var(--color-gold-soft);
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 6px 16px;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero-content-box h1 {
+  font-size: 2.65rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-content-box p {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 28px;
+}
+
+.frapak-btn-outline {
+  display: inline-block;
+  padding: 12px 26px;
+  background: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.frapak-btn-outline:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.frapak-btn-gold {
+  display: inline-block;
+  padding: 12px 26px;
+  background: var(--color-gold);
+  border: 2px solid var(--color-gold);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: all 0.2s ease;
+}
+
+.frapak-btn-gold:hover {
+  background: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   EXACT 10-CARD FRAPAK CATALOGUE ROW (Matches Screenshot 100%)
+   ========================================================================== */
+.frapak-cat-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.frapak-tile-card {
+  background: var(--color-white);
+  border: 1px solid #CCD4DD;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+
+.frapak-tile-card:hover {
+  border-color: var(--color-navy);
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+.frapak-tile-image {
+  height: 140px;
+  background: var(--color-white);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px 10px 0 10px;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  overflow: hidden;
+}
+
+.frapak-cat-tiles-grid .frapak-tile-image {
+  height: 135px;
+}
+
+.frapak-level1-grid .frapak-tile-image {
+  height: 140px;
+}
+
+.frapak-series-grid .frapak-tile-image {
+  height: 160px;
+}
+
+.frapak-tile-image img {
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  filter: none !important;
+  box-shadow: none !important;
+  transition: transform 0.25s ease;
+}
+
+.frapak-tile-card:hover .frapak-tile-image img {
+  transform: scale(1.05);
+}
+
+.frapak-tile-bar {
+  background-color: #D7DFE8;
+  color: var(--color-navy);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 6px 5px;
+  text-align: center;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.25;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.frapak-tile-card:hover .frapak-tile-bar {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   MARKETS GRID (8 Tiles: 4 Columns x 2 Rows)
+   ========================================================================== */
+.frapak-markets-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.frapak-market-tile {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.frapak-market-tile:hover {
+  border-color: var(--color-navy);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+.frapak-market-img {
+  height: 130px;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.frapak-market-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+.frapak-market-tile:hover .frapak-market-img img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   SUSTAINABLE rPET SECTION
+   ========================================================================== */
+.rpet-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.rpet-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rpet-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.rpet-card:hover {
+  border-color: var(--color-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.rpet-card .frapak-tile-image {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.rpet-card-bar {
+  background-color: var(--color-rpet-bar);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+
+.rpet-text-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.rpet-text-content p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.rpet-text-content a {
+  color: var(--color-gold);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   SUSTAINABLE rPET SECTION & READ MORE
+   ========================================================================== */
+.pcr-summary-lead {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.pcr-expandable-content {
+  display: none;
+}
+
+.pcr-expandable-content.open {
+  display: block;
+  animation: fadeInDown 0.25s ease-out;
+}
+
+.frapak-readmore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid var(--color-navy);
+  color: var(--color-navy);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  min-height: 40px;
+  transition: all 0.2s ease;
+}
+
+.frapak-readmore-btn:hover {
+  background: var(--color-navy);
+  color: #fff;
+}
+
+/* ==========================================================================
+   EDITORIAL SECTION ("Packaging Experience" Structured Cards)
+   ========================================================================== */
+.editorial-two-col {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.editorial-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.frapak-exp-card {
+  background: var(--color-white);
+  border: 1px solid #D1D9E0;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.frapak-exp-card:hover {
+  border-color: var(--color-navy);
+  box-shadow: 0 4px 12px rgba(22, 39, 63, 0.06);
+}
+
+.frapak-exp-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.frapak-exp-card .exp-summary {
+  font-size: 0.875rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.frapak-exp-card .exp-details {
+  display: none;
+  padding-top: 10px;
+  font-size: 0.875rem;
+  color: #4B5563;
+  line-height: 1.6;
+  border-top: 1px dashed #E5E7EB;
+  margin-top: 10px;
+}
+
+.frapak-exp-card.open .exp-details {
+  display: block;
+  animation: fadeInDown 0.2s ease-out;
+}
+
+.frapak-exp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--color-gold);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-top: 6px;
+  text-decoration: none;
+  min-height: 36px;
+  transition: color 0.15s ease;
+}
+
+.frapak-exp-btn:hover {
+  color: var(--color-navy);
+}
+
+.editorial-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.editorial-img-box {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.editorial-factory-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.editorial-img-caption {
+  padding: 10px 14px;
+  background: #F8FAFC;
+  border-top: 1px solid #E5E7EB;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-align: center;
+}
+
+/* Certified Quality Card on Desktop to eliminate empty space */
+.editorial-quality-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.quality-card-header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 12px;
+}
+
+.quality-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.quality-card-header h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.quality-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quality-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8125rem;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+.quality-features-list li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.quality-features-list strong {
+  color: var(--color-navy);
+  display: block;
+  font-weight: 700;
+}
+
+.quality-cta-btn {
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  font-size: 0.8125rem;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .pcr-expandable-content {
+    display: block !important;
+  }
+  .frapak-readmore-btn {
+    display: none !important;
+  }
+  .desktop-only-feature {
+    display: block !important;
+  }
+}
+
+/* ==========================================================================
+   DIGITAL TOOL: INTERACTIVE COMPONENT MATCHER
+   ========================================================================== */
+.frapak-matcher-section {
+  background: #ffffff;
+  border-top: 1px solid var(--color-border);
+}
+
+.frapak-matcher-card {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1c3252 100%);
+  border: 1px solid var(--color-border);
+  padding: 40px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 36px;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.frapak-matcher-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.frapak-matcher-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.frapak-matcher-desc {
+  font-size: 0.9375rem;
+  color: #CCD4DD;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.frapak-matcher-btn {
+  margin-left: 0;
+  padding: 12px 28px;
+}
+
+.matcher-spec-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.matcher-spec-header {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.matcher-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #E1E4E8;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.matcher-spec-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   PRODUCTS PAGE CATALOGUE & PRODUCT CARDS
+   ========================================================================== */
+.products-page-title-banner {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: 36px 0;
+}
+
+.products-page-title-banner h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.frapak-cat-nav-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 28px;
+}
+
+.frapak-cat-btn {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-navy);
+  padding: 7px 16px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.frapak-cat-btn.active,
+.frapak-cat-btn:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+  transform: translateY(-1px);
+}
+
+.frapak-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.frapak-product-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  box-shadow: none;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.frapak-product-card:hover {
+  border-color: var(--color-navy);
+  box-shadow: none;
+  transform: translateY(-3px);
+}
+
+.frapak-prod-img {
+  height: 180px;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.frapak-prod-img img {
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.frapak-product-card:hover .frapak-prod-img img {
+  transform: scale(1.05);
+}
+
+.frapak-prod-name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.frapak-prod-table {
+  width: 100%;
+  font-size: 0.75rem;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.frapak-prod-table td {
+  padding: 3px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.frapak-prod-table td:first-child {
+  color: var(--color-text-muted);
+}
+
+.frapak-prod-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.frapak-card-btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-frapak-card {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-card-view {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-navy);
+}
+
+.btn-card-view:hover {
+  background: #e2e8f0;
+}
+
+.btn-card-inquire {
+  background: var(--color-navy);
+  border: 1px solid var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn-card-inquire:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* ==========================================================================
+   PRODUCT DETAIL MODAL & GALLERY
+   ========================================================================== */
+.frapak-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 27, 44, 0.75);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.frapak-modal-overlay.open { display: flex; }
+
+.frapak-modal-box {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.frapak-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 1.4rem;
+  color: var(--color-navy);
+  font-weight: bold;
+  border: none;
+  background: var(--color-off-white);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.frapak-modal-close:hover {
+  background: #e2e8f0;
+}
+
+.gallery-thumbs-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.thumb-preview {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  cursor: pointer;
+  background: var(--color-off-white);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.thumb-preview.active {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 2px var(--color-gold);
+}
+
+.frapak-specs-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 14px 0;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.frapak-specs-table th,
+.frapak-specs-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.frapak-specs-table th {
+  background: var(--color-off-white);
+  color: var(--color-navy);
+  width: 35%;
+  text-align: left;
+}
+
+/* Inquiry Form */
+.frapak-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 27, 44, 0.6);
+  z-index: 2100;
+  display: none;
+  backdrop-filter: blur(3px);
+}
+
+.frapak-drawer-overlay.open { display: block; }
+
+.frapak-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 480px;
+  max-width: 95vw;
+  background: var(--color-white);
+  z-index: 2200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: var(--radius-xl);
+  border-bottom-left-radius: var(--radius-xl);
+}
+
+.frapak-drawer.open { transform: translateX(0); }
+
+.frapak-form-field {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.frapak-form-field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.frapak-form-field input,
+.frapak-form-field select,
+.frapak-form-field textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  transition: all 0.2s ease;
+}
+
+.frapak-form-field input:focus,
+.frapak-form-field select:focus,
+.frapak-form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 3px rgba(22, 39, 63, 0.1);
+}
+
+.frapak-form-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.frapak-form-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* FAQs */
+.faq-box {
+  border-bottom: 1px solid var(--color-border);
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   EXACT FRAPAK FOOTER (Light Grey Background, 4 Columns)
+   ========================================================================== */
+.frapak-footer {
+  background-color: var(--color-footer-grey);
+  border-top: 1px solid var(--color-border);
+  padding-top: 48px;
+  padding-bottom: 24px;
+  font-size: 0.8125rem;
+  color: var(--color-text-dark);
+}
+
+.frapak-footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+.footer-col h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.footer-link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-link-list a {
+  color: var(--color-navy);
+}
+
+.footer-link-list a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+.footer-copyright-bar {
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-legal-links a {
+  color: var(--color-gold, #C9A84C);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
+}
+
+.footer-legal-links a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.footer-legal-sep {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+}
+
+/* ==========================================================================
+   MODAL SYSTEM — Terms & Privacy
+   ========================================================================== */
+
+.frapak-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(5, 15, 35, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.frapak-modal-overlay.is-open {
+  display: flex;
+}
+
+.frapak-modal-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(5, 15, 35, 0.28);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalFadeIn 0.22s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM (320px - 1200px)
+   ========================================================================== */
+
+/* Mobile Filter Bar & Drawer Styles (Levels 2 & 3) */
+.frapak-mobile-filter-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.frapak-mobile-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid var(--color-navy);
+  color: var(--color-navy);
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.frapak-mobile-filter-btn:active {
+  background: #EEF2F6;
+  transform: scale(0.98);
+}
+
+.frapak-filter-count-badge {
+  background: var(--color-navy);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  padding: 1px 7px;
+  margin-left: 2px;
+}
+
+.frapak-mobile-results-count {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.frapak-filter-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 27, 44, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2150;
+  display: none;
+}
+
+.frapak-filter-backdrop.open {
+  display: block;
+}
+
+.frapak-filter-mobile-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--color-navy);
+}
+
+.frapak-filter-close-btn {
+  background: transparent;
+  border: 1px solid #D0D7DE;
+  border-radius: var(--radius-full);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-navy);
+  cursor: pointer;
+}
+
+.frapak-filter-mobile-actions {
+  display: none;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Base Responsive Container Rules */
+@media (max-width: 1200px) {
+  .frapak-cat-tiles-grid { grid-template-columns: repeat(6, 1fr); }
+  .frapak-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .frapak-series-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .frapak-skus-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .frapak-markets-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+@media (max-width: 1024px) {
+  .frapak-top-utility-bar { display: none !important; }
+  .frapak-nav-list { display: none !important; }
+  .frapak-mobile-menu-toggle { display: flex; }
+  .frapak-main-header { height: 68px; }
+  .header-nav-inner { height: 68px; }
+  .frapak-logo { height: 56px; }
+  .frapak-logo-img { height: 48px; }
+
+  .frapak-cat-tiles-grid { grid-template-columns: repeat(4, 1fr); }
+  .frapak-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .frapak-series-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .frapak-skus-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .frapak-markets-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .frapak-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .editorial-two-col { grid-template-columns: 1fr; gap: 24px; }
+  .frapak-catalogue-layout { grid-template-columns: 220px 1fr; gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  /* 1. Fundamental Mobile Width & Spacing (320px - 768px) */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .frapak-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Section Spacing: Compact & Balanced */
+  .frapak-section { padding: 40px 0 !important; }
+  .frapak-section-grey { padding: 40px 0 !important; }
+  .frapak-section-title-wrap { margin-bottom: 22px !important; gap: 10px !important; }
+  .frapak-section-title-wrap::before,
+  .frapak-section-title-wrap::after { max-width: 48px !important; }
+  .frapak-section-title { font-size: 1.35rem !important; line-height: 1.3 !important; }
+
+  /* 2. Mobile Header: [Logo] [Menu] */
+  .frapak-main-header { height: 60px !important; }
+  .header-nav-inner {
+    height: 60px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .frapak-logo {
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .frapak-logo-img {
+    height: 40px !important;
+    width: auto !important;
+  }
+  /* Keep mobile header clean without crowded desktop buttons */
+  .frapak-cart-inquiry-btn { display: none !important; }
+  .frapak-mobile-menu-toggle {
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+  }
+
+  /* 3. Hero Section Hierarchy & Fit (70-85vh) */
+  .frapak-hero-banner {
+    padding: 44px 0 38px 0 !important;
+    min-height: auto !important;
+  }
+  .hero-content-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .hero-badge-tag {
+    font-size: 0.72rem !important;
+    padding: 5px 12px !important;
+    letter-spacing: 0.04em !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-content-box h1 {
+    font-size: clamp(1.6rem, 6vw, 2.15rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-desc {
+    font-size: 0.9375rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 22px !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+  }
+
+  /* 4. Mobile-First Full-Width CTA Buttons */
+  .hero-cta-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .hero-cta-wrap .frapak-btn-outline,
+  .hero-cta-wrap .frapak-btn-gold {
+    width: 100% !important;
+    min-height: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.03em !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  /* 5 & 6. 2-Column Clean Mobile Grid for Product Categories */
+  .frapak-cat-tiles-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .frapak-tile-card {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    border: 1px solid #CCD4DD !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+  .frapak-cat-tiles-grid .frapak-tile-image {
+    height: 120px !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #ffffff !important;
+  }
+  .frapak-cat-tiles-grid .frapak-tile-image img {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  .frapak-tile-bar {
+    font-size: 0.8125rem !important;
+    font-weight: 700 !important;
+    padding: 8px 6px !important;
+    min-height: 38px !important;
+    line-height: 1.3 !important;
+    background: #D7DFE8 !important;
+    color: var(--color-navy) !important;
+  }
+
+  /* 7. 2-Column Clean Mobile Grid for Markets */
+  .frapak-markets-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .frapak-market-tile {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    border: 1px solid #CCD4DD !important;
+    background: #ffffff !important;
+  }
+  .frapak-market-img {
+    height: 115px !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .frapak-market-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* 8 & 9. Sustainable rPET Section & Read More Architecture */
+  .rpet-layout {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .rpet-cards-stack {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .rpet-cards-stack .frapak-tile-image {
+    height: 120px !important;
+    padding: 10px !important;
+  }
+  .pcr-summary-lead {
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+  }
+  .pcr-expandable-content {
+    display: none;
+  }
+  .pcr-expandable-content.open {
+    display: block !important;
+    animation: fadeInDown 0.25s ease-out;
+  }
+  .frapak-readmore-btn {
+    min-height: 44px !important;
+    padding: 10px 20px !important;
+    font-size: 0.84rem !important;
+  }
+
+  /* 10. Packaging Experience Structured Cards */
+  .editorial-two-col {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .editorial-left-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .frapak-exp-card {
+    padding: 16px 14px !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .frapak-exp-card h4 {
+    font-size: 0.95rem !important;
+    margin-bottom: 6px !important;
+  }
+  .frapak-exp-card .exp-summary {
+    font-size: 0.8125rem !important;
+    line-height: 1.55 !important;
+  }
+  .frapak-exp-card .exp-details {
+    font-size: 0.8125rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* 11. Controlled Aspect-Ratio Factory Image & Desktop Feature Control */
+  .desktop-only-feature { display: none !important; }
+  .editorial-right-col { width: 100% !important; }
+  .editorial-img-box {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    border: 1px solid #CCD4DD !important;
+    background: #ffffff !important;
+  }
+  .editorial-factory-img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .editorial-img-caption {
+    padding: 8px 12px !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    background: #F8FAFC !important;
+    text-align: center !important;
+  }
+
+  /* 12. Interactive Matcher Mobile Stack */
+  .frapak-matcher-section { padding: 40px 0 !important; }
+  .frapak-matcher-card {
+    grid-template-columns: 1fr !important;
+    padding: 22px 16px !important;
+    gap: 20px !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .frapak-matcher-title {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+  }
+  .frapak-matcher-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 18px !important;
+  }
+  .frapak-matcher-btn {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 12px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .matcher-spec-box {
+    padding: 16px 14px !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .matcher-spec-header {
+    font-size: 0.75rem !important;
+    margin-bottom: 10px !important;
+  }
+  .matcher-spec-list li {
+    font-size: 0.8125rem !important;
+    line-height: 1.45 !important;
+    gap: 10px !important;
+  }
+
+  /* 13. Mobile Footer Grid (Clean 2-Column or Stacked, No Plus Signs) */
+  .frapak-footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px 20px !important;
+  }
+  .frapak-footer .footer-col h4 {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: var(--color-navy) !important;
+    margin-bottom: 12px !important;
+  }
+  .frapak-footer .footer-link-list li {
+    margin-bottom: 8px !important;
+    font-size: 0.84rem !important;
+  }
+  .frapak-footer p {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Level 1, 2, 3, 4 Drilldown Mobile Grids */
+  .frapak-level1-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .frapak-level1-grid .frapak-tile-image {
+    height: 120px !important;
+  }
+  .frapak-series-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .frapak-skus-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .frapak-sku-img {
+    height: 130px !important;
+    padding: 10px !important;
+  }
+  .frapak-sku-bar {
+    font-size: 0.75rem !important;
+    padding: 6px 4px !important;
+  }
+  .frapak-sku-spec-row {
+    padding: 3px 8px !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Mobile Filter Bar & Drawer */
+  .frapak-mobile-filter-bar { display: flex; }
+  .frapak-catalogue-layout { display: block !important; }
+  .frapak-filter-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 86vw;
+    background: #ffffff;
+    z-index: 2200;
+    transform: translateX(-100%);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 20px 18px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 6px 0 28px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+  }
+  .frapak-filter-sidebar.mobile-open { transform: translateX(0); }
+  .frapak-filter-mobile-header { display: flex; }
+  .frapak-filter-mobile-actions { display: block; }
+
+  /* Level 4 PDP Mobile Stack */
+  .frapak-pdp-layout {
+    grid-template-columns: 1fr !important;
+    padding: 20px 16px !important;
+    gap: 20px !important;
+    border-radius: var(--radius-lg) !important;
+  }
+  .frapak-pdp-gallery-container {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .frapak-pdp-main-stage {
+    height: 280px !important;
+    padding: 14px !important;
+  }
+  .frapak-pdp-thumbs-col {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    gap: 8px !important;
+  }
+  .frapak-pdp-thumb-item {
+    width: 54px !important;
+    height: 54px !important;
+    flex-shrink: 0 !important;
+  }
+  .frapak-pdp-specs-card {
+    padding-left: 0 !important;
+  }
+  .frapak-pdp-specs-card table {
+    margin-bottom: 18px !important;
+  }
+  .frapak-pdp-specs-card th,
+  .frapak-pdp-specs-card td {
+    padding: 8px 10px !important;
+    font-size: 0.8125rem !important;
+  }
+  .frapak-pdp-specs-card td:first-child {
+    width: 42% !important;
+  }
+  .frapak-pdp-cta-wrap {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .frapak-pdp-cta-wrap button {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 13px !important;
+  }
+
+  /* Modals & Inputs */
+  .frapak-drawer {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  .frapak-modal-box {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 20px 16px !important;
+    max-height: 90vh !important;
+  }
+
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents iOS auto-zoom */
+    min-height: 46px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .frapak-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .frapak-section { padding: 36px 0 !important; }
+  .frapak-section-grey { padding: 36px 0 !important; }
+  .frapak-section-title { font-size: 1.25rem !important; }
+
+  .frapak-cat-tiles-grid { gap: 10px !important; }
+  .frapak-cat-tiles-grid .frapak-tile-image { height: 110px !important; }
+  .frapak-markets-grid { gap: 10px !important; }
+  .frapak-market-img { height: 105px !important; }
+  .rpet-cards-stack { gap: 10px !important; }
+  .rpet-cards-stack .frapak-tile-image { height: 110px !important; }
+
+  .editorial-factory-img { height: 200px !important; }
+}
+
+@media (max-width: 360px) {
+  .frapak-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .hero-content-box h1 { font-size: 1.45rem !important; }
+  .frapak-cat-tiles-grid { gap: 8px !important; }
+  .frapak-cat-tiles-grid .frapak-tile-image { height: 100px !important; }
+  .frapak-tile-bar { font-size: 0.72rem !important; min-height: 34px !important; padding: 5px 3px !important; }
+  .frapak-markets-grid { gap: 8px !important; }
+  .frapak-markets-grid .frapak-market-img { height: 95px !important; }
+}
+
+/* ==========================================================================
+   4-TIER FRAPAK CATALOGUE DRILLDOWN STYLES (Levels 1, 2, 3, 4)
+   ========================================================================== */
+
+/* Back Button */
+.frapak-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #CCD4DD;
+  color: var(--color-navy);
+  padding: 7px 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+.frapak-back-btn:hover {
+  background: #EEF2F6;
+  border-color: var(--color-navy);
+  transform: translateX(-2px);
+}
+
+/* Breadcrumbs */
+.frapak-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #777;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.frapak-breadcrumbs a {
+  color: var(--color-navy);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.frapak-breadcrumbs a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+.frapak-breadcrumbs .separator {
+  color: #aaa;
+  font-size: 0.75rem;
+}
+
+.frapak-breadcrumbs .current {
+  color: #444;
+  font-weight: 400;
+}
+
+/* 2-Column Catalogue Layout (Sidebar Filters + Main Grid) */
+.frapak-catalogue-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Sidebar Filters */
+.frapak-filter-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.frapak-filter-group {
+  background: #F4F7FA;
+  border: 1px solid #D3DCE6;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.frapak-filter-header {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.frapak-filter-header .toggle-icon {
+  font-size: 0.75rem;
+  color: var(--color-navy);
+}
+
+.frapak-filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.frapak-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #4B5563;
+  cursor: pointer;
+}
+
+.frapak-filter-item input[type="checkbox"] {
+  accent-color: var(--color-navy);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.frapak-filter-item:hover {
+  color: var(--color-navy);
+}
+
+/* Level 1: 12-Category Grid (Matches Screenshot 1) */
+.frapak-level1-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* Level 2: Series Cards Grid (Matches Screenshot 2) */
+.frapak-series-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Level 3: SKUs Cards Grid (Matches Screenshot 3) */
+.frapak-skus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.frapak-sku-card {
+  background: #ffffff;
+  border: 1px solid #CCD4DD;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+
+.frapak-sku-card:hover {
+  border-color: var(--color-navy);
+  box-shadow: none;
+  transform: translateY(-3px);
+}
+
+.frapak-sku-stock-indicator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: #22C55E;
+  z-index: 5;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.8);
+}
+
+.frapak-sku-img {
+  height: 180px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.frapak-sku-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none !important;
+  box-shadow: none !important;
+  transition: transform 0.25s ease;
+}
+
+.frapak-sku-card:hover .frapak-sku-img img {
+  transform: scale(1.05);
+}
+
+.frapak-sku-bar {
+  background-color: #D7DFE8;
+  color: var(--color-navy);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 8px 10px;
+  text-align: center;
+  line-height: 1.35;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.frapak-sku-card:hover .frapak-sku-bar {
+  background-color: var(--color-navy);
+  color: #ffffff;
+}
+
+.frapak-sku-specs-table {
+  padding: 8px 0;
+  background: #ffffff;
+}
+
+.frapak-sku-spec-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: #4B5563;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.frapak-sku-spec-row:last-child {
+  border-bottom: none;
+}
+
+.frapak-sku-spec-icon {
+  font-size: 0.75rem;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+}
+
+.frapak-sku-spec-val {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Level 4: Product Detail Page (Matches Screenshot 4) */
+.frapak-pdp-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 40px;
+  background: #ffffff;
+  border: 1px solid #CCD4DD;
+  padding: 36px;
+  align-items: start;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.frapak-pdp-gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  gap: 16px;
+  align-items: start;
+}
+
+.frapak-pdp-main-stage {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.frapak-pdp-main-stage img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.frapak-pdp-zoom-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #D1D5DB;
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 0.8125rem;
+  color: #374151;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.frapak-pdp-nav-prev,
+.frapak-pdp-nav-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #D1D5DB;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--color-navy);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.frapak-pdp-nav-prev:hover,
+.frapak-pdp-nav-next:hover {
+  background: var(--color-navy);
+  color: #ffffff;
+}
+
+.frapak-pdp-nav-prev { left: 10px; }
+.frapak-pdp-nav-next { right: 10px; }
+
+.frapak-pdp-thumbs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.frapak-pdp-thumb-item {
+  width: 68px;
+  height: 68px;
+  border: 1px solid #D1D5DB;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.frapak-pdp-thumb-item.active {
+  border: 2px solid #22C55E;
+}
+
+.frapak-pdp-thumb-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* PDP Right Column Specs Table */
+.frapak-pdp-specs-card {
+  padding-left: 10px;
+}
+
+.frapak-pdp-specs-card table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 28px;
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.frapak-pdp-specs-card th,
+.frapak-pdp-specs-card td {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #F0F2F5;
+}
+
+.frapak-pdp-specs-card tr:last-child td {
+  border-bottom: none;
+}
+
+.frapak-pdp-specs-card tr:nth-child(even) {
+  background: #F9FAFB;
+}
+
+.frapak-pdp-specs-card td:first-child {
+  font-weight: 700;
+  color: var(--color-navy);
+  width: 38%;
+}
+
+.frapak-pdp-specs-card td:last-child {
+  color: #374151;
+}
+
+.frapak-pdp-cta-wrap {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+   GLOBAL ROUNDED DESIGN SYSTEM (Ensures NO sharp corners across all pages)
+   ========================================================================== */
+button, 
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="search"], 
+select, 
+textarea {
+  border-radius: var(--radius-sm);
+}
+
+.frapak-btn-outline,
+.frapak-btn-gold {
+  border-radius: var(--radius-sm);
+}
+
+/* Round outer cards and containers */
+.card, 
+.box, 
+.frapak-tile-card,
+.frapak-market-tile,
+.frapak-sku-card,
+.frapak-product-card,
+.rpet-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Ensure images and image containers merge seamlessly with title bars:
+   ONLY top corners curve with the card; bottom corners are 100% FLAT (0) */
+.card img, 
+.box img, 
+.frapak-tile-image,
+.frapak-market-img,
+.frapak-sku-img,
+.frapak-prod-img,
+.frapak-tile-image img,
+.frapak-market-img img,
+.frapak-sku-img img,
+.frapak-prod-img img,
+.rpet-card .frapak-tile-image,
+.rpet-card .frapak-tile-image img {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* Ensure title bars merge seamlessly with images:
+   Top corners are 100% FLAT (0); ONLY bottom corners curve with the card */
+.frapak-tile-bar,
+.rpet-card-bar,
+.frapak-sku-bar {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: var(--radius-md) !important;
+  border-bottom-right-radius: var(--radius-md) !important;
+  margin-top: 0 !important;
+}
+
+/* Zero Shadow Rule for All Product Images and Product Cards */
+.frapak-tile-image img,
+.frapak-prod-img img,
+.frapak-sku-img img,
+.frapak-pdp-main-stage img,
+.frapak-pdp-thumb-item img,
+.frapak-tile-card img,
+.frapak-sku-card img,
+.frapak-product-card img,
+.frapak-tile-image,
+.frapak-sku-img,
+.frapak-prod-img {
+  filter: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.frapak-tile-card,
+.frapak-sku-card,
+.frapak-product-card {
+  box-shadow: none !important;
+}
+
+.frapak-tile-card:hover,
+.frapak-sku-card:hover,
+.frapak-product-card:hover {
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   ABOUT PAGE MOBILE-FIRST RESPONSIVE DESIGN SYSTEM (.about-*)
+   ========================================================================== */
+
+/* About Hero Banner */
+.about-hero-banner {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1b2f4c 100%);
+  color: #ffffff;
+  padding: 40px 0 32px 0;
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.about-hero-badge {
+  display: inline-block;
+  background: var(--color-gold-soft);
+  color: var(--color-gold);
+  border: 1px solid rgba(184, 137, 46, 0.4);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.about-hero-title {
+  font-size: clamp(1.75rem, 5.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.about-hero-subtitle {
+  font-size: clamp(0.9375rem, 2.8vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 780px;
+}
+
+/* Executive Summary Box (Who / What / Why) */
+.about-intro-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-intro-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-intro-tag {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-intro-col h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+.about-intro-col p {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Editorial 2-Column Section */
+.about-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.about-section-header {
+  margin-bottom: 20px;
+}
+
+.about-subheading-tag {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.about-heading-primary {
+  font-size: clamp(1.35rem, 3.5vw, 1.8rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Accordion Story Cards (Read More) */
+.about-story-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-story-card:hover {
+  border-color: #CBD5E1;
+}
+
+.about-story-card.open {
+  border-color: var(--color-navy);
+  box-shadow: 0 4px 16px rgba(22, 39, 63, 0.07);
+}
+
+.about-story-header {
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  background: #ffffff;
+  user-select: none;
+}
+
+.about-story-card.open .about-story-header {
+  background: #F8FAFC;
+}
+
+.about-story-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.about-story-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(22, 39, 63, 0.06);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-story-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.about-story-preview {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-accordion-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F1F5F9;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-navy);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.about-story-card.open .about-accordion-btn {
+  background: var(--color-navy);
+  color: #ffffff;
+  border-color: var(--color-navy);
+}
+
+.about-chevron {
+  transition: transform 0.25s ease;
+}
+
+.about-story-card.open .about-chevron {
+  transform: rotate(180deg);
+}
+
+.about-story-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, padding 0.25s ease;
+  padding: 0 18px;
+}
+
+.about-story-card.open .about-story-body {
+  max-height: 600px;
+  opacity: 1;
+  padding: 14px 18px 18px 18px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.about-story-body p {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Trust & Quality Assurance Card */
+.about-trust-card {
+  background: #ffffff;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  margin-top: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.about-trust-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.about-trust-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-navy);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-trust-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+  margin: 0 0 3px 0;
+}
+
+.about-trust-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 600;
+}
+
+.about-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.about-metric-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.about-metric-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.about-metric-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.about-trust-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-trust-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.about-trust-checklist li svg {
+  color: #16A34A;
+  background: rgba(22, 163, 74, 0.12);
+  border-radius: 50%;
+  padding: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-trust-desc {
+  font-size: 0.8125rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+}
+
+/* Interactive Mobile Image Gallery */
+.about-gallery-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.about-gallery-stage {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: #0E1B2C;
+}
+
+.about-gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.about-gallery-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(14, 27, 44, 0.88) 65%);
+  color: #ffffff;
+  padding: 22px 14px 10px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+  background: #F8FAFC;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-thumb-btn {
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.about-thumb-btn img {
+  width: 100%;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+  display: block;
+}
+
+.about-thumb-btn span {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.about-thumb-btn.active {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 2px rgba(184, 137, 46, 0.25);
+  background: #FFFDF9;
+}
+
+/* 2-Column Capabilities Grid */
+.about-capabilities-card {
+  background: #F8FAFC;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.about-capabilities-header {
+  margin-bottom: 14px;
+}
+
+.about-capabilities-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+  margin: 0 0 2px 0;
+}
+
+.about-capabilities-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.about-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.about-cap-box {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-cap-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(22, 39, 63, 0.07);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-cap-text h5 {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 3px 0;
+}
+
+.about-cap-text p {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-cap-bullets {
+  list-style: none;
+  padding: 12px 0 0 0;
+  margin: 0;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-cap-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+.about-cap-bullets li svg {
+  color: var(--color-navy);
+  flex-shrink: 0;
+}
+
+/* Quality & Compliance Section */
+.about-section-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin: 8px auto 0;
+  text-align: center;
+  line-height: 1.55;
+}
+
+.about-compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.about-compliance-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.about-compliance-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-comp-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-navy);
+  background: #EEF2F6;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.about-compliance-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+.about-compliance-body {
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Specialized Finishes Callout Card */
+.about-finishes-card {
+  margin-top: 28px;
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-left: 5px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.about-finishes-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-finishes-tag {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.about-finishes-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin: 0 0 6px 0;
+}
+
+.about-finishes-desc {
+  font-size: 0.875rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-finishes-cta {
+  flex-shrink: 0;
+}
+
+.about-cta-btn {
+  padding: 12px 24px !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap;
+}
+
+/* Production & Cleanroom Infrastructure Carousel / Grid */
+.about-infra-carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.about-infra-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-infra-img-wrap {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: #0E1B2C;
+}
+
+.about-infra-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-infra-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(14, 27, 44, 0.85);
+  color: var(--color-gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.about-infra-body {
+  padding: 18px;
+  flex: 1;
+}
+
+.about-infra-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 6px 0;
+}
+
+.about-infra-card-desc {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-swipe-hint {
+  display: none;
+}
+
+/* Facility Audit CTA Bar */
+.about-audit-cta-bar {
+  margin-top: 36px;
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1a304e 100%);
+  color: #ffffff;
+  padding: 32px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: var(--radius-lg);
+}
+
+.about-audit-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-audit-tag {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.about-audit-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.about-audit-desc {
+  font-size: 0.875rem;
+  color: #CCD4DD;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 650px;
+}
+
+.about-audit-btn {
+  padding: 12px 26px !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   MOBILE SPECIFIC RULES FOR ABOUT PAGE (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Hero Banner */
+  .about-hero-banner {
+    padding: 32px 0 24px 0 !important;
+  }
+  .about-hero-title {
+    font-size: clamp(1.6rem, 6vw, 2.1rem) !important;
+  }
+  .about-hero-subtitle {
+    font-size: 0.9375rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Executive Intro Box */
+  .about-intro-card {
+    padding: 18px 16px !important;
+    margin-bottom: 24px !important;
+  }
+  .about-intro-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .about-intro-col:not(:last-child) {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #F1F5F9;
+  }
+
+  /* Editorial Layout */
+  .about-editorial-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+  .about-editorial-left,
+  .about-editorial-right {
+    width: 100% !important;
+  }
+
+  /* Accordion Cards */
+  .about-story-header {
+    padding: 14px 14px !important;
+    gap: 10px !important;
+  }
+  .about-story-title {
+    font-size: 0.95rem !important;
+    margin-bottom: 3px !important;
+  }
+  .about-story-preview {
+    font-size: 0.78rem !important;
+  }
+  .about-accordion-btn {
+    padding: 5px 10px !important;
+    font-size: 0.72rem !important;
+  }
+  .about-story-card.open .about-story-body {
+    padding: 12px 14px 14px 14px !important;
+  }
+  .about-story-body p {
+    font-size: 0.8125rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Trust Card */
+  .about-trust-card {
+    padding: 18px 16px !important;
+    margin-top: 20px !important;
+  }
+  .about-trust-title {
+    font-size: 0.95rem !important;
+  }
+  .about-metric-number {
+    font-size: 1.35rem !important;
+  }
+  .about-metric-label {
+    font-size: 0.6875rem !important;
+  }
+  .about-trust-checklist li {
+    font-size: 0.78rem !important;
+    gap: 8px !important;
+  }
+  .about-trust-desc {
+    font-size: 0.75rem !important;
+  }
+
+  /* Gallery Stage */
+  .about-gallery-stage {
+    height: 220px !important;
+  }
+  .about-gallery-thumbs {
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+  .about-thumb-btn img {
+    height: 42px !important;
+  }
+  .about-thumb-btn span {
+    font-size: 0.65rem !important;
+  }
+
+  /* Capabilities Grid */
+  .about-capabilities-card {
+    padding: 18px 14px !important;
+  }
+  .about-capabilities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .about-cap-box {
+    padding: 10px 8px !important;
+  }
+  .about-cap-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .about-cap-text h5 {
+    font-size: 0.78rem !important;
+  }
+  .about-cap-text p {
+    font-size: 0.6875rem !important;
+  }
+
+  /* Compliance Grid (Clean 1 Column) */
+  .about-compliance-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 20px !important;
+  }
+  .about-compliance-card {
+    padding: 18px 16px !important;
+  }
+  .about-compliance-title {
+    font-size: 1.05rem !important;
+  }
+  .about-compliance-body {
+    font-size: 0.8125rem !important;
+  }
+
+  /* Finishes Card & Full-Width CTA */
+  .about-finishes-card {
+    padding: 18px 16px !important;
+    margin-top: 20px !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .about-finishes-content {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .about-finishes-cta {
+    width: 100% !important;
+  }
+  .about-finishes-cta .about-cta-btn {
+    width: 100% !important;
+    min-height: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  /* Infrastructure Horizontal Swipe Carousel */
+  .about-infra-carousel {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding: 4px 0 14px 0 !important;
+    margin-top: 20px !important;
+  }
+  .about-infra-carousel::-webkit-scrollbar {
+    height: 4px;
+  }
+  .about-infra-carousel::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+  .about-infra-card {
+    flex: 0 0 78vw !important;
+    max-width: 300px !important;
+    scroll-snap-align: start !important;
+  }
+  .about-infra-img-wrap {
+    height: 160px !important;
+  }
+  .about-infra-body {
+    padding: 14px !important;
+  }
+  .about-infra-card-title {
+    font-size: 0.9375rem !important;
+  }
+  .about-infra-card-desc {
+    font-size: 0.78rem !important;
+  }
+  .about-swipe-hint {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    font-size: 0.72rem !important;
+    color: var(--color-text-muted) !important;
+    margin-top: 10px !important;
+  }
+
+  /* Facility Audit CTA Bar (Full-Width Mobile) */
+  .about-audit-cta-bar {
+    padding: 24px 18px !important;
+    margin-top: 24px !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .about-audit-text {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .about-audit-title {
+    font-size: 1.15rem !important;
+  }
+  .about-audit-desc {
+    font-size: 0.8125rem !important;
+  }
+  .about-audit-action {
+    width: 100% !important;
+  }
+  .about-audit-btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-capabilities-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-infra-card {
+    flex: 0 0 84vw !important;
+  }
+}
+
+
+/* =========================================================================
+   MARKETS PAGE — Desktop Base Styles
+   ========================================================================= */
+
+/* Hero Banner */
+.mkt-hero-banner {
+  text-align: center;
+  padding: 48px 16px 36px;
+  background: linear-gradient(135deg, #16273F 0%, #0E1B2C 100%);
+  color: #FFFFFF;
+}
+.mkt-hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #E5B869;
+  background: rgba(184, 137, 46, 0.18);
+  border: 1px solid rgba(229, 184, 105, 0.5);
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.mkt-hero-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF !important;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  display: block !important;
+  visibility: visible !important;
+}
+.mkt-hero-subtitle {
+  font-size: clamp(0.9375rem, 1.4vw, 1.05rem);
+  color: #E2E8F0 !important;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Section */
+.mkt-main-section {
+  padding-top: 28px;
+}
+
+/* Category Grid — 5 Tiles */
+.mkt-category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.mkt-cat-tile {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.mkt-cat-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 31, 63, 0.1);
+}
+.mkt-cat-tile:active {
+  transform: scale(0.97);
+}
+.mkt-cat-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mkt-cat-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.mkt-cat-tile:hover .mkt-cat-img img {
+  transform: scale(1.06);
+}
+.mkt-cat-label {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-align: center;
+  background: #fff;
+}
+
+/* Intro Card */
+.mkt-intro-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  padding: 28px;
+  margin-bottom: 36px;
+  border-radius: 16px;
+}
+.mkt-intro-title {
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.mkt-intro-lead {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.mkt-intro-expandable {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+.mkt-intro-expandable p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.mkt-intro-card.expanded .mkt-intro-expandable {
+  max-height: 400px;
+  opacity: 1;
+}
+.mkt-readmore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.mkt-readmore-btn svg {
+  transition: transform 0.3s ease;
+}
+.mkt-intro-card.expanded .mkt-readmore-btn svg {
+  transform: rotate(180deg);
+}
+
+/* Desktop: hide readmore since text is short enough */
+@media (min-width: 769px) {
+  .mkt-intro-expandable {
+    max-height: none;
+    opacity: 1;
+  }
+  .mkt-readmore-btn {
+    display: none;
+  }
+}
+
+/* Market Sector Cards — Desktop (2-col side-by-side) */
+.mkt-sectors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.mkt-sector-card {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 28px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  align-items: center;
+  border-radius: 18px;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+  transition: box-shadow 0.3s ease;
+}
+.mkt-sector-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 31, 63, 0.06);
+}
+.mkt-sector-img-wrap {
+  position: relative;
+  background: var(--color-off-white);
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+}
+.mkt-sector-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  transition: transform 0.3s ease;
+}
+.mkt-sector-card:hover .mkt-sector-img-wrap img {
+  transform: scale(1.04);
+}
+.mkt-sector-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-gold);
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.mkt-sector-content {
+  display: flex;
+  flex-direction: column;
+}
+.mkt-sector-title {
+  font-size: clamp(1.15rem, 1.4vw, 1.3rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.mkt-sector-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.mkt-sector-caps {
+  font-size: 0.8125rem;
+  color: var(--color-navy);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.mkt-sector-caps strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-gold);
+}
+.mkt-sector-caps ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mkt-sector-caps ul li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.8125rem;
+  color: var(--color-navy);
+  line-height: 1.5;
+}
+.mkt-sector-caps ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+}
+
+/* Market Card CTAs */
+.mkt-sector-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.mkt-cta-primary {
+  margin-left: 0 !important;
+  padding: 10px 20px !important;
+  font-size: 0.8125rem !important;
+  min-height: 44px;
+  white-space: nowrap;
+}
+.mkt-cta-secondary {
+  color: var(--color-navy) !important;
+  border-color: var(--color-navy) !important;
+  padding: 10px 20px !important;
+  font-size: 0.8125rem !important;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+/* Bottom Consultation CTA */
+.mkt-consult-cta {
+  background: var(--color-navy);
+  color: #fff;
+  padding: 40px 32px;
+  text-align: center;
+  margin-top: 48px;
+  border-radius: 16px;
+}
+.mkt-consult-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.mkt-consult-title {
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.mkt-consult-desc {
+  font-size: 0.9rem;
+  color: #CCD4DD;
+  max-width: 620px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+.mkt-consult-btn {
+  margin-left: 0 !important;
+  padding: 14px 32px !important;
+  font-size: 0.9rem !important;
+  min-height: 48px;
+}
+
+/* =========================================================================
+   FOOTER ACCORDION (Desktop Grid & Mobile Accordion)
+   ========================================================================= */
+/* =========================================================================
+   FOOTER ACCORDION (Desktop Proportional Grid, Tablet & Mobile Accordion)
+   ========================================================================= */
+.frapak-footer {
+  background-color: var(--color-footer-grey);
+  border-top: 1px solid var(--color-border);
+  padding: 40px 0 24px;
+}
+
+.frapak-footer .frapak-container {
+  max-width: 1380px;
+  width: calc(100% - 64px);
+  margin: 0 auto;
+}
+
+/* Footer Brand Header */
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(22, 39, 63, 0.1);
+}
+
+.footer-brand-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-brand-logo {
+  width: 138px;
+  max-width: 155px;
+  height: auto;
+  display: block;
+}
+
+.footer-brand-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 500;
+  max-width: 320px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* Desktop Proportional Multi-Column Grid */
+.frapak-footer .frapak-footer-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr 2.1fr 1.1fr 1fr;
+  gap: 32px 28px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-accordion-header {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.footer-title {
+  display: block;
+}
+
+.footer-accordion-icon {
+  display: none;
+}
+
+.footer-accordion-panel {
+  display: block;
+  max-height: none;
+  opacity: 1;
+}
+
+/* Column Specific Formatting */
+.footer-address-block {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+}
+
+.footer-address-block span {
+  color: var(--color-text-muted);
+}
+
+.footer-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.footer-phone-link {
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-phone-link:hover {
+  color: var(--color-gold-hover);
+}
+
+.footer-email-link,
+.footer-legal-link,
+.footer-hover-link {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-email-link:hover,
+.footer-legal-link:hover,
+.footer-hover-link:hover {
+  color: var(--color-gold);
+}
+
+.footer-legal-block {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-vat-text {
+  margin-bottom: 2px;
+}
+
+.footer-mission-text {
+  line-height: 1.6;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.footer-bank-block {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.footer-bank-title {
+  color: var(--color-navy);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.footer-bank-acc {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.footer-bank-swift {
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+.footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-link-list a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.15s ease;
+}
+
+.footer-link-list a:hover {
+  color: var(--color-gold);
+}
+
+.footer-copyright-bar {
+  font-size: 0.8125rem;
+  padding: 22px 0 6px;
+  margin-top: 28px;
+  border-top: 1px solid rgba(22, 39, 63, 0.1);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* =========================================================================
+   TABLET RESPONSIVE (768px - 1023px)
+   ========================================================================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .frapak-footer {
+    padding: 36px 0 20px;
+  }
+  .frapak-footer .frapak-footer-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 32px 24px !important;
+    align-items: start !important;
+  }
+  .footer-brand-header {
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+  }
+  .footer-brand-logo {
+    width: 125px !important;
+  }
+}
+
+/* =========================================================================
+   MOBILE ACCORDION (max-width: 767px)
+   ========================================================================= */
+@media (max-width: 767px) {
+  .frapak-footer {
+    padding: 24px 0 16px;
+  }
+  .footer-brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 18px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(22, 39, 63, 0.12);
+  }
+  .footer-brand-logo {
+    width: 110px !important;
+    height: auto !important;
+    margin: 0 auto 8px !important;
+  }
+  .footer-brand-desc {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .frapak-footer .frapak-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .footer-col {
+    border-bottom: 1px solid rgba(22, 39, 63, 0.12);
+    padding: 0 !important;
+  }
+  .footer-col:last-child {
+    border-bottom: none;
+  }
+  .footer-accordion-header {
+    cursor: pointer;
+    min-height: 52px;
+    padding: 14px 4px;
+    margin: 0;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-navy);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .footer-accordion-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--color-gold);
+    transition: transform 0.3s ease;
+  }
+  .footer-accordion-icon .footer-icon-plus {
+    display: block;
+  }
+  .footer-accordion-icon .footer-icon-minus {
+    display: none;
+  }
+  .footer-col.footer-col--open .footer-accordion-icon .footer-icon-plus {
+    display: none;
+  }
+  .footer-col.footer-col--open .footer-accordion-icon .footer-icon-minus {
+    display: block;
+  }
+  .footer-accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.25s ease;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .footer-col.footer-col--open .footer-accordion-panel {
+    max-height: 500px;
+    opacity: 1;
+    padding-bottom: 18px;
+  }
+  .footer-copyright-bar {
+    font-size: 0.75rem;
+    padding: 20px 0 8px;
+    margin-top: 16px;
+    border-top: none;
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+}
+
+
+/* =========================================================================
+   MARKETS PAGE — Mobile Responsive (max-width: 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+
+  /* Hero */
+  .mkt-hero-banner {
+    padding: 36px 16px 28px;
+    text-align: center;
+  }
+  .mkt-hero-badge {
+    font-size: 0.6875rem;
+    padding: 4px 14px;
+    margin-bottom: 10px;
+  }
+  .mkt-hero-title {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    color: #FFFFFF !important;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .mkt-hero-subtitle {
+    font-size: 0.9375rem;
+    color: #E2E8F0 !important;
+    max-width: none;
+    padding: 0 8px;
+    line-height: 1.5;
+  }
+
+  /* Main Section */
+  .mkt-main-section {
+    padding-top: 20px;
+  }
+  .mkt-main-section .frapak-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    max-width: none !important;
+  }
+
+  /* Category Grid — 2-column */
+  .mkt-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .mkt-cat-tile:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .mkt-cat-label {
+    padding: 8px 10px;
+    font-size: 0.8125rem;
+  }
+  .mkt-cat-img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Intro Card */
+  .mkt-intro-card {
+    padding: 20px 16px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+  }
+  .mkt-intro-title {
+    font-size: 1.15rem;
+  }
+  .mkt-intro-lead {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .mkt-intro-expandable {
+    max-height: 0;
+    opacity: 0;
+  }
+  .mkt-intro-card.expanded .mkt-intro-expandable {
+    max-height: 400px;
+    opacity: 1;
+  }
+  .mkt-readmore-btn {
+    display: inline-flex;
+  }
+
+  /* Sector Cards — Vertical Stack */
+  .mkt-sectors-list {
+    gap: 16px;
+  }
+  .mkt-sector-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border-radius: 14px;
+    scroll-margin-top: 72px;
+  }
+  .mkt-sector-img-wrap {
+    border-radius: 14px 14px 0 0;
+    aspect-ratio: 16 / 9;
+    border: none;
+    min-height: 180px;
+  }
+  .mkt-sector-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+  }
+  .mkt-sector-badge {
+    top: 12px;
+    left: 12px;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+  .mkt-sector-content {
+    padding: 16px;
+  }
+  .mkt-sector-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.25rem);
+    margin-bottom: 8px;
+  }
+  .mkt-sector-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .mkt-sector-caps {
+    margin-bottom: 16px;
+  }
+  .mkt-sector-caps strong {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+  }
+  .mkt-sector-caps ul {
+    gap: 3px;
+  }
+  .mkt-sector-caps ul li {
+    font-size: 0.8125rem;
+  }
+
+  /* CTAs — Full Width Stacking */
+  .mkt-sector-ctas {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mkt-cta-primary,
+  .mkt-cta-secondary {
+    width: 100% !important;
+    text-align: center;
+    padding: 12px 16px !important;
+    font-size: 0.8125rem !important;
+    min-height: 46px;
+    justify-content: center;
+  }
+
+  /* Consultation CTA */
+  .mkt-consult-cta {
+    padding: 28px 20px;
+    margin-top: 32px;
+    border-radius: 12px;
+  }
+  .mkt-consult-tag {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+  .mkt-consult-title {
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
+    margin-bottom: 8px;
+  }
+  .mkt-consult-desc {
+    font-size: 0.8125rem;
+    margin-bottom: 16px;
+  }
+  .mkt-consult-btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 0.875rem !important;
+    min-height: 48px;
+  }
+}
+
+/* =========================================================================
+   MARKETS PAGE — Small Mobile (max-width: 375px)
+   ========================================================================= */
+@media (max-width: 375px) {
+  .mkt-category-grid {
+    gap: 8px;
+  }
+  .mkt-cat-tile:nth-child(5) {
+    max-width: 55%;
+  }
+  .mkt-cat-label {
+    font-size: 0.75rem;
+    padding: 7px 8px;
+  }
+  .mkt-sector-img-wrap {
+    min-height: 160px;
+  }
+  .mkt-sector-title {
+    font-size: 1.05rem;
+  }
+  .mkt-consult-cta {
+    padding: 24px 16px;
+  }
+}
+
+/* =========================================================================
+   CUSTOM SOLUTIONS PAGE — Responsive Design System
+   ========================================================================= */
+
+/* Hero Banner */
+.cst-hero-banner {
+  text-align: center;
+  padding: 48px 16px 36px;
+  background: linear-gradient(135deg, #16273F 0%, #0E1B2C 100%);
+  color: #FFFFFF;
+}
+.cst-hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #E5B869;
+  background: rgba(184, 137, 46, 0.18);
+  border: 1px solid rgba(229, 184, 105, 0.5);
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.cst-hero-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF !important;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+.cst-hero-subtitle {
+  font-size: clamp(0.9375rem, 1.4vw, 1.05rem);
+  color: #E2E8F0 !important;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Bespoke Editorial Section */
+.cst-main-section {
+  padding: 48px 0;
+}
+.cst-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+.cst-editorial-left {
+  display: flex;
+  flex-direction: column;
+}
+.cst-editorial-right {
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+}
+.cst-section-heading {
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.cst-editorial-lead {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-navy);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.cst-subheading {
+  font-size: 0.9375rem;
+  color: var(--color-navy);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.cst-capabilities-list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+.cst-capabilities-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+.cst-capabilities-list li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+.cst-capabilities-list li strong {
+  color: var(--color-navy);
+}
+
+/* Tooling Assurance Card */
+.cst-assurance-card {
+  margin-top: 24px;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-gold);
+  padding: 20px 22px;
+  border-radius: 14px;
+}
+.cst-assurance-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 10px;
+}
+.cst-assurance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  font-size: 0.8125rem;
+  color: #444;
+  line-height: 1.8;
+}
+.cst-assurance-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.cst-assurance-list li strong {
+  color: var(--color-navy);
+}
+.cst-btn-full {
+  margin-left: 0 !important;
+  width: 100% !important;
+  padding: 13px 24px !important;
+  font-size: 0.875rem !important;
+  min-height: 48px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Editorial Image */
+.cst-img-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+}
+.cst-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Process Section & Carousel */
+.cst-process-section {
+  padding: 48px 0;
+}
+.cst-section-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin: 8px auto 0;
+}
+.cst-stage-carousel-wrapper {
+  margin-top: 32px;
+}
+.cst-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.cst-stage-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-navy);
+  padding: 24px 20px;
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cst-stage-card--gold {
+  border-top-color: var(--color-gold);
+}
+.cst-stage-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+.cst-stage-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+.cst-stage-desc {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+.cst-carousel-dots {
+  display: none;
+}
+
+/* Specialty Finishes Grid */
+.cst-finishes-section {
+  padding: 48px 0;
+}
+.cst-finishes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.cst-finish-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  border-radius: 14px;
+  transition: transform 0.25s ease;
+}
+.cst-finish-img-wrap {
+  height: 190px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.cst-finish-img-wrap img {
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: contain;
+}
+.cst-finish-content {
+  padding: 18px;
+}
+.cst-finish-cat {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.cst-finish-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+.cst-finish-desc {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Bottom Consultation Banner */
+.cst-consult-banner {
+  margin-top: 40px;
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1c3252 100%);
+  color: #fff;
+  padding: 36px 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 16px;
+}
+.cst-consult-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+.cst-consult-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 4px 0 6px 0;
+}
+.cst-consult-desc {
+  font-size: 0.875rem;
+  color: #CCD4DD;
+  margin: 0;
+  max-width: 650px;
+}
+.cst-consult-btn {
+  margin-left: 0 !important;
+  padding: 14px 28px !important;
+  font-size: 0.875rem !important;
+  min-height: 48px;
+}
+
+/* =========================================================================
+   CUSTOM SOLUTIONS PAGE — Mobile Optimization (max-width: 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+  .cst-hero-banner {
+    padding: 36px 16px 28px;
+  }
+  .cst-hero-badge {
+    font-size: 0.6875rem;
+    padding: 4px 14px;
+    margin-bottom: 10px;
+  }
+  .cst-editorial-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    align-items: start !important;
+  }
+  .cst-editorial-right {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .cst-img-wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+    border-radius: 14px !important;
+  }
+  .cst-img-wrapper img {
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+  }
+  .cst-editorial-lead {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .cst-assurance-card {
+    padding: 16px 14px;
+  }
+  .cst-btn-full {
+    min-height: 46px;
+    padding: 12px 16px !important;
+  }
+
+  /* 4-Stage Horizontal Swipe Carousel */
+  .cst-stage-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding: 4px 2px 12px 2px;
+  }
+  .cst-stage-card {
+    flex: 0 0 82vw !important;
+    max-width: 310px !important;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 18px 16px;
+  }
+  .cst-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .cst-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border-dark);
+    transition: background 0.25s ease, width 0.25s ease;
+  }
+  .cst-dot.active {
+    width: 20px;
+    border-radius: 4px;
+    background: var(--color-navy);
+  }
+
+  /* Specialty Finishes 2-Column Mobile Grid */
+  .cst-finishes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 24px;
+  }
+  .cst-finish-img-wrap {
+    height: 140px;
+    padding: 8px;
+  }
+  .cst-finish-content {
+    padding: 12px 10px;
+  }
+  .cst-finish-cat {
+    font-size: 0.625rem;
+  }
+  .cst-finish-title {
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+  .cst-finish-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  /* Consultation Banner */
+  .cst-consult-banner {
+    flex-direction: column;
+    padding: 24px 18px;
+    margin-top: 28px;
+    border-radius: 12px;
+  }
+  .cst-consult-title {
+    font-size: clamp(1.15rem, 5vw, 1.35rem);
+  }
+  .cst-consult-desc {
+    font-size: 0.8125rem;
+  }
+  .cst-consult-btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 14px;
+  }
+}
+
+/* =========================================================================
+   CONTACT US PAGE — Responsive Architecture
+   ========================================================================= */
+
+/* Hero Banner */
+.cnt-hero-banner {
+  text-align: center;
+  padding: 48px 16px 36px;
+  background: linear-gradient(135deg, #16273F 0%, #0E1B2C 100%);
+  color: #FFFFFF;
+}
+.cnt-hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #E5B869;
+  background: rgba(184, 137, 46, 0.18);
+  border: 1px solid rgba(229, 184, 105, 0.5);
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.cnt-hero-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF !important;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+.cnt-hero-subtitle {
+  font-size: clamp(0.9375rem, 1.4vw, 1.05rem);
+  color: #E2E8F0 !important;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Section & Layout Grid */
+.cnt-main-section {
+  padding: 48px 0;
+}
+.cnt-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Info Cards Column */
+.cnt-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cnt-info-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  border-radius: 14px;
+}
+.cnt-info-card--navy {
+  background: #fff;
+  border-left: 4px solid var(--color-navy);
+}
+.cnt-card-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.cnt-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+.cnt-card-title-sm {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+.cnt-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.cnt-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+.cnt-contact-links a {
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+.cnt-contact-links a:hover {
+  color: var(--color-gold);
+}
+.cnt-card-subtext {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.cnt-sla-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.8;
+}
+.cnt-sla-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cnt-next-steps {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.6;
+}
+.cnt-next-steps div {
+  margin-bottom: 6px;
+}
+.cnt-next-steps div:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact Form Container */
+.cnt-form-container {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  width: 100%;
+  box-sizing: border-box;
+}
+.cnt-form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+.cnt-form-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+.cnt-form {
+  width: 100%;
+  box-sizing: border-box;
+}
+.cnt-form .frapak-form-field {
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cnt-form .frapak-form-field label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+.cnt-form .frapak-form-field input,
+.cnt-form .frapak-form-field select,
+.cnt-form .frapak-form-field textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-height: 46px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--color-navy);
+  transition: border-color 0.2s ease;
+}
+.cnt-form .frapak-form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.cnt-form .frapak-form-field input:focus,
+.cnt-form .frapak-form-field select:focus,
+.cnt-form .frapak-form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(184, 137, 46, 0.12);
+}
+.cnt-submit-btn {
+  margin-left: 0 !important;
+  width: 100% !important;
+  margin-top: 8px;
+  min-height: 48px;
+  font-size: 0.875rem !important;
+  justify-content: center;
+}
+
+/* Hubs & FAQs */
+.cnt-section-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin: 8px auto 0;
+}
+.cnt-hubs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.cnt-hub-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  border-radius: 14px;
+}
+.cnt-hub-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.cnt-hub-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+.cnt-hub-desc {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.cnt-hub-caps {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.cnt-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.cnt-faq-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  padding: 22px;
+  border-radius: 14px;
+}
+.cnt-faq-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.cnt-faq-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+.cnt-faq-desc {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* CTA Banner */
+.cnt-cta-banner {
+  margin-top: 40px;
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1a304e 100%);
+  color: #fff;
+  padding: 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 16px;
+}
+.cnt-cta-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.cnt-cta-desc {
+  font-size: 0.875rem;
+  color: #CCD4DD;
+  margin: 0;
+}
+.cnt-cta-buttons {
+  display: flex;
+  gap: 14px;
+}
+.cnt-cta-call {
+  margin-left: 0 !important;
+  padding: 12px 22px !important;
+  font-size: 0.8125rem !important;
+  text-decoration: none;
+  min-height: 44px;
+}
+.cnt-cta-inquiry {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+  padding: 12px 22px !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+  min-height: 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cnt-cta-inquiry:hover,
+.cnt-cta-inquiry:active {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+/* =========================================================================
+   CONTACT US PAGE — Mobile Optimization (max-width: 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+  .cnt-hero-banner {
+    padding: 36px 16px 28px;
+  }
+  .cnt-hero-badge {
+    font-size: 0.6875rem;
+    padding: 4px 14px;
+    margin-bottom: 10px;
+  }
+  .cnt-layout-grid {
+    display: block !important;
+    width: 100% !important;
+  }
+  .cnt-info-col {
+    margin-bottom: 24px;
+    gap: 14px;
+  }
+  .cnt-info-card {
+    padding: 18px 16px;
+  }
+  .cnt-form-container {
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+    box-shadow: none !important;
+  }
+  .cnt-hubs-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    margin-top: 24px;
+  }
+  .cnt-hub-card {
+    padding: 18px 16px;
+  }
+  .cnt-faq-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 24px;
+  }
+  .cnt-faq-card {
+    padding: 14px 12px;
+  }
+  .cnt-faq-title {
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+  .cnt-faq-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  .cnt-cta-banner {
+    flex-direction: column;
+    padding: 24px 18px;
+    margin-top: 28px;
+    border-radius: 12px;
+  }
+  .cnt-cta-title {
+    font-size: 1.15rem;
+  }
+  .cnt-cta-desc {
+    font-size: 0.8125rem;
+  }
+  .cnt-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .cnt-cta-call,
+  .cnt-cta-inquiry {
+    width: 100% !important;
+    min-height: 48px;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex !important;
+    align-items: center;
+  }
+}
+
+/* =========================================================================
+   MOBILE PRODUCTS PAGE — FINAL UI/UX OPTIMIZATIONS (@media max-width: 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* 1. HORIZONTAL ARTIFACT & OVERFLOW CLEANUP */
+  #view-products,
+  #view-products .frapak-section,
+  #frapak-drilldown-container,
+  .frapak-level1-grid {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  #view-products .frapak-section::before,
+  #view-products .frapak-section::after,
+  #frapak-drilldown-container::before,
+  #frapak-drilldown-container::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* 2. MOBILE HEADER PROPORTIONS */
+  .frapak-main-header {
+    height: 60px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+  }
+  .header-nav-inner {
+    height: 60px !important;
+    padding: 0 16px !important;
+  }
+  .frapak-logo {
+    height: 48px !important;
+  }
+  .frapak-logo-img {
+    height: 36px !important;
+    width: auto !important;
+    max-width: 85px !important;
+    object-fit: contain !important;
+  }
+  .frapak-mobile-menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+  }
+
+  /* 3. HERO SECTION BANNER (Reuses About Page Hero Design System) */
+  .products-page-title-banner {
+    padding: 40px 16px 32px 16px !important;
+    text-align: center !important;
+  }
+
+  /* 4. PRODUCTS INTRODUCTION */
+  .products-intro-wrap {
+    margin-bottom: 24px !important;
+    padding-bottom: 0 !important;
+    text-align: center !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+  .products-intro-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    color: var(--color-navy) !important;
+    max-width: 340px !important;
+    margin: 0 auto 10px auto !important;
+    text-align: center !important;
+  }
+  .products-intro-desc {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: var(--color-text-muted) !important;
+    max-width: 340px !important;
+    margin: 0 auto !important;
+    margin-bottom: 0 !important;
+    text-align: center !important;
+  }
+
+  /* 5. 2-COLUMN PRODUCT GRID & SAFE CONTAINER (15–18px side padding, 10–14px gap) */
+  #view-products .frapak-section {
+    padding-top: 40px !important;
+    padding-bottom: 50px !important;
+  }
+  .frapak-level1-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 0 !important;
+    margin-bottom: 50px !important;
+    border: none !important;
+  }
+
+  /* 6, 7 & 8. PRODUCT CARDS, IMAGE AREA & NAME AREA */
+  .frapak-level1-grid .frapak-tile-card {
+    background: #ffffff !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    transition: border-color 0.2s ease !important;
+  }
+  .frapak-level1-grid .frapak-tile-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .frapak-level1-grid .frapak-tile-card:active {
+    border-color: var(--color-navy) !important;
+  }
+
+  .frapak-level1-grid .frapak-tile-image {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    border: none !important;
+    outline: none !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .frapak-level1-grid .frapak-tile-image img {
+    width: 88% !important;
+    height: 88% !important;
+    max-width: 88% !important;
+    max-height: 88% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: none !important;
+  }
+
+  .frapak-level1-grid .frapak-tile-bar {
+    background-color: #D7DFE8 !important;
+    color: var(--color-navy) !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    padding: 8px 6px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    outline: none !important;
+    margin: 0 !important;
+    border-top: none !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  /* 11-17. FOOTER & ACCORDIONS EXACT REFERENCE MATCH */
+  .frapak-footer {
+    background-color: #EEF2F6 !important;
+    border-top: 1px solid #E2E8F0 !important;
+    padding-top: 36px !important;
+    padding-bottom: 24px !important;
+  }
+  .footer-brand-header {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 24px !important;
+    border-bottom: 1px solid #CBD5E1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .footer-brand-logo-link {
+    display: inline-block !important;
+    margin-bottom: 12px !important;
+  }
+  .footer-brand-logo {
+    width: 120px !important;
+    height: auto !important;
+    max-width: 130px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  .footer-brand-desc {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    color: #475569 !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .frapak-footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    border-bottom: 1px solid #CBD5E1 !important;
+    margin-bottom: 24px !important;
+  }
+  .footer-col {
+    width: 100% !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+  }
+  .footer-col:last-child {
+    border-bottom: none !important;
+  }
+  .footer-accordion-header {
+    width: 100% !important;
+    min-height: 52px !important;
+    padding: 16px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    color: var(--color-navy) !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+  .footer-title {
+    flex: 1 !important;
+    text-align: left !important;
+  }
+  .footer-accordion-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--color-gold) !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .footer-accordion-icon svg {
+    stroke: var(--color-gold) !important;
+    color: var(--color-gold) !important;
+  }
+  .footer-icon-minus { display: none !important; }
+  .footer-icon-plus { display: block !important; }
+
+  .footer-col.footer-col--open .footer-icon-plus { display: none !important; }
+  .footer-col.footer-col--open .footer-icon-minus { display: block !important; }
+
+  .footer-accordion-panel {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    transition: max-height 0.22s ease, opacity 0.22s ease, padding 0.22s ease !important;
+    padding: 0 !important;
+  }
+  .footer-col.footer-col--open .footer-accordion-panel {
+    max-height: 600px !important;
+    opacity: 1 !important;
+    padding: 0 0 18px 0 !important;
+  }
+  .footer-copyright-bar {
+    font-size: 12px !important;
+    text-align: center !important;
+    padding: 24px 15px 12px 15px !important;
+    color: #64748B !important;
+    border-top: none !important;
+  }
+}
+
+/* ==========================================================================
+   PRODUCTS CATALOGUE INTRO SPACING
+   ========================================================================== */
+.products-intro-wrap {
+  margin-bottom: 26px !important;
+  padding-bottom: 0 !important;
+}
+
+.products-intro-title {
+  margin-bottom: 8px !important;
+}
+
+.products-intro-desc {
+  margin-bottom: 0 !important;
+  color: #475569 !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}

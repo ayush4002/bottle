@@ -1,0 +1,426 @@
+{
+    "materials": [
+        {
+            "id": 1,
+            "name": "PET",
+            "short_label": "PET",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "HDPE",
+            "short_label": "HDPE",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "PP",
+            "short_label": "PP",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "100% rPET",
+            "short_label": "rPET",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "PCR Plastic",
+            "short_label": "PCR",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "Glass",
+            "short_label": "Glass",
+            "status": "active",
+            "display_order": 6
+        },
+        {
+            "id": 7,
+            "name": "Aluminium",
+            "short_label": "ALU",
+            "status": "active",
+            "display_order": 7
+        },
+        {
+            "id": 8,
+            "name": "Bio-Based PET Polymer",
+            "status": "active",
+            "display_order": 1,
+            "hex_code": ""
+        }
+    ],
+    "volumes": [
+        {
+            "id": 1,
+            "display_label": "10ml",
+            "value": "10",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "display_label": "30ml",
+            "value": "30",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "display_label": "50ml",
+            "value": "50",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "display_label": "100ml",
+            "value": "100",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "display_label": "200ml",
+            "value": "200",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "display_label": "250ml",
+            "value": "250",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 6
+        },
+        {
+            "id": 7,
+            "display_label": "300ml",
+            "value": "300",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 7
+        },
+        {
+            "id": 8,
+            "display_label": "500ml",
+            "value": "500",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 8
+        },
+        {
+            "id": 9,
+            "display_label": "750ml",
+            "value": "750",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 9
+        },
+        {
+            "id": 10,
+            "display_label": "1000ml (1L)",
+            "value": "1000",
+            "unit": "ml",
+            "status": "active",
+            "display_order": 10
+        }
+    ],
+    "necks": [
+        {
+            "id": 1,
+            "name": "18\/410",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "20\/410",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "24\/410",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "28\/410",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "38\/400",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "45mm",
+            "status": "active",
+            "display_order": 6
+        },
+        {
+            "id": 7,
+            "name": "46mm Agro",
+            "status": "active",
+            "display_order": 7
+        }
+    ],
+    "applications": [
+        {
+            "id": 1,
+            "name": "Cosmetics & Personal Care",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "Pharmaceutical & Syrup",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "Agro & Pesticides",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "Food & Beverage",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "Household & Cleansing",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "Industrial & Chemical",
+            "status": "active",
+            "display_order": 6
+        }
+    ],
+    "features": [
+        {
+            "id": 1,
+            "name": "100% Recyclable",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "Leak Resistant",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "Tamper Evident",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "Food Grade certified",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "Chemical Resistant",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "UV Protective",
+            "status": "active",
+            "display_order": 6
+        }
+    ],
+    "shapes": [
+        {
+            "id": 1,
+            "name": "Round",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "Square",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "Oval",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "Boston Round",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "Cylinder",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "Dome",
+            "status": "active",
+            "display_order": 6
+        },
+        {
+            "id": 7,
+            "name": "Flex Oval",
+            "status": "active",
+            "display_order": 7
+        },
+        {
+            "id": 8,
+            "name": "Custom",
+            "status": "active",
+            "display_order": 8
+        }
+    ],
+    "colours": [
+        {
+            "id": 1,
+            "name": "Clear",
+            "hex_code": "#ffffff",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "White",
+            "hex_code": "#f8fafc",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "Black",
+            "hex_code": "#0f172a",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "Amber",
+            "hex_code": "#d97706",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "Blue",
+            "hex_code": "#0284c7",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "Green",
+            "hex_code": "#16a34a",
+            "status": "active",
+            "display_order": 6
+        }
+    ],
+    "closures": [
+        {
+            "id": 1,
+            "name": "Screw Cap",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "Flip Top",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "Pump",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "Sprayer",
+            "status": "active",
+            "display_order": 4
+        },
+        {
+            "id": 5,
+            "name": "Trigger",
+            "status": "active",
+            "display_order": 5
+        },
+        {
+            "id": 6,
+            "name": "Dropper",
+            "status": "active",
+            "display_order": 6
+        },
+        {
+            "id": 7,
+            "name": "Disc Top",
+            "status": "active",
+            "display_order": 7
+        }
+    ],
+    "audiences": [
+        {
+            "id": 1,
+            "name": "Unisex \/ General",
+            "status": "active",
+            "display_order": 1
+        },
+        {
+            "id": 2,
+            "name": "Men",
+            "status": "active",
+            "display_order": 2
+        },
+        {
+            "id": 3,
+            "name": "Women",
+            "status": "active",
+            "display_order": 3
+        },
+        {
+            "id": 4,
+            "name": "Industrial \/ Commercial",
+            "status": "active",
+            "display_order": 4
+        }
+    ]
+}
