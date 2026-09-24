@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrueNorth Group — your packaging Experience</title>
+  <meta name="description" content="TrueNorth Group, the hybrid packaging specialist with over three decades of excellence in manufacturing and distribution of PET bottles, PET jars, pumps, caps and sprays." />
+  
+  <link rel="icon" type="image/svg+xml" href="/logo_svg.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css?v=1.0.7" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP UTILITY BAR (Exact Frapak Top Strip)
+       ========================================================================= -->
+  <div class="frapak-top-utility-bar">
+    <div class="frapak-container top-bar-inner">
+      
+      <!-- Search Input with Live Autocomplete -->
+      <div class="frapak-search-box">
+        <input type="text" id="top-search-input" placeholder="Search your packaging..." />
+        <button onclick="window.navigateToPage('products')" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <div class="search-results-popover" id="top-search-popover"></div>
+      </div>
+
+      <!-- Certifications & Language Selector -->
+      <div class="top-bar-right">
+        <span>Audited Cleanroom Manufacturing • Food-Grade ISO Certified</span>
+        <div class="lang-selector">
+          <span style="display: inline-flex; align-items: center; gap: 6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            EN
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MAIN NAVIGATION HEADER (White Sticky Header)
+       ========================================================================= -->
+  <header class="frapak-main-header">
+    <div class="frapak-container header-nav-inner">
+      
+      <!-- Logo -->
+      <a href="#home" class="frapak-logo" onclick="window.navigateToPage('home')">
+        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="frapak-logo-img" />
+      </a>
+
+      <!-- Exact Client Headers: Home - About - Products - Market - Custom Solutions - Contact -->
+      <ul class="frapak-nav-list">
+        <li><a href="#home" class="frapak-nav-link active" data-page="home" onclick="window.navigateToPage('home')">Home</a></li>
+        <li><a href="#about" class="frapak-nav-link" data-page="about" onclick="window.navigateToPage('about')">About</a></li>
+        <li><a href="#products" class="frapak-nav-link" data-page="products" onclick="window.navigateToPage('products')">Products</a></li>
+        <li><a href="#market" class="frapak-nav-link" data-page="market" onclick="window.navigateToPage('market')">Market</a></li>
+        <li><a href="#custom" class="frapak-nav-link" data-page="custom" onclick="window.navigateToPage('custom')">Custom Solutions</a></li>
+        <li><a href="#contact" class="frapak-nav-link" data-page="contact" onclick="window.navigateToPage('contact')">Contact</a></li>
+      </ul>
+
+      <!-- Header Actions (Inquiry + Mobile Hamburger) -->
+      <div class="header-actions-wrap">
+        <button class="frapak-cart-inquiry-btn" onclick="window.openInquiry()" aria-label="Open Inquiry">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>INQUIRY</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="frapak-mobile-menu-toggle" id="frapak-mobile-menu-btn" onclick="window.toggleMobileMenu()" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MOBILE NAVIGATION DRAWER & BACKDROP
+       ========================================================================= -->
+  <div class="frapak-mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="window.closeMobileMenu()"></div>
+  <aside class="frapak-mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <a href="#home" class="mobile-nav-logo" onclick="window.navigateToPage('home'); window.closeMobileMenu();">
+        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" />
+      </a>
+      <button class="mobile-nav-close-btn" onclick="window.closeMobileMenu()" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Search Box -->
+    <div class="mobile-nav-search">
+      <div class="mobile-search-input-wrap">
+        <input type="text" id="mobile-search-input" placeholder="Search packaging..." />
+        <button onclick="window.executeMobileSearch()" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+      <div class="search-results-popover" id="mobile-search-popover"></div>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <nav class="mobile-nav-links">
+      <a href="#home" class="mobile-nav-item active" data-page="home" onclick="window.navigateToPage('home'); window.closeMobileMenu();">
+        <span>Home</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#about" class="mobile-nav-item" data-page="about" onclick="window.navigateToPage('about'); window.closeMobileMenu();">
+        <span>About</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#products" class="mobile-nav-item" data-page="products" onclick="window.navigateToPage('products'); window.closeMobileMenu();">
+        <span>Products Catalogue</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#market" class="mobile-nav-item" data-page="market" onclick="window.navigateToPage('market'); window.closeMobileMenu();">
+        <span>Markets</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#custom" class="mobile-nav-item" data-page="custom" onclick="window.navigateToPage('custom'); window.closeMobileMenu();">
+        <span>Custom Solutions</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#contact" class="mobile-nav-item" data-page="contact" onclick="window.navigateToPage('contact'); window.closeMobileMenu();">
+        <span>Contact & Locations</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </nav>
+
+    <!-- Drawer Footer Actions -->
+    <div class="mobile-nav-footer">
+      <button class="frapak-btn-gold mobile-nav-inquiry-btn" onclick="window.closeMobileMenu(); window.openInquiry();">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        SEND AN INQUIRY
+      </button>
+      <div class="mobile-nav-cert-badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>ISO 15593 Food-Grade • Class 10,000 Cleanroom</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       VIEW 1: HOME PAGE
+       ======================================================================= -->
+  <section class="page-view" id="view-home">
+    
+    <!-- 1. Hero Banner ("Our packaging experts") -->
+    <section class="frapak-hero-banner">
+      <div class="frapak-container">
+        <div class="hero-content-box">
+          <span class="hero-badge-tag">YOUR PACKAGING EXPERIENCE & EXPERTISE</span>
+          <h1>Primary Packaging Specialists & Manufacturers</h1>
+          <p class="hero-desc">
+            TrueNorth Group is your hybrid packaging partner, seamlessly blending precision manufacturing and global distribution to provide comprehensive bottles, jars, pumps, and closures tailored to your specific needs.
+          </p>
+          <div class="hero-cta-wrap">
+            <a href="#products" class="frapak-btn-outline" onclick="window.navigateToPage('products')">
+              VIEW OUR PACKAGING
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <button class="frapak-btn-gold" onclick="window.openInquiry()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              SEND AN INQUIRY
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Product Catalogue: Exact 5 Categories (PET Bottles, PET Jars, Pumps, Caps, Sprays) -->
+    <section class="frapak-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Choose from our catalogue of primary packaging products</h2>
+        </div>
+
+        <div class="frapak-cat-tiles-grid" id="home-cat-tiles-grid">
+          <!-- Rendered by app.js: Bottles PET, Bottles PE, Caps, Pumps, Sprayers, Triggers, Foamers, Airless, PET Jars, PP Jars -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Markets Section: Exact 5 Markets (Cosmetics, Pharma, Agro, Beverages, Liquor) -->
+    <section class="frapak-section-grey">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Markets of TrueNorth Group</h2>
+        </div>
+
+        <div class="frapak-markets-grid" id="home-markets-grid">
+          <!-- Rendered by app.js: Cosmetics, Pharma, Agro, Beverages, Liquor -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Sustainable Products Section (Exact Client Content: PCR plastics) -->
+    <section class="frapak-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">A large selection of sustainable rPET products</h2>
+        </div>
+
+        <div class="rpet-layout">
+          <!-- Left 2 Product Tiles -->
+          <div class="rpet-cards-stack">
+            <div class="rpet-card" onclick="window.goToCategory('Bottles PET')">
+              <div class="frapak-tile-image">
+                <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.png" alt="rPET bottles" loading="lazy" />
+              </div>
+              <div class="rpet-card-bar">rPET bottles</div>
+            </div>
+            <div class="rpet-card" onclick="window.goToCategory('PET Jars')">
+              <div class="frapak-tile-image">
+                <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.jpg" alt="rPET jars" loading="lazy" />
+              </div>
+              <div class="rpet-card-bar">rPET jars</div>
+            </div>
+          </div>
+
+          <!-- Right Exact Client Content with Mobile-Friendly Read More Architecture -->
+          <div class="rpet-text-content">
+            <h3>Content: PCR plastics</h3>
+            <p class="pcr-summary-lead">
+              TrueNorth Group is dedicated to continuous innovation, frequently expanding its diverse array of products by introducing a variety of neck sizes and capacities to meet evolving market demands. Furthermore, we're enhancing our product range by integrating sustainable, eco-friendly options, demonstrating our commitment to environmental responsibility.
+            </p>
+            
+            <div class="pcr-expandable-content" id="pcr-expandable-content">
+              <p>
+                Our selection of PET bottles and jars, now available in 100% recycled PET (rPET), reflects this commitment. These eco-conscious choices are offered with a manageable minimum order quantity (MOQ) of just 20,000 units, making sustainability accessible to a wider range of customers. In addition, we ensure ready availability of rPET bottles and jars, keeping them in stock to meet immediate needs and demands. This approach allows us to cater to both bespoke and standard requirements, aligning with our mission to provide high-quality, sustainable packaging solutions.
+              </p>
+              <p>
+                We also have <a href="#products" onclick="window.goToCategory('PET Bottles')">rPET bottles on stock</a> and <a href="#products" onclick="window.goToCategory('PET Jars')">rPET jars on stock</a>.
+              </p>
+            </div>
+
+            <button class="frapak-readmore-btn" id="pcr-readmore-toggle" onclick="window.togglePcrContent()" aria-expanded="false">
+              <span>Read more +</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Editorial Section (Exact Client Content & Headings in Mobile-First Cards) -->
+    <section class="frapak-section-grey">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Our Packaging Experience</h2>
+        </div>
+
+        <div class="editorial-two-col">
+          <!-- Left Column: 6 Structured Mobile Cards / Accordions -->
+          <div class="editorial-left-col">
+            
+            <div class="frapak-exp-card">
+              <h4>Primary Packaging Expertise & Global Distribution</h4>
+              <p class="exp-summary">TrueNorth Group is your ideal supplier and partner for premium quality primary packaging. As a hybrid packaging specialist, we seamlessly blend manufacturing and distribution to provide comprehensive packaging tailored to meet your specific needs.</p>
+              <div class="exp-details">
+                <p>With our audited partner facilities and controlled cleanroom operations, we are well positioned to serve domestic requirements as well as direct seaport global exports.</p>
+              </div>
+              <button class="frapak-exp-btn" onclick="window.toggleExpCard(this)" aria-expanded="false">
+                <span>Read more &rarr;</span>
+              </button>
+            </div>
+
+            <div class="frapak-exp-card">
+              <h4>Three Decades of Excellence and Innovation</h4>
+              <p class="exp-summary">For over 25 years, our partners have focused on the precision production of polyethylene terephthalate (PET) bottles, while also acting as a leading distributor for cosmetic and trigger pumps.</p>
+              <div class="exp-details">
+                <p>This dual competency ensures that we have a broad and deep understanding of the packaging market, making us the go-to partner for primary packaging across domestic and global markets.</p>
+              </div>
+              <button class="frapak-exp-btn" onclick="window.toggleExpCard(this)" aria-expanded="false">
+                <span>Read more &rarr;</span>
+              </button>
+            </div>
+
+            <div class="frapak-exp-card">
+              <h4>Unparalleled Product Range</h4>
+              <p class="exp-summary">Our comprehensive product portfolio encompasses a diverse range of standard and customised packaging solutions, including bottles, jars, pumps and closures.</p>
+              <div class="exp-details">
+                <p>We can accommodate specific requirements in terms of shape, size and colour, offering our clients endless possibilities for effectively promoting their products.</p>
+              </div>
+              <button class="frapak-exp-btn" onclick="window.toggleExpCard(this)" aria-expanded="false">
+                <span>Read more &rarr;</span>
+              </button>
+            </div>
+
+            <div class="frapak-exp-card">
+              <h4>Quality Assurance Through In-House R&D</h4>
+              <p class="exp-summary">Quality is a non-negotiable priority at TrueNorth Group. Our in-house Research and Development (R&D) team meticulously checks each manufactured product for quality and leak issues.</p>
+              <div class="exp-details">
+                <p>Through rigorous testing, which includes over 1,000 leak-free trials, we ensure that our closures and finger sprayers work seamlessly with our bottles and jars.</p>
+              </div>
+              <button class="frapak-exp-btn" onclick="window.toggleExpCard(this)" aria-expanded="false">
+                <span>Read more &rarr;</span>
+              </button>
+            </div>
+
+            <div class="frapak-exp-card">
+              <h4>Food-grade certified</h4>
+              <p class="exp-summary">Safety is our top priority. All our PET packaging, including bottles and jars, is certified as food-grade, making it ideal for the food and beverage industry, among others.</p>
+              <div class="exp-details">
+                <p>Manufactured strictly adhering to international food-approved ISO standards and cleanroom production protocols.</p>
+              </div>
+              <button class="frapak-exp-btn" onclick="window.toggleExpCard(this)" aria-expanded="false">
+                <span>Read more &rarr;</span>
+              </button>
+            </div>
+
+            <div class="frapak-exp-card">
+              <h4>Sustainability as a core principle</h4>
+              <p class="exp-summary">In an era increasingly defined by environmental concerns, we take our responsibility seriously. Our PET bottles and jars are available in 100% rPET and are made of post-consumer resin (PCR).</p>
+              <div class="exp-details">
+                <p>We are committed to the principles of reducing waste, reusing materials, refilling containers, and recycling, aligning our operations with sustainable practices.</p>
+              </div>
+              <button class="frapak-exp-btn" onclick="window.toggleExpCard(this)" aria-expanded="false">
+                <span>Read more &rarr;</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Factory Image, Logistics Image & Quality Capabilities Card -->
+          <div class="editorial-right-col">
+            <!-- Image 1: Manufacturing Facility -->
+            <div class="editorial-img-box">
+              <img src="/factory.webp" alt="Precision Cleanroom Manufacturing Operations" class="editorial-factory-img" loading="lazy" />
+              <div class="editorial-img-caption">
+                <span>Controlled Cleanroom & Automated Blow Molding Facility</span>
+              </div>
+            </div>
+
+            <!-- Image 2: Global Supply Chain & Warehousing (Desktop Only) -->
+            <div class="editorial-img-box desktop-only-feature">
+              <img src="/benefit_supply.webp" alt="Global Supply Chain & Audited Warehousing" class="editorial-factory-img" loading="lazy" />
+              <div class="editorial-img-caption">
+                <span>Audited Warehousing, Barcode QA & Direct Seaport Exports</span>
+              </div>
+            </div>
+
+            <!-- Executive Quality & Technical Showcase Card (Desktop Only) -->
+            <div class="editorial-quality-card desktop-only-feature">
+              <div class="quality-card-header">
+                <div class="quality-badge">Certified Standards</div>
+                <h4>Precision Quality & Global Assurance</h4>
+              </div>
+              <ul class="quality-features-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>ISO 15593 Certified:</strong>
+                    <span>Audited Class 10,000 cleanroom packaging manufacturing.</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>1,000+ Cycle Leak-Free QA:</strong>
+                    <span>Rigorous vacuum seal & torque testing across all neck finishes.</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Custom Mould Engineering:</strong>
+                    <span>In-house 3D prototyping, bespoke tooling, and short lead times.</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Sustainable PCR & rPET:</strong>
+                    <span>Low 20,000 MOQ for recycled polymers with stock ready for dispatch.</span>
+                  </div>
+                </li>
+              </ul>
+              <button class="frapak-btn-gold quality-cta-btn" onclick="window.openInquiry(null, true)">
+                REQUEST TECHNICAL SAMPLE KIT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Digital Tool: Interactive Component Matcher Callout (Mobile Stacked Layout) -->
+    <section class="frapak-section frapak-matcher-section">
+      <div class="frapak-container">
+        <div class="frapak-matcher-card">
+          <div class="frapak-matcher-left">
+            <div class="frapak-matcher-eyebrow">Digital Packaging Tool</div>
+            <h3 class="frapak-matcher-title">Interactive Component Matching Tool</h3>
+            <p class="frapak-matcher-desc">
+              Cross-match bottles, jars, pumps, and closures in real-time. Verify neck finish compatibility across 18mm, 20mm, 24mm, 28mm, and 38mm formats with 1,000+ leak-tested configurations.
+            </p>
+            <button class="frapak-btn-gold frapak-matcher-btn" onclick="window.openMatcherTool()">
+              LAUNCH COMPONENT MATCHER
+            </button>
+          </div>
+          
+          <div class="frapak-matcher-right">
+            <div class="matcher-spec-box">
+              <div class="matcher-spec-header">Instant Compatibility Verification</div>
+              <ul class="matcher-spec-list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Container Selection:</strong> Boston, Dome, Flat, Brute & Jars</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Neck Finishes:</strong> 15mm – 38mm PCO & ROPP</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Closures:</strong> Pumps, Sprayers, Triggers, CRC, Disc Tops</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Leak Assurance:</strong> 1,000+ cycle verified seals</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =======================================================================
+       VIEW 3: PRODUCTS PAGE (4-Tier Frapak Drilldown Flow)
+       ======================================================================= -->
+  <section class="page-view" id="view-products">
+    
+    <!-- Products Hero Title Banner (Reuses About Page Hero Design System) -->
+    <div class="products-page-title-banner about-hero-banner">
+      <div class="frapak-container">
+        <div class="about-hero-badge" id="products-hero-badge">TRUENORTH PRODUCTS</div>
+        <h1 class="about-hero-title" id="products-view-main-title">Products of TrueNorth Group</h1>
+        <p class="about-hero-subtitle" id="products-hero-subtitle">Premium Primary Packaging Solutions</p>
+      </div>
+    </div>
+
+    <section class="frapak-section" style="padding-top: 28px;">
+      <div class="frapak-container">
+        <!-- 4-Tier Dynamic Container Rendered by app.js -->
+        <div id="frapak-drilldown-container"></div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =======================================================================
+       VIEW 2: ABOUT PAGE (Comprehensive Brand Heritage & Compliance)
+       ======================================================================= -->
+  <section class="page-view" id="view-about">
+    
+    <!-- About Hero Title Banner -->
+    <div class="products-page-title-banner about-hero-banner">
+      <div class="frapak-container">
+        <div class="about-hero-badge">TrueNorth Heritage</div>
+        <h1 class="about-hero-title">About TrueNorth Group</h1>
+        <p class="about-hero-subtitle">Over 25 Years of Primary Packaging Expertise</p>
+      </div>
+    </div>
+
+    <!-- About Main Content Section -->
+    <section class="frapak-section about-main-section">
+      <div class="frapak-container">
+
+        <!-- First-Screen Executive Summary: Who We Are / What We Do / Why Trusted -->
+        <div class="about-intro-card">
+          <div class="about-intro-grid">
+            <div class="about-intro-col">
+              <span class="about-intro-tag">WHO WE ARE</span>
+              <h4>Hybrid Packaging Specialist</h4>
+              <p>Over 25 years of domestic and international primary packaging leadership for pharmaceutical, cosmetic, and personal-care brands.</p>
+            </div>
+            <div class="about-intro-col">
+              <span class="about-intro-tag">WHAT WE DO</span>
+              <h4>Engineered PET & Glass</h4>
+              <p>Complete bottle, jar, pump, and closure spectrum (10ml–1,000ml) with custom tooling, specialized finishes, and leak-free seals.</p>
+            </div>
+            <div class="about-intro-col">
+              <span class="about-intro-tag">WHY WE ARE TRUSTED</span>
+              <h4>100% Quality & Cleanroom</h4>
+              <p>TÜV NORD ISO 9001 certified manufacturing, Class 10,000 cleanroom molding, US FDA DMF filings, and 1,000+ cycle leak trials.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Two-Column Layout (Mobile: Stacked & Structured; Desktop: Side-by-Side) -->
+        <div class="about-editorial-grid">
+          
+          <!-- Left Column: Structured Brand Heritage with Read-More Accordions -->
+          <div class="about-editorial-left">
+            <div class="about-section-header">
+              <span class="about-subheading-tag">COMPANY BACKGROUND</span>
+              <h2 class="about-heading-primary">Brand Heritage & Quality Standards</h2>
+            </div>
+
+            <!-- Accordion Card 1: 25+ Years Heritage -->
+            <div class="about-story-card" id="about-story-0">
+              <div class="about-story-header" onclick="window.toggleAboutStory(0)">
+                <div class="about-story-title-wrap">
+                  <div class="about-story-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="about-story-title">Over 25 Years of Primary Packaging Expertise</h3>
+                    <p class="about-story-preview">Founded on over 25 years of industry leadership in domestic and international primary packaging, specializing in PET and glass containers.</p>
+                  </div>
+                </div>
+                <button type="button" class="about-accordion-btn" aria-label="Toggle details">
+                  <span class="about-btn-text">Read More</span>
+                  <svg class="about-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+              </div>
+              <div class="about-story-body">
+                <p>
+                  TrueNorth Group was established on the foundation of over 25 years of experience in the domestic and international primary-packaging industry. We specialise in PET and glass bottles for pharmaceutical, cosmetic and personal-care applications.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Card 2: Quality & Cleanroom -->
+            <div class="about-story-card" id="about-story-1">
+              <div class="about-story-header" onclick="window.toggleAboutStory(1)">
+                <div class="about-story-title-wrap">
+                  <div class="about-story-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="about-story-title">Global Quality, Safety & Cleanroom Standards</h3>
+                    <p class="about-story-preview">Meeting strict FDA guidelines, ISO standards, BSCI, ETI, and Class 10,000 cleanroom environments across international client markets.</p>
+                  </div>
+                </div>
+                <button type="button" class="about-accordion-btn" aria-label="Toggle details">
+                  <span class="about-btn-text">Read More</span>
+                  <svg class="about-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+              </div>
+              <div class="about-story-body">
+                <p>
+                  Our experience has given us a strong understanding of the quality, safety and documentation requirements expected by customers across international markets. We work with manufacturing partners capable of meeting relevant requirements and standards, including FDA-related guidelines, ISO standards, BSCI and ETI requirements, as well as controlled manufacturing environments such as <strong>Class 10,000 cleanrooms</strong>, wherever applicable.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Card 3: Audited Facilities -->
+            <div class="about-story-card" id="about-story-2">
+              <div class="about-story-header" onclick="window.toggleAboutStory(2)">
+                <div class="about-story-title-wrap">
+                  <div class="about-story-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="about-story-title">Audited Facilities & Rigorous Process Control</h3>
+                    <p class="about-story-preview">Sustained capital investment, rigorous process validation, and detailed assessments ensure facilities meet demanding project requirements.</p>
+                  </div>
+                </div>
+                <button type="button" class="about-accordion-btn" aria-label="Toggle details">
+                  <span class="about-btn-text">Read More</span>
+                  <svg class="about-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+              </div>
+              <div class="about-story-body">
+                <p>
+                  Achieving and consistently maintaining these standards requires sustained investment, rigorous processes and continuous improvement. Our manufacturing partners undergo detailed assessments and audits to ensure that their facilities, quality systems and production capabilities meet the requirements of each project.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Card 4: Link to Accredited Manufacturers -->
+            <div class="about-story-card" id="about-story-3">
+              <div class="about-story-header" onclick="window.toggleAboutStory(3)">
+                <div class="about-story-title-wrap">
+                  <div class="about-story-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="about-story-title">Your Trusted Link to Accredited Manufacturers</h3>
+                    <p class="about-story-preview">Connecting brand owners with audited manufacturing partners, coordinating technical specifications, quality files, and timely execution.</p>
+                  </div>
+                </div>
+                <button type="button" class="about-accordion-btn" aria-label="Toggle details">
+                  <span class="about-btn-text">Read More</span>
+                  <svg class="about-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+              </div>
+              <div class="about-story-body">
+                <p>
+                  At TrueNorth Group, we act as the link between customers and carefully selected manufacturing partners. From understanding technical specifications and regulatory expectations to coordinating product development, quality documentation and order execution, we help customers source dependable primary-packaging solutions with confidence.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Card 5: 100% Customer Satisfaction -->
+            <div class="about-story-card" id="about-story-4">
+              <div class="about-story-header" onclick="window.toggleAboutStory(4)">
+                <div class="about-story-title-wrap">
+                  <div class="about-story-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m8 14 2.5 2.5L16 10"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="about-story-title">100% Customer Satisfaction</h3>
+                    <p class="about-story-preview">Accomplished through professional communication, stringent quality control, zero-leak testing, and dependable on-time delivery.</p>
+                  </div>
+                </div>
+                <button type="button" class="about-accordion-btn" aria-label="Toggle details">
+                  <span class="about-btn-text">Read More</span>
+                  <svg class="about-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+              </div>
+              <div class="about-story-body">
+                <p>
+                  Over the years, we have achieved <strong>100% customer satisfaction</strong>—an accomplishment built on our professionalism, prompt response, stringent quality control and commitment to on-time delivery. We believe customer satisfaction is earned through consistent performance, transparent communication and dependable service at every stage of an order.
+                </p>
+              </div>
+            </div>
+
+            <!-- Premium Mobile Trust & Quality Card -->
+            <div class="about-trust-card">
+              <div class="about-trust-header">
+                <div class="about-trust-badge-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <h3 class="about-trust-title">TRUST & QUALITY ASSURANCE</h3>
+                  <p class="about-trust-subtitle">Accredited In-House Laboratory & Cleanroom Inspection</p>
+                </div>
+              </div>
+
+              <!-- Prominent Numerical Metrics -->
+              <div class="about-metrics-row">
+                <div class="about-metric-box">
+                  <div class="about-metric-number">1,000+</div>
+                  <div class="about-metric-label">Leak-Free Cycles Tested</div>
+                </div>
+                <div class="about-metric-box">
+                  <div class="about-metric-number">100%</div>
+                  <div class="about-metric-label">Quality & Food-Grade ISO</div>
+                </div>
+              </div>
+
+              <!-- 5-Point Trust Checklist -->
+              <ul class="about-trust-checklist">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Proven Track Record:</strong> 25+ years domestic and international packaging supply</span></li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Cleanroom Manufacturing:</strong> Class 10,000 controlled medical & cosmetic molding</span></li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>International Standards:</strong> TÜV NORD ISO 9001, BSCI, ETI & US FDA DMF</span></li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Reliable Supply Chain:</strong> Zero-leak torque calibration and damage-free transit</span></li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Customer-Focused Processes:</strong> Complete COA, TDS, MSDS batch traceability</span></li>
+              </ul>
+
+              <p class="about-trust-desc">
+                Every production batch undergoes comprehensive dimensional screening, torque-seal calibration, and vacuum chamber leak-testing before dispatch for pharmaceutical, food, and export packaging.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Mobile Gallery & Core Capabilities -->
+          <div class="about-editorial-right">
+            
+            <!-- Interactive Mobile Image Gallery (1 Large Stage + 2 Interactive Thumbnails) -->
+            <div class="about-gallery-card">
+              <div class="about-gallery-stage">
+                <img id="about-main-gallery-img" src="/factory.webp" alt="TrueNorth Group Manufacturing Facility" class="about-gallery-main-img" loading="lazy" />
+                <div class="about-gallery-caption-bar" id="about-gallery-caption">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>TrueNorth Group Manufacturing Facility</span>
+                </div>
+              </div>
+
+              <!-- Gallery Thumbnails (Touch-Friendly Switching) -->
+              <div class="about-gallery-thumbs" id="about-gallery-thumbs">
+                <button type="button" class="about-thumb-btn active" onclick="window.switchAboutGallery('/factory.webp', 'TrueNorth Group Manufacturing Facility', 0)">
+                  <img src="/factory.webp" alt="Manufacturing Plant" />
+                  <span>Factory Plant</span>
+                </button>
+                <button type="button" class="about-thumb-btn" onclick="window.switchAboutGallery('/manufacturing.webp', 'Cleanroom Production Environment', 1)">
+                  <img src="/manufacturing.webp" alt="Cleanroom Production" />
+                  <span>Cleanroom</span>
+                </button>
+                <button type="button" class="about-thumb-btn" onclick="window.switchAboutGallery('/benefit_supply.webp', 'In-House R&D and Leak Testing Laboratory', 2)">
+                  <img src="/benefit_supply.webp" alt="R&D Testing Lab" />
+                  <span>R&D Lab</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2-Column Core Capabilities Grid -->
+            <div class="about-capabilities-card">
+              <div class="about-capabilities-header">
+                <h4 class="about-capabilities-title">CORE CAPABILITIES AT A GLANCE</h4>
+                <span class="about-capabilities-sub">End-to-end primary packaging capabilities</span>
+              </div>
+
+              <div class="about-capabilities-grid">
+                <!-- Capability 1 -->
+                <div class="about-cap-box">
+                  <div class="about-cap-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </div>
+                  <div class="about-cap-text">
+                    <h5>R&D & Tooling</h5>
+                    <p>Custom 3D CAD design, precision molds, and rapid sampling.</p>
+                  </div>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="about-cap-box">
+                  <div class="about-cap-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  </div>
+                  <div class="about-cap-text">
+                    <h5>Cleanroom Molding</h5>
+                    <p>Automated Class 10k lines for pharma & sterile cosmetics.</p>
+                  </div>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="about-cap-box">
+                  <div class="about-cap-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  </div>
+                  <div class="about-cap-text">
+                    <h5>Quality & Compliance</h5>
+                    <p>TÜV NORD ISO 9001, US FDA DMF, and 1,000+ leak trials.</p>
+                  </div>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="about-cap-box">
+                  <div class="about-cap-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  </div>
+                  <div class="about-cap-text">
+                    <h5>Global Logistics</h5>
+                    <p>Heavy-duty export cartons, stretch pallets & batch tracking.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Capability Key Points -->
+              <ul class="about-cap-bullets">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>10ml – 1,000ml</strong> PET & Glass Packaging Spectrum</span></li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>BSCI & ETI</strong> Ethical Social Compliance Verified</span></li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>100%</strong> Customer Satisfaction Record Earned</span></li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality & Compliance Dedicated Section -->
+    <section class="frapak-section-grey about-compliance-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Quality & Regulatory Compliance</h2>
+          <p class="about-section-desc">Audited manufacturing standards ensuring flawless regulatory approval across international markets.</p>
+        </div>
+
+        <!-- Compliance Cards Grid (Mobile: 1 Column Clean Cards; Desktop: 3 Column Grid) -->
+        <div class="about-compliance-grid">
+          <div class="about-compliance-card">
+            <div class="about-compliance-card-header">
+              <div class="about-comp-badge">TÜV NORD</div>
+              <h3 class="about-compliance-title">ISO 9001 & GMP</h3>
+            </div>
+            <p class="about-compliance-body">
+              Our manufacturing partners maintain ISO 9001 quality-management certification from <strong>TÜV NORD</strong>, operate under applicable Good Manufacturing Practices (GMP), and provide Drug Master File (DMF) documentation for eligible pharmaceutical-packaging products.
+            </p>
+          </div>
+
+          <div class="about-compliance-card">
+            <div class="about-compliance-card-header">
+              <div class="about-comp-badge">ETHICAL AUDIT</div>
+              <h3 class="about-compliance-title">Social & Ethical Standards</h3>
+            </div>
+            <p class="about-compliance-body">
+              Partner facilities are assessed for working conditions, employee welfare, labour practices, workplace safety, and factory standards aligned with the principles of the <strong>Ethical Trading Initiative (ETI)</strong> and <strong>BSCI</strong>.
+            </p>
+          </div>
+
+          <div class="about-compliance-card">
+            <div class="about-compliance-card-header">
+              <div class="about-comp-badge">FULL DOSSIERS</div>
+              <h3 class="about-compliance-title">Complete Transparency</h3>
+            </div>
+            <p class="about-compliance-body">
+              Comprehensive compliance documentation—including <strong>Certificates of Analysis (COA)</strong>, <strong>Material Safety Data Sheets (MSDS)</strong> and <strong>Technical Data Sheets (TDS)</strong>—is readily available on request during the enquiry and vendor-approval process.
+            </p>
+          </div>
+        </div>
+
+        <!-- Specialized Finishes & Custom Packaging Callout -->
+        <div class="about-finishes-card">
+          <div class="about-finishes-content">
+            <span class="about-finishes-tag">CUSTOM MANUFACTURING</span>
+            <h3 class="about-finishes-title">Specialised Finishes & Custom Packaging</h3>
+            <p class="about-finishes-desc">
+              We offer specialised surface treatments including <strong>Pearl finish, Matte finish, High-gloss finish, UV-protective options, and bespoke custom colours</strong> tailored to brand specifications. Available neck sizes include <strong>15 mm, 19 mm, 20 mm, 22 mm, 25 mm and 28 mm</strong>.
+            </p>
+          </div>
+          <div class="about-finishes-cta">
+            <button type="button" class="frapak-btn-gold about-cta-btn" onclick="window.openInquiry('Custom Packaging & Finishes Inquiry')">
+              EXPLORE CUSTOM PACKAGING
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Advanced Production & Quality Infrastructure (Mobile: Horizontal Swipeable Carousel; Desktop: 4-Column Grid) -->
+    <section class="frapak-section about-infra-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Production & Cleanroom Infrastructure</h2>
+          <p class="about-section-desc">
+            Precision engineering backed by automated robotic lines, Class 10,000 cleanrooms, and stringent 1,000+ cycle leak assurance.
+          </p>
+        </div>
+
+        <!-- Infrastructure Carousel (Mobile Swipeable Container) -->
+        <div class="about-infra-carousel" id="about-infra-carousel">
+          
+          <div class="about-infra-card">
+            <div class="about-infra-img-wrap">
+              <img src="/manufacturing.webp" alt="Cleanroom Production Environment" loading="lazy" />
+              <span class="about-infra-tag">Cleanroom Class 10k</span>
+            </div>
+            <div class="about-infra-body">
+              <h4 class="about-infra-card-title">Controlled Molding</h4>
+              <p class="about-infra-card-desc">Automated closed-loop cleanroom molding for medical, pharmaceutical, and high-purity cosmetic containers.</p>
+            </div>
+          </div>
+
+          <div class="about-infra-card">
+            <div class="about-infra-img-wrap">
+              <img src="/factory.webp" alt="Blow Molding Machinery" loading="lazy" />
+              <span class="about-infra-tag">Automated Tooling</span>
+            </div>
+            <div class="about-infra-body">
+              <h4 class="about-infra-card-title">Injection Blow Molding</h4>
+              <p class="about-infra-card-desc">Multi-cavity high-speed European machines ensuring consistent wall thickness and airtight neck thread tolerances.</p>
+            </div>
+          </div>
+
+          <div class="about-infra-card">
+            <div class="about-infra-img-wrap">
+              <img src="/benefit_supply.webp" alt="Quality Assurance Lab" loading="lazy" />
+              <span class="about-infra-tag">In-House R&D</span>
+            </div>
+            <div class="about-infra-body">
+              <h4 class="about-infra-card-title">1,000+ Leak-Free Trials</h4>
+              <p class="about-infra-card-desc">Every closure, pump, and neck finish undergoes rigorous vacuum chamber pressure testing before shipment.</p>
+            </div>
+          </div>
+
+          <div class="about-infra-card">
+            <div class="about-infra-img-wrap">
+              <img src="/benefit_supply.webp" alt="Global Export Logistics" loading="lazy" />
+              <span class="about-infra-tag">Global Supply</span>
+            </div>
+            <div class="about-infra-body">
+              <h4 class="about-infra-card-title">Export Packaging & Dispatch</h4>
+              <p class="about-infra-card-desc">Heavy-duty corrugated shipping cartons, stretch-wrapped pallets, and full batch traceability for zero-damage transit.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mobile Swipe Indicator Hint -->
+        <div class="about-swipe-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span>Swipe horizontally to view all infrastructure capabilities</span>
+        </div>
+
+        <!-- Facility Audit CTA Bar -->
+        <div class="about-audit-cta-bar">
+          <div class="about-audit-text">
+            <div class="about-audit-tag">FACILITY AUDIT & DOCUMENTATION</div>
+            <h3 class="about-audit-title">Need Regulatory Documentation or a Facility Audit?</h3>
+            <p class="about-audit-desc">
+              We provide complete technical dossiers including TÜV NORD ISO 9001 certificates, US FDA DMF filings, COA, TDS, and MSDS on request.
+            </p>
+          </div>
+          <div class="about-audit-action">
+            <button type="button" class="frapak-btn-gold about-audit-btn" onclick="window.openInquiry('Regulatory Dossier & Facility Audit Request')">
+              REQUEST AUDIT / DOSSIER
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =======================================================================
+       VIEW 5: CUSTOM SOLUTIONS (Exact Client Copy)
+       ======================================================================= -->
+  <section class="page-view" id="view-custom">
+    
+    <!-- Custom Solutions Hero Banner -->
+    <div class="products-page-title-banner cst-hero-banner">
+      <div class="frapak-container">
+        <div class="cst-hero-badge">CUSTOM SOLUTIONS</div>
+        <h1 class="cst-hero-title">Custom Solutions</h1>
+        <p class="cst-hero-subtitle">Bespoke packaging development, engineering and manufacturing support.</p>
+      </div>
+    </div>
+
+    <!-- Main Bespoke Development Section -->
+    <section class="frapak-section cst-main-section">
+      <div class="frapak-container">
+        
+        <div class="cst-editorial-grid">
+          <div class="cst-editorial-left">
+            <h2 class="cst-section-heading">Bespoke Design & Mould Development</h2>
+            <p class="cst-editorial-lead">
+              We don’t encourage you to be restricted to our current designs. With trusted networks across Mould developers with supreme quality and longevity, we connect and execute custom design developments based on your exact requirements.
+            </p>
+
+            <h3 class="cst-subheading">Our Custom Development Capabilities:</h3>
+            <ul class="cst-capabilities-list">
+              <li><strong>Custom 3D Geometries</strong> — Ergonomic curves, distinctive contours, and proprietary bottles.</li>
+              <li><strong>Pantone Color Matching</strong> — Solid opaques, translucent tints, and UV barrier formulations.</li>
+              <li><strong>Mould Construction & Tooling</strong> — Pilot single-cavity prototyping and high-speed mass production.</li>
+              <li><strong>In-House Decoration</strong> — Silk-screen printing, hot foil stamping, and customized labelling.</li>
+            </ul>
+
+            <!-- Tooling Assurance Card -->
+            <div class="cst-assurance-card">
+              <h4 class="cst-assurance-title">Tooling Assurance & Prototyping Speed</h4>
+              <ul class="cst-assurance-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>10–14 Days</strong> Rapid Pilot Single-Cavity Prototyping</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>1,000,000+ Cycles</strong> Hardened Tool Steel Longevity</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Full IP Confidentiality</strong> & NDA Protection for Proprietary Shapes</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Flexible Tooling Amortization</strong> on High-Volume Orders</span></li>
+              </ul>
+              <button type="button" class="frapak-btn-gold cst-btn-full" onclick="window.openInquiry('Custom Mould Inquiry')">
+                CONTACT US FOR CUSTOM SOLUTIONS
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="cst-editorial-right">
+            <div class="cst-img-wrapper">
+              <img src="/branded_bottles.webp" alt="Custom Design Solutions" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: 4-Stage Custom Development Process (Swipe Carousel on Mobile) -->
+    <section class="frapak-section-grey cst-process-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">The 4-Stage Custom Development Process</h2>
+          <p class="cst-section-desc">
+            From initial 3D concept to qualified multi-cavity mass production with complete engineering support.
+          </p>
+        </div>
+
+        <div class="cst-stage-carousel-wrapper">
+          <div class="cst-stage-grid" id="cst-stage-carousel">
+            
+            <!-- Stage 01 -->
+            <div class="cst-stage-card">
+              <div class="cst-stage-badge">STAGE 01</div>
+              <h3 class="cst-stage-title">3D CAD & Concepting</h3>
+              <p class="cst-stage-desc">
+                Comprehensive 3D digital modeling, volumetric capacity analysis, ergonomic contouring, and neck thread engineering tailored to your brand identity.
+              </p>
+            </div>
+
+            <!-- Stage 02 -->
+            <div class="cst-stage-card cst-stage-card--gold">
+              <div class="cst-stage-badge">STAGE 02</div>
+              <h3 class="cst-stage-title">Rapid Pilot Tooling</h3>
+              <p class="cst-stage-desc">
+                Cost-effective single-cavity prototype mould manufacturing delivering functional pre-production bottle samples within 10 to 14 business days.
+              </p>
+            </div>
+
+            <!-- Stage 03 -->
+            <div class="cst-stage-card">
+              <div class="cst-stage-badge">STAGE 03</div>
+              <h3 class="cst-stage-title">1,000+ Cycle Testing</h3>
+              <p class="cst-stage-desc">
+                Exhaustive vacuum leak-testing, top-load crush strength tests, drop impact validation, and formulation chemical compatibility trials.
+              </p>
+            </div>
+
+            <!-- Stage 04 -->
+            <div class="cst-stage-card cst-stage-card--gold">
+              <div class="cst-stage-badge">STAGE 04</div>
+              <h3 class="cst-stage-title">Mass Production</h3>
+              <p class="cst-stage-desc">
+                High-speed multi-cavity injection blow molding with automated optical dimension screening and export-standard palletization.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Mobile Dots Indicator -->
+          <div class="cst-carousel-dots" aria-hidden="true">
+            <span class="cst-dot active"></span>
+            <span class="cst-dot"></span>
+            <span class="cst-dot"></span>
+            <span class="cst-dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Specialty Finishes & Surface Treatments (2-Column Grid on Mobile) -->
+    <section class="frapak-section cst-finishes-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Specialty Finishes & Surface Treatments</h2>
+          <p class="cst-section-desc">
+            Enhance shelf presence with precision in-house decorating, tactile surface coatings, and bespoke colour formulations.
+          </p>
+        </div>
+
+        <div class="cst-finishes-grid">
+          
+          <!-- Card 1 -->
+          <div class="cst-finish-card">
+            <div class="cst-finish-img-wrap">
+              <img src="/brand_assets/pet_bottles/354ml Square-30gm 24mm.jpg" alt="Square Bottle Mould" loading="lazy" />
+            </div>
+            <div class="cst-finish-content">
+              <div class="cst-finish-cat">Custom Geometries</div>
+              <h3 class="cst-finish-title">Square & Contour Moulds</h3>
+              <p class="cst-finish-desc">Sharp-shoulder squares, ergonomic ovals, and custom grip indentations for prestige shelf standout.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="cst-finish-card">
+            <div class="cst-finish-img-wrap">
+              <img src="/brand_assets/pet_bottles/veola 1.jpg" alt="Veola Custom Contours" loading="lazy" />
+            </div>
+            <div class="cst-finish-content">
+              <div class="cst-finish-cat">Decoration Tech</div>
+              <h3 class="cst-finish-title">Hot Foil & Silk Screening</h3>
+              <p class="cst-finish-desc">High-precision screen printing, metallic gold/silver foil stamping, and full-wrap shrink sleeving.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="cst-finish-card">
+            <div class="cst-finish-img-wrap">
+              <img src="/brand_assets/glass_bottles/metal_unishell_cap_.jpg" alt="Metal Unishell Closures" loading="lazy" />
+            </div>
+            <div class="cst-finish-content">
+              <div class="cst-finish-cat">Prestige Fitments</div>
+              <h3 class="cst-finish-title">Metal Unishell & Closures</h3>
+              <p class="cst-finish-desc">Anodized aluminum overshells, matte-embossed wooden caps, and dual-layer dispensing pumps.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="cst-finish-card">
+            <div class="cst-finish-img-wrap">
+              <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.jpg" alt="Wide Mouth Jars" loading="lazy" />
+            </div>
+            <div class="cst-finish-content">
+              <div class="cst-finish-cat">Custom Jars</div>
+              <h3 class="cst-finish-title">Wide-Mouth Jar Tooling</h3>
+              <p class="cst-finish-desc">Double-wall luxury cosmetic jars and tamper-evident induction sealed nutraceutical packers from 50ml to 1000ml.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Engineering Consultation CTA Banner -->
+        <div class="cst-consult-banner">
+          <div class="cst-consult-text">
+            <span class="cst-consult-tag">ENGINEERING CONSULTATION</span>
+            <h3 class="cst-consult-title">Have a Custom Packaging Concept in Mind?</h3>
+            <p class="cst-consult-desc">
+              Send us your target dimensions, capacity, or bottle sketch. Our engineering team will review technical feasibility and deliver a mould proposal within 48 hours.
+            </p>
+          </div>
+          <button type="button" class="frapak-btn-gold cst-consult-btn" onclick="window.openInquiry('Custom Packaging Concept')">
+            START BESPOKE PROJECT
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =======================================================================
+       VIEW 7: SUSTAINABILITY PAGE
+       ======================================================================= -->
+  <section class="page-view" id="view-sustainability">
+    
+    <div class="products-page-title-banner about-hero-banner">
+      <div class="frapak-container">
+        <div class="about-hero-badge">ECO RESPONSIBILITY</div>
+        <h1 class="about-hero-title">Sustainable rPET & PCR Solutions</h1>
+        <p class="about-hero-subtitle">100% Recycled Polymers & Eco-Friendly Primary Packaging</p>
+      </div>
+    </div>
+
+    <section class="frapak-section">
+      <div class="frapak-container">
+        <div class="rpet-layout">
+          <div class="rpet-cards-stack">
+            <div class="rpet-card" onclick="window.goToCategory('Bottles PET')">
+              <div class="frapak-tile-image">
+                <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.png" alt="rPET bottles" loading="lazy" />
+              </div>
+              <div class="rpet-card-bar">rPET bottles</div>
+            </div>
+            <div class="rpet-card" onclick="window.goToCategory('PET Jars')">
+              <div class="frapak-tile-image">
+                <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.jpg" alt="rPET jars" loading="lazy" />
+              </div>
+              <div class="rpet-card-bar">rPET jars</div>
+            </div>
+          </div>
+
+          <div class="rpet-text-content">
+            <h3>Content: PCR plastics & Circular Economy</h3>
+            <p class="pcr-summary-lead">
+              TrueNorth Group is dedicated to continuous innovation, frequently expanding its diverse array of products by introducing a variety of neck sizes and capacities to meet evolving market demands.
+            </p>
+            <p>
+              Our selection of PET bottles and jars, now available in 100% recycled PET (rPET), reflects this commitment. These eco-conscious choices are offered with a manageable minimum order quantity (MOQ) of just 20,000 units, making sustainability accessible to a wider range of customers.
+            </p>
+            <button type="button" class="frapak-btn-gold" style="margin-top: 16px;" onclick="window.openInquiry('rPET & PCR Packaging Inquiry')">
+              REQUEST SUSTAINABLE SAMPLES
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =======================================================================
+       VIEW 6: CONTACT US PAGE (Exact 6-Field Form)
+       ======================================================================= -->
+  <section class="page-view" id="view-contact">
+    
+    <!-- Contact Hero Banner -->
+    <div class="products-page-title-banner cnt-hero-banner">
+      <div class="frapak-container">
+        <div class="cnt-hero-badge">CONTACT</div>
+        <h1 class="cnt-hero-title">Contact TrueNorth Group</h1>
+        <p class="cnt-hero-subtitle">Have a question, packaging requirement, or custom development need? Talk to our team.</p>
+      </div>
+    </div>
+
+    <!-- Main Contact Details & Form Section -->
+    <section class="frapak-section cnt-main-section">
+      <div class="frapak-container">
+        
+        <div class="cnt-layout-grid">
+          
+          <!-- Left Info Column -->
+          <div class="cnt-info-col">
+            
+            <!-- 1. HQ Details Card -->
+            <div class="cnt-info-card">
+              <div class="cnt-card-tag">Primary Contacts</div>
+              <h3 class="cnt-card-title">Company Details & HQ</h3>
+              <p class="cnt-card-desc">
+                TrueNorth Group<br />
+                Audited Manufacturing & Global Logistics Hubs<br />
+                Serving Nationwide Distribution & Seaport Global Exports
+              </p>
+              <div class="cnt-contact-links">
+                <div><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></div>
+                <div><strong>Email:</strong> <a href="mailto:info@wetruenorthgroup.com">info@wetruenorthgroup.com</a></div>
+              </div>
+              <p class="cnt-card-subtext">
+                GST / VAT: IN27AAAC0000A1Z5 • TÜV NORD ISO 9001 Certified
+              </p>
+            </div>
+
+            <!-- 2. Customer Support & Response SLA -->
+            <div class="cnt-info-card cnt-info-card--navy">
+              <h3 class="cnt-card-title-sm">Customer Support & Response SLA</h3>
+              <ul class="cnt-sla-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span><strong>Monday – Friday:</strong> 9:00 AM – 6:30 PM</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span><strong>Saturday:</strong> 9:00 AM – 1:30 PM</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span><strong>Technical Review:</strong> Inquiries answered within 4 business hours</span></li>
+              </ul>
+            </div>
+
+            <!-- 3. What Happens Next? -->
+            <div class="cnt-info-card">
+              <h3 class="cnt-card-title-sm">What Happens Next?</h3>
+              <div class="cnt-next-steps">
+                <div><strong>1. Specification Match:</strong> Our packaging engineer reviews neck thread and material requirements.</div>
+                <div><strong>2. Tiered Wholesale Quote:</strong> You receive competitive bulk pricing & MOQ terms within 24h.</div>
+                <div><strong>3. Sample Dispatch:</strong> Complimentary sample kit sent to your laboratory or office via express courier.</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Form Container (100% Viewport Fit) -->
+          <div class="cnt-form-container">
+            <h2 class="cnt-form-title">Send Us Your Inquiry</h2>
+            <p class="cnt-form-subtitle">Have a packaging requirement? Talk to our engineering team.</p>
+
+            <form id="contact-page-form" class="cnt-form">
+              <div class="frapak-form-field">
+                <label for="cnt-name">1. Name *</label>
+                <input type="text" id="cnt-name" name="name" required placeholder="Enter your full name" autocomplete="name" />
+              </div>
+              <div class="frapak-form-field">
+                <label for="cnt-company">2. Company Name *</label>
+                <input type="text" id="cnt-company" name="company" required placeholder="Enter company name" autocomplete="organization" />
+              </div>
+              <div class="frapak-form-field">
+                <label for="cnt-email">3. Email ID *</label>
+                <input type="email" id="cnt-email" name="email" required placeholder="Enter email address" autocomplete="email" />
+              </div>
+              <div class="frapak-form-field">
+                <label for="cnt-country">4. Country *</label>
+                <select id="cnt-country" name="country" class="country-select" required></select>
+              </div>
+              <div class="frapak-form-field">
+                <label for="cnt-phone">5. Phone Number *</label>
+                <input type="tel" id="cnt-phone" name="phone" required placeholder="Country code + phone number" autocomplete="tel" />
+              </div>
+              <div class="frapak-form-field">
+                <label for="cnt-inquiry">6. Inquiry *</label>
+                <textarea id="cnt-inquiry" name="inquiry" required placeholder="Tell us about your packaging requirements, volumes, or custom specifications"></textarea>
+              </div>
+
+              <button type="submit" class="frapak-btn-gold cnt-submit-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                SEND INQUIRY
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Global Manufacturing & Logistics Hubs -->
+    <section class="frapak-section-grey cnt-hubs-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Global Manufacturing & Logistics Hubs</h2>
+          <p class="cnt-section-desc">
+            Hybrid manufacturing and streamlined export distribution infrastructure connecting clients to reliable supply chains worldwide.
+          </p>
+        </div>
+
+        <div class="cnt-hubs-grid">
+          <div class="cnt-hub-card">
+            <div class="cnt-hub-tag">Manufacturing Hub</div>
+            <h3 class="cnt-hub-title">Precision Blow Molding Hub</h3>
+            <p class="cnt-hub-desc">
+              State-of-the-art injection blow molding facilities, Class 10,000 cleanrooms for pharma packaging, and automated quality testing laboratories serving nationwide supply and direct seaport exports.
+            </p>
+            <div class="cnt-hub-caps">
+              Capabilities: PET Bottles, Jars, Cleanroom Molding, ROPP Finishes
+            </div>
+          </div>
+
+          <div class="cnt-hub-card">
+            <div class="cnt-hub-tag">Engineering Center</div>
+            <h3 class="cnt-hub-title">Automated Tooling & Engineering</h3>
+            <p class="cnt-hub-desc">
+              Specialized high-cavity mould design, precision cosmetic lotion pumps, fine mist atomizers, and industrial trigger sprayer automation meeting global export durability standards.
+            </p>
+            <div class="cnt-hub-caps">
+              Capabilities: Dispensing Pumps, Triggers, Mist Sprayers, Luxury Closures
+            </div>
+          </div>
+
+          <div class="cnt-hub-card">
+            <div class="cnt-hub-tag">Global Logistics</div>
+            <h3 class="cnt-hub-title">International Export Network</h3>
+            <p class="cnt-hub-desc">
+              Direct containerized ocean freight (FCL/LCL) and expedited air courier shipping to Europe, the Americas, the Middle East, and Africa with complete customs documentation.
+            </p>
+            <div class="cnt-hub-caps">
+              Capabilities: FOB / CIF / DDP Shipping, Batch Traceability, Palletization
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Buyer & Procurement Assistance FAQs -->
+    <section class="frapak-section cnt-procurement-section">
+      <div class="frapak-container">
+        <div class="frapak-section-title-wrap">
+          <h2 class="frapak-section-title">Buyer & Procurement Assistance</h2>
+          <p class="cnt-section-desc">
+            Answers to common procurement, compliance, and sample inquiries for fast turnaround.
+          </p>
+        </div>
+
+        <div class="cnt-faq-grid">
+          <div class="cnt-faq-card">
+            <div class="cnt-faq-tag">Turnaround</div>
+            <h3 class="cnt-faq-title">Sample Dispatch</h3>
+            <p class="cnt-faq-desc">Standard catalogue samples are dispatched within 3 to 5 business days worldwide via DHL/FedEx courier.</p>
+          </div>
+
+          <div class="cnt-faq-card">
+            <div class="cnt-faq-tag">Order Size</div>
+            <h3 class="cnt-faq-title">Minimum Orders (MOQ)</h3>
+            <p class="cnt-faq-desc">Standard product lines start at 1,000 units. 100% recycled PCR rPET items feature an accessible MOQ of just 20,000 units.</p>
+          </div>
+
+          <div class="cnt-faq-card">
+            <div class="cnt-faq-tag">Compliance</div>
+            <h3 class="cnt-faq-title">Audit & Regulatory</h3>
+            <p class="cnt-faq-desc">TÜV NORD ISO 9001, US FDA DMF, COA, TDS, and Food-Grade certifications are provided with technical proposals.</p>
+          </div>
+
+          <div class="cnt-faq-card">
+            <div class="cnt-faq-tag">Customization</div>
+            <h3 class="cnt-faq-title">Pantone Colors</h3>
+            <p class="cnt-faq-desc">Solid opaques, high-clarity tints, pearl finishes, and UV-protective barrier additives tailored to your formula.</p>
+          </div>
+        </div>
+
+        <!-- Bottom Immediate Help CTA Strip -->
+        <div class="cnt-cta-banner">
+          <div class="cnt-cta-text">
+            <h3 class="cnt-cta-title">Need Immediate Technical or Pricing Assistance?</h3>
+            <p class="cnt-cta-desc">Connect directly with our packaging engineers or call our global support desk.</p>
+          </div>
+          <div class="cnt-cta-buttons">
+            <a href="tel:+919876543210" class="frapak-btn-gold cnt-cta-call">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              CALL +91 98765 43210
+            </a>
+            <button type="button" class="frapak-btn-outline cnt-cta-inquiry" onclick="window.openInquiry('Immediate Technical Assistance')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              OPEN QUICK INQUIRY
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =========================================================================
+       INQUIRY DRAWER
+       ========================================================================= -->
+  <div class="frapak-drawer-overlay" id="inquiry-drawer-overlay" onclick="window.closeInquiry()"></div>
+  <aside class="frapak-drawer" id="inquiry-drawer">
+    <div class="drawer-header" style="background: var(--color-navy); color: #fff; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+      <h3 style="font-size: 1.1rem; font-weight: 700;">Packaging Inquiry</h3>
+      <button onclick="window.closeInquiry()" style="color: #fff; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 4px;" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body" style="padding: 20px; overflow-y: auto;">
+      <div id="inquiry-product-badge" style="display: none;"></div>
+
+      <form id="drawer-inquiry-form">
+        <div class="frapak-form-field">
+          <label>1. Name *</label>
+          <input type="text" name="name" required placeholder="Enter your name" />
+        </div>
+        <div class="frapak-form-field">
+          <label>2. Company Name *</label>
+          <input type="text" name="company" required placeholder="Enter company name" />
+        </div>
+        <div class="frapak-form-field">
+          <label>3. Email ID *</label>
+          <input type="email" name="email" required placeholder="Enter email address" />
+        </div>
+        <div class="frapak-form-field">
+          <label>4. Country *</label>
+          <select name="country" class="country-select" required></select>
+        </div>
+        <div class="frapak-form-field">
+          <label>5. Phone Number *</label>
+          <input type="tel" name="phone" required placeholder="Country code + phone number" />
+        </div>
+        <div class="frapak-form-field">
+          <label>6. Inquiry *</label>
+          <textarea id="inquiry-notes-field" name="inquiry" required placeholder="Tell us about your requirement"></textarea>
+        </div>
+
+        <button type="submit" class="frapak-btn-gold" style="margin-left: 0; width: 100%; margin-top: 6px;">
+          SEND INQUIRY
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       CONFIRMATION MODAL
+       ========================================================================= -->
+  <div class="frapak-modal-overlay" id="success-modal">
+    <div class="frapak-modal-box" style="max-width: 440px;">
+      <div id="success-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       TERMS & CONDITIONS MODAL
+       ========================================================================= -->
+  <div class="frapak-modal-overlay" id="terms-modal" onclick="window.closeTermsModal()">
+    <div class="frapak-modal-box" style="max-width: 640px; padding: 28px;" onclick="event.stopPropagation()">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #E2E8F0; padding-bottom: 12px;">
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-navy); margin: 0;">General Terms &amp; Conditions</h3>
+        <button onclick="window.closeTermsModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-navy); line-height: 1;">&times;</button>
+      </div>
+      <div style="font-size: 0.84rem; color: #4B5563; line-height: 1.6; max-height: 60vh; overflow-y: auto; padding-right: 8px;">
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">1. Quality Assurance &amp; Manufacturing Standards</h4>
+        <p style="margin-bottom: 12px;">All PET bottles, jars, closures, and pumps produced by TrueNorth Group comply strictly with TÜV NORD ISO 9001 quality management protocols and food-grade safety standards. Production is conducted under cleanroom protocols for medical, cosmetic, and food packaging applications.</p>
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">2. Minimum Order Quantities (MOQ) &amp; Tooling</h4>
+        <p style="margin-bottom: 12px;">Standard catalogue items feature low MOQs starting from 20,000 units per batch. Custom pilot tooling and 3D prototype sampling terms are agreed upon project specifications prior to mold fabrication.</p>
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">3. Leak-Free Guarantee &amp; Inspection</h4>
+        <p style="margin-bottom: 12px;">Every production batch undergoes 1,000+ cycle vacuum chamber leak tests and neck-finish torque calibration. Technical samples dispatched for customer testing must be verified before mass production sign-off.</p>
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">4. Export Shipping &amp; Delivery Terms</h4>
+        <p style="margin-bottom: 0;">Shipments are packaged in export-grade corrugated cartons, stretch-wrapped pallets, and assigned full batch traceability for zero-damage transit across domestic and global logistics destinations.</p>
+      </div>
+      <button onclick="window.closeTermsModal()" class="frapak-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE TERMS</button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PRIVACY STATEMENT MODAL
+       ========================================================================= -->
+  <div class="frapak-modal-overlay" id="privacy-modal" onclick="window.closePrivacyModal()">
+    <div class="frapak-modal-box" style="max-width: 640px; padding: 28px;" onclick="event.stopPropagation()">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #E2E8F0; padding-bottom: 12px;">
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-navy); margin: 0;">Privacy Statement</h3>
+        <button onclick="window.closePrivacyModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-navy); line-height: 1;">&times;</button>
+      </div>
+      <div style="font-size: 0.84rem; color: #4B5563; line-height: 1.6; max-height: 60vh; overflow-y: auto; padding-right: 8px;">
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">1. Client Data Protection</h4>
+        <p style="margin-bottom: 12px;">TrueNorth Group values your business privacy. All technical drawings, CAD files, sample requests, and procurement inquiries submitted through our portal are stored securely under encrypted SSL protocols.</p>
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">2. Confidentiality &amp; Non-Disclosure (NDA)</h4>
+        <p style="margin-bottom: 12px;">Proprietary bottle designs and custom mold specifications remain 100% confidential. We strictly execute Non-Disclosure Agreements (NDAs) for custom tooling and private-label packaging developments.</p>
+        <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">3. Information Usage &amp; Communication</h4>
+        <p style="margin-bottom: 0;">Contact details provided during RFQ submissions are exclusively utilized by our engineering team to provide quotations, technical specifications, and shipment status updates. We do not sell or share data with third parties.</p>
+      </div>
+      <button onclick="window.closePrivacyModal()" class="frapak-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE PRIVACY STATEMENT</button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER (Clean 4-Column Responsive Architecture)
+       ========================================================================= -->
+  <footer class="frapak-footer">
+    <div class="frapak-container">
+      
+      <!-- Footer Brand Header (Logo & Description above accordions) -->
+      <div class="footer-brand-header">
+        <a href="#home" class="footer-brand-logo-link" onclick="window.navigateToPage('home')">
+          <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="footer-brand-logo" />
+        </a>
+        <p class="footer-brand-desc">
+          Global Primary Packaging Specialists & Precision Manufacturers
+        </p>
+      </div>
+
+      <div class="frapak-footer-grid">
+        
+        <!-- Section 1: Products -->
+        <div class="footer-col" id="footer-col-products">
+          <button type="button" class="footer-accordion-header" aria-expanded="false" aria-controls="footer-panel-products" id="footer-header-products" onclick="window.toggleFooterAccordion('footer-col-products')">
+            <span class="footer-title">PRODUCTS</span>
+            <span class="footer-accordion-icon" aria-hidden="true">
+              <svg class="footer-icon-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <svg class="footer-icon-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="footer-accordion-panel" id="footer-panel-products" role="region" aria-labelledby="footer-header-products">
+            <ul class="footer-link-list">
+              <li><a href="#products" onclick="window.goToCategory('PET Bottles')">PET Bottles</a></li>
+              <li><a href="#products" onclick="window.goToCategory('HDPE Bottles')">HDPE Bottles</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Caps')">Caps</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Pumps')">Pumps</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Finger Sprayer')">Finger Sprayer</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Trigger Sprayer')">Trigger Sprayer</a></li>
+              <li><a href="#products" onclick="window.goToCategory('PET Jars')">PET Jars</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Lids')">Lids</a></li>
+              <li><a href="#products" onclick="window.goToCategory('PP Jars')">PP Jars</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Mono material jar')">Mono Material Jar</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Foamer Pumps')">Foamer Pumps</a></li>
+              <li><a href="#products" onclick="window.goToCategory('Airless')">Airless</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section 2: Company Details HQ -->
+        <div class="footer-col" id="footer-col-company">
+          <button type="button" class="footer-accordion-header" aria-expanded="false" aria-controls="footer-panel-company" id="footer-header-company" onclick="window.toggleFooterAccordion('footer-col-company')">
+            <span class="footer-title">COMPANY DETAILS HQ</span>
+            <span class="footer-accordion-icon" aria-hidden="true">
+              <svg class="footer-icon-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <svg class="footer-icon-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="footer-accordion-panel" id="footer-panel-company" role="region" aria-labelledby="footer-header-company">
+            <p class="footer-address-block">
+              <strong>TrueNorth Group</strong><br />
+              Global Manufacturing Operations<br />
+              <span>Serving Domestic & Global Exports</span>
+            </p>
+            <div class="footer-contact-block">
+              <a href="tel:+919876543210" class="footer-phone-link" style="color: var(--color-gold) !important; font-weight: 700;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +91 98765 43210
+              </a>
+              <a href="mailto:info@wetruenorthgroup.com" class="footer-email-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                info@wetruenorthgroup.com
+              </a>
+            </div>
+            <div class="footer-legal-block">
+              <p class="footer-vat-text">VAT reg.no. IN27AAAC0000A1Z5</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Mission -->
+        <div class="footer-col" id="footer-col-mission">
+          <button type="button" class="footer-accordion-header" aria-expanded="false" aria-controls="footer-panel-mission" id="footer-header-mission" onclick="window.toggleFooterAccordion('footer-col-mission')">
+            <span class="footer-title">MISSION</span>
+            <span class="footer-accordion-icon" aria-hidden="true">
+              <svg class="footer-icon-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <svg class="footer-icon-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="footer-accordion-panel" id="footer-panel-mission" role="region" aria-labelledby="footer-header-mission">
+            <p class="footer-mission-text">
+              TrueNorth Group is your ideal supplier and partner for premium quality primary packaging. As a hybrid packaging specialist, we seamlessly blend manufacturing and distribution to provide comprehensive packaging tailored to meet your specific needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 4: Extra Information -->
+        <div class="footer-col" id="footer-col-extra">
+          <button type="button" class="footer-accordion-header" aria-expanded="false" aria-controls="footer-panel-extra" id="footer-header-extra" onclick="window.toggleFooterAccordion('footer-col-extra')">
+            <span class="footer-title">EXTRA INFORMATION</span>
+            <span class="footer-accordion-icon" aria-hidden="true">
+              <svg class="footer-icon-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <svg class="footer-icon-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="footer-accordion-panel" id="footer-panel-extra" role="region" aria-labelledby="footer-header-extra">
+            <ul class="footer-link-list">
+              <li><a href="#custom" onclick="window.navigateToPage('custom')">Custom Mould Development</a></li>
+              <li><a href="#custom" onclick="window.navigateToPage('custom')">PCR Plastics & rPET Stock</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section 5: Bank Details -->
+        <div class="footer-col" id="footer-col-bank">
+          <button type="button" class="footer-accordion-header" aria-expanded="false" aria-controls="footer-panel-bank" id="footer-header-bank" onclick="window.toggleFooterAccordion('footer-col-bank')">
+            <span class="footer-title">BANK DETAILS</span>
+            <span class="footer-accordion-icon" aria-hidden="true">
+              <svg class="footer-icon-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <svg class="footer-icon-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="footer-accordion-panel" id="footer-panel-bank" role="region" aria-labelledby="footer-header-bank">
+            <div class="footer-bank-block">
+              <strong class="footer-bank-title">TrueNorth Group</strong>
+              <p class="footer-bank-acc">IN98 HDFC 0001 2345 67</p>
+              <p class="footer-bank-swift">SWIFT / BIC: <strong>HDFCINBB</strong></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-copyright-bar">
+        <span>© 1996 - 2026 TrueNorth Group. All Rights Reserved.</span>
+        <span class="footer-legal-links">
+          <a href="#" onclick="event.preventDefault(); window.openTermsModal()">General Terms &amp; Conditions</a>
+          <span class="footer-legal-sep">|</span>
+          <a href="#" onclick="event.preventDefault(); window.openPrivacyModal()">Privacy Statement</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app.js?v=1.0.7"></script>
+</body>
+</html>
