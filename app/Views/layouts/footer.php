@@ -138,6 +138,65 @@
     </div>
   </footer>
 
-  <script type="module" src="/app.js?v=1.0.7"></script>
+  <script>
+    // Mobile Drawer Navigation
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const backdrop = document.getElementById('mobile-nav-backdrop');
+      const btn = document.getElementById('frapak-mobile-menu-btn');
+      if (drawer && backdrop) {
+        drawer.classList.toggle('active');
+        backdrop.classList.toggle('active');
+        if (btn) btn.setAttribute('aria-expanded', drawer.classList.contains('active'));
+      }
+    }
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const backdrop = document.getElementById('mobile-nav-backdrop');
+      const btn = document.getElementById('frapak-mobile-menu-btn');
+      if (drawer) drawer.classList.remove('active');
+      if (backdrop) backdrop.classList.remove('active');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+
+    // Footer Accordions on Mobile
+    function toggleFooterAccordion(colId) {
+      const col = document.getElementById(colId);
+      if (!col) return;
+      const headerBtn = col.querySelector('.footer-accordion-header');
+      const panel = col.querySelector('.footer-accordion-panel');
+      const isExpanded = headerBtn ? headerBtn.getAttribute('aria-expanded') === 'true' : false;
+      if (headerBtn) headerBtn.setAttribute('aria-expanded', !isExpanded);
+      if (panel) panel.style.maxHeight = isExpanded ? null : panel.scrollHeight + 'px';
+    }
+
+    // Modal Controls (Inquiry & Legal)
+    function openInquiry(productName) {
+      const modal = document.getElementById('inquiryModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        if (productName) {
+          const input = modal.querySelector('input[name="product_name"]');
+          if (input) input.value = productName;
+        }
+      }
+    }
+    function closeInquiry() {
+      const modal = document.getElementById('inquiryModal');
+      if (modal) modal.style.display = 'none';
+    }
+    function openTermsModal() {
+      const modal = document.getElementById('termsModal');
+      if (modal) modal.style.display = 'flex';
+    }
+    function openPrivacyModal() {
+      const modal = document.getElementById('privacyModal');
+      if (modal) modal.style.display = 'flex';
+    }
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) modal.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
