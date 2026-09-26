@@ -232,7 +232,7 @@ $csrfToken = $_SESSION['csrf_token'];
     <div class="alert-danger"><?= htmlspecialchars($error) ?></div>
   <?php endif; ?>
 
-  <form id="smartProductForm" action="save_product.php" method="POST" enctype="multipart/form-data">
+  <form id="smartProductForm" action="/admin/save_product.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>" />
 
     <!-- 1. PRODUCT BASICS -->

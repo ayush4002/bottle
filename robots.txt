@@ -1,0 +1,35 @@
+# ==============================================================================
+# TRUENORTH GROUP — ROBOTS.TXT
+# Website: https://wetruenorthgroup.com
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /products
+Allow: /about
+Allow: /contact
+Allow: /custom
+Allow: /sustainability
+Allow: /product?
+Allow: /product/
+Allow: /brand_assets/
+Allow: /public/
+Allow: /vikaas_inputs/
+Allow: /favicon.svg
+Allow: /logo_svg.svg
+Allow: /styles.css
+
+# Disallow private administration, configuration, and API routes
+Disallow: /admin/
+Disallow: /config/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.sql$
+Disallow: /diag.php
+Disallow: /test_server.php
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://wetruenorthgroup.com/sitemap.xml

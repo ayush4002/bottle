@@ -1,0 +1,11 @@
+/* TEAM */
+Organization: TrueNorth Group
+Website: https://wetruenorthgroup.com
+Location: Global Manufacturing & Export Hubs
+Specialization: Primary Packaging Specialist — PET Bottles, Jars, Pumps & Closures
+
+/* SITE */
+Standards: HTML5, CSS3, PHP 8.3, Schema.org Microdata, OpenGraph, JSON-LD
+Components: Vanilla CSS Design System, Responsive Multi-device Layout, REST API
+Software: Custom TrueNorth Packaging CMS & Engine
+Security: ISO 9001 Certified Audited Facilities, Class 10,000 Cleanroom Standards

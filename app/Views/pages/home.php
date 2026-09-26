@@ -35,13 +35,12 @@
 
         <div class="frapak-cat-tiles-grid" id="home-cat-tiles-grid">
           <?php foreach ($categories as $cat): ?>
-            <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="frapak-cat-tile" style="text-decoration: none;">
+            <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="frapak-tile-card" style="text-decoration: none;">
               <div class="frapak-tile-image">
                 <img src="<?= htmlspecialchars($cat['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($cat['name']) ?>" loading="lazy" />
               </div>
-              <div class="frapak-tile-footer">
+              <div class="frapak-tile-bar">
                 <span><?= htmlspecialchars($cat['name']) ?></span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
               </div>
             </a>
           <?php endforeach; ?>
@@ -57,21 +56,25 @@
         </div>
 
         <div class="frapak-markets-grid" id="home-markets-grid">
-          <a href="/products?category=cosmetic-bottles" class="frapak-cat-tile" style="text-decoration: none;">
-            <div class="frapak-tile-image"><img src="/vikaas_inputs/cosmetics.png" alt="Cosmetics Market" loading="lazy" /></div>
-            <div class="frapak-tile-footer"><span>Personal Care & Cosmetics</span></div>
+          <a href="/products?category=cosmetic-bottles" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/cosmetics.webp" alt="Cosmetics" loading="lazy" /></div>
+            <div class="frapak-tile-bar"><span>Cosmetics</span></div>
           </a>
-          <a href="/products?category=pet-bottles" class="frapak-cat-tile" style="text-decoration: none;">
-            <div class="frapak-tile-image"><img src="/vikaas_inputs/pharma_bottles.png" alt="Pharma Market" loading="lazy" /></div>
-            <div class="frapak-tile-footer"><span>Pharmaceuticals</span></div>
+          <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/pharma_bottles.webp" alt="Pharma" loading="lazy" /></div>
+            <div class="frapak-tile-bar"><span>Pharma</span></div>
           </a>
-          <a href="/products?category=agro-bottles" class="frapak-cat-tile" style="text-decoration: none;">
-            <div class="frapak-tile-image"><img src="/vikaas_inputs/agro_pesticides.jpg" alt="Agro Market" loading="lazy" /></div>
-            <div class="frapak-tile-footer"><span>Agrochemicals & Pesticides</span></div>
+          <a href="/products?category=agro-bottles" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/agro_pesticides.webp" alt="Agro" loading="lazy" /></div>
+            <div class="frapak-tile-bar"><span>Agro</span></div>
           </a>
-          <a href="/products?category=pet-jars" class="frapak-cat-tile" style="text-decoration: none;">
-            <div class="frapak-tile-image"><img src="/vikaas_inputs/pet_nutraceuticle_jars.png" alt="Nutraceuticals Market" loading="lazy" /></div>
-            <div class="frapak-tile-footer"><span>Nutraceuticals</span></div>
+          <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/LIQUOR_Bottles.webp" alt="Beverages" loading="lazy" /></div>
+            <div class="frapak-tile-bar"><span>Beverages</span></div>
+          </a>
+          <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/brand_assets/glass_bottles/7G3A8712.webp" alt="Liquor" loading="lazy" /></div>
+            <div class="frapak-tile-bar"><span>Liquor</span></div>
           </a>
         </div>
       </div>
@@ -89,13 +92,13 @@
           <div class="rpet-cards-stack">
             <a href="/products?category=pet-bottles" class="rpet-card" style="text-decoration: none;">
               <div class="frapak-tile-image">
-                <img src="/vikaas_inputs/thumbnails/thumbnail_pet_bottles.png" alt="rPET bottles" loading="lazy" />
+                <img src="/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp" alt="rPET bottles" loading="lazy" />
               </div>
               <div class="rpet-card-bar">rPET bottles</div>
             </a>
             <a href="/products?category=pet-jars" class="rpet-card" style="text-decoration: none;">
               <div class="frapak-tile-image">
-                <img src="/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.jpg" alt="rPET jars" loading="lazy" />
+                <img src="/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp" alt="rPET jars" loading="lazy" />
               </div>
               <div class="rpet-card-bar">rPET jars</div>
             </a>

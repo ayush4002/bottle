@@ -25,18 +25,10 @@ foreach ($allProducts as $p) {
     if (!empty($p['is_featured'])) $featuredCount++;
 }
 
-// Inquiries / Quotes Count
-$quoteCount = 0;
-if (class_exists('Database')) {
-    $db = Database::getInstance();
-    if ($db && $db->isConnected()) {
-        try {
-            $pdo = $db->getConnection();
-            $stmt = $pdo->query("SELECT COUNT(*) FROM quote_requests");
-            $quoteCount = (int)$stmt->fetchColumn();
-        } catch (Exception $e) {}
-    }
-}
+// Inquiries / Quotes Count from InquiryModel
+require_once dirname(__DIR__) . '/app/Models/InquiryModel.php';
+$inqStats = InquiryModel::getStats();
+$recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
 ?>
 
 <style>
@@ -164,11 +156,69 @@ if (class_exists('Database')) {
     <div class="stat-card-desc">Showcased on homepage</div>
   </div>
 
-  <div class="stat-card">
-    <div class="stat-card-title">Quote Inquiries</div>
-    <div class="stat-card-value" style="color: #38bdf8;"><?= number_format($quoteCount) ?></div>
-    <div class="stat-card-desc">Customer submissions</div>
+  <a href="/admin/inquiries.php" class="stat-card" style="text-decoration: none; display: block; border-left: 3px solid #38bdf8; transition: transform 0.15s ease;">
+    <div class="stat-card-title">Client Inquiries</div>
+    <div class="stat-card-value" style="color: #38bdf8;"><?= number_format($inqStats['total']) ?></div>
+    <div class="stat-card-desc"><?= $inqStats['new'] ?> new / pending review &rarr;</div>
+  </a>
+</div>
+
+<!-- RECENT CLIENT INQUIRIES -->
+<div class="section-card" style="margin-bottom: 28px;">
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+    <h3 style="margin: 0; font-size: 1.1rem; color: #f8fafc;">Recent Client Quote Inquiries</h3>
+    <a href="/admin/inquiries.php" style="color: #38bdf8; text-decoration: none; font-size: 0.85rem; font-weight: 600;">View All Inquiries (<?= $inqStats['total'] ?>) &rarr;</a>
   </div>
+
+  <?php if (empty($recentInquiries)): ?>
+    <div style="text-align: center; padding: 28px 20px; color: #64748b;">
+      <p style="margin: 0;">No client inquiries received yet.</p>
+    </div>
+  <?php else: ?>
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table class="table-admin">
+        <thead>
+          <tr>
+            <th>Ref / Date</th>
+            <th>Client Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Product / Notes</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($recentInquiries as $inq): ?>
+            <?php
+              $st = $inq['status'] ?? 'new';
+              $badgeColor = ($st === 'closed') ? '#4ade80' : (($st === 'contacted') ? '#eab308' : '#38bdf8');
+            ?>
+            <tr>
+              <td>
+                <strong style="color: #b8892e;"><?= htmlspecialchars($inq['quote_id'] ?? '') ?></strong>
+                <div style="font-size: 0.75rem; color: #64748b;"><?= date('M d, H:i', strtotime($inq['created_at'] ?? 'now')) ?></div>
+              </td>
+              <td><strong><?= htmlspecialchars($inq['name'] ?? 'N/A') ?></strong></td>
+              <td><a href="mailto:<?= htmlspecialchars($inq['email'] ?? '') ?>" style="color: #38bdf8; text-decoration: none;"><?= htmlspecialchars($inq['email'] ?? '') ?></a></td>
+              <td><?= htmlspecialchars($inq['country'] ?? 'N/A') ?></td>
+              <td style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <?= htmlspecialchars($inq['product'] ?: $inq['inquiry']) ?>
+              </td>
+              <td>
+                <span style="font-size: 0.75rem; font-weight: 700; color: <?= $badgeColor ?>; text-transform: uppercase;">
+                  <?= htmlspecialchars($st) ?>
+                </span>
+              </td>
+              <td>
+                <a href="/admin/inquiries.php" style="color: #b8892e; font-weight: 700; text-decoration: none; font-size: 0.82rem;">Manage &rarr;</a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif; ?>
 </div>
 
 <!-- CLIENT UPLOADED PRODUCTS -->

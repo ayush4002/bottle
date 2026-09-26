@@ -260,16 +260,32 @@ $gender = $product['gender'] ?? 'Unisex';
     <div class="alert-danger"><?= htmlspecialchars($err) ?></div>
   <?php endif; ?>
 
-  <form id="smartProductForm" action="save_product.php" method="POST" enctype="multipart/form-data">
+  <?php if ($status === 'archived'): ?>
+    <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <div>
+        <strong style="color: #f87171; font-size: 1rem; display: block; margin-bottom: 4px;">⚠️ This Product is Currently Archived</strong>
+        <p style="margin: 0; font-size: 0.85rem; color: #cbd5e1;">It is completely hidden from the live website catalogue and search. You can restore it to published status at any time.</p>
+      </div>
+      <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product.php?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; padding: 10px 18px; border-radius: 8px; text-decoration: none; color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Restore Product to Active Catalogue
+      </a>
+    </div>
+  <?php endif; ?>
+
+  <form id="smartProductForm" action="/admin/save_product.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>" />
     <input type="hidden" name="is_edit" value="1" />
     <input type="hidden" name="id" value="<?= htmlspecialchars($product['id']) ?>" />
+    <input type="hidden" name="original_sku" value="<?= htmlspecialchars($product['articleNo'] ?? $product['id']) ?>" />
+    <input type="hidden" name="db_id" value="<?= htmlspecialchars($product['db_id'] ?? '') ?>" />
+    <input type="hidden" name="return_url" value="<?= htmlspecialchars($_SERVER['HTTP_REFERER'] ?? '/admin/products.php') ?>" />
 
     <!-- 1. PRODUCT BASICS -->
     <div class="form-card">
       <div class="card-header-smart">
         <span>① Product Basics</span>
-        <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 400;">Product Title &amp; SKU</span>
+        <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 400;">Product Title &amp; SKU Identifier</span>
       </div>
 
       <div class="form-group">
@@ -281,9 +297,10 @@ $gender = $product['gender'] ?? 'Unisex';
         <div>
           <label for="articleNo" class="form-label">SKU / Article Number *</label>
           <input type="text" id="articleNo" name="articleNo" class="form-control-smart" value="<?= htmlspecialchars($product['articleNo'] ?? '') ?>" required />
+          <span style="font-size: 0.75rem; color: #64748b; margin-top: 4px; display: block;">Primary catalogue identifier used across warehouse and order lookups</span>
         </div>
         <div>
-          <label for="gender" class="form-label">Target Audience / Gender</label>
+          <label for="gender" class="form-label">Target Audience / Application</label>
           <select id="gender" name="gender" class="form-control-smart">
             <option value="Unisex" <?= $gender === 'Unisex' ? 'selected' : '' ?>>Unisex / General</option>
             <option value="Men" <?= $gender === 'Men' ? 'selected' : '' ?>>Men</option>
@@ -293,7 +310,7 @@ $gender = $product['gender'] ?? 'Unisex';
       </div>
     </div>
 
-    <!-- 2. CLASSIFICATION & SPECIFICATIONS (CHIPS) -->
+    <!-- 2. CLASSIFICATION & SPECIFICATIONS -->
     <div class="form-card">
       <div class="card-header-smart">
         <span>② Classification &amp; Specifications</span>
@@ -314,57 +331,61 @@ $gender = $product['gender'] ?? 'Unisex';
 
         <div>
           <label for="serie" class="form-label">Series / Subcategory</label>
-          <select id="serie" name="serie" class="form-control-smart">
+          <input type="text" id="serie" name="serie" list="serieList" class="form-control-smart" value="<?= htmlspecialchars($product['serie'] ?? '') ?>" placeholder="e.g. Cosmetic Bottles, General..." />
+          <datalist id="serieList">
             <!-- Dynamically populated -->
-          </select>
+          </datalist>
         </div>
       </div>
 
-      <!-- MATERIAL CHIPS (DATABASE BACKED) -->
+      <!-- MATERIAL (DIRECT INPUT + QUICK CHIPS) -->
       <div class="form-group">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <label class="form-label">Material Polymer</label>
-          <a href="/admin/categories.php?tab=materials" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Materials &nearr;</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <label for="material" class="form-label" style="margin-bottom: 0;">Material Polymer *</label>
+          <a href="/admin/categories.php?tab=materials" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Materials &nearr;</a>
         </div>
-        <input type="hidden" id="material" name="material" value="<?= htmlspecialchars($material) ?>" />
+        <input type="text" id="material" name="material" class="form-control-smart" value="<?= htmlspecialchars($material) ?>" placeholder="e.g. PET, HDPE, RPET, Glass..." required oninput="highlightMatchingChip('material-chips', this.value)" />
+        <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Quick-select standard option:</div>
         <div class="chip-group" id="material-chips">
           <?php foreach ($materialsList as $m): ?>
             <?php $mVal = $m['name'] ?? $m['short_label']; ?>
-            <div class="select-chip <?= strtolower($material) === strtolower($mVal) ? 'selected' : '' ?>" onclick="selectChip('material-chips', this, 'material', '<?= htmlspecialchars($mVal) ?>')">
+            <div class="select-chip <?= strtolower(trim($material)) === strtolower(trim($mVal)) ? 'selected' : '' ?>" onclick="selectSpecChip('material-chips', this, 'material', '<?= htmlspecialchars(addslashes($mVal)) ?>')">
               <?= htmlspecialchars($mVal) ?>
             </div>
           <?php endforeach; ?>
         </div>
       </div>
 
-      <!-- VOLUME CHIPS (DATABASE BACKED) -->
+      <!-- VOLUME / CAPACITY (DIRECT INPUT + QUICK CHIPS) -->
       <div class="form-group">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <label class="form-label">Volume / Capacity</label>
-          <a href="/admin/categories.php?tab=volumes" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Volumes &nearr;</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <label for="capacity" class="form-label" style="margin-bottom: 0;">Volume / Capacity *</label>
+          <a href="/admin/categories.php?tab=volumes" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Volumes &nearr;</a>
         </div>
-        <input type="hidden" id="capacity" name="capacity" value="<?= htmlspecialchars($capacity) ?>" />
+        <input type="text" id="capacity" name="capacity" class="form-control-smart" value="<?= htmlspecialchars($capacity) ?>" placeholder="e.g. 100ml, 250ml, 500cc, 1L..." required oninput="highlightMatchingChip('capacity-chips', this.value)" />
+        <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Quick-select standard option:</div>
         <div class="chip-group" id="capacity-chips">
           <?php foreach ($volumesList as $v): ?>
             <?php $vVal = $v['display_label'] ?? ($v['name'] ?? $v['value']); ?>
-            <div class="select-chip <?= strtolower($capacity) === strtolower($vVal) ? 'selected' : '' ?>" onclick="selectChip('capacity-chips', this, 'capacity', '<?= htmlspecialchars($vVal) ?>')">
+            <div class="select-chip <?= strtolower(trim($capacity)) === strtolower(trim($vVal)) ? 'selected' : '' ?>" onclick="selectSpecChip('capacity-chips', this, 'capacity', '<?= htmlspecialchars(addslashes($vVal)) ?>')">
               <?= htmlspecialchars($vVal) ?>
             </div>
           <?php endforeach; ?>
         </div>
       </div>
 
-      <!-- NECK CHIPS (DATABASE BACKED) -->
+      <!-- NECK FINISH (DIRECT INPUT + QUICK CHIPS) -->
       <div class="form-group">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <label class="form-label">Neck Finish / Thread Size</label>
-          <a href="/admin/categories.php?tab=necks" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Necks &nearr;</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <label for="neck" class="form-label" style="margin-bottom: 0;">Neck Finish / Thread Size</label>
+          <a href="/admin/categories.php?tab=necks" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Necks &nearr;</a>
         </div>
-        <input type="hidden" id="neck" name="neck" value="<?= htmlspecialchars($neck) ?>" />
+        <input type="text" id="neck" name="neck" class="form-control-smart" value="<?= htmlspecialchars($neck) ?>" placeholder="e.g. 24/410, 28/410, 46mm Agro..." oninput="highlightMatchingChip('neck-chips', this.value)" />
+        <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Quick-select standard option:</div>
         <div class="chip-group" id="neck-chips">
           <?php foreach ($necksList as $nk): ?>
             <?php $nkVal = $nk['name']; ?>
-            <div class="select-chip <?= strtolower($neck) === strtolower($nkVal) ? 'selected' : '' ?>" onclick="selectChip('neck-chips', this, 'neck', '<?= htmlspecialchars($nkVal) ?>')">
+            <div class="select-chip <?= strtolower(trim($neck)) === strtolower(trim($nkVal)) ? 'selected' : '' ?>" onclick="selectSpecChip('neck-chips', this, 'neck', '<?= htmlspecialchars(addslashes($nkVal)) ?>')">
               <?= htmlspecialchars($nkVal) ?>
             </div>
           <?php endforeach; ?>
@@ -374,11 +395,11 @@ $gender = $product['gender'] ?? 'Unisex';
       <div class="form-row">
         <div>
           <label for="weight" class="form-label">Gram Weight</label>
-          <input type="text" id="weight" name="weight" class="form-control-smart" value="<?= htmlspecialchars($weight) ?>" />
+          <input type="text" id="weight" name="weight" class="form-control-smart" value="<?= htmlspecialchars($weight) ?>" placeholder="e.g. 23 g, 65 g..." />
         </div>
         <div>
           <label for="moq" class="form-label">Minimum Order Quantity (MOQ)</label>
-          <input type="text" id="moq" name="moq" class="form-control-smart" value="<?= htmlspecialchars($moq) ?>" />
+          <input type="text" id="moq" name="moq" class="form-control-smart" value="<?= htmlspecialchars($moq) ?>" placeholder="e.g. 5,000 pcs, 10,000 pcs..." />
         </div>
       </div>
     </div>
@@ -498,13 +519,37 @@ $gender = $product['gender'] ?? 'Unisex';
       </div>
     </div>
 
-    <!-- SUBMIT BAR -->
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding-top: 18px; border-top: 1px solid #334155; flex-wrap: wrap; gap: 12px;">
-      <a href="/admin/products.php" class="btn-cancel" style="min-height: 48px; display: inline-flex; align-items: center; justify-content: center; flex: 1; min-width: 140px;">Cancel &amp; Return</a>
+    <!-- SUBMIT BAR & ACTION CONTROLS -->
+    <div class="form-card" style="border-color: #475569; background: #1e293b; padding: 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <a href="/admin/products.php" class="btn-cancel" style="min-height: 48px; display: inline-flex; align-items: center; gap: 6px;">
+            &larr; Cancel &amp; Return
+          </a>
 
-      <button type="submit" class="btn-submit-publish" onclick="document.getElementById('status').value = 'published';" style="min-height: 48px; flex: 2; min-width: 200px;">
-        SAVE CHANGES &amp; PUBLISH &rarr;
-      </button>
+          <?php if ($status === 'archived'): ?>
+            <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product.php?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; min-height: 48px; padding: 0 20px; border-radius: 10px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Restore to Active
+            </a>
+          <?php else: ?>
+            <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=archive&return_url=<?= urlencode('/admin/products.php') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Archive this product? It will be hidden from the live website catalogue.');">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>
+              Archive Product
+            </a>
+          <?php endif; ?>
+
+          <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=permanent&return_url=<?= urlencode('/admin/products.php') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Are you sure you want to PERMANENTLY delete product \'<?= htmlspecialchars(addslashes($product['name'] ?? 'Product')) ?>\'? This action CANNOT be undone.');">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            Delete Permanently
+          </a>
+        </div>
+
+        <button type="submit" class="btn-submit-publish" style="min-height: 48px; padding: 0 36px; display: inline-flex; align-items: center; gap: 8px;">
+          <span>SAVE CHANGES</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
     </div>
 
   </form>
@@ -516,32 +561,54 @@ const currentSerie = <?= json_encode($product['serie'] ?? '') ?>;
 
 function updateSubcategories() {
   const catSlug = document.getElementById('categorySlug').value;
-  const serieSelect = document.getElementById('serie');
-  serieSelect.innerHTML = '';
+  const datalist = document.getElementById('serieList');
+  if (!datalist) return;
+  datalist.innerHTML = '';
 
   const filtered = seriesData.filter(s => s.categorySlug === catSlug);
-  if (filtered.length > 0) {
-    filtered.forEach(s => {
+  const added = new Set();
+
+  filtered.forEach(s => {
+    const val = s.serie || s.name;
+    if (val && !added.has(val.toLowerCase())) {
+      added.add(val.toLowerCase());
       const opt = document.createElement('option');
-      const val = s.serie || s.name;
       opt.value = val;
-      opt.textContent = val;
-      if (val === currentSerie) opt.selected = true;
-      serieSelect.appendChild(opt);
-    });
-  } else {
+      datalist.appendChild(opt);
+    }
+  });
+
+  if (currentSerie && !added.has(currentSerie.toLowerCase())) {
     const opt = document.createElement('option');
-    opt.value = 'General Series';
-    opt.textContent = 'General Series';
-    serieSelect.appendChild(opt);
+    opt.value = currentSerie;
+    datalist.appendChild(opt);
   }
 }
 
-function selectChip(groupId, chipElem, inputId, val) {
+function selectSpecChip(groupId, chipElem, inputId, val) {
   const group = document.getElementById(groupId);
-  group.querySelectorAll('.select-chip').forEach(c => c.classList.remove('selected'));
+  if (group) {
+    group.querySelectorAll('.select-chip').forEach(c => c.classList.remove('selected'));
+  }
   chipElem.classList.add('selected');
-  document.getElementById(inputId).value = val;
+  const inp = document.getElementById(inputId);
+  if (inp) {
+    inp.value = val;
+  }
+}
+
+function highlightMatchingChip(groupId, typedVal) {
+  const group = document.getElementById(groupId);
+  if (!group) return;
+  const cleanVal = (typedVal || '').trim().toLowerCase();
+  group.querySelectorAll('.select-chip').forEach(c => {
+    const chipText = c.textContent.trim().toLowerCase();
+    if (cleanVal && chipText === cleanVal) {
+      c.classList.add('selected');
+    } else {
+      c.classList.remove('selected');
+    }
+  });
 }
 
 function autoGenerateDescription() {

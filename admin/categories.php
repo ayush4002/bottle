@@ -582,11 +582,11 @@ function saveOptionForm(e) {
   const formData = new FormData(document.getElementById('optionForm'));
   formData.append('action', 'save_option');
 
-  fetch('categories.php', {
+  fetch('/admin/categories.php', {
     method: 'POST',
     body: formData
   }).then(() => {
-    window.location.href = 'categories.php?tab=' + document.getElementById('optGroup').value + '&msg=Option+saved+successfully';
+    window.location.href = '/admin/categories.php?tab=' + document.getElementById('optGroup').value + '&msg=Option+saved+successfully';
   });
 }
 
@@ -597,11 +597,11 @@ function toggleOptionStatus(group, id, newStatus) {
   formData.append('id', id);
   formData.append('status', newStatus);
 
-  fetch('api_options.php', { method: 'POST', body: formData })
+  fetch('/admin/api_options.php', { method: 'POST', body: formData })
     .then(r => r.json())
     .then(res => {
       if (res.success) {
-        window.location.href = 'categories.php?tab=' + group + '&msg=' + encodeURIComponent(res.message);
+        window.location.href = '/admin/categories.php?tab=' + group + '&msg=' + encodeURIComponent(res.message);
       }
     });
 }
@@ -614,11 +614,11 @@ function deleteOptionItem(group, id, name) {
   formData.append('group', group);
   formData.append('id', id);
 
-  fetch('api_options.php', { method: 'POST', body: formData })
+  fetch('/admin/api_options.php', { method: 'POST', body: formData })
     .then(r => r.json())
     .then(res => {
       if (res.success) {
-        window.location.href = 'categories.php?tab=' + group + '&msg=' + encodeURIComponent(res.message);
+        window.location.href = '/admin/categories.php?tab=' + group + '&msg=' + encodeURIComponent(res.message);
       } else if (res.in_use) {
         if (confirm(res.message)) {
           const forceData = new FormData();
@@ -626,10 +626,10 @@ function deleteOptionItem(group, id, name) {
           forceData.append('group', group);
           forceData.append('id', id);
           forceData.append('force_deactivate', '1');
-          fetch('api_options.php', { method: 'POST', body: forceData })
+          fetch('/admin/api_options.php', { method: 'POST', body: forceData })
             .then(r2 => r2.json())
             .then(res2 => {
-              window.location.href = 'categories.php?tab=' + group + '&msg=' + encodeURIComponent(res2.message);
+              window.location.href = '/admin/categories.php?tab=' + group + '&msg=' + encodeURIComponent(res2.message);
             });
         }
       } else {

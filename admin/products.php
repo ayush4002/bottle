@@ -29,9 +29,17 @@ if (!empty($filterCategory)) {
 
 // Apply Status Filter
 if (!empty($filterStatus)) {
-    $allProducts = array_values(array_filter($allProducts, function($p) use ($filterStatus) {
+    if ($filterStatus !== 'all') {
+        $allProducts = array_values(array_filter($allProducts, function($p) use ($filterStatus) {
+            $st = $p['status'] ?? 'published';
+            return $st === $filterStatus;
+        }));
+    }
+} else {
+    // Default view: Show active products (published & draft), hide archived
+    $allProducts = array_values(array_filter($allProducts, function($p) {
         $st = $p['status'] ?? 'published';
-        return $st === $filterStatus;
+        return $st !== 'archived';
     }));
 }
 
@@ -255,7 +263,7 @@ $err = $_GET['err'] ?? '';
   <div class="alert-box-error"><?= htmlspecialchars($err) ?></div>
 <?php endif; ?>
 <!-- SEARCH & MULTI-FILTER FORM -->
-<form method="GET" action="products.php" class="filter-card">
+<form method="GET" action="/admin/products.php" class="filter-card">
   <input type="text" name="search" class="filter-input" placeholder="Search product name, SKU, or material..." value="<?= htmlspecialchars($search) ?>" />
   
   <select name="category" class="filter-select" onchange="this.form.submit()">
@@ -268,10 +276,11 @@ $err = $_GET['err'] ?? '';
   </select>
 
   <select name="status" class="filter-select" onchange="this.form.submit()">
-    <option value="">All Statuses</option>
-    <option value="published" <?= $filterStatus === 'published' ? 'selected' : '' ?>>Published</option>
-    <option value="draft" <?= $filterStatus === 'draft' ? 'selected' : '' ?>>Draft</option>
+    <option value="" <?= $filterStatus === '' ? 'selected' : '' ?>>Active (Published &amp; Draft)</option>
+    <option value="published" <?= $filterStatus === 'published' ? 'selected' : '' ?>>Published Only</option>
+    <option value="draft" <?= $filterStatus === 'draft' ? 'selected' : '' ?>>Drafts Only</option>
     <option value="archived" <?= $filterStatus === 'archived' ? 'selected' : '' ?>>Archived</option>
+    <option value="all" <?= $filterStatus === 'all' ? 'selected' : '' ?>>All Statuses</option>
   </select>
 
   <select name="stock" class="filter-select" onchange="this.form.submit()">
@@ -283,7 +292,7 @@ $err = $_GET['err'] ?? '';
   <button type="submit" style="background: #0284c7; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; min-height: 46px;">Search</button>
 
   <?php if (!empty($search) || !empty($filterCategory) || !empty($filterStatus) || !empty($filterStock)): ?>
-    <a href="products.php" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 6px; display: inline-flex; align-items: center; min-height: 44px;">Reset All</a>
+    <a href="/admin/products.php" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 6px; display: inline-flex; align-items: center; min-height: 44px;">Reset All</a>
   <?php endif; ?>
 </form>
 
@@ -385,7 +394,7 @@ $err = $_GET['err'] ?? '';
         $pPrice = (float)($p['regularPrice'] ?? ($p['price'] ?? 0));
         $pSale = isset($p['salePrice']) && $p['salePrice'] !== null ? (float)$p['salePrice'] : null;
       ?>
-      <div class="mobile-product-card">
+      <div class="mobile-product-card" id="prod-card-<?= htmlspecialchars($pId) ?>" data-sku="<?= htmlspecialchars($pId) ?>">
         <div class="mpc-top">
           <img src="<?= htmlspecialchars($p['image'] ?? ($p['images'][0] ?? '/logo_svg.svg')) ?>" class="mpc-thumb" alt="Thumb" />
           <div class="mpc-info">
@@ -426,8 +435,14 @@ $err = $_GET['err'] ?? '';
             <?php endif; ?>
           </div>
           <div class="mpc-btns">
-            <a href="/admin/edit_product.php?id=<?= urlencode($pId) ?>" class="btn-action-edit">Edit</a>
-            <a href="/admin/delete_product.php?id=<?= urlencode($pId) ?>" class="btn-action-delete" onclick="return confirm('Are you sure you want to delete/archive product \'<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>\'?');">Delete</a>
+            <?php if ($pStatus === 'archived'): ?>
+              <button type="button" class="btn-action-edit" style="background: #15803d; border:none; cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'restore', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Restore</button>
+              <button type="button" class="btn-action-delete" style="background: #991b1b; color: #fff; border:none; cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'permanent', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Delete Forever</button>
+            <?php else: ?>
+              <a href="/admin/edit_product.php?id=<?= urlencode($pId) ?>" class="btn-action-edit">Edit</a>
+              <button type="button" class="btn-action-delete" style="background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'archive', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Archive</button>
+              <button type="button" class="btn-action-delete" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'permanent', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Delete</button>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -465,7 +480,7 @@ $err = $_GET['err'] ?? '';
             $pPrice = (float)($p['regularPrice'] ?? ($p['price'] ?? 0));
             $pSale = isset($p['salePrice']) && $p['salePrice'] !== null ? (float)$p['salePrice'] : null;
           ?>
-          <tr>
+          <tr id="prod-row-<?= htmlspecialchars($pId) ?>" data-sku="<?= htmlspecialchars($pId) ?>">
             <td>
               <img src="<?= htmlspecialchars($p['image'] ?? ($p['images'][0] ?? '/logo_svg.svg')) ?>" class="product-thumb" alt="Thumb" />
             </td>
@@ -512,14 +527,27 @@ $err = $_GET['err'] ?? '';
               <?php endif; ?>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-              <a href="/admin/edit_product.php?id=<?= urlencode($pId) ?>" class="btn-action-edit" title="Edit product details">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                Edit
-              </a>
+              <?php if ($pStatus === 'archived'): ?>
+                <button type="button" class="btn-action-edit" style="background: #15803d; padding: 6px 12px; border:none; cursor:pointer;" title="Restore to active catalogue" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'restore', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">
+                  Restore
+                </button>
+                <button type="button" class="btn-action-delete" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border-color: rgba(239, 68, 68, 0.5); margin-left: 6px; cursor:pointer;" title="Permanently delete from database" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'permanent', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">
+                  Delete Forever
+                </button>
+              <?php else: ?>
+                <a href="/admin/edit_product.php?id=<?= urlencode($pId) ?>" class="btn-action-edit" title="Edit product details">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                  Edit
+                </a>
 
-              <a href="/admin/delete_product.php?id=<?= urlencode($pId) ?>" class="btn-action-delete" onclick="return confirm('Are you sure you want to delete/archive product \'<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>\'?');" style="margin-left: 6px;">
-                Delete
-              </a>
+                <button type="button" class="btn-action-delete" style="background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); margin-left: 6px; cursor:pointer;" title="Archive product" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'archive', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">
+                  Archive
+                </button>
+
+                <button type="button" class="btn-action-delete" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); margin-left: 6px; cursor:pointer;" title="Delete forever" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'permanent', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">
+                  Delete
+                </button>
+              <?php endif; ?>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -532,11 +560,11 @@ $err = $_GET['err'] ?? '';
 <?php if ($totalPages > 1): ?>
   <div class="pagination">
     <div style="color: #94a3b8; font-size: 0.85rem;">
-      Page <strong><?= $page ?></strong> of <strong><?= $totalPages ?></strong> (Total <?= $totalProducts ?> SKUs)
+      Page <strong><?= $page ?></strong> of <strong><?= $totalPages ?></strong> (Total <span id="totalProductCount"><?= $totalProducts ?></span> SKUs)
     </div>
     <div style="display: flex; gap: 6px; flex-wrap: wrap;">
       <?php if ($page > 1): ?>
-        <a href="?<?= http_build_query(array_merge($_GET, ['page' => $page - 1])) ?>" class="page-link">&laquo; Prev</a>
+        <a href="/admin/products.php?<?= http_build_query(array_merge($_GET, ['page' => $page - 1])) ?>" class="page-link">&laquo; Prev</a>
       <?php endif; ?>
 
       <?php 
@@ -544,16 +572,85 @@ $err = $_GET['err'] ?? '';
         $endP = min($totalPages, $page + 3);
         for ($i = $startP; $i <= $endP; $i++): 
       ?>
-        <a href="?<?= http_build_query(array_merge($_GET, ['page' => $i])) ?>" class="page-link <?= $i === $page ? 'active' : '' ?>">
+        <a href="/admin/products.php?<?= http_build_query(array_merge($_GET, ['page' => $i])) ?>" class="page-link <?= $i === $page ? 'active' : '' ?>">
           <?= $i ?>
         </a>
       <?php endfor; ?>
 
       <?php if ($page < $totalPages): ?>
-        <a href="?<?= http_build_query(array_merge($_GET, ['page' => $page + 1])) ?>" class="page-link">Next &raquo;</a>
+        <a href="/admin/products.php?<?= http_build_query(array_merge($_GET, ['page' => $page + 1])) ?>" class="page-link">Next &raquo;</a>
       <?php endif; ?>
     </div>
   </div>
 <?php endif; ?>
+
+<!-- TOAST ALERT NOTIFICATION CONTAINER -->
+<div id="toastNotification" style="position: fixed; bottom: 28px; right: 28px; z-index: 9999; display: none; background: #1e293b; color: #fff; padding: 14px 22px; border-radius: 12px; border: 1px solid #38bdf8; box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-size: 0.9rem; font-weight: 600; align-items: center; gap: 12px; transition: all 0.3s ease;"></div>
+
+<script>
+function showToast(msg, isErr = false) {
+  const t = document.getElementById('toastNotification');
+  if (!t) return;
+  t.style.display = 'flex';
+  t.style.borderColor = isErr ? '#ef4444' : '#38bdf8';
+  t.innerHTML = (isErr ? '❌ ' : '✓ ') + msg;
+  setTimeout(() => { t.style.display = 'none'; }, 4500);
+}
+
+function ajaxProductAction(sku, action, name, btnElem) {
+  let confirmMsg = '';
+  if (action === 'archive') {
+    confirmMsg = "Archive product '" + name + "'? It will be hidden from the live website catalogue.";
+  } else if (action === 'permanent') {
+    confirmMsg = "PERMANENTLY DELETE product '" + name + "'? This action cannot be undone.";
+  } else if (action === 'restore') {
+    confirmMsg = "Restore product '" + name + "' to active catalogue?";
+  }
+
+  if (confirmMsg && !confirm(confirmMsg)) {
+    return false;
+  }
+
+  btnElem.disabled = true;
+  btnElem.style.opacity = '0.5';
+
+  fetch('/admin/delete_product.php?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action) + '&ajax=1', {
+    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      showToast(data.message);
+      // Remove row and/or mobile card smoothly
+      const row = document.getElementById('prod-row-' + sku) || btnElem.closest('tr');
+      const card = document.getElementById('prod-card-' + sku) || btnElem.closest('.mobile-product-card');
+
+      [row, card].forEach(elem => {
+        if (elem) {
+          elem.style.transition = 'all 0.35s ease';
+          elem.style.opacity = '0';
+          elem.style.transform = 'translateX(40px)';
+          setTimeout(() => { elem.remove(); }, 350);
+        }
+      });
+
+      // Update counter if present
+      const counter = document.getElementById('totalProductCount');
+      if (counter) {
+        const cur = parseInt(counter.textContent) || 0;
+        if (cur > 0) counter.textContent = cur - 1;
+      }
+    } else {
+      showToast(data.message || 'Action failed', true);
+      btnElem.disabled = false;
+      btnElem.style.opacity = '1';
+    }
+  })
+  .catch(err => {
+    // Fallback to normal navigation
+    window.location.href = '/admin/delete_product.php?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action);
+  });
+}
+</script>
 
 <?php require_once __DIR__ . '/footer.php'; ?>

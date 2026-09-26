@@ -125,12 +125,18 @@ if (empty($img1)) $img1 = '/logo_svg.svg';
 $images = array_values(array_filter([$img1, $img2, $img3, $img4]));
 
 $seriesList = ProductModel::getSeries();
-$seriesSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $serie), '-'));
+$seriesSlug = '';
 foreach ($seriesList as $sItem) {
-    if (strtolower($sItem['name']) === strtolower($serie) || strtolower($sItem['slug']) === strtolower($serie)) {
+    if (strcasecmp($sItem['name'] ?? '', $serie) === 0 || strcasecmp($sItem['slug'] ?? '', $serie) === 0) {
         $seriesSlug = $sItem['slug'];
         break;
     }
+}
+if (empty($seriesSlug)) {
+    $seriesSlug = ProductModel::getSeriesSlugBySubcategory($serie);
+}
+if (empty($seriesSlug)) {
+    $seriesSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $serie), '-'));
 }
 if (empty($seriesSlug)) $seriesSlug = 'custom-series';
 
@@ -142,8 +148,14 @@ if (empty($id)) {
     $id = 'PROD-' . time() . '-' . rand(100, 999);
 }
 
+$originalSku = trim($_POST['original_sku'] ?? ($_POST['id'] ?? ''));
+$dbId = !empty($_POST['db_id']) ? (int)$_POST['db_id'] : 0;
+$returnUrl = trim($_POST['return_url'] ?? '');
+
 $productData = [
     'id' => $id,
+    'original_sku' => $originalSku,
+    'db_id' => $dbId,
     'name' => $name,
     'fullTitle' => $fullTitle,
     'articleNo' => $articleNo,
@@ -176,14 +188,38 @@ $productData = [
 
 $saved = ProductModel::saveProduct($productData);
 
+$isAjax = !empty($_POST['ajax']) || (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
+
 if ($saved) {
-    $statusText = ($status === 'draft') ? 'saved as draft' : 'published to the live catalogue';
+    if ($status === 'archived') {
+        $statusText = 'archived (hidden from live site)';
+    } elseif ($status === 'draft') {
+        $statusText = 'saved as draft';
+    } else {
+        $statusText = 'published to live catalogue';
+    }
     $successMsg = $isEdit ? "Product '{$name}' updated and {$statusText} successfully!" : "Product '{$name}' {$statusText} successfully!";
-    header("Location: /admin/products.php?msg=" . urlencode($successMsg));
+
+    if ($isAjax) {
+        header('Content-Type: application/json');
+        echo json_encode(['success' => true, 'message' => $successMsg, 'product' => $saved]);
+        exit();
+    }
+
+    $redirectUrl = !empty($returnUrl) ? $returnUrl : "/admin/products.php";
+    $sep = strpos($redirectUrl, '?') !== false ? '&' : '?';
+    header("Location: " . $redirectUrl . $sep . "msg=" . urlencode($successMsg));
     exit();
 } else {
-    $errorMsg = "Failed to save product.";
-    $targetUrl = $isEdit ? "/admin/edit_product.php?id=" . urlencode($id) . "&err=" . urlencode($errorMsg) : "/admin/add_product.php?err=" . urlencode($errorMsg);
+    $errorMsg = "Failed to save product in database. Please check that SKU and product name are unique.";
+
+    if ($isAjax) {
+        header('Content-Type: application/json');
+        echo json_encode(['success' => false, 'message' => $errorMsg]);
+        exit();
+    }
+
+    $targetUrl = $isEdit ? "/admin/edit_product.php?id=" . urlencode($originalSku ?: $id) . "&err=" . urlencode($errorMsg) : "/admin/add_product.php?err=" . urlencode($errorMsg);
     header("Location: " . $targetUrl);
     exit();
 }

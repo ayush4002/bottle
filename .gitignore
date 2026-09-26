@@ -8,6 +8,9 @@ yarn-debug.log*
 node_modules
 dist
 dist.zip
+*.zip
+CPANEL_PUBLIC_HTML/
+CPANEL_PUBLIC_HTML
 .vercel
 
 # Operating System & IDE

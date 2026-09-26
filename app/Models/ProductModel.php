@@ -57,85 +57,85 @@ class ProductModel {
             [
                 "name" => "PET bottles",
                 "slug" => "pet-bottles",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pet_bottles.png",
-                "coverImage" => "/vikaas_inputs/pharma_bottles.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp",
+                "coverImage" => "/vikaas_inputs/pharma_bottles.webp",
                 "desc" => "Precision injection blow-moulded PET bottles from 10ml to 1,000ml in cylindrical, Boston, dome, oval, and custom configurations."
             ],
             [
                 "name" => "HDPE bottles",
                 "slug" => "hdpe-bottles",
-                "image" => "/brand_assets/pet_bottles/100ml_boston_white.jpeg",
-                "coverImage" => "/vikaas_inputs/pharma_bottles.png",
+                "image" => "/brand_assets/pet_bottles/100ml_boston_white.webp",
+                "coverImage" => "/vikaas_inputs/pharma_bottles.webp",
                 "desc" => "Chemical-resistant HDPE containers engineered for pharmaceutical syrups, laboratory reagents, and industrial applications."
             ],
             [
                 "name" => "Caps",
                 "slug" => "caps",
-                "image" => "/brand_assets/caps/nb108-i.png",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "Engineered screw closures, flip top caps, disc top caps, child-resistant caps (CRC), and tamper-evident ROPP finishes."
             ],
             [
                 "name" => "Pumps",
                 "slug" => "pumps",
-                "image" => "/brand_assets/pumps/nb101-a.png",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "Cosmetic lotion pumps, treatment dispensers, and saddle pumps with precision 1.2cc to 4.0cc dosage outputs."
             ],
             [
                 "name" => "Finger sprayer",
                 "slug" => "finger-sprayers",
-                "image" => "/brand_assets/sprays/nb304-a.png",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "Ultra-fine atomization mist sprayers with protective clear overcaps for toners, fragrances, and antiseptic formulations."
             ],
             [
                 "name" => "Trigger sprayer",
                 "slug" => "trigger-sprayers",
-                "image" => "/brand_assets/sprays/nb201-a.png",
-                "coverImage" => "/vikaas_inputs/agro_pesticides.jpg",
+                "image" => "/brand_assets/sprays/nb201-a.webp",
+                "coverImage" => "/vikaas_inputs/agro_pesticides.webp",
                 "desc" => "Heavy-duty ergonomic trigger sprayers and chemical-resistant industrial spray heads with stream and mist options."
             ],
             [
                 "name" => "PET jars",
                 "slug" => "pet-jars",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.jpg",
-                "coverImage" => "/vikaas_inputs/pet_nutraceuticle_jars.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp",
+                "coverImage" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
                 "desc" => "Nutraceutical tablet jars, wide-mouth capsule containers, and cosmetic cream jars from 75cc to 500cc."
             ],
             [
                 "name" => "Lids",
                 "slug" => "lids",
-                "image" => "/brand_assets/glass_bottles/metal_unishell_cap_.jpg",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/brand_assets/glass_bottles/metal_unishell_cap_.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "Aluminum metal unishell lids, smooth ribbed screw caps, and induction heat-seal closures."
             ],
             [
                 "name" => "PP jars",
                 "slug" => "pp-jars",
-                "image" => "/brand_assets/pet_bottles/75cc_blue_jar.jpeg",
-                "coverImage" => "/vikaas_inputs/pet_nutraceuticle_jars.png",
+                "image" => "/brand_assets/pet_bottles/75cc_blue_jar.webp",
+                "coverImage" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
                 "desc" => "Double-wall luxury cosmetic jars and single-wall polypropylene jars with airtight interior shives."
             ],
             [
                 "name" => "Mono material jar",
                 "slug" => "mono-material-jars",
-                "image" => "/vikaas_inputs/pet_nutraceuticle_jars.png",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "100% single-polymer recyclable PP jars aligned with circular packaging and ESG standards."
             ],
             [
                 "name" => "Foamer pumps",
                 "slug" => "foamer-pumps",
-                "image" => "/brand_assets/pet_bottles/veola_50ml.jpg",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/brand_assets/pet_bottles/veola_50ml.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "Propellant-free foaming dispenser bottles creating rich micro-foam for face washes and dermatological scrubs."
             ],
             [
                 "name" => "Airless",
                 "slug" => "airless",
-                "image" => "/brand_assets/pet_bottles/100ml_bulb_bottle.jpg",
-                "coverImage" => "/vikaas_inputs/cosmetics.png",
+                "image" => "/brand_assets/pet_bottles/100ml_bulb_bottle.webp",
+                "coverImage" => "/vikaas_inputs/cosmetics.webp",
                 "desc" => "Piston-driven vacuum airless bottles and bulb active dispensers protecting sensitive cosmetics from oxidation."
             ]
         ];
@@ -145,7 +145,7 @@ class ProductModel {
                 "slug" => "agro-bottles",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/agro_bottles/500ml_agro.png",
+                "image" => "/brand_assets/agro_bottles/500ml_agro.webp",
                 "material" => "PET / HDPE",
                 "shape" => "Cylindrical",
                 "volumeRange" => "100ml – 1000ml",
@@ -157,7 +157,7 @@ class ProductModel {
                 "slug" => "cosmetic-bottles",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/cosmetic_bottles/300ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/300ml_veola.webp",
                 "material" => "PET / RPET",
                 "shape" => "Oval / Round / Boston / Tulip",
                 "volumeRange" => "10ml – 1000ml",
@@ -169,7 +169,7 @@ class ProductModel {
                 "slug" => "round-jars",
                 "categorySlug" => "pet-jars",
                 "categoryName" => "PET jars",
-                "image" => "/brand_assets/jar_bottles/250cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/250cc_rd.webp",
                 "material" => "PET",
                 "shape" => "Round Wide-Mouth",
                 "volumeRange" => "75cc – 500cc",
@@ -181,7 +181,7 @@ class ProductModel {
                 "slug" => "sharp-cylindrical-pet",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.jpeg",
+                "image" => "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.webp",
                 "material" => "PET / RPET",
                 "shape" => "Cylindrical",
                 "volumeRange" => "100ml – 500ml",
@@ -193,7 +193,7 @@ class ProductModel {
                 "slug" => "boston-round-pet",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.jpeg",
+                "image" => "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.webp",
                 "material" => "PET / RPET",
                 "shape" => "Round",
                 "volumeRange" => "50ml – 1,000ml",
@@ -205,7 +205,7 @@ class ProductModel {
                 "slug" => "tall-boston-round-pet",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/boston_range.jpg",
+                "image" => "/brand_assets/pet_bottles/boston_range.webp",
                 "material" => "PET / RPET",
                 "shape" => "Round",
                 "volumeRange" => "100ml – 500ml",
@@ -217,7 +217,7 @@ class ProductModel {
                 "slug" => "flex-oval",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/oval_200ml.jpg",
+                "image" => "/brand_assets/pet_bottles/oval_200ml.webp",
                 "material" => "PET",
                 "shape" => "Oval",
                 "volumeRange" => "100ml – 300ml",
@@ -229,7 +229,7 @@ class ProductModel {
                 "slug" => "cosmo-sirop",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/badami_200ml.jpg",
+                "image" => "/brand_assets/pet_bottles/badami_200ml.webp",
                 "material" => "PET",
                 "shape" => "Round",
                 "volumeRange" => "60ml – 500ml",
@@ -241,7 +241,7 @@ class ProductModel {
                 "slug" => "cosmo-veral",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/catherdine_400ml.jpg",
+                "image" => "/brand_assets/pet_bottles/catherdine_400ml.webp",
                 "material" => "PET",
                 "shape" => "Round",
                 "volumeRange" => "100ml – 400ml",
@@ -253,7 +253,7 @@ class ProductModel {
                 "slug" => "short-round",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/round_100ml.jpg",
+                "image" => "/brand_assets/pet_bottles/round_100ml.webp",
                 "material" => "PET",
                 "shape" => "Round",
                 "volumeRange" => "50ml – 200ml",
@@ -265,7 +265,7 @@ class ProductModel {
                 "slug" => "tri-oval",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/hs_oval_300ml_26g.jpg",
+                "image" => "/brand_assets/pet_bottles/hs_oval_300ml_26g.webp",
                 "material" => "PET",
                 "shape" => "Tri Oval",
                 "volumeRange" => "100ml – 300ml",
@@ -277,7 +277,7 @@ class ProductModel {
                 "slug" => "dome-shape-pet",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/100ml_dome_shape_17gm_28mm_-_2_.jpg",
+                "image" => "/brand_assets/pet_bottles/100ml_dome_shape_17gm_28mm_-_2_.webp",
                 "material" => "PET",
                 "shape" => "Dome Round",
                 "volumeRange" => "100ml – 250ml",
@@ -289,7 +289,7 @@ class ProductModel {
                 "slug" => "square-pet",
                 "categorySlug" => "pet-bottles",
                 "categoryName" => "PET bottles",
-                "image" => "/brand_assets/pet_bottles/354ml_square-30gm_24mm.jpg",
+                "image" => "/brand_assets/pet_bottles/354ml_square-30gm_24mm.webp",
                 "material" => "PET",
                 "shape" => "Square",
                 "volumeRange" => "150ml – 500ml",
@@ -301,7 +301,7 @@ class ProductModel {
                 "slug" => "pharma-brute-hdpe",
                 "categorySlug" => "hdpe-bottles",
                 "categoryName" => "HDPE bottles",
-                "image" => "/brand_assets/pet_bottles/200ml_brute_18gm_25mm.jpg",
+                "image" => "/brand_assets/pet_bottles/200ml_brute_18gm_25mm.webp",
                 "material" => "HDPE",
                 "shape" => "Round",
                 "volumeRange" => "60ml – 500ml",
@@ -313,7 +313,7 @@ class ProductModel {
                 "slug" => "flat-syrup-hdpe",
                 "categorySlug" => "hdpe-bottles",
                 "categoryName" => "HDPE bottles",
-                "image" => "/brand_assets/pet_bottles/200ml_flat_19gm_25mm.jpg",
+                "image" => "/brand_assets/pet_bottles/200ml_flat_19gm_25mm.webp",
                 "material" => "HDPE",
                 "shape" => "Flat Oval",
                 "volumeRange" => "60ml – 300ml",
@@ -325,7 +325,7 @@ class ProductModel {
                 "slug" => "boston-white-hdpe",
                 "categorySlug" => "hdpe-bottles",
                 "categoryName" => "HDPE bottles",
-                "image" => "/brand_assets/pet_bottles/100ml_boston_white.jpeg",
+                "image" => "/brand_assets/pet_bottles/100ml_boston_white.webp",
                 "material" => "HDPE",
                 "shape" => "Round",
                 "volumeRange" => "100ml – 1,000ml",
@@ -337,7 +337,7 @@ class ProductModel {
                 "slug" => "screw-dispensing-caps",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp",
                 "material" => "Polypropylene (PP)",
                 "shape" => "Round",
                 "volumeRange" => "Fitment 18mm – 38mm",
@@ -349,7 +349,7 @@ class ProductModel {
                 "slug" => "crc-caps",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/glass_bottles/metal_unishell_cap_.jpg",
+                "image" => "/brand_assets/glass_bottles/metal_unishell_cap_.webp",
                 "material" => "PP / PE",
                 "shape" => "Round",
                 "volumeRange" => "Fitment 20mm – 28mm",
@@ -361,7 +361,7 @@ class ProductModel {
                 "slug" => "cosmetic-lotion-pumps",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.webp",
                 "material" => "PP with SS304 Spring",
                 "shape" => "Dispenser",
                 "volumeRange" => "Output: 1.2cc – 4.0cc",
@@ -373,7 +373,7 @@ class ProductModel {
                 "slug" => "fine-mist-atomizers",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_sprays.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_sprays.webp",
                 "material" => "PP / PET Nozzle",
                 "shape" => "Dispenser",
                 "volumeRange" => "Output: 0.12ml – 0.18ml",
@@ -385,7 +385,7 @@ class ProductModel {
                 "slug" => "industrial-trigger-sprayers",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.webp",
                 "material" => "Heavy-Duty PP",
                 "shape" => "Trigger",
                 "volumeRange" => "Output: 0.8cc – 1.3cc",
@@ -397,7 +397,7 @@ class ProductModel {
                 "slug" => "nutraceutical-tablet-jars",
                 "categorySlug" => "pet-jars",
                 "categoryName" => "PET jars",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.jpg",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp",
                 "material" => "Food-Grade PET",
                 "shape" => "Wide-Mouth Round",
                 "volumeRange" => "75cc – 500cc",
@@ -409,7 +409,7 @@ class ProductModel {
                 "slug" => "metal-unishell-lids",
                 "categorySlug" => "lids",
                 "categoryName" => "Lids",
-                "image" => "/brand_assets/glass_bottles/metal_unishell_cap_.jpg",
+                "image" => "/brand_assets/glass_bottles/metal_unishell_cap_.webp",
                 "material" => "Aluminum / PP",
                 "shape" => "Round",
                 "volumeRange" => "Fitment 38mm – 70mm",
@@ -421,7 +421,7 @@ class ProductModel {
                 "slug" => "double-wall-pp-jars",
                 "categorySlug" => "pp-jars",
                 "categoryName" => "PP jars",
-                "image" => "/brand_assets/pet_bottles/75cc_blue_jar.jpeg",
+                "image" => "/brand_assets/pet_bottles/75cc_blue_jar.webp",
                 "material" => "PP Double-Wall",
                 "shape" => "Round Jar",
                 "volumeRange" => "50ml – 250ml",
@@ -433,7 +433,7 @@ class ProductModel {
                 "slug" => "mono-pp-jars",
                 "categorySlug" => "mono-material-jars",
                 "categoryName" => "Mono material jar",
-                "image" => "/vikaas_inputs/pet_nutraceuticle_jars.png",
+                "image" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
                 "material" => "100% Recyclable PP",
                 "shape" => "Round",
                 "volumeRange" => "50ml – 200ml",
@@ -445,7 +445,7 @@ class ProductModel {
                 "slug" => "micro-foamers",
                 "categorySlug" => "foamer-pumps",
                 "categoryName" => "Foamer pumps",
-                "image" => "/brand_assets/pet_bottles/veola_50ml.jpg",
+                "image" => "/brand_assets/pet_bottles/veola_50ml.webp",
                 "material" => "PET Bottle & PP Foamer",
                 "shape" => "Cylindrical",
                 "volumeRange" => "50ml – 200ml",
@@ -457,7 +457,7 @@ class ProductModel {
                 "slug" => "airless-dispensers",
                 "categorySlug" => "airless",
                 "categoryName" => "Airless",
-                "image" => "/brand_assets/pet_bottles/100ml_bulb_bottle.jpg",
+                "image" => "/brand_assets/pet_bottles/100ml_bulb_bottle.webp",
                 "material" => "PET / PP Airless Piston",
                 "shape" => "Bulb / Cylinder",
                 "volumeRange" => "30ml – 100ml",
@@ -469,7 +469,7 @@ class ProductModel {
                 "slug" => "push-pull-dispensing-nb108-a",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-a.png",
+                "image" => "/brand_assets/caps/nb108-a.webp",
                 "material" => "PP / PE",
                 "shape" => "Round Cylindrical",
                 "volumeRange" => "Neck 20/410 – 28/400",
@@ -481,7 +481,7 @@ class ProductModel {
                 "slug" => "classic-cylindrical-screw-nb108-b",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "material" => "PP / Aluminum",
                 "shape" => "Cylindrical Flat Top",
                 "volumeRange" => "Neck 18/410 – 43/410",
@@ -493,7 +493,7 @@ class ProductModel {
                 "slug" => "precision-tapered-nozzle-nb108-c",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-c.png",
+                "image" => "/brand_assets/caps/nb108-c.webp",
                 "material" => "PP / LDPE",
                 "shape" => "Conical Nozzle",
                 "volumeRange" => "Neck 18/410 – 28/410",
@@ -505,7 +505,7 @@ class ProductModel {
                 "slug" => "dual-tone-applicator-spout-nb108-d",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-d.png",
+                "image" => "/brand_assets/caps/nb108-d.webp",
                 "material" => "PP / HDPE",
                 "shape" => "Conical Twist Spout",
                 "volumeRange" => "Neck 18/410 – 28/410",
@@ -517,7 +517,7 @@ class ProductModel {
                 "slug" => "wide-flange-flip-top-nb108-e",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-e.png",
+                "image" => "/brand_assets/caps/nb108-e.webp",
                 "material" => "PP",
                 "shape" => "Round Wide Top",
                 "volumeRange" => "Neck 24/410 – 33/410",
@@ -529,7 +529,7 @@ class ProductModel {
                 "slug" => "butterfly-hinge-ribbed-flip-top-nb108-f",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-f.png",
+                "image" => "/brand_assets/caps/nb108-f.webp",
                 "material" => "PP",
                 "shape" => "Cylindrical Ribbed",
                 "volumeRange" => "Neck 24/410 – 28/410",
@@ -541,7 +541,7 @@ class ProductModel {
                 "slug" => "dual-wall-flip-top-snap-nb108-g",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-g.png",
+                "image" => "/brand_assets/caps/nb108-g.webp",
                 "material" => "PP",
                 "shape" => "Cylindrical Flat Shoulder",
                 "volumeRange" => "Neck 20/410 – 28/400",
@@ -553,7 +553,7 @@ class ProductModel {
                 "slug" => "luxury-ribbed-skirt-flip-top-nb108-h",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "material" => "PP / Electroplated",
                 "shape" => "Cylindrical Ribbed",
                 "volumeRange" => "Neck 18/410 – 38/400",
@@ -565,7 +565,7 @@ class ProductModel {
                 "slug" => "prestige-disc-top-press-nb108-i",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "material" => "PP / Aluminum Collar",
                 "shape" => "Cylindrical Disc Top",
                 "volumeRange" => "Neck 18/410 – 28/415",
@@ -577,7 +577,7 @@ class ProductModel {
                 "slug" => "smooth-cylindrical-flip-top-nb108-j",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-j.png",
+                "image" => "/brand_assets/caps/nb108-j.webp",
                 "material" => "PP",
                 "shape" => "Smooth Cylindrical",
                 "volumeRange" => "Neck 20/410 – 28/410",
@@ -589,7 +589,7 @@ class ProductModel {
                 "slug" => "continuous-thread-screw-nb108-k",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "material" => "PP / HDPE",
                 "shape" => "Ribbed Flat Top",
                 "volumeRange" => "Neck 20mm – 90mm",
@@ -601,7 +601,7 @@ class ProductModel {
                 "slug" => "mushroom-dome-luxury-nb108-l",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-l.png",
+                "image" => "/brand_assets/caps/nb108-l.webp",
                 "material" => "PP / SAN",
                 "shape" => "Mushroom Dome",
                 "volumeRange" => "Neck 20/415 – 24/415",
@@ -613,7 +613,7 @@ class ProductModel {
                 "slug" => "contoured-ergonomic-flip-top-nb108-m",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-m.png",
+                "image" => "/brand_assets/caps/nb108-m.webp",
                 "material" => "PP",
                 "shape" => "Asymmetric Ergonomic Top",
                 "volumeRange" => "Neck 24/410 – 24/410",
@@ -625,7 +625,7 @@ class ProductModel {
                 "slug" => "deep-skirt-heavy-wall-nb108-n",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-n.png",
+                "image" => "/brand_assets/caps/nb108-n.webp",
                 "material" => "PP / Double-Wall",
                 "shape" => "Straight Cylindrical",
                 "volumeRange" => "Neck 18/410 – 24/410",
@@ -637,7 +637,7 @@ class ProductModel {
                 "slug" => "decorative-spherical-ball-nb108-o",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-o.png",
+                "image" => "/brand_assets/caps/nb108-o.webp",
                 "material" => "PP / ABS",
                 "shape" => "Spherical / Fluted Ball",
                 "volumeRange" => "Neck 24/410 – 24/410",
@@ -649,7 +649,7 @@ class ProductModel {
                 "slug" => "tamper-evident-sports-push-pull-nb108-p",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-p.png",
+                "image" => "/brand_assets/caps/nb108-p.webp",
                 "material" => "PP / PE / PET",
                 "shape" => "Sports Push-Pull with Overcap",
                 "volumeRange" => "Neck 28/410 – 28/415",
@@ -661,7 +661,7 @@ class ProductModel {
                 "slug" => "ribbed-skirt-swivel-turret-nb108-q",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-q.png",
+                "image" => "/brand_assets/caps/nb108-q.webp",
                 "material" => "PP / LDPE",
                 "shape" => "Turret Spout",
                 "volumeRange" => "Neck 24/410 – 28/410",
@@ -673,7 +673,7 @@ class ProductModel {
                 "slug" => "domed-flip-top-closure-nb108-r",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-r.png",
+                "image" => "/brand_assets/caps/nb108-r.webp",
                 "material" => "PP / Aluminum Shell",
                 "shape" => "Domed Cylinder",
                 "volumeRange" => "Neck 20/410 – 28/410",
@@ -685,7 +685,7 @@ class ProductModel {
                 "slug" => "organic-pebble-form-smooth-nb108-s",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-s.png",
+                "image" => "/brand_assets/caps/nb108-s.webp",
                 "material" => "PP / High-Gloss Resin",
                 "shape" => "Ergonomic Organic Pebble",
                 "volumeRange" => "Neck 24mm – 24mm",
@@ -697,7 +697,7 @@ class ProductModel {
                 "slug" => "translucent-pp-snap-hinge-nb108-t",
                 "categorySlug" => "caps",
                 "categoryName" => "Caps",
-                "image" => "/brand_assets/caps/nb108-t.png",
+                "image" => "/brand_assets/caps/nb108-t.webp",
                 "material" => "100% Virgin PP Natural",
                 "shape" => "Stepped Cylindrical",
                 "volumeRange" => "Neck 18/410 – 24/410",
@@ -709,7 +709,7 @@ class ProductModel {
                 "slug" => "pump-nb101-a",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -721,7 +721,7 @@ class ProductModel {
                 "slug" => "pump-nb101-b",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -733,7 +733,7 @@ class ProductModel {
                 "slug" => "pump-nb101-d",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -745,7 +745,7 @@ class ProductModel {
                 "slug" => "pump-nb101-o",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -757,7 +757,7 @@ class ProductModel {
                 "slug" => "pump-nb101-e",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -769,7 +769,7 @@ class ProductModel {
                 "slug" => "pump-nb101-f",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -781,7 +781,7 @@ class ProductModel {
                 "slug" => "pump-nb101-g",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -793,7 +793,7 @@ class ProductModel {
                 "slug" => "pump-nb101-h",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -805,7 +805,7 @@ class ProductModel {
                 "slug" => "pump-nb101-i",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -817,7 +817,7 @@ class ProductModel {
                 "slug" => "pump-nb101-j",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -829,7 +829,7 @@ class ProductModel {
                 "slug" => "pump-nb101-k",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -841,7 +841,7 @@ class ProductModel {
                 "slug" => "pump-nb101-m",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -853,7 +853,7 @@ class ProductModel {
                 "slug" => "pump-nb101-n",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2cc/T +/-",
@@ -865,7 +865,7 @@ class ProductModel {
                 "slug" => "pump-nb102-a",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb102-a.png",
+                "image" => "/brand_assets/pumps/nb102-a.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2.5cc/T +/-",
@@ -877,7 +877,7 @@ class ProductModel {
                 "slug" => "pump-nb102-b",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb102-b.png",
+                "image" => "/brand_assets/pumps/nb102-b.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2.5cc/T +/-",
@@ -889,7 +889,7 @@ class ProductModel {
                 "slug" => "pump-nb102-c",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb102-c.png",
+                "image" => "/brand_assets/pumps/nb102-c.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2.5cc/T +/-",
@@ -901,7 +901,7 @@ class ProductModel {
                 "slug" => "pump-nb102-d",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb102-d.png",
+                "image" => "/brand_assets/pumps/nb102-d.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2.5cc/T +/-",
@@ -913,7 +913,7 @@ class ProductModel {
                 "slug" => "pump-nb102-e",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb102-e.png",
+                "image" => "/brand_assets/pumps/nb102-e.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2.5cc/T +/-",
@@ -925,7 +925,7 @@ class ProductModel {
                 "slug" => "pump-nb102-f",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb102-f.png",
+                "image" => "/brand_assets/pumps/nb102-f.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 2.5cc/T +/-",
@@ -937,7 +937,7 @@ class ProductModel {
                 "slug" => "pump-nb103-a",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-a.png",
+                "image" => "/brand_assets/pumps/nb103-a.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -949,7 +949,7 @@ class ProductModel {
                 "slug" => "pump-nb103-c",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-c.png",
+                "image" => "/brand_assets/pumps/nb103-c.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -961,7 +961,7 @@ class ProductModel {
                 "slug" => "pump-nb103-d",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-d.png",
+                "image" => "/brand_assets/pumps/nb103-d.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -973,7 +973,7 @@ class ProductModel {
                 "slug" => "pump-nb103-e",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-e.png",
+                "image" => "/brand_assets/pumps/nb103-e.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -985,7 +985,7 @@ class ProductModel {
                 "slug" => "pump-nb103-f",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-f.png",
+                "image" => "/brand_assets/pumps/nb103-f.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -997,7 +997,7 @@ class ProductModel {
                 "slug" => "pump-nb103-g",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-g.png",
+                "image" => "/brand_assets/pumps/nb103-g.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -1009,7 +1009,7 @@ class ProductModel {
                 "slug" => "pump-nb103-h",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb103-h.png",
+                "image" => "/brand_assets/pumps/nb103-h.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 1.4cc/T +/-",
@@ -1021,7 +1021,7 @@ class ProductModel {
                 "slug" => "pump-nb104-a",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb104-a.png",
+                "image" => "/brand_assets/pumps/nb104-a.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 4cc/T +/-",
@@ -1033,7 +1033,7 @@ class ProductModel {
                 "slug" => "pump-nb104-b",
                 "categorySlug" => "pumps",
                 "categoryName" => "Pumps",
-                "image" => "/brand_assets/pumps/nb104-b.png",
+                "image" => "/brand_assets/pumps/nb104-b.webp",
                 "material" => "PP / Aluminum Sheath / SS304",
                 "shape" => "Switch Lotion Dispenser",
                 "volumeRange" => "Output 4cc/T +/-",
@@ -1045,7 +1045,7 @@ class ProductModel {
                 "slug" => "spray-nb107-a",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb107-a.png",
+                "image" => "/brand_assets/sprays/nb107-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.12cc/T +/- , 0.05cc/T +/-",
@@ -1057,7 +1057,7 @@ class ProductModel {
                 "slug" => "spray-nb107-c",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb107-c.png",
+                "image" => "/brand_assets/sprays/nb107-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.12cc/T +/- , 0.05cc/T +/-",
@@ -1069,7 +1069,7 @@ class ProductModel {
                 "slug" => "spray-nb107-b",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb107-b.png",
+                "image" => "/brand_assets/sprays/nb107-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.12cc/T +/- , 0.05cc/T +/-",
@@ -1081,7 +1081,7 @@ class ProductModel {
                 "slug" => "spray-nb107-d",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb107-d.png",
+                "image" => "/brand_assets/sprays/nb107-d.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.12cc/T +/- , 0.05cc/T +/-",
@@ -1093,7 +1093,7 @@ class ProductModel {
                 "slug" => "spray-nb107-e",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb107-e.png",
+                "image" => "/brand_assets/sprays/nb107-e.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.12cc/T +/- , 0.05cc/T +/-",
@@ -1105,7 +1105,7 @@ class ProductModel {
                 "slug" => "spray-nb201-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-a.png",
+                "image" => "/brand_assets/sprays/nb201-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1117,7 +1117,7 @@ class ProductModel {
                 "slug" => "spray-nb201-c",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-c.png",
+                "image" => "/brand_assets/sprays/nb201-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1129,7 +1129,7 @@ class ProductModel {
                 "slug" => "spray-nb201-g",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-g.png",
+                "image" => "/brand_assets/sprays/nb201-g.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1141,7 +1141,7 @@ class ProductModel {
                 "slug" => "spray-nb201-h",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-h.png",
+                "image" => "/brand_assets/sprays/nb201-h.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1153,7 +1153,7 @@ class ProductModel {
                 "slug" => "spray-nb201-i",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-i.png",
+                "image" => "/brand_assets/sprays/nb201-i.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1165,7 +1165,7 @@ class ProductModel {
                 "slug" => "spray-nb201-j",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-j.png",
+                "image" => "/brand_assets/sprays/nb201-j.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1177,7 +1177,7 @@ class ProductModel {
                 "slug" => "spray-nb201-k",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-k.png",
+                "image" => "/brand_assets/sprays/nb201-k.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1189,7 +1189,7 @@ class ProductModel {
                 "slug" => "spray-nb201-m",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-m.png",
+                "image" => "/brand_assets/sprays/nb201-m.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1201,7 +1201,7 @@ class ProductModel {
                 "slug" => "spray-nb201-n",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-n.png",
+                "image" => "/brand_assets/sprays/nb201-n.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1213,7 +1213,7 @@ class ProductModel {
                 "slug" => "spray-nb201-o",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb201-o.png",
+                "image" => "/brand_assets/sprays/nb201-o.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.8cc/T +/-",
@@ -1225,7 +1225,7 @@ class ProductModel {
                 "slug" => "spray-nb202-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb202-a.png",
+                "image" => "/brand_assets/sprays/nb202-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.0cc/T +/-",
@@ -1237,7 +1237,7 @@ class ProductModel {
                 "slug" => "spray-nb202-b",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb202-b.png",
+                "image" => "/brand_assets/sprays/nb202-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.0cc/T +/-",
@@ -1249,7 +1249,7 @@ class ProductModel {
                 "slug" => "spray-nb202-c",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb202-c.png",
+                "image" => "/brand_assets/sprays/nb202-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.0cc/T +/-",
@@ -1261,7 +1261,7 @@ class ProductModel {
                 "slug" => "spray-nb203-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-a.png",
+                "image" => "/brand_assets/sprays/nb203-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1273,7 +1273,7 @@ class ProductModel {
                 "slug" => "spray-nb203-b-1",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-b-1.png",
+                "image" => "/brand_assets/sprays/nb203-b-1.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1285,7 +1285,7 @@ class ProductModel {
                 "slug" => "spray-nb203-b-2",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-b-2.png",
+                "image" => "/brand_assets/sprays/nb203-b-2.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1297,7 +1297,7 @@ class ProductModel {
                 "slug" => "spray-nb203-c",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-c.png",
+                "image" => "/brand_assets/sprays/nb203-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1309,7 +1309,7 @@ class ProductModel {
                 "slug" => "spray-nb203-d",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-d.png",
+                "image" => "/brand_assets/sprays/nb203-d.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1321,7 +1321,7 @@ class ProductModel {
                 "slug" => "spray-nb203-e",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-e.png",
+                "image" => "/brand_assets/sprays/nb203-e.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1333,7 +1333,7 @@ class ProductModel {
                 "slug" => "spray-nb203-f",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb203-f.png",
+                "image" => "/brand_assets/sprays/nb203-f.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.3cc/T +/- , 0.65cc/T +/-",
@@ -1345,7 +1345,7 @@ class ProductModel {
                 "slug" => "spray-nb204-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb204-a.png",
+                "image" => "/brand_assets/sprays/nb204-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.2cc/T +/-",
@@ -1357,7 +1357,7 @@ class ProductModel {
                 "slug" => "spray-nb204-b",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb204-b.png",
+                "image" => "/brand_assets/sprays/nb204-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.2cc/T +/-",
@@ -1369,7 +1369,7 @@ class ProductModel {
                 "slug" => "spray-nb205-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb205-a.png",
+                "image" => "/brand_assets/sprays/nb205-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.2cc/T +/-",
@@ -1381,7 +1381,7 @@ class ProductModel {
                 "slug" => "spray-nb205-b",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb205-b.png",
+                "image" => "/brand_assets/sprays/nb205-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.2cc/T +/-",
@@ -1393,7 +1393,7 @@ class ProductModel {
                 "slug" => "spray-nb205-c",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb205-c.png",
+                "image" => "/brand_assets/sprays/nb205-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.2cc/T +/-",
@@ -1405,7 +1405,7 @@ class ProductModel {
                 "slug" => "spray-nb205-d",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb205-d.png",
+                "image" => "/brand_assets/sprays/nb205-d.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 1.2cc/T +/-",
@@ -1417,7 +1417,7 @@ class ProductModel {
                 "slug" => "spray-nb206-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb206-a.png",
+                "image" => "/brand_assets/sprays/nb206-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.9cc/T +/-",
@@ -1429,7 +1429,7 @@ class ProductModel {
                 "slug" => "spray-nb206-b",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb206-b.png",
+                "image" => "/brand_assets/sprays/nb206-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.9cc/T +/-",
@@ -1441,7 +1441,7 @@ class ProductModel {
                 "slug" => "spray-nb206-c",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb206-c.png",
+                "image" => "/brand_assets/sprays/nb206-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.9cc/T +/-",
@@ -1453,7 +1453,7 @@ class ProductModel {
                 "slug" => "spray-nb206-d",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb206-d.png",
+                "image" => "/brand_assets/sprays/nb206-d.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.9cc/T +/-",
@@ -1465,7 +1465,7 @@ class ProductModel {
                 "slug" => "spray-nb206-e",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb206-e.png",
+                "image" => "/brand_assets/sprays/nb206-e.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.9cc/T +/-",
@@ -1477,7 +1477,7 @@ class ProductModel {
                 "slug" => "spray-nb207-a",
                 "categorySlug" => "trigger-sprayers",
                 "categoryName" => "Trigger sprayer",
-                "image" => "/brand_assets/sprays/nb207-a.png",
+                "image" => "/brand_assets/sprays/nb207-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Ergonomic Trigger",
                 "volumeRange" => "Output 0.26-0.3cc/T +/-",
@@ -1489,7 +1489,7 @@ class ProductModel {
                 "slug" => "spray-nb304-a",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.14ml +/- , 0.25ml +/-",
@@ -1501,7 +1501,7 @@ class ProductModel {
                 "slug" => "spray-nb304-b",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.14ml +/- , 0.25ml +/-",
@@ -1513,7 +1513,7 @@ class ProductModel {
                 "slug" => "spray-nb304-c",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/nb304-c.png",
+                "image" => "/brand_assets/sprays/nb304-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output 0.14ml +/- , 0.25ml +/-",
@@ -1525,7 +1525,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-a",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-a.png",
+                "image" => "/brand_assets/sprays/continuedspray-a.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1537,7 +1537,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-b",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-b.png",
+                "image" => "/brand_assets/sprays/continuedspray-b.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1549,7 +1549,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-c",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-c.png",
+                "image" => "/brand_assets/sprays/continuedspray-c.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1561,7 +1561,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-d",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-d.png",
+                "image" => "/brand_assets/sprays/continuedspray-d.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1573,7 +1573,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-e",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-e.png",
+                "image" => "/brand_assets/sprays/continuedspray-e.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1585,7 +1585,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-f",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-f.png",
+                "image" => "/brand_assets/sprays/continuedspray-f.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1597,7 +1597,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-g",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-g.png",
+                "image" => "/brand_assets/sprays/continuedspray-g.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1609,7 +1609,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-h",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-h.png",
+                "image" => "/brand_assets/sprays/continuedspray-h.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1621,7 +1621,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-i",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-i.png",
+                "image" => "/brand_assets/sprays/continuedspray-i.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1633,7 +1633,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-j",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-j.png",
+                "image" => "/brand_assets/sprays/continuedspray-j.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1645,7 +1645,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-k",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-k.png",
+                "image" => "/brand_assets/sprays/continuedspray-k.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1657,7 +1657,7 @@ class ProductModel {
                 "slug" => "spray-continuedspray-l",
                 "categorySlug" => "finger-sprayers",
                 "categoryName" => "Finger sprayer",
-                "image" => "/brand_assets/sprays/continuedspray-l.png",
+                "image" => "/brand_assets/sprays/continuedspray-l.webp",
                 "material" => "PP / PE / Precision Nozzle",
                 "shape" => "Fine Mist Atomizer",
                 "volumeRange" => "Output Fine Mist",
@@ -1686,9 +1686,9 @@ class ProductModel {
                 "bodyDia" => "59.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/100ml_agro_short.png",
+                "image" => "/brand_assets/agro_bottles/100ml_agro_short.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/100ml_agro_short.png"
+                    "/brand_assets/agro_bottles/100ml_agro_short.webp"
                 ],
                 "description" => "Heavy-duty 100ml Agro Short Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1713,9 +1713,9 @@ class ProductModel {
                 "bodyDia" => "52 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/100ml_agro_long.png",
+                "image" => "/brand_assets/agro_bottles/100ml_agro_long.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/100ml_agro_long.png"
+                    "/brand_assets/agro_bottles/100ml_agro_long.webp"
                 ],
                 "description" => "Heavy-duty 100ml Agro Long Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1740,9 +1740,9 @@ class ProductModel {
                 "bodyDia" => "63.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/250ml_agro.png",
+                "image" => "/brand_assets/agro_bottles/250ml_agro.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/250ml_agro.png"
+                    "/brand_assets/agro_bottles/250ml_agro.webp"
                 ],
                 "description" => "Heavy-duty 250ml Agro Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1767,9 +1767,9 @@ class ProductModel {
                 "bodyDia" => "76 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/500ml_agro.png",
+                "image" => "/brand_assets/agro_bottles/500ml_agro.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/500ml_agro.png"
+                    "/brand_assets/agro_bottles/500ml_agro.webp"
                 ],
                 "description" => "Heavy-duty 500ml Agro Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1794,9 +1794,9 @@ class ProductModel {
                 "bodyDia" => "89.3 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/1000ml_agro_short.png",
+                "image" => "/brand_assets/agro_bottles/1000ml_agro_short.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/1000ml_agro_short.png"
+                    "/brand_assets/agro_bottles/1000ml_agro_short.webp"
                 ],
                 "description" => "Heavy-duty 1000ml Agro Long Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1821,9 +1821,9 @@ class ProductModel {
                 "bodyDia" => "94 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/1000ml_agro_short.png",
+                "image" => "/brand_assets/agro_bottles/1000ml_agro_short.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/1000ml_agro_short.png"
+                    "/brand_assets/agro_bottles/1000ml_agro_short.webp"
                 ],
                 "description" => "Heavy-duty 1000ml Agro short Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1848,9 +1848,9 @@ class ProductModel {
                 "bodyDia" => "63 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/250ml_agro.png",
+                "image" => "/brand_assets/agro_bottles/250ml_agro.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/250ml_agro.png"
+                    "/brand_assets/agro_bottles/250ml_agro.webp"
                 ],
                 "description" => "Heavy-duty 250ml Agro (Bio Fit) Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1875,9 +1875,9 @@ class ProductModel {
                 "bodyDia" => "72.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/500ml_agro.png",
+                "image" => "/brand_assets/agro_bottles/500ml_agro.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/500ml_agro.png"
+                    "/brand_assets/agro_bottles/500ml_agro.webp"
                 ],
                 "description" => "Heavy-duty 500ml Agro (Bio Fit) Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1902,9 +1902,9 @@ class ProductModel {
                 "bodyDia" => "90 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/agro_bottles/1000ml_agro_short.png",
+                "image" => "/brand_assets/agro_bottles/1000ml_agro_short.webp",
                 "gallery" => [
-                    "/brand_assets/agro_bottles/1000ml_agro_short.png"
+                    "/brand_assets/agro_bottles/1000ml_agro_short.webp"
                 ],
                 "description" => "Heavy-duty 1000ml Agro (Bio Fit) Agro PET bottle with 46 mm tamper-evident neck finish. Ideal for pesticides, agro-chemicals, bio-fertilizers, and liquid nutrients.",
                 "compatibleClosures" => "46 mm Tamper-Evident Agro Cap"
@@ -1929,9 +1929,9 @@ class ProductModel {
                 "bodyDia" => "45.5 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/75cc_rd.jpeg",
+                "image" => "/brand_assets/jar_bottles/75cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/75cc_rd.jpeg"
+                    "/brand_assets/jar_bottles/75cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 75CC Rd PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -1956,9 +1956,9 @@ class ProductModel {
                 "bodyDia" => "45.5 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/120cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/120cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/120cc_rd.jpg"
+                    "/brand_assets/jar_bottles/120cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 120CC Rd PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -1983,9 +1983,9 @@ class ProductModel {
                 "bodyDia" => "50.5 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/150cc_rd.jpeg",
+                "image" => "/brand_assets/jar_bottles/150cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/150cc_rd.jpeg"
+                    "/brand_assets/jar_bottles/150cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 150CC Rd PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2010,9 +2010,9 @@ class ProductModel {
                 "bodyDia" => "56.6 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/175cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/175cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/175cc_rd.jpg"
+                    "/brand_assets/jar_bottles/175cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 175CC Rd PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2037,9 +2037,9 @@ class ProductModel {
                 "bodyDia" => "58.5 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/200cc_rd.jpeg",
+                "image" => "/brand_assets/jar_bottles/200cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/200cc_rd.jpeg"
+                    "/brand_assets/jar_bottles/200cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 200CC Rd PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2064,9 +2064,9 @@ class ProductModel {
                 "bodyDia" => "63.90 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/250cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/250cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/250cc_rd.jpg"
+                    "/brand_assets/jar_bottles/250cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 250CC Rd PET Jar with 45 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "45 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2091,9 +2091,9 @@ class ProductModel {
                 "bodyDia" => "",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/300cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/300cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/300cc_rd.jpg"
+                    "/brand_assets/jar_bottles/300cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 300CC Rd PET Jar with 45 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "45 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2118,9 +2118,9 @@ class ProductModel {
                 "bodyDia" => "73 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/400cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/400cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/400cc_rd.jpg"
+                    "/brand_assets/jar_bottles/400cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 400CC Rd PET Jar with 45 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "45 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2145,9 +2145,9 @@ class ProductModel {
                 "bodyDia" => "77.67 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/500cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/500cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/500cc_rd.jpg"
+                    "/brand_assets/jar_bottles/500cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 500CC Rd PET Jar with 45 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "45 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2172,9 +2172,9 @@ class ProductModel {
                 "bodyDia" => "",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/250cc_rd.jpg",
+                "image" => "/brand_assets/jar_bottles/250cc_rd.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/250cc_rd.jpg"
+                    "/brand_assets/jar_bottles/250cc_rd.webp"
                 ],
                 "description" => "Wide-mouth 250ml IPSCOM PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2199,9 +2199,9 @@ class ProductModel {
                 "bodyDia" => "60 mm",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/jar_bottles/175ml_moringo.jpeg",
+                "image" => "/brand_assets/jar_bottles/175ml_moringo.webp",
                 "gallery" => [
-                    "/brand_assets/jar_bottles/175ml_moringo.jpeg"
+                    "/brand_assets/jar_bottles/175ml_moringo.webp"
                 ],
                 "description" => "Wide-mouth 175ml Moringo PET Jar with 38 mm thread finish. Precision molded for tablet supplements, nutraceutical powders, and cosmetic creams.",
                 "compatibleClosures" => "38 mm Smooth Screw Lid / Induction Heat Seal Lid"
@@ -2226,9 +2226,9 @@ class ProductModel {
                 "bodyDia" => "17.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/10ml_cosmetic.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/10ml_cosmetic.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/10ml_cosmetic.jpg"
+                    "/brand_assets/cosmetic_bottles/10ml_cosmetic.webp"
                 ],
                 "description" => "Elegant 10ml Cosmetic cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "14 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2253,9 +2253,9 @@ class ProductModel {
                 "bodyDia" => "31.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/25ml_romance.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/25ml_romance.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/25ml_romance.jpg"
+                    "/brand_assets/cosmetic_bottles/25ml_romance.webp"
                 ],
                 "description" => "Elegant 25ml Romance cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "14 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2280,9 +2280,9 @@ class ProductModel {
                 "bodyDia" => "42.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/50ml_tulip.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/50ml_tulip.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/50ml_tulip.jpg"
+                    "/brand_assets/cosmetic_bottles/50ml_tulip.webp"
                 ],
                 "description" => "Elegant 50ml Tulip cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2307,9 +2307,9 @@ class ProductModel {
                 "bodyDia" => "51.3 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_tulip.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_tulip.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_tulip.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_tulip.webp"
                 ],
                 "description" => "Elegant 100ml Tulip cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "19.68 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2334,9 +2334,9 @@ class ProductModel {
                 "bodyDia" => "38 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/50ml_hs_bottle.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/50ml_hs_bottle.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/50ml_hs_bottle.jpg"
+                    "/brand_assets/cosmetic_bottles/50ml_hs_bottle.webp"
                 ],
                 "description" => "Elegant 50ml HS Bottle cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2361,9 +2361,9 @@ class ProductModel {
                 "bodyDia" => "46 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/85ml_hs_bottle.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/85ml_hs_bottle.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/85ml_hs_bottle.jpg"
+                    "/brand_assets/cosmetic_bottles/85ml_hs_bottle.webp"
                 ],
                 "description" => "Elegant 85ml HS Bottle cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2388,9 +2388,9 @@ class ProductModel {
                 "bodyDia" => "32.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/30ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/30ml_veola.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/30ml_veola.jpg"
+                    "/brand_assets/cosmetic_bottles/30ml_veola.webp"
                 ],
                 "description" => "Elegant 30ml Veola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "15 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2415,9 +2415,9 @@ class ProductModel {
                 "bodyDia" => "37.71 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/50ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/50ml_veola.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/50ml_veola.jpg"
+                    "/brand_assets/cosmetic_bottles/50ml_veola.webp"
                 ],
                 "description" => "Elegant 50ml Veola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2442,9 +2442,9 @@ class ProductModel {
                 "bodyDia" => "32.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_veola.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_veola.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_veola.webp"
                 ],
                 "description" => "Elegant 100ml Veola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2469,9 +2469,9 @@ class ProductModel {
                 "bodyDia" => "64.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_veola.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_veola.jpg"
+                    "/brand_assets/cosmetic_bottles/200ml_veola.webp"
                 ],
                 "description" => "Elegant 200ml Veola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2496,9 +2496,9 @@ class ProductModel {
                 "bodyDia" => "74 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/300ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/300ml_veola.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/300ml_veola.jpg"
+                    "/brand_assets/cosmetic_bottles/300ml_veola.webp"
                 ],
                 "description" => "Elegant 300ml Veola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2523,9 +2523,9 @@ class ProductModel {
                 "bodyDia" => "85 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/500ml_veola.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/500ml_veola.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/500ml_veola.jpg"
+                    "/brand_assets/cosmetic_bottles/500ml_veola.webp"
                 ],
                 "description" => "Elegant 500ml Veola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "28 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2550,9 +2550,9 @@ class ProductModel {
                 "bodyDia" => "59.69 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/192ml_oval.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/192ml_oval.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/192ml_oval.jpg"
+                    "/brand_assets/cosmetic_bottles/192ml_oval.webp"
                 ],
                 "description" => "Elegant 141ml Oval cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "18 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2577,9 +2577,9 @@ class ProductModel {
                 "bodyDia" => "60.33 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/192ml_oval.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/192ml_oval.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/192ml_oval.jpg"
+                    "/brand_assets/cosmetic_bottles/192ml_oval.webp"
                 ],
                 "description" => "Elegant 192ml Oval cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2604,9 +2604,9 @@ class ProductModel {
                 "bodyDia" => "57 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_oval.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_oval.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_oval.jpg"
+                    "/brand_assets/cosmetic_bottles/200ml_oval.webp"
                 ],
                 "description" => "Elegant 200ml Oval cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "25 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2631,9 +2631,9 @@ class ProductModel {
                 "bodyDia" => "68 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/300ml_oval.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/300ml_oval.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/300ml_oval.jpg"
+                    "/brand_assets/cosmetic_bottles/300ml_oval.webp"
                 ],
                 "description" => "Elegant 300ml Oval cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2658,9 +2658,9 @@ class ProductModel {
                 "bodyDia" => "57.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_badami.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_badami.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_badami.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_badami.webp"
                 ],
                 "description" => "Elegant 100ml Badami cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2685,9 +2685,9 @@ class ProductModel {
                 "bodyDia" => "76 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_badami.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_badami.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_badami.jpg"
+                    "/brand_assets/cosmetic_bottles/200ml_badami.webp"
                 ],
                 "description" => "Elegant 200ml Badami cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2712,9 +2712,9 @@ class ProductModel {
                 "bodyDia" => "63 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_oval.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_oval.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_oval.jpg"
+                    "/brand_assets/cosmetic_bottles/200ml_oval.webp"
                 ],
                 "description" => "Elegant 200ml Bhola cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2739,9 +2739,9 @@ class ProductModel {
                 "bodyDia" => "58.15 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_canthradine.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_canthradine.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_canthradine.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_canthradine.webp"
                 ],
                 "description" => "Elegant 100ml Canthradine cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2766,9 +2766,9 @@ class ProductModel {
                 "bodyDia" => "83.8 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/400ml_canthradine.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/400ml_canthradine.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/400ml_canthradine.jpg"
+                    "/brand_assets/cosmetic_bottles/400ml_canthradine.webp"
                 ],
                 "description" => "Elegant 400ml Canthradine cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "28 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2793,9 +2793,9 @@ class ProductModel {
                 "bodyDia" => "42.54 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/50ml_baby_oil.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/50ml_baby_oil.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/50ml_baby_oil.jpg"
+                    "/brand_assets/cosmetic_bottles/50ml_baby_oil.webp"
                 ],
                 "description" => "Elegant 50ml Baby Oil cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "19.69 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2820,9 +2820,9 @@ class ProductModel {
                 "bodyDia" => "54.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_baby_oil.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_baby_oil.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_baby_oil.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_baby_oil.webp"
                 ],
                 "description" => "Elegant 100ml Baby Oil cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "19.69 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2847,9 +2847,9 @@ class ProductModel {
                 "bodyDia" => "69 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_baby_oil.jpeg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_baby_oil.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_baby_oil.jpeg"
+                    "/brand_assets/cosmetic_bottles/200ml_baby_oil.webp"
                 ],
                 "description" => "Elegant 200ml Baby Oil cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "25 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2874,9 +2874,9 @@ class ProductModel {
                 "bodyDia" => "75.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/225ml_eskinol.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/225ml_eskinol.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/225ml_eskinol.jpg"
+                    "/brand_assets/cosmetic_bottles/225ml_eskinol.webp"
                 ],
                 "description" => "Elegant 225ml Eskinol cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "24 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2901,9 +2901,9 @@ class ProductModel {
                 "bodyDia" => "60.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_oval_ring.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_oval_ring.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_oval_ring.jpg"
+                    "/brand_assets/cosmetic_bottles/200ml_oval_ring.webp"
                 ],
                 "description" => "Elegant 200ml Oval Ring cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "25 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2928,9 +2928,9 @@ class ProductModel {
                 "bodyDia" => "70 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/300ml_vasa_new.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/300ml_vasa_new.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/300ml_vasa_new.jpg"
+                    "/brand_assets/cosmetic_bottles/300ml_vasa_new.webp"
                 ],
                 "description" => "Elegant 300ml Vasa New cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "28 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2955,9 +2955,9 @@ class ProductModel {
                 "bodyDia" => "69.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/1000ml_vasa.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/1000ml_vasa.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/1000ml_vasa.jpg"
+                    "/brand_assets/cosmetic_bottles/1000ml_vasa.webp"
                 ],
                 "description" => "Elegant 1000ml Vasa cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "28 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -2982,9 +2982,9 @@ class ProductModel {
                 "bodyDia" => "30.2 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/30ml_cg.jpeg",
+                "image" => "/brand_assets/cosmetic_bottles/30ml_cg.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/30ml_cg.jpeg"
+                    "/brand_assets/cosmetic_bottles/30ml_cg.webp"
                 ],
                 "description" => "Elegant 30ml CG cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "14 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3009,9 +3009,9 @@ class ProductModel {
                 "bodyDia" => "40 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/70ml_cg.jpeg",
+                "image" => "/brand_assets/cosmetic_bottles/70ml_cg.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/70ml_cg.jpeg"
+                    "/brand_assets/cosmetic_bottles/70ml_cg.webp"
                 ],
                 "description" => "Elegant 70ml CG cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3036,9 +3036,9 @@ class ProductModel {
                 "bodyDia" => "52.3 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/170ml_cg.jpeg",
+                "image" => "/brand_assets/cosmetic_bottles/170ml_cg.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/170ml_cg.jpeg"
+                    "/brand_assets/cosmetic_bottles/170ml_cg.webp"
                 ],
                 "description" => "Elegant 170ml CG cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "25 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3063,9 +3063,9 @@ class ProductModel {
                 "bodyDia" => "33 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/50ml_spray.jpeg",
+                "image" => "/brand_assets/cosmetic_bottles/50ml_spray.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/50ml_spray.jpeg"
+                    "/brand_assets/cosmetic_bottles/50ml_spray.webp"
                 ],
                 "description" => "Elegant 50ml Spray cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3090,9 +3090,9 @@ class ProductModel {
                 "bodyDia" => "41.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_spray_round.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_spray_round.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_spray_round.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_spray_round.webp"
                 ],
                 "description" => "Elegant 100ml Spray Round cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3144,9 +3144,9 @@ class ProductModel {
                 "bodyDia" => "38 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_round_boston.jpeg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_round_boston.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_round_boston.jpeg"
+                    "/brand_assets/cosmetic_bottles/100ml_round_boston.webp"
                 ],
                 "description" => "Elegant 100ml Round Boston cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3171,9 +3171,9 @@ class ProductModel {
                 "bodyDia" => "47 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/200ml_round_boston.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/200ml_round_boston.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/200ml_round_boston.jpg"
+                    "/brand_assets/cosmetic_bottles/200ml_round_boston.webp"
                 ],
                 "description" => "Elegant 200ml Round Boston cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3198,9 +3198,9 @@ class ProductModel {
                 "bodyDia" => "62.5 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/480ml_round_boston.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/480ml_round_boston.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/480ml_round_boston.jpg"
+                    "/brand_assets/cosmetic_bottles/480ml_round_boston.webp"
                 ],
                 "description" => "Elegant 480ml Round Boston cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "28 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3225,9 +3225,9 @@ class ProductModel {
                 "bodyDia" => "40 mm",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/cosmetic_bottles/100ml_square.jpg",
+                "image" => "/brand_assets/cosmetic_bottles/100ml_square.webp",
                 "gallery" => [
-                    "/brand_assets/cosmetic_bottles/100ml_square.jpg"
+                    "/brand_assets/cosmetic_bottles/100ml_square.webp"
                 ],
                 "description" => "Elegant 100ml Square cosmetic PET bottle designed for body lotions, hair oils, sprays, toners, and personal care formulations.",
                 "compatibleClosures" => "20 mm Lotion Pump / Fine Mist Sprayer / Flip Top Cap"
@@ -3250,10 +3250,10 @@ class ProductModel {
                 "color" => "Lavender / Yellow / White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-a.png",
+                "image" => "/brand_assets/caps/nb108-a.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-a.png",
-                    "/brand_assets/caps/originals/nb108-a.png"
+                    "/brand_assets/caps/nb108-a.webp",
+                    "/brand_assets/caps/originals/nb108-a.webp"
                 ],
                 "description" => "Dishwash liquids, sports drinks, hair serums, personal care lotions. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -3276,10 +3276,10 @@ class ProductModel {
                 "color" => "Lavender / Yellow / White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-a.png",
+                "image" => "/brand_assets/caps/nb108-a.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-a.png",
-                    "/brand_assets/caps/originals/nb108-a.png"
+                    "/brand_assets/caps/nb108-a.webp",
+                    "/brand_assets/caps/originals/nb108-a.webp"
                 ],
                 "description" => "Dishwash liquids, sports drinks, hair serums, personal care lotions. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -3302,10 +3302,10 @@ class ProductModel {
                 "color" => "Lavender / Yellow / White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-a.png",
+                "image" => "/brand_assets/caps/nb108-a.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-a.png",
-                    "/brand_assets/caps/originals/nb108-a.png"
+                    "/brand_assets/caps/nb108-a.webp",
+                    "/brand_assets/caps/originals/nb108-a.webp"
                 ],
                 "description" => "Dishwash liquids, sports drinks, hair serums, personal care lotions. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -3328,10 +3328,10 @@ class ProductModel {
                 "color" => "Lavender / Yellow / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-a.png",
+                "image" => "/brand_assets/caps/nb108-a.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-a.png",
-                    "/brand_assets/caps/originals/nb108-a.png"
+                    "/brand_assets/caps/nb108-a.webp",
+                    "/brand_assets/caps/originals/nb108-a.webp"
                 ],
                 "description" => "Dishwash liquids, sports drinks, hair serums, personal care lotions. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/400 neck bottles, jars, and cosmetic containers"
@@ -3354,10 +3354,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -3380,10 +3380,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -3406,10 +3406,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -3432,10 +3432,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -3458,10 +3458,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/415 neck bottles, jars, and cosmetic containers"
@@ -3484,10 +3484,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/415 neck bottles, jars, and cosmetic containers"
@@ -3510,10 +3510,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 33/410 neck bottles, jars, and cosmetic containers"
@@ -3536,10 +3536,10 @@ class ProductModel {
                 "color" => "Brushed Gold / Piano Black / White Ribbed",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-b.png",
+                "image" => "/brand_assets/caps/nb108-b.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-b.png",
-                    "/brand_assets/caps/originals/nb108-b.png"
+                    "/brand_assets/caps/nb108-b.webp",
+                    "/brand_assets/caps/originals/nb108-b.webp"
                 ],
                 "description" => "Pharmaceutical syrups, luxury cosmetics, skincare bottles, essential oils. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 43/410 neck bottles, jars, and cosmetic containers"
@@ -3562,10 +3562,10 @@ class ProductModel {
                 "color" => "Gloss Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-c.png",
+                "image" => "/brand_assets/caps/nb108-c.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-c.png",
-                    "/brand_assets/caps/originals/nb108-c.png"
+                    "/brand_assets/caps/nb108-c.webp",
+                    "/brand_assets/caps/originals/nb108-c.webp"
                 ],
                 "description" => "Hair oils, scalp treatments, glue & adhesives, technical liquids. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -3588,10 +3588,10 @@ class ProductModel {
                 "color" => "Gloss Black",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-c.png",
+                "image" => "/brand_assets/caps/nb108-c.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-c.png",
-                    "/brand_assets/caps/originals/nb108-c.png"
+                    "/brand_assets/caps/nb108-c.webp",
+                    "/brand_assets/caps/originals/nb108-c.webp"
                 ],
                 "description" => "Hair oils, scalp treatments, glue & adhesives, technical liquids. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -3614,10 +3614,10 @@ class ProductModel {
                 "color" => "Gloss Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-c.png",
+                "image" => "/brand_assets/caps/nb108-c.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-c.png",
-                    "/brand_assets/caps/originals/nb108-c.png"
+                    "/brand_assets/caps/nb108-c.webp",
+                    "/brand_assets/caps/originals/nb108-c.webp"
                 ],
                 "description" => "Hair oils, scalp treatments, glue & adhesives, technical liquids. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -3640,10 +3640,10 @@ class ProductModel {
                 "color" => "Gloss Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-c.png",
+                "image" => "/brand_assets/caps/nb108-c.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-c.png",
-                    "/brand_assets/caps/originals/nb108-c.png"
+                    "/brand_assets/caps/nb108-c.webp",
+                    "/brand_assets/caps/originals/nb108-c.webp"
                 ],
                 "description" => "Hair oils, scalp treatments, glue & adhesives, technical liquids. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -3666,10 +3666,10 @@ class ProductModel {
                 "color" => "Black Collar with White Tip",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-d.png",
+                "image" => "/brand_assets/caps/nb108-d.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-d.png",
-                    "/brand_assets/caps/originals/nb108-d.png"
+                    "/brand_assets/caps/nb108-d.webp",
+                    "/brand_assets/caps/originals/nb108-d.webp"
                 ],
                 "description" => "Automotive additives, hairdressing dyes, cosmetic lotions, precision chemical dosing. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -3692,10 +3692,10 @@ class ProductModel {
                 "color" => "Black Collar with White Tip",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-d.png",
+                "image" => "/brand_assets/caps/nb108-d.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-d.png",
-                    "/brand_assets/caps/originals/nb108-d.png"
+                    "/brand_assets/caps/nb108-d.webp",
+                    "/brand_assets/caps/originals/nb108-d.webp"
                 ],
                 "description" => "Automotive additives, hairdressing dyes, cosmetic lotions, precision chemical dosing. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -3718,10 +3718,10 @@ class ProductModel {
                 "color" => "Black Collar with White Tip",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-d.png",
+                "image" => "/brand_assets/caps/nb108-d.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-d.png",
-                    "/brand_assets/caps/originals/nb108-d.png"
+                    "/brand_assets/caps/nb108-d.webp",
+                    "/brand_assets/caps/originals/nb108-d.webp"
                 ],
                 "description" => "Automotive additives, hairdressing dyes, cosmetic lotions, precision chemical dosing. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -3744,10 +3744,10 @@ class ProductModel {
                 "color" => "Black Collar with White Tip",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-d.png",
+                "image" => "/brand_assets/caps/nb108-d.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-d.png",
-                    "/brand_assets/caps/originals/nb108-d.png"
+                    "/brand_assets/caps/nb108-d.webp",
+                    "/brand_assets/caps/originals/nb108-d.webp"
                 ],
                 "description" => "Automotive additives, hairdressing dyes, cosmetic lotions, precision chemical dosing. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -3770,10 +3770,10 @@ class ProductModel {
                 "color" => "Gloss Green / Deep Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-e.png",
+                "image" => "/brand_assets/caps/nb108-e.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-e.png",
-                    "/brand_assets/caps/originals/nb108-e.png"
+                    "/brand_assets/caps/nb108-e.webp",
+                    "/brand_assets/caps/originals/nb108-e.webp"
                 ],
                 "description" => "Body lotions, suncare, liquid soaps, shampoo & conditioners. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -3796,10 +3796,10 @@ class ProductModel {
                 "color" => "Gloss Green / Deep Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-e.png",
+                "image" => "/brand_assets/caps/nb108-e.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-e.png",
-                    "/brand_assets/caps/originals/nb108-e.png"
+                    "/brand_assets/caps/nb108-e.webp",
+                    "/brand_assets/caps/originals/nb108-e.webp"
                 ],
                 "description" => "Body lotions, suncare, liquid soaps, shampoo & conditioners. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -3822,10 +3822,10 @@ class ProductModel {
                 "color" => "Gloss Green / Deep Black",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-e.png",
+                "image" => "/brand_assets/caps/nb108-e.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-e.png",
-                    "/brand_assets/caps/originals/nb108-e.png"
+                    "/brand_assets/caps/nb108-e.webp",
+                    "/brand_assets/caps/originals/nb108-e.webp"
                 ],
                 "description" => "Body lotions, suncare, liquid soaps, shampoo & conditioners. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/415 neck bottles, jars, and cosmetic containers"
@@ -3848,10 +3848,10 @@ class ProductModel {
                 "color" => "Gloss Green / Deep Black",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-e.png",
+                "image" => "/brand_assets/caps/nb108-e.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-e.png",
-                    "/brand_assets/caps/originals/nb108-e.png"
+                    "/brand_assets/caps/nb108-e.webp",
+                    "/brand_assets/caps/originals/nb108-e.webp"
                 ],
                 "description" => "Body lotions, suncare, liquid soaps, shampoo & conditioners. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 33/410 neck bottles, jars, and cosmetic containers"
@@ -3874,10 +3874,10 @@ class ProductModel {
                 "color" => "Clean White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-f.png",
+                "image" => "/brand_assets/caps/nb108-f.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-f.png",
-                    "/brand_assets/caps/originals/nb108-f.png"
+                    "/brand_assets/caps/nb108-f.webp",
+                    "/brand_assets/caps/originals/nb108-f.webp"
                 ],
                 "description" => "Hand sanitizers, body lotions, face cleansers, liquid soaps. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -3900,10 +3900,10 @@ class ProductModel {
                 "color" => "Clean White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-f.png",
+                "image" => "/brand_assets/caps/nb108-f.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-f.png",
-                    "/brand_assets/caps/originals/nb108-f.png"
+                    "/brand_assets/caps/nb108-f.webp",
+                    "/brand_assets/caps/originals/nb108-f.webp"
                 ],
                 "description" => "Hand sanitizers, body lotions, face cleansers, liquid soaps. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/400 neck bottles, jars, and cosmetic containers"
@@ -3926,10 +3926,10 @@ class ProductModel {
                 "color" => "Clean White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-f.png",
+                "image" => "/brand_assets/caps/nb108-f.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-f.png",
-                    "/brand_assets/caps/originals/nb108-f.png"
+                    "/brand_assets/caps/nb108-f.webp",
+                    "/brand_assets/caps/originals/nb108-f.webp"
                 ],
                 "description" => "Hand sanitizers, body lotions, face cleansers, liquid soaps. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -3952,10 +3952,10 @@ class ProductModel {
                 "color" => "Solid Black / Bold Red / White",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-g.png",
+                "image" => "/brand_assets/caps/nb108-g.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-g.png",
-                    "/brand_assets/caps/originals/nb108-g.png"
+                    "/brand_assets/caps/nb108-g.webp",
+                    "/brand_assets/caps/originals/nb108-g.webp"
                 ],
                 "description" => "Food condiments, dish soap, household cleaners, cosmetic shampoos. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -3978,10 +3978,10 @@ class ProductModel {
                 "color" => "Solid Black / Bold Red / White",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-g.png",
+                "image" => "/brand_assets/caps/nb108-g.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-g.png",
-                    "/brand_assets/caps/originals/nb108-g.png"
+                    "/brand_assets/caps/nb108-g.webp",
+                    "/brand_assets/caps/originals/nb108-g.webp"
                 ],
                 "description" => "Food condiments, dish soap, household cleaners, cosmetic shampoos. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -4004,10 +4004,10 @@ class ProductModel {
                 "color" => "Solid Black / Bold Red / White",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-g.png",
+                "image" => "/brand_assets/caps/nb108-g.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-g.png",
-                    "/brand_assets/caps/originals/nb108-g.png"
+                    "/brand_assets/caps/nb108-g.webp",
+                    "/brand_assets/caps/originals/nb108-g.webp"
                 ],
                 "description" => "Food condiments, dish soap, household cleaners, cosmetic shampoos. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -4030,10 +4030,10 @@ class ProductModel {
                 "color" => "Solid Black / Bold Red / White",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-g.png",
+                "image" => "/brand_assets/caps/nb108-g.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-g.png",
-                    "/brand_assets/caps/originals/nb108-g.png"
+                    "/brand_assets/caps/nb108-g.webp",
+                    "/brand_assets/caps/originals/nb108-g.webp"
                 ],
                 "description" => "Food condiments, dish soap, household cleaners, cosmetic shampoos. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/400 neck bottles, jars, and cosmetic containers"
@@ -4056,10 +4056,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -4082,10 +4082,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/415 neck bottles, jars, and cosmetic containers"
@@ -4108,10 +4108,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -4134,10 +4134,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/415 neck bottles, jars, and cosmetic containers"
@@ -4160,10 +4160,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -4186,10 +4186,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/415 neck bottles, jars, and cosmetic containers"
@@ -4212,10 +4212,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -4238,10 +4238,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/415 neck bottles, jars, and cosmetic containers"
@@ -4264,10 +4264,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 33/410 neck bottles, jars, and cosmetic containers"
@@ -4290,10 +4290,10 @@ class ProductModel {
                 "color" => "Electroplated Gold / Midnight Black",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-h.png",
+                "image" => "/brand_assets/caps/nb108-h.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-h.png",
-                    "/brand_assets/caps/originals/nb108-h.png"
+                    "/brand_assets/caps/nb108-h.webp",
+                    "/brand_assets/caps/originals/nb108-h.webp"
                 ],
                 "description" => "High-end haircare, salon shampoos, luxury shower gels, prestige cosmetics. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 38/400 neck bottles, jars, and cosmetic containers"
@@ -4316,10 +4316,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -4342,10 +4342,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/415 neck bottles, jars, and cosmetic containers"
@@ -4368,10 +4368,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -4394,10 +4394,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/415 neck bottles, jars, and cosmetic containers"
@@ -4420,10 +4420,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -4446,10 +4446,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/415 neck bottles, jars, and cosmetic containers"
@@ -4472,10 +4472,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -4498,10 +4498,10 @@ class ProductModel {
                 "color" => "Chrome Silver / Luxury Gold / Black / Translucent Natural",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-i.png",
+                "image" => "/brand_assets/caps/nb108-i.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-i.png",
-                    "/brand_assets/caps/originals/nb108-i.png"
+                    "/brand_assets/caps/nb108-i.webp",
+                    "/brand_assets/caps/originals/nb108-i.webp"
                 ],
                 "description" => "Facial cleansers, body lotions, haircare conditioners, baby wash. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/415 neck bottles, jars, and cosmetic containers"
@@ -4524,10 +4524,10 @@ class ProductModel {
                 "color" => "Pastel Blush Pink / Tangerine Orange",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-j.png",
+                "image" => "/brand_assets/caps/nb108-j.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-j.png",
-                    "/brand_assets/caps/originals/nb108-j.png"
+                    "/brand_assets/caps/nb108-j.webp",
+                    "/brand_assets/caps/originals/nb108-j.webp"
                 ],
                 "description" => "Sun care, skincare serums, dermatological lotions, baby care. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -4550,10 +4550,10 @@ class ProductModel {
                 "color" => "Pastel Blush Pink / Tangerine Orange",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-j.png",
+                "image" => "/brand_assets/caps/nb108-j.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-j.png",
-                    "/brand_assets/caps/originals/nb108-j.png"
+                    "/brand_assets/caps/nb108-j.webp",
+                    "/brand_assets/caps/originals/nb108-j.webp"
                 ],
                 "description" => "Sun care, skincare serums, dermatological lotions, baby care. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -4576,10 +4576,10 @@ class ProductModel {
                 "color" => "Pastel Blush Pink / Tangerine Orange",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-j.png",
+                "image" => "/brand_assets/caps/nb108-j.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-j.png",
-                    "/brand_assets/caps/originals/nb108-j.png"
+                    "/brand_assets/caps/nb108-j.webp",
+                    "/brand_assets/caps/originals/nb108-j.webp"
                 ],
                 "description" => "Sun care, skincare serums, dermatological lotions, baby care. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -4602,10 +4602,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20mm neck bottles, jars, and cosmetic containers"
@@ -4628,10 +4628,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24mm neck bottles, jars, and cosmetic containers"
@@ -4654,10 +4654,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28mm neck bottles, jars, and cosmetic containers"
@@ -4680,10 +4680,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 32mm neck bottles, jars, and cosmetic containers"
@@ -4706,10 +4706,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 38mm neck bottles, jars, and cosmetic containers"
@@ -4732,10 +4732,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 45mm neck bottles, jars, and cosmetic containers"
@@ -4758,10 +4758,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 54mm neck bottles, jars, and cosmetic containers"
@@ -4784,10 +4784,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 61mm neck bottles, jars, and cosmetic containers"
@@ -4810,10 +4810,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 68mm neck bottles, jars, and cosmetic containers"
@@ -4836,10 +4836,10 @@ class ProductModel {
                 "color" => "Royal Blue / Crimson Red / Black / White",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-k.png",
+                "image" => "/brand_assets/caps/nb108-k.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-k.png",
-                    "/brand_assets/caps/originals/nb108-k.png"
+                    "/brand_assets/caps/nb108-k.webp",
+                    "/brand_assets/caps/originals/nb108-k.webp"
                 ],
                 "description" => "Pharma bottles, nutraceutical packers, chemical reagents, wide-mouth jars. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 90mm neck bottles, jars, and cosmetic containers"
@@ -4862,10 +4862,10 @@ class ProductModel {
                 "color" => "Frosted Natural / Electric Magenta / Piano Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-l.png",
+                "image" => "/brand_assets/caps/nb108-l.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-l.png",
-                    "/brand_assets/caps/originals/nb108-l.png"
+                    "/brand_assets/caps/nb108-l.webp",
+                    "/brand_assets/caps/originals/nb108-l.webp"
                 ],
                 "description" => "High-prestige perfumes, luxury body lotions, hair tonics, vanity skincare. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/415 neck bottles, jars, and cosmetic containers"
@@ -4888,10 +4888,10 @@ class ProductModel {
                 "color" => "Frosted Natural / Electric Magenta / Piano Black",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-l.png",
+                "image" => "/brand_assets/caps/nb108-l.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-l.png",
-                    "/brand_assets/caps/originals/nb108-l.png"
+                    "/brand_assets/caps/nb108-l.webp",
+                    "/brand_assets/caps/originals/nb108-l.webp"
                 ],
                 "description" => "High-prestige perfumes, luxury body lotions, hair tonics, vanity skincare. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/415 neck bottles, jars, and cosmetic containers"
@@ -4914,10 +4914,10 @@ class ProductModel {
                 "color" => "Clean White with Pastel Peach Actuator",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-m.png",
+                "image" => "/brand_assets/caps/nb108-m.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-m.png",
-                    "/brand_assets/caps/originals/nb108-m.png"
+                    "/brand_assets/caps/nb108-m.webp",
+                    "/brand_assets/caps/originals/nb108-m.webp"
                 ],
                 "description" => "Premium facial care, hand creams, sun lotions, body moisturizer. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -4940,10 +4940,10 @@ class ProductModel {
                 "color" => "Opaque White / Warm Apricot",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-n.png",
+                "image" => "/brand_assets/caps/nb108-n.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-n.png",
-                    "/brand_assets/caps/originals/nb108-n.png"
+                    "/brand_assets/caps/nb108-n.webp",
+                    "/brand_assets/caps/originals/nb108-n.webp"
                 ],
                 "description" => "Cosmetic jars, pharmaceutical tablets, specialty chemical concentrates. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -4966,10 +4966,10 @@ class ProductModel {
                 "color" => "Opaque White / Warm Apricot",
                 "isStock" => false,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-n.png",
+                "image" => "/brand_assets/caps/nb108-n.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-n.png",
-                    "/brand_assets/caps/originals/nb108-n.png"
+                    "/brand_assets/caps/nb108-n.webp",
+                    "/brand_assets/caps/originals/nb108-n.webp"
                 ],
                 "description" => "Cosmetic jars, pharmaceutical tablets, specialty chemical concentrates. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -4992,10 +4992,10 @@ class ProductModel {
                 "color" => "Opaque White / Warm Apricot",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-n.png",
+                "image" => "/brand_assets/caps/nb108-n.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-n.png",
-                    "/brand_assets/caps/originals/nb108-n.png"
+                    "/brand_assets/caps/nb108-n.webp",
+                    "/brand_assets/caps/originals/nb108-n.webp"
                 ],
                 "description" => "Cosmetic jars, pharmaceutical tablets, specialty chemical concentrates. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -5018,10 +5018,10 @@ class ProductModel {
                 "color" => "Soft Rose Pink / Sage Green / Ocean Teal",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-o.png",
+                "image" => "/brand_assets/caps/nb108-o.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-o.png",
-                    "/brand_assets/caps/originals/nb108-o.png"
+                    "/brand_assets/caps/nb108-o.webp",
+                    "/brand_assets/caps/originals/nb108-o.webp"
                 ],
                 "description" => "Artisanal perfumes, youth cosmetics, luxury bath oils, novelty skincare. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -5044,10 +5044,10 @@ class ProductModel {
                 "color" => "Vibrant Red / Clean White / Emerald Green",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-p.png",
+                "image" => "/brand_assets/caps/nb108-p.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-p.png",
-                    "/brand_assets/caps/originals/nb108-p.png"
+                    "/brand_assets/caps/nb108-p.webp",
+                    "/brand_assets/caps/originals/nb108-p.webp"
                 ],
                 "description" => "Energy drinks, functional beverages, syrup bottles, active sports nutrition. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -5070,10 +5070,10 @@ class ProductModel {
                 "color" => "Vibrant Red / Clean White / Emerald Green",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-p.png",
+                "image" => "/brand_assets/caps/nb108-p.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-p.png",
-                    "/brand_assets/caps/originals/nb108-p.png"
+                    "/brand_assets/caps/nb108-p.webp",
+                    "/brand_assets/caps/originals/nb108-p.webp"
                 ],
                 "description" => "Energy drinks, functional beverages, syrup bottles, active sports nutrition. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/415 neck bottles, jars, and cosmetic containers"
@@ -5096,10 +5096,10 @@ class ProductModel {
                 "color" => "Bright White Ribbed Skirt",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-q.png",
+                "image" => "/brand_assets/caps/nb108-q.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-q.png",
-                    "/brand_assets/caps/originals/nb108-q.png"
+                    "/brand_assets/caps/nb108-q.webp",
+                    "/brand_assets/caps/originals/nb108-q.webp"
                 ],
                 "description" => "Edible oils, hair oils, automotive lubricants, craft liquids. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -5122,10 +5122,10 @@ class ProductModel {
                 "color" => "Bright White Ribbed Skirt",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-q.png",
+                "image" => "/brand_assets/caps/nb108-q.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-q.png",
-                    "/brand_assets/caps/originals/nb108-q.png"
+                    "/brand_assets/caps/nb108-q.webp",
+                    "/brand_assets/caps/originals/nb108-q.webp"
                 ],
                 "description" => "Edible oils, hair oils, automotive lubricants, craft liquids. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -5148,10 +5148,10 @@ class ProductModel {
                 "color" => "Mirror Chrome Shell / Sage Green Gloss PP",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-r.png",
+                "image" => "/brand_assets/caps/nb108-r.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-r.png",
-                    "/brand_assets/caps/originals/nb108-r.png"
+                    "/brand_assets/caps/nb108-r.webp",
+                    "/brand_assets/caps/originals/nb108-r.webp"
                 ],
                 "description" => "Prestige cosmetics, salon hair oils, luxury bath gels, organic personal care. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -5174,10 +5174,10 @@ class ProductModel {
                 "color" => "Mirror Chrome Shell / Sage Green Gloss PP",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-r.png",
+                "image" => "/brand_assets/caps/nb108-r.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-r.png",
-                    "/brand_assets/caps/originals/nb108-r.png"
+                    "/brand_assets/caps/nb108-r.webp",
+                    "/brand_assets/caps/originals/nb108-r.webp"
                 ],
                 "description" => "Prestige cosmetics, salon hair oils, luxury bath gels, organic personal care. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -5200,10 +5200,10 @@ class ProductModel {
                 "color" => "Mirror Chrome Shell / Sage Green Gloss PP",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/brand_assets/caps/nb108-r.png",
+                "image" => "/brand_assets/caps/nb108-r.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-r.png",
-                    "/brand_assets/caps/originals/nb108-r.png"
+                    "/brand_assets/caps/nb108-r.webp",
+                    "/brand_assets/caps/originals/nb108-r.webp"
                 ],
                 "description" => "Prestige cosmetics, salon hair oils, luxury bath gels, organic personal care. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 28/410 neck bottles, jars, and cosmetic containers"
@@ -5226,10 +5226,10 @@ class ProductModel {
                 "color" => "Porcelain White / Piano Black",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-s.png",
+                "image" => "/brand_assets/caps/nb108-s.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-s.png",
-                    "/brand_assets/caps/originals/nb108-s.png"
+                    "/brand_assets/caps/nb108-s.webp",
+                    "/brand_assets/caps/originals/nb108-s.webp"
                 ],
                 "description" => "Luxury botanical skincare, spa toners, high-end beauty elixirs. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24mm neck bottles, jars, and cosmetic containers"
@@ -5252,10 +5252,10 @@ class ProductModel {
                 "color" => "Semi-Transparent Natural",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-t.png",
+                "image" => "/brand_assets/caps/nb108-t.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-t.png",
-                    "/brand_assets/caps/originals/nb108-t.png"
+                    "/brand_assets/caps/nb108-t.webp",
+                    "/brand_assets/caps/originals/nb108-t.webp"
                 ],
                 "description" => "Medical liquids, laboratory reagents, chemical dosing, cosmetic droppers. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 18/410 neck bottles, jars, and cosmetic containers"
@@ -5278,10 +5278,10 @@ class ProductModel {
                 "color" => "Semi-Transparent Natural",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-t.png",
+                "image" => "/brand_assets/caps/nb108-t.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-t.png",
-                    "/brand_assets/caps/originals/nb108-t.png"
+                    "/brand_assets/caps/nb108-t.webp",
+                    "/brand_assets/caps/originals/nb108-t.webp"
                 ],
                 "description" => "Medical liquids, laboratory reagents, chemical dosing, cosmetic droppers. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 20/410 neck bottles, jars, and cosmetic containers"
@@ -5304,10 +5304,10 @@ class ProductModel {
                 "color" => "Semi-Transparent Natural",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/caps/nb108-t.png",
+                "image" => "/brand_assets/caps/nb108-t.webp",
                 "gallery" => [
-                    "/brand_assets/caps/nb108-t.png",
-                    "/brand_assets/caps/originals/nb108-t.png"
+                    "/brand_assets/caps/nb108-t.webp",
+                    "/brand_assets/caps/originals/nb108-t.webp"
                 ],
                 "description" => "Medical liquids, laboratory reagents, chemical dosing, cosmetic droppers. Manufactured under ISO 9001 quality controls with verified leak-tight seals and precise neck thread tolerances.",
                 "compatibleClosures" => "Fits all standard 24/410 neck bottles, jars, and cosmetic containers"
@@ -5330,11 +5330,11 @@ class ProductModel {
                 "color" => "Any colour",
                 "isStock" => false,
                 "moq" => "25,740",
-                "image" => "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.jpg",
+                "image" => "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.jpg",
-                    "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.jpeg",
-                    "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.jpg"
+                    "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.webp",
+                    "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.webp",
+                    "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.webp"
                 ],
                 "description" => "The 250ml Sharp Cylindrical PET bottle features a clean flat-shoulder profile with standard 24/410 neck finish. Ideal for cosmetic sprays, lotions, and sanitizing liquids.",
                 "compatibleClosures" => "24/410 Lotion Dispenser, 24/410 Fine Mist Sprayer, 24/410 Disc Top Cap"
@@ -5357,10 +5357,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "5,440",
-                "image" => "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.jpg",
-                    "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.jpeg"
+                    "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.webp",
+                    "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.webp"
                 ],
                 "description" => "Readily stocked 100ml cylindrical bottle with 20/410 neck. Low MOQ for fast delivery and sampling.",
                 "compatibleClosures" => "20/410 Mist Sprayer, 20/410 Screw Cap"
@@ -5383,10 +5383,10 @@ class ProductModel {
                 "color" => "Any colour",
                 "isStock" => false,
                 "moq" => "27,200",
-                "image" => "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.jpg",
-                    "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.jpg"
+                    "/brand_assets/pet_bottles/vidut_100ml_26gm28mm.webp",
+                    "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.webp"
                 ],
                 "description" => "Versatile 100ml bottle with wider 24/410 neck finish accommodating full-size cosmetic lotion pumps.",
                 "compatibleClosures" => "24/410 Pumps, Disc Tops, Flip Caps"
@@ -5409,10 +5409,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "2,688",
-                "image" => "/brand_assets/pet_bottles/200ml_round_18_19gm_25mm.jpg",
+                "image" => "/brand_assets/pet_bottles/200ml_round_18_19gm_25mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/200ml_round_18_19gm_25mm.jpg",
-                    "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.jpeg"
+                    "/brand_assets/pet_bottles/200ml_round_18_19gm_25mm.webp",
+                    "/brand_assets/pet_bottles/cosmetic_bottle-_spray_bottle_-_family.webp"
                 ],
                 "description" => "Popular 200ml stock container suitable for body wash, micellar water, and hair conditioner.",
                 "compatibleClosures" => "24/410 Lotion Pumps, Mist Sprayers, Flip Tops"
@@ -5435,10 +5435,10 @@ class ProductModel {
                 "color" => "Any colour",
                 "isStock" => false,
                 "moq" => "18,400",
-                "image" => "/brand_assets/pet_bottles/500ml_spray_30g_24mm.jpg",
+                "image" => "/brand_assets/pet_bottles/500ml_spray_30g_24mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/500ml_spray_30g_24mm.jpg",
-                    "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.jpg"
+                    "/brand_assets/pet_bottles/500ml_spray_30g_24mm.webp",
+                    "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.webp"
                 ],
                 "description" => "High capacity 500ml bottle with heavy wall construction for salon products, detergents, and industrial solutions.",
                 "compatibleClosures" => "28-410 Trigger Sprayer, 28-410 High-Output Dispenser"
@@ -5464,8 +5464,8 @@ class ProductModel {
                 "image" => "/brand_assets/pet_bottles/boston_60ml_8.5gm.jpeg",
                 "gallery" => [
                     "/brand_assets/pet_bottles/boston_60ml_8.5gm.jpeg",
-                    "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.jpeg",
-                    "/brand_assets/pet_bottles/boston_range.jpg"
+                    "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.webp",
+                    "/brand_assets/pet_bottles/boston_range.webp"
                 ],
                 "description" => "Classic rounded shoulder 50ml travel bottle engineered with USP Class VI certified food-grade PET.",
                 "compatibleClosures" => "20/410 Screw Cap, 20/410 Mist Sprayer"
@@ -5491,7 +5491,7 @@ class ProductModel {
                 "image" => "/brand_assets/pet_bottles/boston100ml_11.5gm.jpeg",
                 "gallery" => [
                     "/brand_assets/pet_bottles/boston100ml_11.5gm.jpeg",
-                    "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.jpeg"
+                    "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.webp"
                 ],
                 "description" => "Standard 100ml Boston Round bottle, high optical clarity with thick base appearance.",
                 "compatibleClosures" => "20/410 Dispensing Caps, Atomizers"
@@ -5514,10 +5514,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "3,400",
-                "image" => "/brand_assets/pet_bottles/boston_200ml_16g_clr.jpg",
+                "image" => "/brand_assets/pet_bottles/boston_200ml_16g_clr.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/boston_200ml_16g_clr.jpg",
-                    "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.jpeg"
+                    "/brand_assets/pet_bottles/boston_200ml_16g_clr.webp",
+                    "/brand_assets/pet_bottles/cosmetic_bottle-_boston-_family.webp"
                 ],
                 "description" => "The flagship 200ml Boston Round bottle in high demand across body washes and botanical shampoos.",
                 "compatibleClosures" => "24/410 Lotion Pump, Disc Top, Flip Top"
@@ -5540,10 +5540,10 @@ class ProductModel {
                 "color" => "Any colour",
                 "isStock" => false,
                 "moq" => "24,000",
-                "image" => "/brand_assets/pet_bottles/boston_200ml_16g_clr.jpg",
+                "image" => "/brand_assets/pet_bottles/boston_200ml_16g_clr.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/boston_200ml_16g_clr.jpg",
-                    "/brand_assets/pet_bottles/boston_range.jpg"
+                    "/brand_assets/pet_bottles/boston_200ml_16g_clr.webp",
+                    "/brand_assets/pet_bottles/boston_range.webp"
                 ],
                 "description" => "250ml capacity with custom color masterbatch options (Amber, Cobalt Blue, Forest Green, Solid White).",
                 "compatibleClosures" => "24/410 Dispenser, Mist Sprayer"
@@ -5566,10 +5566,10 @@ class ProductModel {
                 "color" => "Any colour",
                 "isStock" => false,
                 "moq" => "16,500",
-                "image" => "/brand_assets/pet_bottles/boston_480ml_36g_28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/boston_480ml_36g_28mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/boston_480ml_36g_28mm.jpg",
-                    "/brand_assets/pet_bottles/boston_range.jpg"
+                    "/brand_assets/pet_bottles/boston_480ml_36g_28mm.webp",
+                    "/brand_assets/pet_bottles/boston_range.webp"
                 ],
                 "description" => "Generous 480ml / 16 oz format engineered for salon-grade haircare and body lotions.",
                 "compatibleClosures" => "28/410 Saddle Pump, Trigger Sprayer"
@@ -5592,10 +5592,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "1,800",
-                "image" => "/brand_assets/pet_bottles/1000ml_rd_pco_40gm_28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/1000ml_rd_pco_40gm_28mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/1000ml_rd_pco_40gm_28mm.jpg",
-                    "/brand_assets/pet_bottles/boston_range.jpg"
+                    "/brand_assets/pet_bottles/1000ml_rd_pco_40gm_28mm.webp",
+                    "/brand_assets/pet_bottles/boston_range.webp"
                 ],
                 "description" => "1-litre high capacity container with standard 28mm neck, excellent drop impact strength.",
                 "compatibleClosures" => "28mm PCO Caps, Heavy-Duty Dispensing Pumps"
@@ -5618,11 +5618,11 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => false,
                 "moq" => "20,000",
-                "image" => "/brand_assets/pet_bottles/100ml_dome_shape_17gm_28mm_-_2_.jpg",
+                "image" => "/brand_assets/pet_bottles/100ml_dome_shape_17gm_28mm_-_2_.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/100ml_dome_shape_17gm_28mm_-_2_.jpg",
-                    "/brand_assets/pet_bottles/125ml_dome_17gm_28-2.jpg",
-                    "/brand_assets/pet_bottles/250ml_dome_24gm_28mm.jpg"
+                    "/brand_assets/pet_bottles/100ml_dome_shape_17gm_28mm_-_2_.webp",
+                    "/brand_assets/pet_bottles/125ml_dome_17gm_28-2.webp",
+                    "/brand_assets/pet_bottles/250ml_dome_24gm_28mm.webp"
                 ],
                 "description" => "Gracefully curved dome contour creating a high-end luxury look for facial mists and toners.",
                 "compatibleClosures" => "24/410 Mist Sprayers, Treatment Pumps"
@@ -5645,10 +5645,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "3,200",
-                "image" => "/brand_assets/pet_bottles/250ml_dome_24gm_28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/250ml_dome_24gm_28mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/250ml_dome_24gm_28mm.jpg",
-                    "/brand_assets/pet_bottles/300ml_dome.jpg"
+                    "/brand_assets/pet_bottles/250ml_dome_24gm_28mm.webp",
+                    "/brand_assets/pet_bottles/300ml_dome.webp"
                 ],
                 "description" => "250ml dome bottle offering ergonomic palm fit and modern cosmetic counter presence.",
                 "compatibleClosures" => "28/410 Dispenser, Disc Top"
@@ -5671,10 +5671,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => false,
                 "moq" => "22,000",
-                "image" => "/brand_assets/pet_bottles/oval_200ml.jpg",
+                "image" => "/brand_assets/pet_bottles/oval_200ml.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/oval_200ml.jpg",
-                    "/brand_assets/pet_bottles/hs_oval_300ml_26g.jpg"
+                    "/brand_assets/pet_bottles/oval_200ml.webp",
+                    "/brand_assets/pet_bottles/hs_oval_300ml_26g.webp"
                 ],
                 "description" => "Ergonomic squeeze-friendly oval design tailored for premium body washes and hair serums.",
                 "compatibleClosures" => "24/410 Flip Top, Disc Top, Lotion Pump"
@@ -5697,9 +5697,9 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "2,500",
-                "image" => "/brand_assets/pet_bottles/hs_oval_300ml_26g.jpg",
+                "image" => "/brand_assets/pet_bottles/hs_oval_300ml_26g.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/hs_oval_300ml_26g.jpg"
+                    "/brand_assets/pet_bottles/hs_oval_300ml_26g.webp"
                 ],
                 "description" => "300ml heavy-grammage oval container with superior structural rigidity.",
                 "compatibleClosures" => "26mm Custom Closures, Pumps"
@@ -5722,10 +5722,10 @@ class ProductModel {
                 "color" => "Amber",
                 "isStock" => true,
                 "moq" => "4,000",
-                "image" => "/brand_assets/pet_bottles/badami_100ml.jpg",
+                "image" => "/brand_assets/pet_bottles/badami_100ml.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/badami_100ml.jpg",
-                    "/brand_assets/pet_bottles/badami_200ml.jpg"
+                    "/brand_assets/pet_bottles/badami_100ml.webp",
+                    "/brand_assets/pet_bottles/badami_200ml.webp"
                 ],
                 "description" => "Class 10,000 cleanroom manufactured amber UV-blocking syrup container with US FDA DMF documentation.",
                 "compatibleClosures" => "25mm Pilfer-Proof CRC Cap with Measuring Cup"
@@ -5748,9 +5748,9 @@ class ProductModel {
                 "color" => "Amber",
                 "isStock" => false,
                 "moq" => "20,000",
-                "image" => "/brand_assets/pet_bottles/badami_200ml.jpg",
+                "image" => "/brand_assets/pet_bottles/badami_200ml.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/badami_200ml.jpg"
+                    "/brand_assets/pet_bottles/badami_200ml.webp"
                 ],
                 "description" => "High-volume pharmaceutical syrup bottle with tamper-evident neck bead for oral medications.",
                 "compatibleClosures" => "25mm ROPP Closure, Child-Resistant Cap"
@@ -5773,11 +5773,11 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => false,
                 "moq" => "25,000",
-                "image" => "/brand_assets/pet_bottles/75_cc_24gm_38mm_rev.jpeg",
+                "image" => "/brand_assets/pet_bottles/75_cc_24gm_38mm_rev.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/75_cc_24gm_38mm_rev.jpeg",
-                    "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.jpg",
-                    "/vikaas_inputs/pet_nutraceuticle_jars.png"
+                    "/brand_assets/pet_bottles/75_cc_24gm_38mm_rev.webp",
+                    "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp",
+                    "/vikaas_inputs/pet_nutraceuticle_jars.webp"
                 ],
                 "description" => "Compact 75cc tablet jar suitable for premium dietary supplements, vitamins, and capsule trials.",
                 "compatibleClosures" => "38mm Induction Heat Seal CRC Cap"
@@ -5800,10 +5800,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "4,200",
-                "image" => "/brand_assets/pet_bottles/120cc_clear.jpg",
+                "image" => "/brand_assets/pet_bottles/120cc_clear.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/120cc_clear.jpg",
-                    "/vikaas_inputs/pet_nutraceuticle_jars.png"
+                    "/brand_assets/pet_bottles/120cc_clear.webp",
+                    "/vikaas_inputs/pet_nutraceuticle_jars.webp"
                 ],
                 "description" => "Industry-standard 120cc capsule packer readily available from stock.",
                 "compatibleClosures" => "38mm Ribbed Cap, CRC Child-Resistant Closure"
@@ -5826,10 +5826,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "3,000",
-                "image" => "/brand_assets/pet_bottles/200_cc_24gm_38mm.jpeg",
+                "image" => "/brand_assets/pet_bottles/200_cc_24gm_38mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/200_cc_24gm_38mm.jpeg",
-                    "/brand_assets/pet_bottles/150_cc_24gm_38mm.jpeg"
+                    "/brand_assets/pet_bottles/200_cc_24gm_38mm.webp",
+                    "/brand_assets/pet_bottles/150_cc_24gm_38mm.webp"
                 ],
                 "description" => "Class 10k controlled production nutraceutical container for 60 to 90 count softgels.",
                 "compatibleClosures" => "38mm Metal Unishell or Plastic Induction Cap"
@@ -5852,10 +5852,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => false,
                 "moq" => "12,000",
-                "image" => "/brand_assets/pet_bottles/500cc.jpg",
+                "image" => "/brand_assets/pet_bottles/500cc.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/500cc.jpg",
-                    "/brand_assets/pet_bottles/300cc.jpg"
+                    "/brand_assets/pet_bottles/500cc.webp",
+                    "/brand_assets/pet_bottles/300cc.webp"
                 ],
                 "description" => "Large 500cc jar for bulk sports nutrition tablets, powder scoops, and healthcare formulations.",
                 "compatibleClosures" => "53mm Ribbed Closure with PS-22 Pressure Seal Liner"
@@ -5878,10 +5878,10 @@ class ProductModel {
                 "color" => "White",
                 "isStock" => true,
                 "moq" => "3,500",
-                "image" => "/brand_assets/pet_bottles/200ml_brute_18gm_25mm.jpg",
+                "image" => "/brand_assets/pet_bottles/200ml_brute_18gm_25mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/200ml_brute_18gm_25mm.jpg",
-                    "/brand_assets/pet_bottles/100ml_boston_white.jpeg"
+                    "/brand_assets/pet_bottles/200ml_brute_18gm_25mm.webp",
+                    "/brand_assets/pet_bottles/100ml_boston_white.webp"
                 ],
                 "description" => "High-barrier opaque HDPE bottle for light-sensitive pharmaceutical oral suspensions.",
                 "compatibleClosures" => "25mm CRC Cap, Tamper-Evident Ring"
@@ -5904,10 +5904,10 @@ class ProductModel {
                 "color" => "White",
                 "isStock" => true,
                 "moq" => "5,000",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp",
                 "gallery" => [
-                    "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.png",
-                    "/brand_assets/glass_bottles/metal_unishell_cap_.jpg"
+                    "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp",
+                    "/brand_assets/glass_bottles/metal_unishell_cap_.webp"
                 ],
                 "description" => "Precision-moulded ribbed screw cap with EPE foam liner ensuring leak-tight seal on all standard 24/410 bottles.",
                 "compatibleClosures" => "Compatible with all 24/410 PET and HDPE bottles"
@@ -5930,10 +5930,10 @@ class ProductModel {
                 "color" => "White / Glossy",
                 "isStock" => true,
                 "moq" => "2,500",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.webp",
                 "gallery" => [
-                    "/vikaas_inputs/thumbnails/thumbnail_pumps.png",
-                    "/brand_assets/pet_bottles/beer_shampoo_200ml.jpg"
+                    "/vikaas_inputs/thumbnails/thumbnail_pumps.webp",
+                    "/brand_assets/pet_bottles/beer_shampoo_200ml.webp"
                 ],
                 "description" => "Smooth glide actuation pump with metal-free liquid path and stainless steel 304 internal spring mechanism.",
                 "compatibleClosures" => "Fits 24/410 Boston, Cylindrical, Dome bottles"
@@ -5956,10 +5956,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "3,000",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_sprays.png",
+                "image" => "/vikaas_inputs/thumbnails/thumbnail_sprays.webp",
                 "gallery" => [
-                    "/vikaas_inputs/thumbnails/thumbnail_sprays.png",
-                    "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.jpg"
+                    "/vikaas_inputs/thumbnails/thumbnail_sprays.webp",
+                    "/brand_assets/pet_bottles/100ml_spray_bottle-_16g_19mm_short.webp"
                 ],
                 "description" => "Precision swirl chamber delivering ultra-fine mist atomization for toners and room fragrances.",
                 "compatibleClosures" => "Fits all 20/410 neck bottles"
@@ -5982,10 +5982,10 @@ class ProductModel {
                 "color" => "White",
                 "isStock" => true,
                 "moq" => "1,500",
-                "image" => "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.jpg",
+                "image" => "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.jpg",
-                    "/brand_assets/pet_bottles/500ml_spray_30g_24mm.jpg"
+                    "/brand_assets/pet_bottles/500ml_spray_bottle-_37gm_28mm.webp",
+                    "/brand_assets/pet_bottles/500ml_spray_30g_24mm.webp"
                 ],
                 "description" => "High-ESCR chemical-resistant sprayer head featuring spray, stream, and off twist lock settings.",
                 "compatibleClosures" => "Fits 500ml and 1000ml standard 28-410 bottles"
@@ -6008,10 +6008,10 @@ class ProductModel {
                 "color" => "Blue / Custom",
                 "isStock" => true,
                 "moq" => "2,000",
-                "image" => "/brand_assets/pet_bottles/75cc_blue_jar.jpeg",
+                "image" => "/brand_assets/pet_bottles/75cc_blue_jar.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/75cc_blue_jar.jpeg",
-                    "/vikaas_inputs/pet_nutraceuticle_jars.png"
+                    "/brand_assets/pet_bottles/75cc_blue_jar.webp",
+                    "/vikaas_inputs/pet_nutraceuticle_jars.webp"
                 ],
                 "description" => "Luxury double-wall construction with inner liner cup and protective plastic shive for face creams.",
                 "compatibleClosures" => "Includes matching airtight screw lid"
@@ -6034,10 +6034,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "3,000",
-                "image" => "/brand_assets/pet_bottles/veola_50ml.jpg",
+                "image" => "/brand_assets/pet_bottles/veola_50ml.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/veola_50ml.jpg",
-                    "/brand_assets/pet_bottles/veola-100ml.jpg"
+                    "/brand_assets/pet_bottles/veola_50ml.webp",
+                    "/brand_assets/pet_bottles/veola-100ml.webp"
                 ],
                 "description" => "Compact facial foaming pump bottle generating ultra-dense foam without aerosol gas.",
                 "compatibleClosures" => "Includes integrated 30mm foamer head and overcap"
@@ -6060,10 +6060,10 @@ class ProductModel {
                 "color" => "Transparent",
                 "isStock" => true,
                 "moq" => "2,000",
-                "image" => "/brand_assets/pet_bottles/100ml_bulb_bottle.jpg",
+                "image" => "/brand_assets/pet_bottles/100ml_bulb_bottle.webp",
                 "gallery" => [
-                    "/brand_assets/pet_bottles/100ml_bulb_bottle.jpg",
-                    "/brand_assets/pet_bottles/bulb_bottle-_30ml.jpg"
+                    "/brand_assets/pet_bottles/100ml_bulb_bottle.webp",
+                    "/brand_assets/pet_bottles/bulb_bottle-_30ml.webp"
                 ],
                 "description" => "Curved bulb silhouette designed for active serums, retinols, and precision facial oils.",
                 "compatibleClosures" => "Fits dropper assembly or treatment dispenser"
@@ -6086,9 +6086,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-a.png"
+                    "/brand_assets/pumps/nb101-a.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -6111,9 +6111,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-a.png"
+                    "/brand_assets/pumps/nb101-a.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -6136,9 +6136,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-a.png"
+                    "/brand_assets/pumps/nb101-a.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -6161,9 +6161,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-a.png"
+                    "/brand_assets/pumps/nb101-a.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -6186,9 +6186,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-a.png"
+                    "/brand_assets/pumps/nb101-a.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -6211,9 +6211,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-a.png",
+                "image" => "/brand_assets/pumps/nb101-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-a.png"
+                    "/brand_assets/pumps/nb101-a.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -6236,9 +6236,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-b.png"
+                    "/brand_assets/pumps/nb101-b.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -6261,9 +6261,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-b.png"
+                    "/brand_assets/pumps/nb101-b.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -6286,9 +6286,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-b.png"
+                    "/brand_assets/pumps/nb101-b.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -6311,9 +6311,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-b.png"
+                    "/brand_assets/pumps/nb101-b.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -6336,9 +6336,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-b.png"
+                    "/brand_assets/pumps/nb101-b.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -6361,9 +6361,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-b.png",
+                "image" => "/brand_assets/pumps/nb101-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-b.png"
+                    "/brand_assets/pumps/nb101-b.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -6386,9 +6386,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-d.png"
+                    "/brand_assets/pumps/nb101-d.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -6411,9 +6411,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-d.png"
+                    "/brand_assets/pumps/nb101-d.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -6436,9 +6436,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-d.png"
+                    "/brand_assets/pumps/nb101-d.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -6461,9 +6461,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-d.png"
+                    "/brand_assets/pumps/nb101-d.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -6486,9 +6486,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-d.png"
+                    "/brand_assets/pumps/nb101-d.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -6511,9 +6511,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-d.png",
+                "image" => "/brand_assets/pumps/nb101-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-d.png"
+                    "/brand_assets/pumps/nb101-d.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -6536,9 +6536,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-o.png"
+                    "/brand_assets/pumps/nb101-o.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -6561,9 +6561,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-o.png"
+                    "/brand_assets/pumps/nb101-o.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -6586,9 +6586,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-o.png"
+                    "/brand_assets/pumps/nb101-o.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -6611,9 +6611,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-o.png"
+                    "/brand_assets/pumps/nb101-o.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -6636,9 +6636,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-o.png"
+                    "/brand_assets/pumps/nb101-o.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -6661,9 +6661,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-o.png",
+                "image" => "/brand_assets/pumps/nb101-o.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-o.png"
+                    "/brand_assets/pumps/nb101-o.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -6686,9 +6686,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-e.png"
+                    "/brand_assets/pumps/nb101-e.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -6711,9 +6711,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-e.png"
+                    "/brand_assets/pumps/nb101-e.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -6736,9 +6736,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-e.png"
+                    "/brand_assets/pumps/nb101-e.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -6761,9 +6761,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-e.png"
+                    "/brand_assets/pumps/nb101-e.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -6786,9 +6786,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-e.png"
+                    "/brand_assets/pumps/nb101-e.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -6811,9 +6811,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-e.png",
+                "image" => "/brand_assets/pumps/nb101-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-e.png"
+                    "/brand_assets/pumps/nb101-e.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -6836,9 +6836,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-f.png"
+                    "/brand_assets/pumps/nb101-f.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -6861,9 +6861,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-f.png"
+                    "/brand_assets/pumps/nb101-f.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -6886,9 +6886,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-f.png"
+                    "/brand_assets/pumps/nb101-f.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -6911,9 +6911,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-f.png"
+                    "/brand_assets/pumps/nb101-f.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -6936,9 +6936,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-f.png"
+                    "/brand_assets/pumps/nb101-f.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -6961,9 +6961,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-f.png",
+                "image" => "/brand_assets/pumps/nb101-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-f.png"
+                    "/brand_assets/pumps/nb101-f.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -6986,9 +6986,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-g.png"
+                    "/brand_assets/pumps/nb101-g.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7011,9 +7011,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-g.png"
+                    "/brand_assets/pumps/nb101-g.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7036,9 +7036,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-g.png"
+                    "/brand_assets/pumps/nb101-g.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7061,9 +7061,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-g.png"
+                    "/brand_assets/pumps/nb101-g.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7086,9 +7086,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-g.png"
+                    "/brand_assets/pumps/nb101-g.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -7111,9 +7111,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-g.png",
+                "image" => "/brand_assets/pumps/nb101-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-g.png"
+                    "/brand_assets/pumps/nb101-g.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -7136,9 +7136,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-h.png"
+                    "/brand_assets/pumps/nb101-h.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7161,9 +7161,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-h.png"
+                    "/brand_assets/pumps/nb101-h.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7186,9 +7186,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-h.png"
+                    "/brand_assets/pumps/nb101-h.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7211,9 +7211,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-h.png"
+                    "/brand_assets/pumps/nb101-h.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7236,9 +7236,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-h.png"
+                    "/brand_assets/pumps/nb101-h.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -7261,9 +7261,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-h.png",
+                "image" => "/brand_assets/pumps/nb101-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-h.png"
+                    "/brand_assets/pumps/nb101-h.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -7286,9 +7286,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-i.png"
+                    "/brand_assets/pumps/nb101-i.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7311,9 +7311,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-i.png"
+                    "/brand_assets/pumps/nb101-i.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7336,9 +7336,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-i.png"
+                    "/brand_assets/pumps/nb101-i.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7361,9 +7361,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-i.png"
+                    "/brand_assets/pumps/nb101-i.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7386,9 +7386,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-i.png"
+                    "/brand_assets/pumps/nb101-i.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -7411,9 +7411,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-i.png",
+                "image" => "/brand_assets/pumps/nb101-i.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-i.png"
+                    "/brand_assets/pumps/nb101-i.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -7436,9 +7436,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-j.png"
+                    "/brand_assets/pumps/nb101-j.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7461,9 +7461,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-j.png"
+                    "/brand_assets/pumps/nb101-j.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7486,9 +7486,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-j.png"
+                    "/brand_assets/pumps/nb101-j.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7511,9 +7511,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-j.png"
+                    "/brand_assets/pumps/nb101-j.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7536,9 +7536,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-j.png"
+                    "/brand_assets/pumps/nb101-j.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -7561,9 +7561,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-j.png",
+                "image" => "/brand_assets/pumps/nb101-j.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-j.png"
+                    "/brand_assets/pumps/nb101-j.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -7586,9 +7586,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-k.png"
+                    "/brand_assets/pumps/nb101-k.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7611,9 +7611,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-k.png"
+                    "/brand_assets/pumps/nb101-k.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7636,9 +7636,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-k.png"
+                    "/brand_assets/pumps/nb101-k.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7661,9 +7661,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-k.png"
+                    "/brand_assets/pumps/nb101-k.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7686,9 +7686,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-k.png"
+                    "/brand_assets/pumps/nb101-k.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -7711,9 +7711,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-k.png",
+                "image" => "/brand_assets/pumps/nb101-k.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-k.png"
+                    "/brand_assets/pumps/nb101-k.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -7736,9 +7736,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-m.png"
+                    "/brand_assets/pumps/nb101-m.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7761,9 +7761,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-m.png"
+                    "/brand_assets/pumps/nb101-m.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7786,9 +7786,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-m.png"
+                    "/brand_assets/pumps/nb101-m.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7811,9 +7811,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-m.png"
+                    "/brand_assets/pumps/nb101-m.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7836,9 +7836,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-m.png"
+                    "/brand_assets/pumps/nb101-m.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -7861,9 +7861,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-m.png",
+                "image" => "/brand_assets/pumps/nb101-m.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-m.png"
+                    "/brand_assets/pumps/nb101-m.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -7886,9 +7886,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-n.png"
+                    "/brand_assets/pumps/nb101-n.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -7911,9 +7911,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-n.png"
+                    "/brand_assets/pumps/nb101-n.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -7936,9 +7936,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-n.png"
+                    "/brand_assets/pumps/nb101-n.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -7961,9 +7961,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-n.png"
+                    "/brand_assets/pumps/nb101-n.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -7986,9 +7986,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-n.png"
+                    "/brand_assets/pumps/nb101-n.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/412 neck bottles and containers"
@@ -8011,9 +8011,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb101-n.png",
+                "image" => "/brand_assets/pumps/nb101-n.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb101-n.png"
+                    "/brand_assets/pumps/nb101-n.webp"
                 ],
                 "description" => "NB101 Lotion Pump delivering 2cc/T +/- precision dosage. Available in 24/410, 28/410, 28/400, 24/415, 28/412, 28/415 neck finishes. Closures: Smooth 24/410,28/410; Ribbed 24/410,28/410; Ribbed 28/400; Ribbed 24/415,28/412,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8036,9 +8036,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-a.png",
+                "image" => "/brand_assets/pumps/nb102-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-a.png"
+                    "/brand_assets/pumps/nb102-a.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8061,9 +8061,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-a.png",
+                "image" => "/brand_assets/pumps/nb102-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-a.png"
+                    "/brand_assets/pumps/nb102-a.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8086,9 +8086,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-a.png",
+                "image" => "/brand_assets/pumps/nb102-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-a.png"
+                    "/brand_assets/pumps/nb102-a.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8111,9 +8111,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-a.png",
+                "image" => "/brand_assets/pumps/nb102-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-a.png"
+                    "/brand_assets/pumps/nb102-a.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8136,9 +8136,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-a.png",
+                "image" => "/brand_assets/pumps/nb102-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-a.png"
+                    "/brand_assets/pumps/nb102-a.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8161,9 +8161,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-b.png",
+                "image" => "/brand_assets/pumps/nb102-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-b.png"
+                    "/brand_assets/pumps/nb102-b.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8186,9 +8186,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-b.png",
+                "image" => "/brand_assets/pumps/nb102-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-b.png"
+                    "/brand_assets/pumps/nb102-b.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8211,9 +8211,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-b.png",
+                "image" => "/brand_assets/pumps/nb102-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-b.png"
+                    "/brand_assets/pumps/nb102-b.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8236,9 +8236,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-b.png",
+                "image" => "/brand_assets/pumps/nb102-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-b.png"
+                    "/brand_assets/pumps/nb102-b.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8261,9 +8261,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-b.png",
+                "image" => "/brand_assets/pumps/nb102-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-b.png"
+                    "/brand_assets/pumps/nb102-b.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8286,9 +8286,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-c.png",
+                "image" => "/brand_assets/pumps/nb102-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-c.png"
+                    "/brand_assets/pumps/nb102-c.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8311,9 +8311,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-c.png",
+                "image" => "/brand_assets/pumps/nb102-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-c.png"
+                    "/brand_assets/pumps/nb102-c.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8336,9 +8336,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-c.png",
+                "image" => "/brand_assets/pumps/nb102-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-c.png"
+                    "/brand_assets/pumps/nb102-c.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8361,9 +8361,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-c.png",
+                "image" => "/brand_assets/pumps/nb102-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-c.png"
+                    "/brand_assets/pumps/nb102-c.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8386,9 +8386,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-c.png",
+                "image" => "/brand_assets/pumps/nb102-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-c.png"
+                    "/brand_assets/pumps/nb102-c.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8411,9 +8411,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-d.png",
+                "image" => "/brand_assets/pumps/nb102-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-d.png"
+                    "/brand_assets/pumps/nb102-d.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8436,9 +8436,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-d.png",
+                "image" => "/brand_assets/pumps/nb102-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-d.png"
+                    "/brand_assets/pumps/nb102-d.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8461,9 +8461,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-d.png",
+                "image" => "/brand_assets/pumps/nb102-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-d.png"
+                    "/brand_assets/pumps/nb102-d.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8486,9 +8486,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-d.png",
+                "image" => "/brand_assets/pumps/nb102-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-d.png"
+                    "/brand_assets/pumps/nb102-d.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8511,9 +8511,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-d.png",
+                "image" => "/brand_assets/pumps/nb102-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-d.png"
+                    "/brand_assets/pumps/nb102-d.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8536,9 +8536,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-e.png",
+                "image" => "/brand_assets/pumps/nb102-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-e.png"
+                    "/brand_assets/pumps/nb102-e.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8561,9 +8561,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-e.png",
+                "image" => "/brand_assets/pumps/nb102-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-e.png"
+                    "/brand_assets/pumps/nb102-e.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8586,9 +8586,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-e.png",
+                "image" => "/brand_assets/pumps/nb102-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-e.png"
+                    "/brand_assets/pumps/nb102-e.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8611,9 +8611,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-e.png",
+                "image" => "/brand_assets/pumps/nb102-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-e.png"
+                    "/brand_assets/pumps/nb102-e.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8636,9 +8636,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-e.png",
+                "image" => "/brand_assets/pumps/nb102-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-e.png"
+                    "/brand_assets/pumps/nb102-e.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8661,9 +8661,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-f.png",
+                "image" => "/brand_assets/pumps/nb102-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-f.png"
+                    "/brand_assets/pumps/nb102-f.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8686,9 +8686,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-f.png",
+                "image" => "/brand_assets/pumps/nb102-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-f.png"
+                    "/brand_assets/pumps/nb102-f.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8711,9 +8711,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-f.png",
+                "image" => "/brand_assets/pumps/nb102-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-f.png"
+                    "/brand_assets/pumps/nb102-f.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8736,9 +8736,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-f.png",
+                "image" => "/brand_assets/pumps/nb102-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-f.png"
+                    "/brand_assets/pumps/nb102-f.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8761,9 +8761,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb102-f.png",
+                "image" => "/brand_assets/pumps/nb102-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb102-f.png"
+                    "/brand_assets/pumps/nb102-f.webp"
                 ],
                 "description" => "NB102 Outside-Spring Switch Lotion Pump delivering 2.5cc/T +/- precision dosage. Available in 28/400, 24/410, 28/410, 24/415, 28/415 neck finishes. Closures: Smooth/Ribbed 28/400; Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8786,9 +8786,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-a.png",
+                "image" => "/brand_assets/pumps/nb103-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-a.png"
+                    "/brand_assets/pumps/nb103-a.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8811,9 +8811,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-a.png",
+                "image" => "/brand_assets/pumps/nb103-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-a.png"
+                    "/brand_assets/pumps/nb103-a.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8836,9 +8836,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-a.png",
+                "image" => "/brand_assets/pumps/nb103-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-a.png"
+                    "/brand_assets/pumps/nb103-a.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8861,9 +8861,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-a.png",
+                "image" => "/brand_assets/pumps/nb103-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-a.png"
+                    "/brand_assets/pumps/nb103-a.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -8886,9 +8886,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-a.png",
+                "image" => "/brand_assets/pumps/nb103-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-a.png"
+                    "/brand_assets/pumps/nb103-a.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -8911,9 +8911,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-c.png",
+                "image" => "/brand_assets/pumps/nb103-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-c.png"
+                    "/brand_assets/pumps/nb103-c.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -8936,9 +8936,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-c.png",
+                "image" => "/brand_assets/pumps/nb103-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-c.png"
+                    "/brand_assets/pumps/nb103-c.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -8961,9 +8961,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-c.png",
+                "image" => "/brand_assets/pumps/nb103-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-c.png"
+                    "/brand_assets/pumps/nb103-c.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -8986,9 +8986,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-c.png",
+                "image" => "/brand_assets/pumps/nb103-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-c.png"
+                    "/brand_assets/pumps/nb103-c.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -9011,9 +9011,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-c.png",
+                "image" => "/brand_assets/pumps/nb103-c.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-c.png"
+                    "/brand_assets/pumps/nb103-c.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -9036,9 +9036,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-d.png",
+                "image" => "/brand_assets/pumps/nb103-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-d.png"
+                    "/brand_assets/pumps/nb103-d.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -9061,9 +9061,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-d.png",
+                "image" => "/brand_assets/pumps/nb103-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-d.png"
+                    "/brand_assets/pumps/nb103-d.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9086,9 +9086,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-d.png",
+                "image" => "/brand_assets/pumps/nb103-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-d.png"
+                    "/brand_assets/pumps/nb103-d.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -9111,9 +9111,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-d.png",
+                "image" => "/brand_assets/pumps/nb103-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-d.png"
+                    "/brand_assets/pumps/nb103-d.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -9136,9 +9136,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-d.png",
+                "image" => "/brand_assets/pumps/nb103-d.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-d.png"
+                    "/brand_assets/pumps/nb103-d.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -9161,9 +9161,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-e.png",
+                "image" => "/brand_assets/pumps/nb103-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-e.png"
+                    "/brand_assets/pumps/nb103-e.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -9186,9 +9186,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-e.png",
+                "image" => "/brand_assets/pumps/nb103-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-e.png"
+                    "/brand_assets/pumps/nb103-e.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9211,9 +9211,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-e.png",
+                "image" => "/brand_assets/pumps/nb103-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-e.png"
+                    "/brand_assets/pumps/nb103-e.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -9236,9 +9236,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-e.png",
+                "image" => "/brand_assets/pumps/nb103-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-e.png"
+                    "/brand_assets/pumps/nb103-e.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -9261,9 +9261,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-e.png",
+                "image" => "/brand_assets/pumps/nb103-e.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-e.png"
+                    "/brand_assets/pumps/nb103-e.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -9286,9 +9286,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-f.png",
+                "image" => "/brand_assets/pumps/nb103-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-f.png"
+                    "/brand_assets/pumps/nb103-f.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -9311,9 +9311,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-f.png",
+                "image" => "/brand_assets/pumps/nb103-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-f.png"
+                    "/brand_assets/pumps/nb103-f.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9336,9 +9336,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-f.png",
+                "image" => "/brand_assets/pumps/nb103-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-f.png"
+                    "/brand_assets/pumps/nb103-f.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -9361,9 +9361,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-f.png",
+                "image" => "/brand_assets/pumps/nb103-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-f.png"
+                    "/brand_assets/pumps/nb103-f.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -9386,9 +9386,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-f.png",
+                "image" => "/brand_assets/pumps/nb103-f.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-f.png"
+                    "/brand_assets/pumps/nb103-f.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -9411,9 +9411,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-g.png",
+                "image" => "/brand_assets/pumps/nb103-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-g.png"
+                    "/brand_assets/pumps/nb103-g.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -9436,9 +9436,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-g.png",
+                "image" => "/brand_assets/pumps/nb103-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-g.png"
+                    "/brand_assets/pumps/nb103-g.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9461,9 +9461,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-g.png",
+                "image" => "/brand_assets/pumps/nb103-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-g.png"
+                    "/brand_assets/pumps/nb103-g.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -9486,9 +9486,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-g.png",
+                "image" => "/brand_assets/pumps/nb103-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-g.png"
+                    "/brand_assets/pumps/nb103-g.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -9511,9 +9511,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-g.png",
+                "image" => "/brand_assets/pumps/nb103-g.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-g.png"
+                    "/brand_assets/pumps/nb103-g.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -9536,9 +9536,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-h.png",
+                "image" => "/brand_assets/pumps/nb103-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-h.png"
+                    "/brand_assets/pumps/nb103-h.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/410 neck bottles and containers"
@@ -9561,9 +9561,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-h.png",
+                "image" => "/brand_assets/pumps/nb103-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-h.png"
+                    "/brand_assets/pumps/nb103-h.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9586,9 +9586,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-h.png",
+                "image" => "/brand_assets/pumps/nb103-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-h.png"
+                    "/brand_assets/pumps/nb103-h.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 24/415 neck bottles and containers"
@@ -9611,9 +9611,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-h.png",
+                "image" => "/brand_assets/pumps/nb103-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-h.png"
+                    "/brand_assets/pumps/nb103-h.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/415 neck bottles and containers"
@@ -9636,9 +9636,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb103-h.png",
+                "image" => "/brand_assets/pumps/nb103-h.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb103-h.png"
+                    "/brand_assets/pumps/nb103-h.webp"
                 ],
                 "description" => "NB103 Inside-Spring Switch Lotion Pump delivering 1.4cc/T +/- precision dosage. Available in 24/410, 28/410, 24/415, 28/415, 28/400 neck finishes. Closures: Smooth/Ribbed 24/410,28/410; Smooth/Ribbed 24/415,28/415; Smooth/Ribbed 28/400; Treatments: Aluminum, UV, Sandblasting, Bamboo, Water transfer printing.",
                 "compatibleClosures" => "Compatible with standard 28/400 neck bottles and containers"
@@ -9661,9 +9661,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-a.png",
+                "image" => "/brand_assets/pumps/nb104-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-a.png"
+                    "/brand_assets/pumps/nb104-a.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9686,9 +9686,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-a.png",
+                "image" => "/brand_assets/pumps/nb104-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-a.png"
+                    "/brand_assets/pumps/nb104-a.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 33/410 neck bottles and containers"
@@ -9711,9 +9711,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-a.png",
+                "image" => "/brand_assets/pumps/nb104-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-a.png"
+                    "/brand_assets/pumps/nb104-a.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 38/400 neck bottles and containers"
@@ -9736,9 +9736,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-a.png",
+                "image" => "/brand_assets/pumps/nb104-a.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-a.png"
+                    "/brand_assets/pumps/nb104-a.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 38/410 neck bottles and containers"
@@ -9761,9 +9761,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-b.png",
+                "image" => "/brand_assets/pumps/nb104-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-b.png"
+                    "/brand_assets/pumps/nb104-b.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 28/410 neck bottles and containers"
@@ -9786,9 +9786,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-b.png",
+                "image" => "/brand_assets/pumps/nb104-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-b.png"
+                    "/brand_assets/pumps/nb104-b.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 33/410 neck bottles and containers"
@@ -9811,9 +9811,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-b.png",
+                "image" => "/brand_assets/pumps/nb104-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-b.png"
+                    "/brand_assets/pumps/nb104-b.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 38/400 neck bottles and containers"
@@ -9836,9 +9836,9 @@ class ProductModel {
                 "color" => "White / Gloss Black / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/pumps/nb104-b.png",
+                "image" => "/brand_assets/pumps/nb104-b.webp",
                 "gallery" => [
-                    "/brand_assets/pumps/nb104-b.png"
+                    "/brand_assets/pumps/nb104-b.webp"
                 ],
                 "description" => "NB104 Big-Output Lotion Pump delivering 4cc/T +/- precision dosage. Available in 28/410, 33/410, 38/400, 38/410 neck finishes. Closure sizes: 28/410,33/410,38/400,38/410. Ribbed/Smooth 28/410,33/410,38/410; Double wall closure 33/410,28/410,38/400; Treatments: Ribbed, Smooth, UV, Sandblasting, Water transfer printing, Aluminum, Bamboo.",
                 "compatibleClosures" => "Compatible with standard 38/410 neck bottles and containers"
@@ -9861,9 +9861,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-a.png",
+                "image" => "/brand_assets/sprays/nb107-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-a.png"
+                    "/brand_assets/sprays/nb107-a.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410, 28/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 18/410 spray bottles and liquid containers"
@@ -9886,9 +9886,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-a.png",
+                "image" => "/brand_assets/sprays/nb107-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-a.png"
+                    "/brand_assets/sprays/nb107-a.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410, 28/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -9911,9 +9911,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-a.png",
+                "image" => "/brand_assets/sprays/nb107-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-a.png"
+                    "/brand_assets/sprays/nb107-a.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410, 28/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -9936,9 +9936,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-a.png",
+                "image" => "/brand_assets/sprays/nb107-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-a.png"
+                    "/brand_assets/sprays/nb107-a.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410, 28/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -9961,9 +9961,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-c.png",
+                "image" => "/brand_assets/sprays/nb107-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-c.png"
+                    "/brand_assets/sprays/nb107-c.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 18/410 spray bottles and liquid containers"
@@ -9986,9 +9986,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-c.png",
+                "image" => "/brand_assets/sprays/nb107-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-c.png"
+                    "/brand_assets/sprays/nb107-c.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -10011,9 +10011,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-c.png",
+                "image" => "/brand_assets/sprays/nb107-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-c.png"
+                    "/brand_assets/sprays/nb107-c.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -10036,9 +10036,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-b.png",
+                "image" => "/brand_assets/sprays/nb107-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-b.png"
+                    "/brand_assets/sprays/nb107-b.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 18/410 spray bottles and liquid containers"
@@ -10061,9 +10061,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-b.png",
+                "image" => "/brand_assets/sprays/nb107-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-b.png"
+                    "/brand_assets/sprays/nb107-b.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -10086,9 +10086,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-b.png",
+                "image" => "/brand_assets/sprays/nb107-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-b.png"
+                    "/brand_assets/sprays/nb107-b.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 20/410, 24/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -10111,9 +10111,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-d.png",
+                "image" => "/brand_assets/sprays/nb107-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-d.png"
+                    "/brand_assets/sprays/nb107-d.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 30/410. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 30/410 spray bottles and liquid containers"
@@ -10136,9 +10136,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-e.png",
+                "image" => "/brand_assets/sprays/nb107-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-e.png"
+                    "/brand_assets/sprays/nb107-e.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 18/415, 20/410, 20/415. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 18/410 spray bottles and liquid containers"
@@ -10161,9 +10161,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-e.png",
+                "image" => "/brand_assets/sprays/nb107-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-e.png"
+                    "/brand_assets/sprays/nb107-e.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 18/415, 20/410, 20/415. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 18/415 spray bottles and liquid containers"
@@ -10186,9 +10186,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-e.png",
+                "image" => "/brand_assets/sprays/nb107-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-e.png"
+                    "/brand_assets/sprays/nb107-e.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 18/415, 20/410, 20/415. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -10211,9 +10211,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb107-e.png",
+                "image" => "/brand_assets/sprays/nb107-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb107-e.png"
+                    "/brand_assets/sprays/nb107-e.webp"
                 ],
                 "description" => "NB107 Medical Sprayer engineered for uniform dispensing. Available sizes: 18/410, 18/415, 20/410, 20/415. Actuator style options 1/2/3 shown within photo.",
                 "compatibleClosures" => "Fits standard 20/415 spray bottles and liquid containers"
@@ -10236,9 +10236,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-a.png",
+                "image" => "/brand_assets/sprays/nb201-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-a.png"
+                    "/brand_assets/sprays/nb201-a.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10261,9 +10261,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-a.png",
+                "image" => "/brand_assets/sprays/nb201-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-a.png"
+                    "/brand_assets/sprays/nb201-a.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10286,9 +10286,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-a.png",
+                "image" => "/brand_assets/sprays/nb201-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-a.png"
+                    "/brand_assets/sprays/nb201-a.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10311,9 +10311,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-c.png",
+                "image" => "/brand_assets/sprays/nb201-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-c.png"
+                    "/brand_assets/sprays/nb201-c.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10336,9 +10336,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-c.png",
+                "image" => "/brand_assets/sprays/nb201-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-c.png"
+                    "/brand_assets/sprays/nb201-c.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10361,9 +10361,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-c.png",
+                "image" => "/brand_assets/sprays/nb201-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-c.png"
+                    "/brand_assets/sprays/nb201-c.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10386,9 +10386,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-g.png",
+                "image" => "/brand_assets/sprays/nb201-g.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-g.png"
+                    "/brand_assets/sprays/nb201-g.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10411,9 +10411,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-g.png",
+                "image" => "/brand_assets/sprays/nb201-g.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-g.png"
+                    "/brand_assets/sprays/nb201-g.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10436,9 +10436,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-g.png",
+                "image" => "/brand_assets/sprays/nb201-g.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-g.png"
+                    "/brand_assets/sprays/nb201-g.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10461,9 +10461,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-h.png",
+                "image" => "/brand_assets/sprays/nb201-h.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-h.png"
+                    "/brand_assets/sprays/nb201-h.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10486,9 +10486,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-h.png",
+                "image" => "/brand_assets/sprays/nb201-h.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-h.png"
+                    "/brand_assets/sprays/nb201-h.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10511,9 +10511,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-h.png",
+                "image" => "/brand_assets/sprays/nb201-h.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-h.png"
+                    "/brand_assets/sprays/nb201-h.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10536,9 +10536,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-i.png",
+                "image" => "/brand_assets/sprays/nb201-i.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-i.png"
+                    "/brand_assets/sprays/nb201-i.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10561,9 +10561,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-i.png",
+                "image" => "/brand_assets/sprays/nb201-i.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-i.png"
+                    "/brand_assets/sprays/nb201-i.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10586,9 +10586,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-i.png",
+                "image" => "/brand_assets/sprays/nb201-i.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-i.png"
+                    "/brand_assets/sprays/nb201-i.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10611,9 +10611,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-j.png",
+                "image" => "/brand_assets/sprays/nb201-j.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-j.png"
+                    "/brand_assets/sprays/nb201-j.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10636,9 +10636,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-j.png",
+                "image" => "/brand_assets/sprays/nb201-j.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-j.png"
+                    "/brand_assets/sprays/nb201-j.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10661,9 +10661,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-j.png",
+                "image" => "/brand_assets/sprays/nb201-j.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-j.png"
+                    "/brand_assets/sprays/nb201-j.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10686,9 +10686,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-k.png",
+                "image" => "/brand_assets/sprays/nb201-k.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-k.png"
+                    "/brand_assets/sprays/nb201-k.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10711,9 +10711,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-k.png",
+                "image" => "/brand_assets/sprays/nb201-k.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-k.png"
+                    "/brand_assets/sprays/nb201-k.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10736,9 +10736,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-k.png",
+                "image" => "/brand_assets/sprays/nb201-k.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-k.png"
+                    "/brand_assets/sprays/nb201-k.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10761,9 +10761,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-m.png",
+                "image" => "/brand_assets/sprays/nb201-m.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-m.png"
+                    "/brand_assets/sprays/nb201-m.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10786,9 +10786,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-m.png",
+                "image" => "/brand_assets/sprays/nb201-m.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-m.png"
+                    "/brand_assets/sprays/nb201-m.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10811,9 +10811,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-m.png",
+                "image" => "/brand_assets/sprays/nb201-m.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-m.png"
+                    "/brand_assets/sprays/nb201-m.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10836,9 +10836,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-n.png",
+                "image" => "/brand_assets/sprays/nb201-n.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-n.png"
+                    "/brand_assets/sprays/nb201-n.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10861,9 +10861,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-n.png",
+                "image" => "/brand_assets/sprays/nb201-n.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-n.png"
+                    "/brand_assets/sprays/nb201-n.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10886,9 +10886,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-n.png",
+                "image" => "/brand_assets/sprays/nb201-n.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-n.png"
+                    "/brand_assets/sprays/nb201-n.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10911,9 +10911,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-o.png",
+                "image" => "/brand_assets/sprays/nb201-o.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-o.png"
+                    "/brand_assets/sprays/nb201-o.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -10936,9 +10936,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-o.png",
+                "image" => "/brand_assets/sprays/nb201-o.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-o.png"
+                    "/brand_assets/sprays/nb201-o.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -10961,9 +10961,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb201-o.png",
+                "image" => "/brand_assets/sprays/nb201-o.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb201-o.png"
+                    "/brand_assets/sprays/nb201-o.webp"
                 ],
                 "description" => "NB201 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Closure 28/400,28/410,28/415. Nozzle options: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam. Trigger options: Normal, Two Finger, Big Trigger.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -10986,9 +10986,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-a.png",
+                "image" => "/brand_assets/sprays/nb202-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-a.png"
+                    "/brand_assets/sprays/nb202-a.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 24/410, 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11011,9 +11011,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-a.png",
+                "image" => "/brand_assets/sprays/nb202-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-a.png"
+                    "/brand_assets/sprays/nb202-a.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 24/410, 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -11036,9 +11036,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-a.png",
+                "image" => "/brand_assets/sprays/nb202-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-a.png"
+                    "/brand_assets/sprays/nb202-a.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 24/410, 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11061,9 +11061,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-b.png",
+                "image" => "/brand_assets/sprays/nb202-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-b.png"
+                    "/brand_assets/sprays/nb202-b.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -11086,9 +11086,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-b.png",
+                "image" => "/brand_assets/sprays/nb202-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-b.png"
+                    "/brand_assets/sprays/nb202-b.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11111,9 +11111,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-c.png",
+                "image" => "/brand_assets/sprays/nb202-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-c.png"
+                    "/brand_assets/sprays/nb202-c.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -11136,9 +11136,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb202-c.png",
+                "image" => "/brand_assets/sprays/nb202-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb202-c.png"
+                    "/brand_assets/sprays/nb202-c.webp"
                 ],
                 "description" => "NB202 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410. .",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11161,9 +11161,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-a.png",
+                "image" => "/brand_assets/sprays/nb203-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-a.png"
+                    "/brand_assets/sprays/nb203-a.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11186,9 +11186,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-a.png",
+                "image" => "/brand_assets/sprays/nb203-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-a.png"
+                    "/brand_assets/sprays/nb203-a.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11211,9 +11211,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-a.png",
+                "image" => "/brand_assets/sprays/nb203-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-a.png"
+                    "/brand_assets/sprays/nb203-a.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11236,9 +11236,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-a.png",
+                "image" => "/brand_assets/sprays/nb203-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-a.png"
+                    "/brand_assets/sprays/nb203-a.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11261,9 +11261,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-1.png",
+                "image" => "/brand_assets/sprays/nb203-b-1.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-1.png"
+                    "/brand_assets/sprays/nb203-b-1.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11286,9 +11286,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-1.png",
+                "image" => "/brand_assets/sprays/nb203-b-1.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-1.png"
+                    "/brand_assets/sprays/nb203-b-1.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11311,9 +11311,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-1.png",
+                "image" => "/brand_assets/sprays/nb203-b-1.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-1.png"
+                    "/brand_assets/sprays/nb203-b-1.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11336,9 +11336,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-1.png",
+                "image" => "/brand_assets/sprays/nb203-b-1.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-1.png"
+                    "/brand_assets/sprays/nb203-b-1.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11361,9 +11361,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-2.png",
+                "image" => "/brand_assets/sprays/nb203-b-2.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-2.png"
+                    "/brand_assets/sprays/nb203-b-2.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11386,9 +11386,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-2.png",
+                "image" => "/brand_assets/sprays/nb203-b-2.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-2.png"
+                    "/brand_assets/sprays/nb203-b-2.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11411,9 +11411,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-2.png",
+                "image" => "/brand_assets/sprays/nb203-b-2.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-2.png"
+                    "/brand_assets/sprays/nb203-b-2.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11436,9 +11436,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-b-2.png",
+                "image" => "/brand_assets/sprays/nb203-b-2.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-b-2.png"
+                    "/brand_assets/sprays/nb203-b-2.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11461,9 +11461,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-c.png",
+                "image" => "/brand_assets/sprays/nb203-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-c.png"
+                    "/brand_assets/sprays/nb203-c.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11486,9 +11486,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-c.png",
+                "image" => "/brand_assets/sprays/nb203-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-c.png"
+                    "/brand_assets/sprays/nb203-c.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11511,9 +11511,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-c.png",
+                "image" => "/brand_assets/sprays/nb203-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-c.png"
+                    "/brand_assets/sprays/nb203-c.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11536,9 +11536,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-c.png",
+                "image" => "/brand_assets/sprays/nb203-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-c.png"
+                    "/brand_assets/sprays/nb203-c.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11561,9 +11561,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-d.png",
+                "image" => "/brand_assets/sprays/nb203-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-d.png"
+                    "/brand_assets/sprays/nb203-d.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11586,9 +11586,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-d.png",
+                "image" => "/brand_assets/sprays/nb203-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-d.png"
+                    "/brand_assets/sprays/nb203-d.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11611,9 +11611,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-d.png",
+                "image" => "/brand_assets/sprays/nb203-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-d.png"
+                    "/brand_assets/sprays/nb203-d.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11636,9 +11636,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-d.png",
+                "image" => "/brand_assets/sprays/nb203-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-d.png"
+                    "/brand_assets/sprays/nb203-d.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11661,9 +11661,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-e.png",
+                "image" => "/brand_assets/sprays/nb203-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-e.png"
+                    "/brand_assets/sprays/nb203-e.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11686,9 +11686,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-e.png",
+                "image" => "/brand_assets/sprays/nb203-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-e.png"
+                    "/brand_assets/sprays/nb203-e.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11711,9 +11711,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-e.png",
+                "image" => "/brand_assets/sprays/nb203-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-e.png"
+                    "/brand_assets/sprays/nb203-e.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11736,9 +11736,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-e.png",
+                "image" => "/brand_assets/sprays/nb203-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-e.png"
+                    "/brand_assets/sprays/nb203-e.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11761,9 +11761,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-f.png",
+                "image" => "/brand_assets/sprays/nb203-f.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-f.png"
+                    "/brand_assets/sprays/nb203-f.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -11786,9 +11786,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-f.png",
+                "image" => "/brand_assets/sprays/nb203-f.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-f.png"
+                    "/brand_assets/sprays/nb203-f.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -11811,9 +11811,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-f.png",
+                "image" => "/brand_assets/sprays/nb203-f.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-f.png"
+                    "/brand_assets/sprays/nb203-f.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -11836,9 +11836,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb203-f.png",
+                "image" => "/brand_assets/sprays/nb203-f.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb203-f.png"
+                    "/brand_assets/sprays/nb203-f.webp"
                 ],
                 "description" => "NB203 Trigger Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410, 24/415, 28/410. Closure: Smooth, Ribbed. Sizes 20/410,24/410,24/415,28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11861,9 +11861,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb204-a.png",
+                "image" => "/brand_assets/sprays/nb204-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb204-a.png"
+                    "/brand_assets/sprays/nb204-a.webp"
                 ],
                 "description" => "NB204 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/410, 28/400. Closure size 28/410, 28/400.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11886,9 +11886,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb204-a.png",
+                "image" => "/brand_assets/sprays/nb204-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb204-a.png"
+                    "/brand_assets/sprays/nb204-a.webp"
                 ],
                 "description" => "NB204 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/410, 28/400. Closure size 28/410, 28/400.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -11911,9 +11911,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb204-b.png",
+                "image" => "/brand_assets/sprays/nb204-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb204-b.png"
+                    "/brand_assets/sprays/nb204-b.webp"
                 ],
                 "description" => "NB204 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/410, 28/400. Closure size 28/410, 28/400.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -11936,9 +11936,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb204-b.png",
+                "image" => "/brand_assets/sprays/nb204-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb204-b.png"
+                    "/brand_assets/sprays/nb204-b.webp"
                 ],
                 "description" => "NB204 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/410, 28/400. Closure size 28/410, 28/400.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -11961,9 +11961,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-a.png",
+                "image" => "/brand_assets/sprays/nb205-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-a.png"
+                    "/brand_assets/sprays/nb205-a.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -11986,9 +11986,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-a.png",
+                "image" => "/brand_assets/sprays/nb205-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-a.png"
+                    "/brand_assets/sprays/nb205-a.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12011,9 +12011,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-a.png",
+                "image" => "/brand_assets/sprays/nb205-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-a.png"
+                    "/brand_assets/sprays/nb205-a.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12036,9 +12036,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-b.png",
+                "image" => "/brand_assets/sprays/nb205-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-b.png"
+                    "/brand_assets/sprays/nb205-b.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12061,9 +12061,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-b.png",
+                "image" => "/brand_assets/sprays/nb205-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-b.png"
+                    "/brand_assets/sprays/nb205-b.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12086,9 +12086,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-b.png",
+                "image" => "/brand_assets/sprays/nb205-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-b.png"
+                    "/brand_assets/sprays/nb205-b.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12111,9 +12111,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-c.png",
+                "image" => "/brand_assets/sprays/nb205-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-c.png"
+                    "/brand_assets/sprays/nb205-c.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12136,9 +12136,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-c.png",
+                "image" => "/brand_assets/sprays/nb205-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-c.png"
+                    "/brand_assets/sprays/nb205-c.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12161,9 +12161,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-c.png",
+                "image" => "/brand_assets/sprays/nb205-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-c.png"
+                    "/brand_assets/sprays/nb205-c.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12186,9 +12186,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-d.png",
+                "image" => "/brand_assets/sprays/nb205-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-d.png"
+                    "/brand_assets/sprays/nb205-d.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12211,9 +12211,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-d.png",
+                "image" => "/brand_assets/sprays/nb205-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-d.png"
+                    "/brand_assets/sprays/nb205-d.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12236,9 +12236,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb205-d.png",
+                "image" => "/brand_assets/sprays/nb205-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb205-d.png"
+                    "/brand_assets/sprays/nb205-d.webp"
                 ],
                 "description" => "NB205 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. All-plastic trigger sprayer, no metal spring inside. Foam variant also available.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12261,9 +12261,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-a.png",
+                "image" => "/brand_assets/sprays/nb206-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-a.png"
+                    "/brand_assets/sprays/nb206-a.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12286,9 +12286,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-a.png",
+                "image" => "/brand_assets/sprays/nb206-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-a.png"
+                    "/brand_assets/sprays/nb206-a.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12311,9 +12311,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-a.png",
+                "image" => "/brand_assets/sprays/nb206-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-a.png"
+                    "/brand_assets/sprays/nb206-a.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12336,9 +12336,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-b.png",
+                "image" => "/brand_assets/sprays/nb206-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-b.png"
+                    "/brand_assets/sprays/nb206-b.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12361,9 +12361,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-b.png",
+                "image" => "/brand_assets/sprays/nb206-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-b.png"
+                    "/brand_assets/sprays/nb206-b.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12386,9 +12386,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-b.png",
+                "image" => "/brand_assets/sprays/nb206-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-b.png"
+                    "/brand_assets/sprays/nb206-b.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12411,9 +12411,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-c.png",
+                "image" => "/brand_assets/sprays/nb206-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-c.png"
+                    "/brand_assets/sprays/nb206-c.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12436,9 +12436,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-c.png",
+                "image" => "/brand_assets/sprays/nb206-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-c.png"
+                    "/brand_assets/sprays/nb206-c.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12461,9 +12461,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-c.png",
+                "image" => "/brand_assets/sprays/nb206-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-c.png"
+                    "/brand_assets/sprays/nb206-c.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12486,9 +12486,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-d.png",
+                "image" => "/brand_assets/sprays/nb206-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-d.png"
+                    "/brand_assets/sprays/nb206-d.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12511,9 +12511,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-d.png",
+                "image" => "/brand_assets/sprays/nb206-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-d.png"
+                    "/brand_assets/sprays/nb206-d.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12536,9 +12536,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-d.png",
+                "image" => "/brand_assets/sprays/nb206-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-d.png"
+                    "/brand_assets/sprays/nb206-d.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12561,9 +12561,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-e.png",
+                "image" => "/brand_assets/sprays/nb206-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-e.png"
+                    "/brand_assets/sprays/nb206-e.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12586,9 +12586,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-e.png",
+                "image" => "/brand_assets/sprays/nb206-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-e.png"
+                    "/brand_assets/sprays/nb206-e.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12611,9 +12611,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb206-e.png",
+                "image" => "/brand_assets/sprays/nb206-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb206-e.png"
+                    "/brand_assets/sprays/nb206-e.webp"
                 ],
                 "description" => "NB206 Trigger Sprayer engineered for uniform dispensing. Available sizes: 28/400, 28/410, 28/415. Size 28/400,28/410,28/415. Safety Closure / Normal Closure options. Nozzle: Spray/Spray, Spray/Stream, Metal mesh/Foam, Plastic mesh/Foam.",
                 "compatibleClosures" => "Fits standard 28/415 spray bottles and liquid containers"
@@ -12636,9 +12636,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb207-a.png",
+                "image" => "/brand_assets/sprays/nb207-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb207-a.png"
+                    "/brand_assets/sprays/nb207-a.webp"
                 ],
                 "description" => "NB207 Trigger Sprayer engineered for uniform dispensing. Available sizes: 24/410, 28/400, 28/410. Size 24/410, 28/400, 28/410.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -12661,9 +12661,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb207-a.png",
+                "image" => "/brand_assets/sprays/nb207-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb207-a.png"
+                    "/brand_assets/sprays/nb207-a.webp"
                 ],
                 "description" => "NB207 Trigger Sprayer engineered for uniform dispensing. Available sizes: 24/410, 28/400, 28/410. Size 24/410, 28/400, 28/410.",
                 "compatibleClosures" => "Fits standard 28/400 spray bottles and liquid containers"
@@ -12686,9 +12686,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb207-a.png",
+                "image" => "/brand_assets/sprays/nb207-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb207-a.png"
+                    "/brand_assets/sprays/nb207-a.webp"
                 ],
                 "description" => "NB207 Trigger Sprayer engineered for uniform dispensing. Available sizes: 24/410, 28/400, 28/410. Size 24/410, 28/400, 28/410.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12711,9 +12711,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 14/410 spray bottles and liquid containers"
@@ -12736,9 +12736,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 18/410 spray bottles and liquid containers"
@@ -12761,9 +12761,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 18/415 spray bottles and liquid containers"
@@ -12786,9 +12786,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -12811,9 +12811,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 20/415 spray bottles and liquid containers"
@@ -12836,9 +12836,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 22/410 spray bottles and liquid containers"
@@ -12861,9 +12861,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 22/415 spray bottles and liquid containers"
@@ -12886,9 +12886,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -12911,9 +12911,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -12936,9 +12936,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-a.png",
+                "image" => "/brand_assets/sprays/nb304-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-a.png"
+                    "/brand_assets/sprays/nb304-a.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -12961,9 +12961,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 14/410 spray bottles and liquid containers"
@@ -12986,9 +12986,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 18/410 spray bottles and liquid containers"
@@ -13011,9 +13011,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 18/415 spray bottles and liquid containers"
@@ -13036,9 +13036,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -13061,9 +13061,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 20/415 spray bottles and liquid containers"
@@ -13086,9 +13086,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 22/410 spray bottles and liquid containers"
@@ -13111,9 +13111,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 22/415 spray bottles and liquid containers"
@@ -13136,9 +13136,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -13161,9 +13161,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 24/415 spray bottles and liquid containers"
@@ -13186,9 +13186,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-b.png",
+                "image" => "/brand_assets/sprays/nb304-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-b.png"
+                    "/brand_assets/sprays/nb304-b.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 14/410, 18/410, 18/415, 20/410, 20/415, 22/410, 22/415, 24/410, 24/415, 28/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 28/410 spray bottles and liquid containers"
@@ -13211,9 +13211,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-c.png",
+                "image" => "/brand_assets/sprays/nb304-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-c.png"
+                    "/brand_assets/sprays/nb304-c.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 20/410 spray bottles and liquid containers"
@@ -13236,9 +13236,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/nb304-c.png",
+                "image" => "/brand_assets/sprays/nb304-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/nb304-c.png"
+                    "/brand_assets/sprays/nb304-c.webp"
                 ],
                 "description" => "NB304 Fine-Mist / Perfume Sprayer engineered for uniform dispensing. Available sizes: 20/410, 24/410. Design options: spring outside, spring inside, 360 degree. Closure options: Ribbed, Smooth, UV, Aluminum, Sandblasting, Water transfer printing, Bamboo.",
                 "compatibleClosures" => "Fits standard 24/410 spray bottles and liquid containers"
@@ -13261,9 +13261,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-a.png",
+                "image" => "/brand_assets/sprays/continuedspray-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-a.png"
+                    "/brand_assets/sprays/continuedspray-a.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 200ml, 300ml, 500ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 200ml spray bottles and liquid containers"
@@ -13286,9 +13286,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-a.png",
+                "image" => "/brand_assets/sprays/continuedspray-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-a.png"
+                    "/brand_assets/sprays/continuedspray-a.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 200ml, 300ml, 500ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 300ml spray bottles and liquid containers"
@@ -13311,9 +13311,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => false,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-a.png",
+                "image" => "/brand_assets/sprays/continuedspray-a.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-a.png"
+                    "/brand_assets/sprays/continuedspray-a.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 200ml, 300ml, 500ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 500ml spray bottles and liquid containers"
@@ -13336,9 +13336,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-b.png",
+                "image" => "/brand_assets/sprays/continuedspray-b.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-b.png"
+                    "/brand_assets/sprays/continuedspray-b.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 350ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 350ml spray bottles and liquid containers"
@@ -13361,9 +13361,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-c.png",
+                "image" => "/brand_assets/sprays/continuedspray-c.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-c.png"
+                    "/brand_assets/sprays/continuedspray-c.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 350ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 350ml spray bottles and liquid containers"
@@ -13386,9 +13386,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-d.png",
+                "image" => "/brand_assets/sprays/continuedspray-d.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-d.png"
+                    "/brand_assets/sprays/continuedspray-d.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 380ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 380ml spray bottles and liquid containers"
@@ -13411,9 +13411,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-e.png",
+                "image" => "/brand_assets/sprays/continuedspray-e.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-e.png"
+                    "/brand_assets/sprays/continuedspray-e.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 440ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 440ml spray bottles and liquid containers"
@@ -13436,9 +13436,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-f.png",
+                "image" => "/brand_assets/sprays/continuedspray-f.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-f.png"
+                    "/brand_assets/sprays/continuedspray-f.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 300ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 300ml spray bottles and liquid containers"
@@ -13461,9 +13461,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-g.png",
+                "image" => "/brand_assets/sprays/continuedspray-g.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-g.png"
+                    "/brand_assets/sprays/continuedspray-g.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 320ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 320ml spray bottles and liquid containers"
@@ -13486,9 +13486,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-h.png",
+                "image" => "/brand_assets/sprays/continuedspray-h.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-h.png"
+                    "/brand_assets/sprays/continuedspray-h.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 500ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 500ml spray bottles and liquid containers"
@@ -13511,9 +13511,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-i.png",
+                "image" => "/brand_assets/sprays/continuedspray-i.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-i.png"
+                    "/brand_assets/sprays/continuedspray-i.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 330ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 330ml spray bottles and liquid containers"
@@ -13536,9 +13536,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-j.png",
+                "image" => "/brand_assets/sprays/continuedspray-j.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-j.png"
+                    "/brand_assets/sprays/continuedspray-j.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 330ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 330ml spray bottles and liquid containers"
@@ -13561,9 +13561,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-k.png",
+                "image" => "/brand_assets/sprays/continuedspray-k.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-k.png"
+                    "/brand_assets/sprays/continuedspray-k.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 350ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 350ml spray bottles and liquid containers"
@@ -13586,9 +13586,9 @@ class ProductModel {
                 "color" => "Multi-colour / Custom",
                 "isStock" => true,
                 "moq" => "10,000",
-                "image" => "/brand_assets/sprays/continuedspray-l.png",
+                "image" => "/brand_assets/sprays/continuedspray-l.webp",
                 "gallery" => [
-                    "/brand_assets/sprays/continuedspray-l.png"
+                    "/brand_assets/sprays/continuedspray-l.webp"
                 ],
                 "description" => "Continued Spray Bottle Continuous-Mist Spray Bottle engineered for uniform dispensing. Available sizes: 200ml. No product code printed in catalog for this group; lettered A-L by photo position only.",
                 "compatibleClosures" => "Fits standard 200ml spray bottles and liquid containers"
@@ -13628,7 +13628,7 @@ class ProductModel {
                                 'name' => $r['name'],
                                 'slug' => $r['slug'],
                                 'image' => $r['image'] ?? '/logo_svg.svg',
-                                'coverImage' => $r['cover_image'] ?? '/vikaas_inputs/PHARMA_BOTTLES.png',
+                                'coverImage' => $r['cover_image'] ?? '/vikaas_inputs/PHARMA_BOTTLES.webp',
                                 'desc' => $r['description'] ?? ''
                             ];
                         }, $rows);
@@ -13638,7 +13638,30 @@ class ProductModel {
                 // Fallback
             }
         }
-        return self::$categories;
+        $cats = self::$categories;
+        $optsFile = self::getOptionsFilePath();
+        if (file_exists($optsFile)) {
+            $opts = json_decode(file_get_contents($optsFile), true) ?: [];
+            if (!empty($opts['categories']) && is_array($opts['categories'])) {
+                foreach ($opts['categories'] as $c) {
+                    $slug = $c['slug'] ?? strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $c['name'] ?? ''), '-'));
+                    $found = false;
+                    foreach ($cats as $idx => $orig) {
+                        if (($orig['slug'] ?? '') === $slug) {
+                            $cats[$idx] = array_merge($orig, $c);
+                            $found = true;
+                            break;
+                        }
+                    }
+                    if (!$found && !empty($c['name'])) {
+                        $c['slug'] = $slug;
+                        $c['image'] = $c['image'] ?? '/logo_svg.svg';
+                        $cats[] = $c;
+                    }
+                }
+            }
+        }
+        return $cats;
     }
 
     public static function getCategoryBySlug($slug) {
@@ -13650,17 +13673,42 @@ class ProductModel {
     }
 
     public static function getSeries() {
-        return self::$series;
+        $series = self::$series;
+        $optsFile = self::getOptionsFilePath();
+        if (file_exists($optsFile)) {
+            $opts = json_decode(file_get_contents($optsFile), true) ?: [];
+            if (!empty($opts['subcategories']) && is_array($opts['subcategories'])) {
+                foreach ($opts['subcategories'] as $s) {
+                    $slug = $s['slug'] ?? strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $s['name'] ?? ''), '-'));
+                    $found = false;
+                    foreach ($series as $idx => $orig) {
+                        if (($orig['slug'] ?? '') === $slug) {
+                            $series[$idx] = array_merge($orig, $s);
+                            $found = true;
+                            break;
+                        }
+                    }
+                    if (!$found && !empty($s['name'])) {
+                        $s['slug'] = $slug;
+                        $s['image'] = $s['image'] ?? '/logo_svg.svg';
+                        $series[] = $s;
+                    }
+                }
+            }
+        }
+        return $series;
     }
 
     public static function getSeriesByCategory($categorySlug) {
-        return array_values(array_filter(self::$series, function($s) use ($categorySlug) {
+        $allSeries = self::getSeries();
+        return array_values(array_filter($allSeries, function($s) use ($categorySlug) {
             return ($s['categorySlug'] ?? '') === $categorySlug;
         }));
     }
 
     public static function getSeriesBySlug($slug) {
-        foreach (self::$series as $s) {
+        $allSeries = self::getSeries();
+        foreach ($allSeries as $s) {
             if (($s['slug'] ?? '') === $slug) return $s;
         }
         return null;
@@ -13720,8 +13768,10 @@ class ProductModel {
                             $primaryImg = !empty($imgArr[0]) ? $imgArr[0] : '/logo_svg.svg';
 
                             $list[] = [
+                                'db_id' => (int)$r['id'],
                                 'id' => $r['sku'],
                                 'name' => $r['name'],
+                                'slug' => $r['slug'] ?? '',
                                 'fullTitle' => $r['name'],
                                 'articleNo' => $r['sku'],
                                 'websiteNo' => $r['sku'],
@@ -13797,11 +13847,12 @@ class ProductModel {
 
         $list = array_values($allMap);
 
-        if (!$includeArchived) {
-            $list = array_values(array_filter($list, function($p) {
-                return ($p['status'] ?? 'published') === 'published';
-            }));
-        }
+        $list = array_values(array_filter($list, function($p) use ($includeArchived) {
+            $st = $p['status'] ?? 'published';
+            if ($st === 'deleted') return false;
+            if (!$includeArchived) return $st === 'published';
+            return true;
+        }));
 
         return $list;
     }
@@ -13838,13 +13889,105 @@ class ProductModel {
     }
 
     public static function getSkuById($id) {
+        if (empty($id)) return null;
+
+        // 1. Direct MySQL single-row lookup if connected
+        if (class_exists('Database')) {
+            try {
+                $db = Database::getInstance();
+                if ($db && $db->isConnected()) {
+                    $pdo = $db->getConnection();
+                    $stmt = $pdo->prepare("SELECT p.*, GROUP_CONCAT(pi.image_url ORDER BY pi.sort_order ASC SEPARATOR '|||') as image_list 
+                                            FROM products p 
+                                            LEFT JOIN product_images pi ON p.id = pi.product_id 
+                                            WHERE p.id = ? OR p.sku = ? OR p.slug = ?
+                                            GROUP BY p.id LIMIT 1");
+                    $numId = is_numeric($id) ? (int)$id : 0;
+                    $stmt->execute([$numId, (string)$id, (string)$id]);
+                    $r = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if ($r) {
+                        $imgArr = !empty($r['image_list']) ? explode('|||', $r['image_list']) : [];
+                        $primaryImg = !empty($imgArr[0]) ? $imgArr[0] : '/logo_svg.svg';
+
+                        return [
+                            'db_id' => (int)$r['id'],
+                            'id' => $r['sku'],
+                            'name' => $r['name'],
+                            'slug' => $r['slug'] ?? '',
+                            'fullTitle' => $r['name'],
+                            'articleNo' => $r['sku'],
+                            'websiteNo' => $r['sku'],
+                            'categorySlug' => $r['category_slug'],
+                            'categoryName' => $r['category_name'],
+                            'seriesSlug' => self::getSeriesSlugBySubcategory($r['subcategory']),
+                            'serie' => $r['subcategory'],
+                            'gender' => $r['gender'] ?? 'Unisex',
+                            'regularPrice' => (float)$r['regular_price'],
+                            'salePrice' => $r['sale_price'] !== null ? (float)$r['sale_price'] : null,
+                            'stockQty' => (int)$r['stock_qty'],
+                            'stockStatus' => (int)$r['stock_qty'] <= 0 ? 'out_of_stock' : $r['stock_status'],
+                            'status' => $r['status'],
+                            'isFeatured' => (bool)$r['is_featured'],
+                            'image' => $primaryImg,
+                            'images' => !empty($imgArr) ? $imgArr : [$primaryImg],
+                            'gallery' => !empty($imgArr) ? $imgArr : [$primaryImg],
+                            'shortDescription' => $r['short_desc'] ?? '',
+                            'description' => $r['description'] ?? '',
+                            'seoTitle' => $r['seo_title'] ?? '',
+                            'seoDescription' => $r['seo_description'] ?? '',
+                            'specs' => [
+                                'capacity' => $r['capacity'],
+                                'neck' => $r['neck_finish'],
+                                'material' => $r['material'],
+                                'weight' => $r['weight'],
+                                'moq' => $r['moq']
+                            ],
+                            'updatedAt' => $r['updated_at'] ?? ''
+                        ];
+                    }
+                }
+            } catch (Exception $e) {
+                // Fallback to memory search
+            }
+        }
+
+        // 2. Fallback memory / JSON lookup
         $all = self::getSkus(true);
         foreach ($all as $sku) {
-            if (($sku['id'] ?? '') === $id || ($sku['articleNo'] ?? '') === $id) {
+            if (($sku['id'] ?? '') === $id || 
+                ($sku['articleNo'] ?? '') === $id || 
+                (isset($sku['db_id']) && (string)$sku['db_id'] === (string)$id) ||
+                ($sku['slug'] ?? '') === $id) {
                 return $sku;
             }
         }
         return null;
+    }
+
+    /**
+     * Get distinct subcategories / series from DB
+     */
+    public static function getSubcategoriesByCategory($catSlug = '') {
+        if (class_exists('Database')) {
+            try {
+                $db = Database::getInstance();
+                if ($db && $db->isConnected()) {
+                    $pdo = $db->getConnection();
+                    if (!empty($catSlug)) {
+                        $stmt = $pdo->prepare("SELECT DISTINCT subcategory FROM products WHERE category_slug = ? AND subcategory IS NOT NULL AND subcategory != '' ORDER BY subcategory ASC");
+                        $stmt->execute([$catSlug]);
+                    } else {
+                        $stmt = $pdo->query("SELECT DISTINCT subcategory FROM products WHERE subcategory IS NOT NULL AND subcategory != '' ORDER BY subcategory ASC");
+                    }
+                    $subs = $stmt->fetchAll(PDO::FETCH_COLUMN);
+                    if (!empty($subs)) {
+                        return array_values(array_filter($subs));
+                    }
+                }
+            } catch (Exception $e) {}
+        }
+        return [];
     }
 
     public static function searchProducts($query, $includeArchived = false) {
@@ -13869,53 +14012,94 @@ class ProductModel {
      * Save/Update ANY product (migrated or custom) persistently in MySQL DB
      */
     public static function saveProduct($data) {
-        $id = $data['id'] ?? ($data['articleNo'] ?? ('PROD-' . time() . '-' . rand(100, 999)));
-        $existing = self::getSkuById($id);
+        $originalSku = trim($data['original_sku'] ?? ($data['id'] ?? ''));
+        $originalId = !empty($data['db_id']) ? (int)$data['db_id'] : 0;
+        $articleNo = trim($data['articleNo'] ?? ($originalSku ?: ('PROD-' . time() . '-' . rand(100, 999))));
+        $id = $articleNo;
+
+        // Existing product lookup for fallback data
+        $existing = !empty($originalSku) ? self::getSkuById($originalSku) : (!empty($articleNo) ? self::getSkuById($articleNo) : null);
+
+        $name = trim($data['name'] ?? ($existing['name'] ?? 'Product Item'));
+        $fullTitle = trim($data['fullTitle'] ?? ($data['name'] ?? ($existing['fullTitle'] ?? $name)));
+        $categorySlug = trim($data['categorySlug'] ?? ($existing['categorySlug'] ?? 'pet-bottles'));
+        $categoryName = trim($data['categoryName'] ?? ($existing['categoryName'] ?? 'PET bottles'));
+        $serie = trim($data['serie'] ?? ($existing['serie'] ?? 'General Series'));
+        $seriesSlug = trim($data['seriesSlug'] ?? ($existing['seriesSlug'] ?? self::getSeriesSlugBySubcategory($serie)));
+        $gender = trim($data['gender'] ?? ($existing['gender'] ?? 'Unisex'));
+
+        $regularPrice = isset($data['regularPrice']) && $data['regularPrice'] !== '' ? max(0, (float)$data['regularPrice']) : (float)($existing['regularPrice'] ?? 0);
+        $salePrice = isset($data['salePrice']) && $data['salePrice'] !== '' ? max(0, (float)$data['salePrice']) : null;
+        if ($salePrice !== null && $salePrice > $regularPrice && $regularPrice > 0) {
+            $salePrice = $regularPrice;
+        }
+
+        $stockQty = isset($data['stockQty']) && $data['stockQty'] !== '' ? max(0, (int)$data['stockQty']) : (int)($existing['stockQty'] ?? 1000);
+        $stockStatus = $stockQty <= 0 ? 'out_of_stock' : trim($data['stockStatus'] ?? ($existing['stockStatus'] ?? 'in_stock'));
+
+        $status = trim($data['status'] ?? ($existing['status'] ?? 'published'));
+        if (!in_array($status, ['published', 'draft', 'archived'])) {
+            $status = 'published';
+        }
+
+        $isFeatured = isset($data['isFeatured']) ? (bool)$data['isFeatured'] : (bool)($existing['isFeatured'] ?? false);
 
         $images = $data['images'] ?? ($existing['images'] ?? [($data['image'] ?? '/logo_svg.svg')]);
         if (!is_array($images)) $images = [$images];
+        $images = array_values(array_filter($images));
+        if (empty($images)) $images = ['/logo_svg.svg'];
         $primaryImage = $data['image'] ?? ($images[0] ?? '/logo_svg.svg');
 
-        $stockQty = isset($data['stockQty']) ? (int)$data['stockQty'] : (int)($existing['stockQty'] ?? 1000);
-        $stockStatus = $stockQty <= 0 ? 'out_of_stock' : ($data['stockStatus'] ?? ($existing['stockStatus'] ?? 'in_stock'));
+        $capacity = trim($data['capacity'] ?? ($existing['specs']['capacity'] ?? ($existing['volume'] ?? ($existing['capacity'] ?? 'N/A'))));
+        $neck = trim($data['neck'] ?? ($existing['specs']['neck'] ?? ($existing['neckSize'] ?? ($existing['neck'] ?? 'N/A'))));
+        $material = trim($data['material'] ?? ($existing['specs']['material'] ?? ($existing['material'] ?? 'PET')));
+        $weight = trim($data['weight'] ?? ($existing['specs']['weight'] ?? ($existing['weight'] ?? 'N/A')));
+        $moq = trim($data['moq'] ?? ($existing['specs']['moq'] ?? ($existing['moq'] ?? '5,000 pcs')));
+
+        $shortDescription = trim($data['shortDescription'] ?? ($existing['shortDescription'] ?? ''));
+        $description = trim($data['description'] ?? ($existing['description'] ?? ''));
+        $seoTitle = trim($data['seoTitle'] ?? ($existing['seoTitle'] ?? ''));
+        $seoDescription = trim($data['seoDescription'] ?? ($existing['seoDescription'] ?? ''));
+        $video = trim($data['video'] ?? ($existing['video'] ?? ''));
+        $sizes = $data['sizes'] ?? ($existing['sizes'] ?? []);
 
         $updatedRecord = [
             'id' => $id,
-            'name' => $data['name'] ?? ($existing['name'] ?? 'Product Name'),
-            'fullTitle' => $data['fullTitle'] ?? ($data['name'] ?? ($existing['fullTitle'] ?? '')),
-            'articleNo' => $data['articleNo'] ?? ($existing['articleNo'] ?? $id),
-            'websiteNo' => $data['websiteNo'] ?? ($existing['websiteNo'] ?? ''),
-            'categorySlug' => $data['categorySlug'] ?? ($existing['categorySlug'] ?? 'pet-bottles'),
-            'categoryName' => $data['categoryName'] ?? ($existing['categoryName'] ?? 'PET bottles'),
-            'seriesSlug' => $data['seriesSlug'] ?? ($existing['seriesSlug'] ?? 'custom-series'),
-            'serie' => $data['serie'] ?? ($existing['serie'] ?? 'Custom Range'),
-            'gender' => $data['gender'] ?? ($existing['gender'] ?? 'Unisex'),
-            'regularPrice' => isset($data['regularPrice']) ? (float)$data['regularPrice'] : (float)($existing['regularPrice'] ?? 0),
-            'salePrice' => isset($data['salePrice']) && $data['salePrice'] !== '' ? (float)$data['salePrice'] : null,
+            'name' => $name,
+            'fullTitle' => $fullTitle,
+            'articleNo' => $articleNo,
+            'websiteNo' => $articleNo,
+            'categorySlug' => $categorySlug,
+            'categoryName' => $categoryName,
+            'seriesSlug' => $seriesSlug,
+            'serie' => $serie,
+            'gender' => $gender,
+            'regularPrice' => $regularPrice,
+            'salePrice' => $salePrice,
             'stockQty' => $stockQty,
             'stockStatus' => $stockStatus,
-            'status' => $data['status'] ?? ($existing['status'] ?? 'published'),
-            'isFeatured' => isset($data['isFeatured']) ? (bool)$data['isFeatured'] : (bool)($existing['isFeatured'] ?? false),
+            'status' => $status,
+            'isFeatured' => $isFeatured,
             'image' => $primaryImage,
-            'images' => array_values(array_filter($images)),
-            'gallery' => array_values(array_filter($images)),
-            'video' => $data['video'] ?? ($existing['video'] ?? null),
-            'sizes' => $data['sizes'] ?? ($existing['sizes'] ?? []),
-            'shortDescription' => $data['shortDescription'] ?? ($existing['shortDescription'] ?? ''),
-            'description' => $data['description'] ?? ($existing['description'] ?? ''),
-            'seoTitle' => $data['seoTitle'] ?? ($existing['seoTitle'] ?? ''),
-            'seoDescription' => $data['seoDescription'] ?? ($existing['seoDescription'] ?? ''),
+            'images' => $images,
+            'gallery' => $images,
+            'video' => $video,
+            'sizes' => $sizes,
+            'shortDescription' => $shortDescription,
+            'description' => $description,
+            'seoTitle' => $seoTitle,
+            'seoDescription' => $seoDescription,
             'specs' => [
-                'capacity' => $data['capacity'] ?? ($existing['specs']['capacity'] ?? ($existing['volume'] ?? 'N/A')),
-                'neck' => $data['neck'] ?? ($existing['specs']['neck'] ?? ($existing['neckSize'] ?? 'N/A')),
-                'material' => $data['material'] ?? ($existing['specs']['material'] ?? ($existing['material'] ?? 'PET')),
-                'weight' => $data['weight'] ?? ($existing['specs']['weight'] ?? ($existing['weight'] ?? 'N/A')),
-                'moq' => $data['moq'] ?? ($existing['specs']['moq'] ?? ($existing['moq'] ?? '5,000 pcs'))
+                'capacity' => $capacity,
+                'neck' => $neck,
+                'material' => $material,
+                'weight' => $weight,
+                'moq' => $moq
             ],
             'updatedAt' => date('Y-m-d H:i:s')
         ];
 
-        // 1. MySQL PDO Transaction
+        // 1. MySQL DB Transaction
         if (class_exists('Database')) {
             try {
                 $db = Database::getInstance();
@@ -13923,52 +14107,175 @@ class ProductModel {
                     $pdo = $db->getConnection();
                     $pdo->beginTransaction();
 
-                    $stmt = $pdo->prepare("INSERT INTO products (sku, name, slug, category_slug, category_name, subcategory, gender, short_desc, description, regular_price, sale_price, stock_qty, stock_status, status, is_featured, capacity, neck_finish, material, weight, moq, seo_title, seo_description, updated_at) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) 
-                        ON DUPLICATE KEY UPDATE 
-                        name=VALUES(name), category_slug=VALUES(category_slug), category_name=VALUES(category_name), subcategory=VALUES(subcategory), gender=VALUES(gender), regular_price=VALUES(regular_price), sale_price=VALUES(sale_price), stock_qty=VALUES(stock_qty), stock_status=VALUES(stock_status), status=VALUES(status), is_featured=VALUES(is_featured), capacity=VALUES(capacity), neck_finish=VALUES(neck_finish), material=VALUES(material), weight=VALUES(weight), moq=VALUES(moq), short_desc=VALUES(short_desc), description=VALUES(description), updated_at=NOW()");
+                    // Check if existing record exists in MySQL
+                    $existingRow = null;
+                    if ($originalId > 0) {
+                        $fStmt = $pdo->prepare("SELECT id, sku, slug, name FROM products WHERE id = ? LIMIT 1");
+                        $fStmt->execute([$originalId]);
+                        $existingRow = $fStmt->fetch(PDO::FETCH_ASSOC);
+                    }
+                    if (!$existingRow && !empty($originalSku)) {
+                        $fStmt = $pdo->prepare("SELECT id, sku, slug, name FROM products WHERE sku = ? LIMIT 1");
+                        $fStmt->execute([$originalSku]);
+                        $existingRow = $fStmt->fetch(PDO::FETCH_ASSOC);
+                    }
+                    if (!$existingRow && !empty($articleNo)) {
+                        $fStmt = $pdo->prepare("SELECT id, sku, slug, name FROM products WHERE sku = ? LIMIT 1");
+                        $fStmt->execute([$articleNo]);
+                        $existingRow = $fStmt->fetch(PDO::FETCH_ASSOC);
+                    }
 
-                    $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $updatedRecord['name']), '-'));
-                    $stmt->execute([
-                        $updatedRecord['articleNo'],
-                        $updatedRecord['name'],
-                        $slug,
-                        $updatedRecord['categorySlug'],
-                        $updatedRecord['categoryName'],
-                        $updatedRecord['serie'],
-                        $updatedRecord['gender'],
-                        $updatedRecord['shortDescription'],
-                        $updatedRecord['description'],
-                        $updatedRecord['regularPrice'],
-                        $updatedRecord['salePrice'],
-                        $updatedRecord['stockQty'],
-                        $updatedRecord['stockStatus'],
-                        $updatedRecord['status'],
-                        $updatedRecord['isFeatured'] ? 1 : 0,
-                        $updatedRecord['specs']['capacity'],
-                        $updatedRecord['specs']['neck'],
-                        $updatedRecord['specs']['material'],
-                        $updatedRecord['specs']['weight'],
-                        $updatedRecord['specs']['moq'],
-                        $updatedRecord['seoTitle'],
-                        $updatedRecord['seoDescription']
-                    ]);
+                    if ($existingRow) {
+                        // UPDATE EXISTING ROW
+                        $targetDbId = (int)$existingRow['id'];
+                        $slug = $existingRow['slug'];
 
-                    // Fetch product ID from DB
-                    $pStmt = $pdo->prepare("SELECT id FROM products WHERE sku = ?");
-                    $pStmt->execute([$updatedRecord['articleNo']]);
-                    $dbId = $pStmt->fetchColumn();
+                        // If name changed, compute a unique slug
+                        if (strcasecmp($existingRow['name'], $name) !== 0 || empty($slug)) {
+                            $baseSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+                            if (empty($baseSlug)) $baseSlug = 'product-' . $targetDbId;
 
-                    if ($dbId) {
-                        // Delete old image relations & re-insert updated images
+                            // Check collision
+                            $chk = $pdo->prepare("SELECT id FROM products WHERE slug = ? AND id != ? LIMIT 1");
+                            $chk->execute([$baseSlug, $targetDbId]);
+                            if ($chk->fetch()) {
+                                $slug = $baseSlug . '-' . strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $articleNo), '-'));
+                                $chk2 = $pdo->prepare("SELECT id FROM products WHERE slug = ? AND id != ? LIMIT 1");
+                                $chk2->execute([$slug, $targetDbId]);
+                                if ($chk2->fetch()) {
+                                    $slug .= '-' . $targetDbId;
+                                }
+                            } else {
+                                $slug = $baseSlug;
+                            }
+                        }
+
+                        $updSql = "UPDATE products SET 
+                                    sku = ?, 
+                                    name = ?, 
+                                    slug = ?, 
+                                    category_slug = ?, 
+                                    category_name = ?, 
+                                    subcategory = ?, 
+                                    gender = ?, 
+                                    short_desc = ?, 
+                                    description = ?, 
+                                    regular_price = ?, 
+                                    sale_price = ?, 
+                                    stock_qty = ?, 
+                                    stock_status = ?, 
+                                    status = ?, 
+                                    is_featured = ?, 
+                                    capacity = ?, 
+                                    neck_finish = ?, 
+                                    material = ?, 
+                                    weight = ?, 
+                                    moq = ?, 
+                                    seo_title = ?, 
+                                    seo_description = ?, 
+                                    deleted_at = CASE WHEN ? = 'archived' THEN NOW() ELSE NULL END, 
+                                    updated_at = NOW() 
+                                   WHERE id = ?";
+
+                        $updStmt = $pdo->prepare($updSql);
+                        $updStmt->execute([
+                            $articleNo,
+                            $name,
+                            $slug,
+                            $categorySlug,
+                            $categoryName,
+                            $serie,
+                            $gender,
+                            $shortDescription,
+                            $description,
+                            $regularPrice,
+                            $salePrice,
+                            $stockQty,
+                            $stockStatus,
+                            $status,
+                            $isFeatured ? 1 : 0,
+                            $capacity,
+                            $neck,
+                            $material,
+                            $weight,
+                            $moq,
+                            $seoTitle,
+                            $seoDescription,
+                            $status,
+                            $targetDbId
+                        ]);
+
+                        // Update images
                         $delStmt = $pdo->prepare("DELETE FROM product_images WHERE product_id = ?");
-                        $delStmt->execute([$dbId]);
+                        $delStmt->execute([$targetDbId]);
 
                         $imgStmt = $pdo->prepare("INSERT INTO product_images (product_id, image_url, is_primary, sort_order) VALUES (?, ?, ?, ?)");
-                        foreach ($updatedRecord['images'] as $iIdx => $imgUrl) {
+                        foreach ($images as $iIdx => $imgUrl) {
                             $isPrim = ($iIdx === 0) ? 1 : 0;
-                            $imgStmt->execute([$dbId, $imgUrl, $isPrim, $iIdx + 1]);
+                            $imgStmt->execute([$targetDbId, $imgUrl, $isPrim, $iIdx + 1]);
                         }
+
+                        $updatedRecord['db_id'] = $targetDbId;
+                        $updatedRecord['slug'] = $slug;
+
+                    } else {
+                        // INSERT NEW PRODUCT
+                        $baseSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+                        if (empty($baseSlug)) $baseSlug = 'product-' . time();
+
+                        $chk = $pdo->prepare("SELECT id FROM products WHERE slug = ? LIMIT 1");
+                        $chk->execute([$baseSlug]);
+                        if ($chk->fetch()) {
+                            $slug = $baseSlug . '-' . strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $articleNo), '-'));
+                            $chk2 = $pdo->prepare("SELECT id FROM products WHERE slug = ? LIMIT 1");
+                            $chk2->execute([$slug]);
+                            if ($chk2->fetch()) {
+                                $slug .= '-' . rand(100, 999);
+                            }
+                        } else {
+                            $slug = $baseSlug;
+                        }
+
+                        $insSql = "INSERT INTO products (sku, name, slug, category_slug, category_name, subcategory, gender, short_desc, description, regular_price, sale_price, stock_qty, stock_status, status, is_featured, capacity, neck_finish, material, weight, moq, seo_title, seo_description, created_at, updated_at, deleted_at) 
+                                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW(), CASE WHEN ? = 'archived' THEN NOW() ELSE NULL END)";
+
+                        $insStmt = $pdo->prepare($insSql);
+                        $insStmt->execute([
+                            $articleNo,
+                            $name,
+                            $slug,
+                            $categorySlug,
+                            $categoryName,
+                            $serie,
+                            $gender,
+                            $shortDescription,
+                            $description,
+                            $regularPrice,
+                            $salePrice,
+                            $stockQty,
+                            $stockStatus,
+                            $status,
+                            $isFeatured ? 1 : 0,
+                            $capacity,
+                            $neck,
+                            $material,
+                            $weight,
+                            $moq,
+                            $seoTitle,
+                            $seoDescription,
+                            $status
+                        ]);
+
+                        $newDbId = (int)$pdo->lastInsertId();
+
+                        $imgStmt = $pdo->prepare("INSERT INTO product_images (product_id, image_url, is_primary, sort_order) VALUES (?, ?, ?, ?)");
+                        foreach ($images as $iIdx => $imgUrl) {
+                            $isPrim = ($iIdx === 0) ? 1 : 0;
+                            $imgStmt->execute([$newDbId, $imgUrl, $isPrim, $iIdx + 1]);
+                        }
+
+                        $updatedRecord['db_id'] = $newDbId;
+                        $updatedRecord['slug'] = $slug;
                     }
 
                     $pdo->commit();
@@ -13978,13 +14285,17 @@ class ProductModel {
                     $pdo->rollBack();
                 }
                 error_log("DB Product Save Transaction Error: " . $e->getMessage());
+                return false;
             }
         }
 
-        // 2. Dual JSON Fallback Persistence
+        // 2. Dual JSON Persistence
         $editedPath = defined('EDITED_PRODUCTS_FILE') ? EDITED_PRODUCTS_FILE : __DIR__ . '/../../config/edited_products.json';
         $edited = self::getEditedProducts();
-        $edited[$id] = $updatedRecord;
+        $edited[$articleNo] = $updatedRecord;
+        if (!empty($originalSku) && $originalSku !== $articleNo) {
+            unset($edited[$originalSku]);
+        }
         file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
 
         return $updatedRecord;
@@ -13995,16 +14306,19 @@ class ProductModel {
     }
 
     /**
-     * Safely delete/archive a product in MySQL DB & JSON store
+     * Safely archive a product in MySQL DB & JSON store
      */
     public static function deleteProduct($id) {
+        if (empty($id)) return false;
+
         if (class_exists('Database')) {
             try {
                 $db = Database::getInstance();
                 if ($db && $db->isConnected()) {
                     $pdo = $db->getConnection();
                     $stmt = $pdo->prepare("UPDATE products SET status = 'archived', deleted_at = NOW() WHERE sku = ? OR id = ?");
-                    $stmt->execute([$id, $id]);
+                    $numId = is_numeric($id) ? (int)$id : 0;
+                    $stmt->execute([(string)$id, $numId]);
                 }
             } catch (Exception $e) {
                 error_log("DB Product Delete Error: " . $e->getMessage());
@@ -14019,7 +14333,7 @@ class ProductModel {
             $product = self::getSkuById($id);
             if ($product) {
                 $product['status'] = 'archived';
-                $edited[$id] = $product;
+                $edited[$product['articleNo'] ?? $id] = $product;
             }
         }
         file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
@@ -14027,12 +14341,106 @@ class ProductModel {
         return true;
     }
 
+    /**
+     * Restore an archived product to published
+     */
+    public static function restoreProduct($id) {
+        if (empty($id)) return false;
+
+        if (class_exists('Database')) {
+            try {
+                $db = Database::getInstance();
+                if ($db && $db->isConnected()) {
+                    $pdo = $db->getConnection();
+                    $stmt = $pdo->prepare("UPDATE products SET status = 'published', deleted_at = NULL WHERE sku = ? OR id = ?");
+                    $numId = is_numeric($id) ? (int)$id : 0;
+                    $stmt->execute([(string)$id, $numId]);
+                }
+            } catch (Exception $e) {
+                error_log("DB Product Restore Error: " . $e->getMessage());
+            }
+        }
+
+        $editedPath = defined('EDITED_PRODUCTS_FILE') ? EDITED_PRODUCTS_FILE : __DIR__ . '/../../config/edited_products.json';
+        $edited = self::getEditedProducts();
+        if (isset($edited[$id])) {
+            $edited[$id]['status'] = 'published';
+        } else {
+            $product = self::getSkuById($id);
+            if ($product) {
+                $product['status'] = 'published';
+                $edited[$product['articleNo'] ?? $id] = $product;
+            }
+        }
+        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
+
+        return true;
+    }
+
+    /**
+     * Permanently delete a product from MySQL DB & JSON store
+     */
+    public static function permanentDeleteProduct($id) {
+        if (empty($id)) return false;
+
+        if (class_exists('Database')) {
+            try {
+                $db = Database::getInstance();
+                if ($db && $db->isConnected()) {
+                    $pdo = $db->getConnection();
+                    $numId = is_numeric($id) ? (int)$id : 0;
+
+                    // Delete product images first (if cascade is not enabled)
+                    $delImgs = $pdo->prepare("DELETE FROM product_images WHERE product_id IN (SELECT id FROM products WHERE sku = ? OR id = ?)");
+                    @$delImgs->execute([(string)$id, $numId]);
+
+                    $stmt = $pdo->prepare("DELETE FROM products WHERE sku = ? OR id = ?");
+                    $stmt->execute([(string)$id, $numId]);
+                }
+            } catch (Exception $e) {
+                error_log("DB Product Permanent Delete Error: " . $e->getMessage());
+            }
+        }
+
+        $editedPath = defined('EDITED_PRODUCTS_FILE') ? EDITED_PRODUCTS_FILE : __DIR__ . '/../../config/edited_products.json';
+        $edited = self::getEditedProducts();
+        unset($edited[$id]);
+        foreach ($edited as $k => $v) {
+            if (($v['id'] ?? '') === $id || ($v['articleNo'] ?? '') === $id || (isset($v['db_id']) && (string)$v['db_id'] === (string)$id)) {
+                unset($edited[$k]);
+            }
+        }
+        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
+
+        // Also clean up custom products if applicable
+        $customPath = defined('CUSTOM_PRODUCTS_FILE') ? CUSTOM_PRODUCTS_FILE : __DIR__ . '/../../config/custom_products.json';
+        if (file_exists($customPath)) {
+            $customs = json_decode(file_get_contents($customPath), true) ?: [];
+            $filteredCustoms = array_values(array_filter($customs, function($c) use ($id) {
+                return ($c['id'] ?? '') !== $id && ($c['articleNo'] ?? '') !== $id;
+            }));
+            file_put_contents($customPath, json_encode($filteredCustoms, JSON_PRETTY_PRINT));
+        }
+
+        return true;
+    }
+
     public static function deleteCustomProduct($id) {
-        return self::deleteProduct($id);
+        return self::permanentDeleteProduct($id);
     }
 
     public static function getCompanyInfo() {
-        return self::$companyInfo;
+        $info = self::$companyInfo;
+        $settingsFile = defined('ROOT_PATH') ? ROOT_PATH . '/config/site_settings.json' : dirname(__DIR__, 2) . '/config/site_settings.json';
+        if (file_exists($settingsFile)) {
+            $settings = json_decode(file_get_contents($settingsFile), true) ?: [];
+            if (!empty($settings['site_name'])) $info['name'] = $settings['site_name'];
+            if (!empty($settings['contact_email'])) $info['email'] = $settings['contact_email'];
+            if (!empty($settings['contact_phone'])) $info['phone'] = $settings['contact_phone'];
+            if (!empty($settings['currency'])) $info['currency'] = $settings['currency'];
+            if (!empty($settings['tagline'])) $info['tagline'] = $settings['tagline'];
+        }
+        return $info;
     }
 
     public static function getCountries() {

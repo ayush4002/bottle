@@ -17,13 +17,13 @@
           <div class="rpet-cards-stack">
             <div class="rpet-card" onclick="window.goToCategory('Bottles PET')">
               <div class="frapak-tile-image">
-                <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.png" alt="rPET bottles" loading="lazy" />
+                <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="rPET bottles" loading="lazy" />
               </div>
               <div class="rpet-card-bar">rPET bottles</div>
             </div>
             <div class="rpet-card" onclick="window.goToCategory('PET Jars')">
               <div class="frapak-tile-image">
-                <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.jpg" alt="rPET jars" loading="lazy" />
+                <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="rPET jars" loading="lazy" />
               </div>
               <div class="rpet-card-bar">rPET jars</div>
             </div>

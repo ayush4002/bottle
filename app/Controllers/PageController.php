@@ -45,6 +45,11 @@ class PageController {
             exit();
         }
 
+        $seriesSlug = $sku['seriesSlug'] ?? null;
+        $categorySlug = $sku['categorySlug'] ?? null;
+        $seriesInfo = $seriesSlug ? ProductModel::getSeriesBySlug($seriesSlug) : null;
+        $categoryInfo = $categorySlug ? ProductModel::getCategoryBySlug($categorySlug) : null;
+
         $company = ProductModel::getCompanyInfo();
         $categories = ProductModel::getCategories();
         $activePage = 'products';

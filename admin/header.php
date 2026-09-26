@@ -489,6 +489,19 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         Dashboard
       </a>
+      <a href="/admin/inquiries.php" class="cms-nav-link <?= $currentPage == 'inquiries' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Client Inquiries
+        <?php
+          if (file_exists(dirname(__DIR__) . '/app/Models/InquiryModel.php')) {
+              require_once dirname(__DIR__) . '/app/Models/InquiryModel.php';
+              $inqStats = InquiryModel::getStats();
+              if (($inqStats['new'] ?? 0) > 0) {
+                  echo '<span style="background: #0284c7; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 999px; margin-left: auto;">' . $inqStats['new'] . '</span>';
+              }
+          }
+        ?>
+      </a>
 
       <div class="cms-nav-section">Catalogue & Products</div>
       <a href="/admin/products.php" class="cms-nav-link <?= in_array($currentPage, ['products', 'edit_product']) ? 'active' : '' ?>">

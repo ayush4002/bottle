@@ -54,6 +54,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$authenticated) {
             if ($username === ADMIN_USER && ($password === ADMIN_PASS || password_verify($password, password_hash(ADMIN_PASS, PASSWORD_DEFAULT)))) {
                 $authenticated = true;
+                $userRole = 'Super Admin';
+            }
+        }
+
+        // 3. Fallback to JSON Admin Users
+        if (!$authenticated) {
+            $usersFile = defined('ROOT_PATH') ? ROOT_PATH . '/config/admin_users.json' : dirname(__DIR__) . '/config/admin_users.json';
+            if (file_exists($usersFile)) {
+                $users = json_decode(file_get_contents($usersFile), true) ?: [];
+                foreach ($users as $u) {
+                    if (strcasecmp($u['username'] ?? '', $username) === 0 || strcasecmp($u['email'] ?? '', $username) === 0) {
+                        if (!empty($u['password_hash']) && password_verify($password, $u['password_hash'])) {
+                            $authenticated = true;
+                            $username = $u['username'];
+                            $userRole = $u['role'] ?? 'Editor';
+                            $userEmail = $u['email'] ?? '';
+                            break;
+                        }
+                    }
+                }
             }
         }
 

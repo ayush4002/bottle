@@ -1,0 +1,15 @@
+[
+    {
+        "id": 2,
+        "quote_id": "INQ-E2603915",
+        "name": "Ayush Test Client",
+        "company": "Acme Packaging Ltd",
+        "email": "ayush4002@gmail.com",
+        "phone": "+91 9999999999",
+        "country": "India",
+        "product": "100ml Boston Round PET Bottle",
+        "inquiry": "This is a test inquiry to verify client confirmation email receipt.",
+        "status": "new",
+        "created_at": "2026-09-25 14:55:30"
+    }
+]

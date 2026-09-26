@@ -134,7 +134,7 @@
           <!-- Card 1 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/brand_assets/pet_bottles/354ml Square-30gm 24mm.jpg" alt="Square Bottle Mould" loading="lazy" />
+              <img src="/brand_assets/pet_bottles/354ml Square-30gm 24mm.webp" alt="Square Bottle Mould" loading="lazy" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Custom Geometries</div>
@@ -146,7 +146,7 @@
           <!-- Card 2 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/brand_assets/pet_bottles/veola 1.jpg" alt="Veola Custom Contours" loading="lazy" />
+              <img src="/brand_assets/pet_bottles/veola 1.webp" alt="Veola Custom Contours" loading="lazy" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Decoration Tech</div>
@@ -158,7 +158,7 @@
           <!-- Card 3 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/brand_assets/glass_bottles/metal_unishell_cap_.jpg" alt="Metal Unishell Closures" loading="lazy" />
+              <img src="/brand_assets/glass_bottles/metal_unishell_cap_.webp" alt="Metal Unishell Closures" loading="lazy" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Prestige Fitments</div>
@@ -170,7 +170,7 @@
           <!-- Card 4 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.jpg" alt="Wide Mouth Jars" loading="lazy" />
+              <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="Wide Mouth Jars" loading="lazy" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Custom Jars</div>

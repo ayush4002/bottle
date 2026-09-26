@@ -81,7 +81,38 @@
               </div>
               <div class="frapak-form-field">
                 <label for="cnt-country">4. Country *</label>
-                <select id="cnt-country" name="country" class="country-select" required></select>
+                <select id="cnt-country" name="country" class="country-select" required>
+                  <option value="" disabled selected>Select your country...</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Germany">Germany</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="France">France</option>
+                  <option value="Netherlands">Netherlands</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="South Africa">South Africa</option>
+                  <option value="Malaysia">Malaysia</option>
+                  <option value="India">India</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Spain">Spain</option>
+                  <option value="Switzerland">Switzerland</option>
+                  <option value="Japan">Japan</option>
+                  <option value="China">China</option>
+                  <option value="Brazil">Brazil</option>
+                  <option value="Mexico">Mexico</option>
+                  <option value="Poland">Poland</option>
+                  <option value="Belgium">Belgium</option>
+                  <option value="Sweden">Sweden</option>
+                  <option value="Austria">Austria</option>
+                  <option value="Denmark">Denmark</option>
+                  <option value="Norway">Norway</option>
+                  <option value="Ireland">Ireland</option>
+                  <option value="New Zealand">New Zealand</option>
+                  <option value="Other Country">Other Country</option>
+                </select>
               </div>
               <div class="frapak-form-field">
                 <label for="cnt-phone">5. Phone Number *</label>
