@@ -58,14 +58,14 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
           </button>
           
-          <img id="pdp-active-display-img" src="<?= htmlspecialchars($primaryImg) ?>" alt="<?= htmlspecialchars($sku['name'] ?? 'Product') ?>" />
+          <img id="pdp-active-display-img" src="<?= htmlspecialchars($primaryImg) ?>" alt="<?= htmlspecialchars($sku['name'] ?? 'Product') ?>" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
         </div>
 
         <!-- Vertical Thumbnails Column -->
         <div class="frapak-pdp-thumbs-col">
           <?php foreach ($gallery as $idx => $gUrl): ?>
             <div class="frapak-pdp-thumb-item <?= $idx === 0 ? 'active' : '' ?>" onclick="window.switchPdpImage(this, '<?= htmlspecialchars($gUrl, ENT_QUOTES) ?>')">
-              <img src="<?= htmlspecialchars($gUrl) ?>" alt="Thumb <?= $idx + 1 ?>" />
+              <img src="<?= htmlspecialchars($gUrl) ?>" alt="Thumb <?= $idx + 1 ?>" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
             </div>
           <?php endforeach; ?>
         </div>

@@ -396,7 +396,7 @@ $err = $_GET['err'] ?? '';
       ?>
       <div class="mobile-product-card" id="prod-card-<?= htmlspecialchars($pId) ?>" data-sku="<?= htmlspecialchars($pId) ?>">
         <div class="mpc-top">
-          <img src="<?= htmlspecialchars($p['image'] ?? ($p['images'][0] ?? '/logo_svg.svg')) ?>" class="mpc-thumb" alt="Thumb" />
+          <img src="<?= htmlspecialchars($p['image'] ?? ($p['images'][0] ?? '/logo_svg.svg')) ?>" class="mpc-thumb" alt="Thumb" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
           <div class="mpc-info">
             <h4 class="mpc-name"><?= htmlspecialchars($p['name'] ?? $p['fullTitle'] ?? 'Product Item') ?></h4>
             <div class="mpc-meta">
@@ -482,7 +482,7 @@ $err = $_GET['err'] ?? '';
           ?>
           <tr id="prod-row-<?= htmlspecialchars($pId) ?>" data-sku="<?= htmlspecialchars($pId) ?>">
             <td>
-              <img src="<?= htmlspecialchars($p['image'] ?? ($p['images'][0] ?? '/logo_svg.svg')) ?>" class="product-thumb" alt="Thumb" />
+              <img src="<?= htmlspecialchars($p['image'] ?? ($p['images'][0] ?? '/logo_svg.svg')) ?>" class="product-thumb" alt="Thumb" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
             </td>
             <td>
               <strong style="color: #f8fafc; font-size: 0.92rem; display: block; margin-bottom: 2px;">

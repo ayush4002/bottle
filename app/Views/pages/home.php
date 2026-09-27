@@ -69,11 +69,11 @@
             <div class="frapak-tile-bar"><span>Agro</span></div>
           </a>
           <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/vikaas_inputs/LIQUOR_Bottles.webp" alt="Beverages" loading="lazy" /></div>
+            <div class="frapak-market-img"><img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Beverages" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" /></div>
             <div class="frapak-tile-bar"><span>Beverages</span></div>
           </a>
           <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/brand_assets/glass_bottles/7G3A8712.webp" alt="Liquor" loading="lazy" /></div>
+            <div class="frapak-market-img"><img src="/vikaas_inputs/LIQUOR_Bottles.webp" alt="Liquor" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" /></div>
             <div class="frapak-tile-bar"><span>Liquor</span></div>
           </a>
         </div>

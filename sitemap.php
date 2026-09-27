@@ -114,7 +114,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <lastmod><?= $lastMod ?></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <?php if (!empty($pImage)): ?>
+    <?php if (!empty($pImage) && $pImage !== '/logo_svg.svg' && $pImage !== '/logo.webp'): ?>
       <?php
         $imgUrl = (strpos($pImage, 'http') === 0) ? $pImage : ($baseUrl . '/' . ltrim($pImage, '/'));
       ?>

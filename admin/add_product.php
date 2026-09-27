@@ -451,7 +451,7 @@ $csrfToken = $_SESSION['csrf_token'];
         <div class="media-slot" onclick="document.getElementById('file_img1').click()">
           <input type="file" name="product_img1" id="file_img1" accept="image/*" style="opacity: 0; position: absolute; top:0; left:0; width:100%; height:100%; cursor: pointer;" onchange="previewSlot(this, 'prev_img1')" />
           <span style="font-size: 0.75rem; font-weight: 700; color: #38bdf8; display: block; margin-bottom: 6px;">IMAGE 1 (PRIMARY)</span>
-          <img id="prev_img1" src="/brand_assets/pet_bottles/100ml_boston_white.jpeg" class="media-slot-preview" alt="Slot 1" />
+          <img id="prev_img1" src="/logo_svg.svg" class="media-slot-preview" alt="Slot 1" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
           <span style="font-size: 0.75rem; color: #94a3b8;">Click to Upload</span>
         </div>
 

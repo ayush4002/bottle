@@ -468,8 +468,8 @@ $gender = $product['gender'] ?? 'Unisex';
           <input type="hidden" name="existing_img1" value="<?= htmlspecialchars($img1) ?>" />
           <input type="file" name="product_img1" id="file_img1" accept="image/*" style="opacity: 0; position: absolute; top:0; left:0; width:100%; height:100%; cursor: pointer;" onchange="previewSlot(this, 'prev_img1')" />
           <span style="font-size: 0.75rem; font-weight: 700; color: #38bdf8; display: block; margin-bottom: 6px;">IMAGE 1 (PRIMARY)</span>
-          <img id="prev_img1" src="<?= htmlspecialchars($img1) ?>" class="media-slot-preview" alt="Slot 1" />
-          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Replace</span>
+          <img id="prev_img1" src="<?= htmlspecialchars($img1) ?>" class="media-slot-preview" alt="Slot 1" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Upload / Replace</span>
         </div>
 
         <!-- SLOT 2 -->
@@ -477,8 +477,8 @@ $gender = $product['gender'] ?? 'Unisex';
           <input type="hidden" name="existing_img2" value="<?= htmlspecialchars($img2) ?>" />
           <input type="file" name="product_img2" id="file_img2" accept="image/*" style="opacity: 0; position: absolute; top:0; left:0; width:100%; height:100%; cursor: pointer;" onchange="previewSlot(this, 'prev_img2')" />
           <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 6px;">IMAGE 2</span>
-          <img id="prev_img2" src="<?= htmlspecialchars($img2) ?>" class="media-slot-preview" alt="Slot 2" />
-          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Replace</span>
+          <img id="prev_img2" src="<?= htmlspecialchars($img2) ?>" class="media-slot-preview" alt="Slot 2" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Upload / Replace</span>
         </div>
 
         <!-- SLOT 3 -->
@@ -486,8 +486,8 @@ $gender = $product['gender'] ?? 'Unisex';
           <input type="hidden" name="existing_img3" value="<?= htmlspecialchars($img3) ?>" />
           <input type="file" name="product_img3" id="file_img3" accept="image/*" style="opacity: 0; position: absolute; top:0; left:0; width:100%; height:100%; cursor: pointer;" onchange="previewSlot(this, 'prev_img3')" />
           <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 6px;">IMAGE 3</span>
-          <img id="prev_img3" src="<?= htmlspecialchars($img3) ?>" class="media-slot-preview" alt="Slot 3" />
-          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Replace</span>
+          <img id="prev_img3" src="<?= htmlspecialchars($img3) ?>" class="media-slot-preview" alt="Slot 3" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Upload / Replace</span>
         </div>
 
         <!-- SLOT 4 -->
@@ -495,8 +495,8 @@ $gender = $product['gender'] ?? 'Unisex';
           <input type="hidden" name="existing_img4" value="<?= htmlspecialchars($img4) ?>" />
           <input type="file" name="product_img4" id="file_img4" accept="image/*" style="opacity: 0; position: absolute; top:0; left:0; width:100%; height:100%; cursor: pointer;" onchange="previewSlot(this, 'prev_img4')" />
           <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 6px;">IMAGE 4</span>
-          <img id="prev_img4" src="<?= htmlspecialchars($img4) ?>" class="media-slot-preview" alt="Slot 4" />
-          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Replace</span>
+          <img id="prev_img4" src="<?= htmlspecialchars($img4) ?>" class="media-slot-preview" alt="Slot 4" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+          <span style="font-size: 0.75rem; color: #94a3b8;">Click to Upload / Replace</span>
         </div>
       </div>
     </div>

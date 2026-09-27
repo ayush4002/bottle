@@ -68,10 +68,10 @@ if (isset($assetMimes[$ext])) {
     // Fallback image for missing packaging asset (prevents broken 404 image icons)
     if (in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'svg'])) {
         $fallbacks = [
-            __DIR__ . '/brand_assets/pet_bottles/100ml_boston_white.jpeg',
-            __DIR__ . '/public/brand_assets/pet_bottles/100ml_boston_white.jpeg',
             __DIR__ . '/logo_svg.svg',
-            __DIR__ . '/public/logo_svg.svg'
+            __DIR__ . '/public/logo_svg.svg',
+            __DIR__ . '/logo.webp',
+            __DIR__ . '/public/logo.webp'
         ];
         foreach ($fallbacks as $fb) {
             if (is_file($fb)) {

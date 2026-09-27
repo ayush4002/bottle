@@ -125,11 +125,10 @@ error_reporting(E_ALL);
     <strong>Checking Image Assets &amp; Linux Case Sensitivity:</strong><br>
     <?php
       $testImages = [
-        'Caps Image' => 'brand_assets/caps/nb108-a.png',
-        'Pumps Image' => 'brand_assets/pumps/nb101-a.png',
-        'Sprays Image' => 'brand_assets/sprays/nb304-a.png',
-        'Vikaas Thumbnails' => 'vikaas_inputs/thumbnails/thumbnail_pet_bottles.png',
+        'Vikaas Thumbnails' => 'vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp',
+        'Vikaas Cosmetics' => 'vikaas_inputs/COSMETICS.webp',
         'Logo SVG' => 'logo_svg.svg',
+        'Logo WebP' => 'logo.webp',
       ];
 
       foreach ($testImages as $label => $relPath) {

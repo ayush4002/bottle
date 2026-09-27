@@ -429,7 +429,7 @@ if ($searchQuery) {
                     <?php endif; ?>
 
                     <div class="frapak-sku-img">
-                      <img src="<?= htmlspecialchars($sku['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($sku['name'] ?? '') ?>" loading="lazy" />
+                      <img src="<?= htmlspecialchars($sku['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($sku['name'] ?? '') ?>" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
                     </div>
                     <div class="frapak-sku-bar"><?= htmlspecialchars($sku['name'] ?? 'Product SKU') ?></div>
 
