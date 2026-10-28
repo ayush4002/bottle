@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1791451978,
+        "quote_id": "INQ-96B8563E",
+        "name": "Ayush Test",
+        "company": "Acme Packaging Ltd",
+        "email": "info@wetruenorthgroup.com",
+        "phone": "+91 11 4752 8900",
+        "country": "India",
+        "product": "500ml Veola PET Bottle",
+        "inquiry": "Looking for 25,000 units with matching flip-top caps.",
+        "status": "new",
+        "created_at": "2026-10-08 11:32:58"
+    },
+    {
+        "id": 1791451359,
+        "quote_id": "INQ-EE0BBCD5",
+        "name": "Ayush Test",
+        "company": "Acme Packaging Ltd",
+        "email": "info@wetruenorthgroup.com",
+        "phone": "+91 11 4752 8900",
+        "country": "India",
+        "product": "500ml Veola PET Bottle",
+        "inquiry": "Looking for 25,000 units with matching flip-top caps.",
+        "status": "new",
+        "created_at": "2026-10-08 11:22:39"
+    },
+    {
+        "id": 1790754893,
+        "quote_id": "INQ-B1997238",
+        "name": "Ayush Test",
+        "company": "Acme Packaging Ltd",
+        "email": "info@wetruenorthgroup.com",
+        "phone": "+91 11 4752 8900",
+        "country": "India",
+        "product": "500ml Veola PET Bottle",
+        "inquiry": "Looking for 25,000 units with matching flip-top caps.",
+        "status": "new",
+        "created_at": "2026-09-30 09:54:53"
+    },
+    {
+        "id": 1790754741,
+        "quote_id": "INQ-F7BF54F0",
+        "name": "Ayush Test",
+        "company": "Acme Packaging Ltd",
+        "email": "info@wetruenorthgroup.com",
+        "phone": "+91 11 4752 8900",
+        "country": "India",
+        "product": "500ml Veola PET Bottle",
+        "inquiry": "Looking for 25,000 units with matching flip-top caps.",
+        "status": "new",
+        "created_at": "2026-09-30 09:52:21"
+    },
+    {
+        "id": 2,
+        "quote_id": "INQ-E2603915",
+        "name": "Ayush Test Client",
+        "company": "Acme Packaging Ltd",
+        "email": "ayush4002@gmail.com",
+        "phone": "+91 9999999999",
+        "country": "India",
+        "product": "100ml Boston Round PET Bottle",
+        "inquiry": "This is a test inquiry to verify client confirmation email receipt.",
+        "status": "new",
+        "created_at": "2026-09-25 14:55:30"
+    }
+]
