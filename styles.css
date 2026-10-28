@@ -48,7 +48,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -57,7 +57,7 @@ body {
   background-color: var(--color-white);
   color: var(--color-text-dark);
   line-height: 1.55;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   position: relative;
 }
@@ -185,16 +185,18 @@ a {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  width: 380px;
-  max-width: 95vw;
+  width: 420px;
+  max-width: min(420px, calc(100vw - 32px));
   background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.18), 0 4px 12px rgba(15, 23, 42, 0.08);
   display: none;
   z-index: 99999;
-  max-height: 360px;
+  max-height: 420px;
   overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .search-results-popover.open,
@@ -234,7 +236,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 84px;
+  height: 125px;
 }
 
 /* Logo */
@@ -246,7 +248,7 @@ a {
   font-size: 1.35rem;
   color: var(--color-navy);
   text-decoration: none;
-  height: 76px;
+  height: 118px;
   transition: transform 0.2s ease;
 }
 
@@ -255,7 +257,7 @@ a {
 }
 
 .frapak-logo-img {
-  height: 70px;
+  height: 114px;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -397,8 +399,8 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 320px;
-  max-width: 86vw;
+  width: 340px;
+  max-width: 90vw;
   background: #ffffff;
   z-index: 2250;
   display: flex;
@@ -407,6 +409,7 @@ a {
   transform: translateX(100%);
   transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -425,7 +428,7 @@ a {
 }
 
 .mobile-nav-logo img {
-  height: 38px;
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -452,6 +455,39 @@ a {
   padding: 14px 18px;
   border-bottom: 1px solid #F0F2F5;
   position: relative;
+}
+
+/* Mobile Drawer Popover: Fully Contained Within Drawer */
+.mobile-nav-search .search-results-popover {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 10px !important;
+  right: 10px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 20px) !important;
+  box-sizing: border-box !important;
+  border-radius: 12px !important;
+  overflow-x: hidden !important;
+  max-height: 380px !important;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16) !important;
+}
+
+.search-popular-panel {
+  padding: 14px !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.search-popular-panel .generic-search-tag-chip {
+  white-space: normal !important;
+  text-align: center !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  line-height: 1.25 !important;
+  word-break: break-word !important;
 }
 
 .mobile-search-input-wrap {
@@ -562,9 +598,9 @@ a {
 .frapak-hero-banner {
   position: relative;
   background-color: var(--color-navy);
-  background-image: linear-gradient(rgba(22, 39, 63, 0.88), rgba(22, 39, 63, 0.96)), url('/factory.webp');
+  background-image: linear-gradient(90deg, rgba(16, 28, 46, 0.92) 0%, rgba(16, 28, 46, 0.65) 50%, rgba(16, 28, 46, 0.2) 100%), url('/hero_bottles_banner.webp');
   background-size: cover;
-  background-position: center;
+  background-position: right center;
   color: var(--color-white);
   padding: 76px 0;
 }
@@ -646,11 +682,11 @@ a {
 }
 
 /* ==========================================================================
-   EXACT 12-CARD CATALOGUE GRID (Matches Image 2 Design & Layout 100%)
+   EXACT 7-CARD CATALOGUE GRID (Matches Google Drive Specifications)
    ========================================================================== */
 .frapak-cat-tiles-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
 }
@@ -1843,10 +1879,10 @@ a {
   .frapak-top-utility-bar { display: none !important; }
   .frapak-nav-list { display: none !important; }
   .frapak-mobile-menu-toggle { display: flex; }
-  .frapak-main-header { height: 68px; }
-  .header-nav-inner { height: 68px; }
-  .frapak-logo { height: 56px; }
-  .frapak-logo-img { height: 48px; }
+  .frapak-main-header { height: 115px; }
+  .header-nav-inner { height: 115px; }
+  .frapak-logo { height: 108px; }
+  .frapak-logo-img { height: 104px; }
 
   .frapak-cat-tiles-grid { grid-template-columns: repeat(4, 1fr); }
   .frapak-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
@@ -1884,22 +1920,23 @@ a {
   .frapak-section-title { font-size: 1.35rem !important; line-height: 1.3 !important; }
 
   /* 2. Mobile Header: [Logo] [Menu] */
-  .frapak-main-header { height: 60px !important; }
+  .frapak-main-header { height: 108px !important; }
   .header-nav-inner {
-    height: 60px !important;
+    height: 108px !important;
     padding: 0 16px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
   }
   .frapak-logo {
-    height: 48px !important;
+    height: 100px !important;
     display: flex !important;
     align-items: center !important;
   }
   .frapak-logo-img {
-    height: 40px !important;
+    height: 96px !important;
     width: auto !important;
+    max-width: 260px !important;
   }
   /* Keep mobile header clean without crowded desktop buttons */
   .frapak-cart-inquiry-btn { display: none !important; }
@@ -2389,16 +2426,40 @@ a {
 /* 2-Column Catalogue Layout (Sidebar Filters + Main Grid) */
 .frapak-catalogue-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 32px;
-  align-items: start;
+  align-items: stretch !important;
 }
 
-/* Sidebar Filters */
+.frapak-sidebar-column {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+}
+
+.frapak-products-main-column {
+  min-width: 0;
+}
+
+/* Sidebar Filters (Desktop Sticky Floating - Full Height, Zero Nested Scroll) */
 .frapak-filter-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+@media (min-width: 901px) {
+  .frapak-filter-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 96px;
+    z-index: 20;
+    max-height: none !important;
+    overflow: visible !important;
+    will-change: top, transform;
+  }
 }
 
 .frapak-filter-group {
@@ -2430,17 +2491,41 @@ a {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-height: 240px;
-  overflow-y: auto;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-right: 0;
 }
 
 .frapak-filter-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   font-size: 0.8125rem;
   color: #4B5563;
   cursor: pointer;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.frapak-filter-item-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.frapak-filter-item.is-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.frapak-filter-item .facet-count {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .frapak-filter-item input[type="checkbox"] {
@@ -2449,16 +2534,97 @@ a {
   height: 16px;
   cursor: pointer;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .frapak-filter-item:hover {
   color: var(--color-navy);
 }
 
-/* Level 1: 12-Category Grid (Matches Screenshot 1) */
+/* Active Filters Chip Bar */
+.frapak-active-filters-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.active-filters-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 2px;
+}
+
+.active-filters-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
+}
+
+.active-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--color-navy);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.active-filter-chip:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.active-filter-chip .chip-remove {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #94a3b8;
+  margin-left: 2px;
+}
+
+.active-filter-chip:hover .chip-remove {
+  color: #b91c1c;
+}
+
+.clear-all-filters-btn {
+  background: none;
+  border: none;
+  color: #b8892e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  text-decoration: underline;
+  margin-left: auto;
+}
+
+.clear-all-filters-btn:hover {
+  color: #8a641b;
+}
+
+/* Level 1: 7-Category Grid (Matches Google Drive Specifications) */
 .frapak-level1-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
 }
@@ -2497,15 +2663,7 @@ a {
 }
 
 .frapak-sku-stock-indicator {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 9px;
-  height: 9px;
-  border-radius: var(--radius-full);
-  background: #22C55E;
-  z-index: 5;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.8);
+  display: none !important;
 }
 
 .frapak-sku-img {
@@ -3033,6 +3191,7 @@ textarea {
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.2s ease;
+  pointer-events: none;
 }
 
 .about-story-card.open .about-accordion-btn {
@@ -4233,7 +4392,7 @@ textarea {
 /* Desktop Proportional Multi-Column Grid */
 .frapak-footer .frapak-footer-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.5fr 2.1fr 1.1fr 1fr;
+  grid-template-columns: 1.1fr 1.5fr 2fr 1.2fr;
   gap: 32px 28px;
   align-items: start;
 }
@@ -5581,6 +5740,37 @@ textarea {
    ========================================================================= */
 @media (max-width: 768px) {
   /* 1. HORIZONTAL ARTIFACT & OVERFLOW CLEANUP */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  img, video, canvas, svg {
+    max-width: 100%;
+  }
+
+  .frapak-breadcrumbs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 0.8125rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 18px !important;
+    overflow-x: hidden !important;
+  }
+
+  .table-responsive-wrapper,
+  .frapak-pdp-specs-card table,
+  .frapak-specs-table,
+  .frapak-prod-table {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+  }
+
   #view-products,
   #view-products .frapak-section,
   #frapak-drilldown-container,
@@ -5599,21 +5789,21 @@ textarea {
 
   /* 2. MOBILE HEADER PROPORTIONS */
   .frapak-main-header {
-    height: 60px !important;
+    height: 108px !important;
     background: #ffffff !important;
     border-bottom: 1px solid #E2E8F0 !important;
   }
   .header-nav-inner {
-    height: 60px !important;
+    height: 108px !important;
     padding: 0 16px !important;
   }
   .frapak-logo {
-    height: 48px !important;
+    height: 100px !important;
   }
   .frapak-logo-img {
-    height: 36px !important;
+    height: 96px !important;
     width: auto !important;
-    max-width: 85px !important;
+    max-width: 260px !important;
     object-fit: contain !important;
   }
   .frapak-mobile-menu-toggle {

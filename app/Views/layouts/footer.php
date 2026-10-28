@@ -26,19 +26,22 @@
             </span>
           </button>
           <div class="footer-accordion-panel" id="footer-panel-products" role="region" aria-labelledby="footer-header-products">
+            <span style="display: block; font-size: 0.72rem; font-weight: 800; color: #b8892e; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">By Category:</span>
+            <ul class="footer-link-list" style="margin-bottom: 12px;">
+              <?php 
+                $footerCategories = !empty($categories) ? $categories : (class_exists('ProductModel') ? ProductModel::getCategories() : []);
+                foreach ($footerCategories as $cat): 
+              ?>
+                <li><a href="/products?category=<?= urlencode($cat['slug']) ?>"><?= htmlspecialchars($cat['name']) ?></a></li>
+              <?php endforeach; ?>
+            </ul>
+            <span style="display: block; font-size: 0.72rem; font-weight: 800; color: #b8892e; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">By Industry Market:</span>
             <ul class="footer-link-list">
-              <li><a href="/products?category=pet-bottles">PET Bottles</a></li>
-              <li><a href="/products?category=hdpe-bottles">HDPE Bottles</a></li>
-              <li><a href="/products?category=caps">Caps</a></li>
-              <li><a href="/products?category=pumps">Pumps</a></li>
-              <li><a href="/products?category=finger-sprayers">Finger Sprayer</a></li>
-              <li><a href="/products?category=trigger-sprayers">Trigger Sprayer</a></li>
-              <li><a href="/products?category=pet-jars">PET Jars</a></li>
-              <li><a href="/products?category=lids">Lids</a></li>
-              <li><a href="/products?category=pp-jars">PP Jars</a></li>
-              <li><a href="/products?category=mono-material-jars">Mono Material Jar</a></li>
-              <li><a href="/products?category=foamer-pumps">Foamer Pumps</a></li>
-              <li><a href="/products?category=airless">Airless</a></li>
+              <li><a href="/products?industry=cosmetics">Cosmetics & Personal Care</a></li>
+              <li><a href="/products?industry=pharma">Pharmaceuticals & Healthcare</a></li>
+              <li><a href="/products?industry=agro">Agrochemicals & Pesticides</a></li>
+              <li><a href="/products?industry=nutraceuticals">Nutraceuticals & Supplements</a></li>
+              <li><a href="/products?industry=liquor">Liquor, Spirits & Beverages</a></li>
             </ul>
           </div>
         </div>
@@ -55,8 +58,8 @@
           <div class="footer-accordion-panel" id="footer-panel-company" role="region" aria-labelledby="footer-header-company">
             <p class="footer-address-block">
               <strong>TrueNorth Group</strong><br />
-              Global Manufacturing Operations<br />
-              <span>Serving Domestic & Global Exports</span>
+              #201, Vardhaman Trade Towers, Rohit Kunj, Pitampura, Delhi-110034<br />
+              <span>Manufacturing: Daman, India • Closures: Ningbo, China</span>
             </p>
             <div class="footer-contact-block">
               <a href="tel:+919876543210" class="footer-phone-link" style="color: var(--color-gold) !important; font-weight: 700;">
@@ -67,9 +70,6 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 info@wetruenorthgroup.com
               </a>
-            </div>
-            <div class="footer-legal-block">
-              <p class="footer-vat-text">VAT reg.no. IN27AAAC0000A1Z5</p>
             </div>
           </div>
         </div>
@@ -104,24 +104,6 @@
               <li><a href="#custom" onclick="window.navigateToPage('custom')">Custom Mould Development</a></li>
               <li><a href="#custom" onclick="window.navigateToPage('custom')">PCR Plastics & rPET Stock</a></li>
             </ul>
-          </div>
-        </div>
-
-        <!-- Section 5: Bank Details -->
-        <div class="footer-col" id="footer-col-bank">
-          <button type="button" class="footer-accordion-header" aria-expanded="false" aria-controls="footer-panel-bank" id="footer-header-bank" onclick="window.toggleFooterAccordion('footer-col-bank')">
-            <span class="footer-title">BANK DETAILS</span>
-            <span class="footer-accordion-icon" aria-hidden="true">
-              <svg class="footer-icon-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <svg class="footer-icon-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </span>
-          </button>
-          <div class="footer-accordion-panel" id="footer-panel-bank" role="region" aria-labelledby="footer-header-bank">
-            <div class="footer-bank-block">
-              <strong class="footer-bank-title">TrueNorth Group</strong>
-              <p class="footer-bank-acc">IN98 HDFC 0001 2345 67</p>
-              <p class="footer-bank-swift">SWIFT / BIC: <strong>HDFCINBB</strong></p>
-            </div>
           </div>
         </div>
 
@@ -164,8 +146,13 @@
       const drawer = document.getElementById('mobile-nav-drawer');
       const backdrop = document.getElementById('mobile-nav-backdrop');
       const btn = document.getElementById('frapak-mobile-menu-btn');
+      const mobilePopover = document.getElementById('mobile-search-popover');
       if (drawer) drawer.classList.remove('open', 'active');
       if (backdrop) backdrop.classList.remove('open', 'active');
+      if (mobilePopover) {
+        mobilePopover.classList.remove('open', 'active');
+        mobilePopover.style.display = 'none';
+      }
       if (btn) {
         btn.classList.remove('active');
         btn.setAttribute('aria-expanded', 'false');
@@ -411,20 +398,73 @@
       }
     };
 
-    // Live Search Autocomplete Engine
+    // Live Search Autocomplete Engine with Generic Packaging Searches
     function initLiveSearch() {
+      const popularSearches = [
+        { label: 'Caps & Closures', q: 'caps' },
+        { label: 'Bottles (All)', q: 'bottles' },
+        { label: 'Jars', q: 'jars' },
+        { label: 'Lotion Pumps', q: 'lotion pump' },
+        { label: 'Foam Pumps', q: 'foam pump' },
+        { label: 'Trigger Sprayers', q: 'trigger sprayer' },
+        { label: 'Mist Sprayers', q: 'mist sprayer' },
+        { label: 'Agro Bottles', q: 'agro' },
+        { label: 'Cosmetic Bottles', q: 'cosmetics' },
+        { label: 'Pharma Bottles', q: 'pharma' },
+        { label: 'HDPE', q: 'hdpe' },
+        { label: 'PET', q: 'pet' },
+        { label: '500ml', q: '500ml' }
+      ];
+
+      function renderPopularPanel(popoverEl, inputEl) {
+        let html = '<div class="search-popular-panel" style="padding: 14px; background: #fff; box-sizing: border-box; width: 100%;">';
+        html += '<div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">';
+        html += '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+        html += 'Popular Generic Searches';
+        html += '</div>';
+        html += '<div style="display: flex; flex-wrap: wrap; gap: 6px; box-sizing: border-box; width: 100%;">';
+        popularSearches.forEach(function(item) {
+          html += '<button type="button" class="generic-search-tag-chip" data-search-q="' + item.q + '" style="background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 20px; padding: 5px 10px; font-size: 0.78rem; font-weight: 600; color: #1e293b; cursor: pointer; transition: all 0.15s ease; white-space: normal; text-align: center; max-width: 100%; box-sizing: border-box; line-height: 1.25;" onmouseover="this.style.background=\'#e0f2fe\'; this.style.borderColor=\'#38bdf8\'; this.style.color=\'#0369a1\';" onmouseout="this.style.background=\'#f1f5f9\'; this.style.borderColor=\'#e2e8f0\'; this.style.color=\'#1e293b\';">' + item.label + '</button>';
+        });
+        html += '</div>';
+        html += '</div>';
+
+        popoverEl.innerHTML = html;
+        popoverEl.classList.add('open', 'active');
+        popoverEl.style.display = 'block';
+
+        // Bind clicks on tag chips
+        popoverEl.querySelectorAll('.generic-search-tag-chip').forEach(function(chip) {
+          chip.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const q = this.getAttribute('data-search-q');
+            if (q) {
+              inputEl.value = q;
+              window.location.href = '/products?q=' + encodeURIComponent(q);
+            }
+          });
+        });
+      }
+
       function bindSearch(inputEl, popoverEl) {
         if (!inputEl || !popoverEl) return;
         let debounceTimer = null;
+
+        // On Focus: show popular packaging tags if empty
+        inputEl.addEventListener('focus', function() {
+          const val = inputEl.value.trim();
+          if (val.length < 2) {
+            renderPopularPanel(popoverEl, inputEl);
+          }
+        });
 
         inputEl.addEventListener('input', function() {
           const val = inputEl.value.trim();
           clearTimeout(debounceTimer);
 
           if (val.length < 2) {
-            popoverEl.classList.remove('open', 'active');
-            popoverEl.style.display = 'none';
-            popoverEl.innerHTML = '';
+            renderPopularPanel(popoverEl, inputEl);
             return;
           }
 
@@ -433,30 +473,48 @@
               .then(function(r) { return r.json(); })
               .then(function(data) {
                 if (!data || !data.results || data.results.length === 0) {
-                  popoverEl.innerHTML = '<div style="padding: 14px; text-align: center; color: #64748b; font-size: 0.85rem;">No packaging found for "' + val + '"</div>';
+                  popoverEl.innerHTML = '<div style="padding: 18px 14px; text-align: center; color: #64748b; font-size: 0.85rem;">No packaging found for "<strong>' + escapeSearchHtml(val) + '</strong>"</div>';
                   popoverEl.classList.add('open', 'active');
                   popoverEl.style.display = 'block';
                   return;
                 }
 
-                let html = '<div style="padding: 8px 0; max-height: 320px; overflow-y: auto;">';
+                let html = '<div style="padding: 0; max-height: 380px; overflow-y: auto;">';
+
+                // Generic Taxonomy Match Header Banner
+                if (data.taxonomyMatch && data.taxonomyMatch.name) {
+                  html += 
+                    '<div style="background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-bottom: 1px solid #cbd5e1; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between;">' +
+                      '<div>' +
+                        '<span style="display: inline-block; background: #0284c7; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; margin-bottom: 2px;">Generic Category Match</span>' +
+                        '<div style="font-weight: 800; font-size: 0.86rem; color: #0f172a;">' + escapeSearchHtml(data.taxonomyMatch.name) + ' (' + data.count + ' Products)</div>' +
+                      '</div>' +
+                      '<a href="/products?q=' + encodeURIComponent(val) + '" style="font-size: 0.78rem; font-weight: 700; color: #b8892e; text-decoration: none; padding: 4px 8px; background: #fff; border: 1px solid #cbd5e1; border-radius: 4px;">View All &rarr;</a>' +
+                    '</div>';
+                }
+
                 const items = data.results.slice(0, 6);
                 items.forEach(function(item) {
                   const img = item.image || '/logo_svg.svg';
                   const title = item.name || 'Product';
-                  const meta = item.serie || item.categoryName || '';
+                  const meta = item.series || item.serie || item.categoryName || '';
+                  const neck = (item.specs && item.specs.neck) ? item.specs.neck : '';
+                  const cap = (item.specs && item.specs.capacity && item.specs.capacity !== 'N/A') ? item.specs.capacity : '';
+                  const specsStr = [cap, neck].filter(Boolean).join(' • ');
+
                   html += 
                     '<a href="/product?id=' + encodeURIComponent(item.id) + '" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; text-decoration: none; border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background=\'#f8fafc\'" onmouseout="this.style.background=\'transparent\'">' +
-                      '<img src="' + img + '" alt="' + title + '" style="width: 38px; height: 38px; object-fit: contain; border-radius: 4px; border: 1px solid #e2e8f0; background: #fff; padding: 2px; flex-shrink: 0;" />' +
+                      '<img src="' + img + '" alt="' + escapeSearchHtml(title) + '" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; border: 1px solid #e2e8f0; background: #fff; padding: 2px; flex-shrink: 0;" />' +
                       '<div style="min-width: 0; flex: 1;">' +
-                        '<div style="font-size: 0.84rem; font-weight: 700; color: #16273f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + title + '</div>' +
-                        '<div style="font-size: 0.75rem; color: #64748b;">' + meta + '</div>' +
+                        '<div style="font-size: 0.84rem; font-weight: 700; color: #16273f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + escapeSearchHtml(title) + '</div>' +
+                        '<div style="font-size: 0.74rem; color: #64748b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + escapeSearchHtml(meta) + (specsStr ? ' &bull; <span style="color:#0284c7; font-weight:600;">' + escapeSearchHtml(specsStr) + '</span>' : '') + '</div>' +
                       '</div>' +
                     '</a>';
                 });
+
                 html += 
-                  '<a href="/products?q=' + encodeURIComponent(val) + '" style="display: block; text-align: center; padding: 10px; font-size: 0.82rem; font-weight: 700; color: #b8892e; background: #f8fafc; text-decoration: none; border-top: 1px solid #e2e8f0;">' +
-                    'View all ' + data.count + ' results for "' + val + '" &rarr;' +
+                  '<a href="/products?q=' + encodeURIComponent(val) + '" style="display: block; text-align: center; padding: 11px; font-size: 0.83rem; font-weight: 700; color: #b8892e; background: #f8fafc; text-decoration: none; border-top: 1px solid #e2e8f0;">' +
+                    'View all ' + data.count + ' results for "' + escapeSearchHtml(val) + '" &rarr;' +
                   '</a>';
                 html += '</div>';
 
@@ -467,7 +525,7 @@
               .catch(function(err) {
                 console.warn('Search autocomplete error:', err);
               });
-          }, 200);
+          }, 180);
         });
 
         // Close on click outside
@@ -479,9 +537,43 @@
         });
       }
 
+      function escapeSearchHtml(str) {
+        return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
       bindSearch(document.getElementById('top-search-input'), document.getElementById('top-search-popover'));
       bindSearch(document.getElementById('mobile-search-input'), document.getElementById('mobile-search-popover'));
     }
+
+    // About Page Accordion Story Toggle
+    window.toggleAboutStory = function(idx) {
+      const card = document.getElementById('about-story-' + idx);
+      if (!card) return;
+      const isOpen = card.classList.contains('open');
+      if (isOpen) {
+        card.classList.remove('open');
+      } else {
+        card.classList.add('open');
+      }
+      const btnText = card.querySelector('.about-btn-text');
+      if (btnText) {
+        btnText.textContent = card.classList.contains('open') ? 'Read Less' : 'Read More';
+      }
+    };
+
+    // Home Page PCR Content Toggle
+    window.togglePcrContent = function(btn) {
+      const content = document.getElementById('pcr-expandable-content');
+      if (!content) return;
+      const isOpen = content.classList.contains('open');
+      content.classList.toggle('open');
+      if (btn) {
+        const span = btn.querySelector('span');
+        if (span) span.textContent = content.classList.contains('open') ? 'Read Less' : 'Read More';
+        const svg = btn.querySelector('svg');
+        if (svg) svg.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    };
 
     // Initialize on page ready
     if (document.readyState === 'loading') {

@@ -23,19 +23,20 @@
             
             <!-- 1. HQ Details Card -->
             <div class="cnt-info-card">
-              <div class="cnt-card-tag">Primary Contacts</div>
-              <h3 class="cnt-card-title">Company Details & HQ</h3>
-              <p class="cnt-card-desc">
-                TrueNorth Group<br />
-                Audited Manufacturing & Global Logistics Hubs<br />
-                Serving Nationwide Distribution & Seaport Global Exports
+              <div class="cnt-card-tag">Company Details & HQ</div>
+              <h3 class="cnt-card-title">TrueNorth Group</h3>
+              <p class="cnt-card-desc" style="line-height: 1.6; margin-bottom: 12px;">
+                <strong>Address:</strong><br />
+                #201, Vardhaman Trade Towers<br />
+                Rohit Kunj, LSC Pitampura, Delhi-110034<br />
+                India
               </p>
               <div class="cnt-contact-links">
                 <div><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></div>
                 <div><strong>Email:</strong> <a href="mailto:info@wetruenorthgroup.com">info@wetruenorthgroup.com</a></div>
               </div>
-              <p class="cnt-card-subtext">
-                GST / VAT: IN27AAAC0000A1Z5 • TÜV NORD ISO 9001 Certified
+              <p class="cnt-card-subtext" style="margin-top: 10px;">
+                TÜV NORD ISO 9001 Certified Quality Management
               </p>
             </div>
 
@@ -147,35 +148,35 @@
 
         <div class="cnt-hubs-grid">
           <div class="cnt-hub-card">
-            <div class="cnt-hub-tag">Manufacturing Hub</div>
-            <h3 class="cnt-hub-title">Precision Blow Molding Hub</h3>
+            <div class="cnt-hub-tag">Manufacturing Facility</div>
+            <h3 class="cnt-hub-title">Daman, India</h3>
             <p class="cnt-hub-desc">
-              State-of-the-art injection blow molding facilities, Class 10,000 cleanrooms for pharma packaging, and automated quality testing laboratories serving nationwide supply and direct seaport exports.
+              Audited Manufacturing &amp; Global Logistics Hubs. Serving nationwide distribution and seaport global exports.
             </p>
             <div class="cnt-hub-caps">
-              Capabilities: PET Bottles, Jars, Cleanroom Molding, ROPP Finishes
+              Capabilities: PET Bottles, Jars, Precision Blow Molding, Seaport Global Exports
             </div>
           </div>
 
           <div class="cnt-hub-card">
-            <div class="cnt-hub-tag">Engineering Center</div>
-            <h3 class="cnt-hub-title">Automated Tooling & Engineering</h3>
+            <div class="cnt-hub-tag">Caps, Pumps &amp; Closures</div>
+            <h3 class="cnt-hub-title">Ningbo, China</h3>
             <p class="cnt-hub-desc">
-              Specialized high-cavity mould design, precision cosmetic lotion pumps, fine mist atomizers, and industrial trigger sprayer automation meeting global export durability standards.
+              Global Logistics Hubs, Air and Sea shipments. Precision tooling and assembly for cosmetic lotion pumps, atomizers, and engineered closures.
             </p>
             <div class="cnt-hub-caps">
-              Capabilities: Dispensing Pumps, Triggers, Mist Sprayers, Luxury Closures
+              Capabilities: Dispensing Pumps, Sprayers, Closures, Air &amp; Sea Freight
             </div>
           </div>
 
           <div class="cnt-hub-card">
-            <div class="cnt-hub-tag">Global Logistics</div>
-            <h3 class="cnt-hub-title">International Export Network</h3>
+            <div class="cnt-hub-tag">Corporate HQ</div>
+            <h3 class="cnt-hub-title">Delhi, India</h3>
             <p class="cnt-hub-desc">
-              Direct containerized ocean freight (FCL/LCL) and expedited air courier shipping to Europe, the Americas, the Middle East, and Africa with complete customs documentation.
+              TrueNorth Group Headquarters. Technical customer advisory, sample fulfillment, and international contract coordination.
             </p>
             <div class="cnt-hub-caps">
-              Capabilities: FOB / CIF / DDP Shipping, Batch Traceability, Palletization
+              Address: #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034
             </div>
           </div>
         </div>
@@ -202,7 +203,7 @@
           <div class="cnt-faq-card">
             <div class="cnt-faq-tag">Order Size</div>
             <h3 class="cnt-faq-title">Minimum Orders (MOQ)</h3>
-            <p class="cnt-faq-desc">Standard product lines start at 1,000 units. 100% recycled PCR rPET items feature an accessible MOQ of just 20,000 units.</p>
+            <p class="cnt-faq-desc">Standard product lines start at 1,000 units. 100% recycled PCR rPET items feature an accessible MOQ of just 30,000 units.</p>
           </div>
 
           <div class="cnt-faq-card">

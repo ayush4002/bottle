@@ -76,19 +76,28 @@ if (!empty($sku)) {
 } elseif (($activePage ?? '') === 'products') {
     // 2. Catalog / Products Page
     $catParam = $_GET['category'] ?? '';
+    $indParam = $_GET['industry'] ?? '';
     $qParam = $_GET['q'] ?? '';
-    if (!empty($catParam)) {
+    if (!empty($indParam)) {
+        $indInfo = class_exists('ProductModel') ? ProductModel::getIndustryBySlug($indParam) : null;
+        $indTitle = $indInfo['name'] ?? ucwords(str_replace(['-', '_'], ' ', $indParam));
+        $seoTitle = "{$indTitle} Packaging Solutions & Containers | TrueNorth Group";
+        $seoDesc = $indInfo['desc'] ?? "Wholesale packaging solutions tailored for {$indTitle}. PET and HDPE bottles, jars, pumps, and closures.";
+        $canonicalUrl = $seoBaseUrl . '/products?industry=' . urlencode($indParam);
+    } elseif (!empty($catParam)) {
         $catTitle = ucwords(str_replace(['-', '_'], ' ', $catParam));
         $seoTitle = "{$catTitle} Catalog & Wholesale Containers | TrueNorth Group";
         $seoDesc = "Commercial wholesale range of {$catTitle}. High-tolerance precision blow molding, cleanroom production, and worldwide shipping. Request bulk samples & pricing.";
         $canonicalUrl = $seoBaseUrl . '/products?category=' . urlencode($catParam);
     } elseif (!empty($qParam)) {
-        $seoTitle = "Search: " . htmlspecialchars($qParam) . " | Packaging Catalog — TrueNorth";
+        $tax = class_exists('ProductModel') ? ProductModel::getSearchTaxonomyMatch($qParam) : null;
+        $categoryLabel = !empty($tax['name']) ? " (" . $tax['name'] . ")" : "";
+        $seoTitle = "Search: " . htmlspecialchars($qParam) . "{$categoryLabel} | Packaging Catalog — TrueNorth";
         $seoDesc = "Packaging search results for " . htmlspecialchars($qParam) . " across PET bottles, jars, pumps, and closures.";
         $canonicalUrl = $seoBaseUrl . '/products?q=' . urlencode($qParam);
     } else {
         $seoTitle = 'Packaging Catalog & Containers Directory | TrueNorth Group';
-        $seoDesc = 'Browse 400+ PET bottles, HDPE containers, cosmetic jars, foamers, lotion pumps, mist sprayers, and tamper-evident closures. ISO certified factory direct.';
+        $seoDesc = 'Browse 290+ PET bottles, agro containers, cosmetic jars, lotion pumps, mist sprayers, and precision closures across 7 specialized categories. ISO certified factory direct.';
         $canonicalUrl = $seoBaseUrl . '/products';
     }
 } elseif (($activePage ?? '') === 'about') {
@@ -127,9 +136,10 @@ $jsonLdList[] = [
     'telephone' => '+91 98765 43210',
     'address' => [
         '@type' => 'PostalAddress',
-        'streetAddress' => 'Global Manufacturing & Cleanroom Production Hubs',
-        'addressLocality' => 'Mumbai',
-        'addressRegion' => 'MH',
+        'streetAddress' => '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura',
+        'addressLocality' => 'Delhi',
+        'postalCode' => '110034',
+        'addressRegion' => 'DL',
         'addressCountry' => 'IN'
     ],
     'contactPoint' => [
@@ -200,7 +210,7 @@ $jsonLdList[] = [
   <link rel="icon" type="image/svg+xml" href="/logo_svg.svg" />
   <link rel="shortcut icon" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/logo.webp" />
-  <link rel="stylesheet" href="/styles.css?v=1.0.8" />
+  <link rel="stylesheet" href="/styles.css?v=<?= time() ?>" />
 
   <!-- Structured Data (JSON-LD) -->
   <?php foreach ($jsonLdList as $schemaItem): ?>
@@ -315,10 +325,18 @@ $jsonLdList[] = [
         <span>About</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-      <a href="/products" class="mobile-nav-item <?= ($activePage ?? '') === 'products' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
+      <a href="/products" class="mobile-nav-item <?= ($activePage ?? '') === 'products' && empty($_GET['industry']) ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Products Catalogue</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
+      <div style="padding: 6px 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+        <span style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; width: 100%; margin-bottom: 2px; letter-spacing: 0.05em;">Browse by Industry:</span>
+        <a href="/products?industry=cosmetics" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Cosmetics</a>
+        <a href="/products?industry=pharma" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Pharma</a>
+        <a href="/products?industry=agro" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Agro</a>
+        <a href="/products?industry=nutraceuticals" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Nutraceuticals</a>
+        <a href="/products?industry=liquor" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Liquor</a>
+      </div>
       <a href="/custom" class="mobile-nav-item <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Custom Solutions</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>

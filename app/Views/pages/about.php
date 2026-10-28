@@ -210,30 +210,14 @@
           <!-- Right Column: Interactive Mobile Gallery & Core Capabilities -->
           <div class="about-editorial-right">
             
-            <!-- Interactive Mobile Image Gallery (1 Large Stage + 2 Interactive Thumbnails) -->
+            <!-- Manufacturing Image Showcase -->
             <div class="about-gallery-card">
               <div class="about-gallery-stage">
-                <img id="about-main-gallery-img" src="/factory.webp" alt="TrueNorth Group Manufacturing Facility" class="about-gallery-main-img" loading="lazy" />
+                <img id="about-main-gallery-img" src="/pet_bottles_manufacturing_facility.webp" alt="PET Bottles Manufacturing Facility" class="about-gallery-main-img" loading="lazy" />
                 <div class="about-gallery-caption-bar" id="about-gallery-caption">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                  <span>TrueNorth Group Manufacturing Facility</span>
+                  <span>PET Bottles Manufacturing Facility</span>
                 </div>
-              </div>
-
-              <!-- Gallery Thumbnails (Touch-Friendly Switching) -->
-              <div class="about-gallery-thumbs" id="about-gallery-thumbs">
-                <button type="button" class="about-thumb-btn active" onclick="window.switchAboutGallery('/factory.webp', 'TrueNorth Group Manufacturing Facility', 0)">
-                  <img src="/factory.webp" alt="Manufacturing Plant" />
-                  <span>Factory Plant</span>
-                </button>
-                <button type="button" class="about-thumb-btn" onclick="window.switchAboutGallery('/manufacturing.webp', 'Cleanroom Production Environment', 1)">
-                  <img src="/manufacturing.webp" alt="Cleanroom Production" />
-                  <span>Cleanroom</span>
-                </button>
-                <button type="button" class="about-thumb-btn" onclick="window.switchAboutGallery('/benefit_supply.webp', 'In-House R&D and Leak Testing Laboratory', 2)">
-                  <img src="/benefit_supply.webp" alt="R&D Testing Lab" />
-                  <span>R&D Lab</span>
-                </button>
               </div>
             </div>
 
@@ -320,7 +304,7 @@
               <h3 class="about-compliance-title">ISO 9001 & GMP</h3>
             </div>
             <p class="about-compliance-body">
-              Our manufacturing partners maintain ISO 9001 quality-management certification from <strong>TÜV NORD</strong>, operate under applicable Good Manufacturing Practices (GMP), and provide Drug Master File (DMF) documentation for eligible pharmaceutical-packaging products.
+              Our manufacturing partners maintain ISO 9001 quality-management certification from <strong>TÜV NORD</strong>, operate under applicable Good Manufacturing Practices (GMP), and provide Drug Master File (DMF) documentation for eligible pharmaceutical-packaging products. The PET bottles are manufactured under strict quality controls and precision moulding in fully automated and audited facility in <strong>Mykron Plus India Pvt. Ltd., Daman</strong>.
             </p>
           </div>
 
@@ -379,18 +363,18 @@
           
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/manufacturing.webp" alt="Cleanroom Production Environment" loading="lazy" />
+              <img src="/photo_cleanroom.webp" alt="Cleanroom Production Environment" loading="lazy" />
               <span class="about-infra-tag">Cleanroom Class 10k</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">Controlled Molding</h4>
-              <p class="about-infra-card-desc">Automated closed-loop cleanroom molding for medical, pharmaceutical, and high-purity cosmetic containers.</p>
+              <h4 class="about-infra-card-title">Cleanroom Production</h4>
+              <p class="about-infra-card-desc">Bottles are produced, inspected, and packed in a Class 10K cleanroom by trained staff using strict hygiene controls.</p>
             </div>
           </div>
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/factory.webp" alt="Blow Molding Machinery" loading="lazy" />
+              <img src="/photo_injection_molding.webp" alt="Injection Blow Molding" loading="lazy" />
               <span class="about-infra-tag">Automated Tooling</span>
             </div>
             <div class="about-infra-body">
@@ -401,22 +385,22 @@
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/benefit_supply.webp" alt="Quality Assurance Lab" loading="lazy" />
-              <span class="about-infra-tag">In-House R&D</span>
+              <img src="/photo_leak_trials.webp" alt="1,000+ Leak-Free Trials" loading="lazy" />
+              <span class="about-infra-tag">In-House R&amp;D</span>
             </div>
             <div class="about-infra-body">
               <h4 class="about-infra-card-title">1,000+ Leak-Free Trials</h4>
-              <p class="about-infra-card-desc">Every closure, pump, and neck finish undergoes rigorous vacuum chamber pressure testing before shipment.</p>
+              <p class="about-infra-card-desc">Closures, pumps, and neck finishes are evaluated for fit, sealing performance, and application suitability during development.</p>
             </div>
           </div>
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/benefit_supply.webp" alt="Global Export Logistics" loading="lazy" />
+              <img src="/photo_global_supply.webp" alt="Export Packaging &amp; Dispatch" loading="lazy" />
               <span class="about-infra-tag">Global Supply</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">Export Packaging & Dispatch</h4>
+              <h4 class="about-infra-card-title">Export Packaging &amp; Dispatch</h4>
               <p class="about-infra-card-desc">Heavy-duty corrugated shipping cartons, stretch-wrapped pallets, and full batch traceability for zero-damage transit.</p>
             </div>
           </div>
@@ -449,3 +433,20 @@
     </section>
 
   </section>
+
+  <script>
+  window.toggleAboutStory = function(idx) {
+    const card = document.getElementById('about-story-' + idx);
+    if (!card) return;
+    const isOpen = card.classList.contains('open');
+    if (isOpen) {
+      card.classList.remove('open');
+    } else {
+      card.classList.add('open');
+    }
+    const btnText = card.querySelector('.about-btn-text');
+    if (btnText) {
+      btnText.textContent = card.classList.contains('open') ? 'Read Less' : 'Read More';
+    }
+  };
+  </script>

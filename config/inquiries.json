@@ -1,5 +1,31 @@
 [
     {
+        "id": 1790754893,
+        "quote_id": "INQ-B1997238",
+        "name": "Ayush Test",
+        "company": "Acme Packaging Ltd",
+        "email": "info@wetruenorthgroup.com",
+        "phone": "+91 9876543210",
+        "country": "India",
+        "product": "500ml Veola PET Bottle",
+        "inquiry": "Looking for 25,000 units with matching flip-top caps.",
+        "status": "new",
+        "created_at": "2026-09-30 09:54:53"
+    },
+    {
+        "id": 1790754741,
+        "quote_id": "INQ-F7BF54F0",
+        "name": "Ayush Test",
+        "company": "Acme Packaging Ltd",
+        "email": "info@wetruenorthgroup.com",
+        "phone": "+91 9876543210",
+        "country": "India",
+        "product": "500ml Veola PET Bottle",
+        "inquiry": "Looking for 25,000 units with matching flip-top caps.",
+        "status": "new",
+        "created_at": "2026-09-30 09:52:21"
+    },
+    {
         "id": 2,
         "quote_id": "INQ-E2603915",
         "name": "Ayush Test Client",

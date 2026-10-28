@@ -53,28 +53,31 @@
       <div class="frapak-container">
         <div class="frapak-section-title-wrap">
           <h2 class="frapak-section-title">Markets of TrueNorth Group</h2>
+          <p style="color: #64748B; font-size: 0.95rem; max-width: 750px; margin: 8px auto 0; text-align: center; line-height: 1.5;">
+            Tailored primary packaging solutions engineered to meet rigorous compliance and aesthetic standards across 5 key industries.
+          </p>
         </div>
 
         <div class="frapak-markets-grid" id="home-markets-grid">
-          <a href="/products?category=cosmetic-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/vikaas_inputs/cosmetics.webp" alt="Cosmetics" loading="lazy" /></div>
-            <div class="frapak-tile-bar"><span>Cosmetics</span></div>
+          <a href="/products?industry=cosmetics" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/COSMETICS.webp" alt="Cosmetics & Personal Care" loading="lazy" onerror="this.onerror=null;this.src='/vikaas_inputs/cosmetics.webp';" /></div>
+            <div class="frapak-tile-bar"><span>Cosmetics & Care</span></div>
           </a>
-          <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/vikaas_inputs/pharma_bottles.webp" alt="Pharma" loading="lazy" /></div>
-            <div class="frapak-tile-bar"><span>Pharma</span></div>
+          <a href="/products?industry=pharma" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/PHARMA_BOTTLES.webp" alt="Pharmaceuticals & Healthcare" loading="lazy" onerror="this.onerror=null;this.src='/vikaas_inputs/pharma_bottles.webp';" /></div>
+            <div class="frapak-tile-bar"><span>Pharma & Health</span></div>
           </a>
-          <a href="/products?category=agro-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/vikaas_inputs/agro_pesticides.webp" alt="Agro" loading="lazy" /></div>
-            <div class="frapak-tile-bar"><span>Agro</span></div>
+          <a href="/products?industry=agro" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/AGRO_PESTICIDES.webp" alt="Agrochemicals & Pesticides" loading="lazy" onerror="this.onerror=null;this.src='/vikaas_inputs/agro_pesticides.webp';" /></div>
+            <div class="frapak-tile-bar"><span>Agro & Pesticides</span></div>
           </a>
-          <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Beverages" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" /></div>
-            <div class="frapak-tile-bar"><span>Beverages</span></div>
+          <a href="/products?industry=nutraceuticals" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/PET_nutraceuticle_jars.webp" alt="Nutraceuticals & Health Supplements" loading="lazy" onerror="this.onerror=null;this.src='/vikaas_inputs/pet_nutraceuticle_jars.webp';" /></div>
+            <div class="frapak-tile-bar"><span>Nutraceutical Jars</span></div>
           </a>
-          <a href="/products?category=pet-bottles" class="frapak-market-tile" style="text-decoration: none;">
-            <div class="frapak-market-img"><img src="/vikaas_inputs/LIQUOR_Bottles.webp" alt="Liquor" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" /></div>
-            <div class="frapak-tile-bar"><span>Liquor</span></div>
+          <a href="/products?industry=liquor" class="frapak-market-tile" style="text-decoration: none;">
+            <div class="frapak-market-img"><img src="/vikaas_inputs/LIQUOR_Bottles.webp" alt="Liquor, Spirits & Beverages" loading="lazy" onerror="this.onerror=null;this.src='/vikaas_inputs/liquor_bottles.webp';" /></div>
+            <div class="frapak-tile-bar"><span>Liquor & Spirits</span></div>
           </a>
         </div>
       </div>
@@ -90,13 +93,13 @@
         <div class="rpet-layout">
           <!-- Left 2 Product Tiles -->
           <div class="rpet-cards-stack">
-            <a href="/products?category=pet-bottles" class="rpet-card" style="text-decoration: none;">
+            <a href="/products?category=cosmetics-bottles" class="rpet-card" style="text-decoration: none;">
               <div class="frapak-tile-image">
                 <img src="/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp" alt="rPET bottles" loading="lazy" />
               </div>
               <div class="rpet-card-bar">rPET bottles</div>
             </a>
-            <a href="/products?category=pet-jars" class="rpet-card" style="text-decoration: none;">
+            <a href="/products?category=jars" class="rpet-card" style="text-decoration: none;">
               <div class="frapak-tile-image">
                 <img src="/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp" alt="rPET jars" loading="lazy" />
               </div>
@@ -106,19 +109,24 @@
 
           <!-- Right Content -->
           <div class="rpet-text-content">
-            <h3>Content: PCR plastics</h3>
+            <h3>More Choice. Less Virgin Plastic.</h3>
             <p class="pcr-summary-lead">
-              TrueNorth Group is dedicated to continuous innovation, frequently expanding its diverse array of products by introducing a variety of neck sizes and capacities to meet evolving market demands. Furthermore, we're enhancing our product range by integrating sustainable, eco-friendly options, demonstrating our commitment to environmental responsibility.
+              Every product has different packaging needs. That’s why we keep adding bottle and jar sizes, neck options and recycled materials to the TrueNorth Group range—giving you more flexibility when choosing your packaging.
             </p>
             
             <div class="pcr-expandable-content" id="pcr-expandable-content">
               <p>
-                Our selection of PET bottles and jars, now available in 100% recycled PET (rPET), reflects this commitment. These eco-conscious choices are offered with a manageable minimum order quantity (MOQ) of just 20,000 units, making sustainability accessible to a wider range of customers. In addition, we ensure ready availability of rPET bottles and jars, keeping them in stock to meet immediate needs and demands. This approach allows us to cater to both bespoke and standard requirements, aligning with our mission to provide high-quality, sustainable packaging solutions.
+                For businesses looking to use recycled plastic, we offer bottles and jars made from 100% recycled PET (rPET), with minimum orders starting at 30,000 units. Standard options are also held in stock for immediate requirements. From selecting a ready-made bottle to developing a customised design, we work with you to find a solution that suits your product and supports your sustainability goals.
               </p>
               <p>
-                We also have <a href="/products?category=pet-bottles">rPET bottles on stock</a> and <a href="/products?category=pet-jars">rPET jars on stock</a>.
+                We also have <a href="/products?category=cosmetics-bottles">rPET bottles on stock</a> and <a href="/products?category=jars">rPET jars on stock</a>.
               </p>
             </div>
+
+            <button type="button" class="frapak-readmore-btn" onclick="window.togglePcrContent(this)">
+              <span>Read More</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
           </div>
         </div>
       </div>

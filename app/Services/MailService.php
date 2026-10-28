@@ -98,14 +98,12 @@ class MailService {
         }
 
         // ------------------------------------------------------------------
-        // 4. Send Confirmation Copy to Client (If Enabled)
+        // 4. Send Confirmation & Acknowledgement Copy to Client
         // ------------------------------------------------------------------
-        $settingsFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/site_settings.json';
-        $siteSettings = file_exists($settingsFile) ? (json_decode(file_get_contents($settingsFile), true) ?: []) : [];
-        $sendClientCopy = isset($siteSettings['send_client_confirmation']) ? (bool)$siteSettings['send_client_confirmation'] : true;
+        $sendClientCopy = true; // Always send client acknowledgement email
 
-        if ($sendClientCopy && !empty($customerEmail)) {
-            $clientSubject = "Inquiry Confirmation [{$quoteId}] — TrueNorth Group";
+        if (!empty($customerEmail)) {
+            $clientSubject = "Inquiry Acknowledgement [{$quoteId}] — TrueNorth Group";
             $clientHtml = "
             <!DOCTYPE html>
             <html>
@@ -187,7 +185,7 @@ class MailService {
 
         return [
             'success' => true,
-            'message' => 'Your inquiry has been submitted and sent to our sales team successfully. A confirmation email has been dispatched to ' . htmlspecialchars($customerEmail) . '.',
+            'message' => 'Your inquiry has been submitted successfully! An acknowledgement confirmation email has been dispatched to ' . htmlspecialchars($customerEmail) . '.',
             'quoteId' => $quoteId
         ];
     }

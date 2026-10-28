@@ -29,7 +29,7 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
     </h2>
 
     <!-- Back Button -->
-    <a href="<?= !empty($seriesSlug) ? '/products?category=' . urlencode($catSlug) . '&series=' . urlencode($seriesSlug) : '/products?category=' . urlencode($catSlug) ?>" class="frapak-back-btn">
+    <a href="/products?category=<?= urlencode($catSlug) ?>" class="frapak-back-btn">
       Back
     </a>
 
@@ -37,11 +37,7 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
     <div class="frapak-breadcrumbs">
       <a href="/products">Products</a>
       <span class="separator">&gt;</span>
-      <a href="/products?category=<?= urlencode($catSlug) ?>"><?= htmlspecialchars($catSlug) ?></a>
-      <?php if (!empty($seriesSlug)): ?>
-        <span class="separator">&gt;</span>
-        <a href="/products?category=<?= urlencode($catSlug) ?>&series=<?= urlencode($seriesSlug) ?>"><?= htmlspecialchars($seriesName) ?></a>
-      <?php endif; ?>
+      <a href="/products?category=<?= urlencode($catSlug) ?>"><?= htmlspecialchars($catName) ?></a>
       <span class="separator">&gt;</span>
       <span class="current"><?= htmlspecialchars($sku['name'] ?? 'Product') ?></span>
     </div>
@@ -81,10 +77,6 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
               <td><?= htmlspecialchars($sku['specs']['material'] ?? $sku['material'] ?? 'PET') ?></td>
             </tr>
             <tr>
-              <td>Serie</td>
-              <td><?= htmlspecialchars($seriesName) ?></td>
-            </tr>
-            <tr>
               <td>Article no.</td>
               <td><?= htmlspecialchars($sku['articleNo'] ?? $sku['code'] ?? 'TN-001') ?></td>
             </tr>
@@ -97,7 +89,7 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
               <td><?= htmlspecialchars($sku['specs']['shape'] ?? $sku['shape'] ?? 'Cylindrical') ?></td>
             </tr>
             <tr>
-              <td>Volume</td>
+              <td>Size</td>
               <td><?= htmlspecialchars($sku['specs']['capacity'] ?? $sku['volume'] ?? 'Standard') ?></td>
             </tr>
             <tr>
@@ -109,16 +101,8 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
               <td><?= htmlspecialchars($sku['specs']['color'] ?? $sku['color'] ?? 'Clear / White / Custom') ?></td>
             </tr>
             <tr>
-              <td>Stock</td>
-              <td><?= (!empty($sku['isStock']) || ($sku['stockStatus'] ?? '') === 'in_stock') ? 'Yes' : 'No' ?></td>
-            </tr>
-            <tr>
               <td>Website no.</td>
               <td><?= htmlspecialchars($sku['websiteNo'] ?? ($sku['articleNo'] ?? '')) ?></td>
-            </tr>
-            <tr>
-              <td>MOQ</td>
-              <td><?= htmlspecialchars($sku['specs']['moq'] ?? $sku['moq'] ?? '10,000') ?></td>
             </tr>
           </tbody>
         </table>

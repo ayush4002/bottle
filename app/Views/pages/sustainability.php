@@ -30,12 +30,12 @@
           </div>
 
           <div class="rpet-text-content">
-            <h3>Content: PCR plastics & Circular Economy</h3>
+            <h3>More Choice. Less Virgin Plastic.</h3>
             <p class="pcr-summary-lead">
-              TrueNorth Group is dedicated to continuous innovation, frequently expanding its diverse array of products by introducing a variety of neck sizes and capacities to meet evolving market demands.
+              Every product has different packaging needs. That’s why we keep adding bottle and jar sizes, neck options and recycled materials to the TrueNorth Group range—giving you more flexibility when choosing your packaging.
             </p>
             <p>
-              Our selection of PET bottles and jars, now available in 100% recycled PET (rPET), reflects this commitment. These eco-conscious choices are offered with a manageable minimum order quantity (MOQ) of just 20,000 units, making sustainability accessible to a wider range of customers.
+              For businesses looking to use recycled plastic, we offer bottles and jars made from 100% recycled PET (rPET), with minimum orders starting at 30,000 units. Standard options are also held in stock for immediate requirements. From selecting a ready-made bottle to developing a customised design, we work with you to find a solution that suits your product and supports your sustainability goals.
             </p>
             <button type="button" class="frapak-btn-gold" style="margin-top: 16px;" onclick="window.openInquiry('rPET & PCR Packaging Inquiry')">
               REQUEST SUSTAINABLE SAMPLES

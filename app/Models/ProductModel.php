@@ -6,6 +6,7 @@
 // ==========================================================================
 
 require_once dirname(__DIR__, 2) . '/config/database.php';
+require_once __DIR__ . '/SearchDictionary.php';
 
 class ProductModel {
     private static $companyInfo = [
@@ -15,7 +16,7 @@ class ProductModel {
             "heroSubtitle" => "TrueNorth Group was established on the foundation of over 25 years of experience in the domestic and international primary-packaging industry. We specialise in PET and glass bottles for pharmaceutical, cosmetic, and personal-care applications.",
             "phone" => "+91 98765 43210",
             "email" => "info@wetruenorthgroup.com",
-            "hq" => "Global Manufacturing Operations | Audited Partner Network Serving Global Exports",
+            "hq" => "#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India | Manufacturing: Daman, India | Closures: Ningbo, China",
             "experienceYears" => "25+ Years",
             "customerSatisfaction" => "100%",
             "stats" => [
@@ -54,91 +55,94 @@ class ProductModel {
             ]
         ];
     private static $categories = [
-            [
-                "name" => "PET bottles",
-                "slug" => "pet-bottles",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp",
-                "coverImage" => "/vikaas_inputs/pharma_bottles.webp",
-                "desc" => "Precision injection blow-moulded PET bottles from 10ml to 1,000ml in cylindrical, Boston, dome, oval, and custom configurations."
-            ],
-            [
-                "name" => "HDPE bottles",
-                "slug" => "hdpe-bottles",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp",
-                "coverImage" => "/vikaas_inputs/pharma_bottles.webp",
-                "desc" => "Chemical-resistant HDPE containers engineered for pharmaceutical syrups, laboratory reagents, and industrial applications."
-            ],
-            [
-                "name" => "Caps",
-                "slug" => "caps",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "Engineered screw closures, flip top caps, disc top caps, child-resistant caps (CRC), and tamper-evident ROPP finishes."
-            ],
-            [
-                "name" => "Pumps",
-                "slug" => "pumps",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "Cosmetic lotion pumps, treatment dispensers, and saddle pumps with precision 1.2cc to 4.0cc dosage outputs."
-            ],
-            [
-                "name" => "Finger sprayer",
-                "slug" => "finger-sprayers",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_sprays.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "Ultra-fine atomization mist sprayers with protective clear overcaps for toners, fragrances, and antiseptic formulations."
-            ],
-            [
-                "name" => "Trigger sprayer",
-                "slug" => "trigger-sprayers",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_sprays.webp",
-                "coverImage" => "/vikaas_inputs/agro_pesticides.webp",
-                "desc" => "Heavy-duty ergonomic trigger sprayers and chemical-resistant industrial spray heads with stream and mist options."
-            ],
-            [
-                "name" => "PET jars",
-                "slug" => "pet-jars",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp",
-                "coverImage" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
-                "desc" => "Nutraceutical tablet jars, wide-mouth capsule containers, and cosmetic cream jars from 75cc to 500cc."
-            ],
-            [
-                "name" => "Lids",
-                "slug" => "lids",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "Aluminum metal unishell lids, smooth ribbed screw caps, and induction heat-seal closures."
-            ],
-            [
-                "name" => "PP jars",
-                "slug" => "pp-jars",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp",
-                "coverImage" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
-                "desc" => "Double-wall luxury cosmetic jars and single-wall polypropylene jars with airtight interior shives."
-            ],
-            [
-                "name" => "Mono material jar",
-                "slug" => "mono-material-jars",
-                "image" => "/vikaas_inputs/pet_nutraceuticle_jars.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "100% single-polymer recyclable PP jars aligned with circular packaging and ESG standards."
-            ],
-            [
-                "name" => "Foamer pumps",
-                "slug" => "foamer-pumps",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "Propellant-free foaming dispenser bottles creating rich micro-foam for face washes and dermatological scrubs."
-            ],
-            [
-                "name" => "Airless",
-                "slug" => "airless",
-                "image" => "/vikaas_inputs/thumbnails/thumbnail_pumps.webp",
-                "coverImage" => "/vikaas_inputs/cosmetics.webp",
-                "desc" => "Piston-driven vacuum airless bottles and bulb active dispensers protecting sensitive cosmetics from oxidation."
-            ]
-        ];
+        [
+            "name" => "Agro Bottles",
+            "slug" => "agro-bottles",
+            "image" => "/uploads/products/agro-bottles/agro-500ml-agro.webp",
+            "coverImage" => "/uploads/products/agro-bottles/agro-500ml-agro.webp",
+            "desc" => "Agro & pesticide PET bottles engineered with 46mm tamper-evident neck finishes from 100ml to 1,000ml."
+        ],
+        [
+            "name" => "Caps",
+            "slug" => "caps",
+            "image" => "/uploads/products/caps/cap-nb108-a.webp",
+            "coverImage" => "/uploads/products/caps/cap-nb108-a.webp",
+            "desc" => "Engineered precision screw closures, push-pull caps, flip-top caps, disc-top caps, and CRC closures."
+        ],
+        [
+            "name" => "Cosmetics Bottles",
+            "slug" => "cosmetics-bottles",
+            "image" => "/uploads/products/cosmetics-bottles/cosmetic-100ml-tulip.webp",
+            "coverImage" => "/uploads/products/cosmetics-bottles/cosmetic-100ml-tulip.webp",
+            "desc" => "Cosmetic & personal care PET containers in Veola, Tulip, Badami, Oval, and Boston configurations."
+        ],
+        [
+            "name" => "Jars",
+            "slug" => "jars",
+            "image" => "/uploads/products/jars/jar-150cc-rd.webp",
+            "coverImage" => "/uploads/products/jars/jar-150cc-rd.webp",
+            "desc" => "Wide-mouth round PET jars from 75cc to 500cc for nutraceutical tablets, powders, and cosmetic creams."
+        ],
+        [
+            "name" => "Pharma Bottles",
+            "slug" => "pharma-bottles",
+            "image" => "/uploads/products/pharma-bottles/pharma-100ml-dome-pet.webp",
+            "coverImage" => "/uploads/products/pharma-bottles/pharma-100ml-dome-pet.webp",
+            "desc" => "Cleanroom manufactured pharmaceutical PET bottles for syrups, suspensions, and oral formulations."
+        ],
+        [
+            "name" => "Pumps",
+            "slug" => "pumps",
+            "image" => "/uploads/products/pumps/lotion-pump-nb101-a.webp",
+            "coverImage" => "/uploads/products/pumps/lotion-pump-nb101-a.webp",
+            "desc" => "High-output lotion pumps, treatment dispensers, switch pumps, and foaming dispensers with precision dosage."
+        ],
+        [
+            "name" => "Sprays",
+            "slug" => "sprays",
+            "image" => "/uploads/products/sprays/medical-sprayer-nb107-a.webp",
+            "coverImage" => "/uploads/products/sprays/medical-sprayer-nb107-a.webp",
+            "desc" => "Medical sprayers, fine-mist atomizers, continuous-mist sprayers, and trigger spray systems."
+        ],
+    ];
+
+    private static $industries = [
+        'agro' => [
+            'name' => 'Agrochemicals & Pesticides',
+            'slug' => 'agro',
+            'headline' => 'Agrochemicals & Pesticides Packaging',
+            'desc' => 'High-barrier PET & HDPE containers, tamper-evident 46mm agro neck finishes, and chemical-resistant closures designed for agrochemicals and pesticides.',
+            'image' => '/vikaas_inputs/AGRO_PESTICIDES.webp'
+        ],
+        'cosmetics' => [
+            'name' => 'Cosmetics & Personal Care',
+            'slug' => 'cosmetics',
+            'headline' => 'Cosmetics & Personal Care Packaging',
+            'desc' => 'Premium aesthetic PET bottles, luxury dispensing pumps, fine mist atomizers, and cosmetic jars crafted for skincare, haircare, and personal care brands.',
+            'image' => '/vikaas_inputs/COSMETICS.webp'
+        ],
+        'pharma' => [
+            'name' => 'Pharmaceuticals & Healthcare',
+            'slug' => 'pharma',
+            'headline' => 'Pharmaceuticals & Healthcare Packaging',
+            'desc' => 'Cleanroom-manufactured USP Class VI oral syrup bottles, CRC child-resistant closures, amber UV-protective bottles, and medical dispensing solutions.',
+            'image' => '/vikaas_inputs/PHARMA_BOTTLES.webp'
+        ],
+        'nutraceuticals' => [
+            'name' => 'Nutraceuticals & Supplements',
+            'slug' => 'nutraceuticals',
+            'headline' => 'Nutraceuticals & Health Supplements Packaging',
+            'desc' => 'Wide-mouth round PET jars and packer bottles from 75cc to 500cc engineered for tablets, capsules, nutritional powders, and wellness supplements.',
+            'image' => '/vikaas_inputs/PET_nutraceuticle_jars.webp'
+        ],
+        'liquor' => [
+            'name' => 'Liquor, Spirits & Beverages',
+            'slug' => 'liquor',
+            'headline' => 'Liquor, Spirits & Beverages Packaging',
+            'desc' => 'Crystal-clear PET pocket flasks, flat liquor containers, round spirits bottles, and beverage packaging engineered for premium shelf appeal and shatter resistance.',
+            'image' => '/vikaas_inputs/LIQUOR_Bottles.webp'
+        ]
+    ];
     private static $series = [
             [
                 "name" => "Agro & Pesticide PET Bottles",
@@ -1875,6 +1879,10 @@ class ProductModel {
                                 'updatedAt' => $r['updated_at'] ?? ''
                             ];
                         }
+                        foreach ($list as &$item) {
+                            self::assignProductIndustries($item);
+                        }
+                        unset($item);
                         return $list;
                     }
                 }
@@ -1932,7 +1940,129 @@ class ProductModel {
             return true;
         }));
 
+        foreach ($list as &$item) {
+            self::assignProductIndustries($item);
+        }
+        unset($item);
+
         return $list;
+    }
+
+    /**
+     * Categorize each SKU into client industry markets:
+     * - agro: Agrochemicals & Pesticides
+     * - cosmetics: Cosmetics & Personal Care
+     * - pharma: Pharmaceuticals & Healthcare
+     * - nutraceuticals: Nutraceuticals & Supplements
+     * - liquor: Liquor, Spirits & Beverages
+     */
+    public static function assignProductIndustries(&$sku) {
+        $cat = strtolower(trim($sku['categorySlug'] ?? ''));
+        $series = strtolower(trim($sku['seriesSlug'] ?? ($sku['serie'] ?? '')));
+        $name = strtolower(trim($sku['name'] ?? ''));
+        $skuId = strtolower(trim($sku['id'] ?? ''));
+
+        $inds = [];
+
+        // 1. Agrochemicals & Pesticides
+        if ($cat === 'agro-bottles' || 
+            strpos($series, 'agro') !== false || 
+            strpos($series, 'trigger') !== false ||
+            strpos($name, 'agro') !== false ||
+            strpos($name, 'pesticide') !== false ||
+            strpos($name, 'chemical') !== false ||
+            strpos($name, 'trigger') !== false) {
+            $inds[] = 'agro';
+        }
+
+        // 2. Cosmetics & Personal Care
+        if ($cat === 'cosmetics-bottles' || 
+            $cat === 'pumps' || 
+            $cat === 'sprays' ||
+            $cat === 'finger-sprayers' ||
+            strpos($series, 'cosmetic') !== false ||
+            strpos($series, 'lotion') !== false ||
+            strpos($series, 'foam') !== false ||
+            strpos($series, 'mist') !== false ||
+            strpos($series, 'atomizer') !== false ||
+            strpos($name, 'cosmetic') !== false ||
+            strpos($name, 'perfume') !== false ||
+            strpos($name, 'tulip') !== false ||
+            strpos($name, 'veola') !== false ||
+            strpos($name, 'badami') !== false ||
+            strpos($name, 'lotion') !== false ||
+            strpos($name, 'spray') !== false ||
+            $cat === 'caps') {
+            $inds[] = 'cosmetics';
+        }
+
+        // 3. Pharmaceuticals & Healthcare
+        if ($cat === 'pharma-bottles' || 
+            strpos($series, 'pharma') !== false || 
+            strpos($series, 'medical') !== false ||
+            strpos($series, 'crc') !== false ||
+            strpos($name, 'medical') !== false ||
+            strpos($name, 'syrup') !== false ||
+            strpos($name, 'round pet') !== false ||
+            strpos($name, 'dome pet') !== false ||
+            strpos($name, 'crc') !== false ||
+            strpos($name, 'child') !== false ||
+            $cat === 'caps') {
+            $inds[] = 'pharma';
+        }
+
+        // 4. Nutraceuticals & Supplements
+        if ($cat === 'jars' || 
+            strpos($series, 'jar') !== false || 
+            strpos($series, 'nutra') !== false ||
+            strpos($name, 'jar') !== false ||
+            strpos($name, 'nutra') !== false ||
+            strpos($name, 'capsule') !== false ||
+            strpos($name, 'tablet') !== false ||
+            strpos($name, 'packer') !== false ||
+            strpos($name, 'powder') !== false) {
+            $inds[] = 'nutraceuticals';
+        }
+
+        // 5. Liquor, Spirits & Beverages
+        if (strpos($name, 'flat') !== false || 
+            strpos($name, 'flask') !== false || 
+            strpos($series, 'flat') !== false ||
+            strpos($name, 'liquor') !== false ||
+            strpos($name, 'spirit') !== false ||
+            strpos($name, 'beverage') !== false ||
+            strpos($name, 'round pet') !== false ||
+            ($cat === 'pharma-bottles' && (strpos($name, '200ml') !== false || strpos($name, '100ml') !== false))) {
+            $inds[] = 'liquor';
+        }
+
+        // Fallback default if unmatched
+        if (empty($inds)) {
+            $inds[] = 'cosmetics';
+        }
+
+        $sku['industries'] = array_values(array_unique($inds));
+        $sku['industrySlugs'] = implode(',', $sku['industries']);
+        return $sku['industries'];
+    }
+
+    public static function getIndustries() {
+        return self::$industries;
+    }
+
+    public static function getIndustryBySlug($slug) {
+        $slug = strtolower(trim($slug));
+        return self::$industries[$slug] ?? null;
+    }
+
+    public static function getSkusByIndustry($industrySlug) {
+        $industrySlug = strtolower(trim($industrySlug));
+        $all = self::getSkus();
+        $filtered = array_values(array_filter($all, function($sku) use ($industrySlug) {
+            return in_array($industrySlug, $sku['industries'] ?? []);
+        }));
+        usort($filtered, [__CLASS__, 'compareProductSizes']);
+        return $filtered;
     }
 
     public static function getSeriesSlugBySubcategory($subcat) {
@@ -1954,16 +2084,47 @@ class ProductModel {
 
     public static function getSkusBySeries($seriesSlug) {
         $all = self::getSkus();
-        return array_values(array_filter($all, function($sku) use ($seriesSlug) {
+        $filtered = array_values(array_filter($all, function($sku) use ($seriesSlug) {
             return ($sku['seriesSlug'] ?? '') === $seriesSlug;
         }));
+        usort($filtered, [__CLASS__, 'compareProductSizes']);
+        return $filtered;
+    }
+
+    public static function extractNumericSize($sku) {
+        $capStr = trim($sku['specs']['capacity'] ?? ($sku['capacity'] ?? ($sku['volume'] ?? '')));
+        if (!$capStr) {
+            if (preg_match('/(\d+(?:\.\d+)?)\s*(ml|cc|gm|g|l)\b/i', ($sku['name'] ?? '') . ' ' . ($sku['id'] ?? ''), $m)) {
+                $capStr = $m[0];
+            }
+        }
+        if (preg_match('/(\d+(?:\.\d+)?)\s*(ml|cc|gm|g|l)?/i', $capStr, $matches)) {
+            $val = (float)$matches[1];
+            $unit = strtolower($matches[2] ?? 'ml');
+            if ($unit === 'l') {
+                $val *= 1000;
+            }
+            return $val;
+        }
+        return 999999;
+    }
+
+    public static function compareProductSizes($a, $b) {
+        $sizeA = self::extractNumericSize($a);
+        $sizeB = self::extractNumericSize($b);
+        if ($sizeA === $sizeB) {
+            return strcmp($a['name'] ?? '', $b['name'] ?? '');
+        }
+        return ($sizeA < $sizeB) ? -1 : 1;
     }
 
     public static function getSkusByCategory($categorySlug) {
         $all = self::getSkus();
-        return array_values(array_filter($all, function($sku) use ($categorySlug) {
+        $filtered = array_values(array_filter($all, function($sku) use ($categorySlug) {
             return ($sku['categorySlug'] ?? '') === $categorySlug;
         }));
+        usort($filtered, [__CLASS__, 'compareProductSizes']);
+        return $filtered;
     }
 
     public static function getSkuById($id) {
@@ -1988,7 +2149,7 @@ class ProductModel {
                         $imgArr = !empty($r['image_list']) ? explode('|||', $r['image_list']) : [];
                         $primaryImg = !empty($imgArr[0]) ? $imgArr[0] : '/logo_svg.svg';
 
-                        return [
+                        $itemData = [
                             'db_id' => (int)$r['id'],
                             'id' => $r['sku'],
                             'name' => $r['name'],
@@ -2023,6 +2184,8 @@ class ProductModel {
                             ],
                             'updatedAt' => $r['updated_at'] ?? ''
                         ];
+                        self::assignProductIndustries($itemData);
+                        return $itemData;
                     }
                 }
             } catch (Exception $e) {
@@ -2068,22 +2231,139 @@ class ProductModel {
         return [];
     }
 
+    /**
+     * Intelligent Generic Packaging Search Engine
+     * Leverages SearchDictionary taxonomy, singular/plural stemming, category expansion,
+     * specification matching (capacity, neck finish, material, shape), and relevance scoring.
+     */
     public static function searchProducts($query, $includeArchived = false) {
-        $query = strtolower(trim($query));
+        $rawQuery = trim($query ?? '');
         $all = self::getSkus($includeArchived);
-        if (empty($query)) return $all;
-        return array_values(array_filter($all, function($sku) use ($query) {
+        if ($rawQuery === '') return $all;
+
+        $q = strtolower($rawQuery);
+        $qNormalized = preg_replace('/[\s\-]+/', ' ', $q);
+
+        // 1. Check if query matches generic taxonomy terms
+        $taxMatch = SearchDictionary::matchTaxonomy($q);
+        $targetCategories = $taxMatch['categorySlugs'] ?? [];
+        $materialPattern = $taxMatch['pattern'] ?? null;
+
+        // 2. Generate search stems (singular/plural variations)
+        $stems = SearchDictionary::getQueryStems($q);
+
+        $scored = [];
+
+        foreach ($all as $sku) {
+            $score = 0;
+            $catSlug = strtolower($sku['categorySlug'] ?? '');
+            $catName = strtolower($sku['categoryName'] ?? '');
             $name = strtolower($sku['name'] ?? '');
-            $serie = strtolower($sku['serie'] ?? '');
+            $fullTitle = strtolower($sku['fullTitle'] ?? '');
+            $series = strtolower($sku['series'] ?? ($sku['serie'] ?? ''));
             $article = strtolower($sku['articleNo'] ?? '');
-            $desc = strtolower($sku['description'] ?? '');
             $id = strtolower($sku['id'] ?? '');
-            return strpos($name, $query) !== false || 
-                   strpos($serie, $query) !== false || 
-                   strpos($article, $query) !== false ||
-                   strpos($id, $query) !== false ||
-                   strpos($desc, $query) !== false;
-        }));
+            $desc = strtolower($sku['description'] ?? '');
+            $specs = is_array($sku['specs'] ?? null) ? $sku['specs'] : [];
+            $mat = strtolower($specs['material'] ?? ($sku['material'] ?? ''));
+            $cap = strtolower($specs['capacity'] ?? '');
+            $neck = strtolower($specs['neck'] ?? '');
+            $shape = strtolower($sku['shape'] ?? ($specs['shape'] ?? ''));
+
+            // A. Generic Taxonomy Category Match (e.g., "cap" matches all products in 'caps')
+            if (!empty($targetCategories) && in_array($catSlug, $targetCategories)) {
+                $score += 100;
+            }
+
+            // B. Material search match (e.g. "hdpe", "pet", "pp")
+            if ($materialPattern && preg_match($materialPattern, $mat)) {
+                $score += 85;
+            }
+
+            // C. Direct SKU ID / Article No match
+            if ($id === $q || $article === $q) {
+                $score += 150;
+            } elseif (strpos($id, $q) !== false || strpos($article, $q) !== false) {
+                $score += 90;
+            }
+
+            // D. Name, FullTitle, Category and Series matches across all stems
+            foreach ($stems as $st) {
+                // Word boundary name match
+                if (preg_match('/\b' . preg_quote($st, '/') . '\b/i', $name) || preg_match('/\b' . preg_quote($st, '/') . '\b/i', $fullTitle)) {
+                    $score += 70;
+                } elseif (strpos($name, $st) !== false || strpos($fullTitle, $st) !== false) {
+                    $score += 40;
+                }
+
+                if (preg_match('/\b' . preg_quote($st, '/') . '\b/i', $series)) {
+                    $score += 50;
+                } elseif (strpos($series, $st) !== false) {
+                    $score += 30;
+                }
+
+                if (strpos($catName, $st) !== false || strpos($catSlug, $st) !== false) {
+                    $score += 45;
+                }
+            }
+
+            // E. Specs match (Capacity e.g. 500ml/500 ml, Neck e.g. 24/410, Material e.g. PET, Shape e.g. Round)
+            $normCap = str_replace(' ', '', $cap);
+            $normQ = str_replace(' ', '', $q);
+            if ($normCap !== '' && ($normCap === $normQ || strpos($normCap, $normQ) !== false)) {
+                $score += 65;
+            }
+            if ($neck !== '' && strpos($neck, $q) !== false) {
+                $score += 45;
+            }
+            if ($mat !== '' && strpos($mat, $q) !== false) {
+                $score += 35;
+            }
+            if ($shape !== '' && strpos($shape, $q) !== false) {
+                $score += 30;
+            }
+
+            // F. Description match (Whole word match only to avoid false substring positives like capacity -> cap)
+            if ($score === 0) {
+                foreach ($stems as $st) {
+                    if (preg_match('/\b' . preg_quote($st, '/') . '\b/i', $desc)) {
+                        $score += 15;
+                        break;
+                    }
+                }
+            }
+
+            if ($score > 0) {
+                $scored[] = [
+                    'sku' => $sku,
+                    'score' => $score
+                ];
+            }
+        }
+
+        // Sort by score descending, then alphabetical by name
+        usort($scored, function($a, $b) {
+            if ($a['score'] === $b['score']) {
+                return strcmp($a['sku']['name'] ?? '', $b['sku']['name'] ?? '');
+            }
+            return ($a['score'] > $b['score']) ? -1 : 1;
+        });
+
+        return array_map(function($item) {
+            return $item['sku'];
+        }, $scored);
+    }
+
+    public static function getPopularSearches() {
+        return SearchDictionary::$popularSearches;
+    }
+
+    public static function getSearchTaxonomyMatch($query) {
+        return SearchDictionary::matchTaxonomy($query);
+    }
+
+    public static function getGenericSearchTaxonomy() {
+        return SearchDictionary::$taxonomy;
     }
 
     /**

@@ -149,8 +149,8 @@ if ($path === 'api/search') {
     exit();
 }
 
-// Product Detail Route (e.g. /product?id=123 or /product/123)
-if ($path === 'product' || strpos($path, 'product/') === 0) {
+// Product Detail Route (e.g. /product?id=123 or /product_detail?id=123 or /product/123)
+if ($path === 'product' || $path === 'product_detail' || strpos($path, 'product/') === 0) {
     $skuId = $_GET['id'] ?? null;
     if (!$skuId && strpos($path, 'product/') === 0) {
         $parts = explode('/', $path);

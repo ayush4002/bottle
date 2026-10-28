@@ -58,14 +58,30 @@ class ProductController {
         header("Content-Type: application/json; charset=UTF-8");
         header("Access-Control-Allow-Origin: *");
 
-        $query = $_GET['q'] ?? '';
+        $query = trim($_GET['q'] ?? '');
+        $taxMatch = !empty($query) ? ProductModel::getSearchTaxonomyMatch($query) : null;
+        $popular = ProductModel::getPopularSearches();
+
+        if (empty($query)) {
+            echo json_encode([
+                "success" => true,
+                "query" => "",
+                "count" => 0,
+                "popular" => $popular,
+                "results" => []
+            ]);
+            exit();
+        }
+
         $results = ProductModel::searchProducts($query);
 
         echo json_encode([
             "success" => true,
             "query" => $query,
+            "taxonomyMatch" => $taxMatch,
             "count" => count($results),
-            "results" => array_slice($results, 0, 20) // Limit to top 20 search results
+            "popular" => $popular,
+            "results" => array_slice($results, 0, 20) // Top 20 search results
         ]);
         exit();
     }
