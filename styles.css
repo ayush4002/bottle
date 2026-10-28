@@ -133,31 +133,39 @@ a {
    ========================================================================== */
 .tn-top-utility-bar {
   background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  padding: 8px 0;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 7px 0;
+  font-size: 0.8125rem;
+  line-height: 1.2;
 }
 
 .top-bar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 /* Search Box */
 .tn-search-box {
   display: flex;
   align-items: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid #DCE3EB;
   border-radius: var(--radius-full);
-  padding: 6px 14px;
-  background: var(--color-white);
-  width: 350px;
+  padding: 5px 12px 5px 14px;
+  background: #F8FAFC;
+  width: 260px;
+  flex: 0 1 260px;
+  min-width: 170px;
   position: relative;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tn-search-box:focus-within {
   border-color: var(--color-gold);
+  background: var(--color-white);
   box-shadow: 0 0 0 3px var(--color-gold-soft);
 }
 
@@ -170,6 +178,10 @@ a {
   color: var(--color-text-dark);
 }
 
+.tn-search-box input::placeholder {
+  color: #94A3B8;
+}
+
 .tn-search-box button {
   border: none;
   background: none;
@@ -177,8 +189,15 @@ a {
   color: var(--color-navy);
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: var(--radius-full);
   padding: 4px;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.tn-search-box button:hover {
+  color: var(--color-gold);
 }
 
 .search-results-popover {
@@ -202,27 +221,148 @@ a {
 .search-results-popover.open,
 .search-results-popover.active { display: block; }
 
-/* Language & Utilities */
+/* Language & Utilities / Top Bar Right */
 .top-bar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   font-size: 0.8125rem;
   color: var(--color-text-muted);
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
-.top-bar-cert-badge {
+.top-bar-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: #475569;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.top-bar-icon {
+  flex-shrink: 0;
+  color: #64748B;
+  vertical-align: middle;
+}
+
+.top-bar-icon-gold {
+  color: var(--color-gold) !important;
+}
+
+.top-bar-cert-badge {
+  font-weight: 500;
+  color: #334155;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .top-bar-cert-badge svg {
   color: #64748b;
   flex-shrink: 0;
+}
+
+.top-bar-cert-title {
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.top-bar-sep {
+  color: #94A3B8;
+  margin: 0 2px;
+}
+
+.top-bar-cleanroom-text {
+  color: #475569;
+}
+
+.top-bar-export-item {
+  font-weight: 700;
+  color: var(--color-gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.top-bar-export-text {
+  color: var(--color-gold);
+  letter-spacing: 0.01em;
+}
+
+.top-bar-divider {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: #E2E8F0;
+  flex-shrink: 0;
+}
+
+.top-bar-contact-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.top-bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.top-bar-phone {
+  color: var(--color-gold);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.top-bar-phone:hover {
+  color: var(--color-gold-hover);
+  text-decoration: underline;
+}
+
+.top-bar-slash {
+  color: #CBD5E1;
+  font-weight: 400;
+  user-select: none;
+  margin: 0 2px;
+}
+
+.top-bar-email {
+  color: #475569;
+  font-weight: 600;
+}
+
+.top-bar-email:hover {
+  color: var(--color-navy);
+  text-decoration: underline;
+}
+
+/* Responsive Scaling for Top Bar on Laptops (1025px - 1260px) */
+@media (max-width: 1260px) {
+  .tn-search-box {
+    width: 220px;
+    flex: 0 1 220px;
+  }
+  .top-bar-cleanroom-text,
+  .top-bar-cert-badge .top-bar-sep {
+    display: none;
+  }
+}
+
+@media (max-width: 1120px) {
+  .top-bar-export-item,
+  .top-bar-right .top-bar-divider:nth-of-type(2) {
+    display: none;
+  }
 }
 
 /* Language Selector & Dropdown */

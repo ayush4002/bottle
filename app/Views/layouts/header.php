@@ -248,25 +248,33 @@ $jsonLdList[] = [
 
       <!-- Certifications & Global Distribution Strip -->
       <div class="top-bar-right">
-        <span class="top-bar-cert-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right: 6px; vertical-align: -2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          TÜV NORD ISO 9001:2015 • Class 10,000 Cleanroom
-        </span>
-        <span class="top-bar-cert-badge top-bar-export-badge" style="display: inline-flex; align-items: center; color: var(--color-gold); font-weight: 700; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 12px; margin-left: 12px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Worldwide Seaport Exports
-        </span>
-        <span class="top-bar-cert-badge" style="display: inline-flex; align-items: center; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 12px; margin-left: 12px; gap: 4px;">
-          <a href="tel:+919810220761" style="color: var(--color-gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +91 9810220761
+        <div class="top-bar-item top-bar-cert-badge">
+          <svg class="top-bar-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="top-bar-cert-title">TÜV NORD ISO 9001:2015</span>
+          <span class="top-bar-sep">•</span>
+          <span class="top-bar-cleanroom-text">Class 10,000 Cleanroom</span>
+        </div>
+
+        <span class="top-bar-divider" aria-hidden="true"></span>
+
+        <div class="top-bar-item top-bar-export-item">
+          <svg class="top-bar-icon top-bar-icon-gold" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="top-bar-export-text">Worldwide Seaport Exports</span>
+        </div>
+
+        <span class="top-bar-divider" aria-hidden="true"></span>
+
+        <div class="top-bar-item top-bar-contact-group">
+          <a href="tel:+919810220761" class="top-bar-link top-bar-phone" title="Call us">
+            <svg class="top-bar-icon top-bar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+91 9810220761</span>
           </a>
-          <span style="color: rgba(255,255,255,0.3); margin: 0 4px;">/</span>
-          <a href="mailto:info@wetruenorthgroup.com" style="color: inherit; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            info@wetruenorthgroup.com
+          <span class="top-bar-slash" aria-hidden="true">/</span>
+          <a href="mailto:info@wetruenorthgroup.com" class="top-bar-link top-bar-email" title="Email us">
+            <svg class="top-bar-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>info@wetruenorthgroup.com</span>
           </a>
-        </span>
+        </div>
       </div>
 
     </div>
