@@ -159,7 +159,7 @@ class MailService {
 
                   <div class='cta-block'>
                     <strong>Need immediate assistance or have CAD / 3D design files to attach?</strong><br>
-                    You can reply directly to this email (<a href='mailto:Info@wetruenorthgroup.com' style='color: #16273f; font-weight: 700;'>Info@wetruenorthgroup.com</a>) or contact our technical sales desk at <strong>+91 9810220761</strong>.
+                    You can reply directly to this email (<a href='mailto:info@wetruenorthgroup.com' style='color: #16273f; font-weight: 700;'>info@wetruenorthgroup.com</a>) or contact our technical sales desk at <strong>+91 9810220761</strong>.
                   </div>
                 </div>
                 <div class='footer'>

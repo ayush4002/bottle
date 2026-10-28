@@ -12,7 +12,7 @@ $company = ProductModel::getCompanyInfo();
 
 $siteName = $currentSettings['site_name'] ?? ($company['name'] ?? 'TrueNorth Group');
 $tagline = $currentSettings['tagline'] ?? ($company['tagline'] ?? 'Primary Packaging Specialist — Engineered PET & Precision Closures');
-$contactEmail = $currentSettings['contact_email'] ?? ($company['email'] ?? 'Info@wetruenorthgroup.com');
+$contactEmail = $currentSettings['contact_email'] ?? ($company['email'] ?? 'info@wetruenorthgroup.com');
 $contactPhone = $currentSettings['contact_phone'] ?? ($company['phone'] ?? '+91 9810220761');
 $currency = $currentSettings['currency'] ?? '₹';
 $hqAddress = $currentSettings['hq'] ?? ($company['hq'] ?? 'Global Manufacturing Operations | Audited Partner Network Serving Global Exports');

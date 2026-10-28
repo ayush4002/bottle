@@ -83,6 +83,163 @@
       </div>
     </section>
 
+
+<section class="facts-section">
+    <div class="facts-container">
+
+        <div class="facts-header">
+            <span>OUR STRENGTH</span>
+            <h2 class=".tn-section-title">Facts &amp; Figures</h2>
+        </div>
+
+        <div class="facts-grid">
+
+            <div class="facts-item">
+                <h3>ISO TÜV 9001:2015</h3>
+                <p>Certified Quality Management</p>
+            </div>
+
+            <div class="facts-item">
+                <h3>US FDA Approved</h3>
+                <p>Quality &amp; Regulatory Standards</p>
+            </div>
+
+            <div class="facts-item">
+                <h3>DMF Bottles</h3>
+                <p>Pharmaceutical Packaging</p>
+            </div>
+
+            <div class="facts-item">
+                <h3>Class 10,000</h3>
+                <p>Manufacturing Environment</p>
+            </div>
+
+            <div class="facts-item">
+                <h3>25 Years</h3>
+                <p>Manufacturing Experience</p>
+            </div>
+
+            <div class="facts-item">
+                <h3>5 Continents</h3>
+                <p>Happy Customers Worldwide</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+.facts-section {
+    padding: 60px 24px;
+    background: #ffffff;
+    font-family: inherit;
+    color: #17243b;
+}
+
+.facts-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Center-aligned heading */
+.facts-header {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.facts-header span {
+    display: block;
+    margin-bottom: 8px;
+    color: #2446a8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.facts-header h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #17243b;
+}
+
+/* Facts grid */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid #e5e8ee;
+    border-left: 1px solid #e5e8ee;
+}
+
+.facts-item {
+    padding: 27px 24px;
+    border-right: 1px solid #e5e8ee;
+    border-bottom: 1px solid #e5e8ee;
+    transition: background 0.2s ease;
+}
+
+.facts-item:hover {
+    background: #f8faff;
+}
+
+.facts-item h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #2446a8;
+}
+
+.facts-item p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .facts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile: two items per row */
+@media (max-width: 600px) {
+    .facts-section {
+        padding: 42px 16px;
+    }
+
+    .facts-header {
+        margin-bottom: 28px;
+    }
+
+    .facts-header h2 {
+        font-size: 27px;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .facts-item {
+        padding: 22px 12px;
+    }
+
+    .facts-item h3 {
+        font-size: 15px;
+    }
+
+    .facts-item p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+</style>
+
+
+
     <!-- 4. Sustainable Products Section -->
     <section class="tn-section">
       <div class="tn-container">

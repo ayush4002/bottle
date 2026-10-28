@@ -142,7 +142,7 @@ $jsonLdList[] = [
     'logo' => $seoBaseUrl . '/logo.webp',
     'image' => $seoBaseUrl . '/logo.webp',
     'description' => 'Primary packaging manufacturer and partner producing and distributing high-grade PET bottles, jars, caps, and pumps worldwide.',
-    'email' => 'Info@wetruenorthgroup.com',
+    'email' => 'info@wetruenorthgroup.com',
     'telephone' => '+91 9810220761',
     'address' => [
         '@type' => 'PostalAddress',
@@ -156,7 +156,7 @@ $jsonLdList[] = [
         '@type' => 'ContactPoint',
         'telephone' => '+91 9810220761',
         'contactType' => 'Sales & Technical Inquiries',
-        'email' => 'Info@wetruenorthgroup.com',
+        'email' => 'info@wetruenorthgroup.com',
         'areaServed' => 'Global',
         'availableLanguage' => ['English', 'Hindi']
     ]
@@ -262,9 +262,9 @@ $jsonLdList[] = [
             +91 9810220761
           </a>
           <span style="color: rgba(255,255,255,0.3); margin: 0 4px;">/</span>
-          <a href="mailto:Info@wetruenorthgroup.com" style="color: inherit; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+          <a href="mailto:info@wetruenorthgroup.com" style="color: inherit; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            Info@wetruenorthgroup.com
+            info@wetruenorthgroup.com
           </a>
         </span>
       </div>
@@ -383,9 +383,9 @@ $jsonLdList[] = [
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>+91 9810220761</span>
         </a>
-        <a href="mailto:Info@wetruenorthgroup.com" style="color: #475569; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+        <a href="mailto:info@wetruenorthgroup.com" style="color: #475569; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Info@wetruenorthgroup.com</span>
+          <span>info@wetruenorthgroup.com</span>
         </a>
       </div>
     </div>

@@ -14,6 +14,7 @@ CPANEL_PUBLIC_HTML/
 scratch/
 "new chnages/"
 *.bak
+temp_*/
 
 # Environment & credentials
 .env*

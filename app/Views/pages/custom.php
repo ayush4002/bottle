@@ -175,7 +175,8 @@
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Custom Jars</div>
               <h3 class="cst-finish-title">Wide-Mouth Jar Tooling</h3>
-              <p class="cst-finish-desc">Double-wall luxury cosmetic jars and tamper-evident induction sealed nutraceutical packers from 50ml to 1000ml.</p>
+              <p class="cst-finish-desc">Wide-Mouth Jar Tooling
+Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers from 75cc to 500cc</p>
             </div>
           </div>
 

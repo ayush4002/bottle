@@ -15,7 +15,7 @@ class ProductModel {
             "heroHeadline" => "Primary Packaging Specialists & Manufacturers",
             "heroSubtitle" => "TrueNorth Group was established on the foundation of over 25 years of experience in the domestic and international primary-packaging industry. We specialise in precision PET bottles, jars, and closures for pharmaceutical, cosmetic, and personal-care applications.",
             "phone" => "+91 9810220761",
-            "email" => "Info@wetruenorthgroup.com",
+            "email" => "info@wetruenorthgroup.com",
             "hq" => "#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India | Manufacturing: Daman, India | Closures: Ningbo, China",
             "experienceYears" => "25+ Years",
             "customerSatisfaction" => "99.8%",
