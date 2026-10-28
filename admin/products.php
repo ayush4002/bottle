@@ -249,7 +249,7 @@ $err = $_GET['err'] ?? '';
       Full CRUD Product Management — Showing <?= count($pagedProducts) ?> of <?= $totalProducts ?> live packaging SKUs
     </p>
   </div>
-  <a href="/admin/add_product.php" class="frapak-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 700; background: #eab308; color: #0f172a;">
+  <a href="/admin/add_product" class="tn-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 700; background: #eab308; color: #0f172a;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     Upload New Product
   </a>
@@ -263,7 +263,7 @@ $err = $_GET['err'] ?? '';
   <div class="alert-box-error"><?= htmlspecialchars($err) ?></div>
 <?php endif; ?>
 <!-- SEARCH & MULTI-FILTER FORM -->
-<form method="GET" action="/admin/products.php" class="filter-card">
+<form method="GET" action="/admin/products" class="filter-card">
   <input type="text" name="search" class="filter-input" placeholder="Search product name, SKU, or material..." value="<?= htmlspecialchars($search) ?>" />
   
   <select name="category" class="filter-select" onchange="this.form.submit()">
@@ -292,7 +292,7 @@ $err = $_GET['err'] ?? '';
   <button type="submit" style="background: #0284c7; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; min-height: 46px;">Search</button>
 
   <?php if (!empty($search) || !empty($filterCategory) || !empty($filterStatus) || !empty($filterStock)): ?>
-    <a href="/admin/products.php" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 6px; display: inline-flex; align-items: center; min-height: 44px;">Reset All</a>
+    <a href="/admin/products" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-left: 6px; display: inline-flex; align-items: center; min-height: 44px;">Reset All</a>
   <?php endif; ?>
 </form>
 
@@ -439,7 +439,7 @@ $err = $_GET['err'] ?? '';
               <button type="button" class="btn-action-edit" style="background: #15803d; border:none; cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'restore', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Restore</button>
               <button type="button" class="btn-action-delete" style="background: #991b1b; color: #fff; border:none; cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'permanent', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Delete Forever</button>
             <?php else: ?>
-              <a href="/admin/edit_product.php?id=<?= urlencode($pId) ?>" class="btn-action-edit">Edit</a>
+              <a href="/admin/edit_product?id=<?= urlencode($pId) ?>" class="btn-action-edit">Edit</a>
               <button type="button" class="btn-action-delete" style="background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'archive', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Archive</button>
               <button type="button" class="btn-action-delete" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); cursor:pointer;" onclick="ajaxProductAction('<?= htmlspecialchars($pId) ?>', 'permanent', '<?= htmlspecialchars(addslashes($p['name'] ?? 'Product')) ?>', this)">Delete</button>
             <?php endif; ?>
@@ -535,7 +535,7 @@ $err = $_GET['err'] ?? '';
                   Delete Forever
                 </button>
               <?php else: ?>
-                <a href="/admin/edit_product.php?id=<?= urlencode($pId) ?>" class="btn-action-edit" title="Edit product details">
+                <a href="/admin/edit_product?id=<?= urlencode($pId) ?>" class="btn-action-edit" title="Edit product details">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                   Edit
                 </a>
@@ -564,7 +564,7 @@ $err = $_GET['err'] ?? '';
     </div>
     <div style="display: flex; gap: 6px; flex-wrap: wrap;">
       <?php if ($page > 1): ?>
-        <a href="/admin/products.php?<?= http_build_query(array_merge($_GET, ['page' => $page - 1])) ?>" class="page-link">&laquo; Prev</a>
+        <a href="/admin/products?<?= http_build_query(array_merge($_GET, ['page' => $page - 1])) ?>" class="page-link">&laquo; Prev</a>
       <?php endif; ?>
 
       <?php 
@@ -572,13 +572,13 @@ $err = $_GET['err'] ?? '';
         $endP = min($totalPages, $page + 3);
         for ($i = $startP; $i <= $endP; $i++): 
       ?>
-        <a href="/admin/products.php?<?= http_build_query(array_merge($_GET, ['page' => $i])) ?>" class="page-link <?= $i === $page ? 'active' : '' ?>">
+        <a href="/admin/products?<?= http_build_query(array_merge($_GET, ['page' => $i])) ?>" class="page-link <?= $i === $page ? 'active' : '' ?>">
           <?= $i ?>
         </a>
       <?php endfor; ?>
 
       <?php if ($page < $totalPages): ?>
-        <a href="/admin/products.php?<?= http_build_query(array_merge($_GET, ['page' => $page + 1])) ?>" class="page-link">Next &raquo;</a>
+        <a href="/admin/products?<?= http_build_query(array_merge($_GET, ['page' => $page + 1])) ?>" class="page-link">Next &raquo;</a>
       <?php endif; ?>
     </div>
   </div>
@@ -614,7 +614,7 @@ function ajaxProductAction(sku, action, name, btnElem) {
   btnElem.disabled = true;
   btnElem.style.opacity = '0.5';
 
-  fetch('/admin/delete_product.php?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action) + '&ajax=1', {
+  fetch('/admin/delete_product?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action) + '&ajax=1', {
     headers: { 'X-Requested-With': 'XMLHttpRequest' }
   })
   .then(res => res.json())
@@ -648,7 +648,7 @@ function ajaxProductAction(sku, action, name, btnElem) {
   })
   .catch(err => {
     // Fallback to normal navigation
-    window.location.href = '/admin/delete_product.php?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action);
+    window.location.href = '/admin/delete_product?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action);
   });
 }
 </script>

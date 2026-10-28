@@ -11,9 +11,9 @@ $currentSettings = file_exists($settingsFile) ? (json_decode(file_get_contents($
 $company = ProductModel::getCompanyInfo();
 
 $siteName = $currentSettings['site_name'] ?? ($company['name'] ?? 'TrueNorth Group');
-$tagline = $currentSettings['tagline'] ?? ($company['tagline'] ?? 'Primary Packaging Specialist — PET & Glass Solutions');
-$contactEmail = $currentSettings['contact_email'] ?? ($company['email'] ?? 'info@wetruenorthgroup.com');
-$contactPhone = $currentSettings['contact_phone'] ?? ($company['phone'] ?? '+91 98765 43210');
+$tagline = $currentSettings['tagline'] ?? ($company['tagline'] ?? 'Primary Packaging Specialist — Engineered PET & Precision Closures');
+$contactEmail = $currentSettings['contact_email'] ?? ($company['email'] ?? 'Info@wetruenorthgroup.com');
+$contactPhone = $currentSettings['contact_phone'] ?? ($company['phone'] ?? '+91 9810220761');
 $currency = $currentSettings['currency'] ?? '₹';
 $hqAddress = $currentSettings['hq'] ?? ($company['hq'] ?? 'Global Manufacturing Operations | Audited Partner Network Serving Global Exports');
 $sendClientConfirmation = isset($currentSettings['send_client_confirmation']) ? (int)$currentSettings['send_client_confirmation'] : 1;
@@ -65,7 +65,7 @@ require_once __DIR__ . '/header.php';
     <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; padding: 14px 18px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 24px;"><?= htmlspecialchars($error) ?></div>
   <?php endif; ?>
 
-  <form method="POST" action="/admin/settings.php">
+  <form method="POST" action="/admin/settings">
     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
 
     <div style="margin-bottom: 20px;">
@@ -113,7 +113,7 @@ require_once __DIR__ . '/header.php';
       </div>
     </div>
 
-    <button type="submit" class="frapak-btn-gold" style="width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; background: #eab308; color: #0f172a;">SAVE WEBSITE SETTINGS</button>
+    <button type="submit" class="tn-btn-gold" style="width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; background: #eab308; color: #0f172a;">SAVE WEBSITE SETTINGS</button>
   </form>
 </div>
 

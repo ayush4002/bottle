@@ -119,7 +119,7 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
     <h1 style="font-size: 1.8rem; font-weight: 800; margin: 0;">CMS Business Dashboard</h1>
     <p style="color: #94a3b8; margin: 4px 0 0 0;">Catalogue overview, inventory statistics, and customer inquiries</p>
   </div>
-  <a href="/admin/add_product.php" class="frapak-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 700;">
+  <a href="/admin/add_product" class="tn-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 700;">
     + Upload New Product
   </a>
 </div>
@@ -156,7 +156,7 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
     <div class="stat-card-desc">Showcased on homepage</div>
   </div>
 
-  <a href="/admin/inquiries.php" class="stat-card" style="text-decoration: none; display: block; border-left: 3px solid #38bdf8; transition: transform 0.15s ease;">
+  <a href="/admin/inquiries" class="stat-card" style="text-decoration: none; display: block; border-left: 3px solid #38bdf8; transition: transform 0.15s ease;">
     <div class="stat-card-title">Client Inquiries</div>
     <div class="stat-card-value" style="color: #38bdf8;"><?= number_format($inqStats['total']) ?></div>
     <div class="stat-card-desc"><?= $inqStats['new'] ?> new / pending review &rarr;</div>
@@ -167,7 +167,7 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
 <div class="section-card" style="margin-bottom: 28px;">
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
     <h3 style="margin: 0; font-size: 1.1rem; color: #f8fafc;">Recent Client Quote Inquiries</h3>
-    <a href="/admin/inquiries.php" style="color: #38bdf8; text-decoration: none; font-size: 0.85rem; font-weight: 600;">View All Inquiries (<?= $inqStats['total'] ?>) &rarr;</a>
+    <a href="/admin/inquiries" style="color: #38bdf8; text-decoration: none; font-size: 0.85rem; font-weight: 600;">View All Inquiries (<?= $inqStats['total'] ?>) &rarr;</a>
   </div>
 
   <?php if (empty($recentInquiries)): ?>
@@ -211,7 +211,7 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
                 </span>
               </td>
               <td>
-                <a href="/admin/inquiries.php" style="color: #b8892e; font-weight: 700; text-decoration: none; font-size: 0.82rem;">Manage &rarr;</a>
+                <a href="/admin/inquiries" style="color: #b8892e; font-weight: 700; text-decoration: none; font-size: 0.82rem;">Manage &rarr;</a>
               </td>
             </tr>
           <?php endforeach; ?>
@@ -225,13 +225,13 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
 <div class="section-card">
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
     <h3 style="margin: 0; font-size: 1.1rem;">Client Uploaded Custom Products</h3>
-    <a href="/admin/products.php" style="color: #38bdf8; text-decoration: none; font-size: 0.85rem; font-weight: 600;">View All Products &rarr;</a>
+    <a href="/admin/products" style="color: #38bdf8; text-decoration: none; font-size: 0.85rem; font-weight: 600;">View All Products &rarr;</a>
   </div>
 
   <?php if (empty($customProducts)): ?>
     <div style="text-align: center; padding: 36px 20px; color: #64748b;">
       <p style="margin: 0 0 12px 0;">No custom products uploaded yet.</p>
-      <a href="/admin/add_product.php" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Upload your first packaging product &rarr;</a>
+      <a href="/admin/add_product" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Upload your first packaging product &rarr;</a>
     </div>
   <?php else: ?>
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -259,7 +259,7 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
               <td><?= htmlspecialchars(date('M d, Y', strtotime($p['createdAt'] ?? 'now'))) ?></td>
               <td><span class="badge-custom">Live Custom</span></td>
               <td>
-                <a href="/admin/delete_product.php?id=<?= urlencode($p['id']) ?>" onclick="return confirm('Are you sure you want to delete this product?');" style="color: #ef4444; font-size: 0.85rem; text-decoration: none; font-weight: 600;">Delete</a>
+                <a href="/admin/delete_product?id=<?= urlencode($p['id']) ?>" onclick="return confirm('Are you sure you want to delete this product?');" style="color: #ef4444; font-size: 0.85rem; text-decoration: none; font-weight: 600;">Delete</a>
               </td>
             </tr>
           <?php endforeach; ?>

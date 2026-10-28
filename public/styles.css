@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRODUCTION WEBSITE — EXACT FRAPAK B2B CORPORATE UI
+   PRODUCTION WEBSITE — EXACT TRUENORTH B2B CORPORATE UI
    Brand Colors: Primary Navy (#16273F) & Accent Gold (#B8892E)
    ========================================================================== */
 
@@ -79,18 +79,18 @@ a {
 }
 
 /* Container */
-.frapak-container {
+.tn-container {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 16px;
 }
 
-.frapak-section {
+.tn-section {
   padding: 48px 0;
 }
 
-.frapak-section-grey {
+.tn-section-grey {
   background-color: var(--color-off-white);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -98,7 +98,7 @@ a {
 }
 
 /* Section Title Block (Stacked Vertical Layout for Full-Width Titles) */
-.frapak-section-title-wrap {
+.tn-section-title-wrap {
   text-align: center;
   margin-bottom: 32px;
   position: relative;
@@ -110,12 +110,12 @@ a {
   width: 100%;
 }
 
-.frapak-section-title-wrap::before,
-.frapak-section-title-wrap::after {
+.tn-section-title-wrap::before,
+.tn-section-title-wrap::after {
   display: none;
 }
 
-.frapak-section-title {
+.tn-section-title {
   font-size: clamp(1.35rem, 2.5vw, 1.8rem);
   font-weight: 800;
   color: var(--color-navy);
@@ -131,7 +131,7 @@ a {
 /* ==========================================================================
    TOP UTILITY BAR & MAIN HEADER
    ========================================================================== */
-.frapak-top-utility-bar {
+.tn-top-utility-bar {
   background: var(--color-white);
   border-bottom: 1px solid var(--color-border);
   padding: 8px 0;
@@ -144,7 +144,7 @@ a {
 }
 
 /* Search Box */
-.frapak-search-box {
+.tn-search-box {
   display: flex;
   align-items: center;
   border: 1px solid var(--color-border);
@@ -156,12 +156,12 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-search-box:focus-within {
+.tn-search-box:focus-within {
   border-color: var(--color-gold);
   box-shadow: 0 0 0 3px var(--color-gold-soft);
 }
 
-.frapak-search-box input {
+.tn-search-box input {
   border: none;
   background: transparent;
   outline: none;
@@ -170,7 +170,7 @@ a {
   color: var(--color-text-dark);
 }
 
-.frapak-search-box button {
+.tn-search-box button {
   border: none;
   background: none;
   cursor: pointer;
@@ -211,17 +211,196 @@ a {
   color: var(--color-text-muted);
 }
 
-.lang-selector {
-  display: flex;
+.top-bar-cert-badge {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
-  font-weight: 600;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.top-bar-cert-badge svg {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+/* Language Selector & Dropdown */
+.lang-selector-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-selector-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
   color: var(--color-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.lang-selector-btn:hover,
+.lang-selector-wrap.open .lang-selector-btn {
+  background: rgba(184, 137, 46, 0.1);
+  border-color: rgba(184, 137, 46, 0.3);
+  color: #b8892e;
+}
+
+.lang-chevron {
+  transition: transform 0.2s ease;
+}
+
+.lang-selector-wrap.open .lang-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 210px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16), 0 4px 10px rgba(15, 23, 42, 0.06);
+  padding: 6px 0;
+  display: none;
+  z-index: 999999;
+  animation: langFadeIn 0.18s ease-out;
+}
+
+@keyframes langFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lang-selector-wrap.open .lang-dropdown-menu {
+  display: block;
+}
+
+.lang-dropdown-header {
+  padding: 6px 14px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.lang-options-list {
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-option:hover {
+  background: #f8fafc;
+  color: #b8892e;
+}
+
+.lang-option.active {
+  background: rgba(184, 137, 46, 0.08);
+  color: #b8892e;
+  font-weight: 700;
+}
+
+.lang-flag {
+  font-size: 1.05rem;
+  margin-right: 8px;
+  line-height: 1;
+}
+
+.lang-name {
+  flex: 1;
+  text-align: left;
+}
+
+.lang-code {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.lang-option.active .lang-code {
+  background: #b8892e;
+  color: #ffffff;
+}
+
+/* Mobile Language Chips */
+.mobile-lang-chip {
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 6px;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mobile-lang-chip:hover,
+.mobile-lang-chip.active {
+  background: #16273f;
+  color: #fff;
+  border-color: #16273f;
+}
+
+/* Google Translate Frame Clean Suppression */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.skiptranslate iframe {
+  display: none !important;
 }
 
 /* Main Navigation Bar */
-.frapak-main-header {
+.tn-main-header {
   position: sticky;
   top: 0;
   left: 0;
@@ -236,11 +415,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 125px;
+  height: 96px;
 }
 
 /* Logo */
-.frapak-logo {
+.tn-logo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -248,16 +427,16 @@ a {
   font-size: 1.35rem;
   color: var(--color-navy);
   text-decoration: none;
-  height: 118px;
+  height: 84px;
   transition: transform 0.2s ease;
 }
 
-.frapak-logo:hover {
+.tn-logo:hover {
   transform: scale(1.02);
 }
 
-.frapak-logo-img {
-  height: 114px;
+.tn-logo-img {
+  height: 80px;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -265,14 +444,14 @@ a {
 }
 
 /* Menu Links */
-.frapak-nav-list {
+.tn-nav-list {
   display: flex;
   align-items: center;
   list-style: none;
   gap: 22px;
 }
 
-.frapak-nav-link {
+.tn-nav-link {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--color-navy);
@@ -281,16 +460,16 @@ a {
   position: relative;
 }
 
-.frapak-nav-link:hover {
+.tn-nav-link:hover {
   color: var(--color-gold);
 }
 
-.frapak-nav-link.active {
+.tn-nav-link.active {
   color: var(--color-navy);
   font-weight: 700;
 }
 
-.frapak-nav-link.active::after {
+.tn-nav-link.active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -302,7 +481,7 @@ a {
 }
 
 /* Header Inquiry Button */
-.frapak-cart-inquiry-btn {
+.tn-cart-inquiry-btn {
   background: var(--color-navy);
   color: var(--color-white);
   padding: 11px 22px;
@@ -318,7 +497,7 @@ a {
   box-shadow: 0 2px 6px rgba(22, 39, 63, 0.15);
 }
 
-.frapak-cart-inquiry-btn:hover {
+.tn-cart-inquiry-btn:hover {
   background: var(--color-gold);
   border-color: var(--color-gold);
   transform: translateY(-1px);
@@ -333,7 +512,7 @@ a {
 }
 
 /* Mobile Hamburger Button */
-.frapak-mobile-menu-toggle {
+.tn-mobile-menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -348,8 +527,8 @@ a {
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-.frapak-mobile-menu-toggle:hover,
-.frapak-mobile-menu-toggle:active {
+.tn-mobile-menu-toggle:hover,
+.tn-mobile-menu-toggle:active {
   background: #E5EBF2;
   border-color: var(--color-navy);
 }
@@ -363,20 +542,20 @@ a {
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.frapak-mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
+.tn-mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.frapak-mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
+.tn-mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
   opacity: 0;
 }
 
-.frapak-mobile-menu-toggle.active .hamburger-bar:nth-child(3) {
+.tn-mobile-menu-toggle.active .hamburger-bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile Navigation Drawer & Backdrop */
-.frapak-mobile-nav-backdrop {
+.tn-mobile-nav-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(14, 27, 44, 0.65);
@@ -388,13 +567,13 @@ a {
   transition: opacity 0.3s ease;
 }
 
-.frapak-mobile-nav-backdrop.open,
-.frapak-mobile-nav-backdrop.active {
+.tn-mobile-nav-backdrop.open,
+.tn-mobile-nav-backdrop.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-.frapak-mobile-nav-drawer {
+.tn-mobile-nav-drawer {
   position: fixed;
   top: 0;
   right: 0;
@@ -413,8 +592,8 @@ a {
   -webkit-overflow-scrolling: touch;
 }
 
-.frapak-mobile-nav-drawer.open,
-.frapak-mobile-nav-drawer.active {
+.tn-mobile-nav-drawer.open,
+.tn-mobile-nav-drawer.active {
   transform: translateX(0);
 }
 
@@ -595,18 +774,22 @@ a {
 /* ==========================================================================
    HERO BANNER ("Our packaging experts")
    ========================================================================== */
-.frapak-hero-banner {
+.tn-hero-banner {
   position: relative;
-  background-color: var(--color-navy);
-  background-image: linear-gradient(90deg, rgba(16, 28, 46, 0.92) 0%, rgba(16, 28, 46, 0.65) 50%, rgba(16, 28, 46, 0.2) 100%), url('/hero_bottles_banner.webp');
+  background-color: #010719;
+  background-image: linear-gradient(90deg, #010719 0%, #010719 44%, rgba(1, 7, 25, 0.95) 54%, rgba(1, 7, 25, 0.65) 68%, rgba(1, 7, 25, 0.15) 85%, transparent 100%), url('/hero_bottles_banner.webp');
   background-size: cover;
   background-position: right center;
+  background-repeat: no-repeat;
   color: var(--color-white);
-  padding: 76px 0;
+  padding: 72px 0;
+  overflow: hidden;
 }
 
 .hero-content-box {
-  max-width: 660px;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-badge-tag {
@@ -624,20 +807,24 @@ a {
 }
 
 .hero-content-box h1 {
-  font-size: 2.65rem;
+  font-size: clamp(1.9rem, 2.9vw, 2.35rem);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.18;
   margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
-.hero-content-box p {
-  font-size: 1.0625rem;
+.hero-content-box p,
+.hero-desc {
+  font-size: 1.025rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 28px;
+  max-width: 460px;
 }
 
-.frapak-btn-outline {
+.tn-btn-outline {
   display: inline-block;
   padding: 12px 26px;
   background: transparent;
@@ -652,14 +839,14 @@ a {
   cursor: pointer;
 }
 
-.frapak-btn-outline:hover {
+.tn-btn-outline:hover {
   background: var(--color-gold);
   border-color: var(--color-gold);
   color: var(--color-white);
   transform: translateY(-1px);
 }
 
-.frapak-btn-gold {
+.tn-btn-gold {
   display: inline-block;
   padding: 12px 26px;
   background: var(--color-gold);
@@ -675,23 +862,23 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-btn-gold:hover {
+.tn-btn-gold:hover {
   background: var(--color-gold-hover);
   border-color: var(--color-gold-hover);
   transform: translateY(-1px);
 }
 
 /* ==========================================================================
-   EXACT 7-CARD CATALOGUE GRID (Matches Google Drive Specifications)
+   8-CARD CATALOGUE GRID (2 Balanced Rows of 4 Cards: 4 on Top, 4 on Bottom)
    ========================================================================== */
-.frapak-cat-tiles-grid {
+.tn-cat-tiles-grid {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   width: 100%;
 }
 
-.frapak-tile-card {
+.tn-tile-card {
   background: var(--color-white);
   border: 1px solid #D2D9E2;
   display: flex;
@@ -706,15 +893,15 @@ a {
   text-decoration: none !important;
 }
 
-.frapak-tile-card:hover {
+.tn-tile-card:hover {
   border-color: var(--color-navy);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(22, 39, 63, 0.09);
 }
 
-.frapak-tile-image {
+.tn-tile-image {
   height: 145px;
-  background: var(--color-white);
+  background: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -726,19 +913,19 @@ a {
   overflow: hidden;
 }
 
-.frapak-cat-tiles-grid .frapak-tile-image {
+.tn-cat-tiles-grid .tn-tile-image {
   height: 145px;
 }
 
-.frapak-level1-grid .frapak-tile-image {
+.tn-level1-grid .tn-tile-image {
   height: 140px;
 }
 
-.frapak-series-grid .frapak-tile-image {
+.tn-series-grid .tn-tile-image {
   height: 160px;
 }
 
-.frapak-tile-image img {
+.tn-tile-image img {
   height: 100%;
   max-height: 105px;
   max-width: 88%;
@@ -752,11 +939,11 @@ a {
   transition: transform 0.25s ease;
 }
 
-.frapak-tile-card:hover .frapak-tile-image img {
+.tn-tile-card:hover .tn-tile-image img {
   transform: scale(1.04);
 }
 
-.frapak-tile-bar {
+.tn-tile-bar {
   background-color: #DCE4EE;
   color: var(--color-navy);
   font-size: 0.8125rem;
@@ -778,7 +965,7 @@ a {
   transition: background 0.18s ease, color 0.18s ease;
 }
 
-.frapak-tile-card:hover .frapak-tile-bar {
+.tn-tile-card:hover .tn-tile-bar {
   background-color: var(--color-navy);
   color: var(--color-white);
 }
@@ -786,14 +973,14 @@ a {
 /* ==========================================================================
    MARKETS GRID (5 Columns in 1 Row - Matches Image 2 Design & Layout 100%)
    ========================================================================== */
-.frapak-markets-grid {
+.tn-markets-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   width: 100%;
 }
 
-.frapak-market-tile {
+.tn-market-tile {
   background: var(--color-white);
   border: 1px solid #D2D9E2;
   display: flex;
@@ -807,13 +994,13 @@ a {
   text-decoration: none !important;
 }
 
-.frapak-market-tile:hover {
+.tn-market-tile:hover {
   border-color: var(--color-navy);
   box-shadow: 0 6px 16px rgba(22, 39, 63, 0.09);
   transform: translateY(-3px);
 }
 
-.frapak-market-img {
+.tn-market-img {
   height: 140px;
   background: #E8EEF5;
   display: flex;
@@ -826,7 +1013,7 @@ a {
   border-bottom-right-radius: 0 !important;
 }
 
-.frapak-market-img img {
+.tn-market-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -839,11 +1026,11 @@ a {
   transition: transform 0.28s ease;
 }
 
-.frapak-market-tile:hover .frapak-market-img img {
+.tn-market-tile:hover .tn-market-img img {
   transform: scale(1.05);
 }
 
-.frapak-market-tile .frapak-tile-bar {
+.tn-market-tile .tn-tile-bar {
   background-color: #DCE4EE;
   color: var(--color-navy);
   font-size: 0.8125rem;
@@ -865,7 +1052,7 @@ a {
   transition: background 0.18s ease, color 0.18s ease;
 }
 
-.frapak-market-tile:hover .frapak-tile-bar {
+.tn-market-tile:hover .tn-tile-bar {
   background-color: var(--color-navy);
   color: var(--color-white);
 }
@@ -875,14 +1062,14 @@ a {
    ========================================================================== */
 .rpet-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
 }
 
 .rpet-cards-stack {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
@@ -904,7 +1091,7 @@ a {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
-.rpet-card .frapak-tile-image {
+.rpet-card .tn-tile-image {
   border-top-left-radius: var(--radius-md);
   border-top-right-radius: var(--radius-md);
 }
@@ -959,7 +1146,7 @@ a {
   animation: fadeInDown 0.25s ease-out;
 }
 
-.frapak-readmore-btn {
+.tn-readmore-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -976,7 +1163,7 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-readmore-btn:hover {
+.tn-readmore-btn:hover {
   background: var(--color-navy);
   color: #fff;
 }
@@ -997,7 +1184,7 @@ a {
   gap: 16px;
 }
 
-.frapak-exp-card {
+.tn-exp-card {
   background: var(--color-white);
   border: 1px solid #D1D9E0;
   border-radius: var(--radius-md);
@@ -1006,12 +1193,12 @@ a {
   box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
-.frapak-exp-card:hover {
+.tn-exp-card:hover {
   border-color: var(--color-navy);
   box-shadow: 0 4px 12px rgba(22, 39, 63, 0.06);
 }
 
-.frapak-exp-card h4 {
+.tn-exp-card h4 {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-navy);
@@ -1019,14 +1206,14 @@ a {
   line-height: 1.35;
 }
 
-.frapak-exp-card .exp-summary {
+.tn-exp-card .exp-summary {
   font-size: 0.875rem;
   color: #4B5563;
   line-height: 1.6;
   margin-bottom: 0;
 }
 
-.frapak-exp-card .exp-details {
+.tn-exp-card .exp-details {
   display: none;
   padding-top: 10px;
   font-size: 0.875rem;
@@ -1036,12 +1223,12 @@ a {
   margin-top: 10px;
 }
 
-.frapak-exp-card.open .exp-details {
+.tn-exp-card.open .exp-details {
   display: block;
   animation: fadeInDown 0.2s ease-out;
 }
 
-.frapak-exp-btn {
+.tn-exp-btn {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -1058,7 +1245,7 @@ a {
   transition: color 0.15s ease;
 }
 
-.frapak-exp-btn:hover {
+.tn-exp-btn:hover {
   color: var(--color-navy);
 }
 
@@ -1165,7 +1352,7 @@ a {
   .pcr-expandable-content {
     display: block !important;
   }
-  .frapak-readmore-btn {
+  .tn-readmore-btn {
     display: none !important;
   }
   .desktop-only-feature {
@@ -1176,12 +1363,12 @@ a {
 /* ==========================================================================
    DIGITAL TOOL: INTERACTIVE COMPONENT MATCHER
    ========================================================================== */
-.frapak-matcher-section {
+.tn-matcher-section {
   background: #ffffff;
   border-top: 1px solid var(--color-border);
 }
 
-.frapak-matcher-card {
+.tn-matcher-card {
   background: linear-gradient(135deg, var(--color-navy) 0%, #1c3252 100%);
   border: 1px solid var(--color-border);
   padding: 40px;
@@ -1193,7 +1380,7 @@ a {
   border-radius: 16px;
 }
 
-.frapak-matcher-eyebrow {
+.tn-matcher-eyebrow {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-gold);
@@ -1202,7 +1389,7 @@ a {
   margin-bottom: 8px;
 }
 
-.frapak-matcher-title {
+.tn-matcher-title {
   font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
@@ -1210,14 +1397,14 @@ a {
   line-height: 1.3;
 }
 
-.frapak-matcher-desc {
+.tn-matcher-desc {
   font-size: 0.9375rem;
   color: #CCD4DD;
   line-height: 1.6;
   margin-bottom: 24px;
 }
 
-.frapak-matcher-btn {
+.tn-matcher-btn {
   margin-left: 0;
   padding: 12px 28px;
 }
@@ -1281,7 +1468,7 @@ a {
   font-weight: 800;
 }
 
-.frapak-cat-nav-strip {
+.tn-cat-nav-strip {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -1290,7 +1477,7 @@ a {
   margin-bottom: 28px;
 }
 
-.frapak-cat-btn {
+.tn-cat-btn {
   background: var(--color-off-white);
   border: 1px solid var(--color-border);
   color: var(--color-navy);
@@ -1302,21 +1489,21 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-cat-btn.active,
-.frapak-cat-btn:hover {
+.tn-cat-btn.active,
+.tn-cat-btn:hover {
   background: var(--color-navy);
   color: var(--color-white);
   border-color: var(--color-navy);
   transform: translateY(-1px);
 }
 
-.frapak-products-grid {
+.tn-products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.frapak-product-card {
+.tn-product-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   display: flex;
@@ -1328,13 +1515,13 @@ a {
   overflow: hidden;
 }
 
-.frapak-product-card:hover {
+.tn-product-card:hover {
   border-color: var(--color-navy);
   box-shadow: none;
   transform: translateY(-3px);
 }
 
-.frapak-prod-img {
+.tn-prod-img {
   height: 180px;
   background: var(--color-off-white);
   display: flex;
@@ -1347,17 +1534,17 @@ a {
   overflow: hidden;
 }
 
-.frapak-prod-img img {
+.tn-prod-img img {
   max-height: 100%;
   object-fit: contain;
   transition: transform 0.25s ease;
 }
 
-.frapak-product-card:hover .frapak-prod-img img {
+.tn-product-card:hover .tn-prod-img img {
   transform: scale(1.05);
 }
 
-.frapak-prod-name {
+.tn-prod-name {
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--color-navy);
@@ -1365,36 +1552,36 @@ a {
   cursor: pointer;
 }
 
-.frapak-prod-table {
+.tn-prod-table {
   width: 100%;
   font-size: 0.75rem;
   border-collapse: collapse;
   margin-bottom: 12px;
 }
 
-.frapak-prod-table td {
+.tn-prod-table td {
   padding: 3px 0;
   border-bottom: 1px solid var(--color-border);
 }
 
-.frapak-prod-table td:first-child {
+.tn-prod-table td:first-child {
   color: var(--color-text-muted);
 }
 
-.frapak-prod-table td:last-child {
+.tn-prod-table td:last-child {
   text-align: right;
   font-weight: 600;
   color: var(--color-navy);
 }
 
-.frapak-card-btn-row {
+.tn-card-btn-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-top: auto;
 }
 
-.btn-frapak-card {
+.btn-tn-card {
   padding: 8px 12px;
   font-size: 0.75rem;
   font-weight: 700;
@@ -1429,7 +1616,7 @@ a {
 /* ==========================================================================
    PRODUCT DETAIL MODAL & GALLERY
    ========================================================================== */
-.frapak-modal-overlay {
+.tn-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(15, 27, 44, 0.75);
@@ -1441,9 +1628,9 @@ a {
   backdrop-filter: blur(4px);
 }
 
-.frapak-modal-overlay.open { display: flex; }
+.tn-modal-overlay.open { display: flex; }
 
-.frapak-modal-box {
+.tn-modal-box {
   background: var(--color-white);
   border-radius: var(--radius-xl);
   max-width: 900px;
@@ -1455,7 +1642,7 @@ a {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-.frapak-modal-close {
+.tn-modal-close {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -1474,7 +1661,7 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-modal-close:hover {
+.tn-modal-close:hover {
   background: #e2e8f0;
 }
 
@@ -1502,7 +1689,7 @@ a {
   box-shadow: 0 0 0 2px var(--color-gold);
 }
 
-.frapak-specs-table {
+.tn-specs-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -1513,14 +1700,14 @@ a {
   border: 1px solid var(--color-border);
 }
 
-.frapak-specs-table th,
-.frapak-specs-table td {
+.tn-specs-table th,
+.tn-specs-table td {
   padding: 8px 12px;
   border-bottom: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
 }
 
-.frapak-specs-table th {
+.tn-specs-table th {
   background: var(--color-off-white);
   color: var(--color-navy);
   width: 35%;
@@ -1528,7 +1715,7 @@ a {
 }
 
 /* Inquiry Form */
-.frapak-drawer-overlay {
+.tn-drawer-overlay {
   position: fixed;
   inset: 0;
   background: rgba(15, 27, 44, 0.6);
@@ -1537,9 +1724,9 @@ a {
   backdrop-filter: blur(3px);
 }
 
-.frapak-drawer-overlay.open { display: block; }
+.tn-drawer-overlay.open { display: block; }
 
-.frapak-drawer {
+.tn-drawer {
   position: fixed;
   top: 0;
   right: 0;
@@ -1557,9 +1744,9 @@ a {
   border-bottom-left-radius: var(--radius-xl);
 }
 
-.frapak-drawer.open { transform: translateX(0); }
+.tn-drawer.open { transform: translateX(0); }
 
-.frapak-modal-overlay {
+.tn-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(15, 27, 44, 0.65);
@@ -1570,37 +1757,37 @@ a {
   padding: 20px;
   backdrop-filter: blur(4px);
 }
-.frapak-modal-overlay.open { display: flex; }
-.frapak-modal-box {
+.tn-modal-overlay.open { display: flex; }
+.tn-modal-box {
   background: var(--color-white, #ffffff);
   border-radius: 12px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  animation: frapakModalIn 0.25s ease-out;
+  animation: tnModalIn 0.25s ease-out;
 }
-@keyframes frapakModalIn {
+@keyframes tnModalIn {
   from { opacity: 0; transform: translateY(16px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.frapak-form-field {
+.tn-form-field {
   margin-bottom: 14px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.frapak-form-field label {
+.tn-form-field label {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-navy);
 }
 
-.frapak-form-field input,
-.frapak-form-field select,
-.frapak-form-field textarea {
+.tn-form-field input,
+.tn-form-field select,
+.tn-form-field textarea {
   width: 100%;
   padding: 9px 12px;
   border: 1px solid var(--color-border);
@@ -1611,20 +1798,20 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-form-field input:focus,
-.frapak-form-field select:focus,
-.frapak-form-field textarea:focus {
+.tn-form-field input:focus,
+.tn-form-field select:focus,
+.tn-form-field textarea:focus {
   outline: none;
   border-color: var(--color-navy);
   box-shadow: 0 0 0 3px rgba(22, 39, 63, 0.1);
 }
 
-.frapak-form-field textarea {
+.tn-form-field textarea {
   min-height: 80px;
   resize: vertical;
 }
 
-.frapak-form-field textarea {
+.tn-form-field textarea {
   min-height: 80px;
   resize: vertical;
 }
@@ -1653,9 +1840,9 @@ a {
 }
 
 /* ==========================================================================
-   EXACT FRAPAK FOOTER (Light Grey Background, 4 Columns)
+   EXACT TRUENORTH FOOTER (Light Grey Background, 4 Columns)
    ========================================================================== */
-.frapak-footer {
+.tn-footer {
   background-color: var(--color-footer-grey);
   border-top: 1px solid var(--color-border);
   padding-top: 48px;
@@ -1664,7 +1851,7 @@ a {
   color: var(--color-text-dark);
 }
 
-.frapak-footer-grid {
+.tn-footer-grid {
   display: grid;
   grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr;
   gap: 28px;
@@ -1735,7 +1922,7 @@ a {
    MODAL SYSTEM — Terms & Privacy
    ========================================================================== */
 
-.frapak-modal-overlay {
+.tn-modal-overlay {
   display: none;
   position: fixed;
   inset: 0;
@@ -1748,11 +1935,11 @@ a {
   padding: 20px;
 }
 
-.frapak-modal-overlay.is-open {
+.tn-modal-overlay.is-open {
   display: flex;
 }
 
-.frapak-modal-box {
+.tn-modal-box {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 24px 80px rgba(5, 15, 35, 0.28);
@@ -1773,7 +1960,7 @@ a {
    ========================================================================== */
 
 /* Mobile Filter Bar & Drawer Styles (Levels 2 & 3) */
-.frapak-mobile-filter-bar {
+.tn-mobile-filter-bar {
   display: none;
   align-items: center;
   justify-content: space-between;
@@ -1781,7 +1968,7 @@ a {
   gap: 12px;
 }
 
-.frapak-mobile-filter-btn {
+.tn-mobile-filter-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1797,12 +1984,12 @@ a {
   transition: all 0.2s ease;
 }
 
-.frapak-mobile-filter-btn:active {
+.tn-mobile-filter-btn:active {
   background: #EEF2F6;
   transform: scale(0.98);
 }
 
-.frapak-filter-count-badge {
+.tn-filter-count-badge {
   background: var(--color-navy);
   color: #ffffff;
   font-size: 0.6875rem;
@@ -1812,13 +1999,13 @@ a {
   margin-left: 2px;
 }
 
-.frapak-mobile-results-count {
+.tn-mobile-results-count {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
   font-weight: 600;
 }
 
-.frapak-filter-backdrop {
+.tn-filter-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(14, 27, 44, 0.65);
@@ -1828,11 +2015,11 @@ a {
   display: none;
 }
 
-.frapak-filter-backdrop.open {
+.tn-filter-backdrop.open {
   display: block;
 }
 
-.frapak-filter-mobile-header {
+.tn-filter-mobile-header {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -1844,7 +2031,7 @@ a {
   color: var(--color-navy);
 }
 
-.frapak-filter-close-btn {
+.tn-filter-close-btn {
   background: transparent;
   border: 1px solid #D0D7DE;
   border-radius: var(--radius-full);
@@ -1859,7 +2046,7 @@ a {
   cursor: pointer;
 }
 
-.frapak-filter-mobile-actions {
+.tn-filter-mobile-actions {
   display: none;
   margin-top: 16px;
   padding-top: 14px;
@@ -1868,30 +2055,39 @@ a {
 
 /* Base Responsive Container Rules */
 @media (max-width: 1200px) {
-  .frapak-cat-tiles-grid { grid-template-columns: repeat(6, 1fr); }
-  .frapak-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
-  .frapak-series-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .frapak-skus-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .frapak-markets-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .hero-content-box { max-width: 470px; }
+  .tn-hero-banner { background-position: calc(100% + 140px) center; }
+  .tn-cat-tiles-grid { grid-template-columns: repeat(4, 1fr); }
+  .tn-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .tn-series-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .tn-skus-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .tn-markets-grid { grid-template-columns: repeat(5, 1fr) !important; }
 }
 
 @media (max-width: 1024px) {
-  .frapak-top-utility-bar { display: none !important; }
-  .frapak-nav-list { display: none !important; }
-  .frapak-mobile-menu-toggle { display: flex; }
-  .frapak-main-header { height: 115px; }
+  .hero-content-box { max-width: 440px; }
+  .hero-content-box h1 { font-size: clamp(1.75rem, 3.2vw, 2.1rem); }
+  .hero-desc { font-size: 0.95rem; max-width: 420px; }
+  .tn-hero-banner {
+    background-position: calc(100% + 200px) center;
+    background-image: linear-gradient(90deg, #010719 0%, #010719 46%, rgba(1, 7, 25, 0.96) 62%, rgba(1, 7, 25, 0.70) 78%, rgba(1, 7, 25, 0.25) 92%, transparent 100%), url('/hero_bottles_banner.webp');
+  }
+  .tn-top-utility-bar { display: none !important; }
+  .tn-nav-list { display: none !important; }
+  .tn-mobile-menu-toggle { display: flex; }
+  .tn-main-header { height: 115px; }
   .header-nav-inner { height: 115px; }
-  .frapak-logo { height: 108px; }
-  .frapak-logo-img { height: 104px; }
+  .tn-logo { height: 108px; }
+  .tn-logo-img { height: 104px; }
 
-  .frapak-cat-tiles-grid { grid-template-columns: repeat(4, 1fr); }
-  .frapak-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
-  .frapak-series-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .frapak-skus-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .frapak-markets-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .frapak-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .tn-cat-tiles-grid { grid-template-columns: repeat(4, 1fr); }
+  .tn-level1-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .tn-series-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .tn-skus-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .tn-markets-grid { grid-template-columns: repeat(5, 1fr) !important; }
+  .tn-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .editorial-two-col { grid-template-columns: 1fr; gap: 24px; }
-  .frapak-catalogue-layout { grid-template-columns: 220px 1fr; gap: 20px; }
+  .tn-catalogue-layout { grid-template-columns: 220px 1fr; gap: 20px; }
 }
 
 @media (max-width: 768px) {
@@ -1902,7 +2098,7 @@ a {
     overflow-x: hidden !important;
   }
 
-  .frapak-container {
+  .tn-container {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
@@ -1912,15 +2108,15 @@ a {
   }
 
   /* Section Spacing: Compact & Balanced */
-  .frapak-section { padding: 40px 0 !important; }
-  .frapak-section-grey { padding: 40px 0 !important; }
-  .frapak-section-title-wrap { margin-bottom: 22px !important; gap: 10px !important; }
-  .frapak-section-title-wrap::before,
-  .frapak-section-title-wrap::after { max-width: 48px !important; }
-  .frapak-section-title { font-size: 1.35rem !important; line-height: 1.3 !important; }
+  .tn-section { padding: 40px 0 !important; }
+  .tn-section-grey { padding: 40px 0 !important; }
+  .tn-section-title-wrap { margin-bottom: 22px !important; gap: 10px !important; }
+  .tn-section-title-wrap::before,
+  .tn-section-title-wrap::after { max-width: 48px !important; }
+  .tn-section-title { font-size: 1.35rem !important; line-height: 1.3 !important; }
 
   /* 2. Mobile Header: [Logo] [Menu] */
-  .frapak-main-header { height: 108px !important; }
+  .tn-main-header { height: 108px !important; }
   .header-nav-inner {
     height: 108px !important;
     padding: 0 16px !important;
@@ -1928,19 +2124,19 @@ a {
     align-items: center !important;
     justify-content: space-between !important;
   }
-  .frapak-logo {
+  .tn-logo {
     height: 100px !important;
     display: flex !important;
     align-items: center !important;
   }
-  .frapak-logo-img {
+  .tn-logo-img {
     height: 96px !important;
     width: auto !important;
     max-width: 260px !important;
   }
   /* Keep mobile header clean without crowded desktop buttons */
-  .frapak-cart-inquiry-btn { display: none !important; }
-  .frapak-mobile-menu-toggle {
+  .tn-cart-inquiry-btn { display: none !important; }
+  .tn-mobile-menu-toggle {
     display: flex !important;
     width: 44px !important;
     height: 44px !important;
@@ -1950,9 +2146,11 @@ a {
   }
 
   /* 3. Hero Section Hierarchy & Fit (70-85vh) */
-  .frapak-hero-banner {
+  .tn-hero-banner {
     padding: 44px 0 38px 0 !important;
     min-height: auto !important;
+    background-image: linear-gradient(180deg, rgba(1, 7, 25, 0.95) 0%, rgba(1, 7, 25, 0.88) 100%), url('/hero_bottles_banner.webp') !important;
+    background-position: center right !important;
   }
   .hero-content-box {
     width: 100% !important;
@@ -1984,8 +2182,8 @@ a {
     gap: 12px !important;
     width: 100% !important;
   }
-  .hero-cta-wrap .frapak-btn-outline,
-  .hero-cta-wrap .frapak-btn-gold {
+  .hero-cta-wrap .tn-btn-outline,
+  .hero-cta-wrap .tn-btn-gold {
     width: 100% !important;
     min-height: 46px !important;
     display: flex !important;
@@ -2001,19 +2199,19 @@ a {
   }
 
   /* 5 & 6. 2-Column Clean Mobile Grid for Product Categories */
-  .frapak-cat-tiles-grid {
+  .tn-cat-tiles-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
     width: 100% !important;
   }
-  .frapak-tile-card {
+  .tn-tile-card {
     border-radius: var(--radius-md) !important;
     overflow: hidden !important;
     border: 1px solid #CCD4DD !important;
     background: #ffffff !important;
     box-shadow: none !important;
   }
-  .frapak-cat-tiles-grid .frapak-tile-image {
+  .tn-cat-tiles-grid .tn-tile-image {
     height: 120px !important;
     padding: 10px !important;
     display: flex !important;
@@ -2021,12 +2219,12 @@ a {
     justify-content: center !important;
     background: #ffffff !important;
   }
-  .frapak-cat-tiles-grid .frapak-tile-image img {
+  .tn-cat-tiles-grid .tn-tile-image img {
     max-height: 100% !important;
     max-width: 100% !important;
     object-fit: contain !important;
   }
-  .frapak-tile-bar {
+  .tn-tile-bar {
     font-size: 0.8125rem !important;
     font-weight: 700 !important;
     padding: 8px 6px !important;
@@ -2037,18 +2235,18 @@ a {
   }
 
   /* 7. 2-Column Clean Mobile Grid for Markets */
-  .frapak-markets-grid {
+  .tn-markets-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
     width: 100% !important;
   }
-  .frapak-market-tile {
+  .tn-market-tile {
     border-radius: var(--radius-md) !important;
     overflow: hidden !important;
     border: 1px solid #CCD4DD !important;
     background: #ffffff !important;
   }
-  .frapak-market-img {
+  .tn-market-img {
     height: 115px !important;
     background: #ffffff !important;
     padding: 0 !important;
@@ -2056,7 +2254,7 @@ a {
     align-items: center !important;
     justify-content: center !important;
   }
-  .frapak-market-img img {
+  .tn-market-img img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -2073,7 +2271,7 @@ a {
     gap: 12px !important;
     width: 100% !important;
   }
-  .rpet-cards-stack .frapak-tile-image {
+  .rpet-cards-stack .tn-tile-image {
     height: 120px !important;
     padding: 10px !important;
   }
@@ -2088,7 +2286,7 @@ a {
     display: block !important;
     animation: fadeInDown 0.25s ease-out;
   }
-  .frapak-readmore-btn {
+  .tn-readmore-btn {
     min-height: 44px !important;
     padding: 10px 20px !important;
     font-size: 0.84rem !important;
@@ -2105,19 +2303,19 @@ a {
     gap: 12px !important;
     width: 100% !important;
   }
-  .frapak-exp-card {
+  .tn-exp-card {
     padding: 16px 14px !important;
     border-radius: var(--radius-md) !important;
   }
-  .frapak-exp-card h4 {
+  .tn-exp-card h4 {
     font-size: 0.95rem !important;
     margin-bottom: 6px !important;
   }
-  .frapak-exp-card .exp-summary {
+  .tn-exp-card .exp-summary {
     font-size: 0.8125rem !important;
     line-height: 1.55 !important;
   }
-  .frapak-exp-card .exp-details {
+  .tn-exp-card .exp-details {
     font-size: 0.8125rem !important;
     line-height: 1.55 !important;
   }
@@ -2146,24 +2344,24 @@ a {
   }
 
   /* 12. Interactive Matcher Mobile Stack */
-  .frapak-matcher-section { padding: 40px 0 !important; }
-  .frapak-matcher-card {
+  .tn-matcher-section { padding: 40px 0 !important; }
+  .tn-matcher-card {
     grid-template-columns: 1fr !important;
     padding: 22px 16px !important;
     gap: 20px !important;
     border-radius: var(--radius-md) !important;
   }
-  .frapak-matcher-title {
+  .tn-matcher-title {
     font-size: 1.35rem !important;
     line-height: 1.25 !important;
     margin-bottom: 10px !important;
   }
-  .frapak-matcher-desc {
+  .tn-matcher-desc {
     font-size: 0.84rem !important;
     line-height: 1.55 !important;
     margin-bottom: 18px !important;
   }
-  .frapak-matcher-btn {
+  .tn-matcher-btn {
     width: 100% !important;
     min-height: 46px !important;
     padding: 12px !important;
@@ -2186,59 +2384,66 @@ a {
   }
 
   /* 13. Mobile Footer Grid (Clean 2-Column or Stacked, No Plus Signs) */
-  .frapak-footer-grid {
+  .tn-footer-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 28px 20px !important;
   }
-  .frapak-footer .footer-col h4 {
+  .tn-footer .footer-col h4 {
     font-size: 0.95rem !important;
     font-weight: 700 !important;
     color: var(--color-navy) !important;
     margin-bottom: 12px !important;
   }
-  .frapak-footer .footer-link-list li {
+  .tn-footer .footer-link-list li {
     margin-bottom: 8px !important;
     font-size: 0.84rem !important;
   }
-  .frapak-footer p {
+  .tn-footer p {
     font-size: 0.84rem !important;
     line-height: 1.55 !important;
   }
 
   /* Level 1, 2, 3, 4 Drilldown Mobile Grids */
-  .frapak-level1-grid {
+  .tn-level1-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
   }
-  .frapak-level1-grid .frapak-tile-image {
+  .tn-level1-grid .tn-tile-image {
     height: 120px !important;
   }
-  .frapak-series-grid {
+  .tn-series-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
   }
-  .frapak-skus-grid {
+  .tn-skus-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
   }
-  .frapak-sku-img {
+  .tn-sku-img {
     height: 130px !important;
     padding: 10px !important;
   }
-  .frapak-sku-bar {
+  .tn-sku-bar {
     font-size: 0.75rem !important;
     padding: 6px 4px !important;
   }
-  .frapak-sku-spec-row {
+  .tn-sku-spec-row {
     padding: 3px 8px !important;
     font-size: 0.72rem !important;
   }
 
   /* Mobile Filter Bar & Drawer */
-  .frapak-mobile-filter-bar { display: flex; }
-  .frapak-catalogue-layout { display: block !important; }
-  .frapak-filter-sidebar {
+  .tn-mobile-filter-bar { display: flex; }
+  .tn-catalogue-layout { display: block !important; }
+  .tn-sidebar-column {
+    display: contents !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .tn-filter-sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -2256,56 +2461,56 @@ a {
     display: flex;
     flex-direction: column;
   }
-  .frapak-filter-sidebar.mobile-open { transform: translateX(0); }
-  .frapak-filter-mobile-header { display: flex; }
-  .frapak-filter-mobile-actions { display: block; }
+  .tn-filter-sidebar.mobile-open { transform: translateX(0); }
+  .tn-filter-mobile-header { display: flex; }
+  .tn-filter-mobile-actions { display: block; }
 
   /* Level 4 PDP Mobile Stack */
-  .frapak-pdp-layout {
+  .tn-pdp-layout {
     grid-template-columns: 1fr !important;
     padding: 20px 16px !important;
     gap: 20px !important;
     border-radius: var(--radius-lg) !important;
   }
-  .frapak-pdp-gallery-container {
+  .tn-pdp-gallery-container {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
-  .frapak-pdp-main-stage {
+  .tn-pdp-main-stage {
     height: 280px !important;
     padding: 14px !important;
   }
-  .frapak-pdp-thumbs-col {
+  .tn-pdp-thumbs-col {
     flex-direction: row !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 6px;
     gap: 8px !important;
   }
-  .frapak-pdp-thumb-item {
+  .tn-pdp-thumb-item {
     width: 54px !important;
     height: 54px !important;
     flex-shrink: 0 !important;
   }
-  .frapak-pdp-specs-card {
+  .tn-pdp-specs-card {
     padding-left: 0 !important;
   }
-  .frapak-pdp-specs-card table {
+  .tn-pdp-specs-card table {
     margin-bottom: 18px !important;
   }
-  .frapak-pdp-specs-card th,
-  .frapak-pdp-specs-card td {
+  .tn-pdp-specs-card th,
+  .tn-pdp-specs-card td {
     padding: 8px 10px !important;
     font-size: 0.8125rem !important;
   }
-  .frapak-pdp-specs-card td:first-child {
+  .tn-pdp-specs-card td:first-child {
     width: 42% !important;
   }
-  .frapak-pdp-cta-wrap {
+  .tn-pdp-cta-wrap {
     flex-direction: column !important;
     gap: 10px !important;
   }
-  .frapak-pdp-cta-wrap button {
+  .tn-pdp-cta-wrap button {
     width: 100% !important;
     text-align: center !important;
     margin: 0 !important;
@@ -2313,11 +2518,11 @@ a {
   }
 
   /* Modals & Inputs */
-  .frapak-drawer {
+  .tn-drawer {
     width: 100vw !important;
     max-width: 100vw !important;
   }
-  .frapak-modal-box {
+  .tn-modal-box {
     width: calc(100vw - 24px) !important;
     max-width: calc(100vw - 24px) !important;
     padding: 20px 16px !important;
@@ -2331,44 +2536,44 @@ a {
 }
 
 @media (max-width: 480px) {
-  .frapak-container {
+  .tn-container {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
 
-  .frapak-section { padding: 36px 0 !important; }
-  .frapak-section-grey { padding: 36px 0 !important; }
-  .frapak-section-title { font-size: 1.25rem !important; }
+  .tn-section { padding: 36px 0 !important; }
+  .tn-section-grey { padding: 36px 0 !important; }
+  .tn-section-title { font-size: 1.25rem !important; }
 
-  .frapak-cat-tiles-grid { gap: 10px !important; }
-  .frapak-cat-tiles-grid .frapak-tile-image { height: 110px !important; }
-  .frapak-markets-grid { gap: 10px !important; }
-  .frapak-market-img { height: 105px !important; }
+  .tn-cat-tiles-grid { gap: 10px !important; }
+  .tn-cat-tiles-grid .tn-tile-image { height: 110px !important; }
+  .tn-markets-grid { gap: 10px !important; }
+  .tn-market-img { height: 105px !important; }
   .rpet-cards-stack { gap: 10px !important; }
-  .rpet-cards-stack .frapak-tile-image { height: 110px !important; }
+  .rpet-cards-stack .tn-tile-image { height: 110px !important; }
 
   .editorial-factory-img { height: 200px !important; }
 }
 
 @media (max-width: 360px) {
-  .frapak-container {
+  .tn-container {
     padding-left: 12px !important;
     padding-right: 12px !important;
   }
   .hero-content-box h1 { font-size: 1.45rem !important; }
-  .frapak-cat-tiles-grid { gap: 8px !important; }
-  .frapak-cat-tiles-grid .frapak-tile-image { height: 100px !important; }
-  .frapak-tile-bar { font-size: 0.72rem !important; min-height: 34px !important; padding: 5px 3px !important; }
-  .frapak-markets-grid { gap: 8px !important; }
-  .frapak-markets-grid .frapak-market-img { height: 95px !important; }
+  .tn-cat-tiles-grid { gap: 8px !important; }
+  .tn-cat-tiles-grid .tn-tile-image { height: 100px !important; }
+  .tn-tile-bar { font-size: 0.72rem !important; min-height: 34px !important; padding: 5px 3px !important; }
+  .tn-markets-grid { gap: 8px !important; }
+  .tn-markets-grid .tn-market-img { height: 95px !important; }
 }
 
 /* ==========================================================================
-   4-TIER FRAPAK CATALOGUE DRILLDOWN STYLES (Levels 1, 2, 3, 4)
+   4-TIER TRUENORTH CATALOGUE DRILLDOWN STYLES (Levels 1, 2, 3, 4)
    ========================================================================== */
 
 /* Back Button */
-.frapak-back-btn {
+.tn-back-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2385,14 +2590,14 @@ a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.04);
 }
 
-.frapak-back-btn:hover {
+.tn-back-btn:hover {
   background: #EEF2F6;
   border-color: var(--color-navy);
   transform: translateX(-2px);
 }
 
 /* Breadcrumbs */
-.frapak-breadcrumbs {
+.tn-breadcrumbs {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2402,47 +2607,47 @@ a {
   flex-wrap: wrap;
 }
 
-.frapak-breadcrumbs a {
+.tn-breadcrumbs a {
   color: var(--color-navy);
   text-decoration: none;
   font-weight: 600;
 }
 
-.frapak-breadcrumbs a:hover {
+.tn-breadcrumbs a:hover {
   color: var(--color-gold);
   text-decoration: underline;
 }
 
-.frapak-breadcrumbs .separator {
+.tn-breadcrumbs .separator {
   color: #aaa;
   font-size: 0.75rem;
 }
 
-.frapak-breadcrumbs .current {
+.tn-breadcrumbs .current {
   color: #444;
   font-weight: 400;
 }
 
 /* 2-Column Catalogue Layout (Sidebar Filters + Main Grid) */
-.frapak-catalogue-layout {
+.tn-catalogue-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 32px;
   align-items: stretch !important;
 }
 
-.frapak-sidebar-column {
+.tn-sidebar-column {
   position: relative;
   height: 100%;
   min-width: 0;
 }
 
-.frapak-products-main-column {
+.tn-products-main-column {
   min-width: 0;
 }
 
 /* Sidebar Filters (Desktop Sticky Floating - Full Height, Zero Nested Scroll) */
-.frapak-filter-sidebar {
+.tn-filter-sidebar {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -2451,7 +2656,7 @@ a {
 }
 
 @media (min-width: 901px) {
-  .frapak-filter-sidebar {
+  .tn-filter-sidebar {
     position: -webkit-sticky;
     position: sticky;
     top: 96px;
@@ -2462,7 +2667,7 @@ a {
   }
 }
 
-.frapak-filter-group {
+.tn-filter-group {
   background: #F4F7FA;
   border: 1px solid #D3DCE6;
   border-radius: var(--radius-md);
@@ -2470,7 +2675,7 @@ a {
   box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
-.frapak-filter-header {
+.tn-filter-header {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--color-navy);
@@ -2482,12 +2687,12 @@ a {
   user-select: none;
 }
 
-.frapak-filter-header .toggle-icon {
+.tn-filter-header .toggle-icon {
   font-size: 0.75rem;
   color: var(--color-navy);
 }
 
-.frapak-filter-list {
+.tn-filter-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -2496,7 +2701,7 @@ a {
   padding-right: 0;
 }
 
-.frapak-filter-item {
+.tn-filter-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2507,7 +2712,7 @@ a {
   transition: color 0.15s ease, opacity 0.15s ease;
 }
 
-.frapak-filter-item-left {
+.tn-filter-item-left {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2515,20 +2720,20 @@ a {
   word-break: break-word;
 }
 
-.frapak-filter-item.is-disabled {
+.tn-filter-item.is-disabled {
   opacity: 0.35;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.frapak-filter-item .facet-count {
+.tn-filter-item .facet-count {
   font-size: 0.75rem;
   color: #94a3b8;
   font-weight: 600;
   flex-shrink: 0;
 }
 
-.frapak-filter-item input[type="checkbox"] {
+.tn-filter-item input[type="checkbox"] {
   accent-color: var(--color-navy);
   width: 16px;
   height: 16px;
@@ -2537,12 +2742,12 @@ a {
   flex-shrink: 0;
 }
 
-.frapak-filter-item:hover {
+.tn-filter-item:hover {
   color: var(--color-navy);
 }
 
 /* Active Filters Chip Bar */
-.frapak-active-filters-bar {
+.tn-active-filters-bar {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2621,29 +2826,29 @@ a {
   color: #8a641b;
 }
 
-/* Level 1: 7-Category Grid (Matches Google Drive Specifications) */
-.frapak-level1-grid {
+/* Level 1: 8-Category Grid (4x2 Grid: 4 on Top, 4 on Bottom) */
+.tn-level1-grid {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   width: 100%;
 }
 
 /* Level 2: Series Cards Grid (Matches Screenshot 2) */
-.frapak-series-grid {
+.tn-series-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
 /* Level 3: SKUs Cards Grid (Matches Screenshot 3) */
-.frapak-skus-grid {
+.tn-skus-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
-.frapak-sku-card {
+.tn-sku-card {
   background: #ffffff;
   border: 1px solid #CCD4DD;
   position: relative;
@@ -2656,19 +2861,19 @@ a {
   box-shadow: none;
 }
 
-.frapak-sku-card:hover {
+.tn-sku-card:hover {
   border-color: var(--color-navy);
   box-shadow: none;
   transform: translateY(-3px);
 }
 
-.frapak-sku-stock-indicator {
+.tn-sku-stock-indicator {
   display: none !important;
 }
 
-.frapak-sku-img {
+.tn-sku-img {
   height: 180px;
-  background: #ffffff;
+  background: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2677,7 +2882,7 @@ a {
   border-top-right-radius: var(--radius-md);
 }
 
-.frapak-sku-img img {
+.tn-sku-img img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
@@ -2686,11 +2891,11 @@ a {
   transition: transform 0.25s ease;
 }
 
-.frapak-sku-card:hover .frapak-sku-img img {
+.tn-sku-card:hover .tn-sku-img img {
   transform: scale(1.05);
 }
 
-.frapak-sku-bar {
+.tn-sku-bar {
   background-color: #D7DFE8;
   color: var(--color-navy);
   font-size: 0.8125rem;
@@ -2701,17 +2906,17 @@ a {
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-.frapak-sku-card:hover .frapak-sku-bar {
+.tn-sku-card:hover .tn-sku-bar {
   background-color: var(--color-navy);
   color: #ffffff;
 }
 
-.frapak-sku-specs-table {
+.tn-sku-specs-table {
   padding: 8px 0;
   background: #ffffff;
 }
 
-.frapak-sku-spec-row {
+.tn-sku-spec-row {
   display: grid;
   grid-template-columns: 24px 1fr;
   align-items: center;
@@ -2721,25 +2926,25 @@ a {
   border-bottom: 1px solid #F3F4F6;
 }
 
-.frapak-sku-spec-row:last-child {
+.tn-sku-spec-row:last-child {
   border-bottom: none;
 }
 
-.frapak-sku-spec-icon {
+.tn-sku-spec-icon {
   font-size: 0.75rem;
   color: #6B7280;
   display: flex;
   align-items: center;
 }
 
-.frapak-sku-spec-val {
+.tn-sku-spec-val {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 /* Level 4: Product Detail Page (Matches Screenshot 4) */
-.frapak-pdp-layout {
+.tn-pdp-layout {
   display: grid;
   grid-template-columns: 1.1fr 1.3fr;
   gap: 40px;
@@ -2751,14 +2956,14 @@ a {
   box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
 
-.frapak-pdp-gallery-container {
+.tn-pdp-gallery-container {
   display: grid;
   grid-template-columns: 1fr 70px;
   gap: 16px;
   align-items: start;
 }
 
-.frapak-pdp-main-stage {
+.tn-pdp-main-stage {
   position: relative;
   background: #ffffff;
   border: 1px solid #E5E7EB;
@@ -2771,7 +2976,7 @@ a {
   overflow: hidden;
 }
 
-.frapak-pdp-main-stage img {
+.tn-pdp-main-stage img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
@@ -2779,7 +2984,7 @@ a {
   box-shadow: none !important;
 }
 
-.frapak-pdp-zoom-btn {
+.tn-pdp-zoom-btn {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -2793,8 +2998,8 @@ a {
   box-shadow: 0 2px 4px rgba(0,0,0,0.06);
 }
 
-.frapak-pdp-nav-prev,
-.frapak-pdp-nav-next {
+.tn-pdp-nav-prev,
+.tn-pdp-nav-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -2813,22 +3018,22 @@ a {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.frapak-pdp-nav-prev:hover,
-.frapak-pdp-nav-next:hover {
+.tn-pdp-nav-prev:hover,
+.tn-pdp-nav-next:hover {
   background: var(--color-navy);
   color: #ffffff;
 }
 
-.frapak-pdp-nav-prev { left: 10px; }
-.frapak-pdp-nav-next { right: 10px; }
+.tn-pdp-nav-prev { left: 10px; }
+.tn-pdp-nav-next { right: 10px; }
 
-.frapak-pdp-thumbs-col {
+.tn-pdp-thumbs-col {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.frapak-pdp-thumb-item {
+.tn-pdp-thumb-item {
   width: 68px;
   height: 68px;
   border: 1px solid #D1D5DB;
@@ -2843,22 +3048,22 @@ a {
   overflow: hidden;
 }
 
-.frapak-pdp-thumb-item.active {
+.tn-pdp-thumb-item.active {
   border: 2px solid #22C55E;
 }
 
-.frapak-pdp-thumb-item img {
+.tn-pdp-thumb-item img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
 /* PDP Right Column Specs Table */
-.frapak-pdp-specs-card {
+.tn-pdp-specs-card {
   padding-left: 10px;
 }
 
-.frapak-pdp-specs-card table {
+.tn-pdp-specs-card table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -2868,33 +3073,33 @@ a {
   overflow: hidden;
 }
 
-.frapak-pdp-specs-card th,
-.frapak-pdp-specs-card td {
+.tn-pdp-specs-card th,
+.tn-pdp-specs-card td {
   padding: 10px 14px;
   text-align: left;
   font-size: 0.875rem;
   border-bottom: 1px solid #F0F2F5;
 }
 
-.frapak-pdp-specs-card tr:last-child td {
+.tn-pdp-specs-card tr:last-child td {
   border-bottom: none;
 }
 
-.frapak-pdp-specs-card tr:nth-child(even) {
+.tn-pdp-specs-card tr:nth-child(even) {
   background: #F9FAFB;
 }
 
-.frapak-pdp-specs-card td:first-child {
+.tn-pdp-specs-card td:first-child {
   font-weight: 700;
   color: var(--color-navy);
   width: 38%;
 }
 
-.frapak-pdp-specs-card td:last-child {
+.tn-pdp-specs-card td:last-child {
   color: #374151;
 }
 
-.frapak-pdp-cta-wrap {
+.tn-pdp-cta-wrap {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -2914,18 +3119,18 @@ textarea {
   border-radius: var(--radius-sm);
 }
 
-.frapak-btn-outline,
-.frapak-btn-gold {
+.tn-btn-outline,
+.tn-btn-gold {
   border-radius: var(--radius-sm);
 }
 
 /* Round outer cards and containers */
 .card, 
 .box, 
-.frapak-tile-card,
-.frapak-market-tile,
-.frapak-sku-card,
-.frapak-product-card,
+.tn-tile-card,
+.tn-market-tile,
+.tn-sku-card,
+.tn-product-card,
 .rpet-card {
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -2935,16 +3140,16 @@ textarea {
    ONLY top corners curve with the card; bottom corners are 100% FLAT (0) */
 .card img, 
 .box img, 
-.frapak-tile-image,
-.frapak-market-img,
-.frapak-sku-img,
-.frapak-prod-img,
-.frapak-tile-image img,
-.frapak-market-img img,
-.frapak-sku-img img,
-.frapak-prod-img img,
-.rpet-card .frapak-tile-image,
-.rpet-card .frapak-tile-image img {
+.tn-tile-image,
+.tn-market-img,
+.tn-sku-img,
+.tn-prod-img,
+.tn-tile-image img,
+.tn-market-img img,
+.tn-sku-img img,
+.tn-prod-img img,
+.rpet-card .tn-tile-image,
+.rpet-card .tn-tile-image img {
   border-top-left-radius: var(--radius-md);
   border-top-right-radius: var(--radius-md);
   border-bottom-left-radius: 0 !important;
@@ -2953,9 +3158,9 @@ textarea {
 
 /* Ensure title bars merge seamlessly with images:
    Top corners are 100% FLAT (0); ONLY bottom corners curve with the card */
-.frapak-tile-bar,
+.tn-tile-bar,
 .rpet-card-bar,
-.frapak-sku-bar {
+.tn-sku-bar {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
   border-bottom-left-radius: var(--radius-md) !important;
@@ -2964,31 +3169,31 @@ textarea {
 }
 
 /* Zero Shadow Rule for All Product Images and Product Cards */
-.frapak-tile-image img,
-.frapak-prod-img img,
-.frapak-sku-img img,
-.frapak-pdp-main-stage img,
-.frapak-pdp-thumb-item img,
-.frapak-tile-card img,
-.frapak-sku-card img,
-.frapak-product-card img,
-.frapak-tile-image,
-.frapak-sku-img,
-.frapak-prod-img {
+.tn-tile-image img,
+.tn-prod-img img,
+.tn-sku-img img,
+.tn-pdp-main-stage img,
+.tn-pdp-thumb-item img,
+.tn-tile-card img,
+.tn-sku-card img,
+.tn-product-card img,
+.tn-tile-image,
+.tn-sku-img,
+.tn-prod-img {
   filter: none !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
-.frapak-tile-card,
-.frapak-sku-card,
-.frapak-product-card {
+.tn-tile-card,
+.tn-sku-card,
+.tn-product-card {
   box-shadow: none !important;
 }
 
-.frapak-tile-card:hover,
-.frapak-sku-card:hover,
-.frapak-product-card:hover {
+.tn-tile-card:hover,
+.tn-sku-card:hover,
+.tn-product-card:hover {
   box-shadow: none !important;
 }
 
@@ -4345,16 +4550,17 @@ textarea {
 /* =========================================================================
    FOOTER ACCORDION (Desktop Proportional Grid, Tablet & Mobile Accordion)
    ========================================================================= */
-.frapak-footer {
+.tn-footer {
   background-color: var(--color-footer-grey);
   border-top: 1px solid var(--color-border);
   padding: 40px 0 24px;
 }
 
-.frapak-footer .frapak-container {
-  max-width: 1380px;
-  width: calc(100% - 64px);
+.tn-footer .tn-container {
+  max-width: var(--container-max);
+  width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* Footer Brand Header */
@@ -4390,7 +4596,7 @@ textarea {
 }
 
 /* Desktop Proportional Multi-Column Grid */
-.frapak-footer .frapak-footer-grid {
+.tn-footer .tn-footer-grid {
   display: grid;
   grid-template-columns: 1.1fr 1.5fr 2fr 1.2fr;
   gap: 32px 28px;
@@ -4562,10 +4768,10 @@ textarea {
    TABLET RESPONSIVE (768px - 1023px)
    ========================================================================= */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .frapak-footer {
+  .tn-footer {
     padding: 36px 0 20px;
   }
-  .frapak-footer .frapak-footer-grid {
+  .tn-footer .tn-footer-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 32px 24px !important;
     align-items: start !important;
@@ -4583,7 +4789,7 @@ textarea {
    MOBILE ACCORDION (max-width: 767px)
    ========================================================================= */
 @media (max-width: 767px) {
-  .frapak-footer {
+  .tn-footer {
     padding: 24px 0 16px;
   }
   .footer-brand-header {
@@ -4610,7 +4816,7 @@ textarea {
     text-align: center;
     line-height: 1.4;
   }
-  .frapak-footer .frapak-footer-grid {
+  .tn-footer .tn-footer-grid {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
@@ -4711,7 +4917,7 @@ textarea {
   .mkt-main-section {
     padding-top: 20px;
   }
-  .mkt-main-section .frapak-container {
+  .mkt-main-section .tn-container {
     padding-left: 16px !important;
     padding-right: 16px !important;
     max-width: none !important;
@@ -5476,21 +5682,21 @@ textarea {
   width: 100%;
   box-sizing: border-box;
 }
-.cnt-form .frapak-form-field {
+.cnt-form .tn-form-field {
   margin-bottom: 16px;
   width: 100%;
   box-sizing: border-box;
 }
-.cnt-form .frapak-form-field label {
+.cnt-form .tn-form-field label {
   display: block;
   font-size: 0.8125rem;
   font-weight: 700;
   color: var(--color-navy);
   margin-bottom: 6px;
 }
-.cnt-form .frapak-form-field input,
-.cnt-form .frapak-form-field select,
-.cnt-form .frapak-form-field textarea {
+.cnt-form .tn-form-field input,
+.cnt-form .tn-form-field select,
+.cnt-form .tn-form-field textarea {
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
@@ -5504,13 +5710,13 @@ textarea {
   color: var(--color-navy);
   transition: border-color 0.2s ease;
 }
-.cnt-form .frapak-form-field textarea {
+.cnt-form .tn-form-field textarea {
   min-height: 120px;
   resize: vertical;
 }
-.cnt-form .frapak-form-field input:focus,
-.cnt-form .frapak-form-field select:focus,
-.cnt-form .frapak-form-field textarea:focus {
+.cnt-form .tn-form-field input:focus,
+.cnt-form .tn-form-field select:focus,
+.cnt-form .tn-form-field textarea:focus {
   outline: none;
   border-color: var(--color-gold);
   box-shadow: 0 0 0 3px rgba(184, 137, 46, 0.12);
@@ -5750,7 +5956,7 @@ textarea {
     max-width: 100%;
   }
 
-  .frapak-breadcrumbs {
+  .tn-breadcrumbs {
     display: flex !important;
     flex-wrap: wrap !important;
     align-items: center !important;
@@ -5762,9 +5968,9 @@ textarea {
   }
 
   .table-responsive-wrapper,
-  .frapak-pdp-specs-card table,
-  .frapak-specs-table,
-  .frapak-prod-table {
+  .tn-pdp-specs-card table,
+  .tn-specs-table,
+  .tn-prod-table {
     max-width: 100% !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
@@ -5772,23 +5978,23 @@ textarea {
   }
 
   #view-products,
-  #view-products .frapak-section,
-  #frapak-drilldown-container,
-  .frapak-level1-grid {
+  #view-products .tn-section,
+  #tn-drilldown-container,
+  .tn-level1-grid {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
   }
-  #view-products .frapak-section::before,
-  #view-products .frapak-section::after,
-  #frapak-drilldown-container::before,
-  #frapak-drilldown-container::after {
+  #view-products .tn-section::before,
+  #view-products .tn-section::after,
+  #tn-drilldown-container::before,
+  #tn-drilldown-container::after {
     display: none !important;
     content: none !important;
   }
 
   /* 2. MOBILE HEADER PROPORTIONS */
-  .frapak-main-header {
+  .tn-main-header {
     height: 108px !important;
     background: #ffffff !important;
     border-bottom: 1px solid #E2E8F0 !important;
@@ -5797,16 +6003,16 @@ textarea {
     height: 108px !important;
     padding: 0 16px !important;
   }
-  .frapak-logo {
+  .tn-logo {
     height: 100px !important;
   }
-  .frapak-logo-img {
+  .tn-logo-img {
     height: 96px !important;
     width: auto !important;
     max-width: 260px !important;
     object-fit: contain !important;
   }
-  .frapak-mobile-menu-toggle {
+  .tn-mobile-menu-toggle {
     width: 44px !important;
     height: 44px !important;
     min-height: 44px !important;
@@ -5852,11 +6058,11 @@ textarea {
   }
 
   /* 5. 2-COLUMN PRODUCT GRID & SAFE CONTAINER (15–18px side padding, 10–14px gap) */
-  #view-products .frapak-section {
+  #view-products .tn-section {
     padding-top: 40px !important;
     padding-bottom: 50px !important;
   }
-  .frapak-level1-grid {
+  .tn-level1-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px !important;
@@ -5868,7 +6074,7 @@ textarea {
   }
 
   /* 6, 7 & 8. PRODUCT CARDS, IMAGE AREA & NAME AREA */
-  .frapak-level1-grid .frapak-tile-card {
+  .tn-level1-grid .tn-tile-card {
     background: #ffffff !important;
     border: 1px solid #E2E8F0 !important;
     border-radius: 12px !important;
@@ -5881,15 +6087,15 @@ textarea {
     transform: none !important;
     transition: border-color 0.2s ease !important;
   }
-  .frapak-level1-grid .frapak-tile-card:hover {
+  .tn-level1-grid .tn-tile-card:hover {
     transform: none !important;
     box-shadow: none !important;
   }
-  .frapak-level1-grid .frapak-tile-card:active {
+  .tn-level1-grid .tn-tile-card:active {
     border-color: var(--color-navy) !important;
   }
 
-  .frapak-level1-grid .frapak-tile-image {
+  .tn-level1-grid .tn-tile-image {
     aspect-ratio: 1 / 1 !important;
     height: auto !important;
     width: 100% !important;
@@ -5904,7 +6110,7 @@ textarea {
     overflow: hidden !important;
   }
 
-  .frapak-level1-grid .frapak-tile-image img {
+  .tn-level1-grid .tn-tile-image img {
     width: 88% !important;
     height: 88% !important;
     max-width: 88% !important;
@@ -5918,7 +6124,7 @@ textarea {
     transform: none !important;
   }
 
-  .frapak-level1-grid .frapak-tile-bar {
+  .tn-level1-grid .tn-tile-bar {
     background-color: #D7DFE8 !important;
     color: var(--color-navy) !important;
     font-size: 12.5px !important;
@@ -5939,7 +6145,7 @@ textarea {
   }
 
   /* 11-17. FOOTER & ACCORDIONS EXACT REFERENCE MATCH */
-  .frapak-footer {
+  .tn-footer {
     background-color: #EEF2F6 !important;
     border-top: 1px solid #E2E8F0 !important;
     padding-top: 36px !important;
@@ -5973,7 +6179,7 @@ textarea {
     margin: 0 auto !important;
     text-align: center !important;
   }
-  .frapak-footer-grid {
+  .tn-footer-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 0 !important;
@@ -6004,6 +6210,9 @@ textarea {
     text-align: left !important;
     box-sizing: border-box !important;
   }
+  .footer-accordion-header * {
+    pointer-events: none !important;
+  }
   .footer-title {
     flex: 1 !important;
     text-align: left !important;
@@ -6030,13 +6239,13 @@ textarea {
     max-height: 0 !important;
     overflow: hidden !important;
     opacity: 0 !important;
-    transition: max-height 0.22s ease, opacity 0.22s ease, padding 0.22s ease !important;
+    transition: max-height 0.28s ease, opacity 0.25s ease, padding 0.25s ease !important;
     padding: 0 !important;
   }
   .footer-col.footer-col--open .footer-accordion-panel {
-    max-height: 600px !important;
+    max-height: 1200px !important;
     opacity: 1 !important;
-    padding: 0 0 18px 0 !important;
+    padding: 6px 0 18px 0 !important;
   }
   .footer-copyright-bar {
     font-size: 12px !important;
@@ -6064,4 +6273,40 @@ textarea {
   color: #475569 !important;
   font-size: 1rem !important;
   line-height: 1.6 !important;
+}
+
+/* ==========================================================================
+   PRODUCT CARD CONTRAST ENHANCEMENT (FOR CLEAR TRANSLUCENT BOTTLES & JARS)
+   ========================================================================== */
+.tn-tile-card,
+.tn-sku-card,
+.tn-product-card {
+  background: #ffffff !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+}
+
+.tn-tile-card:hover,
+.tn-sku-card:hover,
+.tn-product-card:hover {
+  border-color: var(--color-navy) !important;
+  box-shadow: 0 8px 20px rgba(22, 39, 63, 0.12) !important;
+  transform: translateY(-3px);
+}
+
+.tn-tile-image,
+.tn-sku-img,
+.tn-prod-img,
+.rpet-card .tn-tile-image {
+  background: #F1F5F9 !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+.tn-tile-image img,
+.tn-prod-img img,
+.tn-sku-img img,
+.rpet-card .tn-tile-image img,
+.tn-pdp-main-stage img {
+  filter: drop-shadow(0 4px 8px rgba(15, 23, 42, 0.09)) !important;
+  box-shadow: none !important;
 }

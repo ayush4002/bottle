@@ -5,7 +5,7 @@
     
     <!-- Custom Solutions Hero Banner -->
     <div class="products-page-title-banner cst-hero-banner">
-      <div class="frapak-container">
+      <div class="tn-container">
         <div class="cst-hero-badge">CUSTOM SOLUTIONS</div>
         <h1 class="cst-hero-title">Custom Solutions</h1>
         <p class="cst-hero-subtitle">Bespoke packaging development, engineering and manufacturing support.</p>
@@ -13,22 +13,22 @@
     </div>
 
     <!-- Main Bespoke Development Section -->
-    <section class="frapak-section cst-main-section">
-      <div class="frapak-container">
+    <section class="tn-section cst-main-section">
+      <div class="tn-container">
         
         <div class="cst-editorial-grid">
           <div class="cst-editorial-left">
             <h2 class="cst-section-heading">Bespoke Design & Mould Development</h2>
             <p class="cst-editorial-lead">
-              We don’t encourage you to be restricted to our current designs. With trusted networks across Mould developers with supreme quality and longevity, we connect and execute custom design developments based on your exact requirements.
+              You are not limited to our standard catalogue designs. Backed by a trusted network of high-precision mould makers and tooling engineers, we execute custom container and closure developments tailored to your exact technical requirements.
             </p>
 
             <h3 class="cst-subheading">Our Custom Development Capabilities:</h3>
             <ul class="cst-capabilities-list">
               <li><strong>Custom 3D Geometries</strong> — Ergonomic curves, distinctive contours, and proprietary bottles.</li>
-              <li><strong>Pantone Color Matching</strong> — Solid opaques, translucent tints, and UV barrier formulations.</li>
+              <li><strong>Pantone Colour Matching</strong> — Solid opaques, translucent tints, and UV barrier formulations.</li>
               <li><strong>Mould Construction & Tooling</strong> — Pilot single-cavity prototyping and high-speed mass production.</li>
-              <li><strong>In-House Decoration</strong> — Silk-screen printing, hot foil stamping, and customized labelling.</li>
+              <li><strong>In-House Decoration</strong> — Silk-screen printing, hot foil stamping, and customised labelling.</li>
             </ul>
 
             <!-- Tooling Assurance Card -->
@@ -40,7 +40,7 @@
                 <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Full IP Confidentiality</strong> & NDA Protection for Proprietary Shapes</span></li>
                 <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Flexible Tooling Amortization</strong> on High-Volume Orders</span></li>
               </ul>
-              <button type="button" class="frapak-btn-gold cst-btn-full" onclick="window.openInquiry('Custom Mould Inquiry')">
+              <button type="button" class="tn-btn-gold cst-btn-full" onclick="window.openInquiry('Custom Mould Inquiry')">
                 CONTACT US FOR CUSTOM SOLUTIONS
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
@@ -58,10 +58,10 @@
     </section>
 
     <!-- Section: 4-Stage Custom Development Process (Swipe Carousel on Mobile) -->
-    <section class="frapak-section-grey cst-process-section">
-      <div class="frapak-container">
-        <div class="frapak-section-title-wrap">
-          <h2 class="frapak-section-title">The 4-Stage Custom Development Process</h2>
+    <section class="tn-section-grey cst-process-section">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">The 4-Stage Custom Development Process</h2>
           <p class="cst-section-desc">
             From initial 3D concept to qualified multi-cavity mass production with complete engineering support.
           </p>
@@ -102,7 +102,7 @@
               <div class="cst-stage-badge">STAGE 04</div>
               <h3 class="cst-stage-title">Mass Production</h3>
               <p class="cst-stage-desc">
-                High-speed multi-cavity injection blow molding with automated optical dimension screening and export-standard palletization.
+                High-speed multi-cavity injection blow moulding with automated optical dimension screening and export-standard palletization.
               </p>
             </div>
 
@@ -120,10 +120,10 @@
     </section>
 
     <!-- Section: Specialty Finishes & Surface Treatments (2-Column Grid on Mobile) -->
-    <section class="frapak-section cst-finishes-section">
-      <div class="frapak-container">
-        <div class="frapak-section-title-wrap">
-          <h2 class="frapak-section-title">Specialty Finishes & Surface Treatments</h2>
+    <section class="tn-section cst-finishes-section">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">Specialty Finishes & Surface Treatments</h2>
           <p class="cst-section-desc">
             Enhance shelf presence with precision in-house decorating, tactile surface coatings, and bespoke colour formulations.
           </p>
@@ -187,10 +187,10 @@
             <span class="cst-consult-tag">ENGINEERING CONSULTATION</span>
             <h3 class="cst-consult-title">Have a Custom Packaging Concept in Mind?</h3>
             <p class="cst-consult-desc">
-              Send us your target dimensions, capacity, or bottle sketch. Our engineering team will review technical feasibility and deliver a mould proposal within 48 hours.
+              Send us your target dimensions, capacity, or bottle sketch. Our engineering team will review technical feasibility and deliver a mould proposal within 24 business hours.
             </p>
           </div>
-          <button type="button" class="frapak-btn-gold cst-consult-btn" onclick="window.openInquiry('Custom Packaging Concept')">
+          <button type="button" class="tn-btn-gold cst-consult-btn" onclick="window.openInquiry('Custom Packaging Concept')">
             START BESPOKE PROJECT
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>

@@ -5,10 +5,12 @@
 // ==========================================================================
 
 // Directory Paths
-define('ROOT_PATH', dirname(__DIR__));
-define('APP_PATH', ROOT_PATH . '/app');
-define('CONFIG_PATH', ROOT_PATH . '/config');
-define('PUBLIC_PATH', ROOT_PATH . '/public');
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', is_dir(__DIR__ . '/app') ? __DIR__ : dirname(__DIR__));
+    define('APP_PATH', ROOT_PATH . '/app');
+    define('CONFIG_PATH', ROOT_PATH . '/config');
+    define('PUBLIC_PATH', ROOT_PATH . '/public');
+}
 
 // --------------------------------------------------------------------------
 // 1. DATABASE CONFIGURATION (EDIT FOR YOUR CPANEL DATABASE)

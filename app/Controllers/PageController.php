@@ -10,10 +10,14 @@ require_once dirname(__DIR__) . '/Models/ProductModel.php';
 class PageController {
 
     public static function renderPage($pageName = 'home', $params = []) {
-        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability'];
+        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability', 'terms', 'privacy', '404'];
         
         if (!in_array($pageName, $allowedPages)) {
-            $pageName = 'home';
+            $pageName = '404';
+        }
+
+        if ($pageName === '404') {
+            http_response_code(404);
         }
 
         $company = ProductModel::getCompanyInfo();

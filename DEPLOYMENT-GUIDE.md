@@ -98,10 +98,10 @@ Ensure the following directories have write permissions for image uploads and JS
 
 1. **Visit Live Website**: Open `https://yourdomain.com` in your browser.
    - Verify homepage banners, product categories, and bottle listings display correctly.
-2. **Access Admin Panel**: Go to `https://yourdomain.com/admin/login.php`.
+2. **Access Admin Panel**: Go to `https://yourdomain.com/admin/login` (or shortcut `https://yourdomain.com/login`).
    - Sign in with your `ADMIN_USER` and `ADMIN_PASS`.
 3. **Test Product Editing**:
-   - Go to `/admin/products.php`.
+   - Go to `/admin/products`.
    - Click **Edit** on a product, change a field, and click **Save Changes**.
 4. **Test Quote Inquiries**:
    - Submit a test quote request on the frontend and verify it records in the database and sends notification.

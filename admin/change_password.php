@@ -69,7 +69,7 @@ $token = generateCsrfToken();
     <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; padding: 12px 14px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 20px;"><?= htmlspecialchars($error) ?></div>
   <?php endif; ?>
 
-  <form method="POST" action="change_password.php">
+  <form method="POST" action="/admin/change_password">
     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>" />
 
     <div style="margin-bottom: 18px;">
@@ -87,7 +87,7 @@ $token = generateCsrfToken();
       <input type="password" name="confirm_password" required class="form-input-admin" style="width: 100%; box-sizing: border-box; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" minlength="6" />
     </div>
 
-    <button type="submit" class="frapak-btn-gold" style="width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">UPDATE PASSWORD</button>
+    <button type="submit" class="tn-btn-gold" style="width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">UPDATE PASSWORD</button>
   </form>
 </div>
 

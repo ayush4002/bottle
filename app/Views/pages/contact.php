@@ -5,7 +5,7 @@
     
     <!-- Contact Hero Banner -->
     <div class="products-page-title-banner cnt-hero-banner">
-      <div class="frapak-container">
+      <div class="tn-container">
         <div class="cnt-hero-badge">CONTACT</div>
         <h1 class="cnt-hero-title">Contact TrueNorth Group</h1>
         <p class="cnt-hero-subtitle">Have a question, packaging requirement, or custom development need? Talk to our team.</p>
@@ -13,8 +13,8 @@
     </div>
 
     <!-- Main Contact Details & Form Section -->
-    <section class="frapak-section cnt-main-section">
-      <div class="frapak-container">
+    <section class="tn-section cnt-main-section">
+      <div class="tn-container">
         
         <div class="cnt-layout-grid">
           
@@ -32,8 +32,8 @@
                 India
               </p>
               <div class="cnt-contact-links">
-                <div><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></div>
-                <div><strong>Email:</strong> <a href="mailto:info@wetruenorthgroup.com">info@wetruenorthgroup.com</a></div>
+                <div><strong>Phone:</strong> <a href="tel:+919810220761">+91 9810220761</a></div>
+                <div><strong>Email:</strong> <a href="mailto:Info@wetruenorthgroup.com">Info@wetruenorthgroup.com</a></div>
               </div>
               <p class="cnt-card-subtext" style="margin-top: 10px;">
                 TÜV NORD ISO 9001 Certified Quality Management
@@ -46,7 +46,7 @@
               <ul class="cnt-sla-list">
                 <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span><strong>Monday – Friday:</strong> 9:00 AM – 6:30 PM</span></li>
                 <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span><strong>Saturday:</strong> 9:00 AM – 1:30 PM</span></li>
-                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span><strong>Technical Review:</strong> Inquiries answered within 4 business hours</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span><strong>Technical Review:</strong> Inquiries answered within 1 business day</span></li>
               </ul>
             </div>
 
@@ -68,19 +68,19 @@
             <p class="cnt-form-subtitle">Have a packaging requirement? Talk to our engineering team.</p>
 
             <form id="contact-page-form" class="cnt-form">
-              <div class="frapak-form-field">
+              <div class="tn-form-field">
                 <label for="cnt-name">1. Name *</label>
                 <input type="text" id="cnt-name" name="name" required placeholder="Enter your full name" autocomplete="name" />
               </div>
-              <div class="frapak-form-field">
+              <div class="tn-form-field">
                 <label for="cnt-company">2. Company Name *</label>
                 <input type="text" id="cnt-company" name="company" required placeholder="Enter company name" autocomplete="organization" />
               </div>
-              <div class="frapak-form-field">
-                <label for="cnt-email">3. Email ID *</label>
-                <input type="email" id="cnt-email" name="email" required placeholder="Enter email address" autocomplete="email" />
+              <div class="tn-form-field">
+                <label for="cnt-email">3. Work Email *</label>
+                <input type="email" id="cnt-email" name="email" required placeholder="Enter work email address" autocomplete="email" />
               </div>
-              <div class="frapak-form-field">
+              <div class="tn-form-field">
                 <label for="cnt-country">4. Country *</label>
                 <select id="cnt-country" name="country" class="country-select" required>
                   <option value="" disabled selected>Select your country...</option>
@@ -115,16 +115,16 @@
                   <option value="Other Country">Other Country</option>
                 </select>
               </div>
-              <div class="frapak-form-field">
+              <div class="tn-form-field">
                 <label for="cnt-phone">5. Phone Number *</label>
                 <input type="tel" id="cnt-phone" name="phone" required placeholder="Country code + phone number" autocomplete="tel" />
               </div>
-              <div class="frapak-form-field">
+              <div class="tn-form-field">
                 <label for="cnt-inquiry">6. Inquiry *</label>
                 <textarea id="cnt-inquiry" name="inquiry" required placeholder="Tell us about your packaging requirements, volumes, or custom specifications"></textarea>
               </div>
 
-              <button type="submit" class="frapak-btn-gold cnt-submit-btn">
+              <button type="submit" class="tn-btn-gold cnt-submit-btn">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 SEND INQUIRY
               </button>
@@ -137,10 +137,10 @@
     </section>
 
     <!-- Section: Global Manufacturing & Logistics Hubs -->
-    <section class="frapak-section-grey cnt-hubs-section">
-      <div class="frapak-container">
-        <div class="frapak-section-title-wrap">
-          <h2 class="frapak-section-title">Global Manufacturing & Logistics Hubs</h2>
+    <section class="tn-section-grey cnt-hubs-section">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">Global Manufacturing & Logistics Hubs</h2>
           <p class="cnt-section-desc">
             Hybrid manufacturing and streamlined export distribution infrastructure connecting clients to reliable supply chains worldwide.
           </p>
@@ -184,10 +184,10 @@
     </section>
 
     <!-- Section: Buyer & Procurement Assistance FAQs -->
-    <section class="frapak-section cnt-procurement-section">
-      <div class="frapak-container">
-        <div class="frapak-section-title-wrap">
-          <h2 class="frapak-section-title">Buyer & Procurement Assistance</h2>
+    <section class="tn-section cnt-procurement-section">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">Buyer & Procurement Assistance</h2>
           <p class="cnt-section-desc">
             Answers to common procurement, compliance, and sample inquiries for fast turnaround.
           </p>
@@ -203,7 +203,7 @@
           <div class="cnt-faq-card">
             <div class="cnt-faq-tag">Order Size</div>
             <h3 class="cnt-faq-title">Minimum Orders (MOQ)</h3>
-            <p class="cnt-faq-desc">Standard product lines start at 1,000 units. 100% recycled PCR rPET items feature an accessible MOQ of just 30,000 units.</p>
+            <p class="cnt-faq-desc">Accessible MOQs starting from 5,000 units per batch (sample trial batches from 1,000 units); custom tooling agreed per project specification.</p>
           </div>
 
           <div class="cnt-faq-card">
@@ -226,11 +226,11 @@
             <p class="cnt-cta-desc">Connect directly with our packaging engineers or call our global support desk.</p>
           </div>
           <div class="cnt-cta-buttons">
-            <a href="tel:+919876543210" class="frapak-btn-gold cnt-cta-call">
+            <a href="tel:+919810220761" class="tn-btn-gold cnt-cta-call">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              CALL +91 98765 43210
+              CALL +91 9810220761
             </a>
-            <button type="button" class="frapak-btn-outline cnt-cta-inquiry" onclick="window.openInquiry('Immediate Technical Assistance')">
+            <button type="button" class="tn-btn-outline cnt-cta-inquiry" onclick="window.openInquiry('Immediate Technical Assistance')">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               OPEN QUICK INQUIRY
             </button>

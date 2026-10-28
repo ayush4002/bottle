@@ -137,7 +137,7 @@ class MailService {
                   <div class='thank-card'>
                     <h2 style='font-size: 1.25rem; font-weight: 800; color: #16273f; margin: 0 0 6px;'>Thank you, {$customerName}!</h2>
                     <p style='margin: 0; color: #475569; font-size: 14px;'>
-                      We have successfully received your wholesale inquiry. Our engineering and procurement team is currently reviewing your requirements. A packaging specialist will follow up with technical drawings, quotation tiers, and sample dispatch details within <strong>4 to 24 business hours</strong>.
+                      We have successfully received your wholesale inquiry. Our engineering and procurement team is currently reviewing your requirements. A packaging specialist will follow up with technical drawings, quotation tiers, and sample dispatch details within <strong>1 business day</strong>.
                     </p>
                     <div class='ref-badge'>Inquiry Reference: {$quoteId}</div>
                   </div>
@@ -159,7 +159,7 @@ class MailService {
 
                   <div class='cta-block'>
                     <strong>Need immediate assistance or have CAD / 3D design files to attach?</strong><br>
-                    You can reply directly to this email (<a href='mailto:info@wetruenorthgroup.com' style='color: #16273f; font-weight: 700;'>info@wetruenorthgroup.com</a>) or contact our technical sales desk at <strong>+91 98765 43210</strong>.
+                    You can reply directly to this email (<a href='mailto:Info@wetruenorthgroup.com' style='color: #16273f; font-weight: 700;'>Info@wetruenorthgroup.com</a>) or contact our technical sales desk at <strong>+91 9810220761</strong>.
                   </div>
                 </div>
                 <div class='footer'>

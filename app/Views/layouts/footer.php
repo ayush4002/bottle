@@ -1,8 +1,8 @@
   <!-- =========================================================================
        FOOTER (Clean 4-Column Responsive Architecture)
        ========================================================================= -->
-  <footer class="frapak-footer">
-    <div class="frapak-container">
+  <footer class="tn-footer">
+    <div class="tn-container">
       
       <!-- Footer Brand Header (Logo & Description above accordions) -->
       <div class="footer-brand-header">
@@ -14,7 +14,7 @@
         </p>
       </div>
 
-      <div class="frapak-footer-grid">
+      <div class="tn-footer-grid">
         
         <!-- Section 1: Products -->
         <div class="footer-col" id="footer-col-products">
@@ -58,17 +58,17 @@
           <div class="footer-accordion-panel" id="footer-panel-company" role="region" aria-labelledby="footer-header-company">
             <p class="footer-address-block">
               <strong>TrueNorth Group</strong><br />
-              #201, Vardhaman Trade Towers, Rohit Kunj, Pitampura, Delhi-110034<br />
+              #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034<br />
               <span>Manufacturing: Daman, India • Closures: Ningbo, China</span>
             </p>
             <div class="footer-contact-block">
-              <a href="tel:+919876543210" class="footer-phone-link" style="color: var(--color-gold) !important; font-weight: 700;">
+              <a href="tel:+919810220761" class="footer-phone-link" style="color: var(--color-gold) !important; font-weight: 700;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +91 98765 43210
+                +91 9810220761
               </a>
-              <a href="mailto:info@wetruenorthgroup.com" class="footer-email-link">
+              <a href="mailto:Info@wetruenorthgroup.com" class="footer-email-link">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                info@wetruenorthgroup.com
+                Info@wetruenorthgroup.com
               </a>
             </div>
           </div>
@@ -85,7 +85,7 @@
           </button>
           <div class="footer-accordion-panel" id="footer-panel-mission" role="region" aria-labelledby="footer-header-mission">
             <p class="footer-mission-text">
-              TrueNorth Group is your ideal supplier and partner for premium quality primary packaging. As a hybrid packaging specialist, we seamlessly blend manufacturing and distribution to provide comprehensive packaging tailored to meet your specific needs.
+              TrueNorth Group is your premier partner and manufacturer of high-grade primary packaging. As an integrated packaging specialist, we seamlessly combine precision manufacturing and global supply chain expertise to deliver tailored bottles, jars, and closures.
             </p>
           </div>
         </div>
@@ -101,8 +101,8 @@
           </button>
           <div class="footer-accordion-panel" id="footer-panel-extra" role="region" aria-labelledby="footer-header-extra">
             <ul class="footer-link-list">
-              <li><a href="#custom" onclick="window.navigateToPage('custom')">Custom Mould Development</a></li>
-              <li><a href="#custom" onclick="window.navigateToPage('custom')">PCR Plastics & rPET Stock</a></li>
+              <li><a href="/custom">Custom Mould Development</a></li>
+              <li><a href="/sustainability">PCR Plastics &amp; rPET Stock</a></li>
             </ul>
           </div>
         </div>
@@ -110,11 +110,11 @@
       </div>
 
       <div class="footer-copyright-bar">
-        <span>© 1996 - 2026 TrueNorth Group. All Rights Reserved.</span>
+        <span>© 2000 - 2026 TrueNorth Group. Over 25 Years of Industry Excellence. All Rights Reserved.</span>
         <span class="footer-legal-links">
-          <a href="#" onclick="event.preventDefault(); window.openTermsModal()">General Terms &amp; Conditions</a>
+          <a href="/terms">General Terms &amp; Conditions</a>
           <span class="footer-legal-sep">|</span>
-          <a href="#" onclick="event.preventDefault(); window.openPrivacyModal()">Privacy Statement</a>
+          <a href="/privacy">Privacy Statement</a>
         </span>
       </div>
     </div>
@@ -125,7 +125,7 @@
     window.toggleMobileMenu = function() {
       const drawer = document.getElementById('mobile-nav-drawer');
       const backdrop = document.getElementById('mobile-nav-backdrop');
-      const btn = document.getElementById('frapak-mobile-menu-btn');
+      const btn = document.getElementById('tn-mobile-menu-btn');
       if (drawer && backdrop) {
         const isOpen = drawer.classList.contains('open') || drawer.classList.contains('active');
         if (isOpen) {
@@ -145,7 +145,7 @@
     window.closeMobileMenu = function() {
       const drawer = document.getElementById('mobile-nav-drawer');
       const backdrop = document.getElementById('mobile-nav-backdrop');
-      const btn = document.getElementById('frapak-mobile-menu-btn');
+      const btn = document.getElementById('tn-mobile-menu-btn');
       const mobilePopover = document.getElementById('mobile-search-popover');
       if (drawer) drawer.classList.remove('open', 'active');
       if (backdrop) backdrop.classList.remove('open', 'active');
@@ -167,15 +167,30 @@
       }
     });
 
-    // Footer Accordions on Mobile
-    function toggleFooterAccordion(colId) {
-      const col = document.getElementById(colId);
+    // Footer Accordions on Mobile (Bulletproof toggle supporting all mobile devices)
+    window.toggleFooterAccordion = function(colId) {
+      const col = typeof colId === 'string' ? document.getElementById(colId) : colId;
       if (!col) return;
       const headerBtn = col.querySelector('.footer-accordion-header');
       const panel = col.querySelector('.footer-accordion-panel');
-      const isExpanded = headerBtn ? headerBtn.getAttribute('aria-expanded') === 'true' : false;
-      if (headerBtn) headerBtn.setAttribute('aria-expanded', !isExpanded);
-      if (panel) panel.style.maxHeight = isExpanded ? null : panel.scrollHeight + 'px';
+      const isCurrentlyOpen = col.classList.contains('footer-col--open');
+      
+      if (isCurrentlyOpen) {
+        col.classList.remove('footer-col--open');
+        if (headerBtn) headerBtn.setAttribute('aria-expanded', 'false');
+        if (panel) {
+          panel.style.maxHeight = '';
+        }
+      } else {
+        col.classList.add('footer-col--open');
+        if (headerBtn) headerBtn.setAttribute('aria-expanded', 'true');
+        if (panel) {
+          panel.style.maxHeight = Math.max(panel.scrollHeight + 40, 800) + 'px';
+        }
+      }
+    };
+    function toggleFooterAccordion(colId) {
+      return window.toggleFooterAccordion(colId);
     }
 
     // Modal & Inquiry Controls
@@ -289,13 +304,203 @@
 
     // Populate country dropdowns everywhere
     const countryList = [
-      "United States", "United Kingdom", "Germany", "United Arab Emirates", 
-      "Saudi Arabia", "France", "Netherlands", "Australia", "Canada", 
-      "Singapore", "South Africa", "Malaysia", "India", "Italy", "Spain", 
-      "Switzerland", "Japan", "China", "Brazil", "Mexico", "Poland", 
-      "Belgium", "Sweden", "Austria", "Denmark", "Norway", "Ireland", 
-      "New Zealand", "Other Country"
-    ];
+      "United States",
+      "United Kingdom",
+      "Germany",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "France",
+      "Netherlands",
+      "Australia",
+      "Canada",
+      "Singapore",
+      "India",
+      "Afghanistan",
+      "Albania",
+      "Algeria",
+      "Andorra",
+      "Angola",
+      "Antigua and Barbuda",
+      "Argentina",
+      "Armenia",
+      "Austria",
+      "Azerbaijan",
+      "Bahamas",
+      "Bahrain",
+      "Bangladesh",
+      "Barbados",
+      "Belarus",
+      "Belgium",
+      "Belize",
+      "Benin",
+      "Bhutan",
+      "Bolivia",
+      "Bosnia and Herzegovina",
+      "Botswana",
+      "Brazil",
+      "Brunei",
+      "Bulgaria",
+      "Burkina Faso",
+      "Burundi",
+      "Cabo Verde",
+      "Cambodia",
+      "Cameroon",
+      "Central African Republic",
+      "Chad",
+      "Chile",
+      "China",
+      "Colombia",
+      "Comoros",
+      "Congo",
+      "Costa Rica",
+      "Croatia",
+      "Cuba",
+      "Cyprus",
+      "Czech Republic",
+      "Denmark",
+      "Djibouti",
+      "Dominica",
+      "Dominican Republic",
+      "Ecuador",
+      "Egypt",
+      "El Salvador",
+      "Equatorial Guinea",
+      "Eritrea",
+      "Estonia",
+      "Eswatini",
+      "Ethiopia",
+      "Fiji",
+      "Finland",
+      "Gabon",
+      "Gambia",
+      "Georgia",
+      "Ghana",
+      "Greece",
+      "Grenada",
+      "Guatemala",
+      "Guinea",
+      "Guinea-Bissau",
+      "Guyana",
+      "Haiti",
+      "Honduras",
+      "Hungary",
+      "Iceland",
+      "Indonesia",
+      "Iran",
+      "Iraq",
+      "Ireland",
+      "Israel",
+      "Italy",
+      "Ivory Coast",
+      "Jamaica",
+      "Japan",
+      "Jordan",
+      "Kazakhstan",
+      "Kenya",
+      "Kiribati",
+      "Kuwait",
+      "Kyrgyzstan",
+      "Laos",
+      "Latvia",
+      "Lebanon",
+      "Lesotho",
+      "Liberia",
+      "Libya",
+      "Liechtenstein",
+      "Lithuania",
+      "Luxembourg",
+      "Madagascar",
+      "Malawi",
+      "Malaysia",
+      "Maldives",
+      "Mali",
+      "Malta",
+      "Marshall Islands",
+      "Mauritania",
+      "Mauritius",
+      "Mexico",
+      "Micronesia",
+      "Moldova",
+      "Monaco",
+      "Mongolia",
+      "Montenegro",
+      "Morocco",
+      "Mozambique",
+      "Myanmar",
+      "Namibia",
+      "Nauru",
+      "Nepal",
+      "New Zealand",
+      "Nicaragua",
+      "Niger",
+      "Nigeria",
+      "North Korea",
+      "North Macedonia",
+      "Norway",
+      "Oman",
+      "Pakistan",
+      "Palau",
+      "Palestine",
+      "Panama",
+      "Papua New Guinea",
+      "Paraguay",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Qatar",
+      "Romania",
+      "Russia",
+      "Rwanda",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Samoa",
+      "San Marino",
+      "Sao Tome and Principe",
+      "Senegal",
+      "Serbia",
+      "Seychelles",
+      "Sierra Leone",
+      "Slovakia",
+      "Slovenia",
+      "Solomon Islands",
+      "Somalia",
+      "South Africa",
+      "South Korea",
+      "South Sudan",
+      "Spain",
+      "Sri Lanka",
+      "Sudan",
+      "Suriname",
+      "Sweden",
+      "Switzerland",
+      "Syria",
+      "Taiwan",
+      "Tajikistan",
+      "Tanzania",
+      "Thailand",
+      "Timor-Leste",
+      "Togo",
+      "Tonga",
+      "Trinidad and Tobago",
+      "Tunisia",
+      "Turkey",
+      "Turkmenistan",
+      "Tuvalu",
+      "Uganda",
+      "Ukraine",
+      "Uruguay",
+      "Uzbekistan",
+      "Vanuatu",
+      "Vatican City",
+      "Venezuela",
+      "Vietnam",
+      "Yemen",
+      "Zambia",
+      "Zimbabwe",
+      "Other Country"
+];
 
     window.initCountrySelects = function() {
       document.querySelectorAll('select.country-select, select[name="country"]').forEach(function(sel) {
@@ -334,11 +539,24 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         })
-        .then(function(r) { return r.json(); })
+        .then(function(r) { 
+          if (!r.ok) {
+            return r.json().then(function(errData) {
+              throw new Error(errData.message || ('Server error: ' + r.status));
+            }).catch(function() {
+              throw new Error('Server returned error status ' + r.status);
+            });
+          }
+          return r.json(); 
+        })
         .then(function(res) {
           if (btn) {
             btn.disabled = false;
             btn.innerHTML = origText;
+          }
+          if (!res || !res.success) {
+            alert(res && res.message ? res.message : 'We could not submit your inquiry at this moment. Please try again or email info@wetruenorthgroup.com.');
+            return;
           }
           if (isDrawer) {
             window.closeInquiry();
@@ -353,7 +571,7 @@
                 '<h3 style="font-size: 1.25rem; font-weight: 800; color: #16273f; margin-bottom: 8px;">Inquiry Received!</h3>' +
                 '<p style="color: #64748b; font-size: 0.95rem; margin-bottom: 16px; line-height: 1.5;">' + (res.message || 'Thank you! Our packaging specialists will contact you within 24 hours.') + '</p>' +
                 '<p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 22px;">Reference: <strong style="color: #b8892e;">' + (res.quoteId || ('INQ-' + Date.now().toString().slice(-6))) + '</strong></p>' +
-                '<button onclick="window.closeModal(\'success-modal\')" class="frapak-btn-gold" style="width: 100%; margin: 0; padding: 12px; font-weight: 700; border-radius: 6px;">CONTINUE BROWSING</button>' +
+                '<button onclick="window.closeModal(\'success-modal\')" class="tn-btn-gold" style="width: 100%; margin: 0; padding: 12px; font-weight: 700; border-radius: 6px;">CONTINUE BROWSING</button>' +
               '</div>';
             successModal.classList.add('open');
             successModal.style.display = 'flex';
@@ -367,11 +585,8 @@
             btn.disabled = false;
             btn.innerHTML = origText;
           }
-          if (isDrawer) {
-            window.closeInquiry();
-          }
-          alert('Your inquiry has been received. Our team will contact you shortly.');
-          formElement.reset();
+          // Do not reset form on error so user does not lose their typed message
+          alert('Submission error: ' + (err.message || 'Unable to connect to server') + '. Please try again or email info@wetruenorthgroup.com directly.');
         });
       });
     }

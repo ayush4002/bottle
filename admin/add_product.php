@@ -212,7 +212,7 @@ $csrfToken = $_SESSION['csrf_token'];
   <!-- HEADER BAR -->
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
     <div>
-      <a href="/admin/products.php" style="color: #38bdf8; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+      <a href="/admin/products" style="color: #38bdf8; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px;">
         &larr; Back to Catalogue Management
       </a>
       <h1 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: #f8fafc;">
@@ -232,7 +232,7 @@ $csrfToken = $_SESSION['csrf_token'];
     <div class="alert-danger"><?= htmlspecialchars($error) ?></div>
   <?php endif; ?>
 
-  <form id="smartProductForm" action="/admin/save_product.php" method="POST" enctype="multipart/form-data">
+  <form id="smartProductForm" action="/admin/save_product" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>" />
 
     <!-- 1. PRODUCT BASICS -->
@@ -295,7 +295,7 @@ $csrfToken = $_SESSION['csrf_token'];
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <label class="form-label">Material Polymer (Click to select)</label>
-          <a href="/admin/categories.php?tab=materials" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Materials &nearr;</a>
+          <a href="/admin/categories?tab=materials" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Materials &nearr;</a>
         </div>
         <input type="hidden" id="material" name="material" value="PET" />
         <div class="chip-group" id="material-chips">
@@ -314,7 +314,7 @@ $csrfToken = $_SESSION['csrf_token'];
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <label class="form-label">Volume / Capacity (Click to select)</label>
-          <a href="/admin/categories.php?tab=volumes" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Volumes &nearr;</a>
+          <a href="/admin/categories?tab=volumes" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Volumes &nearr;</a>
         </div>
         <input type="hidden" id="capacity" name="capacity" value="250ml" />
         <div class="chip-group" id="capacity-chips">
@@ -333,7 +333,7 @@ $csrfToken = $_SESSION['csrf_token'];
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <label class="form-label">Neck Finish / Thread Size</label>
-          <a href="/admin/categories.php?tab=necks" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Necks &nearr;</a>
+          <a href="/admin/categories?tab=necks" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Necks &nearr;</a>
         </div>
         <input type="hidden" id="neck" name="neck" value="24/410" />
         <div class="chip-group" id="neck-chips">
@@ -350,7 +350,7 @@ $csrfToken = $_SESSION['csrf_token'];
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <label class="form-label">Suitable Market Applications (Click all that apply)</label>
-          <a href="/admin/categories.php?tab=applications" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Applications &nearr;</a>
+          <a href="/admin/categories?tab=applications" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Applications &nearr;</a>
         </div>
         <div class="chip-group" id="application-chips">
           <?php foreach ($appsList as $idx => $app): ?>
@@ -365,7 +365,7 @@ $csrfToken = $_SESSION['csrf_token'];
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <label class="form-label">Key Features &amp; Compliance</label>
-          <a href="/admin/categories.php?tab=features" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Features &nearr;</a>
+          <a href="/admin/categories?tab=features" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Features &nearr;</a>
         </div>
         <div class="chip-group" id="features-chips">
           <?php foreach ($featsList as $idx => $feat): ?>

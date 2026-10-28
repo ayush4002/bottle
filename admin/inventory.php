@@ -86,11 +86,11 @@ if (empty($search)) {
 <?php endif; ?>
 
 <!-- Quick Search Form -->
-<form method="GET" action="/admin/inventory.php" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 14px 18px; display: flex; gap: 12px; margin-bottom: 24px; align-items: center; flex-wrap: wrap;">
+<form method="GET" action="/admin/inventory" style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 14px 18px; display: flex; gap: 12px; margin-bottom: 24px; align-items: center; flex-wrap: wrap;">
   <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search SKU or product name to quickly update..." style="flex: 1; min-width: 220px; background: #0f172a; border: 1px solid #475569; color: #fff; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem;" />
   <button type="submit" style="background: #0284c7; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer;">Filter</button>
   <?php if (!empty($search)): ?>
-    <a href="/admin/inventory.php" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Clear Search</a>
+    <a href="/admin/inventory" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Clear Search</a>
   <?php endif; ?>
   <span style="color: #94a3b8; font-size: 0.85rem; margin-left: auto;">Showing <?= min(100, count($products)) ?> of <?= count($products) ?> items</span>
 </form>
@@ -306,7 +306,7 @@ function saveInventoryQuick(skuId, prefix) {
   data.append('stock_qty', stockVal);
   data.append('ajax', '1');
 
-  fetch('/admin/inventory.php', {
+  fetch('/admin/inventory', {
     method: 'POST',
     body: data
   })

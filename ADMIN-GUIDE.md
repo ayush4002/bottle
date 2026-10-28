@@ -21,7 +21,8 @@ Welcome to the **TrueNorth Group Enterprise CMS Dashboard**. This manual provide
 
 1. Open your web browser and navigate to:
    ```text
-   https://yourdomain.com/admin/login.php
+   https://yourdomain.com/admin/login
+   (or short URL: https://yourdomain.com/login)
    ```
 2. Enter your administrator credentials:
    - **Default Username**: `admin`

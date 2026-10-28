@@ -7,7 +7,7 @@ require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 
 $id = trim($_REQUEST['id'] ?? '');
 $action = trim($_REQUEST['action'] ?? 'archive');
-$returnUrl = trim($_REQUEST['return_url'] ?? ($_SERVER['HTTP_REFERER'] ?? '/admin/products.php'));
+$returnUrl = trim($_REQUEST['return_url'] ?? ($_SERVER['HTTP_REFERER'] ?? '/admin/products'));
 $isAjax = !empty($_REQUEST['ajax']) || (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
 
 if (empty($id)) {
@@ -16,7 +16,7 @@ if (empty($id)) {
         echo json_encode(['success' => false, 'message' => 'No product ID specified.']);
         exit();
     }
-    header("Location: /admin/products.php?err=" . urlencode("No product ID specified."));
+    header("Location: /admin/products?err=" . urlencode("No product ID specified."));
     exit();
 }
 
@@ -48,14 +48,15 @@ if ($isAjax) {
 // Redirect back preserving current filters/page
 // Clean out any old msg or err from returnUrl to avoid duplicate query params
 $parsedUrl = parse_url($returnUrl);
-$path = $parsedUrl['path'] ?? '/admin/products.php';
+$rawPath = $parsedUrl['path'] ?? '/admin/products';
+$path = preg_replace('/\.php$/i', '', $rawPath);
 $queryParams = [];
 if (!empty($parsedUrl['query'])) {
     parse_str($parsedUrl['query'], $queryParams);
 }
 unset($queryParams['msg'], $queryParams['err']);
 $queryParams['msg'] = $msg;
-$finalRedirect = $path . '?' . http_build_query($queryParams);
+$finalRedirect = $path . (!empty($queryParams) ? '?' . http_build_query($queryParams) : '');
 
 header("Location: " . $finalRedirect);
 exit();

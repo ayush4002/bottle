@@ -10,23 +10,17 @@ Allow: /about
 Allow: /contact
 Allow: /custom
 Allow: /sustainability
+Allow: /terms
+Allow: /privacy
 Allow: /product?
 Allow: /product/
 Allow: /brand_assets/
 Allow: /public/
-Allow: /vikaas_inputs/
-Allow: /favicon.svg
-Allow: /logo_svg.svg
-Allow: /styles.css
-
-# Disallow private administration, configuration, and API routes
-Disallow: /admin/
+# Disallow private configuration and API routes
 Disallow: /config/
 Disallow: /api/
 Disallow: /*.json$
 Disallow: /*.sql$
-Disallow: /diag.php
-Disallow: /test_server.php
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

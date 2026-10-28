@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_email'] = $userEmail;
             $_SESSION['last_activity'] = time();
 
-            header("Location: /admin/index.php");
+            header("Location: /admin");
             exit();
         } else {
             recordFailedLoginAttempt();
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isAdminLoggedIn()) {
-    header("Location: /admin/index.php");
+    header("Location: /admin");
     exit();
 }
 
@@ -224,7 +224,7 @@ $token = generateCsrfToken();
       <div class="alert-danger"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
 
-    <form method="POST" action="login.php">
+    <form method="POST" action="/admin/login">
       <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>" />
 
       <div class="form-group">

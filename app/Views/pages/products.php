@@ -73,32 +73,32 @@ if ($searchQuery) {
     
     <!-- Hero Banner -->
     <div class="products-page-title-banner about-hero-banner" style="padding: 40px 0;">
-      <div class="frapak-container">
+      <div class="tn-container">
         <div class="about-hero-badge">TRUENORTH PRODUCTS</div>
         <h1 class="about-hero-title">Products of TrueNorth Group</h1>
         <p class="about-hero-subtitle">Primary Packaging Solutions</p>
       </div>
     </div>
 
-    <section class="frapak-section" style="padding: 36px 0;">
-      <div class="frapak-container">
+    <section class="tn-section" style="padding: 36px 0;">
+      <div class="tn-container">
         
         <!-- Search & Quick Navigation Bar -->
         <div style="max-width: 680px; margin: 0 auto 36px;">
           <form action="/products" method="GET" style="display: flex; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #cbd5e1; padding: 4px;">
-            <input type="text" name="q" placeholder="Search 290+ bottles, jars, pumps, caps, sprays by name or size..." style="flex: 1; border: none; padding: 12px 16px; font-size: 0.95rem; outline: none;" />
-            <button type="submit" class="frapak-btn-gold" style="margin: 0; padding: 12px 24px; border-radius: 6px; font-weight: 700;">
+            <input type="text" name="q" placeholder="Search 290+ products..." style="flex: 1; border: none; padding: 12px 16px; font-size: 0.95rem; outline: none;" />
+            <button type="submit" class="tn-btn-gold" style="margin: 0; padding: 12px 24px; border-radius: 6px; font-weight: 700;">
               SEARCH
             </button>
           </form>
         </div>
 
         <!-- Industry Markets Section -->
-        <div class="frapak-section-title-wrap" style="text-align: center; margin-bottom: 24px;">
+        <div class="tn-section-title-wrap" style="text-align: center; margin-bottom: 24px;">
           <div style="display: inline-block; font-size: 0.75rem; font-weight: 800; color: #b8892e; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; background: rgba(184, 137, 46, 0.08); padding: 4px 12px; border-radius: 4px;">
             TARGET SECTOR SELECTION
           </div>
-          <h2 class="frapak-section-title" style="font-size: 1.65rem; font-weight: 800; color: var(--color-navy); margin-bottom: 8px;">
+          <h2 class="tn-section-title" style="font-size: 1.65rem; font-weight: 800; color: var(--color-navy); margin-bottom: 8px;">
             Packaging by Industry & Market
           </h2>
           <p style="color: #64748B; font-size: 0.92rem; max-width: 750px; margin: 0 auto; line-height: 1.5;">
@@ -106,24 +106,24 @@ if ($searchQuery) {
           </p>
         </div>
 
-        <div class="frapak-markets-grid" style="margin-bottom: 48px;">
+        <div class="tn-markets-grid" style="margin-bottom: 48px;">
           <?php foreach ($allIndustries as $indSlug => $ind): ?>
-            <a href="/products?industry=<?= urlencode($indSlug) ?>" class="frapak-market-tile" style="text-decoration: none;">
-              <div class="frapak-market-img">
+            <a href="/products?industry=<?= urlencode($indSlug) ?>" class="tn-market-tile" style="text-decoration: none;">
+              <div class="tn-market-img">
                 <img src="<?= htmlspecialchars($ind['image']) ?>" alt="<?= htmlspecialchars($ind['name']) ?>" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
               </div>
-              <div class="frapak-tile-bar">
+              <div class="tn-tile-bar">
                 <span><?= htmlspecialchars($ind['name']) ?></span>
               </div>
             </a>
           <?php endforeach; ?>
         </div>
 
-        <div class="frapak-section-title-wrap" style="text-align: center; margin-bottom: 32px;">
+        <div class="tn-section-title-wrap" style="text-align: center; margin-bottom: 32px;">
           <div style="display: inline-block; font-size: 0.75rem; font-weight: 800; color: var(--color-navy); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; background: #e2e8f0; padding: 4px 12px; border-radius: 4px;">
             COMPONENT CATALOGUE
           </div>
-          <h2 class="frapak-section-title" style="font-size: 1.8rem; font-weight: 800; color: var(--color-navy); margin-bottom: 8px;">
+          <h2 class="tn-section-title" style="font-size: 1.8rem; font-weight: 800; color: var(--color-navy); margin-bottom: 8px;">
             Packaging Categories
           </h2>
           <p style="color: #64748B; font-size: 0.95rem; max-width: 750px; margin: 0 auto; line-height: 1.5;">
@@ -131,13 +131,13 @@ if ($searchQuery) {
           </p>
         </div>
 
-        <div class="frapak-level1-grid">
+        <div class="tn-level1-grid">
           <?php foreach ($allCategories as $cat): ?>
-            <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="frapak-tile-card" style="text-decoration: none;">
-              <div class="frapak-tile-image">
+            <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="tn-tile-card" style="text-decoration: none;">
+              <div class="tn-tile-image">
                 <img src="<?= htmlspecialchars($cat['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($cat['name']) ?>" loading="lazy" />
               </div>
-              <div class="frapak-tile-bar"><?= htmlspecialchars($cat['name']) ?></div>
+              <div class="tn-tile-bar"><?= htmlspecialchars($cat['name']) ?></div>
             </a>
           <?php endforeach; ?>
         </div>
@@ -161,33 +161,33 @@ if ($searchQuery) {
 
     <!-- Category Banner -->
     <div class="products-page-title-banner about-hero-banner" style="padding: 40px 0;">
-      <div class="frapak-container">
+      <div class="tn-container">
         <div class="about-hero-badge">TRUENORTH PRODUCTS</div>
         <h1 class="about-hero-title"><?= htmlspecialchars($categoryInfo['name'] ?? 'Category') ?></h1>
         <p class="about-hero-subtitle">Premium Primary Packaging Solutions</p>
       </div>
     </div>
 
-    <section class="frapak-section" style="padding: 32px 0;">
-      <div class="frapak-container">
+    <section class="tn-section" style="padding: 32px 0;">
+      <div class="tn-container">
         
         <!-- Breadcrumbs & Back -->
-        <div class="frapak-breadcrumbs">
+        <div class="tn-breadcrumbs">
           <a href="/products">Products</a>
           <span class="separator">&gt;</span>
           <span class="current"><?= htmlspecialchars($categoryInfo['name'] ?? 'Category') ?></span>
         </div>
 
-        <a href="/products" class="frapak-back-btn">&larr; Back to Categories</a>
+        <a href="/products" class="tn-back-btn">&larr; Back to Categories</a>
 
-        <div class="frapak-catalogue-layout">
+        <div class="tn-catalogue-layout">
           
           <!-- Left Sidebar Column -->
-          <div class="frapak-sidebar-column">
-            <aside class="frapak-filter-sidebar">
+          <div class="tn-sidebar-column">
+            <aside class="tn-filter-sidebar">
               
               <!-- Quick Keyword Filter -->
-              <div class="frapak-filter-group" style="padding: 12px 14px;">
+              <div class="tn-filter-group" style="padding: 12px 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                   <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy); margin: 0;">Filter Series</label>
                   <button type="button" onclick="window.resetCatalogueFilters()" style="background: none; border: none; color: #b8892e; font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0;">Reset</button>
@@ -197,13 +197,13 @@ if ($searchQuery) {
 
               <!-- Material Filter -->
               <?php if (!empty($seriesMaterials)): ?>
-                <div class="frapak-filter-group">
-                  <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+                <div class="tn-filter-group">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                     Material <span class="toggle-icon">&#9662;</span>
                   </div>
-                  <div class="frapak-filter-list">
+                  <div class="tn-filter-list">
                     <?php foreach ($seriesMaterials as $mat => $cnt): ?>
-                      <label class="frapak-filter-item">
+                      <label class="tn-filter-item">
                         <input type="checkbox" name="filter-material" value="<?= htmlspecialchars($mat) ?>" onchange="window.filterCatalogueItems()">
                         <?= htmlspecialchars($mat) ?> (<?= $cnt ?>)
                       </label>
@@ -214,7 +214,7 @@ if ($searchQuery) {
 
               <!-- Action Button -->
               <div style="margin-top: 10px;">
-                <button type="button" onclick="window.resetCatalogueFilters()" class="frapak-btn-outline" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
+                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-outline" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
                   Clear Active Filters
                 </button>
               </div>
@@ -223,7 +223,7 @@ if ($searchQuery) {
           </div>
 
           <!-- Main Series Grid -->
-          <div class="frapak-products-main-column">
+          <div class="tn-products-main-column">
             <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
               <h2 style="font-size: 1.55rem; font-weight: 800; color: var(--color-navy); margin: 0;">
                 <?= htmlspecialchars($categoryInfo['name'] ?? 'Category') ?>
@@ -233,18 +233,18 @@ if ($searchQuery) {
               </span>
             </div>
 
-            <div class="frapak-series-grid" id="catalogue-items-grid">
+            <div class="tn-series-grid" id="catalogue-items-grid">
               <?php foreach ($seriesList as $s): ?>
                 <a href="/products?category=<?= urlencode($selectedCategory) ?>&series=<?= urlencode($s['slug']) ?>" 
-                   class="frapak-tile-card filterable-item"
+                   class="tn-tile-card filterable-item"
                    data-name="<?= strtolower(htmlspecialchars($s['name'] ?? '')) ?>"
                    data-material="<?= strtoupper(htmlspecialchars($s['material'] ?? 'PET')) ?>"
                    data-volume="<?= htmlspecialchars($s['volumeRange'] ?? '') ?>"
                    style="text-decoration: none;">
-                  <div class="frapak-tile-image">
+                  <div class="tn-tile-image">
                     <img src="<?= htmlspecialchars($s['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($s['name']) ?>" loading="lazy" />
                   </div>
-                  <div class="frapak-tile-bar"><?= htmlspecialchars($s['name']) ?></div>
+                  <div class="tn-tile-bar"><?= htmlspecialchars($s['name']) ?></div>
                 </a>
               <?php endforeach; ?>
             </div>
@@ -253,7 +253,7 @@ if ($searchQuery) {
             <div id="no-filter-results" style="display: none; text-align: center; padding: 40px 20px; background: #fff; border-radius: 8px; border: 1px dashed #cbd5e1; margin-top: 16px;">
               <h3 style="font-size: 1.1rem; color: #16273f; margin-bottom: 6px;">No packaging series match your filters</h3>
               <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 16px;">Try adjusting your keyword or clearing checked options.</p>
-              <button type="button" onclick="window.resetCatalogueFilters()" class="frapak-btn-gold" style="margin: 0; padding: 8px 18px; font-size: 0.85rem;">Reset Filters</button>
+              <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-gold" style="margin: 0; padding: 8px 18px; font-size: 0.85rem;">Reset Filters</button>
             </div>
 
           </div>
@@ -285,6 +285,7 @@ if ($searchQuery) {
       $skuCapacities = [];
       $skuNecks = [];
       $skuShapes = [];
+      $skuColors = [];
 
       foreach ($skusList as $sku) {
           // Industry mapping
@@ -314,9 +315,10 @@ if ($searchQuery) {
               $skuMaterials[$mat] = ($skuMaterials[$mat] ?? 0) + 1;
           }
 
-          // Capacity / Volume
+          // Capacity / Volume (normalized with standard spacing: e.g. "30 ml")
           $cap = trim($sku['specs']['capacity'] ?? $sku['volume'] ?? '');
           if ($cap && strcasecmp($cap, 'N/A') !== 0) {
+              $cap = preg_replace('/^(\d+(?:\.\d+)?)\s*(ml|cc|gm|g|l)$/i', '$1 $2', $cap);
               $skuCapacities[$cap] = ($skuCapacities[$cap] ?? 0) + 1;
           }
 
@@ -337,15 +339,24 @@ if ($searchQuery) {
               }
           }
 
-          // Shape / Profile
+          // Shape / Profile (Includes Standard)
           $shp = trim($sku['specs']['shape'] ?? $sku['shape'] ?? '');
-          if ($shp && strcasecmp($shp, 'Standard') !== 0) {
+          if ($shp) {
               $skuShapes[$shp] = ($skuShapes[$shp] ?? 0) + 1;
+          }
+
+          // Color / Coating
+          $col = trim($sku['specs']['color'] ?? $sku['color'] ?? '');
+          if ($col) {
+              $skuColors[$col] = ($skuColors[$col] ?? 0) + 1;
           }
       }
 
       // Sort series alphabetically
       ksort($skuSeries);
+
+      // Sort colors by count
+      arsort($skuColors);
 
       // Sort materials by count
       arsort($skuMaterials);
@@ -376,7 +387,7 @@ if ($searchQuery) {
 
     <!-- Page Title / Banner -->
     <div class="products-page-title-banner about-hero-banner" style="padding: 40px 0;">
-      <div class="frapak-container">
+      <div class="tn-container">
         <div class="about-hero-badge"><?= $currentLevel === 'search' ? 'SEARCH RESULTS' : ($currentLevel === 'industry' ? 'INDUSTRY SELECTION' : 'TRUENORTH PRODUCTS') ?></div>
         <h1 class="about-hero-title"><?= htmlspecialchars($viewTitle) ?></h1>
         <p class="about-hero-subtitle">
@@ -394,11 +405,11 @@ if ($searchQuery) {
       </div>
     </div>
 
-    <section class="frapak-section" style="padding: 32px 0;">
-      <div class="frapak-container">
+    <section class="tn-section" style="padding: 32px 0;">
+      <div class="tn-container">
         
         <!-- Breadcrumbs & Back -->
-        <div class="frapak-breadcrumbs">
+        <div class="tn-breadcrumbs">
           <a href="/products">Products</a>
           <?php if (!empty($categoryInfo)): ?>
             <span class="separator">&gt;</span>
@@ -428,7 +439,7 @@ if ($searchQuery) {
           }
         ?>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-          <a href="<?= $backUrl ?>" class="frapak-back-btn" style="margin: 0;">&larr; <?= $backLabel ?></a>
+          <a href="<?= $backUrl ?>" class="tn-back-btn" style="margin: 0;">&larr; <?= $backLabel ?></a>
           
           <?php if ($currentLevel === 'search' || $currentLevel === 'industry'): ?>
             <a href="/products" style="color: #b8892e; font-weight: 700; text-decoration: none; font-size: 0.85rem;">Clear Active View &times;</a>
@@ -436,32 +447,32 @@ if ($searchQuery) {
         </div>
 
         <!-- Mobile Filter Bar Trigger (Shown only on Mobile/Tablet) -->
-        <div class="frapak-mobile-filter-bar">
-          <button type="button" class="frapak-mobile-filter-btn" onclick="window.toggleMobileFilters()">
+        <div class="tn-mobile-filter-bar">
+          <button type="button" class="tn-mobile-filter-btn" onclick="window.toggleMobileFilters()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
             <span>Filters</span>
-            <span class="frapak-filter-count-badge" id="mobile-filter-badge" style="display: none;">0</span>
+            <span class="tn-filter-count-badge" id="mobile-filter-badge" style="display: none;">0</span>
           </button>
-          <span class="frapak-mobile-results-count" id="mobile-products-count"><?= count($skus ?? []) ?> items</span>
+          <span class="tn-mobile-results-count" id="mobile-products-count"><?= !empty($skusList) ? count($skusList) : (!empty($skus) ? count($skus) : 0) ?> items</span>
         </div>
 
-        <div class="frapak-catalogue-layout">
+        <div class="tn-catalogue-layout">
           
           <!-- Left Sidebar Column (Stretches full height of products grid) -->
-          <div class="frapak-sidebar-column">
+          <div class="tn-sidebar-column">
             <!-- =================================================================
                  SMART FLOATING SIDEBAR FILTERS (Sticky as product grid scrolls)
                  ================================================================= -->
-            <aside class="frapak-filter-sidebar" id="catalogue-smart-sidebar">
+            <aside class="tn-filter-sidebar" id="catalogue-smart-sidebar">
               
               <!-- Mobile Drawer Header -->
-              <div class="frapak-filter-mobile-header">
+              <div class="tn-filter-mobile-header">
                 <span>Filter Packaging</span>
-                <button type="button" class="frapak-filter-close-btn" onclick="window.closeMobileFilters()" aria-label="Close filters">&times;</button>
+                <button type="button" class="tn-filter-close-btn" onclick="window.closeMobileFilters()" aria-label="Close filters">&times;</button>
               </div>
               
               <!-- 1. Quick Keyword Filter -->
-              <div class="frapak-filter-group" style="padding: 12px 14px;">
+              <div class="tn-filter-group" style="padding: 12px 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                   <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy); margin: 0;">Quick Search</label>
                   <button type="button" onclick="window.resetCatalogueFilters()" style="background: none; border: none; color: #b8892e; font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0;">Reset</button>
@@ -470,18 +481,18 @@ if ($searchQuery) {
               </div>
 
               <!-- 2. Industry / Market Filter -->
-              <div class="frapak-filter-group" data-filter-group="industry">
-                <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+              <div class="tn-filter-group" data-filter-group="industry">
+                <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                   Industry / Market <span class="toggle-icon">&#9662;</span>
                 </div>
-                <div class="frapak-filter-list">
+                <div class="tn-filter-list">
                   <?php foreach ($allIndustriesMap as $indSlug => $indData): ?>
                     <?php 
                       $cnt = $skuIndustries[$indSlug] ?? 0;
                       $isChecked = ($selectedIndustry === $indSlug);
                     ?>
-                    <label class="frapak-filter-item <?= ($cnt === 0 && !$isChecked) ? 'is-disabled' : '' ?>" data-facet-group="industry" data-facet-val="<?= htmlspecialchars($indSlug) ?>">
-                      <span class="frapak-filter-item-left">
+                    <label class="tn-filter-item <?= ($cnt === 0 && !$isChecked) ? 'is-disabled' : '' ?>" data-facet-group="industry" data-facet-val="<?= htmlspecialchars($indSlug) ?>">
+                      <span class="tn-filter-item-left">
                         <input type="checkbox" name="filter-industry" value="<?= htmlspecialchars($indSlug) ?>" <?= $isChecked ? 'checked' : '' ?> onchange="window.filterCatalogueItems()">
                         <span class="filter-label-text"><?= htmlspecialchars($indData['name']) ?></span>
                       </span>
@@ -493,14 +504,14 @@ if ($searchQuery) {
 
               <!-- 3. Category Filter (for Search & Multi-category views) -->
               <?php if (count($skuCategories) > 1): ?>
-                <div class="frapak-filter-group" data-filter-group="category">
-                  <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+                <div class="tn-filter-group" data-filter-group="category">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                     Packaging Category <span class="toggle-icon">&#9662;</span>
                   </div>
-                  <div class="frapak-filter-list">
+                  <div class="tn-filter-list">
                     <?php foreach ($skuCategories as $cSlug => $cData): ?>
-                      <label class="frapak-filter-item" data-facet-group="category" data-facet-val="<?= htmlspecialchars($cSlug) ?>">
-                        <span class="frapak-filter-item-left">
+                      <label class="tn-filter-item" data-facet-group="category" data-facet-val="<?= htmlspecialchars($cSlug) ?>">
+                        <span class="tn-filter-item-left">
                           <input type="checkbox" name="filter-category" value="<?= htmlspecialchars($cSlug) ?>" onchange="window.filterCatalogueItems()">
                           <span class="filter-label-text"><?= htmlspecialchars($cData['name']) ?></span>
                         </span>
@@ -513,14 +524,14 @@ if ($searchQuery) {
 
               <!-- 3. Size Filter -->
               <?php if (!empty($skuCapacities) && count($skuCapacities) > 1): ?>
-                <div class="frapak-filter-group" data-filter-group="volume">
-                  <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+                <div class="tn-filter-group" data-filter-group="volume">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                     Size <span class="toggle-icon">&#9662;</span>
                   </div>
-                  <div class="frapak-filter-list">
+                  <div class="tn-filter-list">
                     <?php foreach ($skuCapacities as $cap => $cnt): ?>
-                      <label class="frapak-filter-item" data-facet-group="volume" data-facet-val="<?= htmlspecialchars(strtolower($cap)) ?>">
-                        <span class="frapak-filter-item-left">
+                      <label class="tn-filter-item" data-facet-group="volume" data-facet-val="<?= htmlspecialchars(strtolower($cap)) ?>">
+                        <span class="tn-filter-item-left">
                           <input type="checkbox" name="filter-volume" value="<?= htmlspecialchars($cap) ?>" onchange="window.filterCatalogueItems()">
                           <span class="filter-label-text"><?= htmlspecialchars($cap) ?></span>
                         </span>
@@ -533,14 +544,14 @@ if ($searchQuery) {
 
               <!-- 5. Neck Finish Filter -->
               <?php if (!empty($skuNecks) && count($skuNecks) > 1): ?>
-                <div class="frapak-filter-group" data-filter-group="neck">
-                  <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+                <div class="tn-filter-group" data-filter-group="neck">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                     Neck Finish <span class="toggle-icon">&#9662;</span>
                   </div>
-                  <div class="frapak-filter-list">
+                  <div class="tn-filter-list">
                     <?php foreach ($skuNecks as $n => $cnt): ?>
-                      <label class="frapak-filter-item" data-facet-group="neck" data-facet-val="<?= htmlspecialchars(strtolower($n)) ?>">
-                        <span class="frapak-filter-item-left">
+                      <label class="tn-filter-item" data-facet-group="neck" data-facet-val="<?= htmlspecialchars(strtolower($n)) ?>">
+                        <span class="tn-filter-item-left">
                           <input type="checkbox" name="filter-neck" value="<?= htmlspecialchars($n) ?>" onchange="window.filterCatalogueItems()">
                           <span class="filter-label-text"><?= htmlspecialchars($n) ?></span>
                         </span>
@@ -553,14 +564,14 @@ if ($searchQuery) {
 
               <!-- 6. Material Filter -->
               <?php if (!empty($skuMaterials) && count($skuMaterials) > 1): ?>
-                <div class="frapak-filter-group" data-filter-group="material">
-                  <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+                <div class="tn-filter-group" data-filter-group="material">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                     Material <span class="toggle-icon">&#9662;</span>
                   </div>
-                  <div class="frapak-filter-list">
+                  <div class="tn-filter-list">
                     <?php foreach ($skuMaterials as $mat => $cnt): ?>
-                      <label class="frapak-filter-item" data-facet-group="material" data-facet-val="<?= htmlspecialchars(strtoupper($mat)) ?>">
-                        <span class="frapak-filter-item-left">
+                      <label class="tn-filter-item" data-facet-group="material" data-facet-val="<?= htmlspecialchars(strtoupper($mat)) ?>">
+                        <span class="tn-filter-item-left">
                           <input type="checkbox" name="filter-material" value="<?= htmlspecialchars($mat) ?>" onchange="window.filterCatalogueItems()">
                           <span class="filter-label-text"><?= htmlspecialchars($mat) ?></span>
                         </span>
@@ -573,14 +584,14 @@ if ($searchQuery) {
 
               <!-- 7. Shape Filter (if > 1 distinct shape) -->
               <?php if (!empty($skuShapes) && count($skuShapes) > 1): ?>
-                <div class="frapak-filter-group" data-filter-group="shape">
-                  <div class="frapak-filter-header" onclick="window.toggleFilterAccordion(this)">
+                <div class="tn-filter-group" data-filter-group="shape">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
                     Bottle Shape <span class="toggle-icon">&#9662;</span>
                   </div>
-                  <div class="frapak-filter-list">
+                  <div class="tn-filter-list">
                     <?php foreach ($skuShapes as $shp => $cnt): ?>
-                      <label class="frapak-filter-item" data-facet-group="shape" data-facet-val="<?= htmlspecialchars(strtolower($shp)) ?>">
-                        <span class="frapak-filter-item-left">
+                      <label class="tn-filter-item" data-facet-group="shape" data-facet-val="<?= htmlspecialchars(strtolower($shp)) ?>">
+                        <span class="tn-filter-item-left">
                           <input type="checkbox" name="filter-shape" value="<?= htmlspecialchars($shp) ?>" onchange="window.filterCatalogueItems()">
                           <span class="filter-label-text"><?= htmlspecialchars($shp) ?></span>
                         </span>
@@ -591,9 +602,29 @@ if ($searchQuery) {
                 </div>
               <?php endif; ?>
 
+              <!-- 8. Color Filter (Agro, Jars, Pharma) -->
+              <?php if (!empty($skuColors)): ?>
+                <div class="tn-filter-group" data-filter-group="color">
+                  <div class="tn-filter-header" onclick="window.toggleFilterAccordion(this)">
+                    Color <span class="toggle-icon">&#9662;</span>
+                  </div>
+                  <div class="tn-filter-list">
+                    <?php foreach ($skuColors as $col => $cnt): ?>
+                      <label class="tn-filter-item" data-facet-group="color" data-facet-val="<?= htmlspecialchars(strtolower($col)) ?>">
+                        <span class="tn-filter-item-left">
+                          <input type="checkbox" name="filter-color" value="<?= htmlspecialchars($col) ?>" onchange="window.filterCatalogueItems()">
+                          <span class="filter-label-text"><?= htmlspecialchars($col) ?></span>
+                        </span>
+                        <span class="facet-count">(<?= $cnt ?>)</span>
+                      </label>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              <?php endif; ?>
+
               <!-- Reset All Action Button -->
               <div style="margin-top: 6px;">
-                <button type="button" onclick="window.resetCatalogueFilters()" class="frapak-btn-outline" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
+                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-outline" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
                   Clear Active Filters
                 </button>
               </div>
@@ -604,7 +635,7 @@ if ($searchQuery) {
           <!-- =================================================================
                MAIN PRODUCTS GRID & ACTIVE FILTER CHIPS (Stretches Full Height)
                ================================================================= -->
-          <div class="frapak-products-main-column">
+          <div class="tn-products-main-column">
             
             <!-- Title Bar & Live Counter -->
             <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
@@ -617,7 +648,7 @@ if ($searchQuery) {
             </div>
 
             <!-- Active Filters Chips Bar (Dynamic badges with 1-click 'x') -->
-            <div id="active-filters-bar" class="frapak-active-filters-bar" style="display: none;">
+            <div id="active-filters-bar" class="tn-active-filters-bar" style="display: none;">
               <span class="active-filters-label">Active:</span>
               <div id="active-filters-chips" class="active-filters-chips"></div>
               <button type="button" class="clear-all-filters-btn" onclick="window.resetCatalogueFilters()">Clear all</button>
@@ -629,7 +660,7 @@ if ($searchQuery) {
                 <a href="/products" style="color: var(--color-gold); font-weight: 700; text-decoration: none;">View All Catalogue Categories &rarr;</a>
               </div>
             <?php else: ?>
-              <div class="frapak-skus-grid" id="catalogue-items-grid">
+              <div class="tn-skus-grid" id="catalogue-items-grid">
                 <?php foreach ($skusList as $sku): ?>
                   <?php 
                     $skuId = $sku['id'] ?? $sku['articleNo'] ?? 1;
@@ -643,7 +674,7 @@ if ($searchQuery) {
                     $artNo = trim($sku['articleNo'] ?? $sku['code'] ?? 'TN-001');
                   ?>
                   <a href="/product?id=<?= urlencode($skuId) ?>" 
-                     class="frapak-sku-card filterable-item"
+                     class="tn-sku-card filterable-item"
                      data-name="<?= strtolower(htmlspecialchars($sku['name'] ?? '')) ?>"
                      data-code="<?= strtolower(htmlspecialchars($artNo)) ?>"
                      data-category="<?= htmlspecialchars($catSlug) ?>"
@@ -652,38 +683,39 @@ if ($searchQuery) {
                      data-volume="<?= strtolower(htmlspecialchars($volumeVal)) ?>"
                      data-neck="<?= strtolower(htmlspecialchars($neckVal)) ?>"
                      data-shape="<?= strtolower(htmlspecialchars($shapeVal)) ?>"
+                     data-color="<?= strtolower(htmlspecialchars($colorVal)) ?>"
                      data-industries="<?= htmlspecialchars(implode(',', $sku['industries'] ?? [])) ?>"
                      style="text-decoration: none;">
                     
-                    <div class="frapak-sku-img">
+                    <div class="tn-sku-img">
                       <img src="<?= htmlspecialchars($sku['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($sku['name'] ?? '') ?>" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
                     </div>
-                    <div class="frapak-sku-bar"><?= htmlspecialchars($sku['name'] ?? 'Product SKU') ?></div>
+                    <div class="tn-sku-bar"><?= htmlspecialchars($sku['name'] ?? 'Product SKU') ?></div>
 
-                    <div class="frapak-sku-specs-table">
-                      <div class="frapak-sku-spec-row">
-                        <span class="frapak-sku-spec-icon">
+                    <div class="tn-sku-specs-table">
+                      <div class="tn-sku-spec-row">
+                        <span class="tn-sku-spec-icon">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5v14M8 5v14M12 5v14M17 5v14M21 5v14"/></svg>
                         </span>
-                        <span class="frapak-sku-spec-val"><?= htmlspecialchars($artNo) ?></span>
+                        <span class="tn-sku-spec-val"><?= htmlspecialchars($artNo) ?></span>
                       </div>
-                      <div class="frapak-sku-spec-row">
-                        <span class="frapak-sku-spec-icon">
+                      <div class="tn-sku-spec-row">
+                        <span class="tn-sku-spec-icon">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5M11 19h8.2a1.8 1.8 0 0 0 1.583-.935 1.777 1.777 0 0 0-.015-1.778L16.8 9.5M12 5l3.89 6H8.11L12 5z"/></svg>
                         </span>
-                        <span class="frapak-sku-spec-val"><?= htmlspecialchars($materialVal) ?></span>
+                        <span class="tn-sku-spec-val"><?= htmlspecialchars($materialVal) ?></span>
                       </div>
-                      <div class="frapak-sku-spec-row">
-                        <span class="frapak-sku-spec-icon">
+                      <div class="tn-sku-spec-row">
+                        <span class="tn-sku-spec-icon">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6v3H9zM10 6v3a4 4 0 0 1-2 3.46V20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7.54A4 4 0 0 1 14 9V6"/></svg>
                         </span>
-                        <span class="frapak-sku-spec-val"><?= htmlspecialchars($volumeVal ?: $shapeVal) ?></span>
+                        <span class="tn-sku-spec-val"><?= htmlspecialchars($volumeVal ?: $shapeVal) ?></span>
                       </div>
-                      <div class="frapak-sku-spec-row">
-                        <span class="frapak-sku-spec-icon">
+                      <div class="tn-sku-spec-row">
+                        <span class="tn-sku-spec-icon">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
                         </span>
-                        <span class="frapak-sku-spec-val"><?= htmlspecialchars($neckVal ?: $colorVal) ?></span>
+                        <span class="tn-sku-spec-val"><?= htmlspecialchars($neckVal ?: $colorVal) ?></span>
                       </div>
                     </div>
                   </a>
@@ -694,7 +726,7 @@ if ($searchQuery) {
               <div id="no-filter-results" style="display: none; text-align: center; padding: 48px 24px; background: #fff; border-radius: 8px; border: 1px dashed #cbd5e1; margin-top: 16px;">
                 <h3 style="font-size: 1.15rem; color: #16273f; margin-bottom: 6px;">No packaging items match your filters</h3>
                 <p style="color: #64748b; font-size: 0.88rem; margin-bottom: 18px;">Try clearing selected filters or broadening your search keyword.</p>
-                <button type="button" onclick="window.resetCatalogueFilters()" class="frapak-btn-gold" style="margin: 0; padding: 10px 22px; font-size: 0.85rem; font-weight: 700;">Reset All Filters</button>
+                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-gold" style="margin: 0; padding: 10px 22px; font-size: 0.85rem; font-weight: 700;">Reset All Filters</button>
               </div>
 
             <?php endif; ?>
@@ -714,12 +746,12 @@ if ($searchQuery) {
      ========================================================================= -->
 <script>
 window.toggleMobileFilters = function() {
-  const sidebar = document.getElementById('catalogue-smart-sidebar') || document.querySelector('.frapak-filter-sidebar');
-  let backdrop = document.getElementById('frapak-filter-backdrop');
+  const sidebar = document.getElementById('catalogue-smart-sidebar') || document.querySelector('.tn-filter-sidebar');
+  let backdrop = document.getElementById('tn-filter-backdrop');
   if (!backdrop) {
     backdrop = document.createElement('div');
-    backdrop.id = 'frapak-filter-backdrop';
-    backdrop.className = 'frapak-filter-backdrop';
+    backdrop.id = 'tn-filter-backdrop';
+    backdrop.className = 'tn-filter-backdrop';
     backdrop.onclick = window.closeMobileFilters;
     document.body.appendChild(backdrop);
   }
@@ -736,8 +768,8 @@ window.toggleMobileFilters = function() {
 };
 
 window.closeMobileFilters = function() {
-  const sidebar = document.getElementById('catalogue-smart-sidebar') || document.querySelector('.frapak-filter-sidebar');
-  const backdrop = document.getElementById('frapak-filter-backdrop');
+  const sidebar = document.getElementById('catalogue-smart-sidebar') || document.querySelector('.tn-filter-sidebar');
+  const backdrop = document.getElementById('tn-filter-backdrop');
   if (sidebar) sidebar.classList.remove('mobile-open');
   if (backdrop) backdrop.classList.remove('open');
   document.body.style.overflow = '';
@@ -761,7 +793,7 @@ window.resetCatalogueFilters = function() {
   const instantInput = document.getElementById('catalogue-instant-filter');
   if (instantInput) instantInput.value = '';
 
-  document.querySelectorAll('.frapak-filter-sidebar input[type="checkbox"]').forEach(function(cb) {
+  document.querySelectorAll('.tn-filter-sidebar input[type="checkbox"]').forEach(function(cb) {
     cb.checked = false;
   });
 
@@ -769,7 +801,7 @@ window.resetCatalogueFilters = function() {
 };
 
 window.removeSingleFilter = function(filterName, filterValue) {
-  const cbs = document.querySelectorAll('.frapak-filter-sidebar input[name="' + filterName + '"]');
+  const cbs = document.querySelectorAll('.tn-filter-sidebar input[name="' + filterName + '"]');
   cbs.forEach(function(cb) {
     if (cb.value.toLowerCase() === filterValue.toLowerCase()) {
       cb.checked = false;
@@ -796,6 +828,7 @@ function itemMatchesCriteria(item, activeFilters, excludeGroup) {
   const volumes = excludeGroup === 'volume' ? [] : activeFilters.volume;
   const necks = excludeGroup === 'neck' ? [] : activeFilters.neck;
   const shapes = excludeGroup === 'shape' ? [] : activeFilters.shape;
+  const colors = excludeGroup === 'color' ? [] : activeFilters.color;
 
   const itemIndustries = (item.getAttribute('data-industries') || '').toLowerCase().split(',').map(s => s.trim()).filter(Boolean);
   const itemCat = (item.getAttribute('data-category') || '').toLowerCase();
@@ -806,6 +839,7 @@ function itemMatchesCriteria(item, activeFilters, excludeGroup) {
   const itemVol = (item.getAttribute('data-volume') || '').toLowerCase();
   const itemNeck = (item.getAttribute('data-neck') || '').toLowerCase();
   const itemShape = (item.getAttribute('data-shape') || '').toLowerCase();
+  const itemColor = (item.getAttribute('data-color') || '').toLowerCase();
 
   // 1. Text Query with Generic Packaging Taxonomy Expansion
   if (query) {
@@ -889,6 +923,12 @@ function itemMatchesCriteria(item, activeFilters, excludeGroup) {
     if (!shpMatch) return false;
   }
 
+  // 9. Color
+  if (colors.length > 0) {
+    const cMatch = colors.some(c => itemColor.includes(c.toLowerCase()));
+    if (!cMatch) return false;
+  }
+
   return true;
 }
 
@@ -898,13 +938,14 @@ window.filterCatalogueItems = function() {
 
   const activeFilters = {
     query: query,
-    industry: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-industry"]:checked')).map(i => i.value.toLowerCase()),
-    category: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-category"]:checked')).map(i => i.value.toLowerCase()),
-    series: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-series"]:checked')).map(i => i.value.toLowerCase()),
-    material: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-material"]:checked')).map(i => i.value.toUpperCase()),
-    volume: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-volume"]:checked')).map(i => i.value.toLowerCase()),
-    neck: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-neck"]:checked')).map(i => i.value.toLowerCase()),
-    shape: Array.from(document.querySelectorAll('.frapak-filter-sidebar input[name="filter-shape"]:checked')).map(i => i.value.toLowerCase())
+    industry: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-industry"]:checked')).map(i => i.value.toLowerCase()),
+    category: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-category"]:checked')).map(i => i.value.toLowerCase()),
+    series: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-series"]:checked')).map(i => i.value.toLowerCase()),
+    material: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-material"]:checked')).map(i => i.value.toUpperCase()),
+    volume: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-volume"]:checked')).map(i => i.value.toLowerCase()),
+    neck: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-neck"]:checked')).map(i => i.value.toLowerCase()),
+    shape: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-shape"]:checked')).map(i => i.value.toLowerCase()),
+    color: Array.from(document.querySelectorAll('.tn-filter-sidebar input[name="filter-color"]:checked')).map(i => i.value.toLowerCase())
   };
 
   const allItems = Array.from(document.querySelectorAll('.filterable-item'));
@@ -926,9 +967,13 @@ window.filterCatalogueItems = function() {
   if (counterWrap && !countVal) {
     counterWrap.innerText = 'Showing ' + visibleCount + ' item' + (visibleCount === 1 ? '' : 's');
   }
+  const mobileCount = document.getElementById('mobile-products-count');
+  if (mobileCount) {
+    mobileCount.innerText = visibleCount + ' items';
+  }
 
   // 3. Dynamic Faceted Counts & Smart Disabling
-  const facetLabels = document.querySelectorAll('.frapak-filter-sidebar .frapak-filter-item');
+  const facetLabels = document.querySelectorAll('.tn-filter-sidebar .tn-filter-item');
   facetLabels.forEach(function(label) {
     const group = label.getAttribute('data-facet-group');
     const val = label.getAttribute('data-facet-val');
@@ -949,6 +994,7 @@ window.filterCatalogueItems = function() {
         const itemVol = (item.getAttribute('data-volume') || '').toLowerCase();
         const itemNeck = (item.getAttribute('data-neck') || '').toLowerCase();
         const itemShape = (item.getAttribute('data-shape') || '').toLowerCase();
+        const itemColor = (item.getAttribute('data-color') || '').toLowerCase();
 
         let matchesVal = false;
         if (group === 'industry') {
@@ -969,6 +1015,8 @@ window.filterCatalogueItems = function() {
           matchesVal = normItemNeck.includes(normN) || itemNeck.includes(val);
         } else if (group === 'shape') {
           matchesVal = itemShape.includes(val);
+        } else if (group === 'color') {
+          matchesVal = itemColor.includes(val.toLowerCase());
         }
 
         if (matchesVal) facetCount++;
@@ -1009,16 +1057,17 @@ window.filterCatalogueItems = function() {
       'filter-volume': 'Size',
       'filter-neck': 'Neck',
       'filter-material': 'Material',
-      'filter-shape': 'Shape'
+      'filter-shape': 'Shape',
+      'filter-color': 'Color'
     };
 
-    document.querySelectorAll('.frapak-filter-sidebar input[type="checkbox"]:checked').forEach(function(checkedCb) {
+    document.querySelectorAll('.tn-filter-sidebar input[type="checkbox"]:checked').forEach(function(checkedCb) {
       hasActive = true;
       const filterName = checkedCb.name;
       const filterVal = checkedCb.value;
       const prefix = groupNames[filterName] ? groupNames[filterName] + ': ' : '';
 
-      const labelElem = checkedCb.closest('.frapak-filter-item');
+      const labelElem = checkedCb.closest('.tn-filter-item');
       const labelText = labelElem ? (labelElem.querySelector('.filter-label-text')?.textContent || filterVal) : filterVal;
 
       const chip = document.createElement('span');
@@ -1041,8 +1090,15 @@ window.filterCatalogueItems = function() {
 };
 
 function syncSidebarHeight() {
-  const sidebarCols = document.querySelectorAll('.frapak-sidebar-column');
-  const mainCols = document.querySelectorAll('.frapak-products-main-column');
+  const sidebarCols = document.querySelectorAll('.tn-sidebar-column');
+  if (window.innerWidth <= 900) {
+    sidebarCols.forEach(function(sCol) {
+      sCol.style.minHeight = '0px';
+      sCol.style.height = '0px';
+    });
+    return;
+  }
+  const mainCols = document.querySelectorAll('.tn-products-main-column');
   sidebarCols.forEach(function(sCol, idx) {
     const mCol = mainCols[idx];
     if (sCol && mCol) {
@@ -1095,7 +1151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const bottomOffset = 24;
 
     const sidebarHeight = sidebar.offsetHeight;
-    const column = sidebar.closest('.frapak-sidebar-column') || sidebar.parentElement;
+    const column = sidebar.closest('.tn-sidebar-column') || sidebar.parentElement;
     if (!column) return;
     const columnRect = column.getBoundingClientRect();
     const columnTop = columnRect.top + currentScrollY;

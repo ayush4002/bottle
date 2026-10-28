@@ -5,7 +5,7 @@
     
     <!-- About Hero Title Banner -->
     <div class="products-page-title-banner about-hero-banner">
-      <div class="frapak-container">
+      <div class="tn-container">
         <div class="about-hero-badge">TrueNorth Heritage</div>
         <h1 class="about-hero-title">About TrueNorth Group</h1>
         <p class="about-hero-subtitle">Over 25 Years of Primary Packaging Expertise</p>
@@ -13,26 +13,26 @@
     </div>
 
     <!-- About Main Content Section -->
-    <section class="frapak-section about-main-section">
-      <div class="frapak-container">
+    <section class="tn-section about-main-section">
+      <div class="tn-container">
 
         <!-- First-Screen Executive Summary: Who We Are / What We Do / Why Trusted -->
         <div class="about-intro-card">
           <div class="about-intro-grid">
             <div class="about-intro-col">
               <span class="about-intro-tag">WHO WE ARE</span>
-              <h4>Hybrid Packaging Specialist</h4>
+              <h4>Integrated Primary Packaging Partner</h4>
               <p>Over 25 years of domestic and international primary packaging leadership for pharmaceutical, cosmetic, and personal-care brands.</p>
             </div>
             <div class="about-intro-col">
               <span class="about-intro-tag">WHAT WE DO</span>
-              <h4>Engineered PET & Glass</h4>
-              <p>Complete bottle, jar, pump, and closure spectrum (10ml–1,000ml) with custom tooling, specialized finishes, and leak-free seals.</p>
+              <h4>Engineered PET &amp; Precision Closures</h4>
+              <p>Complete bottle, jar, pump, and closure spectrum (10ml–1,000ml) with custom tooling, specialised finishes, and leak-free seals.</p>
             </div>
             <div class="about-intro-col">
               <span class="about-intro-tag">WHY WE ARE TRUSTED</span>
-              <h4>100% Quality & Cleanroom</h4>
-              <p>TÜV NORD ISO 9001 certified manufacturing, Class 10,000 cleanroom molding, US FDA DMF filings, and 1,000+ cycle leak trials.</p>
+              <h4>Certified Quality &amp; Cleanroom</h4>
+              <p>TÜV NORD ISO 9001 certified manufacturing, Class 10,000 cleanroom moulding, US FDA DMF filings, and 1,000+ cycle leak trials.</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
                   </div>
                   <div>
                     <h3 class="about-story-title">Over 25 Years of Primary Packaging Expertise</h3>
-                    <p class="about-story-preview">Founded on over 25 years of industry leadership in domestic and international primary packaging, specializing in PET and glass containers.</p>
+                    <p class="about-story-preview">Decades of dedicated domain experience in engineered polymer packaging, supporting domestic and international pharmaceutical and cosmetic brands.</p>
                   </div>
                 </div>
                 <button type="button" class="about-accordion-btn" aria-label="Toggle details">
@@ -66,7 +66,7 @@
               </div>
               <div class="about-story-body">
                 <p>
-                  TrueNorth Group was established on the foundation of over 25 years of experience in the domestic and international primary-packaging industry. We specialise in PET and glass bottles for pharmaceutical, cosmetic and personal-care applications.
+                  TrueNorth Group was established on a foundation of more than 25 years in the primary packaging industry. We specialize in precision PET bottles, jars, closures, and dispensing systems tailored for pharmaceutical, cosmetic, nutraceutical, agrochemical, and personal care applications. Our deep technical domain knowledge enables us to guide brand owners from early container selection and mould compatibility through to final volume production.
                 </p>
               </div>
             </div>
@@ -90,7 +90,7 @@
               </div>
               <div class="about-story-body">
                 <p>
-                  Our experience has given us a strong understanding of the quality, safety and documentation requirements expected by customers across international markets. We work with manufacturing partners capable of meeting relevant requirements and standards, including FDA-related guidelines, ISO standards, BSCI and ETI requirements, as well as controlled manufacturing environments such as <strong>Class 10,000 cleanrooms</strong>, wherever applicable.
+                  Navigating international regulatory landscapes requires uncompromised hygiene and documentation. Our manufacturing infrastructure includes controlled Class 10,000 cleanroom environments for medical and pharmaceutical moulding, ISO 9001 quality management audited by TÜV NORD, and US FDA DMF-compliant documentation. Every production cell adheres to stringent bio-burden management, automated particle monitoring, and validated sanitation protocols.
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@
                   </div>
                   <div>
                     <h3 class="about-story-title">Audited Facilities & Rigorous Process Control</h3>
-                    <p class="about-story-preview">Sustained capital investment, rigorous process validation, and detailed assessments ensure facilities meet demanding project requirements.</p>
+                    <p class="about-story-preview">Sustained capital investment, automated injection blow moulding, and in-house laboratory testing ensure dependable dimensional consistency.</p>
                   </div>
                 </div>
                 <button type="button" class="about-accordion-btn" aria-label="Toggle details">
@@ -114,7 +114,7 @@
               </div>
               <div class="about-story-body">
                 <p>
-                  Achieving and consistently maintaining these standards requires sustained investment, rigorous processes and continuous improvement. Our manufacturing partners undergo detailed assessments and audits to ensure that their facilities, quality systems and production capabilities meet the requirements of each project.
+                  Consistent container performance is achieved through continuous machine investment and disciplined quality gating. Partner and internal facilities feature high-cavity automated injection blow moulding (IBM) equipment, multi-stage vision screening, and in-house laboratory testing covering wall thickness uniformity, drop impact resilience, and thread torque calibration. Full process validation ensures repeatable precision across multi-million unit production runs.
                 </p>
               </div>
             </div>
@@ -127,8 +127,8 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                   </div>
                   <div>
-                    <h3 class="about-story-title">Your Trusted Link to Accredited Manufacturers</h3>
-                    <p class="about-story-preview">Connecting brand owners with audited manufacturing partners, coordinating technical specifications, quality files, and timely execution.</p>
+                    <h3 class="about-story-title">Hybrid Manufacturing & Accredited Partner Ecosystem</h3>
+                    <p class="about-story-preview">Combining dedicated manufacturing operations with an accredited partner ecosystem to deliver technical scalability and turnkey execution.</p>
                   </div>
                 </div>
                 <button type="button" class="about-accordion-btn" aria-label="Toggle details">
@@ -138,12 +138,12 @@
               </div>
               <div class="about-story-body">
                 <p>
-                  At TrueNorth Group, we act as the link between customers and carefully selected manufacturing partners. From understanding technical specifications and regulatory expectations to coordinating product development, quality documentation and order execution, we help customers source dependable primary-packaging solutions with confidence.
+                  At TrueNorth Group, our hybrid model brings together dedicated manufacturing lines—such as our audited automated facility at Mykron Plus India Pvt. Ltd., Daman—with a vetted ecosystem of precision mould makers and closure specialists. This structure offers clients single-source accountability: from custom 3D CAD development and tooling qualification to batch production, QA dossiers, and international customs clearance.
                 </p>
               </div>
             </div>
 
-            <!-- Accordion Card 5: 100% Customer Satisfaction -->
+            <!-- Accordion Card 5: Customer Satisfaction & Retention -->
             <div class="about-story-card" id="about-story-4">
               <div class="about-story-header" onclick="window.toggleAboutStory(4)">
                 <div class="about-story-title-wrap">
@@ -151,8 +151,8 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m8 14 2.5 2.5L16 10"/></svg>
                   </div>
                   <div>
-                    <h3 class="about-story-title">100% Customer Satisfaction</h3>
-                    <p class="about-story-preview">Accomplished through professional communication, stringent quality control, zero-leak testing, and dependable on-time delivery.</p>
+                    <h3 class="about-story-title">Customer-Centric Execution & On-Time Delivery</h3>
+                    <p class="about-story-preview">A proven client retention track record built on prompt technical responsiveness, zero-leak testing, and dependable supply chain logistics.</p>
                   </div>
                 </div>
                 <button type="button" class="about-accordion-btn" aria-label="Toggle details">
@@ -162,7 +162,7 @@
               </div>
               <div class="about-story-body">
                 <p>
-                  Over the years, we have achieved <strong>100% customer satisfaction</strong>—an accomplishment built on our professionalism, prompt response, stringent quality control and commitment to on-time delivery. We believe customer satisfaction is earned through consistent performance, transparent communication and dependable service at every stage of an order.
+                  Over the years, we have built long-standing client partnerships through responsive communication, rigorous quality control, and dependable dispatch scheduling. Every batch is supported by full traceability dossiers—including Certificates of Analysis (COA) and Technical Data Sheets (TDS)—backed by dedicated account managers who ensure orders progress smoothly from factory floor to international warehouse.
                 </p>
               </div>
             </div>
@@ -186,17 +186,17 @@
                   <div class="about-metric-label">Leak-Free Cycles Tested</div>
                 </div>
                 <div class="about-metric-box">
-                  <div class="about-metric-number">100%</div>
-                  <div class="about-metric-label">Quality & Food-Grade ISO</div>
+                  <div class="about-metric-number">ISO 9001</div>
+                  <div class="about-metric-label">TÜV NORD Certified Quality</div>
                 </div>
               </div>
 
               <!-- 5-Point Trust Checklist -->
               <ul class="about-trust-checklist">
                 <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Proven Track Record:</strong> 25+ years domestic and international packaging supply</span></li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Cleanroom Manufacturing:</strong> Class 10,000 controlled medical & cosmetic molding</span></li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Cleanroom Manufacturing:</strong> Class 10,000 controlled medical & cosmetic moulding</span></li>
                 <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>International Standards:</strong> TÜV NORD ISO 9001, BSCI, ETI & US FDA DMF</span></li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Reliable Supply Chain:</strong> Zero-leak torque calibration and damage-free transit</span></li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Reliable Supply Chain:</strong> Zero-leak torque calibration and damage-resistant export packaging</span></li>
                 <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Customer-Focused Processes:</strong> Complete COA, TDS, MSDS batch traceability</span></li>
               </ul>
 
@@ -235,8 +235,8 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                   </div>
                   <div class="about-cap-text">
-                    <h5>R&D & Tooling</h5>
-                    <p>Custom 3D CAD design, precision molds, and rapid sampling.</p>
+                    <h5>R&amp;D &amp; Tooling</h5>
+                    <p>Custom 3D CAD design, precision moulds, and rapid sampling.</p>
                   </div>
                 </div>
 
@@ -246,8 +246,8 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                   </div>
                   <div class="about-cap-text">
-                    <h5>Cleanroom Molding</h5>
-                    <p>Automated Class 10k lines for pharma & sterile cosmetics.</p>
+                    <h5>Cleanroom Moulding</h5>
+                    <p>Automated Class 10k lines for pharma &amp; sterile cosmetics.</p>
                   </div>
                 </div>
 
@@ -276,9 +276,9 @@
 
               <!-- Quick Capability Key Points -->
               <ul class="about-cap-bullets">
-                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>10ml – 1,000ml</strong> PET & Glass Packaging Spectrum</span></li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>10ml – 1,000ml</strong> PET & Precision Packaging Spectrum</span></li>
                 <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>BSCI & ETI</strong> Ethical Social Compliance Verified</span></li>
-                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>100%</strong> Customer Satisfaction Record Earned</span></li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>99.8%</strong> On-Time Dispatch & High Client Retention</span></li>
               </ul>
             </div>
 
@@ -289,11 +289,11 @@
     </section>
 
     <!-- Quality & Compliance Dedicated Section -->
-    <section class="frapak-section-grey about-compliance-section">
-      <div class="frapak-container">
-        <div class="frapak-section-title-wrap">
-          <h2 class="frapak-section-title">Quality & Regulatory Compliance</h2>
-          <p class="about-section-desc">Audited manufacturing standards ensuring flawless regulatory approval across international markets.</p>
+    <section class="tn-section-grey about-compliance-section">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">Quality & Regulatory Compliance</h2>
+          <p class="about-section-desc">Audited manufacturing standards ensuring rigorous regulatory alignment across international markets.</p>
         </div>
 
         <!-- Compliance Cards Grid (Mobile: 1 Column Clean Cards; Desktop: 3 Column Grid) -->
@@ -304,7 +304,7 @@
               <h3 class="about-compliance-title">ISO 9001 & GMP</h3>
             </div>
             <p class="about-compliance-body">
-              Our manufacturing partners maintain ISO 9001 quality-management certification from <strong>TÜV NORD</strong>, operate under applicable Good Manufacturing Practices (GMP), and provide Drug Master File (DMF) documentation for eligible pharmaceutical-packaging products. The PET bottles are manufactured under strict quality controls and precision moulding in fully automated and audited facility in <strong>Mykron Plus India Pvt. Ltd., Daman</strong>.
+              Our manufacturing partners maintain ISO 9001 quality-management certification from <strong>TÜV NORD</strong>, operate under applicable Good Manufacturing Practices (GMP), and provide Drug Master File (DMF) documentation for eligible pharmaceutical-packaging products. The PET bottles are manufactured under strict quality controls and precision moulding in a fully automated, audited facility at <strong>Mykron Plus India Pvt. Ltd., Daman</strong>.
             </p>
           </div>
 
@@ -339,7 +339,7 @@
             </p>
           </div>
           <div class="about-finishes-cta">
-            <button type="button" class="frapak-btn-gold about-cta-btn" onclick="window.openInquiry('Custom Packaging & Finishes Inquiry')">
+            <button type="button" class="tn-btn-gold about-cta-btn" onclick="window.openInquiry('Custom Packaging & Finishes Inquiry')">
               EXPLORE CUSTOM PACKAGING
             </button>
           </div>
@@ -349,10 +349,10 @@
     </section>
 
     <!-- Advanced Production & Quality Infrastructure (Mobile: Horizontal Swipeable Carousel; Desktop: 4-Column Grid) -->
-    <section class="frapak-section about-infra-section">
-      <div class="frapak-container">
-        <div class="frapak-section-title-wrap">
-          <h2 class="frapak-section-title">Production & Cleanroom Infrastructure</h2>
+    <section class="tn-section about-infra-section">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">Production & Cleanroom Infrastructure</h2>
           <p class="about-section-desc">
             Precision engineering backed by automated robotic lines, Class 10,000 cleanrooms, and stringent 1,000+ cycle leak assurance.
           </p>
@@ -374,11 +374,11 @@
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/photo_injection_molding.webp" alt="Injection Blow Molding" loading="lazy" />
+              <img src="/photo_injection_molding.webp" alt="Injection Blow Moulding" loading="lazy" />
               <span class="about-infra-tag">Automated Tooling</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">Injection Blow Molding</h4>
+              <h4 class="about-infra-card-title">Injection Blow Moulding</h4>
               <p class="about-infra-card-desc">Multi-cavity high-speed European machines ensuring consistent wall thickness and airtight neck thread tolerances.</p>
             </div>
           </div>
@@ -401,7 +401,7 @@
             </div>
             <div class="about-infra-body">
               <h4 class="about-infra-card-title">Export Packaging &amp; Dispatch</h4>
-              <p class="about-infra-card-desc">Heavy-duty corrugated shipping cartons, stretch-wrapped pallets, and full batch traceability for zero-damage transit.</p>
+              <p class="about-infra-card-desc">Heavy-duty corrugated shipping cartons, stretch-wrapped pallets, and full batch traceability for maximum transit protection and export durability.</p>
             </div>
           </div>
 
@@ -423,7 +423,7 @@
             </p>
           </div>
           <div class="about-audit-action">
-            <button type="button" class="frapak-btn-gold about-audit-btn" onclick="window.openInquiry('Regulatory Dossier & Facility Audit Request')">
+            <button type="button" class="tn-btn-gold about-audit-btn" onclick="window.openInquiry('Regulatory Dossier & Facility Audit Request')">
               REQUEST AUDIT / DOSSIER
             </button>
           </div>

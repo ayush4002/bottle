@@ -6,14 +6,14 @@ require_once dirname(__DIR__) . '/config/config.php';
 require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: /admin/products.php");
+    header("Location: /admin/products");
     exit();
 }
 
 // Verify CSRF Token if present
 if (!empty($_POST['csrf_token']) && !empty($_SESSION['csrf_token'])) {
     if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        header("Location: /admin/products.php?err=" . urlencode("CSRF token validation failed. Please try again."));
+        header("Location: /admin/products?err=" . urlencode("CSRF token validation failed. Please try again."));
         exit();
     }
 }
@@ -64,7 +64,7 @@ $seoTitle = trim($_POST['seoTitle'] ?? '');
 $seoDescription = trim($_POST['seoDescription'] ?? '');
 
 if (empty($name)) {
-    $redirectUrl = $isEdit ? "/admin/edit_product.php?id=" . urlencode($id) . "&err=" . urlencode("Product name is required.") : "/admin/add_product.php?err=" . urlencode("Product name is required.");
+    $redirectUrl = $isEdit ? "/admin/edit_product?id=" . urlencode($id) . "&err=" . urlencode("Product name is required.") : "/admin/add_product?err=" . urlencode("Product name is required.");
     header("Location: " . $redirectUrl);
     exit();
 }
@@ -206,7 +206,7 @@ if ($saved) {
         exit();
     }
 
-    $redirectUrl = !empty($returnUrl) ? $returnUrl : "/admin/products.php";
+    $redirectUrl = !empty($returnUrl) ? preg_replace('/\.php(\?|$)/', '$1', $returnUrl) : "/admin/products";
     $sep = strpos($redirectUrl, '?') !== false ? '&' : '?';
     header("Location: " . $redirectUrl . $sep . "msg=" . urlencode($successMsg));
     exit();
@@ -219,7 +219,7 @@ if ($saved) {
         exit();
     }
 
-    $targetUrl = $isEdit ? "/admin/edit_product.php?id=" . urlencode($originalSku ?: $id) . "&err=" . urlencode($errorMsg) : "/admin/add_product.php?err=" . urlencode($errorMsg);
+    $targetUrl = $isEdit ? "/admin/edit_product?id=" . urlencode($originalSku ?: $id) . "&err=" . urlencode($errorMsg) : "/admin/add_product?err=" . urlencode($errorMsg);
     header("Location: " . $targetUrl);
     exit();
 }

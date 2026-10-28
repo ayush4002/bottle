@@ -7,7 +7,13 @@ $currentRole = $_SESSION['admin_role'] ?? 'Super Admin';
 $csrfToken = generateCsrfToken();
 
 // Breadcrumb generator
-$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+$pathParts = explode('/', trim($reqPath, '/'));
+$lastPart = end($pathParts);
+$currentPage = preg_replace('/\.php$/i', '', $lastPart);
+if (empty($currentPage) || $currentPage === 'admin') {
+    $currentPage = 'index';
+}
 $breadcrumbs = [
     'index' => 'Dashboard Overview',
     'products' => 'Product Catalogue',
@@ -18,9 +24,10 @@ $breadcrumbs = [
     'media' => 'Media Library',
     'settings' => 'Website Settings',
     'users' => 'Admin Users',
-    'change_password' => 'Change Password'
+    'change_password' => 'Change Password',
+    'inquiries' => 'Client Inquiries'
 ];
-$crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
+$crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $currentPage));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -476,7 +483,7 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
   <!-- SIDEBAR NAVIGATION (SLIDE-IN ON MOBILE) -->
   <aside class="cms-sidebar" id="cmsSidebar">
     <div class="cms-sidebar-header-mobile">
-      <a href="/admin/index.php" class="cms-sidebar-brand">
+      <a href="/admin" class="cms-sidebar-brand">
         <img src="/logo_svg.svg" alt="TrueNorth Group Logo" />
         <span>TrueNorth CMS</span>
       </a>
@@ -485,11 +492,11 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
 
     <nav class="cms-nav">
       <div class="cms-nav-section">Main Menu</div>
-      <a href="/admin/index.php" class="cms-nav-link <?= $currentPage == 'index' ? 'active' : '' ?>">
+      <a href="/admin" class="cms-nav-link <?= $currentPage == 'index' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         Dashboard
       </a>
-      <a href="/admin/inquiries.php" class="cms-nav-link <?= $currentPage == 'inquiries' ? 'active' : '' ?>">
+      <a href="/admin/inquiries" class="cms-nav-link <?= $currentPage == 'inquiries' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Client Inquiries
         <?php
@@ -504,37 +511,37 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
       </a>
 
       <div class="cms-nav-section">Catalogue & Products</div>
-      <a href="/admin/products.php" class="cms-nav-link <?= in_array($currentPage, ['products', 'edit_product']) ? 'active' : '' ?>">
+      <a href="/admin/products" class="cms-nav-link <?= in_array($currentPage, ['products', 'edit_product']) ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         Products List
       </a>
-      <a href="/admin/add_product.php" class="cms-nav-link <?= $currentPage == 'add_product' ? 'active' : '' ?>">
+      <a href="/admin/add_product" class="cms-nav-link <?= $currentPage == 'add_product' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         Add New Product
       </a>
-      <a href="/admin/categories.php" class="cms-nav-link <?= $currentPage == 'categories' ? 'active' : '' ?>">
+      <a href="/admin/categories" class="cms-nav-link <?= $currentPage == 'categories' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
         Categories
       </a>
-      <a href="/admin/inventory.php" class="cms-nav-link <?= $currentPage == 'inventory' ? 'active' : '' ?>">
+      <a href="/admin/inventory" class="cms-nav-link <?= $currentPage == 'inventory' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 7h-9M14 17H5M17 12H3"/></svg>
         Inventory & Prices
       </a>
 
       <div class="cms-nav-section">Media & Settings</div>
-      <a href="/admin/media.php" class="cms-nav-link <?= $currentPage == 'media' ? 'active' : '' ?>">
+      <a href="/admin/media" class="cms-nav-link <?= $currentPage == 'media' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
         Media Library
       </a>
-      <a href="/admin/settings.php" class="cms-nav-link <?= $currentPage == 'settings' ? 'active' : '' ?>">
+      <a href="/admin/settings" class="cms-nav-link <?= $currentPage == 'settings' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         Website Settings
       </a>
-      <a href="/admin/users.php" class="cms-nav-link <?= $currentPage == 'users' ? 'active' : '' ?>">
+      <a href="/admin/users" class="cms-nav-link <?= $currentPage == 'users' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Admin Users
       </a>
-      <a href="/admin/change_password.php" class="cms-nav-link <?= $currentPage == 'change_password' ? 'active' : '' ?>">
+      <a href="/admin/change_password" class="cms-nav-link <?= $currentPage == 'change_password' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         Change Password
       </a>
@@ -558,14 +565,14 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
         </svg>
       </button>
 
-      <a href="/admin/index.php" class="cms-mobile-brand">
+      <a href="/admin" class="cms-mobile-brand">
         <img src="/logo_svg.svg" alt="TrueNorth Group" />
         <span>TrueNorth CMS</span>
       </a>
 
       <div class="cms-mobile-user">
         <span class="cms-role-badge-sm"><?= htmlspecialchars($currentRole) ?></span>
-        <a href="/admin/logout.php" class="btn-logout-icon" title="Logout">
+        <a href="/admin/logout" class="btn-logout-icon" title="Logout">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
         </a>
       </div>
@@ -574,7 +581,7 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
     <!-- DESKTOP TOP HEADER (>= 992px) -->
     <header class="cms-header cms-desktop-header">
       <div class="cms-breadcrumbs">
-        <a href="/admin/index.php">Admin</a>
+        <a href="/admin">Admin</a>
         <span>/</span>
         <strong><?= htmlspecialchars($crumbTitle) ?></strong>
       </div>
@@ -582,7 +589,7 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst($currentPage);
       <div class="cms-user-profile">
         <span class="cms-role-badge"><?= htmlspecialchars($currentRole) ?></span>
         <span style="font-size: 0.88rem; color: var(--cms-muted);">Hello, <strong><?= htmlspecialchars($currentUser) ?></strong></span>
-        <a href="/admin/logout.php" class="btn-logout-cms">Logout</a>
+        <a href="/admin/logout" class="btn-logout-cms">Logout</a>
       </div>
     </header>
 

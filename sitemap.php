@@ -53,6 +53,18 @@ $corePages = [
         'lastmod' => date('Y-m-d', strtotime('-14 days')),
         'changefreq' => 'monthly',
         'priority' => '0.7'
+    ],
+    [
+        'url' => $baseUrl . '/terms',
+        'lastmod' => date('Y-m-d', strtotime('-14 days')),
+        'changefreq' => 'monthly',
+        'priority' => '0.5'
+    ],
+    [
+        'url' => $baseUrl . '/privacy',
+        'lastmod' => date('Y-m-d', strtotime('-14 days')),
+        'changefreq' => 'monthly',
+        'priority' => '0.5'
     ]
 ];
 

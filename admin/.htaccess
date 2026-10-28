@@ -1,0 +1,24 @@
+# ==============================================================================
+# TRUENORTH GROUP CMS — ADMIN DIRECTORY .HTACCESS
+# Enforces clean URLs, strips .php, and rewrites clean routes to php files
+# ==============================================================================
+
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /admin/
+
+    # 1. 301 Redirect direct requests for index.php to /admin
+    RewriteCond %{THE_REQUEST} \s/admin/index\.php[?\s] [NC]
+    RewriteRule ^index\.php$ /admin [R=301,L]
+
+    # 2. 301 Redirect any direct request for /admin/xyz.php to /admin/xyz
+    RewriteCond %{THE_REQUEST} \s/admin/([a-zA-Z0-9_-]+)\.php[?\s] [NC]
+    RewriteRule ^([a-zA-Z0-9_-]+)\.php$ /admin/%1 [R=301,L]
+
+    # 3. Rewrite extensionless requests /admin/xyz to xyz.php internally
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+</IfModule>

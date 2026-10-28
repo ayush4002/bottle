@@ -66,1452 +66,1472 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-A</loc>
+    <loc>https://wetruenorthgroup.com/products?category=liquor-bottles</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-A</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-B</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-C</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-D</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-L</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-M</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-N</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-L</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-O</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-M</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-P</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-N</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-Q</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-O</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-R</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-P</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-S</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-Q</loc>
+    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-T</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-R</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-S</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=CAP-NB108-T</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-O</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-O</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-M</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-N</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-M</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB101-N</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB102-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB102-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB102-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB102-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB102-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB102-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB103-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-L</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-M</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-N</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-L</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-O</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-M</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-P</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-N</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-Q</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-O</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-R</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-P</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-S</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-Q</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-T</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-R</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-U</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-S</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-V</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-T</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-W</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-U</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-V</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB104-W</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB105-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB105-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB105-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB105-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB105-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB105-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-M</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-N</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-M</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB106-N</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB301-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-L</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-M</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-N</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-L</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-O</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-M</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-N</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB302-O</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB303-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB303-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB303-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB303-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB303-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PUMP-NB303-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB107-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB107-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB107-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB107-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB107-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-M</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-N</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-O</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-M</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB202-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-N</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB202-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB201-O</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB202-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB202-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB202-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-B-1</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB202-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-B-2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-B-1</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-B-2</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB204-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB204-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB203-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB204-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB204-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB205-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB205-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB205-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB205-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB206-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB206-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB206-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB207-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB206-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB206-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB207-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB304-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB304-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB304-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB304-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB304-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB305-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB305-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB306</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB305-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB307</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB305-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB308</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB306</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB309</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB307</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB310</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB308</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB309</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-NB310</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-I</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-J</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-K</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-I</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-L</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-J</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-A</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-K</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-ContinuedSpray-L</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-C</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-A</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-D</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-B</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-E</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-C</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-F</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-D</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-E</loc>
+    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-H</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-F</loc>
+    <loc>https://wetruenorthgroup.com/product?id=AGRO-1000ML-AGRO-SHORT</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=AGRO-100ML-AGRO-LONG</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=SPRAY-PowderSprayer-H</loc>
+    <loc>https://wetruenorthgroup.com/product?id=AGRO-100ML-AGRO-SHORT</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-1000ML-AGRO-SHORT</loc>
+    <loc>https://wetruenorthgroup.com/product?id=AGRO-250ML-AGRO</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-100ML-AGRO-LONG</loc>
+    <loc>https://wetruenorthgroup.com/product?id=AGRO-500ML-AGRO</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-100ML-AGRO-SHORT</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-1000ML-VASA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-250ML-AGRO</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-BABY-OIL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-500ML-AGRO</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-BADAMI</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-1000ML-VASA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-CANTHRADINE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-BABY-OIL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-ROUND-BOSTON</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-BADAMI</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-SPRAY-ROUND</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-CANTHRADINE</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-SQUARE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-ROUND-BOSTON</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-TULIP</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-SPRAY-ROUND</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-VEOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-SQUARE</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-10ML-COSMETIC</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-TULIP</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-170ML-CG</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-100ML-VEOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-192ML-OVAL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-10ML-COSMETIC</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-BABY-OIL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-170ML-CG</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-BADAMI</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-192ML-OVAL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-OVAL-RING</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-BABY-OIL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-OVAL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-BADAMI</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-ROUND-BOSTON</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-OVAL-RING</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-VEOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-OVAL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-225ML-ESKINOL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-ROUND-BOSTON</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-25ML-ROMANCE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-VEOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-300ML-OVAL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-225ML-ESKINOL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-300ML-VASA-NEW</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-25ML-ROMANCE</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-300ML-VEOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-300ML-OVAL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-30ML-CG</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-300ML-VASA-NEW</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-30ML-VEOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-300ML-VEOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-400ML-CANTHRADINE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-30ML-CG</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-480ML-ROUND-BOSTON</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-30ML-VEOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-500ML-VEOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-400ML-CANTHRADINE</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-BABY-OIL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-480ML-ROUND-BOSTON</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-HS-BOTTLE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-500ML-VEOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-SPRAY</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-50ML-BABY-OIL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-TULIP</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-50ML-HS-BOTTLE</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-VEOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-50ML-SPRAY</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-70ML-CG</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-50ML-TULIP</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-85ML-HS-BOTTLE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-50ML-VEOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-BOSTON-60ML-8-5GM-REV</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-70ML-CG</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-120CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-85ML-HS-BOTTLE</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-150CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-BOSTON-60ML-8-5GM-REV</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-175CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-120CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-175ML-MORINGO</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-150CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-200CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-175CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-250CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-175ML-MORINGO</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-300CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-200CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-400CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-250CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-500CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-300CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=JAR-75CC-RD</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-400CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-1000ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-500CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-BRUTE-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-75CC-RD</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-1000ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-12-5G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-100ML-BRUTE-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-13G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-100ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-22MM</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-100ML-ROUND-PET-12-5G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-RING-MARK</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-100ML-ROUND-PET-13G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-10ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-100ML-ROUND-PET-22MM</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-120ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-100ML-ROUND-PET-RING-MARK</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-125ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-10ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-125ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-120ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-150ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-125ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-15ML-ROUND</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-125ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-160ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-150ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-170ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-15ML-ROUND</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-BRUTE-PET-18G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-160ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-BRUTE-PET-22G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-170ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-BRUTE-PET-24G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-BRUTE-PET-18G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-FLAT-PET-22G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-BRUTE-PET-22G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-FLAT-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-BRUTE-PET-24G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-ROUND-PET-CHARAK</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-FLAT-PET-22G</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-FLAT-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-20ML-ROUND-PET-7GM</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-ROUND-PET-CHARAK</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-20ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-200ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-225ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-20ML-ROUND-PET-7GM</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-250ML-BRUTE-PET-SANTIVANI</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-20ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-250ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-225ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-300ML-BRUTE-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-250ML-BRUTE-PET-SANTIVANI</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-300ML-DOME-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-250ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-30ML-ROUND-PET-RING-MARK</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-300ML-BRUTE-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-30ML-ROUND-PET-7-GM</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-300ML-DOME-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-30ML-ROUND-PET-8-GM</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-30ML-ROUND-PET-RING-MARK</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-400ML-BRUTE-37GM-28MM</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-30ML-ROUND-PET-7-GM</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-450ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-30ML-ROUND-PET-8-GM</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-500ML-ROUND-PET-TRIANGULAR</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-400ML-BRUTE-37GM-28MM</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-500ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-450ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-60ML-ROUND-PET-RING-MARK</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-500ML-ROUND-PET-TRIANGULAR</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-60ML-ROUND-PET-MACLEODS</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-500ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-60ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-60ML-ROUND-PET-RING-MARK</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-70ML-ROUND-PET</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-60ML-ROUND-PET-MACLEODS</loc>
+    <loc>https://wetruenorthgroup.com/product?id=AGRO-1000ML-AGRO-LONG</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-60ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-141ML-OVAL</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-70ML-ROUND-PET</loc>
+    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-BHOLA</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-1000ML-AGRO-LONG</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-1000ML-ROUND-PET-PCO</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-250ML-AGRO-BIO-FIT</loc>
+    <loc>https://wetruenorthgroup.com/product?id=PHA-250ML-BRUTE-EXPORT</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-500ML-AGRO-BIO-FIT</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-180ML-KIDNEY-10G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=AGRO-1000ML-AGRO-BIO-FIT</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-180ML-KIDNEY-16G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-141ML-OVAL</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-375ML-WINE</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=COS-200ML-BHOLA</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-750ML-KIDNEY</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=JAR-250ML-IPSCOM</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-90ML-ROUND-10G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-1000ML-ROUND-PET-PCO</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-90ML-RIB-9G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product_detail?id=PHA-250ML-BRUTE-EXPORT</loc>
+    <loc>https://wetruenorthgroup.com/product?id=LIQ-180ML-ROUND-12G</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

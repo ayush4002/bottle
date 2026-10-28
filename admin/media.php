@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $targetPath = $uploadDir . '/' . $targetFile;
 
                 if (move_uploaded_file($_FILES['media_file']['tmp_name'], $targetPath)) {
-                    redirectMedia("media.php?msg=" . urlencode("Image '{$targetFile}' uploaded successfully!"));
+                    redirectMedia("/admin/media?msg=" . urlencode("Image '{$targetFile}' uploaded successfully!"));
                 } else {
                     $error = "Failed to upload image file. Please check directory permissions.";
                 }
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } else {
                     rename($oldPath, $newPath);
                 }
-                redirectMedia("media.php?msg=" . urlencode("Image updated successfully to '{$newName}'!"));
+                redirectMedia("/admin/media?msg=" . urlencode("Image updated successfully to '{$newName}'!"));
             }
         }
     } elseif ($action === 'delete_media') {
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $filePath = $uploadDir . '/' . $targetFile;
             if (file_exists($filePath)) {
                 @unlink($filePath);
-                redirectMedia("media.php?msg=" . urlencode("Image '{$targetFile}' deleted successfully."));
+                redirectMedia("/admin/media?msg=" . urlencode("Image '{$targetFile}' deleted successfully."));
             } else {
                 $error = "File '{$targetFile}' not found or already deleted.";
             }
@@ -235,7 +235,7 @@ if (file_exists($uploadDir)) {
       Upload, view, edit, replace, and delete product image assets (Total: <?= count($images) ?> files)
     </p>
   </div>
-  <button onclick="openUploadModal()" class="frapak-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; background: #0284c7; color: #fff; cursor: pointer; min-height: 46px;">
+  <button onclick="openUploadModal()" class="tn-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; background: #0284c7; color: #fff; cursor: pointer; min-height: 46px;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     Upload New Image
   </button>
@@ -280,7 +280,7 @@ if (file_exists($uploadDir)) {
             Edit
           </button>
 
-          <form method="POST" action="media.php" style="flex: 1;" onsubmit="return confirm('Are you sure you want to permanently delete \'<?= htmlspecialchars(addslashes($img['filename'])) ?>\'?');">
+          <form method="POST" action="/admin/media" style="flex: 1;" onsubmit="return confirm('Are you sure you want to permanently delete \'<?= htmlspecialchars(addslashes($img['filename'])) ?>\'?');">
             <input type="hidden" name="action" value="delete_media" />
             <input type="hidden" name="filename" value="<?= htmlspecialchars($img['filename']) ?>" />
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
@@ -303,7 +303,7 @@ if (file_exists($uploadDir)) {
       <button onclick="closeUploadModal()" style="background: transparent; border: none; color: #94a3b8; font-size: 1.6rem; cursor: pointer;">&times;</button>
     </div>
 
-    <form method="POST" action="media.php" enctype="multipart/form-data">
+    <form method="POST" action="/admin/media" enctype="multipart/form-data">
       <input type="hidden" name="action" value="upload_media" />
       <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
 
@@ -329,7 +329,7 @@ if (file_exists($uploadDir)) {
       <button onclick="closeEditModal()" style="background: transparent; border: none; color: #94a3b8; font-size: 1.6rem; cursor: pointer;">&times;</button>
     </div>
 
-    <form method="POST" action="media.php" enctype="multipart/form-data">
+    <form method="POST" action="/admin/media" enctype="multipart/form-data">
       <input type="hidden" name="action" value="rename_media" />
       <input type="hidden" name="old_filename" id="modalOldFilename" value="" />
       <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />

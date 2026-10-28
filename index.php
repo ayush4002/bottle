@@ -85,7 +85,11 @@ if (isset($assetMimes[$ext])) {
     }
 }
 
-require_once __DIR__ . '/config/config.php';
+if (file_exists(__DIR__ . '/config/config.php')) {
+    require_once __DIR__ . '/config/config.php';
+} elseif (file_exists(__DIR__ . '/config.php')) {
+    require_once __DIR__ . '/config.php';
+}
 require_once __DIR__ . '/app/Models/ProductModel.php';
 require_once __DIR__ . '/app/Controllers/PageController.php';
 require_once __DIR__ . '/app/Controllers/ProductController.php';
@@ -95,18 +99,43 @@ require_once __DIR__ . '/app/Controllers/QuoteController.php';
 $requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 $path = trim($requestUri, '/');
 
+// Short URL shortcut: /login -> /admin/login
+if ($path === 'login' || $path === 'login/') {
+    $qs = $_SERVER['QUERY_STRING'] ?? '';
+    header("Location: /admin/login" . (!empty($qs) ? '?' . $qs : ''), true, 301);
+    exit();
+}
+
+// Canonical Admin clean URLs: 301 redirect any .php requests to extensionless clean URLs
+if ($path === 'admin/index.php') {
+    $qs = $_SERVER['QUERY_STRING'] ?? '';
+    header("Location: /admin" . (!empty($qs) ? '?' . $qs : ''), true, 301);
+    exit();
+}
+if (preg_match('#^admin/([a-zA-Z0-9_-]+)\.php$#i', $path, $matches)) {
+    $cleanSub = $matches[1];
+    $redirectTarget = ($cleanSub === 'index') ? '/admin' : '/admin/' . $cleanSub;
+    $qs = $_SERVER['QUERY_STRING'] ?? '';
+    if (!empty($qs)) {
+        $redirectTarget .= '?' . $qs;
+    }
+    header("Location: " . $redirectTarget, true, 301);
+    exit();
+}
+
 // Admin Routes
-if ($path === 'admin' || $path === 'admin/' || $path === 'admin/index.php') {
+if ($path === 'admin' || $path === 'admin/' || $path === 'admin/index') {
     require_once __DIR__ . '/admin/index.php';
     exit();
 }
 if (strpos($path, 'admin/') === 0) {
-    if (file_exists(__DIR__ . '/' . $path)) {
-        require_once __DIR__ . '/' . $path;
+    $subPath = rtrim(substr($path, 6), '/');
+    if (file_exists(__DIR__ . '/admin/' . $subPath . '.php')) {
+        require_once __DIR__ . '/admin/' . $subPath . '.php';
         exit();
     }
-    if (file_exists(__DIR__ . '/' . $path . '.php')) {
-        require_once __DIR__ . '/' . $path . '.php';
+    if (file_exists(__DIR__ . '/admin/' . $subPath)) {
+        require_once __DIR__ . '/admin/' . $subPath;
         exit();
     }
 }
@@ -173,6 +202,10 @@ if (!empty($path)) {
         case 'catalogue':
             $page = 'products';
             break;
+        case 'product':
+        case 'product_detail':
+            header("Location: /products", true, 301);
+            exit();
         case 'contact':
         case 'locations':
             $page = 'contact';
@@ -185,8 +218,19 @@ if (!empty($path)) {
         case 'rpet':
             $page = 'sustainability';
             break;
+        case 'terms':
+        case 'terms-conditions':
+        case 'general-terms':
+            $page = 'terms';
+            break;
+        case 'privacy':
+        case 'privacy-policy':
+        case 'privacy-statement':
+            $page = 'privacy';
+            break;
         default:
-            $page = 'home';
+            http_response_code(404);
+            $page = '404';
             break;
     }
 }

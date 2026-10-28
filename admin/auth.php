@@ -46,7 +46,7 @@ function isAdminLoggedIn() {
 
 function checkAdminAuth() {
     if (!isAdminLoggedIn()) {
-        header("Location: /admin/login.php");
+        header("Location: /admin/login");
         exit();
     }
 }
@@ -56,7 +56,7 @@ function checkRole($allowedRoles = ['Super Admin']) {
     $userRole = $_SESSION['admin_role'] ?? 'Editor';
     if (!in_array($userRole, (array)$allowedRoles)) {
         http_response_code(403);
-        echo "<div style='font-family: sans-serif; padding: 40px; text-align: center;'><h2>403 - Permission Denied</h2><p>Your admin role (<strong>" . htmlspecialchars($userRole) . "</strong>) does not have access to this section.</p><a href='/admin/index.php'>Return to Dashboard</a></div>";
+        echo "<div style='font-family: sans-serif; padding: 40px; text-align: center;'><h2>403 - Permission Denied</h2><p>Your admin role (<strong>" . htmlspecialchars($userRole) . "</strong>) does not have access to this section.</p><a href='/admin'>Return to Dashboard</a></div>";
         exit();
     }
 }

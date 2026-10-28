@@ -11,22 +11,22 @@ require_once __DIR__ . '/SearchDictionary.php';
 class ProductModel {
     private static $companyInfo = [
             "name" => "TrueNorth Group",
-            "tagline" => "Primary Packaging Specialist — PET & Glass Solutions",
+            "tagline" => "Primary Packaging Specialist — Engineered PET & Precision Closures",
             "heroHeadline" => "Primary Packaging Specialists & Manufacturers",
-            "heroSubtitle" => "TrueNorth Group was established on the foundation of over 25 years of experience in the domestic and international primary-packaging industry. We specialise in PET and glass bottles for pharmaceutical, cosmetic, and personal-care applications.",
-            "phone" => "+91 98765 43210",
-            "email" => "info@wetruenorthgroup.com",
+            "heroSubtitle" => "TrueNorth Group was established on the foundation of over 25 years of experience in the domestic and international primary-packaging industry. We specialise in precision PET bottles, jars, and closures for pharmaceutical, cosmetic, and personal-care applications.",
+            "phone" => "+91 9810220761",
+            "email" => "Info@wetruenorthgroup.com",
             "hq" => "#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India | Manufacturing: Daman, India | Closures: Ningbo, China",
             "experienceYears" => "25+ Years",
-            "customerSatisfaction" => "100%",
+            "customerSatisfaction" => "99.8%",
             "stats" => [
                 [
                     "label" => "Industry Heritage",
                     "value" => "25+ Years"
                 ],
                 [
-                    "label" => "Customer Satisfaction",
-                    "value" => "100%"
+                    "label" => "On-Time Dispatch",
+                    "value" => "99.8%"
                 ],
                 [
                     "label" => "Controlled Cleanrooms",
@@ -104,7 +104,14 @@ class ProductModel {
             "coverImage" => "/uploads/products/sprays/medical-sprayer-nb107-a.webp",
             "desc" => "Medical sprayers, fine-mist atomizers, continuous-mist sprayers, and trigger spray systems."
         ],
-    ];
+            [
+            "name" => "Liquor & Spirits Bottles",
+            "slug" => "liquor-bottles",
+            "image" => "/uploads/products/liquor-bottles/liq-180ml-kidney-10g.webp",
+            "coverImage" => "/uploads/products/liquor-bottles/liq-180ml-kidney-10g.webp",
+            "desc" => "Crystal-clear PET pocket flasks, flat liquor containers, round spirits bottles, and wine bottles from 90ml to 750ml."
+        ],
+];
 
     private static $industries = [
         'agro' => [
@@ -144,6 +151,18 @@ class ProductModel {
         ]
     ];
     private static $series = [
+        [
+            "name" => "Liquor & Spirits PET Bottles",
+            "slug" => "liquor-spirits-pet-bottles",
+            "categorySlug" => "liquor-bottles",
+            "categoryName" => "Liquor & Spirits Bottles",
+            "image" => "/uploads/products/liquor-bottles/liq-180ml-kidney-10g.webp",
+            "material" => "PET",
+            "shape" => "Kidney Flask / Fluted Round / Wine",
+            "volumeRange" => "90ml - 750ml",
+            "neckRange" => "25mm - 30mm",
+            "desc" => "Crystal-clear PET pocket flasks, flat liquor bottles, fluted round spirits containers, and wine bottles engineered for high clarity, shatter resistance, and alcohol packaging."
+        ],
             [
                 "name" => "Agro & Pesticide PET Bottles",
                 "slug" => "agro-bottles",
@@ -1681,8 +1700,191 @@ class ProductModel {
             "Australia",
             "Canada",
             "Singapore",
-            "South Africa",
+            "India",
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cambodia",
+            "Cameroon",
+            "Central African Republic",
+            "Chad",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Costa Rica",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Eswatini",
+            "Ethiopia",
+            "Fiji",
+            "Finland",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Ghana",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Honduras",
+            "Hungary",
+            "Iceland",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Ivory Coast",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kiribati",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Madagascar",
+            "Malawi",
             "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Marshall Islands",
+            "Mauritania",
+            "Mauritius",
+            "Mexico",
+            "Micronesia",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "New Zealand",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "North Korea",
+            "North Macedonia",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Palestine",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Romania",
+            "Russia",
+            "Rwanda",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "Samoa",
+            "San Marino",
+            "Sao Tome and Principe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "South Africa",
+            "South Korea",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Suriname",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "Timor-Leste",
+            "Togo",
+            "Tonga",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Vatican City",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe",
             "Other Country"
         ];
 
@@ -2025,7 +2227,7 @@ class ProductModel {
         }
 
         // 5. Liquor, Spirits & Beverages
-        if (strpos($name, 'flat') !== false || 
+        if ($cat === 'liquor-bottles' || strpos($series, 'liquor') !== false || strpos($name, 'flat') !== false || 
             strpos($name, 'flask') !== false || 
             strpos($series, 'flat') !== false ||
             strpos($name, 'liquor') !== false ||
@@ -2078,6 +2280,7 @@ class ProductModel {
         if (strpos($subLower, 'sharp') !== false) return 'sharp-cylindrical-pet';
         if (strpos($subLower, 'boston') !== false) return 'boston-round-pet';
         if (strpos($subLower, 'jar') !== false) return 'round-jars';
+        if (strpos($subLower, 'liquor') !== false || strpos($subLower, 'spirit') !== false) return 'liquor-spirits-pet-bottles';
 
         return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $subcat), '-'));
     }
@@ -2129,6 +2332,16 @@ class ProductModel {
 
     public static function getSkuById($id) {
         if (empty($id)) return null;
+
+        $idAliases = [
+            'COS-225ML-ESKINOL' => 'COS-225ML-OVAL-SKINCARE',
+            'PHA-200ML-ROUND-PET-CHARAK' => 'PHA-200ML-ROUND-PET-CLASSIC',
+            'PHA-250ML-BRUTE-PET-SANTIVANI' => 'PHA-250ML-BRUTE-PET-HD',
+            'PHA-60ML-ROUND-PET-MACLEODS' => 'PHA-60ML-ROUND-PET-STD',
+        ];
+        if (isset($idAliases[$id])) {
+            $id = $idAliases[$id];
+        }
 
         // 1. Direct MySQL single-row lookup if connected
         if (class_exists('Database')) {
@@ -2324,10 +2537,19 @@ class ProductModel {
             }
 
             // F. Description match (Whole word match only to avoid false substring positives like capacity -> cap)
-            if ($score === 0) {
+            // If the search query mapped to a specific category taxonomy (e.g. pumps, caps, agro-bottles),
+            // do NOT match descriptions of products in unrelated categories (avoids cosmetics bottles matching 'pump' via compatibility descriptions).
+            if ($score === 0 && empty($targetCategories)) {
                 foreach ($stems as $st) {
                     if (preg_match('/\b' . preg_quote($st, '/') . '\b/i', $desc)) {
                         $score += 15;
+                        break;
+                    }
+                }
+            } elseif ($score > 0 && !empty($targetCategories)) {
+                foreach ($stems as $st) {
+                    if (preg_match('/\b' . preg_quote($st, '/') . '\b/i', $desc)) {
+                        $score += 10;
                         break;
                     }
                 }

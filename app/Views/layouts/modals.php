@@ -2,7 +2,7 @@
        INQUIRY DRAWER & MODAL STYLES (Self-contained for immediate live rendering)
        ========================================================================= -->
   <style>
-    .frapak-drawer-overlay {
+    .tn-drawer-overlay {
       position: fixed;
       inset: 0;
       background: rgba(15, 27, 44, 0.65);
@@ -11,10 +11,10 @@
       backdrop-filter: blur(3px);
       transition: opacity 0.25s ease;
     }
-    .frapak-drawer-overlay.open {
+    .tn-drawer-overlay.open {
       display: block !important;
     }
-    .frapak-drawer {
+    .tn-drawer {
       position: fixed;
       top: 0;
       right: 0;
@@ -31,10 +31,10 @@
       border-top-left-radius: 12px;
       border-bottom-left-radius: 12px;
     }
-    .frapak-drawer.open {
+    .tn-drawer.open {
       transform: translateX(0) !important;
     }
-    .frapak-modal-overlay {
+    .tn-modal-overlay {
       position: fixed;
       inset: 0;
       background: rgba(15, 27, 44, 0.65);
@@ -45,19 +45,19 @@
       padding: 20px;
       backdrop-filter: blur(4px);
     }
-    .frapak-modal-overlay.open {
+    .tn-modal-overlay.open {
       display: flex !important;
     }
-    .frapak-modal-box {
+    .tn-modal-box {
       background: #ffffff;
       border-radius: 12px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      animation: frapakModalIn 0.25s ease-out;
+      animation: truenorthModalIn 0.25s ease-out;
     }
-    @keyframes frapakModalIn {
+    @keyframes truenorthModalIn {
       from { opacity: 0; transform: translateY(16px) scale(0.98); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
@@ -66,8 +66,8 @@
   <!-- =========================================================================
        INQUIRY DRAWER
        ========================================================================= -->
-  <div class="frapak-drawer-overlay" id="inquiry-drawer-overlay" onclick="window.closeInquiry()"></div>
-  <aside class="frapak-drawer" id="inquiry-drawer" onclick="event.stopPropagation()">
+  <div class="tn-drawer-overlay" id="inquiry-drawer-overlay" onclick="window.closeInquiry()"></div>
+  <aside class="tn-drawer" id="inquiry-drawer" onclick="event.stopPropagation()">
     <div class="drawer-header" style="background: var(--color-navy); color: #fff; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center;">
       <div>
         <h3 style="font-size: 1.15rem; font-weight: 700; margin: 0; color: #fff;">Wholesale Packaging Inquiry</h3>
@@ -83,19 +83,19 @@
 
       <form id="drawer-inquiry-form">
         <input type="hidden" name="product" id="inquiry-hidden-product" value="" />
-        <div class="frapak-form-field">
+        <div class="tn-form-field">
           <label>1. Name *</label>
           <input type="text" name="name" required placeholder="Enter your full name" autocomplete="name" />
         </div>
-        <div class="frapak-form-field">
+        <div class="tn-form-field">
           <label>2. Company Name *</label>
           <input type="text" name="company" required placeholder="Enter company name" autocomplete="organization" />
         </div>
-        <div class="frapak-form-field">
-          <label>3. Email ID *</label>
+        <div class="tn-form-field">
+          <label>3. Work Email *</label>
           <input type="email" name="email" required placeholder="Enter work email address" autocomplete="email" />
         </div>
-        <div class="frapak-form-field">
+        <div class="tn-form-field">
           <label>4. Country *</label>
           <select name="country" class="country-select" required>
             <option value="" disabled selected>Select your country...</option>
@@ -130,16 +130,16 @@
             <option value="Other Country">Other Country</option>
           </select>
         </div>
-        <div class="frapak-form-field">
+        <div class="tn-form-field">
           <label>5. Phone Number *</label>
           <input type="tel" name="phone" required placeholder="Country code + phone number" autocomplete="tel" />
         </div>
-        <div class="frapak-form-field">
+        <div class="tn-form-field">
           <label>6. Inquiry Details *</label>
           <textarea id="inquiry-notes-field" name="inquiry" required placeholder="Tell us about your required volumes, neck sizes, caps, or target delivery timeline" style="min-height: 90px;"></textarea>
         </div>
 
-        <button type="submit" class="frapak-btn-gold" style="margin-left: 0; width: 100%; margin-top: 10px; padding: 13px; font-weight: 700; font-size: 0.95rem; border-radius: 6px;">
+        <button type="submit" class="tn-btn-gold" style="margin-left: 0; width: 100%; margin-top: 10px; padding: 13px; font-weight: 700; font-size: 0.95rem; border-radius: 6px;">
           SEND INQUIRY
         </button>
       </form>
@@ -149,8 +149,8 @@
   <!-- =========================================================================
        CONFIRMATION MODAL
        ========================================================================= -->
-  <div class="frapak-modal-overlay" id="success-modal" onclick="window.closeModal('success-modal')">
-    <div class="frapak-modal-box" style="max-width: 460px; padding: 24px;" onclick="event.stopPropagation()">
+  <div class="tn-modal-overlay" id="success-modal" onclick="window.closeModal('success-modal')">
+    <div class="tn-modal-box" style="max-width: 460px; padding: 24px;" onclick="event.stopPropagation()">
       <div id="success-modal-content"></div>
     </div>
   </div>
@@ -158,8 +158,8 @@
   <!-- =========================================================================
        TERMS & CONDITIONS MODAL
        ========================================================================= -->
-  <div class="frapak-modal-overlay" id="terms-modal" onclick="window.closeTermsModal()">
-    <div class="frapak-modal-box" style="max-width: 640px; padding: 28px;" onclick="event.stopPropagation()">
+  <div class="tn-modal-overlay" id="terms-modal" onclick="window.closeTermsModal()">
+    <div class="tn-modal-box" style="max-width: 640px; padding: 28px;" onclick="event.stopPropagation()">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #E2E8F0; padding-bottom: 12px;">
         <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-navy); margin: 0;">General Terms &amp; Conditions</h3>
         <button onclick="window.closeTermsModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-navy); line-height: 1;">&times;</button>
@@ -168,21 +168,22 @@
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">1. Quality Assurance &amp; Manufacturing Standards</h4>
         <p style="margin-bottom: 12px;">All PET bottles, jars, closures, and pumps produced by TrueNorth Group comply strictly with TÜV NORD ISO 9001 quality management protocols and food-grade safety standards. Production is conducted under cleanroom protocols for medical, cosmetic, and food packaging applications.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">2. Minimum Order Quantities (MOQ) &amp; Tooling</h4>
-        <p style="margin-bottom: 12px;">Standard catalogue items feature low MOQs starting from 20,000 units per batch. Custom pilot tooling and 3D prototype sampling terms are agreed upon project specifications prior to mold fabrication.</p>
+        <p style="margin-bottom: 12px;">Standard catalogue items feature accessible MOQs starting from 5,000 units per batch. Custom tooling and 3D prototype sampling terms are agreed upon project specifications prior to mould fabrication.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">3. Leak-Free Guarantee &amp; Inspection</h4>
         <p style="margin-bottom: 12px;">Every production batch undergoes 1,000+ cycle vacuum chamber leak tests and neck-finish torque calibration. Technical samples dispatched for customer testing must be verified before mass production sign-off.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">4. Export Shipping &amp; Delivery Terms</h4>
-        <p style="margin-bottom: 0;">Shipments are packaged in export-grade corrugated cartons, stretch-wrapped pallets, and assigned full batch traceability for zero-damage transit across domestic and global logistics destinations.</p>
+        <p style="margin-bottom: 12px;">Shipments are packaged in export-grade corrugated cartons, stretch-wrapped pallets, and assigned full batch traceability for maximum transit protection and export durability across domestic and global logistics destinations.</p>
+        <p style="margin-bottom: 0; font-size: 0.82rem; font-weight: 700;"><a href="/terms" style="color: var(--color-navy); text-decoration: underline;">Read Full Terms &amp; Conditions of Sale &rarr;</a></p>
       </div>
-      <button onclick="window.closeTermsModal()" class="frapak-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE TERMS</button>
+      <button onclick="window.closeTermsModal()" class="tn-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE TERMS</button>
     </div>
   </div>
 
   <!-- =========================================================================
        PRIVACY STATEMENT MODAL
        ========================================================================= -->
-  <div class="frapak-modal-overlay" id="privacy-modal" onclick="window.closePrivacyModal()">
-    <div class="frapak-modal-box" style="max-width: 640px; padding: 28px;" onclick="event.stopPropagation()">
+  <div class="tn-modal-overlay" id="privacy-modal" onclick="window.closePrivacyModal()">
+    <div class="tn-modal-box" style="max-width: 640px; padding: 28px;" onclick="event.stopPropagation()">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #E2E8F0; padding-bottom: 12px;">
         <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--color-navy); margin: 0;">Privacy Statement</h3>
         <button onclick="window.closePrivacyModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-navy); line-height: 1;">&times;</button>
@@ -191,10 +192,11 @@
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">1. Client Data Protection</h4>
         <p style="margin-bottom: 12px;">TrueNorth Group values your business privacy. All technical drawings, CAD files, sample requests, and procurement inquiries submitted through our portal are stored securely under encrypted SSL protocols.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">2. Confidentiality &amp; Non-Disclosure (NDA)</h4>
-        <p style="margin-bottom: 12px;">Proprietary bottle designs and custom mold specifications remain 100% confidential. We strictly execute Non-Disclosure Agreements (NDAs) for custom tooling and private-label packaging developments.</p>
+        <p style="margin-bottom: 12px;">Proprietary bottle designs and custom mould specifications remain 100% confidential. We strictly execute Non-Disclosure Agreements (NDAs) for custom tooling and private-label packaging developments.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">3. Information Usage &amp; Communication</h4>
-        <p style="margin-bottom: 0;">Contact details provided during RFQ submissions are exclusively utilized by our engineering team to provide quotations, technical specifications, and shipment status updates. We do not sell or share data with third parties.</p>
+        <p style="margin-bottom: 12px;">Contact details provided during RFQ submissions are exclusively utilized by our engineering team to provide quotations, technical specifications, and shipment status updates. We do not sell or share data with third parties.</p>
+        <p style="margin-bottom: 0; font-size: 0.82rem; font-weight: 700;"><a href="/privacy" style="color: var(--color-navy); text-decoration: underline;">Read Full Privacy &amp; Data Protection Policy &rarr;</a></p>
       </div>
-      <button onclick="window.closePrivacyModal()" class="frapak-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE PRIVACY STATEMENT</button>
+      <button onclick="window.closePrivacyModal()" class="tn-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE PRIVACY STATEMENT</button>
     </div>
   </div>

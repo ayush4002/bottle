@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px;">
     <h3 style="margin: 0 0 16px 0; font-size: 1.1rem; color: #f8fafc;">Add New Administrator</h3>
     
-    <form method="POST" action="/admin/users.php">
+    <form method="POST" action="/admin/users">
       <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
 
       <div style="margin-bottom: 16px;">
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </select>
       </div>
 
-      <button type="submit" class="frapak-btn-gold" style="width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; background: #eab308; color: #0f172a;">CREATE ADMIN USER</button>
+      <button type="submit" class="tn-btn-gold" style="width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; background: #eab308; color: #0f172a;">CREATE ADMIN USER</button>
     </form>
   </div>
 
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </td>
               <td style="padding: 12px 10px; text-align: right;">
                 <?php if (!$isPrimary): ?>
-                  <a href="/admin/users.php?action=delete&user=<?= urlencode($uName) ?>" onclick="return confirm('Delete admin user \'<?= htmlspecialchars(addslashes($uName)) ?>\'?');" style="color: #ef4444; font-size: 0.8rem; font-weight: 600; text-decoration: none; padding: 4px 8px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 4px;">
+                  <a href="/admin/users?action=delete&user=<?= urlencode($uName) ?>" onclick="return confirm('Delete admin user \'<?= htmlspecialchars(addslashes($uName)) ?>\'?');" style="color: #ef4444; font-size: 0.8rem; font-weight: 600; text-decoration: none; padding: 4px 8px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 4px;">
                     Delete
                   </a>
                 <?php else: ?>

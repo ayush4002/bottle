@@ -97,7 +97,7 @@ if (!empty($sku)) {
         $canonicalUrl = $seoBaseUrl . '/products?q=' . urlencode($qParam);
     } else {
         $seoTitle = 'Packaging Catalog & Containers Directory | TrueNorth Group';
-        $seoDesc = 'Browse 290+ PET bottles, agro containers, cosmetic jars, lotion pumps, mist sprayers, and precision closures across 7 specialized categories. ISO certified factory direct.';
+        $seoDesc = 'Browse 295+ PET bottles, agro containers, cosmetic jars, lotion pumps, mist sprayers, and precision closures across 8 specialized categories. ISO certified factory direct.';
         $canonicalUrl = $seoBaseUrl . '/products';
     }
 } elseif (($activePage ?? '') === 'about') {
@@ -112,14 +112,24 @@ if (!empty($sku)) {
     $canonicalUrl = $seoBaseUrl . '/contact';
 } elseif (($activePage ?? '') === 'custom') {
     // 5. Custom Solutions
-    $seoTitle = 'Custom Mold Design & Tailored Packaging Engineering | TrueNorth Group';
-    $seoDesc = 'Bespoke container tooling, 3D rapid prototyping, custom neck finishes, and private labeling solutions engineered to your exact product specifications.';
+    $seoTitle = 'Custom Mould Design & Tailored Packaging Engineering | TrueNorth Group';
+    $seoDesc = 'Bespoke container tooling, 3D rapid prototyping, custom neck finishes, and private labelling solutions engineered to your exact product specifications.';
     $canonicalUrl = $seoBaseUrl . '/custom';
 } elseif (($activePage ?? '') === 'sustainability') {
     // 6. Sustainability
-    $seoTitle = 'Sustainable Packaging Solutions — PCR-PET & Ocean Bound Plastics | TrueNorth';
+    $seoTitle = 'Sustainable Packaging Solutions — PCR-PET & Circular Polymers | TrueNorth';
     $seoDesc = 'Eco-conscious packaging innovation. 100% Post-Consumer Recycled (PCR) PET bottles, lightweighting engineering, and closed-loop circular packaging solutions.';
     $canonicalUrl = $seoBaseUrl . '/sustainability';
+} elseif (($activePage ?? '') === 'terms') {
+    // 7. Terms & Conditions
+    $seoTitle = 'General Terms & Conditions of Sale | TrueNorth Group';
+    $seoDesc = 'B2B commercial sales terms, quality standards, order fulfillment, and warranty specifications of TrueNorth Group.';
+    $canonicalUrl = $seoBaseUrl . '/terms';
+} elseif (($activePage ?? '') === 'privacy') {
+    // 8. Privacy Statement
+    $seoTitle = 'Privacy Statement & Data Protection Policy | TrueNorth Group';
+    $seoDesc = 'Information regarding personal and commercial data processing, international trade inquiries, and GDPR/regulatory privacy protections.';
+    $canonicalUrl = $seoBaseUrl . '/privacy';
 }
 
 // Global Organization Schema
@@ -131,9 +141,9 @@ $jsonLdList[] = [
     'url' => $seoBaseUrl,
     'logo' => $seoBaseUrl . '/logo.webp',
     'image' => $seoBaseUrl . '/logo.webp',
-    'description' => 'Hybrid primary packaging specialist manufacturing and distributing PET bottles, jars, caps, and pumps worldwide.',
-    'email' => 'info@wetruenorthgroup.com',
-    'telephone' => '+91 98765 43210',
+    'description' => 'Primary packaging manufacturer and partner producing and distributing high-grade PET bottles, jars, caps, and pumps worldwide.',
+    'email' => 'Info@wetruenorthgroup.com',
+    'telephone' => '+91 9810220761',
     'address' => [
         '@type' => 'PostalAddress',
         'streetAddress' => '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura',
@@ -144,9 +154,9 @@ $jsonLdList[] = [
     ],
     'contactPoint' => [
         '@type' => 'ContactPoint',
-        'telephone' => '+91 98765 43210',
+        'telephone' => '+91 9810220761',
         'contactType' => 'Sales & Technical Inquiries',
-        'email' => 'info@wetruenorthgroup.com',
+        'email' => 'Info@wetruenorthgroup.com',
         'areaServed' => 'Global',
         'availableLanguage' => ['English', 'Hindi']
     ]
@@ -222,13 +232,13 @@ $jsonLdList[] = [
 <body>
 
   <!-- =========================================================================
-       TOP UTILITY BAR (Exact Frapak Top Strip)
+       TOP UTILITY BAR (Exact TrueNorth Top Strip)
        ========================================================================= -->
-  <div class="frapak-top-utility-bar">
-    <div class="frapak-container top-bar-inner">
+  <div class="tn-top-utility-bar">
+    <div class="tn-container top-bar-inner">
       
       <!-- Search Input with Live Autocomplete -->
-      <form action="/products" method="GET" class="frapak-search-box" id="top-search-form" onsubmit="if(!this.q.value.trim()) return false;">
+      <form action="/products" method="GET" class="tn-search-box" id="top-search-form" onsubmit="if(!this.q.value.trim()) return false;">
         <input type="text" name="q" id="top-search-input" placeholder="Search bottles, jars, pumps, caps..." autocomplete="off" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>" />
         <button type="submit" aria-label="Search">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -236,16 +246,27 @@ $jsonLdList[] = [
         <div class="search-results-popover" id="top-search-popover"></div>
       </form>
 
-      <!-- Certifications & Language Selector -->
+      <!-- Certifications & Global Distribution Strip -->
       <div class="top-bar-right">
-        <span>Audited Cleanroom Manufacturing • Food-Grade ISO Certified</span>
-        <div class="lang-selector">
-          <span style="display: inline-flex; align-items: center; gap: 6px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            EN
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-          </span>
-        </div>
+        <span class="top-bar-cert-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right: 6px; vertical-align: -2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          TÜV NORD ISO 9001:2015 • Class 10,000 Cleanroom
+        </span>
+        <span class="top-bar-cert-badge top-bar-export-badge" style="display: inline-flex; align-items: center; color: var(--color-gold); font-weight: 700; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 12px; margin-left: 12px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Worldwide Seaport Exports
+        </span>
+        <span class="top-bar-cert-badge" style="display: inline-flex; align-items: center; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 12px; margin-left: 12px; gap: 4px;">
+          <a href="tel:+919810220761" style="color: var(--color-gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 9810220761
+          </a>
+          <span style="color: rgba(255,255,255,0.3); margin: 0 4px;">/</span>
+          <a href="mailto:Info@wetruenorthgroup.com" style="color: inherit; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Info@wetruenorthgroup.com
+          </a>
+        </span>
       </div>
 
     </div>
@@ -254,33 +275,33 @@ $jsonLdList[] = [
   <!-- =========================================================================
        MAIN NAVIGATION HEADER (White Sticky Header)
        ========================================================================= -->
-  <header class="frapak-main-header">
-    <div class="frapak-container header-nav-inner">
+  <header class="tn-main-header">
+    <div class="tn-container header-nav-inner">
       
       <!-- Logo -->
-      <a href="/" class="frapak-logo">
-        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="frapak-logo-img" />
+      <a href="/" class="tn-logo">
+        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="tn-logo-img" />
       </a>
 
       <!-- Exact Client Headers: Home - About - Products - Custom Solutions - Contact -->
-      <ul class="frapak-nav-list">
-        <li><a href="/" class="frapak-nav-link <?= ($activePage ?? 'home') === 'home' ? 'active' : '' ?>">Home</a></li>
-        <li><a href="/about" class="frapak-nav-link <?= ($activePage ?? '') === 'about' ? 'active' : '' ?>">About</a></li>
-        <li><a href="/products" class="frapak-nav-link <?= ($activePage ?? '') === 'products' ? 'active' : '' ?>">Products</a></li>
-        <li><a href="/custom" class="frapak-nav-link <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>">Custom Solutions</a></li>
-        <li><a href="/sustainability" class="frapak-nav-link <?= ($activePage ?? '') === 'sustainability' ? 'active' : '' ?>">Sustainability</a></li>
-        <li><a href="/contact" class="frapak-nav-link <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>">Contact</a></li>
+      <ul class="tn-nav-list">
+        <li><a href="/" class="tn-nav-link <?= ($activePage ?? 'home') === 'home' ? 'active' : '' ?>">Home</a></li>
+        <li><a href="/about" class="tn-nav-link <?= ($activePage ?? '') === 'about' ? 'active' : '' ?>">About</a></li>
+        <li><a href="/products" class="tn-nav-link <?= ($activePage ?? '') === 'products' ? 'active' : '' ?>">Products</a></li>
+        <li><a href="/custom" class="tn-nav-link <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>">Custom Solutions</a></li>
+        <li><a href="/sustainability" class="tn-nav-link <?= ($activePage ?? '') === 'sustainability' ? 'active' : '' ?>">Sustainability</a></li>
+        <li><a href="/contact" class="tn-nav-link <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>">Contact</a></li>
       </ul>
 
       <!-- Header Actions (Inquiry + Mobile Hamburger) -->
       <div class="header-actions-wrap">
-        <button class="frapak-cart-inquiry-btn" onclick="window.openInquiry()" aria-label="Open Inquiry">
+        <button class="tn-cart-inquiry-btn" onclick="window.openInquiry()" aria-label="Open Inquiry">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span>INQUIRY</span>
         </button>
 
         <!-- Mobile Hamburger Button -->
-        <button class="frapak-mobile-menu-toggle" id="frapak-mobile-menu-btn" onclick="window.toggleMobileMenu()" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <button class="tn-mobile-menu-toggle" id="tn-mobile-menu-btn" onclick="window.toggleMobileMenu()" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -293,8 +314,8 @@ $jsonLdList[] = [
   <!-- =========================================================================
        MOBILE NAVIGATION DRAWER & BACKDROP
        ========================================================================= -->
-  <div class="frapak-mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="window.closeMobileMenu()"></div>
-  <aside class="frapak-mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+  <div class="tn-mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="window.closeMobileMenu()"></div>
+  <aside class="tn-mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
     <div class="mobile-nav-header">
       <a href="/" class="mobile-nav-logo" onclick="window.closeMobileMenu();">
         <img src="/logo_svg.svg" alt="TrueNorth Group Logo" />
@@ -351,24 +372,43 @@ $jsonLdList[] = [
       </a>
     </nav>
 
+    <!-- Mobile Global Compliance Strip & Direct Contact -->
+    <div class="mobile-nav-lang-section" style="padding: 12px 16px; border-top: 1px solid #e2e8f0; background: #f8fafc;">
+      <div style="font-size: 0.75rem; font-weight: 700; color: #475569; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>TÜV NORD ISO 9001 • Class 10,000 Cleanroom</span>
+      </div>
+      <div style="font-size: 0.8rem; font-weight: 600; color: #1e293b; display: flex; flex-direction: column; gap: 6px;">
+        <a href="tel:+919810220761" style="color: var(--color-gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+91 9810220761</span>
+        </a>
+        <a href="mailto:Info@wetruenorthgroup.com" style="color: #475569; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Info@wetruenorthgroup.com</span>
+        </a>
+      </div>
+    </div>
+
     <!-- Drawer Footer Actions -->
     <div class="mobile-nav-footer">
-      <button class="frapak-btn-gold mobile-nav-inquiry-btn" onclick="window.closeMobileMenu(); window.openInquiry();">
+      <button class="tn-btn-gold mobile-nav-inquiry-btn" onclick="window.closeMobileMenu(); window.openInquiry();">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         SEND AN INQUIRY
       </button>
       <div class="mobile-nav-cert-badge">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>ISO 15593 Food-Grade • Class 10,000 Cleanroom</span>
+        <span>TÜV NORD ISO 9001:2015 • Class 10,000 Cleanroom</span>
       </div>
     </div>
   </aside>
 
   <script>
+    // Mobile Drawer Navigation
     window.toggleMobileMenu = function() {
       var d = document.getElementById('mobile-nav-drawer');
       var b = document.getElementById('mobile-nav-backdrop');
-      var btn = document.getElementById('frapak-mobile-menu-btn');
+      var btn = document.getElementById('tn-mobile-menu-btn');
       if (d && b) {
         var isOpen = d.classList.contains('open') || d.classList.contains('active');
         if (isOpen) {
@@ -388,7 +428,7 @@ $jsonLdList[] = [
     window.closeMobileMenu = function() {
       var d = document.getElementById('mobile-nav-drawer');
       var b = document.getElementById('mobile-nav-backdrop');
-      var btn = document.getElementById('frapak-mobile-menu-btn');
+      var btn = document.getElementById('tn-mobile-menu-btn');
       if (d) d.classList.remove('open', 'active');
       if (b) b.classList.remove('open', 'active');
       if (btn) {

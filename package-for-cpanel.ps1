@@ -9,9 +9,24 @@ if (Test-Path $zipName) {
 }
 
 # Ensure fresh DB dump
-Write-Host "Updating database dump truenorth_db.sql..." -ForegroundColor Yellow
+Write-Host "Checking database dump truenorth_db.sql..." -ForegroundColor Yellow
+$dumpSuccess = $false
 if (Test-Path "D:\xampp\mysql\bin\mysqldump.exe") {
-    & "D:\xampp\mysql\bin\mysqldump.exe" -u root truenorth_db --result-file="truenorth_db.sql"
+    $tempDump = "temp_truenorth_dump.sql"
+    & "D:\xampp\mysql\bin\mysqldump.exe" -u root truenorth_db --result-file=$tempDump 2>$null
+    if ($LASTEXITCODE -eq 0 -and (Test-Path $tempDump) -and (Get-Item $tempDump).Length -gt 10000) {
+        Move-Item $tempDump "truenorth_db.sql" -Force
+        $dumpSuccess = $true
+        Write-Host "Updated truenorth_db.sql from local MySQL database." -ForegroundColor Green
+    } else {
+        if (Test-Path $tempDump) { Remove-Item $tempDump -Force }
+    }
+}
+if (-not $dumpSuccess) {
+    if (Test-Path "config\truenorth_db.sql") {
+        Copy-Item "config\truenorth_db.sql" "truenorth_db.sql" -Force
+        Write-Host "Used verified production database dump from config\truenorth_db.sql." -ForegroundColor Green
+    }
 }
 
 # Package files using tar
@@ -26,8 +41,17 @@ Write-Host "Compressing production files..." -ForegroundColor Yellow
   --exclude=".vercel/*" `
   --exclude=".env.local" `
   --exclude=".env" `
-  --exclude="deploy_wetruenorthgroup.zip" `
+  --exclude="*.zip" `
+  --exclude="scratch" `
+  --exclude="scratch/*" `
+  --exclude="CPANEL_PUBLIC_HTML" `
+  --exclude="CPANEL_PUBLIC_HTML/*" `
+  --exclude="new chnages" `
+  --exclude="new chnages/*" `
+  --exclude="*.bak" `
   --exclude="*.log" `
+  --exclude="diag.php" `
+  --exclude="test_server.php" `
   * .htaccess .env.example
 
 if (Test-Path $zipName) {

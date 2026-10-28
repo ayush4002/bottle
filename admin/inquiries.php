@@ -162,11 +162,11 @@ require_once __DIR__ . '/header.php';
       <p style="color: #94a3b8; font-size: 0.88rem; margin: 0;">Direct factory quote requests and sample inquiries from wetruenorthgroup.com</p>
     </div>
     <div style="display: flex; gap: 10px;">
-      <a href="/admin/inquiries.php?action=export_csv" class="frapak-btn-gold" style="margin: 0; padding: 10px 18px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+      <a href="/admin/inquiries?action=export_csv" class="tn-btn-gold" style="margin: 0; padding: 10px 18px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Export CSV
       </a>
-      <a href="/admin/settings.php" style="background: #334155; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
+      <a href="/admin/settings" style="background: #334155; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
         Email Settings &rarr;
       </a>
     </div>
@@ -213,27 +213,27 @@ require_once __DIR__ . '/header.php';
     
     <!-- Status Tabs -->
     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-      <a href="/admin/inquiries.php?status=all<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'all' ? 'active' : '' ?>">
+      <a href="/admin/inquiries?status=all<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'all' ? 'active' : '' ?>">
         All (<?= $stats['total'] ?>)
       </a>
-      <a href="/admin/inquiries.php?status=new<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'new' ? 'active' : '' ?>">
+      <a href="/admin/inquiries?status=new<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'new' ? 'active' : '' ?>">
         New (<?= $stats['new'] ?>)
       </a>
-      <a href="/admin/inquiries.php?status=contacted<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'contacted' ? 'active' : '' ?>">
+      <a href="/admin/inquiries?status=contacted<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'contacted' ? 'active' : '' ?>">
         Contacted (<?= $stats['contacted'] ?>)
       </a>
-      <a href="/admin/inquiries.php?status=closed<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'closed' ? 'active' : '' ?>">
+      <a href="/admin/inquiries?status=closed<?= $searchQuery ? '&q=' . urlencode($searchQuery) : '' ?>" class="inq-filter-tab <?= $statusFilter === 'closed' ? 'active' : '' ?>">
         Closed (<?= $stats['closed'] ?>)
       </a>
     </div>
 
     <!-- Keyword Search -->
-    <form action="/admin/inquiries.php" method="GET" style="display: flex; gap: 8px;">
+    <form action="/admin/inquiries" method="GET" style="display: flex; gap: 8px;">
       <input type="hidden" name="status" value="<?= htmlspecialchars($statusFilter) ?>" />
       <input type="text" name="q" value="<?= htmlspecialchars($searchQuery) ?>" placeholder="Search name, email, company, ref..." style="background: #0f172a; border: 1px solid #334155; color: #f8fafc; padding: 8px 14px; border-radius: 6px; font-size: 0.85rem; outline: none; width: 240px;" />
       <button type="submit" style="background: #334155; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; font-size: 0.85rem; cursor: pointer; font-weight: 600;">Search</button>
       <?php if (!empty($searchQuery)): ?>
-        <a href="/admin/inquiries.php?status=<?= urlencode($statusFilter) ?>" style="background: transparent; color: #94a3b8; padding: 8px; text-decoration: none; font-size: 0.85rem;">Clear</a>
+        <a href="/admin/inquiries?status=<?= urlencode($statusFilter) ?>" style="background: transparent; color: #94a3b8; padding: 8px; text-decoration: none; font-size: 0.85rem;">Clear</a>
       <?php endif; ?>
     </form>
 
@@ -336,7 +336,7 @@ require_once __DIR__ . '/header.php';
                 <td style="text-align: right;">
                   <div style="display: flex; justify-content: flex-end; gap: 6px; align-items: center;">
                     <?php if (!empty($row['email'])): ?>
-                      <a href="mailto:<?= htmlspecialchars($row['email']) ?>?subject=Regarding%20your%20inquiry%20<?= urlencode($row['quote_id'] ?? '') ?>%20-%20TrueNorth%20Group" class="frapak-btn-gold" style="margin: 0; padding: 6px 10px; font-size: 0.75rem; text-decoration: none;" title="Reply via Email">
+                      <a href="mailto:<?= htmlspecialchars($row['email']) ?>?subject=Regarding%20your%20inquiry%20<?= urlencode($row['quote_id'] ?? '') ?>%20-%20TrueNorth%20Group" class="tn-btn-gold" style="margin: 0; padding: 6px 10px; font-size: 0.75rem; text-decoration: none;" title="Reply via Email">
                         Reply
                       </a>
                     <?php endif; ?>

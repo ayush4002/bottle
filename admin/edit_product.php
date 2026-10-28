@@ -6,13 +6,13 @@ checkAdminAuth();
 
 $id = trim($_GET['id'] ?? '');
 if (empty($id)) {
-    header("Location: /admin/products.php?err=" . urlencode("No product ID specified for editing."));
+    header("Location: /admin/products?err=" . urlencode("No product ID specified for editing."));
     exit();
 }
 
 $product = ProductModel::getSkuById($id);
 if (!$product) {
-    header("Location: /admin/products.php?err=" . urlencode("Product '{$id}' not found."));
+    header("Location: /admin/products?err=" . urlencode("Product '{$id}' not found."));
     exit();
 }
 
@@ -237,7 +237,7 @@ $gender = $product['gender'] ?? 'Unisex';
   <!-- HEADER BAR -->
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
     <div>
-      <a href="/admin/products.php" style="color: #38bdf8; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+      <a href="/admin/products" style="color: #38bdf8; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px;">
         &larr; Back to Catalogue Management
       </a>
       <h1 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: #f8fafc;">
@@ -266,20 +266,20 @@ $gender = $product['gender'] ?? 'Unisex';
         <strong style="color: #f87171; font-size: 1rem; display: block; margin-bottom: 4px;">⚠️ This Product is Currently Archived</strong>
         <p style="margin: 0; font-size: 0.85rem; color: #cbd5e1;">It is completely hidden from the live website catalogue and search. You can restore it to published status at any time.</p>
       </div>
-      <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product.php?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; padding: 10px 18px; border-radius: 8px; text-decoration: none; color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; padding: 10px 18px; border-radius: 8px; text-decoration: none; color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
         Restore Product to Active Catalogue
       </a>
     </div>
   <?php endif; ?>
 
-  <form id="smartProductForm" action="/admin/save_product.php" method="POST" enctype="multipart/form-data">
+  <form id="smartProductForm" action="/admin/save_product" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>" />
     <input type="hidden" name="is_edit" value="1" />
     <input type="hidden" name="id" value="<?= htmlspecialchars($product['id']) ?>" />
     <input type="hidden" name="original_sku" value="<?= htmlspecialchars($product['articleNo'] ?? $product['id']) ?>" />
     <input type="hidden" name="db_id" value="<?= htmlspecialchars($product['db_id'] ?? '') ?>" />
-    <input type="hidden" name="return_url" value="<?= htmlspecialchars($_SERVER['HTTP_REFERER'] ?? '/admin/products.php') ?>" />
+    <input type="hidden" name="return_url" value="<?= htmlspecialchars($_SERVER['HTTP_REFERER'] ?? '/admin/products') ?>" />
 
     <!-- 1. PRODUCT BASICS -->
     <div class="form-card">
@@ -342,7 +342,7 @@ $gender = $product['gender'] ?? 'Unisex';
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
           <label for="material" class="form-label" style="margin-bottom: 0;">Material Polymer *</label>
-          <a href="/admin/categories.php?tab=materials" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Materials &nearr;</a>
+          <a href="/admin/categories?tab=materials" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Materials &nearr;</a>
         </div>
         <input type="text" id="material" name="material" class="form-control-smart" value="<?= htmlspecialchars($material) ?>" placeholder="e.g. PET, HDPE, RPET, Glass..." required oninput="highlightMatchingChip('material-chips', this.value)" />
         <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Quick-select standard option:</div>
@@ -360,7 +360,7 @@ $gender = $product['gender'] ?? 'Unisex';
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
           <label for="capacity" class="form-label" style="margin-bottom: 0;">Volume / Capacity *</label>
-          <a href="/admin/categories.php?tab=volumes" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Volumes &nearr;</a>
+          <a href="/admin/categories?tab=volumes" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Volumes &nearr;</a>
         </div>
         <input type="text" id="capacity" name="capacity" class="form-control-smart" value="<?= htmlspecialchars($capacity) ?>" placeholder="e.g. 100ml, 250ml, 500cc, 1L..." required oninput="highlightMatchingChip('capacity-chips', this.value)" />
         <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Quick-select standard option:</div>
@@ -378,7 +378,7 @@ $gender = $product['gender'] ?? 'Unisex';
       <div class="form-group">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
           <label for="neck" class="form-label" style="margin-bottom: 0;">Neck Finish / Thread Size</label>
-          <a href="/admin/categories.php?tab=necks" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Necks &nearr;</a>
+          <a href="/admin/categories?tab=necks" target="_blank" style="color: #38bdf8; font-size: 0.78rem; text-decoration: none; font-weight: 600;">Manage Standard Necks &nearr;</a>
         </div>
         <input type="text" id="neck" name="neck" class="form-control-smart" value="<?= htmlspecialchars($neck) ?>" placeholder="e.g. 24/410, 28/410, 46mm Agro..." oninput="highlightMatchingChip('neck-chips', this.value)" />
         <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Quick-select standard option:</div>
@@ -523,23 +523,23 @@ $gender = $product['gender'] ?? 'Unisex';
     <div class="form-card" style="border-color: #475569; background: #1e293b; padding: 24px;">
       <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
         <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
-          <a href="/admin/products.php" class="btn-cancel" style="min-height: 48px; display: inline-flex; align-items: center; gap: 6px;">
+          <a href="/admin/products" class="btn-cancel" style="min-height: 48px; display: inline-flex; align-items: center; gap: 6px;">
             &larr; Cancel &amp; Return
           </a>
 
           <?php if ($status === 'archived'): ?>
-            <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product.php?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; min-height: 48px; padding: 0 20px; border-radius: 10px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: #fff;">
+            <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; min-height: 48px; padding: 0 20px; border-radius: 10px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: #fff;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               Restore to Active
             </a>
           <?php else: ?>
-            <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=archive&return_url=<?= urlencode('/admin/products.php') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Archive this product? It will be hidden from the live website catalogue.');">
+            <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=archive&return_url=<?= urlencode('/admin/products') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Archive this product? It will be hidden from the live website catalogue.');">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>
               Archive Product
             </a>
           <?php endif; ?>
 
-          <a href="/admin/delete_product.php?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=permanent&return_url=<?= urlencode('/admin/products.php') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Are you sure you want to PERMANENTLY delete product \'<?= htmlspecialchars(addslashes($product['name'] ?? 'Product')) ?>\'? This action CANNOT be undone.');">
+          <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=permanent&return_url=<?= urlencode('/admin/products') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Are you sure you want to PERMANENTLY delete product \'<?= htmlspecialchars(addslashes($product['name'] ?? 'Product')) ?>\'? This action CANNOT be undone.');">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
             Delete Permanently
           </a>

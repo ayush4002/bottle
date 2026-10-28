@@ -144,10 +144,20 @@ class SearchDictionary {
             'pattern' => '/\b(pp|polypropylene)\b/i',
             'terms' => ['pp', 'polypropylene']
         ],
-        'liquor' => [
+                'liquor-bottles' => [
+            'name' => 'Liquor & Spirits Bottles',
+            'type' => 'category',
+            'categorySlugs' => ['liquor-bottles'],
+            'terms' => [
+                'liquor', 'spirit', 'spirits', 'alcohol', 'beverage', 'beverages',
+                'flask', 'flasks', 'pocket flask', 'whisky', 'rum', 'vodka', 'gin',
+                'kidney', 'kidney flask', 'wine', 'wine bottle', 'fluted'
+            ]
+        ],
+'liquor' => [
             'name' => 'Liquor & Spirits Containers',
             'type' => 'industry',
-            'categorySlugs' => ['pharma-bottles', 'cosmetics-bottles'],
+            'categorySlugs' => ['liquor-bottles', 'pharma-bottles', 'cosmetics-bottles'],
             'terms' => [
                 'liquor', 'spirit', 'spirits', 'alcohol', 'beverage', 'beverages',
                 'flask', 'flasks', 'pocket flask', 'whisky', 'rum', 'vodka', 'gin',
