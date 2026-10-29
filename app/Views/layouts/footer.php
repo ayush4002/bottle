@@ -26,23 +26,52 @@
             </span>
           </button>
           <div class="footer-accordion-panel" id="footer-panel-products" role="region" aria-labelledby="footer-header-products">
-            <span style="display: block; font-size: 0.72rem; font-weight: 800; color: #b8892e; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">By Category:</span>
-            <ul class="footer-link-list" style="margin-bottom: 12px;">
-              <?php 
-                $footerCategories = !empty($categories) ? $categories : (class_exists('ProductModel') ? ProductModel::getCategories() : []);
-                foreach ($footerCategories as $cat): 
-              ?>
-                <li><a href="/products?category=<?= urlencode($cat['slug']) ?>"><?= htmlspecialchars($cat['name']) ?></a></li>
-              <?php endforeach; ?>
-            </ul>
-            <span style="display: block; font-size: 0.72rem; font-weight: 800; color: #b8892e; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">By Industry Market:</span>
-            <ul class="footer-link-list">
-              <li><a href="/products?industry=cosmetics">Cosmetics & Personal Care</a></li>
-              <li><a href="/products?industry=pharma">Pharmaceuticals & Healthcare</a></li>
-              <li><a href="/products?industry=agro">Agrochemicals & Pesticides</a></li>
-              <li><a href="/products?industry=nutraceuticals">Nutraceuticals & Supplements</a></li>
-              <li><a href="/products?industry=liquor">Liquor, Spirits & Beverages</a></li>
-            </ul>
+            
+            <!-- Category Dropdown Card -->
+            <div class="footer-dropdown-card" id="footer-cat-dropdown">
+              <button type="button" class="footer-dropdown-header" onclick="window.toggleFooterDropdown('footer-cat-dropdown')" aria-expanded="false">
+                <span class="footer-dropdown-title">By Category (8)</span>
+                <span class="footer-dropdown-icon" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </button>
+              <div class="footer-dropdown-body">
+                <ul class="footer-link-list">
+                  <?php 
+                    $footerCategories = !empty($categories) ? $categories : (class_exists('ProductModel') ? ProductModel::getCategories() : []);
+                    foreach ($footerCategories as $cat): 
+                  ?>
+                    <li><a href="/products?category=<?= urlencode($cat['slug']) ?>"><?= htmlspecialchars($cat['name']) ?></a></li>
+                  <?php endforeach; ?>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Industry Market Dropdown Card -->
+            <div class="footer-dropdown-card" id="footer-ind-dropdown" style="margin-top: 8px;">
+              <button type="button" class="footer-dropdown-header" onclick="window.toggleFooterDropdown('footer-ind-dropdown')" aria-expanded="false">
+                <span class="footer-dropdown-title">By Industry (5)</span>
+                <span class="footer-dropdown-icon" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </button>
+              <div class="footer-dropdown-body">
+                <ul class="footer-link-list">
+                  <li><a href="/products?industry=cosmetics">Cosmetics &amp; Personal Care</a></li>
+                  <li><a href="/products?industry=pharma">Pharmaceuticals &amp; Healthcare</a></li>
+                  <li><a href="/products?industry=agro">Agrochemicals &amp; Pesticides</a></li>
+                  <li><a href="/products?industry=nutraceuticals">Nutraceuticals &amp; Supplements</a></li>
+                  <li><a href="/products?industry=liquor">Liquor, Spirits &amp; Beverages</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Direct View All Link -->
+            <a href="/products" class="footer-view-all-link">
+              <span>View All Products</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+
           </div>
         </div>
 
