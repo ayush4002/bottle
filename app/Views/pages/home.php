@@ -84,159 +84,108 @@
     </section>
 
 
-<section class="facts-section">
-    <div class="facts-container">
-
-        <div class="facts-header">
-            <span>OUR STRENGTH</span>
-            <h2 class=".tn-section-title">Facts &amp; Figures</h2>
+    <!-- Facts & Figures: Our Strength Section (TrueNorth Luxury Brand Theme) -->
+    <section class="tn-section tn-strength-section" id="home-strength-section">
+      <div class="tn-container">
+        
+        <div class="tn-section-title-wrap">
+          <span class="tn-section-eyebrow">OUR STRENGTH</span>
+          <h2 class="tn-section-title">Facts &amp; Figures</h2>
+          <p class="tn-section-lead">Pioneering cleanroom production, certified quality management, and trusted primary packaging supply across 5 continents.</p>
         </div>
 
-        <div class="facts-grid">
-
-            <div class="facts-item">
-                <h3>ISO TÜV 9001:2015</h3>
-                <p>Certified Quality Management</p>
+        <div class="tn-strength-grid">
+          
+          <!-- 1. ISO TÜV 9001:2015 -->
+          <div class="tn-strength-card">
+            <div class="tn-strength-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
             </div>
-
-            <div class="facts-item">
-                <h3>US FDA Approved</h3>
-                <p>Quality &amp; Regulatory Standards</p>
+            <div class="tn-strength-info">
+              <h3 class="tn-strength-val">ISO TÜV 9001:2015</h3>
+              <p class="tn-strength-label">Certified Quality Management</p>
             </div>
+          </div>
 
-            <div class="facts-item">
-                <h3>DMF Bottles</h3>
-                <p>Pharmaceutical Packaging</p>
+          <!-- 2. US FDA Approved -->
+          <div class="tn-strength-card">
+            <div class="tn-strength-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
             </div>
+            <div class="tn-strength-info">
+              <h3 class="tn-strength-val">US FDA Approved</h3>
+              <p class="tn-strength-label">Quality &amp; Regulatory Standards</p>
+            </div>
+          </div>
 
-            <div class="facts-item">
-                <h3>Class 10,000</h3>
-                <p>Manufacturing Environment</p>
+          <!-- 3. DMF Bottles -->
+          <div class="tn-strength-card">
+            <div class="tn-strength-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2" width="10" height="4" rx="1"/>
+                <path d="M9 6v3a3 3 0 0 1-3 3H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-1a3 3 0 0 1-3-3V6"/>
+                <line x1="12" y1="13" x2="12" y2="17"/>
+                <line x1="10" y1="15" x2="14" y2="15"/>
+              </svg>
             </div>
+            <div class="tn-strength-info">
+              <h3 class="tn-strength-val">DMF Bottles</h3>
+              <p class="tn-strength-label">Pharmaceutical Packaging</p>
+            </div>
+          </div>
 
-            <div class="facts-item">
-                <h3>25 Years</h3>
-                <p>Manufacturing Experience</p>
+          <!-- 4. Class 10,000 -->
+          <div class="tn-strength-card">
+            <div class="tn-strength-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
             </div>
+            <div class="tn-strength-info">
+              <h3 class="tn-strength-val">Class 10,000</h3>
+              <p class="tn-strength-label">Manufacturing Environment</p>
+            </div>
+          </div>
 
-            <div class="facts-item">
-                <h3>5 Continents</h3>
-                <p>Happy Customers Worldwide</p>
+          <!-- 5. 25 Years -->
+          <div class="tn-strength-card">
+            <div class="tn-strength-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
             </div>
+            <div class="tn-strength-info">
+              <h3 class="tn-strength-val">25 Years</h3>
+              <p class="tn-strength-label">Manufacturing Experience</p>
+            </div>
+          </div>
+
+          <!-- 6. 5 Continents -->
+          <div class="tn-strength-card">
+            <div class="tn-strength-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="tn-strength-info">
+              <h3 class="tn-strength-val">5 Continents</h3>
+              <p class="tn-strength-label">Happy Customers Worldwide</p>
+            </div>
+          </div>
 
         </div>
-    </div>
-</section>
-
-<style>
-.facts-section {
-    padding: 60px 24px;
-    background: #ffffff;
-    font-family: inherit;
-    color: #17243b;
-}
-
-.facts-container {
-    max-width: 1250px;
-    margin: 0 auto;
-}
-
-/* Center-aligned heading */
-.facts-header {
-    margin-bottom: 35px;
-    text-align: center;
-}
-
-.facts-header span {
-    display: block;
-    margin-bottom: 8px;
-    color: #2446a8;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-}
-
-.facts-header h2 {
-    margin: 0;
-    font-size: 32px;
-    line-height: 1.3;
-    font-weight: 700;
-    color: #17243b;
-}
-
-/* Facts grid */
-.facts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    border-top: 1px solid #e5e8ee;
-    border-left: 1px solid #e5e8ee;
-}
-
-.facts-item {
-    padding: 27px 24px;
-    border-right: 1px solid #e5e8ee;
-    border-bottom: 1px solid #e5e8ee;
-    transition: background 0.2s ease;
-}
-
-.facts-item:hover {
-    background: #f8faff;
-}
-
-.facts-item h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-    line-height: 1.4;
-    font-weight: 700;
-    color: #2446a8;
-}
-
-.facts-item p {
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.7;
-    color: #6b7280;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-    .facts-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Mobile: two items per row */
-@media (max-width: 600px) {
-    .facts-section {
-        padding: 42px 16px;
-    }
-
-    .facts-header {
-        margin-bottom: 28px;
-    }
-
-    .facts-header h2 {
-        font-size: 27px;
-    }
-
-    .facts-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .facts-item {
-        padding: 22px 12px;
-    }
-
-    .facts-item h3 {
-        font-size: 15px;
-    }
-
-    .facts-item p {
-        font-size: 12px;
-        line-height: 1.6;
-    }
-}
-</style>
+      </div>
+    </section>
 
 
 
