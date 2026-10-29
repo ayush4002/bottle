@@ -27,16 +27,14 @@
           </button>
           <div class="footer-accordion-panel" id="footer-panel-products" role="region" aria-labelledby="footer-header-products">
             
-            <!-- Category Dropdown Card -->
-            <div class="footer-dropdown-card" id="footer-cat-dropdown">
-              <button type="button" class="footer-dropdown-header" onclick="window.toggleFooterDropdown('footer-cat-dropdown')" aria-expanded="false">
-                <span class="footer-dropdown-title">By Category (8)</span>
-                <span class="footer-dropdown-icon" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
+            <!-- By Category Section -->
+            <div class="footer-section-group" id="footer-group-category">
+              <button type="button" class="footer-subheading-btn" onclick="window.toggleFooterSection('footer-group-category')" aria-expanded="true">
+                <span>By Category:</span>
+                <svg class="footer-sub-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
-              <div class="footer-dropdown-body">
-                <ul class="footer-link-list">
+              <div class="footer-sub-content">
+                <ul class="footer-link-grid">
                   <?php 
                     $footerCategories = !empty($categories) ? $categories : (class_exists('ProductModel') ? ProductModel::getCategories() : []);
                     foreach ($footerCategories as $cat): 
@@ -47,16 +45,14 @@
               </div>
             </div>
 
-            <!-- Industry Market Dropdown Card -->
-            <div class="footer-dropdown-card" id="footer-ind-dropdown" style="margin-top: 8px;">
-              <button type="button" class="footer-dropdown-header" onclick="window.toggleFooterDropdown('footer-ind-dropdown')" aria-expanded="false">
-                <span class="footer-dropdown-title">By Industry (5)</span>
-                <span class="footer-dropdown-icon" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
+            <!-- By Industry Market Section -->
+            <div class="footer-section-group" id="footer-group-industry" style="margin-top: 14px;">
+              <button type="button" class="footer-subheading-btn" onclick="window.toggleFooterSection('footer-group-industry')" aria-expanded="true">
+                <span>By Industry Market:</span>
+                <svg class="footer-sub-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
-              <div class="footer-dropdown-body">
-                <ul class="footer-link-list">
+              <div class="footer-sub-content">
+                <ul class="footer-link-grid">
                   <li><a href="/products?industry=cosmetics">Cosmetics &amp; Personal Care</a></li>
                   <li><a href="/products?industry=pharma">Pharmaceuticals &amp; Healthcare</a></li>
                   <li><a href="/products?industry=agro">Agrochemicals &amp; Pesticides</a></li>
@@ -231,6 +227,33 @@
     function toggleFooterAccordion(colId) {
       return window.toggleFooterAccordion(colId);
     }
+
+    // Toggle footer sub-sections (Category & Industry Market)
+    window.toggleFooterSection = function(groupId) {
+      const group = document.getElementById(groupId);
+      if (!group) return;
+      const content = group.querySelector('.footer-sub-content');
+      const btn = group.querySelector('.footer-subheading-btn');
+      if (!content) return;
+
+      const isCollapsed = content.classList.contains('collapsed');
+      if (isCollapsed) {
+        content.classList.remove('collapsed');
+        if (btn) {
+          btn.classList.remove('collapsed');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      } else {
+        content.classList.add('collapsed');
+        if (btn) {
+          btn.classList.add('collapsed');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    };
+    window.toggleFooterDropdown = function(id) {
+      window.toggleFooterSection(id);
+    };
 
     // Modal & Inquiry Controls
     window.openInquiry = function(productName) {
