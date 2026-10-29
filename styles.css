@@ -4796,6 +4796,14 @@ textarea {
   color: var(--color-text-muted);
 }
 
+.footer-closures-line {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
 .footer-contact-block {
   display: flex;
   flex-direction: column;

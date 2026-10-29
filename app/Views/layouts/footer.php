@@ -59,7 +59,7 @@
             <p class="footer-address-block">
               <strong>TrueNorth Group</strong><br />
               #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034<br />
-              <span>Manufacturing: Daman, India <br/>Closures: Ningbo, China</span>
+              <span>Manufacturing: Daman, India</span>
             </p>
             <div class="footer-contact-block">
               <a href="tel:+919810220761" class="footer-phone-link" style="color: var(--color-gold) !important; font-weight: 700;">
@@ -78,6 +78,9 @@
                 info@wetruenorthgroup.com
               </a>
             </div>
+            <p class="footer-closures-line" style="margin-top: 8px; margin-bottom: 0; font-size: 0.8125rem; color: #64748B;">
+              <span>Closures: Ningbo, China</span>
+            </p>
           </div>
         </div>
 
