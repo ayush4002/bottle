@@ -215,7 +215,7 @@ if (empty($search)) {
             <span style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; padding: 4px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; display: inline-block;">Out of Stock</span>
           <?php endif; ?>
         </div>
-        <button type="button" class="mic-btn-save" style="flex: 1;" onclick="saveInventoryQuick('<?= htmlspecialchars(addslashes($pId)) ?>', 'm')">Quick Save</button>
+        <button type="button" class="mic-btn-save" style="flex: 1;" onclick="saveInventoryQuick('<?= htmlspecialchars(addslashes($pId)) ?>', 'm', this)">Quick Save</button>
       </div>
     </div>
   <?php endforeach; ?>
@@ -275,7 +275,7 @@ if (empty($search)) {
               <?php endif; ?>
             </td>
             <td style="padding: 12px 10px; text-align: right;">
-              <button type="button" id="btn-save-<?= htmlspecialchars($pId) ?>" onclick="saveInventoryQuick('<?= htmlspecialchars(addslashes($pId)) ?>', 'd')" style="background: #0284c7; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;">
+              <button type="button" id="btn-save-<?= htmlspecialchars($pId) ?>" onclick="saveInventoryQuick('<?= htmlspecialchars(addslashes($pId)) ?>', 'd', this)" style="background: #0284c7; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;">
                 Quick Save
               </button>
             </td>
@@ -287,10 +287,10 @@ if (empty($search)) {
 </div>
 
 <script>
-function saveInventoryQuick(skuId, prefix) {
+function saveInventoryQuick(skuId, prefix, btnElem) {
   const priceInput = document.getElementById(prefix + '-price-' + skuId);
   const stockInput = document.getElementById(prefix + '-stock-' + skuId);
-  const btn = prefix === 'd' ? document.getElementById('btn-save-' + skuId) : event.target;
+  const btn = btnElem || (prefix === 'd' ? document.getElementById('btn-save-' + skuId) : (window.event ? window.event.target : null));
   const statusEl = document.getElementById(prefix + '-status-' + skuId);
 
   const priceVal = priceInput ? priceInput.value : 0;

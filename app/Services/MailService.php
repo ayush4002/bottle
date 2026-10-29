@@ -194,10 +194,13 @@ class MailService {
      * Authenticated native PHP SMTP client over SSL socket
      */
     public static function sendSmtp($to, $subject, $htmlContent, $replyTo = '') {
-        $host = defined('SMTP_HOST') ? SMTP_HOST : 'mail.wetruenorthgroup.com';
-        $port = defined('SMTP_PORT') ? (int)SMTP_PORT : 465;
-        $user = defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com';
-        $pass = defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group';
+        $cfg = self::getEmailSettings();
+        $host = $cfg['host'] ?: (defined('SMTP_HOST') ? SMTP_HOST : 'mail.wetruenorthgroup.com');
+        $port = (int)($cfg['port'] ?: (defined('SMTP_PORT') ? SMTP_PORT : 465));
+        $user = $cfg['user'] ?: (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com');
+        $pass = $cfg['pass'] ?: (defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group');
+        $fromName = $cfg['from_name'] ?: 'TrueNorth Group';
+        $fromEmail = $cfg['from_email'] ?: $user;
 
         $timeout = 10;
         $ctx = stream_context_create([
@@ -266,7 +269,7 @@ class MailService {
         $headers = [
             'Date: ' . date('r'),
             'To: ' . $to,
-            'From: ' . 'TrueNorth Packaging <' . $user . '>',
+            'From: ' . '=?UTF-8?B?' . base64_encode($fromName) . '?= <' . $fromEmail . '>',
             'Subject: ' . '=?UTF-8?B?' . base64_encode($subject) . '?=',
             'Message-ID: ' . $msgId,
             'X-Mailer: TrueNorth-System/2.0',
@@ -290,4 +293,124 @@ class MailService {
         fclose($socket);
         return true;
     }
+
+    /**
+     * Get dynamic SMTP and outgoing email settings from site_settings.json or fallback constants
+     */
+    public static function getEmailSettings() {
+        $settingsFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/site_settings.json';
+        $json = file_exists($settingsFile) ? (json_decode(file_get_contents($settingsFile), true) ?: []) : [];
+
+        return [
+            'mode'       => $json['mail_mode'] ?? 'smtp', // 'smtp' or 'mail'
+            'host'       => $json['smtp_host'] ?? (defined('SMTP_HOST') ? SMTP_HOST : 'mail.wetruenorthgroup.com'),
+            'port'       => (int)($json['smtp_port'] ?? (defined('SMTP_PORT') ? SMTP_PORT : 465)),
+            'user'       => $json['smtp_user'] ?? (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com'),
+            'pass'       => $json['smtp_pass'] ?? (defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group'),
+            'from_name'  => $json['from_name'] ?? ($json['site_name'] ?? 'TrueNorth Group'),
+            'from_email' => $json['from_email'] ?? ($json['contact_email'] ?? (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com')),
+            'reply_to'   => $json['reply_to'] ?? ($json['contact_email'] ?? 'info@wetruenorthgroup.com')
+        ];
+    }
+
+    /**
+     * Send personalized official response / quote reply to a client inquiry
+     */
+    public static function sendCustomReply($clientEmail, $clientName, $subject, $messageBody, $quoteId = '', $adminUser = 'TrueNorth Sales') {
+        $cfg = self::getEmailSettings();
+        $cleanEmail = filter_var(trim($clientEmail), FILTER_VALIDATE_EMAIL);
+
+        if (!$cleanEmail) {
+            return ['success' => false, 'message' => 'Invalid client email address.'];
+        }
+
+        $safeName = htmlspecialchars(trim($clientName ?: 'Valued Client'));
+        $safeSubject = trim($subject ?: "Quotation & Specification Reply — TrueNorth Group");
+        $safeRef = htmlspecialchars(trim($quoteId ?: 'INQ'));
+        $formattedBody = nl2br(htmlspecialchars(trim($messageBody)));
+
+        $html = "<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset='utf-8'>
+          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+          <title>" . htmlspecialchars($safeSubject) . "</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; margin: 0; padding: 24px 12px; color: #1e293b; line-height: 1.6; }
+            .email-wrapper { max-width: 640px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+            .email-header { background: #16273f; padding: 28px 32px; text-align: left; border-bottom: 3px solid #b8892e; }
+            .brand-title { color: #ffffff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin: 0 0 4px; }
+            .brand-sub { color: #b8892e; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin: 0; }
+            .email-body { padding: 32px; background: #ffffff; }
+            .ref-badge { display: inline-block; background: rgba(184, 137, 46, 0.12); color: #b8892e; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(184,137,46,0.3); margin-bottom: 20px; }
+            .greeting { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 16px; }
+            .message-box { font-size: 14.5px; color: #334155; line-height: 1.7; margin-bottom: 28px; }
+            .signoff-box { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #b8892e; padding: 18px 20px; border-radius: 0 8px 8px 0; margin-top: 24px; }
+            .signoff-title { font-weight: 800; font-size: 14px; color: #16273f; margin-bottom: 4px; }
+            .signoff-meta { font-size: 12.5px; color: #64748b; line-height: 1.5; }
+            .email-footer { background: #f8fafc; padding: 20px 32px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+          </style>
+        </head>
+        <body>
+          <div class='email-wrapper'>
+            <div class='email-header'>
+              <div class='brand-title'>TrueNorth Group</div>
+              <div class='brand-sub'>Global Primary Packaging Specialists & Precision Manufacturers</div>
+            </div>
+            <div class='email-body'>
+              <div class='ref-badge'>INQUIRY REFERENCE: {$safeRef}</div>
+              <div class='greeting'>Dear {$safeName},</div>
+              <div class='message-box'>
+                {$formattedBody}
+              </div>
+              <div class='signoff-box'>
+                <div class='signoff-title'>TrueNorth Group — Executive Sales & Engineering</div>
+                <div class='signoff-meta'>
+                  #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034<br/>
+                  Manufacturing: Daman, India &bull; Closures: Ningbo, China<br/>
+                  Direct Hotline / WhatsApp: <strong>+91 98102 20761</strong><br/>
+                  Email: <a href='mailto:info@wetruenorthgroup.com' style='color:#b8892e; text-decoration:none;'>info@wetruenorthgroup.com</a> &bull; Web: <a href='https://wetruenorthgroup.com' style='color:#16273f; text-decoration:none;'>wetruenorthgroup.com</a>
+                </div>
+              </div>
+            </div>
+            <div class='email-footer'>
+              &copy; " . date('Y') . " TrueNorth Group. This email was dispatched regarding quotation reference {$safeRef}.
+            </div>
+          </div>
+        </body>
+        </html>";
+
+        // Try authenticated SMTP first
+        $sent = false;
+        if ($cfg['mode'] === 'smtp') {
+            $sent = self::sendSmtp($cleanEmail, $safeSubject, $html, $cfg['reply_to']);
+        }
+
+        // Fallback to PHP native mail()
+        if (!$sent) {
+            $headers = "MIME-Version: 1.0
+
+";
+            $headers .= "Content-Type: text/html; charset=UTF-8
+
+";
+            $headers .= "From: " . '=?UTF-8?B?' . base64_encode($cfg['from_name']) . '?=' . " <" . $cfg['from_email'] . ">
+
+";
+            $headers .= "Reply-To: " . $cfg['reply_to'] . "
+
+";
+            $headers .= "X-Mailer: TrueNorth-CMS/2.0
+
+";
+
+            $sent = @mail($cleanEmail, $safeSubject, $html, $headers, "-f " . $cfg['from_email']);
+        }
+
+        return [
+            'success' => $sent,
+            'message' => $sent ? 'Email dispatched successfully.' : 'Email delivery failed on server transport.'
+        ];
+    }
 }
+

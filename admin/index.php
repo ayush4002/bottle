@@ -211,7 +211,13 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
                 </span>
               </td>
               <td>
-                <a href="/admin/inquiries" style="color: #b8892e; font-weight: 700; text-decoration: none; font-size: 0.82rem;">Manage &rarr;</a>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <a href="/admin/inquiries?reply=<?= urlencode($inq['quote_id'] ?? '') ?>" class="tn-btn-gold" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>
+                    Reply
+                  </a>
+                  <a href="/admin/inquiries" style="color: #94a3b8; text-decoration: none; font-size: 0.78rem;">Manage</a>
+                </div>
               </td>
             </tr>
           <?php endforeach; ?>
@@ -259,6 +265,7 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
               <td><?= htmlspecialchars(date('M d, Y', strtotime($p['createdAt'] ?? 'now'))) ?></td>
               <td><span class="badge-custom">Live Custom</span></td>
               <td>
+                <a href="/admin/edit_product?id=<?= urlencode($p['id']) ?>" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; font-weight: 600; margin-right: 12px;">Edit</a>
                 <a href="/admin/delete_product?id=<?= urlencode($p['id']) ?>" onclick="return confirm('Are you sure you want to delete this product?');" style="color: #ef4444; font-size: 0.85rem; text-decoration: none; font-weight: 600;">Delete</a>
               </td>
             </tr>

@@ -28,6 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['value'])) $data['value'] = trim($_POST['value']);
             if (isset($_POST['unit'])) $data['unit'] = trim($_POST['unit']);
             if (isset($_POST['hex_code'])) $data['hex_code'] = trim($_POST['hex_code']);
+            if (empty($data['slug'])) {
+                $data['slug'] = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+            }
 
             ProductModel::saveOption($group, $data);
             header("Location: /admin/categories?msg=" . urlencode("Option '{$name}' saved successfully!") . "&tab=" . urlencode($group));
@@ -281,40 +284,40 @@ $activeTab = $_GET['tab'] ?? 'categories';
 
   <!-- TABS NAV -->
   <div class="options-nav-tabs">
-    <button class="tab-btn <?= $activeTab === 'categories' ? 'active' : '' ?>" onclick="switchTab('categories')">
+    <button class="tab-btn <?= $activeTab === 'categories' ? 'active' : '' ?>" data-tab="categories" onclick="switchTab('categories', this)">
       Categories <span class="tab-badge"><?= count($allOptions['categories'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'subcategories' ? 'active' : '' ?>" onclick="switchTab('subcategories')">
+    <button class="tab-btn <?= $activeTab === 'subcategories' ? 'active' : '' ?>" data-tab="subcategories" onclick="switchTab('subcategories', this)">
       Series / Subcategories <span class="tab-badge"><?= count($allOptions['subcategories'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'materials' ? 'active' : '' ?>" onclick="switchTab('materials')">
+    <button class="tab-btn <?= $activeTab === 'materials' ? 'active' : '' ?>" data-tab="materials" onclick="switchTab('materials', this)">
       Materials <span class="tab-badge"><?= count($allOptions['materials'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'volumes' ? 'active' : '' ?>" onclick="switchTab('volumes')">
+    <button class="tab-btn <?= $activeTab === 'volumes' ? 'active' : '' ?>" data-tab="volumes" onclick="switchTab('volumes', this)">
       Volumes / Capacities <span class="tab-badge"><?= count($allOptions['volumes'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'necks' ? 'active' : '' ?>" onclick="switchTab('necks')">
+    <button class="tab-btn <?= $activeTab === 'necks' ? 'active' : '' ?>" data-tab="necks" onclick="switchTab('necks', this)">
       Neck Finishes <span class="tab-badge"><?= count($allOptions['necks'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'applications' ? 'active' : '' ?>" onclick="switchTab('applications')">
+    <button class="tab-btn <?= $activeTab === 'applications' ? 'active' : '' ?>" data-tab="applications" onclick="switchTab('applications', this)">
       Applications <span class="tab-badge"><?= count($allOptions['applications'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'features' ? 'active' : '' ?>" onclick="switchTab('features')">
+    <button class="tab-btn <?= $activeTab === 'features' ? 'active' : '' ?>" data-tab="features" onclick="switchTab('features', this)">
       Features <span class="tab-badge"><?= count($allOptions['features'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'shapes' ? 'active' : '' ?>" onclick="switchTab('shapes')">
+    <button class="tab-btn <?= $activeTab === 'shapes' ? 'active' : '' ?>" data-tab="shapes" onclick="switchTab('shapes', this)">
       Product Shapes <span class="tab-badge"><?= count($allOptions['shapes'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'colours' ? 'active' : '' ?>" onclick="switchTab('colours')">
+    <button class="tab-btn <?= $activeTab === 'colours' ? 'active' : '' ?>" data-tab="colours" onclick="switchTab('colours', this)">
       Colours <span class="tab-badge"><?= count($allOptions['colours'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'closures' ? 'active' : '' ?>" onclick="switchTab('closures')">
+    <button class="tab-btn <?= $activeTab === 'closures' ? 'active' : '' ?>" data-tab="closures" onclick="switchTab('closures', this)">
       Closures <span class="tab-badge"><?= count($allOptions['closures'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'audiences' ? 'active' : '' ?>" onclick="switchTab('audiences')">
+    <button class="tab-btn <?= $activeTab === 'audiences' ? 'active' : '' ?>" data-tab="audiences" onclick="switchTab('audiences', this)">
       Target Audience <span class="tab-badge"><?= count($allOptions['audiences'] ?? []) ?></span>
     </button>
-    <button class="tab-btn <?= $activeTab === 'audit' ? 'active' : '' ?>" onclick="switchTab('audit')">
+    <button class="tab-btn <?= $activeTab === 'audit' ? 'active' : '' ?>" data-tab="audit" onclick="switchTab('audit', this)">
       Audit Logs <span class="tab-badge"><?= count($auditLogs) ?></span>
     </button>
   </div>
@@ -350,6 +353,7 @@ $activeTab = $_GET['tab'] ?? 'categories';
             <td><span class="status-badge-active">Active</span></td>
             <td>
               <button class="btn-act" onclick="editOptionItem('categories', <?= htmlspecialchars(json_encode($item)) ?>)">Edit</button>
+              <button class="btn-act btn-act-danger" onclick="deleteOptionItem('categories', <?= $item['id'] ?>, '<?= htmlspecialchars(addslashes($item['name'])) ?>')">Delete</button>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -386,6 +390,7 @@ $activeTab = $_GET['tab'] ?? 'categories';
             <td><code><?= htmlspecialchars($item['slug']) ?></code></td>
             <td>
               <button class="btn-act" onclick="editOptionItem('subcategories', <?= htmlspecialchars(json_encode($item)) ?>)">Edit</button>
+              <button class="btn-act btn-act-danger" onclick="deleteOptionItem('subcategories', <?= $item['id'] ?>, '<?= htmlspecialchars(addslashes($item['name'])) ?>')">Delete</button>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -529,15 +534,26 @@ $activeTab = $_GET['tab'] ?? 'categories';
 </div>
 
 <script>
-function switchTab(tabKey) {
+function switchTab(tabKey, btnElem) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-content-panel').forEach(p => p.classList.remove('active'));
 
-  const btn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabKey));
-  if (btn) btn.classList.add('active');
+  if (btnElem) {
+    btnElem.classList.add('active');
+  } else {
+    const matchedBtn = document.querySelector('.tab-btn[data-tab="' + tabKey + '"]');
+    if (matchedBtn) matchedBtn.classList.add('active');
+  }
 
   const panel = document.getElementById('panel-' + tabKey);
   if (panel) panel.classList.add('active');
+
+  // Update browser URL query param seamlessly
+  try {
+    const url = new URL(window.location);
+    url.searchParams.set('tab', tabKey);
+    window.history.replaceState({}, '', url);
+  } catch(e) {}
 }
 
 function filterTable(tableId, query) {

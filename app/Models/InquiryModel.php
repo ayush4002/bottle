@@ -254,6 +254,47 @@ class InquiryModel {
     /**
      * Delete an inquiry
      */
+    /**
+     * Save an admin reply to an inquiry and mark status as 'contacted'
+     */
+    public static function saveReply($idOrQuoteId, $replyData) {
+        self::initTable();
+
+        // 1. Update DB status
+        if (class_exists('Database')) {
+            $db = Database::getInstance();
+            if ($db && $db->isConnected()) {
+                try {
+                    $pdo = $db->getConnection();
+                    $stmt = $pdo->prepare("UPDATE `inquiries` SET `status` = 'contacted' WHERE `id` = :id OR `quote_id` = :qid");
+                    $stmt->execute([':id' => $idOrQuoteId, ':qid' => $idOrQuoteId]);
+                } catch (Exception $e) {}
+            }
+        }
+
+        // 2. Update JSON with reply entry and status
+        $items = self::getFromJson();
+        $updated = false;
+        foreach ($items as &$item) {
+            if (($item['id'] ?? '') == $idOrQuoteId || ($item['quote_id'] ?? '') === $idOrQuoteId) {
+                $item['status'] = 'contacted';
+                if (!isset($item['replies']) || !is_array($item['replies'])) {
+                    $item['replies'] = [];
+                }
+                $replyData['id'] = time() . rand(10, 99);
+                $replyData['created_at'] = date('Y-m-d H:i:s');
+                $item['replies'][] = $replyData;
+                $updated = true;
+                break;
+            }
+        }
+        if ($updated) {
+            file_put_contents(self::getJsonFile(), json_encode($items, JSON_PRETTY_PRINT));
+        }
+
+        return $updated;
+    }
+
     public static function deleteInquiry($idOrQuoteId) {
         self::initTable();
 
