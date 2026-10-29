@@ -246,21 +246,17 @@ $jsonLdList[] = [
         <div class="search-results-popover" id="top-search-popover"></div>
       </form>
 
-      <!-- Certifications & Global Distribution Strip -->
+      <!-- Top Utility Bar Right: Language Pop-up & Contact Strip -->
       <div class="top-bar-right">
-        <div class="top-bar-item top-bar-cert-badge">
-          <svg class="top-bar-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span class="top-bar-cert-title">TÜV NORD ISO 9001:2015</span>
-          <span class="top-bar-sep">•</span>
-          <span class="top-bar-cleanroom-text">Class 10,000 Cleanroom</span>
-        </div>
-
-        <span class="top-bar-divider" aria-hidden="true"></span>
-
-        <div class="top-bar-item top-bar-export-item">
-          <svg class="top-bar-icon top-bar-icon-gold" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span class="top-bar-export-text">Worldwide Seaport Exports</span>
-        </div>
+        <!-- Language Pop-up Button -->
+        <button type="button" class="top-bar-lang-btn" id="top-bar-lang-btn" onclick="window.openLanguageModal()" title="Select Language / Region" aria-haspopup="dialog" aria-expanded="false">
+          <svg class="top-bar-icon top-bar-icon-gold" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="top-bar-lang-flag" id="top-lang-flag">🌐</span>
+          <span class="top-bar-lang-name" id="top-lang-name">English</span>
+          <svg class="top-bar-lang-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
 
         <span class="top-bar-divider" aria-hidden="true"></span>
 
@@ -382,6 +378,15 @@ $jsonLdList[] = [
 
     <!-- Mobile Global Compliance Strip & Direct Contact -->
     <div class="mobile-nav-lang-section" style="padding: 12px 16px; border-top: 1px solid #e2e8f0; background: #f8fafc;">
+      <div style="margin-bottom: 10px;">
+        <button type="button" onclick="window.closeMobileMenu(); window.openLanguageModal();" style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.82rem; font-weight: 700; color: #16273f;">
+          <span style="display: flex; align-items: center; gap: 8px;">
+            <span id="mobile-lang-flag">🌐</span>
+            <span id="mobile-lang-name">Language: English</span>
+          </span>
+          <span style="color: #b8892e; font-size: 0.75rem; text-transform: uppercase; font-weight: 800;">Change &rarr;</span>
+        </button>
+      </div>
       <div style="font-size: 0.75rem; font-weight: 700; color: #475569; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <span>TÜV NORD ISO 9001 • Class 10,000 Cleanroom</span>

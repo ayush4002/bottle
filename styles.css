@@ -6755,3 +6755,289 @@ textarea {
     font-size: 0.8rem !important;
   }
 }
+
+
+/* ==========================================================================
+   LANGUAGE SELECTOR TRIGGER & POPUP MODAL STYLES
+   ========================================================================== */
+.top-bar-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.top-bar-lang-btn:hover {
+  background: rgba(184, 137, 46, 0.08);
+  border-color: #b8892e;
+  color: #b8892e;
+}
+
+.top-bar-lang-flag {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.top-bar-lang-name {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.top-bar-lang-arrow {
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.top-bar-lang-btn:hover .top-bar-lang-arrow {
+  transform: translateY(1px);
+  color: #b8892e;
+}
+
+/* Language Popup Modal */
+.tn-lang-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 27, 44, 0.72);
+  backdrop-filter: blur(4px);
+  z-index: 999999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: tnLangFadeIn 0.2s ease-out;
+}
+
+.tn-lang-modal-overlay.open {
+  display: flex !important;
+}
+
+@keyframes tnLangFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tn-lang-modal-box {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 660px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 27, 44, 0.35);
+  animation: tnLangSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tnLangSlideIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.tn-lang-modal-header {
+  background: #16273f;
+  color: #ffffff;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #b8892e;
+}
+
+.tn-lang-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(184, 137, 46, 0.15);
+  border: 1px solid rgba(184, 137, 46, 0.4);
+  color: #b8892e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tn-lang-modal-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.tn-lang-modal-sub {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.tn-lang-modal-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #cbd5e1;
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.tn-lang-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.tn-lang-search-bar {
+  padding: 14px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tn-lang-search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.88rem;
+  color: #1e293b;
+  font-family: inherit;
+}
+
+.tn-lang-search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+.tn-lang-grid {
+  padding: 18px 24px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-height: 380px;
+}
+
+@media (max-width: 580px) {
+  .tn-lang-grid {
+    grid-template-columns: 1fr;
+    padding: 14px 16px;
+  }
+  .tn-lang-modal-header {
+    padding: 16px;
+  }
+  .tn-lang-search-bar {
+    padding: 12px 16px;
+  }
+}
+
+.tn-lang-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+}
+
+.tn-lang-card:hover {
+  border-color: #b8892e;
+  background: rgba(184, 137, 46, 0.04);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(184, 137, 46, 0.08);
+}
+
+.tn-lang-card.active {
+  border-color: #b8892e;
+  background: rgba(184, 137, 46, 0.08);
+}
+
+.tn-lang-card-flag {
+  font-size: 1.35rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tn-lang-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tn-lang-card-native {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.tn-lang-card-eng {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.tn-lang-card-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.tn-lang-card.active .tn-lang-card-badge {
+  background: #b8892e;
+  color: #ffffff;
+}
+
+.tn-lang-modal-footer {
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tn-lang-btn-cancel {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  padding: 6px 16px;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tn-lang-btn-cancel:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
