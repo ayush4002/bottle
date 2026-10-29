@@ -1041,11 +1041,11 @@ body {
 
 .tn-tile-image {
   height: 145px;
-  background: #F8FAFC;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 12px 10px 12px;
+  padding: 10px 12px 8px 12px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-left-radius: 0 !important;
@@ -1055,20 +1055,23 @@ body {
 
 .tn-cat-tiles-grid .tn-tile-image {
   height: 145px;
+  background: #ffffff;
 }
 
 .tn-level1-grid .tn-tile-image {
   height: 140px;
+  background: #ffffff;
 }
 
 .tn-series-grid .tn-tile-image {
   height: 160px;
+  background: #ffffff;
 }
 
 .tn-tile-image img {
   height: 100%;
-  max-height: 105px;
-  max-width: 88%;
+  max-height: 120px;
+  max-width: 90%;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -3013,7 +3016,7 @@ body {
 
 .tn-sku-img {
   height: 180px;
-  background: #F8FAFC;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6438,7 +6441,7 @@ textarea {
 .tn-sku-img,
 .tn-prod-img,
 .rpet-card .tn-tile-image {
-  background: #F1F5F9 !important;
+  background: #ffffff !important;
   border-bottom: 1px solid #E2E8F0 !important;
 }
 
@@ -6447,7 +6450,7 @@ textarea {
 .tn-sku-img img,
 .rpet-card .tn-tile-image img,
 .tn-pdp-main-stage img {
-  filter: drop-shadow(0 4px 8px rgba(15, 23, 42, 0.09)) !important;
+  filter: none !important;
   box-shadow: none !important;
 }
 
