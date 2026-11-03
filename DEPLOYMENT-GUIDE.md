@@ -4,7 +4,7 @@ This guide walks you step-by-step through uploading and deploying your website a
 
 ---
 
-## 📋 Pre-Flight Deployment Checklist
+## Pre-Flight Deployment Checklist
 
 - [x] **Database Dump Ready**: `truenorth_db.sql` (Contains all 468+ products, categories, specifications, and CMS settings).
 - [x] **Config Auto-Loader**: `config/config.php` automatically loads environment variables from `.env`.
@@ -14,7 +14,7 @@ This guide walks you step-by-step through uploading and deploying your website a
 
 ---
 
-## 🚀 Deployment Instructions (cPanel / Shared Hosting / Hostinger)
+## Deployment Instructions (cPanel / Shared Hosting / Hostinger)
 
 ### Step 1: Create the MySQL Database & User
 
@@ -94,7 +94,7 @@ Ensure the following directories have write permissions for image uploads and JS
 
 ---
 
-## 🔒 Step 7: Verify Everything on Your Live Domain
+## Step 7: Verify Everything on Your Live Domain
 
 1. **Visit Live Website**: Open `https://yourdomain.com` in your browser.
    - Verify homepage banners, product categories, and bottle listings display correctly.
@@ -108,7 +108,7 @@ Ensure the following directories have write permissions for image uploads and JS
 
 ---
 
-## 🛠️ Server Environment Requirements
+## Server Environment Requirements
 
 - **PHP Version**: PHP 8.0, 8.1, 8.2, or 8.3
 - **PHP Extensions**:

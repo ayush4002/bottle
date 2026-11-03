@@ -276,92 +276,74 @@ $jsonLdList[] = [
           <div class="tn-lang-dropdown-menu" id="tn-lang-dropdown-menu" role="menu" aria-label="Select Language">
             <div class="tn-lang-dropdown-list">
               <button type="button" class="tn-lang-dropdown-item active" data-lang="en" onclick="window.selectLanguage('en', 'English', 'EN')">
-                <span class="tn-lang-item-flag">🌐</span>
                 <span class="tn-lang-item-name">English</span>
                 <span class="tn-lang-item-code">EN</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="es" onclick="window.selectLanguage('es', 'Español', 'ES')">
-                <span class="tn-lang-item-flag">🇪🇸</span>
                 <span class="tn-lang-item-name">Español</span>
                 <span class="tn-lang-item-code">ES</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="fr" onclick="window.selectLanguage('fr', 'Français', 'FR')">
-                <span class="tn-lang-item-flag">🇫🇷</span>
                 <span class="tn-lang-item-name">Français</span>
                 <span class="tn-lang-item-code">FR</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="de" onclick="window.selectLanguage('de', 'Deutsch', 'DE')">
-                <span class="tn-lang-item-flag">🇩🇪</span>
                 <span class="tn-lang-item-name">Deutsch</span>
                 <span class="tn-lang-item-code">DE</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="ar" onclick="window.selectLanguage('ar', 'العربية', 'AR')">
-                <span class="tn-lang-item-flag">🇦🇪</span>
                 <span class="tn-lang-item-name">العربية</span>
                 <span class="tn-lang-item-code">AR</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="ru" onclick="window.selectLanguage('ru', 'Русский', 'RU')">
-                <span class="tn-lang-item-flag">🇷🇺</span>
                 <span class="tn-lang-item-name">Русский</span>
                 <span class="tn-lang-item-code">RU</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="zh-CN" onclick="window.selectLanguage('zh-CN', '简体中文', 'ZH')">
-                <span class="tn-lang-item-flag">🇨🇳</span>
                 <span class="tn-lang-item-name">简体中文</span>
                 <span class="tn-lang-item-code">ZH</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="ja" onclick="window.selectLanguage('ja', '日本語', 'JA')">
-                <span class="tn-lang-item-flag">🇯🇵</span>
                 <span class="tn-lang-item-name">日本語</span>
                 <span class="tn-lang-item-code">JA</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="pt" onclick="window.selectLanguage('pt', 'Português', 'PT')">
-                <span class="tn-lang-item-flag">🇵🇹</span>
                 <span class="tn-lang-item-name">Português</span>
                 <span class="tn-lang-item-code">PT</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="it" onclick="window.selectLanguage('it', 'Italiano', 'IT')">
-                <span class="tn-lang-item-flag">🇮🇹</span>
                 <span class="tn-lang-item-name">Italiano</span>
                 <span class="tn-lang-item-code">IT</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="hi" onclick="window.selectLanguage('hi', 'हिन्दी', 'HI')">
-                <span class="tn-lang-item-flag">🇮🇳</span>
                 <span class="tn-lang-item-name">हिन्दी</span>
                 <span class="tn-lang-item-code">HI</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="nl" onclick="window.selectLanguage('nl', 'Nederlands', 'NL')">
-                <span class="tn-lang-item-flag">🇳🇱</span>
                 <span class="tn-lang-item-name">Nederlands</span>
                 <span class="tn-lang-item-code">NL</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="tr" onclick="window.selectLanguage('tr', 'Türkçe', 'TR')">
-                <span class="tn-lang-item-flag">🇹🇷</span>
                 <span class="tn-lang-item-name">Türkçe</span>
                 <span class="tn-lang-item-code">TR</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="ko" onclick="window.selectLanguage('ko', '한국어', 'KO')">
-                <span class="tn-lang-item-flag">🇰🇷</span>
                 <span class="tn-lang-item-name">한국어</span>
                 <span class="tn-lang-item-code">KO</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="vi" onclick="window.selectLanguage('vi', 'Tiếng Việt', 'VI')">
-                <span class="tn-lang-item-flag">🇻🇳</span>
                 <span class="tn-lang-item-name">Tiếng Việt</span>
                 <span class="tn-lang-item-code">VI</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="id" onclick="window.selectLanguage('id', 'Bahasa Indo', 'ID')">
-                <span class="tn-lang-item-flag">🇮🇩</span>
                 <span class="tn-lang-item-name">Bahasa Indo</span>
                 <span class="tn-lang-item-code">ID</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="pl" onclick="window.selectLanguage('pl', 'Polski', 'PL')">
-                <span class="tn-lang-item-flag">🇵🇱</span>
                 <span class="tn-lang-item-name">Polski</span>
                 <span class="tn-lang-item-code">PL</span>
               </button>
               <button type="button" class="tn-lang-dropdown-item" data-lang="th" onclick="window.selectLanguage('th', 'ไทย', 'TH')">
-                <span class="tn-lang-item-flag">🇹🇭</span>
                 <span class="tn-lang-item-name">ไทย</span>
                 <span class="tn-lang-item-code">TH</span>
               </button>
@@ -487,92 +469,74 @@ $jsonLdList[] = [
         <div class="mobile-lang-dropdown-menu" id="mobile-lang-dropdown-menu" style="display: none; margin-top: 6px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; max-height: 220px; overflow-y: auto; box-shadow: 0 4px 14px rgba(0,0,0,0.08); padding: 4px 0;">
           <div class="tn-lang-dropdown-list">
             <button type="button" class="tn-lang-dropdown-item active" data-lang="en" onclick="window.selectLanguage('en', 'English', 'EN')">
-              <span class="tn-lang-item-flag">🌐</span>
               <span class="tn-lang-item-name">English</span>
               <span class="tn-lang-item-code">EN</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="es" onclick="window.selectLanguage('es', 'Español', 'ES')">
-              <span class="tn-lang-item-flag">🇪🇸</span>
               <span class="tn-lang-item-name">Español</span>
               <span class="tn-lang-item-code">ES</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="fr" onclick="window.selectLanguage('fr', 'Français', 'FR')">
-              <span class="tn-lang-item-flag">🇫🇷</span>
               <span class="tn-lang-item-name">Français</span>
               <span class="tn-lang-item-code">FR</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="de" onclick="window.selectLanguage('de', 'Deutsch', 'DE')">
-              <span class="tn-lang-item-flag">🇩🇪</span>
               <span class="tn-lang-item-name">Deutsch</span>
               <span class="tn-lang-item-code">DE</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="ar" onclick="window.selectLanguage('ar', 'العربية', 'AR')">
-              <span class="tn-lang-item-flag">🇦🇪</span>
               <span class="tn-lang-item-name">العربية</span>
               <span class="tn-lang-item-code">AR</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="ru" onclick="window.selectLanguage('ru', 'Русский', 'RU')">
-              <span class="tn-lang-item-flag">🇷🇺</span>
               <span class="tn-lang-item-name">Русский</span>
               <span class="tn-lang-item-code">RU</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="zh-CN" onclick="window.selectLanguage('zh-CN', '简体中文', 'ZH')">
-              <span class="tn-lang-item-flag">🇨🇳</span>
               <span class="tn-lang-item-name">简体中文</span>
               <span class="tn-lang-item-code">ZH</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="ja" onclick="window.selectLanguage('ja', '日本語', 'JA')">
-              <span class="tn-lang-item-flag">🇯🇵</span>
               <span class="tn-lang-item-name">日本語</span>
               <span class="tn-lang-item-code">JA</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="pt" onclick="window.selectLanguage('pt', 'Português', 'PT')">
-              <span class="tn-lang-item-flag">🇵🇹</span>
               <span class="tn-lang-item-name">Português</span>
               <span class="tn-lang-item-code">PT</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="it" onclick="window.selectLanguage('it', 'Italiano', 'IT')">
-              <span class="tn-lang-item-flag">🇮🇹</span>
               <span class="tn-lang-item-name">Italiano</span>
               <span class="tn-lang-item-code">IT</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="hi" onclick="window.selectLanguage('hi', 'हिन्दी', 'HI')">
-              <span class="tn-lang-item-flag">🇮🇳</span>
               <span class="tn-lang-item-name">हिन्दी</span>
               <span class="tn-lang-item-code">HI</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="nl" onclick="window.selectLanguage('nl', 'Nederlands', 'NL')">
-              <span class="tn-lang-item-flag">🇳🇱</span>
               <span class="tn-lang-item-name">Nederlands</span>
               <span class="tn-lang-item-code">NL</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="tr" onclick="window.selectLanguage('tr', 'Türkçe', 'TR')">
-              <span class="tn-lang-item-flag">🇹🇷</span>
               <span class="tn-lang-item-name">Türkçe</span>
               <span class="tn-lang-item-code">TR</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="ko" onclick="window.selectLanguage('ko', '한국어', 'KO')">
-              <span class="tn-lang-item-flag">🇰🇷</span>
               <span class="tn-lang-item-name">한국어</span>
               <span class="tn-lang-item-code">KO</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="vi" onclick="window.selectLanguage('vi', 'Tiếng Việt', 'VI')">
-              <span class="tn-lang-item-flag">🇻🇳</span>
               <span class="tn-lang-item-name">Tiếng Việt</span>
               <span class="tn-lang-item-code">VI</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="id" onclick="window.selectLanguage('id', 'Bahasa Indo', 'ID')">
-              <span class="tn-lang-item-flag">🇮🇩</span>
               <span class="tn-lang-item-name">Bahasa Indo</span>
               <span class="tn-lang-item-code">ID</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="pl" onclick="window.selectLanguage('pl', 'Polski', 'PL')">
-              <span class="tn-lang-item-flag">🇵🇱</span>
               <span class="tn-lang-item-name">Polski</span>
               <span class="tn-lang-item-code">PL</span>
             </button>
             <button type="button" class="tn-lang-dropdown-item" data-lang="th" onclick="window.selectLanguage('th', 'ไทย', 'TH')">
-              <span class="tn-lang-item-flag">🇹🇭</span>
               <span class="tn-lang-item-name">ไทย</span>
               <span class="tn-lang-item-code">TH</span>
             </button>

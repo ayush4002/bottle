@@ -632,7 +632,7 @@
           if (successModal && successContent) {
             successContent.innerHTML = 
               '<div style="text-align: center; padding: 20px 10px;">' +
-                '<div style="width: 54px; height: 54px; background: rgba(34, 197, 94, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: #16a34a; font-size: 26px; font-weight: bold;">✓</div>' +
+                '<div style="width: 54px; height: 54px; background: rgba(34, 197, 94, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: #16a34a;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>' +
                 '<h3 style="font-size: 1.25rem; font-weight: 800; color: #16273f; margin-bottom: 8px;">Inquiry Received!</h3>' +
                 '<p style="color: #64748b; font-size: 0.95rem; margin-bottom: 16px; line-height: 1.5;">' + (res.message || 'Thank you! Our packaging specialists will contact you within 24 hours.') + '</p>' +
                 '<p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 22px;">Reference: <strong style="color: #b8892e;">' + (res.quoteId || ('INQ-' + Date.now().toString().slice(-6))) + '</strong></p>' +

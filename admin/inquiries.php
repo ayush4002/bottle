@@ -439,7 +439,7 @@ require_once __DIR__ . '/header.php';
                   <?php endif; ?>
                   <?php if (!empty($row['country'])): ?>
                     <div style="font-size: 0.75rem; color: #38bdf8; margin-top: 4px;">
-                      📍 <?= htmlspecialchars($row['country']) ?>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><?= htmlspecialchars($row['country']) ?>
                     </div>
                   <?php endif; ?>
                 </td>
@@ -485,9 +485,9 @@ require_once __DIR__ . '/header.php';
                     <input type="hidden" name="action" value="update_status" />
                     <input type="hidden" name="inquiry_id" value="<?= htmlspecialchars($rowId) ?>" />
                     <select name="status" onchange="this.form.submit()" style="background: #0f172a; border: 1px solid #334155; color: #f8fafc; font-size: 0.78rem; font-weight: 700; border-radius: 6px; padding: 5px 8px; cursor: pointer; width: 100%;">
-                      <option value="new" <?= $st === 'new' ? 'selected' : '' ?>>🔵 New</option>
-                      <option value="contacted" <?= $st === 'contacted' ? 'selected' : '' ?>>🟡 Contacted</option>
-                      <option value="closed" <?= $st === 'closed' ? 'selected' : '' ?>>🟢 Closed</option>
+                      <option value="new" <?= $st === 'new' ? 'selected' : '' ?>>New</option>
+                      <option value="contacted" <?= $st === 'contacted' ? 'selected' : '' ?>>Contacted</option>
+                      <option value="closed" <?= $st === 'closed' ? 'selected' : '' ?>>Closed</option>
                     </select>
                   </form>
                 </td>
@@ -566,10 +566,10 @@ require_once __DIR__ . '/header.php';
     <div style="margin-bottom: 16px;">
       <label style="font-size: 0.76rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">Insert Quick Response Template:</label>
       <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('quote')">📋 Official Quote</button>
-        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('sample')">📦 Sample Dispatch</button>
-        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('tooling')">⚙️ Custom Moulding</button>
-        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('catalog')">📑 MOQ &amp; Lead Time</button>
+        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('quote')">Official Quote</button>
+        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('sample')">Sample Dispatch</button>
+        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('tooling')">Custom Moulding</button>
+        <button type="button" class="inq-tpl-btn" onclick="applyTemplate('catalog')">MOQ &amp; Lead Time</button>
       </div>
     </div>
 

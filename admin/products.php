@@ -523,7 +523,7 @@ $err = $_GET['err'] ?? '';
               <?php endif; ?>
 
               <?php if (!empty($p['isFeatured'])): ?>
-                <span style="display: inline-block; margin-left: 4px; background: rgba(234, 179, 8, 0.2); color: #facc15; padding: 2px 5px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">★ Featured</span>
+                <span style="display: inline-block; margin-left: 4px; background: rgba(234, 179, 8, 0.2); color: #facc15; padding: 2px 5px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">Featured</span>
               <?php endif; ?>
             </td>
             <td style="text-align: right; white-space: nowrap;">
@@ -593,7 +593,7 @@ function showToast(msg, isErr = false) {
   if (!t) return;
   t.style.display = 'flex';
   t.style.borderColor = isErr ? '#ef4444' : '#38bdf8';
-  t.innerHTML = (isErr ? '❌ ' : '✓ ') + msg;
+  t.innerHTML = (isErr ? 'Error: ' : 'Success: ') + msg;
   setTimeout(() => { t.style.display = 'none'; }, 4500);
 }
 
