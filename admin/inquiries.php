@@ -8,8 +8,11 @@ require_once __DIR__ . '/auth.php';
 checkAdminAuth();
 
 require_once dirname(__DIR__) . '/config/config.php';
+require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 require_once dirname(__DIR__) . '/app/Models/InquiryModel.php';
 require_once dirname(__DIR__) . '/app/Services/MailService.php';
+
+$company = ProductModel::getCompanyInfo();
 
 $message = '';
 $error = '';
@@ -710,6 +713,10 @@ function closeReplyModal() {
 function applyTemplate(type) {
   if (!currentActiveInquiry) return;
 
+  const siteName = <?= json_encode($company['name'] ?? 'TrueNorth Group') ?>;
+  const sitePhone = <?= json_encode($company['phone'] ?? '+91 98102 20761') ?>;
+  const siteEmail = <?= json_encode($company['email'] ?? 'info@wetruenorthgroup.com') ?>;
+
   const name = currentActiveInquiry.name || 'Valued Client';
   const product = currentActiveInquiry.product || 'primary packaging bottles & closures';
   const qid = currentActiveInquiry.quote_id || 'INQ';
@@ -717,13 +724,13 @@ function applyTemplate(type) {
   let body = '';
 
   if (type === 'quote') {
-    body = `Dear ${name},\n\nThank you for reaching out to TrueNorth Group regarding your inquiry for ${product} (Ref: ${qid}).\n\nWe have reviewed your specifications and are pleased to provide the initial commercial framework:\n\n• Material & Finish: High-grade virgin PET / PCR polymer with precision finish\n• Standard Minimum Order Quantity (MOQ): 5,000 to 10,000 units per production run\n• Production Lead Time: 14 to 21 business days upon purchase order approval\n• Logistics & Shipping: Worldwide seaport exports from Daman, India & Ningbo, China\n\nPlease reply with your target order volumes and delivery seaport/location so our commercial team can forward an official itemized proforma invoice.\n\nWarm regards,\nSales & Technical Support Team\nTrueNorth Group\nPhone / WhatsApp: +91 98102 20761\nEmail: info@wetruenorthgroup.com\nWebsite: https://wetruenorthgroup.com`;
+    body = `Dear ${name},\n\nThank you for reaching out to ${siteName} regarding your inquiry for ${product} (Ref: ${qid}).\n\nWe have reviewed your specifications and are pleased to provide the initial commercial framework:\n\n• Material & Finish: High-grade virgin PET / PCR polymer with precision finish\n• Standard Minimum Order Quantity (MOQ): 5,000 to 10,000 units per production run\n• Production Lead Time: 14 to 21 business days upon purchase order approval\n• Logistics & Shipping: Worldwide seaport exports from Daman, India & Ningbo, China\n\nPlease reply with your target order volumes and delivery seaport/location so our commercial team can forward an official itemized proforma invoice.\n\nWarm regards,\nSales & Technical Support Team\n${siteName}\nPhone / WhatsApp: ${sitePhone}\nEmail: ${siteEmail}\nWebsite: https://wetruenorthgroup.com`;
   } else if (type === 'sample') {
-    body = `Dear ${name},\n\nThank you for your interest in TrueNorth Group's ${product}.\n\nWe would be delighted to dispatch pre-production physical samples for your laboratory testing and brand evaluation.\n\nCould you please confirm:\n1. The complete delivery address with postal code and recipient contact number\n2. Preferred neck closure / pump compatibility requirements\n3. Your corporate courier account number (DHL/FedEx) if applicable\n\nOnce confirmed, samples will be dispatched promptly within 48 hours.\n\nBest regards,\nSampling & Logistics Team\nTrueNorth Group\nPhone / WhatsApp: +91 98102 20761`;
+    body = `Dear ${name},\n\nThank you for your interest in ${siteName}'s ${product}.\n\nWe would be delighted to dispatch pre-production physical samples for your laboratory testing and brand evaluation.\n\nCould you please confirm:\n1. The complete delivery address with postal code and recipient contact number\n2. Preferred neck closure / pump compatibility requirements\n3. Your corporate courier account number (DHL/FedEx) if applicable\n\nOnce confirmed, samples will be dispatched promptly within 48 hours.\n\nBest regards,\nSampling & Logistics Team\n${siteName}\nPhone / WhatsApp: ${sitePhone}`;
   } else if (type === 'tooling') {
-    body = `Dear ${name},\n\nThank you for inquiring about custom packaging development with TrueNorth Group.\n\nAs an integrated primary packaging manufacturer, we specialize in custom mould engineering, 3D CAD rapid prototyping, and proprietary blow/injection moulding tooling.\n\nTo proceed with your custom design, please share:\n• 2D/3D technical drawings (.step / .igs / .dwg) or reference physical samples\n• Target brimful capacity and required neck thread standard (e.g. 24/410, 28/410)\n• Estimated annual consumption volumes\n\nWe look forward to partnering on your custom bottle development.\n\nSincerely,\nEngineering & Design Team\nTrueNorth Group`;
+    body = `Dear ${name},\n\nThank you for inquiring about custom packaging development with ${siteName}.\n\nAs an integrated primary packaging manufacturer, we specialize in custom mould engineering, 3D CAD rapid prototyping, and proprietary blow/injection moulding tooling.\n\nTo proceed with your custom design, please share:\n• 2D/3D technical drawings (.step / .igs / .dwg) or reference physical samples\n• Target brimful capacity and required neck thread standard (e.g. 24/410, 28/410)\n• Estimated annual consumption volumes\n\nWe look forward to partnering on your custom bottle development.\n\nSincerely,\nEngineering & Design Team\n${siteName}`;
   } else if (type === 'catalog') {
-    body = `Dear ${name},\n\nThank you for contacting TrueNorth Group regarding ${product}.\n\nAttached to this thread is our updated packaging catalogue showcasing our standard PET bottles, jars, pumps, and precision closures.\n\nKey Highlights:\n• Cleanroom manufacturing compliant with Class 10,000 standards\n• ISO 9001:2015 & US FDA approved food and pharma grade polymers\n• Full custom colour matching and hot-stamping / silk-screen printing options\n\nPlease review and let us know which models best suit your brand requirements.\n\nWarm regards,\nTrueNorth Group Sales\nEmail: info@wetruenorthgroup.com`;
+    body = `Dear ${name},\n\nThank you for contacting ${siteName} regarding ${product}.\n\nAttached to this thread is our updated packaging catalogue showcasing our standard PET bottles, jars, pumps, and precision closures.\n\nKey Highlights:\n• Cleanroom manufacturing compliant with Class 10,000 standards\n• ISO 9001:2015 & US FDA approved food and pharma grade polymers\n• Full custom colour matching and hot-stamping / silk-screen printing options\n\nPlease review and let us know which models best suit your brand requirements.\n\nWarm regards,\n${siteName} Sales\nEmail: ${siteEmail}`;
   }
 
   document.getElementById('replyMessage').value = body;

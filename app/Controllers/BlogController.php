@@ -164,3 +164,4 @@ class BlogController {
         require_once APP_PATH . '/Views/layouts/footer.php';
     }
 }
+

@@ -5,6 +5,9 @@ require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 // Auth Check
 checkAdminAuth();
 
+$company = ProductModel::getCompanyInfo();
+$currency = $company['currency'] ?? '₹';
+
 // Query Filters
 $search = trim($_GET['search'] ?? '');
 $filterCategory = trim($_GET['category'] ?? '');
@@ -415,9 +418,9 @@ $err = $_GET['err'] ?? '';
             <span class="mpc-label">Price &amp; Stock</span>
             <span class="mpc-val">
               <?php if ($pSale !== null && $pSale < $pPrice): ?>
-                <strong style="color: #4ade80;">₹<?= number_format($pSale, 2) ?></strong>
+                <strong style="color: #4ade80;"><?= htmlspecialchars($currency) ?><?= number_format($pSale, 2) ?></strong>
               <?php else: ?>
-                <strong style="color: #e2e8f0;">₹<?= number_format($pPrice, 2) ?></strong>
+                <strong style="color: #e2e8f0;"><?= htmlspecialchars($currency) ?><?= number_format($pPrice, 2) ?></strong>
               <?php endif; ?>
               <span style="font-size: 0.75rem; margin-left: 4px; color: <?= $pQty > 0 ? '#94a3b8' : '#ef4444' ?>;">(<?= number_format($pQty) ?> pcs)</span>
             </span>
@@ -503,10 +506,10 @@ $err = $_GET['err'] ?? '';
             </td>
             <td>
               <?php if ($pSale !== null && $pSale < $pPrice): ?>
-                <span style="text-decoration: line-through; color: #64748b; font-size: 0.8rem;">₹<?= number_format($pPrice, 2) ?></span>
-                <strong style="color: #4ade80; font-size: 0.88rem; display: block;">₹<?= number_format($pSale, 2) ?></strong>
+                <span style="text-decoration: line-through; color: #64748b; font-size: 0.8rem;"><?= htmlspecialchars($currency) ?><?= number_format($pPrice, 2) ?></span>
+                <strong style="color: #4ade80; font-size: 0.88rem; display: block;"><?= htmlspecialchars($currency) ?><?= number_format($pSale, 2) ?></strong>
               <?php else: ?>
-                <strong style="color: #e2e8f0; font-size: 0.88rem;">₹<?= number_format($pPrice, 2) ?></strong>
+                <strong style="color: #e2e8f0; font-size: 0.88rem;"><?= htmlspecialchars($currency) ?><?= number_format($pPrice, 2) ?></strong>
               <?php endif; ?>
 
               <div style="font-size: 0.75rem; margin-top: 2px; color: <?= $pQty > 0 ? '#94a3b8' : '#ef4444' ?>;">

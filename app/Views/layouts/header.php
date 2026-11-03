@@ -4,6 +4,10 @@
 // Dynamically generates canonicals, Open Graph, Twitter Cards, & Schema.org JSON-LD
 // ==============================================================================
 
+if (empty($company) && class_exists('ProductModel')) {
+    $company = ProductModel::getCompanyInfo();
+}
+
 $seoBaseUrl = 'https://wetruenorthgroup.com';
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 $canonicalUrl = $seoBaseUrl . $reqPath;
@@ -154,17 +158,17 @@ if (!empty($sku)) {
 $jsonLdList[] = [
     '@context' => 'https://schema.org',
     '@type' => 'Organization',
-    'name' => 'TrueNorth Group',
-    'legalName' => 'TrueNorth Packaging Group',
+    'name' => $company['name'] ?? 'TrueNorth Group',
+    'legalName' => ($company['name'] ?? 'TrueNorth Group') . ' Primary Packaging',
     'url' => $seoBaseUrl,
     'logo' => $seoBaseUrl . '/logo.webp',
     'image' => $seoBaseUrl . '/logo.webp',
     'description' => 'Primary packaging manufacturer and partner producing and distributing high-grade PET bottles, jars, caps, and pumps worldwide.',
-    'email' => 'info@wetruenorthgroup.com',
-    'telephone' => '+91 9810220761',
+    'email' => $company['email'] ?? 'info@wetruenorthgroup.com',
+    'telephone' => $company['phone'] ?? '+91 9810220761',
     'address' => [
         '@type' => 'PostalAddress',
-        'streetAddress' => '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura',
+        'streetAddress' => $company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura',
         'addressLocality' => 'Delhi',
         'postalCode' => '110034',
         'addressRegion' => 'DL',
@@ -172,9 +176,9 @@ $jsonLdList[] = [
     ],
     'contactPoint' => [
         '@type' => 'ContactPoint',
-        'telephone' => '+91 9810220761',
+        'telephone' => $company['phone'] ?? '+91 9810220761',
         'contactType' => 'Sales & Technical Inquiries',
-        'email' => 'info@wetruenorthgroup.com',
+        'email' => $company['email'] ?? 'info@wetruenorthgroup.com',
         'areaServed' => 'Global',
         'availableLanguage' => ['English', 'Hindi']
     ]
@@ -267,14 +271,14 @@ $jsonLdList[] = [
       <!-- Top Utility Bar Right: Contact Strip & Corner Short Language Button (No Emoji) -->
       <div class="top-bar-right">
         <div class="top-bar-item top-bar-contact-group">
-          <a href="tel:+919810220761" class="top-bar-link top-bar-phone" title="Call us">
+          <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" class="top-bar-link top-bar-phone" title="Call us">
             <svg class="top-bar-icon top-bar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>+91 9810220761</span>
+            <span><?= htmlspecialchars($company['phone'] ?? '+91 9810220761') ?></span>
           </a>
           <span class="top-bar-slash" aria-hidden="true">/</span>
-          <a href="mailto:info@wetruenorthgroup.com" class="top-bar-link top-bar-email" title="Email us">
+          <a href="mailto:<?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>" class="top-bar-link top-bar-email" title="Email us">
             <svg class="top-bar-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span>info@wetruenorthgroup.com</span>
+            <span><?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></span>
           </a>
         </div>
 
@@ -571,13 +575,13 @@ $jsonLdList[] = [
         <span>TÜV NORD ISO 9001 • Class 10,000 Cleanroom</span>
       </div>
       <div style="font-size: 0.8rem; font-weight: 600; color: #1e293b; display: flex; flex-direction: column; gap: 6px;">
-        <a href="tel:+919810220761" style="color: var(--color-gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" style="color: var(--color-gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>+91 9810220761</span>
+          <span><?= htmlspecialchars($company['phone'] ?? '+91 9810220761') ?></span>
         </a>
-        <a href="mailto:info@wetruenorthgroup.com" style="color: #475569; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+        <a href="mailto:<?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>" style="color: #475569; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>info@wetruenorthgroup.com</span>
+          <span><?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></span>
         </a>
       </div>
     </div>

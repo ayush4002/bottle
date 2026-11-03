@@ -212,3 +212,4 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
   margin-bottom: 0;
 }
 </style>
+

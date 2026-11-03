@@ -24,16 +24,14 @@
             <!-- 1. HQ Details Card -->
             <div class="cnt-info-card">
               <div class="cnt-card-tag">Company Details & HQ</div>
-              <h3 class="cnt-card-title">TrueNorth Group</h3>
+              <h3 class="cnt-card-title"><?= htmlspecialchars($company['name'] ?? 'TrueNorth Group') ?></h3>
               <p class="cnt-card-desc" style="line-height: 1.6; margin-bottom: 12px;">
                 <strong>Address:</strong><br />
-                #201, Vardhaman Trade Towers<br />
-                Rohit Kunj, LSC Pitampura, Delhi-110034<br />
-                India
+                <?= nl2br(htmlspecialchars($company['hq'] ?? "#201, Vardhaman Trade Towers\nRohit Kunj, LSC Pitampura, Delhi-110034\nIndia")) ?>
               </p>
               <div class="cnt-contact-links">
-                <div><strong>Phone:</strong> <a href="tel:+919810220761">+91 9810220761</a></div>
-                <div><strong>Email:</strong> <a href="mailto:info@wetruenorthgroup.com">info@wetruenorthgroup.com</a></div>
+                <div><strong>Phone:</strong> <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>"><?= htmlspecialchars($company['phone'] ?? '+91 9810220761') ?></a></div>
+                <div><strong>Email:</strong> <a href="mailto:<?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>"><?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></a></div>
               </div>
               <p class="cnt-card-subtext" style="margin-top: 10px;">
                 TÜV NORD ISO 9001 Certified Quality Management
@@ -176,7 +174,7 @@
               TrueNorth Group Headquarters. Technical customer advisory, sample fulfillment, and international contract coordination.
             </p>
             <div class="cnt-hub-caps">
-              Address: #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034
+              Address: <?= htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034') ?>
             </div>
           </div>
         </div>
@@ -226,9 +224,9 @@
             <p class="cnt-cta-desc">Connect directly with our packaging engineers or call our global support desk.</p>
           </div>
           <div class="cnt-cta-buttons">
-            <a href="tel:+919810220761" class="tn-btn-gold cnt-cta-call">
+            <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" class="tn-btn-gold cnt-cta-call">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              CALL +91 98102 20761
+              CALL <?= htmlspecialchars($company['phone'] ?? '+91 98102 20761') ?>
             </a>
             <button type="button" class="tn-btn-outline cnt-cta-inquiry" onclick="window.openInquiry('Immediate Technical Assistance')">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>

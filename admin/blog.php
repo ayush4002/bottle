@@ -243,3 +243,4 @@ $err = $_GET['err'] ?? '';
 </div>
 
 <?php require_once __DIR__ . '/footer.php'; ?>
+

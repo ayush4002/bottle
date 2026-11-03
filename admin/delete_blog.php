@@ -26,3 +26,4 @@ if ($deleted) {
     header("Location: /admin/blog?err=" . urlencode("Failed to delete article."));
     exit();
 }
+

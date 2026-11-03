@@ -83,8 +83,14 @@ class MailService {
         </html>
         ";
 
+        $cfg = self::getEmailSettings();
+        $company = class_exists('ProductModel') ? ProductModel::getCompanyInfo() : [];
+        $siteName = !empty($cfg['from_name']) ? $cfg['from_name'] : ($company['name'] ?? 'TrueNorth Group');
+        $siteTagline = !empty($company['tagline']) ? $company['tagline'] : 'Primary Packaging Specialist';
+        $sitePhone = !empty($company['phone']) ? $company['phone'] : '+91 9810220761';
+        $toAdmin = $cfg['contact_email'];
+
         $adminSubject = "New Inquiry [{$quoteId}] from {$customerName} ({$customerCompany})";
-        $toAdmin = defined('EMAIL_TO') ? EMAIL_TO : 'info@wetruenorthgroup.com';
 
         // 3. Send Staff Notification via Authenticated SMTP Socket
         $adminSent = self::sendSmtp($toAdmin, $adminSubject, $adminHtml, $customerEmail);
@@ -92,18 +98,18 @@ class MailService {
         if (!$adminSent) {
             // Fallback to mail()
             $headers = "MIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n";
-            $headers .= "From: TrueNorth Packaging <" . (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com') . ">\r\n";
+            $headers .= "From: " . '=?UTF-8?B?' . base64_encode($siteName) . '?=' . " <" . $cfg['from_email'] . ">\r\n";
             if (!empty($customerEmail)) $headers .= "Reply-To: {$customerEmail}\r\n";
-            @mail($toAdmin, $adminSubject, $adminHtml, $headers, "-f " . (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com'));
+            @mail($toAdmin, $adminSubject, $adminHtml, $headers, "-f " . $cfg['from_email']);
         }
 
         // ------------------------------------------------------------------
         // 4. Send Confirmation & Acknowledgement Copy to Client
         // ------------------------------------------------------------------
-        $sendClientCopy = true; // Always send client acknowledgement email
+        $sendClientCopy = !empty($cfg['send_client_confirmation']);
 
-        if (!empty($customerEmail)) {
-            $clientSubject = "Inquiry Acknowledgement [{$quoteId}] — TrueNorth Group";
+        if ($sendClientCopy && !empty($customerEmail)) {
+            $clientSubject = "Inquiry Acknowledgement [{$quoteId}] — " . $siteName;
             $clientHtml = "
             <!DOCTYPE html>
             <html>
@@ -130,8 +136,8 @@ class MailService {
             <body>
               <div class='container'>
                 <div class='header'>
-                  <h1>TrueNorth Group</h1>
-                  <p>Primary Packaging Specialist</p>
+                  <h1>{$siteName}</h1>
+                  <p>{$siteTagline}</p>
                 </div>
                 <div class='body'>
                   <div class='thank-card'>
@@ -159,11 +165,11 @@ class MailService {
 
                   <div class='cta-block'>
                     <strong>Need immediate assistance or have CAD / 3D design files to attach?</strong><br>
-                    You can reply directly to this email (<a href='mailto:info@wetruenorthgroup.com' style='color: #16273f; font-weight: 700;'>info@wetruenorthgroup.com</a>) or contact our technical sales desk at <strong>+91 9810220761</strong>.
+                    You can reply directly to this email (<a href='mailto:{$cfg['from_email']}' style='color: #16273f; font-weight: 700;'>{$cfg['from_email']}</a>) or contact our technical sales desk at <strong>{$sitePhone}</strong>.
                   </div>
                 </div>
                 <div class='footer'>
-                  © " . date('Y') . " TrueNorth Group. All Rights Reserved. • <a href='https://wetruenorthgroup.com'>wetruenorthgroup.com</a><br>
+                  © " . date('Y') . " {$siteName}. All Rights Reserved. • <a href='https://wetruenorthgroup.com'>wetruenorthgroup.com</a><br>
                   TÜV NORD ISO 9001 Certified • Food-Grade Cleanroom Manufacturing Hubs
                 </div>
               </div>
@@ -171,15 +177,15 @@ class MailService {
             </html>
             ";
 
-            $clientSent = self::sendSmtp($customerEmail, $clientSubject, $clientHtml, defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com');
+            $clientSent = self::sendSmtp($customerEmail, $clientSubject, $clientHtml, $cfg['reply_to']);
             if (!$clientSent) {
                 // Fail-safe fallback to mail() if SMTP fails
                 $headers = "MIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n";
-                $headers .= "From: TrueNorth Packaging <" . (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com') . ">\r\n";
-                $headers .= "Reply-To: " . (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com') . "\r\n";
+                $headers .= "From: " . '=?UTF-8?B?' . base64_encode($siteName) . '?=' . " <" . $cfg['from_email'] . ">\r\n";
+                $headers .= "Reply-To: " . $cfg['reply_to'] . "\r\n";
                 $headers .= "Message-ID: <" . md5(uniqid(microtime(), true)) . "@wetruenorthgroup.com>\r\n";
                 $headers .= "X-Mailer: TrueNorth-Mailer/2.0\r\n";
-                @mail($customerEmail, $clientSubject, $clientHtml, $headers, "-f " . (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com'));
+                @mail($customerEmail, $clientSubject, $clientHtml, $headers, "-f " . $cfg['from_email']);
             }
         }
 
@@ -309,7 +315,9 @@ class MailService {
             'pass'       => $json['smtp_pass'] ?? (defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group'),
             'from_name'  => $json['from_name'] ?? ($json['site_name'] ?? 'TrueNorth Group'),
             'from_email' => $json['from_email'] ?? ($json['contact_email'] ?? (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com')),
-            'reply_to'   => $json['reply_to'] ?? ($json['contact_email'] ?? 'info@wetruenorthgroup.com')
+            'reply_to'   => $json['reply_to'] ?? ($json['contact_email'] ?? 'info@wetruenorthgroup.com'),
+            'contact_email' => $json['contact_email'] ?? (defined('EMAIL_TO') ? EMAIL_TO : 'info@wetruenorthgroup.com'),
+            'send_client_confirmation' => isset($json['send_client_confirmation']) ? (int)$json['send_client_confirmation'] : 1
         ];
     }
 
@@ -318,6 +326,12 @@ class MailService {
      */
     public static function sendCustomReply($clientEmail, $clientName, $subject, $messageBody, $quoteId = '', $adminUser = 'TrueNorth Sales') {
         $cfg = self::getEmailSettings();
+        $company = class_exists('ProductModel') ? ProductModel::getCompanyInfo() : [];
+        $siteName = !empty($cfg['from_name']) ? $cfg['from_name'] : ($company['name'] ?? 'TrueNorth Group');
+        $siteTagline = !empty($company['tagline']) ? $company['tagline'] : 'Global Primary Packaging Specialists & Precision Manufacturers';
+        $sitePhone = !empty($company['phone']) ? $company['phone'] : '+91 98102 20761';
+        $siteHq = !empty($company['hq']) ? nl2br(htmlspecialchars($company['hq'])) : '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034';
+
         $cleanEmail = filter_var(trim($clientEmail), FILTER_VALIDATE_EMAIL);
 
         if (!$cleanEmail) {
@@ -325,7 +339,7 @@ class MailService {
         }
 
         $safeName = htmlspecialchars(trim($clientName ?: 'Valued Client'));
-        $safeSubject = trim($subject ?: "Quotation & Specification Reply — TrueNorth Group");
+        $safeSubject = trim($subject ?: "Quotation & Specification Reply — " . $siteName);
         $safeRef = htmlspecialchars(trim($quoteId ?: 'INQ'));
         $formattedBody = nl2br(htmlspecialchars(trim($messageBody)));
 
@@ -354,8 +368,8 @@ class MailService {
         <body>
           <div class='email-wrapper'>
             <div class='email-header'>
-              <div class='brand-title'>TrueNorth Group</div>
-              <div class='brand-sub'>Global Primary Packaging Specialists & Precision Manufacturers</div>
+              <div class='brand-title'>{$siteName}</div>
+              <div class='brand-sub'>{$siteTagline}</div>
             </div>
             <div class='email-body'>
               <div class='ref-badge'>INQUIRY REFERENCE: {$safeRef}</div>
@@ -364,17 +378,16 @@ class MailService {
                 {$formattedBody}
               </div>
               <div class='signoff-box'>
-                <div class='signoff-title'>TrueNorth Group — Executive Sales & Engineering</div>
+                <div class='signoff-title'>{$siteName} — Executive Sales & Engineering</div>
                 <div class='signoff-meta'>
-                  #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034<br/>
-                  Manufacturing: Daman, India &bull; Closures: Ningbo, China<br/>
-                  Direct Hotline / WhatsApp: <strong>+91 98102 20761</strong><br/>
-                  Email: <a href='mailto:info@wetruenorthgroup.com' style='color:#b8892e; text-decoration:none;'>info@wetruenorthgroup.com</a> &bull; Web: <a href='https://wetruenorthgroup.com' style='color:#16273f; text-decoration:none;'>wetruenorthgroup.com</a>
+                  {$siteHq}<br/>
+                  Direct Hotline / WhatsApp: <strong>{$sitePhone}</strong><br/>
+                  Email: <a href='mailto:{$cfg['from_email']}' style='color:#b8892e; text-decoration:none;'>{$cfg['from_email']}</a> &bull; Web: <a href='https://wetruenorthgroup.com' style='color:#16273f; text-decoration:none;'>wetruenorthgroup.com</a>
                 </div>
               </div>
             </div>
             <div class='email-footer'>
-              &copy; " . date('Y') . " TrueNorth Group. This email was dispatched regarding quotation reference {$safeRef}.
+              &copy; " . date('Y') . " {$siteName}. This email was dispatched regarding quotation reference {$safeRef}.
             </div>
           </div>
         </body>

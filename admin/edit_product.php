@@ -18,6 +18,8 @@ if (!$product) {
 
 $categories = ProductModel::getCategories();
 $series = ProductModel::getSeries();
+$company = ProductModel::getCompanyInfo();
+$currency = $company['currency'] ?? '₹';
 $dbOptions = ProductModel::getAllOptions(true);
 
 $materialsList = $dbOptions['materials'] ?? [];
@@ -413,11 +415,11 @@ $gender = $product['gender'] ?? 'Unisex';
 
       <div class="form-row-3">
         <div>
-          <label for="regularPrice" class="form-label">Regular Price (₹)</label>
+          <label for="regularPrice" class="form-label">Regular Price (<?= htmlspecialchars($currency) ?>)</label>
           <input type="number" step="0.01" min="0" id="regularPrice" name="regularPrice" class="form-control-smart" value="<?= htmlspecialchars($regularPrice) ?>" />
         </div>
         <div>
-          <label for="salePrice" class="form-label">Sale Price (₹ Optional)</label>
+          <label for="salePrice" class="form-label">Sale Price (<?= htmlspecialchars($currency) ?> Optional)</label>
           <input type="number" step="0.01" min="0" id="salePrice" name="salePrice" class="form-control-smart" value="<?= htmlspecialchars($salePrice) ?>" />
         </div>
         <div>

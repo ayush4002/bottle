@@ -194,11 +194,11 @@ if ($searchQuery) {
               <div class="products-inquiry-direct">
                 <div class="direct-contact-item">
                   <span class="direct-label">Direct Factory Desk:</span>
-                  <a href="tel:+919810220761" class="direct-val">+91 98102 20761</a>
+                  <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" class="direct-val"><?= htmlspecialchars($company['phone'] ?? '+91 98102 20761') ?></a>
                 </div>
                 <div class="direct-contact-item">
                   <span class="direct-label">Technical RFQs:</span>
-                  <a href="mailto:info@wetruenorthgroup.com" class="direct-val">info@wetruenorthgroup.com</a>
+                  <a href="mailto:<?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>" class="direct-val"><?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></a>
                 </div>
               </div>
             </div>

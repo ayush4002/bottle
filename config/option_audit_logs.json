@@ -1,5 +1,41 @@
 [
     {
+        "id": "1793705262243",
+        "user": "admin",
+        "action": "Deleted Option",
+        "group": "industries",
+        "item": "test",
+        "details": "Permanently deleted option",
+        "created_at": "2026-11-03 12:27:42"
+    },
+    {
+        "id": "1793705258718",
+        "user": "admin",
+        "action": "Deleted Option",
+        "group": "categories",
+        "item": "test",
+        "details": "Permanently deleted option",
+        "created_at": "2026-11-03 12:27:38"
+    },
+    {
+        "id": "1793705225311",
+        "user": "admin",
+        "action": "Added Option",
+        "group": "categories",
+        "item": "test",
+        "details": "Saved option attributes",
+        "created_at": "2026-11-03 12:27:05"
+    },
+    {
+        "id": "1793705213295",
+        "user": "admin",
+        "action": "Added Option",
+        "group": "industries",
+        "item": "test",
+        "details": "Saved option attributes",
+        "created_at": "2026-11-03 12:26:53"
+    },
+    {
         "id": "1793704861683",
         "user": "admin",
         "action": "Deleted Option",

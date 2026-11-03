@@ -15,7 +15,7 @@
       <div class="tn-container" style="max-width: 920px;">
         
         <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; font-size: 0.875rem; color: #475569;">
-          <strong>Effective Date:</strong> October 2026 &bull; <strong>Operating Entity:</strong> TrueNorth Group (Primary Packaging Division) &bull; <strong>Headquarters:</strong> #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India.
+          <strong>Effective Date:</strong> October 2026 &bull; <strong>Operating Entity:</strong> <?= htmlspecialchars($company['name'] ?? 'TrueNorth Group') ?> (Primary Packaging Division) &bull; <strong>Headquarters:</strong> <?= htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India.') ?>
         </div>
 
         <article style="font-size: 0.9375rem; line-height: 1.7; color: #334155;">
@@ -53,7 +53,7 @@
           <div style="margin-top: 40px; padding: 20px; background: #F1F5F9; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
             <div>
               <strong style="color: #16273f;">Have questions about our commercial terms or need custom contract terms?</strong>
-              <div style="font-size: 0.875rem; color: #64748b;">Contact our legal &amp; commercial contracts desk: info@wetruenorthgroup.com</div>
+              <div style="font-size: 0.875rem; color: #64748b;">Contact our legal &amp; commercial contracts desk: <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></div>
             </div>
             <a href="/contact" class="tn-btn-gold" style="margin: 0; padding: 10px 20px; font-size: 0.875rem;">CONTACT SALES DESK</a>
           </div>

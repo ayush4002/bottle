@@ -5,6 +5,9 @@ checkAdminAuth();
 require_once dirname(__DIR__) . '/config/config.php';
 require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 
+$company = ProductModel::getCompanyInfo();
+$currency = $company['currency'] ?? '₹';
+
 $message = '';
 $error = '';
 
@@ -34,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Content-Type: application/json');
                 echo json_encode([
                     'success' => true,
-                    'message' => "Updated {$product['name']} (Stock: {$stockQty}, Price: ₹" . number_format($regularPrice, 2) . ")",
+                    'message' => "Updated {$product['name']} (Stock: {$stockQty}, Price: {$currency}" . number_format($regularPrice, 2) . ")",
                     'stockStatus' => $product['stockStatus'],
                     'stockQty' => $stockQty,
                     'price' => $regularPrice
@@ -198,7 +201,7 @@ if (empty($search)) {
 
       <div class="mic-form">
         <div class="mic-field">
-          <label>Price (₹)</label>
+          <label>Price (<?= htmlspecialchars($currency) ?>)</label>
           <input type="number" step="0.01" id="m-price-<?= htmlspecialchars($pId) ?>" value="<?= sprintf('%.2f', $price) ?>" required />
         </div>
         <div class="mic-field">
@@ -229,7 +232,7 @@ if (empty($search)) {
         <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Image</th>
         <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Product Name</th>
         <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Article / SKU</th>
-        <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Price (₹)</th>
+        <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Price (<?= htmlspecialchars($currency) ?>)</th>
         <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Stock Qty (pcs)</th>
         <th style="text-align: left; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Status</th>
         <th style="text-align: right; padding: 12px 10px; font-size: 0.78rem; color: #94a3b8; text-transform: uppercase;">Action</th>

@@ -15,7 +15,7 @@
       <div class="tn-container" style="max-width: 920px;">
         
         <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; font-size: 0.875rem; color: #475569;">
-          <strong>Data Controller:</strong> TrueNorth Group &bull; <strong>Email:</strong> info@wetruenorthgroup.com &bull; <strong>Corporate Address:</strong> #201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India.
+          <strong>Data Controller:</strong> <?= htmlspecialchars($company['name'] ?? 'TrueNorth Group') ?> &bull; <strong>Email:</strong> <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?> &bull; <strong>Corporate Address:</strong> <?= htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India.') ?>
         </div>
 
         <article style="font-size: 0.9375rem; line-height: 1.7; color: #334155;">
@@ -53,7 +53,7 @@
 
           <h2 style="font-size: 1.25rem; font-weight: 800; color: #16273f; margin: 28px 0 12px 0;">5. Your Rights Under GDPR &amp; International Law</h2>
           <p>
-            Depending on your jurisdiction, you have the right to request access to your personal information, request correction of inaccuracies, request deletion of non-essential records, or object to commercial communications. To exercise any of these rights, please contact our data privacy representative at <strong>info@wetruenorthgroup.com</strong>.
+            Depending on your jurisdiction, you have the right to request access to your personal information, request correction of inaccuracies, request deletion of non-essential records, or object to commercial communications. To exercise any of these rights, please contact our data privacy representative at <strong><?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></strong>.
           </p>
 
           <h2 style="font-size: 1.25rem; font-weight: 800; color: #16273f; margin: 28px 0 12px 0;">6. Cookies &amp; Tracking Technologies</h2>
@@ -64,7 +64,7 @@
           <div style="margin-top: 40px; padding: 20px; background: #F1F5F9; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
             <div>
               <strong style="color: #16273f;">Need data clarification or have privacy inquiries?</strong>
-              <div style="font-size: 0.875rem; color: #64748b;">Contact our Data Protection Officer: info@wetruenorthgroup.com</div>
+              <div style="font-size: 0.875rem; color: #64748b;">Contact our Data Protection Officer: <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?></div>
             </div>
             <a href="/contact" class="tn-btn-gold" style="margin: 0; padding: 10px 20px; font-size: 0.875rem;">CONTACT PRIVACY DESK</a>
           </div>

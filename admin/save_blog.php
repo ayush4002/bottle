@@ -83,3 +83,4 @@ if ($saved) {
     header("Location: /admin/blog_editor?err=" . urlencode("Failed to save article. Please check your database permissions."));
     exit();
 }
+
