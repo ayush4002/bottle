@@ -130,6 +130,24 @@ if (!empty($sku)) {
     $seoTitle = 'Privacy Statement & Data Protection Policy | TrueNorth Group';
     $seoDesc = 'Information regarding personal and commercial data processing, international trade inquiries, and GDPR/regulatory privacy protections.';
     $canonicalUrl = $seoBaseUrl . '/privacy';
+} elseif (!empty($post)) {
+    // 9. Single Blog Article (Custom SEO)
+    $seoTitle = !empty($post['meta_title']) ? $post['meta_title'] : ($post['title'] . ' | TrueNorth Group');
+    $seoDesc = !empty($post['meta_description']) ? $post['meta_description'] : ($post['excerpt'] ?: substr(strip_tags($post['content']), 0, 155));
+    $seoKeywords = !empty($post['meta_keywords']) ? $post['meta_keywords'] : 'PET bottles, primary packaging, cleanroom molding, ISO 9001';
+    $canonicalUrl = !empty($post['canonical_url']) ? $post['canonical_url'] : ($seoBaseUrl . '/blog/' . urlencode($post['slug']));
+    $ogType = 'article';
+    $ogTitle = !empty($post['og_title']) ? $post['og_title'] : $seoTitle;
+    $ogDesc = !empty($post['og_description']) ? $post['og_description'] : $seoDesc;
+    $featuredImg = $post['featured_image'] ?? '/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp';
+    $ogImage = (strpos($featuredImg, 'http') === 0) ? $featuredImg : ($seoBaseUrl . '/' . ltrim($featuredImg, '/'));
+    $robotsMeta = !empty($post['robots_meta']) ? $post['robots_meta'] : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+} elseif (($activePage ?? '') === 'blog') {
+    // 10. Blog Index Page
+    $seoTitle = 'Packaging Industry Insights & Technical Guides | TrueNorth Group';
+    $seoDesc = 'Explore expert engineering insights, sustainable rPET packaging developments, cleanroom compliance guides, and dispensing closure specifications from TrueNorth Group.';
+    $seoKeywords = 'PET bottles blog, sustainable packaging articles, cleanroom bottle molding, cosmetic packaging guide, rPET whitepaper, packaging manufacturer news';
+    $canonicalUrl = $seoBaseUrl . '/blog';
 }
 
 // Global Organization Schema
@@ -190,7 +208,7 @@ $jsonLdList[] = [
   <meta name="description" content="<?= htmlspecialchars($seoDesc) ?>" />
   <meta name="keywords" content="<?= htmlspecialchars($seoKeywords) ?>" />
   <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="robots" content="<?= htmlspecialchars($robotsMeta ?? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1') ?>" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="<?= htmlspecialchars($ogType) ?>" />
@@ -373,6 +391,7 @@ $jsonLdList[] = [
         <li><a href="/products" class="tn-nav-link <?= ($activePage ?? '') === 'products' ? 'active' : '' ?>">Products</a></li>
         <li><a href="/custom" class="tn-nav-link <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>">Custom Solutions</a></li>
         <li><a href="/sustainability" class="tn-nav-link <?= ($activePage ?? '') === 'sustainability' ? 'active' : '' ?>">Sustainability</a></li>
+        <li><a href="/blog" class="tn-nav-link <?= ($activePage ?? '') === 'blog' ? 'active' : '' ?>">Blog</a></li>
         <li><a href="/contact" class="tn-nav-link <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>">Contact</a></li>
       </ul>
 
@@ -447,6 +466,10 @@ $jsonLdList[] = [
       </a>
       <a href="/sustainability" class="mobile-nav-item <?= ($activePage ?? '') === 'sustainability' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Sustainability</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="/blog" class="mobile-nav-item <?= ($activePage ?? '') === 'blog' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
+        <span>Blog &amp; Insights</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
       <a href="/contact" class="mobile-nav-item <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">

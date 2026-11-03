@@ -29,6 +29,12 @@ foreach ($allProducts as $p) {
 require_once dirname(__DIR__) . '/app/Models/InquiryModel.php';
 $inqStats = InquiryModel::getStats();
 $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
+
+// Blog Articles Count from BlogModel
+require_once dirname(__DIR__) . '/app/Models/BlogModel.php';
+BlogModel::initStorage();
+$blogCount = count(BlogModel::getAllPosts(false));
+$blogPublished = count(BlogModel::getAllPosts(true));
 ?>
 
 <style>
@@ -160,6 +166,12 @@ $recentInquiries = array_slice(InquiryModel::getAllInquiries(), 0, 6);
     <div class="stat-card-title">Client Inquiries</div>
     <div class="stat-card-value" style="color: #38bdf8;"><?= number_format($inqStats['total']) ?></div>
     <div class="stat-card-desc"><?= $inqStats['new'] ?> new / pending review &rarr;</div>
+  </a>
+
+  <a href="/admin/blog" class="stat-card" style="text-decoration: none; display: block; border-left: 3px solid #b8892e; transition: transform 0.15s ease;">
+    <div class="stat-card-title">Blog &amp; SEO Articles</div>
+    <div class="stat-card-value" style="color: #d4a754;"><?= number_format($blogPublished) ?></div>
+    <div class="stat-card-desc"><?= $blogCount ?> total (<?= $blogCount - $blogPublished ?> drafts) &rarr;</div>
   </a>
 </div>
 

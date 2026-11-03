@@ -94,6 +94,7 @@ require_once __DIR__ . '/app/Models/ProductModel.php';
 require_once __DIR__ . '/app/Controllers/PageController.php';
 require_once __DIR__ . '/app/Controllers/ProductController.php';
 require_once __DIR__ . '/app/Controllers/QuoteController.php';
+require_once __DIR__ . '/app/Controllers/BlogController.php';
 
 // Parse request path
 $requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
@@ -176,6 +177,19 @@ if ($path === 'api/products') {
 if ($path === 'api/search') {
     ProductController::handleSearchApi();
     exit();
+}
+
+// Blog Routes (e.g. /blog, /blog/evolution-rpet-cosmetic-packaging, /insights, /articles)
+if ($path === 'blog' || $path === 'blog/' || $path === 'insights' || $path === 'articles') {
+    BlogController::index();
+    exit();
+}
+if (strpos($path, 'blog/') === 0) {
+    $blogSlug = trim(substr($path, 5), '/');
+    if (!empty($blogSlug)) {
+        BlogController::view($blogSlug);
+        exit();
+    }
 }
 
 // Product Detail Route (e.g. /product?id=123 or /product_detail?id=123 or /product/123)

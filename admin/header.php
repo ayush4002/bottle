@@ -25,7 +25,9 @@ $breadcrumbs = [
     'settings' => 'Website Settings',
     'users' => 'Admin Users',
     'change_password' => 'Change Password',
-    'inquiries' => 'Client Inquiries'
+    'inquiries' => 'Client Inquiries',
+    'blog' => 'Blog & SEO Articles',
+    'blog_editor' => 'Blog & SEO Editor'
 ];
 $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $currentPage));
 ?>
@@ -528,7 +530,13 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $curre
         Inventory & Prices
       </a>
 
-      <div class="cms-nav-section">Media & Settings</div>
+      <div class="cms-nav-section">Content &amp; SEO</div>
+      <a href="/admin/blog" class="cms-nav-link <?= in_array($currentPage, ['blog', 'blog_editor']) ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+        Blog &amp; SEO Articles
+      </a>
+
+      <div class="cms-nav-section">Media &amp; Settings</div>
       <a href="/admin/media" class="cms-nav-link <?= $currentPage == 'media' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
         Media Library

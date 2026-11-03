@@ -141,6 +141,7 @@
             <ul class="footer-link-list">
               <li><a href="/custom">Custom Mould Development</a></li>
               <li><a href="/sustainability">PCR Plastics &amp; rPET Stock</a></li>
+              <li><a href="/blog">Packaging Blog &amp; Insights</a></li>
             </ul>
           </div>
         </div>

@@ -10,6 +10,7 @@ header("X-Robots-Tag: noindex");
 
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/app/Models/ProductModel.php';
+require_once __DIR__ . '/app/Models/BlogModel.php';
 
 // Canonical domain for sitemap URLs (Always HTTPS for Google / Bing)
 $baseUrl = 'https://wetruenorthgroup.com';
@@ -65,6 +66,12 @@ $corePages = [
         'lastmod' => date('Y-m-d', strtotime('-14 days')),
         'changefreq' => 'monthly',
         'priority' => '0.5'
+    ],
+    [
+        'url' => $baseUrl . '/blog',
+        'lastmod' => $today,
+        'changefreq' => 'daily',
+        'priority' => '0.85'
     ]
 ];
 
@@ -134,6 +141,33 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
       <image:loc><?= htmlspecialchars($imgUrl, ENT_XML1) ?></image:loc>
       <image:title><?= htmlspecialchars($pName, ENT_XML1) ?></image:title>
       <image:caption><?= htmlspecialchars(($sku['shortDescription'] ?? $pName) . ' — TrueNorth Group Packaging', ENT_XML1) ?></image:caption>
+    </image:image>
+    <?php endif; ?>
+  </url>
+<?php endforeach; ?>
+
+  <!-- Published Blog & Technical Articles -->
+<?php
+  BlogModel::initStorage();
+  $blogPosts = BlogModel::getAllPosts(true);
+  foreach ($blogPosts as $bp):
+    $bSlug = $bp['slug'] ?? '';
+    if (empty($bSlug)) continue;
+    $bUrl = $baseUrl . '/blog/' . urlencode($bSlug);
+    $bTitle = $bp['title'] ?? 'Packaging Article';
+    $bImg = $bp['featured_image'] ?? '';
+    $bLastMod = !empty($bp['updated_at']) ? date('Y-m-d', strtotime($bp['updated_at'])) : (!empty($bp['published_at']) ? date('Y-m-d', strtotime($bp['published_at'])) : $today);
+?>
+  <url>
+    <loc><?= htmlspecialchars($bUrl, ENT_XML1) ?></loc>
+    <lastmod><?= $bLastMod ?></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <?php if (!empty($bImg) && $bImg !== '/logo_svg.svg'): ?>
+      <?php $bFullImg = (strpos($bImg, 'http') === 0) ? $bImg : ($baseUrl . '/' . ltrim($bImg, '/')); ?>
+    <image:image>
+      <image:loc><?= htmlspecialchars($bFullImg, ENT_XML1) ?></image:loc>
+      <image:title><?= htmlspecialchars($bTitle, ENT_XML1) ?></image:title>
     </image:image>
     <?php endif; ?>
   </url>
