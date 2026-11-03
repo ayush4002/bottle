@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $action = $_POST['action'] ?? '';
 $group = $_POST['group'] ?? '';
 
-if (empty($group) && in_array($action, ['add', 'edit', 'toggle_status', 'delete', 'quick_add'])) {
+if (empty($group) && in_array($action, ['add', 'edit', 'toggle_status', 'delete', 'quick_add', 'save_option'])) {
     echo json_encode(['success' => false, 'message' => 'Option group is required']);
     exit();
 }
@@ -24,6 +24,7 @@ switch ($action) {
     case 'add':
     case 'edit':
     case 'quick_add':
+    case 'save_option':
         $id = (int)($_POST['id'] ?? 0);
         $name = trim($_POST['name'] ?? ($_POST['display_label'] ?? ''));
         if (empty($name)) {
@@ -43,6 +44,35 @@ switch ($action) {
         if (isset($_POST['unit'])) $data['unit'] = trim($_POST['unit']);
         if (isset($_POST['hex_code'])) $data['hex_code'] = trim($_POST['hex_code']);
         if (isset($_POST['display_order'])) $data['display_order'] = (int)$_POST['display_order'];
+        if (isset($_POST['slug'])) $data['slug'] = trim($_POST['slug']);
+        if (isset($_POST['headline'])) $data['headline'] = trim($_POST['headline']);
+        if (isset($_POST['desc'])) $data['desc'] = trim($_POST['desc']);
+        if (isset($_POST['image'])) $data['image'] = trim($_POST['image']);
+        if (isset($_POST['coverImage'])) $data['coverImage'] = trim($_POST['coverImage']);
+
+        // Handle multipart image upload
+        if (!empty($_FILES['image_file']['name']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
+            $tmpFile = $_FILES['image_file']['tmp_name'];
+            $origName = $_FILES['image_file']['name'];
+            $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+            if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp', 'svg', 'gif'])) {
+                $subDir = ($group === 'industries') ? 'industries' : 'categories';
+                $destFolder = dirname(__DIR__) . "/public/uploads/{$subDir}";
+                if (!is_dir($destFolder)) {
+                    mkdir($destFolder, 0777, true);
+                }
+                $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($origName, PATHINFO_FILENAME));
+                $newFileName = time() . '_' . $safeName . '.' . $ext;
+                $destPath = "{$destFolder}/{$newFileName}";
+                if (move_uploaded_file($tmpFile, $destPath)) {
+                    $uploadedUrl = "/uploads/{$subDir}/{$newFileName}";
+                    $data['image'] = $uploadedUrl;
+                    if (empty($data['coverImage'])) {
+                        $data['coverImage'] = $uploadedUrl;
+                    }
+                }
+            }
+        }
 
         $saved = ProductModel::saveOption($group, $data);
         echo json_encode(['success' => true, 'message' => 'Option saved successfully', 'option' => $saved]);
