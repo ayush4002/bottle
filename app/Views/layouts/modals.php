@@ -202,211 +202,6 @@
   </div>
 
 
-  <!-- =========================================================================
-       LANGUAGE SELECTOR POPUP MODAL
-       ========================================================================= -->
-  <div class="tn-lang-modal-overlay" id="tn-lang-modal-overlay" onclick="window.closeLanguageModal(event)">
-    <div class="tn-lang-modal-box" id="tn-lang-modal-box" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="lang-modal-title">
-      
-      <!-- Modal Header -->
-      <div class="tn-lang-modal-header">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="tn-lang-icon-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 id="lang-modal-title" class="tn-lang-modal-title">Select Language / Region</h3>
-            <p class="tn-lang-modal-sub">Choose your preferred language for the TrueNorth packaging portal</p>
-          </div>
-        </div>
-        <button type="button" class="tn-lang-modal-close" onclick="window.closeLanguageModal()" aria-label="Close language selector">&times;</button>
-      </div>
-
-      <!-- Quick Search Filter -->
-      <div class="tn-lang-search-bar">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" id="lang-search-input" placeholder="Search language or country (e.g. Spanish, German, Français, Arabic)..." oninput="window.filterLanguageList(this.value)" autocomplete="off" />
-      </div>
-
-      <!-- Language Selection Grid -->
-      <div class="tn-lang-grid" id="tn-lang-grid">
-        <button type="button" class="tn-lang-card active" data-lang="en" data-name="English" data-flag="🌐" onclick="window.selectLanguage('en', 'English', '🌐')">
-          <span class="tn-lang-card-flag">🌐</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">English</div>
-            <div class="tn-lang-card-eng">Global / Default</div>
-          </div>
-          <span class="tn-lang-card-badge">EN</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="es" data-name="Español" data-flag="🇪🇸" onclick="window.selectLanguage('es', 'Español', '🇪🇸')">
-          <span class="tn-lang-card-flag">🇪🇸</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Español</div>
-            <div class="tn-lang-card-eng">Spanish • España / LatAm</div>
-          </div>
-          <span class="tn-lang-card-badge">ES</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="fr" data-name="Français" data-flag="🇫🇷" onclick="window.selectLanguage('fr', 'Français', '🇫🇷')">
-          <span class="tn-lang-card-flag">🇫🇷</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Français</div>
-            <div class="tn-lang-card-eng">French • France / Afrique</div>
-          </div>
-          <span class="tn-lang-card-badge">FR</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="de" data-name="Deutsch" data-flag="🇩🇪" onclick="window.selectLanguage('de', 'Deutsch', '🇩🇪')">
-          <span class="tn-lang-card-flag">🇩🇪</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Deutsch</div>
-            <div class="tn-lang-card-eng">German • DACH Region</div>
-          </div>
-          <span class="tn-lang-card-badge">DE</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="ar" data-name="العربية" data-flag="🇦🇪" onclick="window.selectLanguage('ar', 'العربية', '🇦🇪')">
-          <span class="tn-lang-card-flag">🇦🇪</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">العربية</div>
-            <div class="tn-lang-card-eng">Arabic • Middle East & GCC</div>
-          </div>
-          <span class="tn-lang-card-badge">AR</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="ru" data-name="Русский" data-flag="🇷🇺" onclick="window.selectLanguage('ru', 'Русский', '🇷🇺')">
-          <span class="tn-lang-card-flag">🇷🇺</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Русский</div>
-            <div class="tn-lang-card-eng">Russian • Eurasia</div>
-          </div>
-          <span class="tn-lang-card-badge">RU</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="zh-CN" data-name="简体中文" data-flag="🇨🇳" onclick="window.selectLanguage('zh-CN', '简体中文', '🇨🇳')">
-          <span class="tn-lang-card-flag">🇨🇳</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">简体中文</div>
-            <div class="tn-lang-card-eng">Chinese • Simplified</div>
-          </div>
-          <span class="tn-lang-card-badge">ZH</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="ja" data-name="日本語" data-flag="🇯🇵" onclick="window.selectLanguage('ja', '日本語', '🇯🇵')">
-          <span class="tn-lang-card-flag">🇯🇵</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">日本語</div>
-            <div class="tn-lang-card-eng">Japanese • 日本</div>
-          </div>
-          <span class="tn-lang-card-badge">JA</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="pt" data-name="Português" data-flag="🇵🇹" onclick="window.selectLanguage('pt', 'Português', '🇵🇹')">
-          <span class="tn-lang-card-flag">🇵🇹</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Português</div>
-            <div class="tn-lang-card-eng">Portuguese • Brasil & Portugal</div>
-          </div>
-          <span class="tn-lang-card-badge">PT</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="it" data-name="Italiano" data-flag="🇮🇹" onclick="window.selectLanguage('it', 'Italiano', '🇮🇹')">
-          <span class="tn-lang-card-flag">🇮🇹</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Italiano</div>
-            <div class="tn-lang-card-eng">Italian • Italia</div>
-          </div>
-          <span class="tn-lang-card-badge">IT</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="hi" data-name="हिन्दी" data-flag="🇮🇳" onclick="window.selectLanguage('hi', 'हिन्दी', '🇮🇳')">
-          <span class="tn-lang-card-flag">🇮🇳</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">हिन्दी</div>
-            <div class="tn-lang-card-eng">Hindi • भारत / India</div>
-          </div>
-          <span class="tn-lang-card-badge">HI</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="nl" data-name="Nederlands" data-flag="🇳🇱" onclick="window.selectLanguage('nl', 'Nederlands', '🇳🇱')">
-          <span class="tn-lang-card-flag">🇳🇱</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Nederlands</div>
-            <div class="tn-lang-card-eng">Dutch • Nederland & België</div>
-          </div>
-          <span class="tn-lang-card-badge">NL</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="tr" data-name="Türkçe" data-flag="🇹🇷" onclick="window.selectLanguage('tr', 'Türkçe', '🇹🇷')">
-          <span class="tn-lang-card-flag">🇹🇷</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Türkçe</div>
-            <div class="tn-lang-card-eng">Turkish • Türkiye</div>
-          </div>
-          <span class="tn-lang-card-badge">TR</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="ko" data-name="한국어" data-flag="🇰🇷" onclick="window.selectLanguage('ko', '한국어', '🇰🇷')">
-          <span class="tn-lang-card-flag">🇰🇷</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">한국어</div>
-            <div class="tn-lang-card-eng">Korean • 대한민국</div>
-          </div>
-          <span class="tn-lang-card-badge">KO</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="vi" data-name="Tiếng Việt" data-flag="🇻🇳" onclick="window.selectLanguage('vi', 'Tiếng Việt', '🇻🇳')">
-          <span class="tn-lang-card-flag">🇻🇳</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Tiếng Việt</div>
-            <div class="tn-lang-card-eng">Vietnamese • Việt Nam</div>
-          </div>
-          <span class="tn-lang-card-badge">VI</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="id" data-name="Bahasa Indonesia" data-flag="🇮🇩" onclick="window.selectLanguage('id', 'Bahasa Indonesia', '🇮🇩')">
-          <span class="tn-lang-card-flag">🇮🇩</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Bahasa Indonesia</div>
-            <div class="tn-lang-card-eng">Indonesian • Indonesia</div>
-          </div>
-          <span class="tn-lang-card-badge">ID</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="pl" data-name="Polski" data-flag="🇵🇱" onclick="window.selectLanguage('pl', 'Polski', '🇵🇱')">
-          <span class="tn-lang-card-flag">🇵🇱</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">Polski</div>
-            <div class="tn-lang-card-eng">Polish • Polska</div>
-          </div>
-          <span class="tn-lang-card-badge">PL</span>
-        </button>
-
-        <button type="button" class="tn-lang-card" data-lang="th" data-name="ไทย" data-flag="🇹🇭" onclick="window.selectLanguage('th', 'ไทย', '🇹🇭')">
-          <span class="tn-lang-card-flag">🇹🇭</span>
-          <div class="tn-lang-card-info">
-            <div class="tn-lang-card-native">ไทย</div>
-            <div class="tn-lang-card-eng">Thai • ประเทศไทย</div>
-          </div>
-          <span class="tn-lang-card-badge">TH</span>
-        </button>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="tn-lang-modal-footer">
-        <div style="font-size: 0.78rem; color: #64748b; display: flex; align-items: center; gap: 6px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span>Instant Worldwide Website Translation</span>
-        </div>
-        <button type="button" class="tn-lang-btn-cancel" onclick="window.closeLanguageModal()">Cancel</button>
-      </div>
-
-    </div>
-  </div>
-
   <!-- Google Translate Hidden Engine -->
   <div id="google_translate_element" style="display:none;position:absolute;top:-9999px;"></div>
   <script type="text/javascript">
@@ -422,50 +217,101 @@
 
   <script>
     // =========================================================================
-    // LANGUAGE POPUP & TRANSLATION CONTROLLER
+    // COMPACT LANGUAGE DROPDOWN CONTROLLER (No Pop-up)
     // =========================================================================
-    window.openLanguageModal = function() {
-      var overlay = document.getElementById('tn-lang-modal-overlay');
-      if (overlay) {
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        var searchInput = document.getElementById('lang-search-input');
-        if (searchInput) {
-          searchInput.value = '';
-          window.filterLanguageList('');
-          setTimeout(function() { searchInput.focus(); }, 100);
+    window.toggleLanguageDropdown = function(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      var menu = document.getElementById('tn-lang-dropdown-menu');
+      var btn = document.getElementById('top-bar-lang-btn');
+      if (!menu) return;
+
+      var isOpen = menu.classList.contains('open');
+      if (isOpen) {
+        menu.classList.remove('open');
+        if (btn) {
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      } else {
+        // Close mobile dropdown if open
+        window.closeMobileLangDropdown();
+        menu.classList.add('open');
+        if (btn) {
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
         }
       }
     };
 
-    window.closeLanguageModal = function(e) {
-      if (e && e.target && e.target.id !== 'tn-lang-modal-overlay') return;
-      var overlay = document.getElementById('tn-lang-modal-overlay');
-      if (overlay) {
-        overlay.classList.remove('open');
-        document.body.style.overflow = '';
+    window.closeLanguageDropdown = function() {
+      var menu = document.getElementById('tn-lang-dropdown-menu');
+      var btn = document.getElementById('top-bar-lang-btn');
+      if (menu) menu.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
       }
     };
 
-    window.filterLanguageList = function(query) {
-      var q = (query || '').toLowerCase().trim();
-      var cards = document.querySelectorAll('.tn-lang-card');
-      cards.forEach(function(card) {
-        var text = (card.textContent || '').toLowerCase();
-        var code = (card.getAttribute('data-lang') || '').toLowerCase();
-        if (!q || text.indexOf(q) !== -1 || code.indexOf(q) !== -1) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+    window.toggleMobileLangDropdown = function(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      var mMenu = document.getElementById('mobile-lang-dropdown-menu');
+      var mBtn = document.getElementById('mobile-lang-btn');
+      if (!mMenu) return;
+
+      var isOpen = mMenu.classList.contains('open') || mMenu.style.display === 'block';
+      if (isOpen) {
+        mMenu.classList.remove('open');
+        mMenu.style.display = 'none';
+        if (mBtn) mBtn.classList.remove('open');
+      } else {
+        window.closeLanguageDropdown();
+        mMenu.classList.add('open');
+        mMenu.style.display = 'block';
+        if (mBtn) mBtn.classList.add('open');
+      }
     };
 
-    window.selectLanguage = function(langCode, langName, flag) {
+    window.closeMobileLangDropdown = function() {
+      var mMenu = document.getElementById('mobile-lang-dropdown-menu');
+      var mBtn = document.getElementById('mobile-lang-btn');
+      if (mMenu) {
+        mMenu.classList.remove('open');
+        mMenu.style.display = 'none';
+      }
+      if (mBtn) mBtn.classList.remove('open');
+    };
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', function(e) {
+      var wrapper = document.getElementById('top-bar-lang-wrapper');
+      if (wrapper && !wrapper.contains(e.target)) {
+        window.closeLanguageDropdown();
+      }
+      var mSection = document.querySelector('.mobile-nav-lang-section');
+      if (mSection && !mSection.contains(e.target)) {
+        window.closeMobileLangDropdown();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        window.closeLanguageDropdown();
+        window.closeMobileLangDropdown();
+      }
+    });
+
+    // Language Selection Handler
+    window.selectLanguage = function(langCode, langName, shortCode) {
       try {
-        var card = document.querySelector('.tn-lang-card[data-lang="' + langCode + '"]');
-        var badge = card ? card.querySelector('.tn-lang-card-badge') : null;
-        var shortCode = badge ? badge.textContent.trim() : (langCode || 'EN').toUpperCase().split('-')[0];
+        shortCode = shortCode || (langCode || 'EN').toUpperCase().split('-')[0];
 
         localStorage.setItem('tn_selected_lang', langCode);
         localStorage.setItem('tn_selected_lang_name', langName);
@@ -489,7 +335,7 @@
           document.cookie = "googtrans=" + cookieVal + "; path=/; domain=." + host;
         }
 
-        // Update button UI (Short button, No emoji)
+        // Update Button UI
         var nameEl = document.getElementById('top-lang-name');
         if (nameEl) nameEl.textContent = shortCode;
 
@@ -499,19 +345,18 @@
         var mNameEl = document.getElementById('mobile-lang-name');
         if (mNameEl) mNameEl.textContent = 'Language: ' + langName + ' (' + shortCode + ')';
 
-        // Highlight active card
-        document.querySelectorAll('.tn-lang-card').forEach(function(c) {
-          if (c.getAttribute('data-lang') === langCode) {
-            c.classList.add('active');
+        // Update active class on items
+        document.querySelectorAll('.tn-lang-dropdown-item').forEach(function(item) {
+          if (item.getAttribute('data-lang') === langCode) {
+            item.classList.add('active');
           } else {
-            c.classList.remove('active');
+            item.classList.remove('active');
           }
         });
 
-        // Close modal
-        var overlay = document.getElementById('tn-lang-modal-overlay');
-        if (overlay) overlay.classList.remove('open');
-        document.body.style.overflow = '';
+        // Close dropdowns
+        window.closeLanguageDropdown();
+        window.closeMobileLangDropdown();
 
         // Trigger Google Translate engine
         var combo = document.querySelector('.goog-te-combo');
@@ -528,21 +373,15 @@
       }
     };
 
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        var overlay = document.getElementById('tn-lang-modal-overlay');
-        if (overlay && overlay.classList.contains('open')) {
-          overlay.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      }
-    });
+    // Backward compatibility aliases so legacy calls do not error
+    window.openLanguageModal = function() { window.toggleLanguageDropdown(); };
+    window.closeLanguageModal = function() { window.closeLanguageDropdown(); };
 
     // Initialize Language Selection on page load
     (function initLang() {
       var savedLang = localStorage.getItem('tn_selected_lang') || 'en';
       var savedName = localStorage.getItem('tn_selected_lang_name') || 'English';
+      var savedCode = localStorage.getItem('tn_selected_lang_code') || 'EN';
 
       // Detect existing googtrans cookie
       var cookieMatch = document.cookie.match(/googtrans=\/en\/([a-zA-Z\-]+)/);
@@ -550,27 +389,28 @@
         savedLang = cookieMatch[1];
       }
 
-      var card = document.querySelector('.tn-lang-card[data-lang="' + savedLang + '"]');
-      var badge = card ? card.querySelector('.tn-lang-card-badge') : null;
-      var shortCode = badge ? badge.textContent.trim() : (savedLang || 'en').toUpperCase().split('-')[0];
-      if (card) {
-        savedName = card.getAttribute('data-name') || savedName;
+      var item = document.querySelector('.tn-lang-dropdown-item[data-lang="' + savedLang + '"]');
+      if (item) {
+        var codeEl = item.querySelector('.tn-lang-item-code');
+        if (codeEl) savedCode = codeEl.textContent.trim();
+        var nameEl = item.querySelector('.tn-lang-item-name');
+        if (nameEl) savedName = nameEl.textContent.trim();
       }
 
-      var nameEl = document.getElementById('top-lang-name');
-      if (nameEl) nameEl.textContent = shortCode;
+      var topName = document.getElementById('top-lang-name');
+      if (topName) topName.textContent = savedCode;
 
       var btnEl = document.getElementById('top-bar-lang-btn');
-      if (btnEl) btnEl.title = 'Language: ' + savedName + ' (' + shortCode + ')';
+      if (btnEl) btnEl.title = 'Language: ' + savedName + ' (' + savedCode + ')';
 
       var mNameEl = document.getElementById('mobile-lang-name');
-      if (mNameEl) mNameEl.textContent = 'Language: ' + savedName + ' (' + shortCode + ')';
+      if (mNameEl) mNameEl.textContent = 'Language: ' + savedName + ' (' + savedCode + ')';
 
-      document.querySelectorAll('.tn-lang-card').forEach(function(c) {
-        if (c.getAttribute('data-lang') === savedLang) {
-          c.classList.add('active');
+      document.querySelectorAll('.tn-lang-dropdown-item').forEach(function(el) {
+        if (el.getAttribute('data-lang') === savedLang) {
+          el.classList.add('active');
         } else {
-          c.classList.remove('active');
+          el.classList.remove('active');
         }
       });
     })();

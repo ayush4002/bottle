@@ -262,14 +262,112 @@ $jsonLdList[] = [
 
         <span class="top-bar-divider" aria-hidden="true"></span>
 
-        <!-- Corner Language Pop-up Button (Short Code, No Emoji) -->
-        <button type="button" class="top-bar-lang-btn" id="top-bar-lang-btn" onclick="window.openLanguageModal()" title="Select Language" aria-haspopup="dialog" aria-expanded="false">
-          <svg class="top-bar-icon top-bar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          <span class="top-bar-lang-name" id="top-lang-name">EN</span>
-          <svg class="top-bar-lang-arrow" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+        <!-- Corner Language Dropdown (Small compact menu, no popup modal) -->
+        <div class="top-bar-lang-dropdown-wrapper" id="top-bar-lang-wrapper">
+          <button type="button" class="top-bar-lang-btn" id="top-bar-lang-btn" onclick="window.toggleLanguageDropdown(event)" title="Select Language" aria-haspopup="true" aria-expanded="false">
+            <svg class="top-bar-icon top-bar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="top-bar-lang-name" id="top-lang-name">EN</span>
+            <svg class="top-bar-lang-arrow" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+          <!-- Small Floating Dropdown Menu -->
+          <div class="tn-lang-dropdown-menu" id="tn-lang-dropdown-menu" role="menu" aria-label="Select Language">
+            <div class="tn-lang-dropdown-list">
+              <button type="button" class="tn-lang-dropdown-item active" data-lang="en" onclick="window.selectLanguage('en', 'English', 'EN')">
+                <span class="tn-lang-item-flag">🌐</span>
+                <span class="tn-lang-item-name">English</span>
+                <span class="tn-lang-item-code">EN</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="es" onclick="window.selectLanguage('es', 'Español', 'ES')">
+                <span class="tn-lang-item-flag">🇪🇸</span>
+                <span class="tn-lang-item-name">Español</span>
+                <span class="tn-lang-item-code">ES</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="fr" onclick="window.selectLanguage('fr', 'Français', 'FR')">
+                <span class="tn-lang-item-flag">🇫🇷</span>
+                <span class="tn-lang-item-name">Français</span>
+                <span class="tn-lang-item-code">FR</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="de" onclick="window.selectLanguage('de', 'Deutsch', 'DE')">
+                <span class="tn-lang-item-flag">🇩🇪</span>
+                <span class="tn-lang-item-name">Deutsch</span>
+                <span class="tn-lang-item-code">DE</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="ar" onclick="window.selectLanguage('ar', 'العربية', 'AR')">
+                <span class="tn-lang-item-flag">🇦🇪</span>
+                <span class="tn-lang-item-name">العربية</span>
+                <span class="tn-lang-item-code">AR</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="ru" onclick="window.selectLanguage('ru', 'Русский', 'RU')">
+                <span class="tn-lang-item-flag">🇷🇺</span>
+                <span class="tn-lang-item-name">Русский</span>
+                <span class="tn-lang-item-code">RU</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="zh-CN" onclick="window.selectLanguage('zh-CN', '简体中文', 'ZH')">
+                <span class="tn-lang-item-flag">🇨🇳</span>
+                <span class="tn-lang-item-name">简体中文</span>
+                <span class="tn-lang-item-code">ZH</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="ja" onclick="window.selectLanguage('ja', '日本語', 'JA')">
+                <span class="tn-lang-item-flag">🇯🇵</span>
+                <span class="tn-lang-item-name">日本語</span>
+                <span class="tn-lang-item-code">JA</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="pt" onclick="window.selectLanguage('pt', 'Português', 'PT')">
+                <span class="tn-lang-item-flag">🇵🇹</span>
+                <span class="tn-lang-item-name">Português</span>
+                <span class="tn-lang-item-code">PT</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="it" onclick="window.selectLanguage('it', 'Italiano', 'IT')">
+                <span class="tn-lang-item-flag">🇮🇹</span>
+                <span class="tn-lang-item-name">Italiano</span>
+                <span class="tn-lang-item-code">IT</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="hi" onclick="window.selectLanguage('hi', 'हिन्दी', 'HI')">
+                <span class="tn-lang-item-flag">🇮🇳</span>
+                <span class="tn-lang-item-name">हिन्दी</span>
+                <span class="tn-lang-item-code">HI</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="nl" onclick="window.selectLanguage('nl', 'Nederlands', 'NL')">
+                <span class="tn-lang-item-flag">🇳🇱</span>
+                <span class="tn-lang-item-name">Nederlands</span>
+                <span class="tn-lang-item-code">NL</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="tr" onclick="window.selectLanguage('tr', 'Türkçe', 'TR')">
+                <span class="tn-lang-item-flag">🇹🇷</span>
+                <span class="tn-lang-item-name">Türkçe</span>
+                <span class="tn-lang-item-code">TR</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="ko" onclick="window.selectLanguage('ko', '한국어', 'KO')">
+                <span class="tn-lang-item-flag">🇰🇷</span>
+                <span class="tn-lang-item-name">한국어</span>
+                <span class="tn-lang-item-code">KO</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="vi" onclick="window.selectLanguage('vi', 'Tiếng Việt', 'VI')">
+                <span class="tn-lang-item-flag">🇻🇳</span>
+                <span class="tn-lang-item-name">Tiếng Việt</span>
+                <span class="tn-lang-item-code">VI</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="id" onclick="window.selectLanguage('id', 'Bahasa Indo', 'ID')">
+                <span class="tn-lang-item-flag">🇮🇩</span>
+                <span class="tn-lang-item-name">Bahasa Indo</span>
+                <span class="tn-lang-item-code">ID</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="pl" onclick="window.selectLanguage('pl', 'Polski', 'PL')">
+                <span class="tn-lang-item-flag">🇵🇱</span>
+                <span class="tn-lang-item-name">Polski</span>
+                <span class="tn-lang-item-code">PL</span>
+              </button>
+              <button type="button" class="tn-lang-dropdown-item" data-lang="th" onclick="window.selectLanguage('th', 'ไทย', 'TH')">
+                <span class="tn-lang-item-flag">🇹🇭</span>
+                <span class="tn-lang-item-name">ไทย</span>
+                <span class="tn-lang-item-code">TH</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -377,14 +475,109 @@ $jsonLdList[] = [
 
     <!-- Mobile Global Compliance Strip & Direct Contact -->
     <div class="mobile-nav-lang-section" style="padding: 12px 16px; border-top: 1px solid #e2e8f0; background: #f8fafc;">
-      <div style="margin-bottom: 10px;">
-        <button type="button" onclick="window.closeMobileMenu(); window.openLanguageModal();" style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.82rem; font-weight: 700; color: #16273f;">
+      <div style="margin-bottom: 10px; position: relative;">
+        <button type="button" id="mobile-lang-btn" onclick="window.toggleMobileLangDropdown(event)" style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.82rem; font-weight: 700; color: #16273f;">
           <span style="display: flex; align-items: center; gap: 8px;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             <span id="mobile-lang-name">Language: English (EN)</span>
           </span>
-          <span style="color: #b8892e; font-size: 0.75rem; text-transform: uppercase; font-weight: 800;">Change &rarr;</span>
+          <svg class="mobile-lang-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
+
+        <div class="mobile-lang-dropdown-menu" id="mobile-lang-dropdown-menu" style="display: none; margin-top: 6px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; max-height: 220px; overflow-y: auto; box-shadow: 0 4px 14px rgba(0,0,0,0.08); padding: 4px 0;">
+          <div class="tn-lang-dropdown-list">
+            <button type="button" class="tn-lang-dropdown-item active" data-lang="en" onclick="window.selectLanguage('en', 'English', 'EN')">
+              <span class="tn-lang-item-flag">🌐</span>
+              <span class="tn-lang-item-name">English</span>
+              <span class="tn-lang-item-code">EN</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="es" onclick="window.selectLanguage('es', 'Español', 'ES')">
+              <span class="tn-lang-item-flag">🇪🇸</span>
+              <span class="tn-lang-item-name">Español</span>
+              <span class="tn-lang-item-code">ES</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="fr" onclick="window.selectLanguage('fr', 'Français', 'FR')">
+              <span class="tn-lang-item-flag">🇫🇷</span>
+              <span class="tn-lang-item-name">Français</span>
+              <span class="tn-lang-item-code">FR</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="de" onclick="window.selectLanguage('de', 'Deutsch', 'DE')">
+              <span class="tn-lang-item-flag">🇩🇪</span>
+              <span class="tn-lang-item-name">Deutsch</span>
+              <span class="tn-lang-item-code">DE</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="ar" onclick="window.selectLanguage('ar', 'العربية', 'AR')">
+              <span class="tn-lang-item-flag">🇦🇪</span>
+              <span class="tn-lang-item-name">العربية</span>
+              <span class="tn-lang-item-code">AR</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="ru" onclick="window.selectLanguage('ru', 'Русский', 'RU')">
+              <span class="tn-lang-item-flag">🇷🇺</span>
+              <span class="tn-lang-item-name">Русский</span>
+              <span class="tn-lang-item-code">RU</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="zh-CN" onclick="window.selectLanguage('zh-CN', '简体中文', 'ZH')">
+              <span class="tn-lang-item-flag">🇨🇳</span>
+              <span class="tn-lang-item-name">简体中文</span>
+              <span class="tn-lang-item-code">ZH</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="ja" onclick="window.selectLanguage('ja', '日本語', 'JA')">
+              <span class="tn-lang-item-flag">🇯🇵</span>
+              <span class="tn-lang-item-name">日本語</span>
+              <span class="tn-lang-item-code">JA</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="pt" onclick="window.selectLanguage('pt', 'Português', 'PT')">
+              <span class="tn-lang-item-flag">🇵🇹</span>
+              <span class="tn-lang-item-name">Português</span>
+              <span class="tn-lang-item-code">PT</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="it" onclick="window.selectLanguage('it', 'Italiano', 'IT')">
+              <span class="tn-lang-item-flag">🇮🇹</span>
+              <span class="tn-lang-item-name">Italiano</span>
+              <span class="tn-lang-item-code">IT</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="hi" onclick="window.selectLanguage('hi', 'हिन्दी', 'HI')">
+              <span class="tn-lang-item-flag">🇮🇳</span>
+              <span class="tn-lang-item-name">हिन्दी</span>
+              <span class="tn-lang-item-code">HI</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="nl" onclick="window.selectLanguage('nl', 'Nederlands', 'NL')">
+              <span class="tn-lang-item-flag">🇳🇱</span>
+              <span class="tn-lang-item-name">Nederlands</span>
+              <span class="tn-lang-item-code">NL</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="tr" onclick="window.selectLanguage('tr', 'Türkçe', 'TR')">
+              <span class="tn-lang-item-flag">🇹🇷</span>
+              <span class="tn-lang-item-name">Türkçe</span>
+              <span class="tn-lang-item-code">TR</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="ko" onclick="window.selectLanguage('ko', '한국어', 'KO')">
+              <span class="tn-lang-item-flag">🇰🇷</span>
+              <span class="tn-lang-item-name">한국어</span>
+              <span class="tn-lang-item-code">KO</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="vi" onclick="window.selectLanguage('vi', 'Tiếng Việt', 'VI')">
+              <span class="tn-lang-item-flag">🇻🇳</span>
+              <span class="tn-lang-item-name">Tiếng Việt</span>
+              <span class="tn-lang-item-code">VI</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="id" onclick="window.selectLanguage('id', 'Bahasa Indo', 'ID')">
+              <span class="tn-lang-item-flag">🇮🇩</span>
+              <span class="tn-lang-item-name">Bahasa Indo</span>
+              <span class="tn-lang-item-code">ID</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="pl" onclick="window.selectLanguage('pl', 'Polski', 'PL')">
+              <span class="tn-lang-item-flag">🇵🇱</span>
+              <span class="tn-lang-item-name">Polski</span>
+              <span class="tn-lang-item-code">PL</span>
+            </button>
+            <button type="button" class="tn-lang-dropdown-item" data-lang="th" onclick="window.selectLanguage('th', 'ไทย', 'TH')">
+              <span class="tn-lang-item-flag">🇹🇭</span>
+              <span class="tn-lang-item-name">ไทย</span>
+              <span class="tn-lang-item-code">TH</span>
+            </button>
+          </div>
+        </div>
       </div>
       <div style="font-size: 0.75rem; font-weight: 700; color: #475569; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
