@@ -659,6 +659,12 @@
     function initInquiryForms() {
       bindInquirySubmit(document.getElementById('drawer-inquiry-form'), true);
       bindInquirySubmit(document.getElementById('contact-page-form'), false);
+      bindInquirySubmit(document.getElementById('products-inquiry-form'), false);
+      document.querySelectorAll('.inquiry-ajax-form').forEach(function(f) {
+        if (f.id !== 'drawer-inquiry-form' && f.id !== 'contact-page-form' && f.id !== 'products-inquiry-form') {
+          bindInquirySubmit(f, false);
+        }
+      });
     }
 
     // Global navigation fallbacks

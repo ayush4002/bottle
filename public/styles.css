@@ -7177,3 +7177,201 @@ textarea {
     justify-content: center;
   }
 }
+
+
+/* ==========================================================================
+   PRODUCTS DOWN INQUIRY FORM SECTION (Executive Direct RFQ & Sampling)
+   ========================================================================== */
+.products-down-inquiry-section {
+  margin-top: 50px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px -8px rgba(15, 27, 44, 0.1);
+  overflow: hidden;
+}
+
+.products-inquiry-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  min-height: 520px;
+}
+
+/* Left Info Column */
+.products-inquiry-info {
+  background: linear-gradient(145deg, #0d1a29 0%, #15273e 55%, #1c3656 100%);
+  padding: 44px 38px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.products-inquiry-info::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(184, 137, 46, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.products-inquiry-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4a754;
+  background: rgba(184, 137, 46, 0.15);
+  border: 1px solid rgba(184, 137, 46, 0.35);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.products-inquiry-title {
+  color: #ffffff;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.28;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.products-inquiry-desc {
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.products-inquiry-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.products-inquiry-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.products-perk-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(184, 137, 46, 0.16);
+  border: 1px solid rgba(184, 137, 46, 0.35);
+  color: #d4a754;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.products-inquiry-perk strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.products-inquiry-perk p {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.products-inquiry-direct {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.direct-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.direct-label {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.direct-val {
+  color: #d4a754;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.direct-val:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Right Form Column */
+.products-inquiry-form-card {
+  padding: 44px 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.products-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.products-form-submit-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 24px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(184, 137, 46, 0.35);
+}
+
+.products-form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 137, 46, 0.45);
+}
+
+@media (max-width: 960px) {
+  .products-inquiry-container {
+    grid-template-columns: 1fr;
+  }
+  .products-inquiry-info {
+    padding: 32px 24px;
+  }
+  .products-inquiry-form-card {
+    padding: 32px 24px;
+  }
+  .products-form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

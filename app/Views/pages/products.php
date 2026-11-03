@@ -141,6 +141,153 @@ if ($searchQuery) {
             </a>
           <?php endforeach; ?>
         </div>
+
+        <!-- =================================================================
+             EXECUTIVE PACKAGING ENQUIRY & SAMPLE REQUEST FORM AT DOWN
+             ================================================================= -->
+        <div class="products-down-inquiry-section" id="products-down-inquiry">
+          <div class="products-inquiry-container">
+            
+            <!-- Left Info Column -->
+            <div class="products-inquiry-info">
+              <div>
+                <span class="products-inquiry-tag">DIRECT FACTORY WHOLESALE &amp; SAMPLING</span>
+                <h3 class="products-inquiry-title">Request a Custom Quote &amp; Free Packaging Samples</h3>
+                <p class="products-inquiry-desc">
+                  Need bulk production pricing, custom mould tooling, sterile cleanroom production, or physical samples dispatched to your facility? Fill out the form and our technical packaging specialists will provide detailed specs and an itemized quote within 24 business hours.
+                </p>
+
+                <div class="products-inquiry-perks">
+                  <div class="products-inquiry-perk">
+                    <div class="products-perk-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div>
+                      <strong>Free Physical Samples</strong>
+                      <p>Dispatched worldwide for line testing &amp; torque calibration.</p>
+                    </div>
+                  </div>
+
+                  <div class="products-inquiry-perk">
+                    <div class="products-perk-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                      <strong>TÜV NORD ISO 9001:2015 Certified</strong>
+                      <p>Accredited cleanroom moulding, 1,000+ vacuum leak cycles tested.</p>
+                    </div>
+                  </div>
+
+                  <div class="products-inquiry-perk">
+                    <div class="products-perk-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <div>
+                      <strong>MOQs from 5,000 Units &amp; Seaport Logistics</strong>
+                      <p>Export packaging with full batch traceability (COA, TDS, MSDS).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direct Contact Box -->
+              <div class="products-inquiry-direct">
+                <div class="direct-contact-item">
+                  <span class="direct-label">Direct Factory Desk:</span>
+                  <a href="tel:+919810220761" class="direct-val">+91 98102 20761</a>
+                </div>
+                <div class="direct-contact-item">
+                  <span class="direct-label">Technical RFQs:</span>
+                  <a href="mailto:info@wetruenorthgroup.com" class="direct-val">info@wetruenorthgroup.com</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Form Column -->
+            <div class="products-inquiry-form-card">
+              <form id="products-inquiry-form" class="inquiry-ajax-form">
+                <input type="hidden" name="source_page" value="Products Catalogue Bottom Form" />
+                <input type="hidden" name="product" value="Catalogue Wholesale RFQ &amp; Samples" />
+
+                <div class="products-form-grid">
+                  <div class="tn-form-field">
+                    <label>1. Full Name *</label>
+                    <input type="text" name="name" required placeholder="Enter your full name" autocomplete="name" />
+                  </div>
+                  <div class="tn-form-field">
+                    <label>2. Company Name *</label>
+                    <input type="text" name="company" required placeholder="Enter company name" autocomplete="organization" />
+                  </div>
+                  <div class="tn-form-field">
+                    <label>3. Work Email *</label>
+                    <input type="email" name="email" required placeholder="name@company.com" autocomplete="email" />
+                  </div>
+                  <div class="tn-form-field">
+                    <label>4. Phone Number *</label>
+                    <input type="tel" name="phone" required placeholder="Country code + phone number" autocomplete="tel" />
+                  </div>
+                  <div class="tn-form-field">
+                    <label>5. Country *</label>
+                    <select name="country" class="country-select" required>
+                      <option value="" disabled selected>Select country...</option>
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Germany">Germany</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="France">France</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="Malaysia">Malaysia</option>
+                      <option value="India">India</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Japan">Japan</option>
+                      <option value="China">China</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Mexico">Mexico</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Other Country">Other Country</option>
+                    </select>
+                  </div>
+                  <div class="tn-form-field">
+                    <label>6. Category of Interest *</label>
+                    <select name="category_interest" required>
+                      <option value="All Categories / Custom Requirement" selected>All Categories / Custom Requirement</option>
+                      <option value="Pharma Bottles">Pharma Bottles</option>
+                      <option value="Cosmetics Bottles">Cosmetics Bottles</option>
+                      <option value="Agro Bottles">Agro Bottles</option>
+                      <option value="Jars">Jars</option>
+                      <option value="Pumps">Pumps</option>
+                      <option value="Sprays">Sprays</option>
+                      <option value="Caps & Closures">Caps &amp; Closures</option>
+                      <option value="Liquor & Spirits Bottles">Liquor &amp; Spirits Bottles</option>
+                      <option value="Custom Mould Development">Custom Mould Development</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="tn-form-field" style="margin-top: 12px;">
+                  <label>7. Specifications &amp; Estimated Quantity *</label>
+                  <textarea name="inquiry" required placeholder="Specify your desired volume (e.g. 50,000 units), neck finish (e.g. 28/410), target bottle weight, cap requirements, or sample delivery address..."></textarea>
+                </div>
+
+                <button type="submit" class="tn-btn-gold products-form-submit-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 8px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  SUBMIT RFQ &amp; SAMPLE REQUEST
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
