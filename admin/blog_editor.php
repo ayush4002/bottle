@@ -58,6 +58,28 @@ $msg = $_GET['msg'] ?? '';
 $err = $_GET['err'] ?? '';
 ?>
 
+<style>
+.blog-editor-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.blog-sidebar-sticky {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+@media (max-width: 1024px) {
+  .blog-editor-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-sidebar-sticky {
+    position: static;
+  }
+}
+</style>
+
 <div style="max-width: 1280px; margin: 0 auto;">
 
   <!-- PAGE HEADER -->
@@ -104,7 +126,7 @@ $err = $_GET['err'] ?? '';
     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
     <input type="hidden" name="id" value="<?= $id ?>" />
 
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start;">
+    <div class="blog-editor-grid">
       
       <!-- LEFT COLUMN: CONTENT WRITING -->
       <div>
@@ -153,14 +175,15 @@ $err = $_GET['err'] ?? '';
 
           <!-- Formatting Shortcut Toolbar -->
           <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 8px; background: #0f172a; border: 1px solid #475569; border-bottom: none; border-radius: 8px 8px 0 0;">
-            <button type="button" onclick="insertTag('<h2>', '</h2>')" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.8rem;">H2</button>
-            <button type="button" onclick="insertTag('<h3>', '</h3>')" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.8rem;">H3</button>
-            <button type="button" onclick="insertTag('<strong>', '</strong>')" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.8rem;">B</button>
-            <button type="button" onclick="insertTag('<em>', '</em>')" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-style: italic; cursor: pointer; font-size: 0.8rem;">I</button>
-            <button type="button" onclick="insertTag('<ul>\n  <li>', '</li>\n  <li>Item 2</li>\n</ul>')" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Bullet List</button>
-            <button type="button" onclick="insertTag('<div class=\"blog-callout-box\">\n  <h4>Key Takeaway</h4>\n  <p>', '</p>\n</div>')" style="padding: 5px 10px; background: rgba(184, 137, 46, 0.2); border: 1px solid rgba(184, 137, 46, 0.4); color: #d4a754; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.8rem;">+ Callout Card</button>
+            <button type="button" onclick="insertH2()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.8rem;">H2</button>
+            <button type="button" onclick="insertH3()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.8rem;">H3</button>
+            <button type="button" onclick="insertBold()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.8rem;">B</button>
+            <button type="button" onclick="insertItalic()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; font-style: italic; cursor: pointer; font-size: 0.8rem;">I</button>
+            <button type="button" onclick="insertParagraph()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">&lt;p&gt;</button>
+            <button type="button" onclick="insertBulletListSnippet()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Bullet List</button>
+            <button type="button" onclick="insertQuoteSnippet()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Quote</button>
+            <button type="button" onclick="insertCalloutSnippet()" style="padding: 5px 10px; background: rgba(184, 137, 46, 0.2); border: 1px solid rgba(184, 137, 46, 0.4); color: #d4a754; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.8rem;">+ Callout Card</button>
             <button type="button" onclick="insertTableSnippet()" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #38bdf8; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">+ Spec Table</button>
-            <button type="button" onclick="insertTag('<p>', '</p>')" style="padding: 5px 10px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">&lt;p&gt;</button>
           </div>
 
           <textarea id="postContent" name="content" rows="18" placeholder="Write comprehensive packaging insights, engineering guides, or case studies here..." required style="width: 100%; box-sizing: border-box; padding: 14px 16px; background: #0f172a; border: 1px solid #475569; border-radius: 0 0 8px 8px; color: #fff; font-size: 0.94rem; line-height: 1.6; font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;" oninput="updateContentStats(); checkSeoChecklist();"><?= htmlspecialchars($content) ?></textarea>
@@ -309,7 +332,7 @@ $err = $_GET['err'] ?? '';
       </div>
 
       <!-- RIGHT COLUMN: PUBLISHING & METADATA -->
-      <div>
+      <div class="blog-sidebar-sticky">
         
         <!-- PUBLISHING STATUS & ACTIONS -->
         <div style="background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 24px; margin-bottom: 24px;">
@@ -452,6 +475,27 @@ function insertTag(startTag, endTag) {
   el.selectionEnd = el.selectionStart + selText.length;
   updateContentStats();
   checkSeoChecklist();
+}
+
+function insertH2() { insertTag('<h2>', '</h2>'); }
+function insertH3() { insertTag('<h3>', '</h3>'); }
+function insertBold() { insertTag('<strong>', '</strong>'); }
+function insertItalic() { insertTag('<em>', '</em>'); }
+function insertParagraph() { insertTag('<p>', '</p>'); }
+
+function insertBulletListSnippet() {
+  const snippet = `\n<ul>\n  <li>Strategic specification or benefit point</li>\n  <li>Precision packaging engineering parameter</li>\n</ul>\n`;
+  insertTag('', snippet);
+}
+
+function insertQuoteSnippet() {
+  const snippet = `\n<blockquote>\n  <p>Technical insight, client quote, or industry standard statement goes here...</p>\n</blockquote>\n`;
+  insertTag('', snippet);
+}
+
+function insertCalloutSnippet() {
+  const snippet = `\n<div class="blog-callout-box">\n  <h4>Key Takeaway</h4>\n  <p>Highlight your most crucial packaging takeaway or recommendation here.</p>\n</div>\n`;
+  insertTag('', snippet);
 }
 
 function insertTableSnippet() {
