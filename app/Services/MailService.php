@@ -21,6 +21,10 @@ class MailService {
         $rawInquiry = trim($data['inquiry'] ?? $data['Inquiry_Details'] ?? $data['Additional_Requirements'] ?? $data['message'] ?? 'General Inquiry');
         $customerInquiry = nl2br(htmlspecialchars($rawInquiry));
         $productName = htmlspecialchars(trim($data['product'] ?? $data['Product_Name'] ?? $data['selected_product'] ?? ''));
+        $targetVolume = htmlspecialchars(trim($data['target_volume'] ?? $data['capacity'] ?? ''));
+        $material = htmlspecialchars(trim($data['material'] ?? $data['material_preference'] ?? ''));
+        $quantity = htmlspecialchars(trim($data['estimated_quantity'] ?? $data['quantity'] ?? ''));
+        $sourcePage = htmlspecialchars(trim($data['source_page'] ?? ''));
 
         // 1. Persist inquiry into MySQL Database and JSON backup
         try {
@@ -68,6 +72,10 @@ class MailService {
                 <tr><th>Phone Number</th><td><a href='tel:{$customerPhone}'>{$customerPhone}</a></td></tr>
                 <tr><th>Country</th><td>{$customerCountry}</td></tr>
                 " . ($productName ? "<tr><th>Subject / Product</th><td><strong>{$productName}</strong></td></tr>" : "") . "
+                " . ($targetVolume ? "<tr><th>Target Volume / Capacity</th><td><strong>{$targetVolume}</strong></td></tr>" : "") . "
+                " . ($material ? "<tr><th>Material Preference</th><td><strong>{$material}</strong></td></tr>" : "") . "
+                " . ($quantity ? "<tr><th>Estimated Initial Run (MOQ)</th><td><strong>{$quantity}</strong></td></tr>" : "") . "
+                " . ($sourcePage ? "<tr><th>Inquiry Source</th><td><span style='color: #64748b;'>{$sourcePage}</span></td></tr>" : "") . "
               </table>
 
               <h4 style='margin: 20px 0 6px; color: #16273f;'>Inquiry / Specification Requirements:</h4>
@@ -156,6 +164,9 @@ class MailService {
                     <tr><th>Phone Number</th><td>{$customerPhone}</td></tr>
                     <tr><th>Country</th><td>{$customerCountry}</td></tr>
                     " . ($productName ? "<tr><th>Product / Requirement</th><td><strong>{$productName}</strong></td></tr>" : "") . "
+                    " . ($targetVolume ? "<tr><th>Target Volume / Capacity</th><td><strong>{$targetVolume}</strong></td></tr>" : "") . "
+                    " . ($material ? "<tr><th>Preferred Material</th><td><strong>{$material}</strong></td></tr>" : "") . "
+                    " . ($quantity ? "<tr><th>Estimated Initial Run (MOQ)</th><td><strong>{$quantity}</strong></td></tr>" : "") . "
                   </table>
 
                   <h4 style='margin: 18px 0 6px; color: #16273f; font-size: 13px;'>Your Message &amp; Specifications:</h4>

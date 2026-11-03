@@ -182,19 +182,183 @@ Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers fr
 
         </div>
 
-        <!-- Bottom Engineering Consultation CTA Banner -->
-        <div class="cst-consult-banner">
-          <div class="cst-consult-text">
-            <span class="cst-consult-tag">ENGINEERING CONSULTATION</span>
-            <h3 class="cst-consult-title">Have a Custom Packaging Concept in Mind?</h3>
-            <p class="cst-consult-desc">
-              Send us your target dimensions, capacity, or bottle sketch. Our engineering team will review technical feasibility and deliver a mould proposal within 24 business hours.
-            </p>
+        <!-- Bottom Engineering Consultation & Bespoke Project Request Form -->
+        <div class="cst-bespoke-section" id="cst-bespoke-form-wrap" style="margin-top: 48px; background: #ffffff; border: 1px solid var(--color-border); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+          <div class="cst-bespoke-grid" style="display: grid; grid-template-columns: 1fr 1.35fr; min-height: 580px;">
+            
+            <!-- Left Info & Value Proposition Column -->
+            <div class="cst-bespoke-info" style="background: linear-gradient(145deg, #0d1a29 0%, #15273e 55%, #1c3656 100%); padding: 44px 38px; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
+              <div>
+                <span class="cst-consult-tag" style="display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold); background: rgba(184, 137, 46, 0.15); border: 1px solid rgba(184, 137, 46, 0.35); padding: 4px 10px; border-radius: 4px; margin-bottom: 14px;">ENGINEERING CONSULTATION</span>
+                <h3 style="color: #ffffff; font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 0 0 14px 0; letter-spacing: -0.01em;">Have a Custom Packaging Concept in Mind?</h3>
+                <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.65; margin: 0 0 28px 0;">
+                  Send us your target dimensions, capacity, or bottle sketch. Our engineering team will review technical feasibility and deliver a comprehensive mould proposal within 24 business hours.
+                </p>
+
+                <!-- Value Props List -->
+                <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 30px;">
+                  <div style="display: flex; align-items: flex-start; gap: 12px;">
+                    <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(184, 137, 46, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-gold);">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div>
+                      <strong style="display: block; font-size: 0.88rem; color: #ffffff; margin-bottom: 2px;">24-Hour Engineering Turnaround</strong>
+                      <span style="font-size: 0.78rem; color: #94a3b8; line-height: 1.45;">Rapid CAD evaluation, cavity optimization, and itemized tooling pricing.</span>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: flex-start; gap: 12px;">
+                    <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(184, 137, 46, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-gold);">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <div>
+                      <strong style="display: block; font-size: 0.88rem; color: #ffffff; margin-bottom: 2px;">Proprietary Tooling &amp; NDA Protection</strong>
+                      <span style="font-size: 0.78rem; color: #94a3b8; line-height: 1.45;">Strict non-disclosure protection. Your proprietary mould remains 100% exclusive to your brand.</span>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: flex-start; gap: 12px;">
+                    <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(184, 137, 46, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-gold);">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                      <strong style="display: block; font-size: 0.88rem; color: #ffffff; margin-bottom: 2px;">Cleanroom Certified Manufacturing</strong>
+                      <span style="font-size: 0.78rem; color: #94a3b8; line-height: 1.45;">TÜV NORD ISO 9001 certified injection blow moulding in Class 10,000 cleanrooms.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direct Factory Contact Strip -->
+              <div style="padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.12); display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #94a3b8;">Direct Technical Desk:</span>
+                  <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" style="color: var(--color-gold); font-weight: 700; text-decoration: none;">
+                    <?= htmlspecialchars($company['phone'] ?? '+91 98102 20761') ?>
+                  </a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #94a3b8;">CAD Inquiries:</span>
+                  <a href="mailto:<?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>" style="color: #cbd5e1; font-weight: 600; text-decoration: none;">
+                    <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Interactive Form Column -->
+            <div class="cst-bespoke-form-card" style="padding: 40px 38px; background: #ffffff; display: flex; flex-direction: column; justify-content: center;">
+              
+              <div style="margin-bottom: 22px;">
+                <h4 style="font-size: 1.15rem; font-weight: 800; color: #16273f; margin: 0 0 6px 0;">Request a Custom Mould Proposal</h4>
+                <p style="font-size: 0.8125rem; color: #64748b; margin: 0;">Fill in your project requirements below. You will receive an immediate email confirmation with reference tracking.</p>
+              </div>
+
+              <form id="custom-bespoke-inquiry-form" class="inquiry-ajax-form">
+                <input type="hidden" name="source_page" value="Custom Packaging Bespoke Engineering Form" />
+                <input type="hidden" name="product" value="Custom Mould Development & Bespoke Packaging" />
+
+                <!-- 2-Column Grid -->
+                <div class="cst-form-inputs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                  
+                  <div class="tn-form-field">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" required placeholder="e.g. John Doe" autocomplete="name" />
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Company / Brand Name *</label>
+                    <input type="text" name="company" required placeholder="e.g. Acme Pharma / Brand" autocomplete="organization" />
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Business Email *</label>
+                    <input type="email" name="email" required placeholder="name@company.com" autocomplete="email" />
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Phone / WhatsApp Number *</label>
+                    <input type="tel" name="phone" required placeholder="Country code + number" autocomplete="tel" />
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Country / Delivery Seaport *</label>
+                    <select name="country" class="country-select" required>
+                      <option value="" disabled selected>Select destination country...</option>
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Germany">Germany</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="France">France</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="India">India</option>
+                      <option value="Other Country">Other Country</option>
+                    </select>
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Target Container Volume</label>
+                    <select name="target_volume">
+                      <option value="Not decided yet / Need advice">Not decided yet / Need advice</option>
+                      <option value="15ml - 50ml (Sample / Travel)">15ml - 50ml (Sample / Travel)</option>
+                      <option value="60ml - 120ml (Serum / Dropper)">60ml - 120ml (Serum / Dropper)</option>
+                      <option value="150ml - 250ml (Lotion / Pharma)">150ml - 250ml (Lotion / Pharma)</option>
+                      <option value="300ml - 500ml (Standard Packer)">300ml - 500ml (Standard Packer)</option>
+                      <option value="750ml - 1000ml (Large Container)">750ml - 1000ml (Large Container)</option>
+                      <option value="Custom Dimensions / Bespoke Jar">Custom Dimensions / Bespoke Jar</option>
+                    </select>
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Preferred Polymer / Material</label>
+                    <select name="material">
+                      <option value="PET (Clear, Amber or Custom Colour)" selected>PET (Clear, Amber, White, or Custom Colour)</option>
+                      <option value="HDPE (High-Density Polyethylene)">HDPE (High-Density Polyethylene)</option>
+                      <option value="PP (Polypropylene Caps & Closures)">PP (Polypropylene Closures)</option>
+                      <option value="rPET (100% Post-Consumer Recycled)">rPET (Sustainable PCR)</option>
+                      <option value="Glass Polymer / Heavy Wall">Glass-Look Heavy Base PET</option>
+                      <option value="Open to Technical Advice">Open to Technical Engineering Advice</option>
+                    </select>
+                  </div>
+
+                  <div class="tn-form-field">
+                    <label>Estimated Initial Run (MOQ)</label>
+                    <select name="estimated_quantity">
+                      <option value="5,000 - 10,000 units (Pilot Trial)">5,000 - 10,000 units (Pilot Trial)</option>
+                      <option value="10,000 - 25,000 units" selected>10,000 - 25,000 units</option>
+                      <option value="25,000 - 50,000 units">25,000 - 50,000 units</option>
+                      <option value="100,000+ units (Commercial Scale)">100,000+ units (Commercial Scale)</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="tn-form-field" style="margin-top: 10px;">
+                  <label>Project Specifications, Concept Dimensions, or Closure Needs *</label>
+                  <textarea name="inquiry" required placeholder="Please describe your bottle shape concept, desired neck thread standard (e.g. 24/410, 28/410), target bottle gram weight, closure type (pump, sprayer, flip-top), or project timeline..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div style="margin-top: 16px;">
+                  <button type="submit" class="tn-btn-gold" style="width: 100%; min-height: 48px; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.04em; justify-content: center; display: inline-flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    SUBMIT BESPOKE INQUIRY &amp; REQUEST MOULD PROPOSAL
+                  </button>
+                  <div style="text-align: center; margin-top: 8px; font-size: 0.75rem; color: #64748b; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span>Confidential NDA Protected • Inquiries answered within 24 business hours</span>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+
           </div>
-          <button type="button" class="tn-btn-gold cst-consult-btn" onclick="window.openInquiry('Custom Packaging Concept')">
-            START BESPOKE PROJECT
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="margin-left: 6px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
         </div>
 
       </div>

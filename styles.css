@@ -5684,6 +5684,62 @@ textarea {
   min-height: 48px;
 }
 
+/* Custom Solutions Bespoke Inquiry Form Section */
+.cst-bespoke-section {
+  margin-top: 48px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.cst-bespoke-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  min-height: 580px;
+}
+.cst-bespoke-info {
+  background: linear-gradient(145deg, #0d1a29 0%, #15273e 55%, #1c3656 100%);
+  padding: 44px 38px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.cst-bespoke-info::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(184, 137, 46, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cst-bespoke-form-card {
+  padding: 40px 38px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .cst-bespoke-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cst-bespoke-info {
+    padding: 32px 20px !important;
+  }
+  .cst-bespoke-form-card {
+    padding: 30px 20px !important;
+  }
+  .cst-form-inputs-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* =========================================================================
    CUSTOM SOLUTIONS PAGE — Mobile Optimization (max-width: 768px)
    ========================================================================= */

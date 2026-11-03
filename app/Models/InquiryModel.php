@@ -68,6 +68,17 @@ class InquiryModel {
         $country = trim($data['country'] ?? $data['Country'] ?? '');
         $product = trim($data['product'] ?? $data['Product_Name'] ?? $data['selected_product'] ?? '');
         $inquiry = trim($data['inquiry'] ?? $data['Inquiry_Details'] ?? $data['Additional_Requirements'] ?? $data['message'] ?? '');
+
+        $extraParams = [];
+        if (!empty($data['target_volume'])) $extraParams[] = "Target Volume: " . trim($data['target_volume']);
+        if (!empty($data['material'])) $extraParams[] = "Material Preference: " . trim($data['material']);
+        if (!empty($data['estimated_quantity'])) $extraParams[] = "Estimated Quantity: " . trim($data['estimated_quantity']);
+        if (!empty($data['source_page'])) $extraParams[] = "Source Page: " . trim($data['source_page']);
+
+        if (!empty($extraParams)) {
+            $inquiry = rtrim($inquiry) . "\n\n--- Project Specifications ---\n" . implode("\n", $extraParams);
+        }
+
         $createdAt = date('Y-m-d H:i:s');
         $status = 'new';
 
