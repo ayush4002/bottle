@@ -246,20 +246,8 @@ $jsonLdList[] = [
         <div class="search-results-popover" id="top-search-popover"></div>
       </form>
 
-      <!-- Top Utility Bar Right: Language Pop-up & Contact Strip -->
+      <!-- Top Utility Bar Right: Contact Strip & Corner Short Language Button (No Emoji) -->
       <div class="top-bar-right">
-        <!-- Language Pop-up Button -->
-        <button type="button" class="top-bar-lang-btn" id="top-bar-lang-btn" onclick="window.openLanguageModal()" title="Select Language / Region" aria-haspopup="dialog" aria-expanded="false">
-          <svg class="top-bar-icon top-bar-icon-gold" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          <span class="top-bar-lang-flag" id="top-lang-flag">🌐</span>
-          <span class="top-bar-lang-name" id="top-lang-name">English</span>
-          <svg class="top-bar-lang-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-
-        <span class="top-bar-divider" aria-hidden="true"></span>
-
         <div class="top-bar-item top-bar-contact-group">
           <a href="tel:+919810220761" class="top-bar-link top-bar-phone" title="Call us">
             <svg class="top-bar-icon top-bar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -271,6 +259,17 @@ $jsonLdList[] = [
             <span>info@wetruenorthgroup.com</span>
           </a>
         </div>
+
+        <span class="top-bar-divider" aria-hidden="true"></span>
+
+        <!-- Corner Language Pop-up Button (Short Code, No Emoji) -->
+        <button type="button" class="top-bar-lang-btn" id="top-bar-lang-btn" onclick="window.openLanguageModal()" title="Select Language" aria-haspopup="dialog" aria-expanded="false">
+          <svg class="top-bar-icon top-bar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="top-bar-lang-name" id="top-lang-name">EN</span>
+          <svg class="top-bar-lang-arrow" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
       </div>
 
     </div>
@@ -381,8 +380,8 @@ $jsonLdList[] = [
       <div style="margin-bottom: 10px;">
         <button type="button" onclick="window.closeMobileMenu(); window.openLanguageModal();" style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.82rem; font-weight: 700; color: #16273f;">
           <span style="display: flex; align-items: center; gap: 8px;">
-            <span id="mobile-lang-flag">🌐</span>
-            <span id="mobile-lang-name">Language: English</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span id="mobile-lang-name">Language: English (EN)</span>
           </span>
           <span style="color: #b8892e; font-size: 0.75rem; text-transform: uppercase; font-weight: 800;">Change &rarr;</span>
         </button>

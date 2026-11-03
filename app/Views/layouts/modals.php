@@ -463,9 +463,13 @@
 
     window.selectLanguage = function(langCode, langName, flag) {
       try {
+        var card = document.querySelector('.tn-lang-card[data-lang="' + langCode + '"]');
+        var badge = card ? card.querySelector('.tn-lang-card-badge') : null;
+        var shortCode = badge ? badge.textContent.trim() : (langCode || 'EN').toUpperCase().split('-')[0];
+
         localStorage.setItem('tn_selected_lang', langCode);
         localStorage.setItem('tn_selected_lang_name', langName);
-        localStorage.setItem('tn_selected_lang_flag', flag);
+        localStorage.setItem('tn_selected_lang_code', shortCode);
 
         // Google Translate Cookie management
         var host = window.location.hostname;
@@ -485,16 +489,15 @@
           document.cookie = "googtrans=" + cookieVal + "; path=/; domain=." + host;
         }
 
-        // Update button UI
-        var flagEl = document.getElementById('top-lang-flag');
+        // Update button UI (Short button, No emoji)
         var nameEl = document.getElementById('top-lang-name');
-        if (flagEl) flagEl.textContent = flag;
-        if (nameEl) nameEl.textContent = langName;
+        if (nameEl) nameEl.textContent = shortCode;
 
-        var mFlagEl = document.getElementById('mobile-lang-flag');
+        var btnEl = document.getElementById('top-bar-lang-btn');
+        if (btnEl) btnEl.title = 'Language: ' + langName + ' (' + shortCode + ')';
+
         var mNameEl = document.getElementById('mobile-lang-name');
-        if (mFlagEl) mFlagEl.textContent = flag;
-        if (mNameEl) mNameEl.textContent = 'Language: ' + langName;
+        if (mNameEl) mNameEl.textContent = 'Language: ' + langName + ' (' + shortCode + ')';
 
         // Highlight active card
         document.querySelectorAll('.tn-lang-card').forEach(function(c) {
@@ -540,7 +543,6 @@
     (function initLang() {
       var savedLang = localStorage.getItem('tn_selected_lang') || 'en';
       var savedName = localStorage.getItem('tn_selected_lang_name') || 'English';
-      var savedFlag = localStorage.getItem('tn_selected_lang_flag') || '🌐';
 
       // Detect existing googtrans cookie
       var cookieMatch = document.cookie.match(/googtrans=\/en\/([a-zA-Z\-]+)/);
@@ -549,20 +551,20 @@
       }
 
       var card = document.querySelector('.tn-lang-card[data-lang="' + savedLang + '"]');
+      var badge = card ? card.querySelector('.tn-lang-card-badge') : null;
+      var shortCode = badge ? badge.textContent.trim() : (savedLang || 'en').toUpperCase().split('-')[0];
       if (card) {
         savedName = card.getAttribute('data-name') || savedName;
-        savedFlag = card.getAttribute('data-flag') || savedFlag;
       }
 
-      var flagEl = document.getElementById('top-lang-flag');
       var nameEl = document.getElementById('top-lang-name');
-      if (flagEl) flagEl.textContent = savedFlag;
-      if (nameEl) nameEl.textContent = savedName;
+      if (nameEl) nameEl.textContent = shortCode;
 
-      var mFlagEl = document.getElementById('mobile-lang-flag');
+      var btnEl = document.getElementById('top-bar-lang-btn');
+      if (btnEl) btnEl.title = 'Language: ' + savedName + ' (' + shortCode + ')';
+
       var mNameEl = document.getElementById('mobile-lang-name');
-      if (mFlagEl) mFlagEl.textContent = savedFlag;
-      if (mNameEl) mNameEl.textContent = 'Language: ' + savedName;
+      if (mNameEl) mNameEl.textContent = 'Language: ' + savedName + ' (' + shortCode + ')';
 
       document.querySelectorAll('.tn-lang-card').forEach(function(c) {
         if (c.getAttribute('data-lang') === savedLang) {
