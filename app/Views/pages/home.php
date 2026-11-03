@@ -45,6 +45,46 @@
             </a>
           <?php endforeach; ?>
         </div>
+
+        <!-- Catalogue Direct Enquiry CTA Banner -->
+        <div class="home-enquiry-banner">
+          <div class="home-enquiry-content">
+            <span class="home-enquiry-tag">DIRECT FACTORY WHOLESALE &amp; SAMPLING</span>
+            <h3 class="home-enquiry-title">Need Custom Capacities, Specific Neck Finishes, or Bulk Pricing?</h3>
+            <p class="home-enquiry-desc">
+              Whether you require custom moulds, sterile cleanroom production, or fast stock dispatch, our packaging specialists provide itemized quotes, technical drawings, and free sample batches within 24 business hours.
+            </p>
+            <div class="home-enquiry-features">
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Free Physical Samples
+              </span>
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                MOQs from 5,000 Units
+              </span>
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                TÜV NORD ISO 9001 Certified
+              </span>
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Global Seaport Logistics
+              </span>
+            </div>
+          </div>
+          <div class="home-enquiry-actions">
+            <button type="button" class="tn-btn-gold home-enquiry-btn" onclick="window.openInquiry('Catalogue Wholesale RFQ & Samples')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              REQUEST A QUOTE &amp; SAMPLES
+            </button>
+            <a href="tel:+919810220761" class="home-enquiry-phone-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Direct Sales: +91 98102 20761
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 

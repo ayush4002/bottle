@@ -280,6 +280,21 @@
                 <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>BSCI & ETI</strong> Ethical Social Compliance Verified</span></li>
                 <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>99.8%</strong> On-Time Dispatch & High Client Retention</span></li>
               </ul>
+
+              <!-- Capability In-Card Quick Enquiry Banner -->
+              <div class="about-quick-inquiry-box">
+                <div class="about-quick-inquiry-content">
+                  <span class="about-quick-inquiry-badge">DIRECT FACTORY CONSULTATION</span>
+                  <h4 class="about-quick-inquiry-title">Ready to Discuss Your Packaging Specifications?</h4>
+                  <p class="about-quick-inquiry-desc">
+                    Connect directly with our engineering desk for technical drawings, tooling feasibility, and bulk wholesale quotes.
+                  </p>
+                </div>
+                <button type="button" class="tn-btn-gold about-quick-inquiry-btn" onclick="window.openInquiry('Core Capabilities Consultation')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 5px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  SEND AN INQUIRY
+                </button>
+              </div>
             </div>
 
           </div>
