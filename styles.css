@@ -7096,6 +7096,144 @@ textarea {
   color: #f8fafc;
 }
 
+/* Pre-Catalogue Overview Banner (Before Catalogue Heading) */
+.home-catalogue-pre-banner {
+  margin: 0 0 36px 0;
+  padding: 30px 36px;
+  background: linear-gradient(135deg, #0e1b2c 0%, #16273f 55%, #1e3a5f 100%);
+  border: 1px solid rgba(184, 137, 46, 0.35);
+  border-left: 5px solid #b8892e;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px -8px rgba(14, 27, 44, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-catalogue-pre-banner::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(184, 137, 46, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.home-pre-banner-content {
+  flex: 1 1 540px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-pre-banner-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4a754;
+  background: rgba(184, 137, 46, 0.15);
+  border: 1px solid rgba(184, 137, 46, 0.32);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.home-pre-banner-title {
+  color: #ffffff;
+  font-size: 1.38rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.home-pre-banner-desc {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0 0 18px 0;
+  max-width: 740px;
+}
+
+.home-pre-banner-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.home-pre-banner-spec {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.home-pre-banner-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 240px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-pre-banner-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(184, 137, 46, 0.35);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.home-pre-banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 137, 46, 0.45);
+}
+
+.home-pre-banner-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.home-pre-banner-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+
 /* About Page In-Card Enquiry Box */
 .about-quick-inquiry-box {
   margin-top: auto;
@@ -7163,6 +7301,16 @@ textarea {
   }
   .home-enquiry-title {
     font-size: 1.2rem;
+  }
+  .home-catalogue-pre-banner {
+    padding: 22px 20px;
+  }
+  .home-pre-banner-title {
+    font-size: 1.2rem;
+  }
+  .home-pre-banner-actions {
+    width: 100%;
+    min-width: 0;
   }
   .home-enquiry-actions {
     width: 100%;

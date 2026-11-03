@@ -9,8 +9,18 @@
         "country": "India",
         "product": "500ml Veola PET Bottle",
         "inquiry": "Looking for 25,000 units with matching flip-top caps.",
-        "status": "new",
-        "created_at": "2026-10-08 11:32:58"
+        "status": "contacted",
+        "created_at": "2026-10-08 11:32:58",
+        "replies": [
+            {
+                "subject": "Re: Quotation & Specification Inquiry [INQ-96B8563E] \u2014 TrueNorth Group",
+                "message": "Dear Ayush Test,\r\n\r\nThank you for reaching out to TrueNorth Group regarding your inquiry for 500ml Veola PET Bottle (Ref: INQ-96B8563E).\r\n\r\nWe have reviewed your specifications and are pleased to provide the initial commercial framework:\r\n\r\n\u2022 Material & Finish: High-grade virgin PET \/ PCR polymer with precision finish\r\n\u2022 Standard Minimum Order Quantity (MOQ): 5,000 to 10,000 units per production run\r\n\u2022 Production Lead Time: 14 to 21 business days upon purchase order approval\r\n\u2022 Logistics & Shipping: Worldwide seaport exports from Daman, India & Ningbo, China\r\n\r\nPlease reply with your target order volumes and delivery seaport\/location so our commercial team can forward an official itemized proforma invoice.\r\n\r\nWarm regards,\r\nSales & Technical Support Team\r\nTrueNorth Group\r\nPhone \/ WhatsApp: +91 98102 20761\r\nEmail: info@wetruenorthgroup.com\r\nWebsite: https:\/\/wetruenorthgroup.com",
+                "admin": "admin",
+                "to": "info@wetruenorthgroup.com",
+                "id": "179369035258",
+                "created_at": "2026-11-03 08:19:12"
+            }
+        ]
     },
     {
         "id": 1791451359,

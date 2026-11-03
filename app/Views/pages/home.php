@@ -29,6 +29,46 @@
     <!-- 2. Product Catalogue: Categories Grid (Server-Rendered PHP from Database) -->
     <section class="tn-section">
       <div class="tn-container">
+
+        <!-- Executive Primary Packaging Overview Banner (Before Catalogue Heading) -->
+        <div class="home-catalogue-pre-banner">
+          <div class="home-pre-banner-content">
+            <span class="home-pre-banner-tag">PRECISION MOULDING &amp; DISPENSING SYSTEMS</span>
+            <h3 class="home-pre-banner-title">Factory-Direct Primary Packaging Across 8 Certified Product Categories</h3>
+            <p class="home-pre-banner-desc">
+              From 10ml mini-droppers to 1,000ml bulk containers, TrueNorth delivers high-precision PET bottles, HDPE containers, cosmetic jars, and fine-mist dispensing systems engineered under strict TÜV NORD ISO 9001 protocols.
+            </p>
+            <div class="home-pre-banner-specs">
+              <span class="home-pre-banner-spec">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                10ml – 1,000ml Spectrum
+              </span>
+              <span class="home-pre-banner-spec">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Class 10,000 Cleanroom
+              </span>
+              <span class="home-pre-banner-spec">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                18/410 to 28/410 Neck Finishes
+              </span>
+              <span class="home-pre-banner-spec">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                290+ Active Mould Designs
+              </span>
+            </div>
+          </div>
+          <div class="home-pre-banner-actions">
+            <button type="button" class="tn-btn-gold home-pre-banner-btn" onclick="document.getElementById('home-cat-tiles-grid').scrollIntoView({behavior: 'smooth'})">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+              BROWSE CATALOGUE
+            </button>
+            <button type="button" class="home-pre-banner-secondary-btn" onclick="window.openInquiry('Pre-Catalogue Custom RFQ')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 5px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Request Custom RFQ
+            </button>
+          </div>
+        </div>
+
         <div class="tn-section-title-wrap">
           <h2 class="tn-section-title">Choose from our catalogue of primary packaging products</h2>
         </div>
@@ -44,45 +84,6 @@
               </div>
             </a>
           <?php endforeach; ?>
-        </div>
-
-        <!-- Catalogue Direct Enquiry CTA Banner -->
-        <div class="home-enquiry-banner">
-          <div class="home-enquiry-content">
-            <span class="home-enquiry-tag">DIRECT FACTORY WHOLESALE &amp; SAMPLING</span>
-            <h3 class="home-enquiry-title">Need Custom Capacities, Specific Neck Finishes, or Bulk Pricing?</h3>
-            <p class="home-enquiry-desc">
-              Whether you require custom moulds, sterile cleanroom production, or fast stock dispatch, our packaging specialists provide itemized quotes, technical drawings, and free sample batches within 24 business hours.
-            </p>
-            <div class="home-enquiry-features">
-              <span class="home-enquiry-feature">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Free Physical Samples
-              </span>
-              <span class="home-enquiry-feature">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                MOQs from 5,000 Units
-              </span>
-              <span class="home-enquiry-feature">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                TÜV NORD ISO 9001 Certified
-              </span>
-              <span class="home-enquiry-feature">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Global Seaport Logistics
-              </span>
-            </div>
-          </div>
-          <div class="home-enquiry-actions">
-            <button type="button" class="tn-btn-gold home-enquiry-btn" onclick="window.openInquiry('Catalogue Wholesale RFQ & Samples')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              REQUEST A QUOTE &amp; SAMPLES
-            </button>
-            <a href="tel:+919810220761" class="home-enquiry-phone-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Direct Sales: +91 98102 20761
-            </a>
-          </div>
         </div>
 
       </div>
@@ -273,6 +274,49 @@
               <span>Read More</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Homepage Direct Factory Wholesale CTA Banner (At the Last of Home Page) -->
+    <section class="tn-section-grey tn-home-final-cta-section" style="padding: 48px 0; border-top: 1px solid #e2e8f0;">
+      <div class="tn-container">
+        <div class="home-enquiry-banner" style="margin: 0;">
+          <div class="home-enquiry-content">
+            <span class="home-enquiry-tag">DIRECT FACTORY WHOLESALE &amp; SAMPLING</span>
+            <h3 class="home-enquiry-title">Need Custom Capacities, Specific Neck Finishes, or Bulk Pricing?</h3>
+            <p class="home-enquiry-desc">
+              Whether you require custom moulds, sterile cleanroom production, or fast stock dispatch, our packaging specialists provide itemized quotes, technical drawings, and free sample batches within 24 business hours.
+            </p>
+            <div class="home-enquiry-features">
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Free Physical Samples
+              </span>
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                MOQs from 5,000 Units
+              </span>
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                TÜV NORD ISO 9001 Certified
+              </span>
+              <span class="home-enquiry-feature">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8892e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Global Seaport Logistics
+              </span>
+            </div>
+          </div>
+          <div class="home-enquiry-actions">
+            <button type="button" class="tn-btn-gold home-enquiry-btn" onclick="window.openInquiry('Homepage Bottom Wholesale RFQ &amp; Samples')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              REQUEST A QUOTE &amp; SAMPLES
+            </button>
+            <a href="tel:+919810220761" class="home-enquiry-phone-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Direct Sales: +91 98102 20761
+            </a>
           </div>
         </div>
       </div>
