@@ -55,10 +55,11 @@ Write-Host "Compressing production files..." -ForegroundColor Yellow
   * .htaccess .env.example
 
 if (Test-Path $zipName) {
+    Copy-Item $zipName "cpanel_public_html.zip" -Force
     $fileItem = Get-Item $zipName
     $sizeMB = [math]::round($fileItem.Length / 1MB, 2)
-    Write-Host "[SUCCESS] Created $zipName ($sizeMB megabytes)" -ForegroundColor Green
-    Write-Host "Upload this file to cPanel File Manager in public_html and extract it." -ForegroundColor Cyan
+    Write-Host "[SUCCESS] Created $zipName ($sizeMB megabytes) and cpanel_public_html.zip" -ForegroundColor Green
+    Write-Host "Upload either zip file to cPanel File Manager in public_html and extract it." -ForegroundColor Cyan
 } else {
     Write-Host "[ERROR] Failed to create zip." -ForegroundColor Red
 }
