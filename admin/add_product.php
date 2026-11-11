@@ -505,6 +505,13 @@ $csrfToken = $_SESSION['csrf_token'];
     <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding-top: 18px; border-top: 1px solid #334155; flex-wrap: wrap; gap: 12px;">
       <button type="submit" name="submit_draft" class="btn-save-draft" onclick="document.getElementById('status').value = 'draft';" style="min-height: 48px; flex: 1; min-width: 140px;">Save as Draft</button>
 
+      <?php
+$product = [];
+$prodSeo = [];
+$prodFaqs = [];
+require __DIR__ . '/partials/product_seo_card.php';
+?>
+
       <button type="submit" class="btn-submit-publish" onclick="document.getElementById('status').value = 'published';" style="min-height: 48px; flex: 2; min-width: 200px;">
         PUBLISH PRODUCT TO LIVE CATALOGUE &rarr;
       </button>

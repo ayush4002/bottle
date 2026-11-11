@@ -1,7 +1,8 @@
   <!-- =======================================================================
        VIEW: PRIVACY STATEMENT & DATA PROTECTION POLICY
        ======================================================================= -->
-  <section class="page-view" id="view-privacy">
+  <div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
+<section class="page-view" id="view-privacy">
     
     <div class="products-page-title-banner about-hero-banner">
       <div class="tn-container">
@@ -15,7 +16,7 @@
       <div class="tn-container" style="max-width: 920px;">
         
         <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; font-size: 0.875rem; color: #475569;">
-          <strong>Data Controller:</strong> <?= htmlspecialchars($company['name'] ?? 'TrueNorth Group') ?> &bull; <strong>Email:</strong> <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?> &bull; <strong>Corporate Address:</strong> <?= htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India.') ?>
+          <strong>Data Controller:</strong> <?= htmlspecialchars($company['name'] ?? 'TrueNorth Group') ?> &bull; <strong>Last Updated:</strong> <?= date('F Y', @filemtime(__FILE__)) ?> &bull; <strong>Email:</strong> <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?> &bull; <strong>Corporate Address:</strong> <?= htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034, India.') ?>
         </div>
 
         <article style="font-size: 0.9375rem; line-height: 1.7; color: #334155;">

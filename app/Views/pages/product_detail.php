@@ -10,6 +10,7 @@ $catSlug = $categoryInfo['slug'] ?? ($sku['categorySlug'] ?? 'pet-bottles');
 $seriesName = $seriesInfo['name'] ?? ($sku['serie'] ?? 'Series');
 $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
 ?>
+<div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
 
 <!-- Product Banner -->
 <div class="products-page-title-banner about-hero-banner" style="padding: 40px 0;">
@@ -54,14 +55,14 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
           </button>
           
-          <img id="pdp-active-display-img" src="<?= htmlspecialchars($primaryImg) ?>" alt="<?= htmlspecialchars($sku['name'] ?? 'Product') ?>" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+          <img id="pdp-active-display-img" src="<?= htmlspecialchars($primaryImg) ?>" alt="<?= htmlspecialchars($sku['name'] ?? 'Product') ?>"<?= tn_img_dims($primaryImg) ?> onerror="this.onerror=null;this.src='/logo_svg.svg';" />
         </div>
 
         <!-- Vertical Thumbnails Column -->
         <div class="tn-pdp-thumbs-col">
           <?php foreach ($gallery as $idx => $gUrl): ?>
             <div class="tn-pdp-thumb-item <?= $idx === 0 ? 'active' : '' ?>" onclick="window.switchPdpImage(this, '<?= htmlspecialchars($gUrl, ENT_QUOTES) ?>')">
-              <img src="<?= htmlspecialchars($gUrl) ?>" alt="Thumb <?= $idx + 1 ?>" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+              <img src="<?= htmlspecialchars($gUrl) ?>" alt="Thumb <?= $idx + 1 ?>"<?= tn_img_dims($gUrl) ?> onerror="this.onerror=null;this.src='/logo_svg.svg';" />
             </div>
           <?php endforeach; ?>
         </div>
@@ -168,6 +169,31 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
 
   </div>
 </section>
+
+<?php if (!empty($tnRelated)): ?>
+<!-- Related Products (checklist §5: related products + contextual internal links) -->
+<section class="tn-section" style="padding: 32px 0; background: #fff;">
+  <div class="tn-container">
+    <div class="tn-section-title-wrap">
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: #16273f; margin: 0 0 6px;">You May Also Explore</h2>
+      <p style="color: #475569; font-size: 0.92rem; margin: 0 0 18px;">More <?= htmlspecialchars($catName) ?> from the TrueNorth catalogue.</p>
+    </div>
+    <div class="tn-grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+      <?php foreach ($tnRelated as $tnRel): ?>
+        <a href="/product?id=<?= urlencode($tnRel['id'] ?? ($tnRel['sku'] ?? '')) ?>" style="display: block; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-decoration: none; background: #fff; transition: box-shadow 0.25s ease;">
+          <div style="aspect-ratio: 1; overflow: hidden; background: #f8fafc;">
+            <img src="<?= htmlspecialchars($tnRel['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($tnRel['name'] ?? '') ?>"<?= tn_img_dims($tnRel['image'] ?? '/logo_svg.svg') ?> loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+          </div>
+          <div style="padding: 12px 14px;">
+            <p style="font-size: 0.85rem; font-weight: 700; color: #16273f; margin: 0; line-height: 1.35;"><?= htmlspecialchars($tnRel['name'] ?? '') ?></p>
+            <p style="font-size: 0.72rem; color: #94a3b8; margin: 6px 0 0;"><?= htmlspecialchars($tnRel['sku'] ?? ($tnRel['id'] ?? '')) ?></p>
+          </div>
+        </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
 
 <script>
 window.switchPdpImage = function(thumbElem, imgUrl) {

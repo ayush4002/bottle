@@ -27,7 +27,9 @@ $breadcrumbs = [
     'change_password' => 'Change Password',
     'inquiries' => 'Client Inquiries',
     'blog' => 'Blog & SEO Articles',
-    'blog_editor' => 'Blog & SEO Editor'
+    'blog_editor' => 'Blog & SEO Editor',
+    'seo_redirects' => 'Redirect Manager',
+    'seo_404' => '404 Error Monitor'
 ];
 $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $currentPage));
 ?>
@@ -38,6 +40,66 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $curre
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title><?= htmlspecialchars($crumbTitle) ?> — TrueNorth Group CMS</title>
   <link rel="icon" type="image/svg+xml" href="/logo_svg.svg" />
+  <meta name="csrf-token" content="<?= htmlspecialchars($csrfToken) ?>" />
+  <script>
+  // Attach the CSRF token to every admin form submit, same-origin fetch() and XHR,
+  // and to state-changing admin links (delete/toggle/dismiss/regenerate).
+  (function () {
+    var token = <?= json_encode($csrfToken, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+    window.TN_CSRF = token;
+    function sameOrigin(url) {
+      try { return new URL(url, location.href).origin === location.origin; } catch (e) { return false; }
+    }
+    function withToken(url) {
+      var u = new URL(url, location.href);
+      if (!u.searchParams.has('csrf_token')) u.searchParams.set('csrf_token', token);
+      return u.pathname + u.search + u.hash;
+    }
+    function needsToken(url) {
+      try {
+        var u = new URL(url, location.href);
+        if (u.origin !== location.origin || u.pathname.indexOf('/admin') !== 0) return false;
+        if (/\/admin\/delete_/.test(u.pathname)) return true;
+        return ['delete', 'toggle', 'dismiss', 'dismiss_404', 'regenerate_sitemap', 'permanent', 'restore', 'archive'].indexOf(u.searchParams.get('action')) !== -1;
+      } catch (e) { return false; }
+    }
+    window.tnCsrfUrl = function (url) { return needsToken(url) ? withToken(url) : url; };
+    function addTokenToForm(f) {
+      if (!f || (f.getAttribute('method') || '').toLowerCase() !== 'post' || !sameOrigin(f.action || location.href)) return;
+      if (!f.querySelector('input[name="csrf_token"]')) {
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = 'csrf_token'; i.value = token;
+        f.appendChild(i);
+      }
+    }
+    document.addEventListener('submit', function (e) { addTokenToForm(e.target); }, true);
+    var origSubmit = HTMLFormElement.prototype.submit;
+    HTMLFormElement.prototype.submit = function () { addTokenToForm(this); return origSubmit.call(this); };
+    document.addEventListener('DOMContentLoaded', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('form'), addTokenToForm);
+    });
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (a && needsToken(a.href)) a.href = withToken(a.href);
+    }, true);
+    var origFetch = window.fetch;
+    if (origFetch) {
+      window.fetch = function (input, init) {
+        var url = typeof input === 'string' ? input : (input && input.url) || '';
+        if (sameOrigin(url)) {
+          init = init || {};
+          var h = new Headers(init.headers || (typeof input !== 'string' && input.headers) || {});
+          h.set('X-CSRF-Token', token);
+          init.headers = h;
+        }
+        return origFetch.call(this, input, init);
+      };
+    }
+    var origOpen = XMLHttpRequest.prototype.open, origSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function (m, url) { this._tnSame = sameOrigin(url); return origOpen.apply(this, arguments); };
+    XMLHttpRequest.prototype.send = function () { if (this._tnSame) { try { this.setRequestHeader('X-CSRF-Token', token); } catch (e) {} } return origSend.apply(this, arguments); };
+  })();
+  </script>
   <link rel="stylesheet" href="/styles.css?v=1.0.8" />
   <style>
     :root {
@@ -536,6 +598,45 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $curre
         Blog &amp; SEO Articles
       </a>
 
+      <a href="/admin/testimonials" class="cms-nav-link <?= in_array($currentPage, ['testimonials', 'testimonial_editor']) ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v18h18"/><path d="M7 16l4-4 3 3 5-6"/><path d="M7 9h4"/></svg>
+        Testimonials &amp; Client Logos
+      </a>
+
+      <div class="cms-nav-section">Technical SEO</div>
+      <a href="/admin/seo" class="cms-nav-link <?= $currentPage == 'seo' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m8 11 2 2 4-4"/></svg>
+        SEO Overview &amp; Audit
+      </a>
+      <a href="/admin/seo_pages" class="cms-nav-link <?= $currentPage == 'seo_pages' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Page SEO Manager
+      </a>
+      <a href="/admin/seo_templates" class="cms-nav-link <?= $currentPage == 'seo_templates' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Meta Templates
+      </a>
+      <a href="/admin/seo_redirects" class="cms-nav-link <?= $currentPage == 'seo_redirects' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        Redirect Manager
+      </a>
+      <a href="/admin/seo_404" class="cms-nav-link <?= $currentPage == 'seo_404' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        404 Monitor
+      </a>
+      <a href="/admin/seo_sitemap" class="cms-nav-link <?= $currentPage == 'seo_sitemap' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M10 6.5h4"/><path d="M6.5 10v4"/><path d="M17.5 10v4"/><path d="M10 17.5h4"/></svg>
+        Sitemap, Robots &amp; Schema
+      </a>
+      <a href="/admin/seo_images" class="cms-nav-link <?= $currentPage == 'seo_images' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Image Alt Tool
+      </a>
+      <a href="/admin/seo_settings" class="cms-nav-link <?= $currentPage == 'seo_settings' ? 'active' : '' ?>">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Global SEO Settings
+      </a>
+
       <div class="cms-nav-section">Media &amp; Settings</div>
       <a href="/admin/media" class="cms-nav-link <?= $currentPage == 'media' ? 'active' : '' ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -580,7 +681,7 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $curre
 
       <div class="cms-mobile-user">
         <span class="cms-role-badge-sm"><?= htmlspecialchars($currentRole) ?></span>
-        <a href="/admin/logout" class="btn-logout-icon" title="Logout">
+        <a href="/admin/logout" class="btn-logout-icon" title="Logout" onclick="event.preventDefault(); document.getElementById('tnLogoutForm').submit();">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
         </a>
       </div>
@@ -597,7 +698,8 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $curre
       <div class="cms-user-profile">
         <span class="cms-role-badge"><?= htmlspecialchars($currentRole) ?></span>
         <span style="font-size: 0.88rem; color: var(--cms-muted);">Hello, <strong><?= htmlspecialchars($currentUser) ?></strong></span>
-        <a href="/admin/logout" class="btn-logout-cms">Logout</a>
+        <a href="/admin/logout" class="btn-logout-cms" onclick="event.preventDefault(); document.getElementById('tnLogoutForm').submit();">Logout</a>
+        <form id="tnLogoutForm" method="post" action="/admin/logout" style="display:none;"><input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" /></form>
       </div>
     </header>
 

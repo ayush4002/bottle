@@ -74,7 +74,7 @@ class BlogModel {
         // 2. Check JSON File
         if (!file_exists($file) || filesize($file) < 5) {
             $seeds = self::getSeedArticles();
-            file_put_contents($file, json_encode($seeds, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+            file_put_contents($file, json_encode($seeds, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
             
             // Seed DB as well if empty
             if (isset($pdo)) {
@@ -365,7 +365,7 @@ class BlogModel {
             $all[] = $record;
         }
 
-        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
 
         return $record;
     }
@@ -396,7 +396,7 @@ class BlogModel {
             $filtered = array_values(array_filter($all, function($p) use ($id) {
                 return (int)($p['id'] ?? 0) !== (int)$id && ($p['slug'] ?? '') !== (string)$id;
             }));
-            file_put_contents($file, json_encode($filtered, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+            file_put_contents($file, json_encode($filtered, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
         }
 
         return true;
@@ -430,7 +430,7 @@ class BlogModel {
                     break;
                 }
             }
-            file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+            file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
         }
     }
 

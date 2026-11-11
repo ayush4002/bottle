@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__) . '/includes/upload_guard.php';
 require_once __DIR__ . '/header.php';
 require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 
@@ -38,12 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($_FILES['image_file']['name']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
                 $tmpFile = $_FILES['image_file']['tmp_name'];
                 $origName = $_FILES['image_file']['name'];
-                $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
-                if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp', 'svg', 'gif'])) {
+                $ext = tn_upload_safe_image_ext($tmpFile, $origName);
+                if ($ext !== false) {
                     $subDir = ($group === 'industries') ? 'industries' : 'categories';
                     $destFolder = dirname(__DIR__) . "/public/uploads/{$subDir}";
                     if (!is_dir($destFolder)) {
-                        mkdir($destFolder, 0777, true);
+                        mkdir($destFolder, 0755, true);
                     }
                     $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($origName, PATHINFO_FILENAME));
                     $newFileName = time() . '_' . $safeName . '.' . $ext;

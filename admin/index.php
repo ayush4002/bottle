@@ -278,7 +278,7 @@ $blogPublished = count(BlogModel::getAllPosts(true));
               <td><span class="badge-custom">Live Custom</span></td>
               <td>
                 <a href="/admin/edit_product?id=<?= urlencode($p['id']) ?>" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; font-weight: 600; margin-right: 12px;">Edit</a>
-                <a href="/admin/delete_product?id=<?= urlencode($p['id']) ?>" onclick="return confirm('Are you sure you want to delete this product?');" style="color: #ef4444; font-size: 0.85rem; text-decoration: none; font-weight: 600;">Delete</a>
+                <a href="/admin/delete_product?id=<?= urlencode($p['id']) ?>&csrf_token=<?= urlencode($csrfToken) ?>" onclick="return confirm('Are you sure you want to delete this product?');" style="color: #ef4444; font-size: 0.85rem; text-decoration: none; font-weight: 600;">Delete</a>
               </td>
             </tr>
           <?php endforeach; ?>

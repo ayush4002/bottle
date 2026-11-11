@@ -2,203 +2,63 @@
 // ==============================================================================
 // TRUENORTH GROUP — ENTERPRISE DYNAMIC SEO ENGINE
 // Dynamically generates canonicals, Open Graph, Twitter Cards, & Schema.org JSON-LD
+// Priority: Page-level override (seo_pages) -> Meta template -> Global default
 // ==============================================================================
 
 if (empty($company) && class_exists('ProductModel')) {
     $company = ProductModel::getCompanyInfo();
 }
 
-$seoBaseUrl = 'https://wetruenorthgroup.com';
-$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
-$canonicalUrl = $seoBaseUrl . $reqPath;
+$rootPath = dirname(__DIR__, 3);
+require_once $rootPath . '/includes/seo.php';
+require_once $rootPath . '/includes/schema.php';
 
-// Base Defaults (Homepage)
-$seoTitle = 'TrueNorth Group — Primary Packaging Specialist | PET Bottles & Jars';
-$seoDesc = 'TrueNorth Group is an ISO 9001 certified hybrid primary packaging specialist manufacturing and distributing high-grade PET bottles, HDPE containers, cosmetic jars, pumps, and custom closures.';
-$seoKeywords = 'PET bottles, cosmetic packaging, HDPE bottles, plastic jars, lotion pumps, mist sprays, wholesale packaging manufacturer, cleanroom molding';
-$ogType = 'website';
-$ogImage = $seoBaseUrl . '/logo.webp';
-$jsonLdList = [];
+$preferredDomain = SeoModel::getSetting('preferred_domain') ?: 'non-www';
+$seoBaseUrl = ($preferredDomain === 'www') ? 'https://www.wetruenorthgroup.com' : 'https://wetruenorthgroup.com';
 
-// Determine page specifics
-if (!empty($sku)) {
-    // 1. Single Product Detail Page
-    $pName = $sku['name'] ?? ($sku['fullTitle'] ?? 'Packaging Container');
-    $pCap = $sku['specs']['capacity'] ?? ($sku['capacity'] ?? ($sku['volume'] ?? ''));
-    $pMat = $sku['specs']['material'] ?? ($sku['material'] ?? 'PET');
-    $pNeck = $sku['specs']['neck'] ?? ($sku['neck'] ?? '');
-    
-    $seoTitle = ($sku['seoTitle'] ?? '') ?: "{$pName} | TrueNorth Packaging";
-    $seoDesc = ($sku['seoDescription'] ?? '') ?: ($sku['shortDescription'] ?? ($sku['description'] ?? "Wholesale high-precision {$pName} engineered in certified cleanrooms. Material: {$pMat}, Volume: {$pCap}, Neck Finish: {$pNeck}. Request an RFQ quote."));
-    $seoKeywords = "{$pName}, {$pMat} bottle, {$pCap} container, {$pNeck} neck, wholesale packaging, bulk quote, ISO certified packaging";
-    $canonicalUrl = $seoBaseUrl . '/product?id=' . urlencode($sku['id']);
-    $ogType = 'product';
-    if (!empty($sku['image'])) {
-        $ogImage = (strpos($sku['image'], 'http') === 0) ? $sku['image'] : ($seoBaseUrl . '/' . ltrim($sku['image'], '/'));
+$seoContext = [
+    'is_404' => (($activePage ?? '') === '404' || http_response_code() === 404),
+    'page_type' => (($activePage ?? '') === '404' || http_response_code() === 404) ? '404' : (!empty($sku) ? 'product' : (!empty($post) ? 'blog' : (($activePage ?? '') === 'products' ? (isset($_GET['category']) ? 'category' : 'page') : 'page'))),
+    'page_ref_id' => (($activePage ?? '') === '404' || http_response_code() === 404) ? '404' : (!empty($sku) ? ($sku['id'] ?? ($sku['slug'] ?? '')) : (!empty($post) ? ($post['slug'] ?? ($post['id'] ?? '')) : ($_GET['category'] ?? ($activePage ?? 'home')))),
+    'product' => $sku ?? null,
+    'article' => $post ?? null,
+    'category' => isset($_GET['category']) ? ['slug' => $_GET['category'], 'name' => ucwords(str_replace(['-', '_'], ' ', $_GET['category']))] : null,
+    'title' => $pageTitle ?? null,
+    'description' => $pageDesc ?? null,
+    // Note: FAQPage schema is emitted by schema.php block 7 via the FAQ repeater;
+    // 'faq' is intentionally absent here.
+    'static_schema' => [
+        'about' => 'AboutPage',
+        'contact' => 'ContactPage',
+        'custom' => 'Service',
+        'sustainability' => 'AboutPage'
+    ][($activePage ?? '')] ?? null,
+    'static_schema_name' => ['about' => 'About Us', 'contact' => 'Contact & Locations', 'custom' => 'Custom & Bespoke Solutions', 'sustainability' => 'Sustainability & rPET', 'faq' => 'Frequently Asked Questions'][($activePage ?? '')] ?? null
+];
+// Product-collection ItemList (checklist §4): fire on category filter / full catalogue
+if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductModel')) {
+    $listSkus = (isset($_GET['category']) && !empty($_GET['category']))
+        ? (ProductModel::getSkusByCategory($_GET['category']) ?: [])
+        : array_slice(ProductModel::getSkus() ?: [], 0, 20);
+    if (!empty($listSkus)) {
+        $items = [];
+        $n = 0;
+        foreach ($listSkus as $i => $s) {
+            $n++;
+            $items[] = [
+                'pos' => $i + 1,
+                'name' => $s['name'] ?? ($s['id'] ?? 'Product'),
+                'url' => $seoBaseUrl . '/product?id=' . urlencode($s['id'] ?? ($s['sku'] ?? ''))
+            ];
+        }
+        $seoContext['item_list'] = [
+            'name' => (isset($_GET['category']) ? ucwords(str_replace(['-', '_'], ' ', $_GET['category'])) . ' Collection' : 'All Products'),
+            'count' => count($listSkus),
+            'items' => $items
+        ];
     }
-
-    // Product Schema (JSON-LD)
-    $jsonLdList[] = [
-        '@context' => 'https://schema.org/',
-        '@type' => 'Product',
-        'name' => $pName,
-        'image' => [$ogImage],
-        'description' => strip_tags($seoDesc),
-        'sku' => $sku['id'],
-        'mpn' => $sku['articleNo'] ?? $sku['id'],
-        'brand' => [
-            '@type' => 'Brand',
-            'name' => 'TrueNorth Group'
-        ],
-        'manufacturer' => [
-            '@type' => 'Organization',
-            'name' => 'TrueNorth Group',
-            'url' => $seoBaseUrl
-        ],
-        'offers' => [
-            '@type' => 'Offer',
-            'url' => $canonicalUrl,
-            'priceCurrency' => 'INR',
-            'price' => !empty($sku['regularPrice']) ? (float)$sku['regularPrice'] : '0.00',
-            'priceValidUntil' => date('Y-12-31', strtotime('+1 year')),
-            'availability' => 'https://schema.org/InStock',
-            'itemCondition' => 'https://schema.org/NewCondition'
-        ]
-    ];
-
-    // BreadcrumbList Schema
-    $jsonLdList[] = [
-        '@context' => 'https://schema.org',
-        '@type' => 'BreadcrumbList',
-        'itemListElement' => [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $seoBaseUrl . '/'],
-            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Products', 'item' => $seoBaseUrl . '/products'],
-            ['@type' => 'ListItem', 'position' => 3, 'name' => $pName, 'item' => $canonicalUrl]
-        ]
-    ];
-
-} elseif (($activePage ?? '') === 'products') {
-    // 2. Catalog / Products Page
-    $catParam = $_GET['category'] ?? '';
-    $indParam = $_GET['industry'] ?? '';
-    $qParam = $_GET['q'] ?? '';
-    if (!empty($indParam)) {
-        $indInfo = class_exists('ProductModel') ? ProductModel::getIndustryBySlug($indParam) : null;
-        $indTitle = $indInfo['name'] ?? ucwords(str_replace(['-', '_'], ' ', $indParam));
-        $seoTitle = "{$indTitle} Packaging Solutions & Containers | TrueNorth Group";
-        $seoDesc = $indInfo['desc'] ?? "Wholesale packaging solutions tailored for {$indTitle}. PET and HDPE bottles, jars, pumps, and closures.";
-        $canonicalUrl = $seoBaseUrl . '/products?industry=' . urlencode($indParam);
-    } elseif (!empty($catParam)) {
-        $catTitle = ucwords(str_replace(['-', '_'], ' ', $catParam));
-        $seoTitle = "{$catTitle} Catalog & Wholesale Containers | TrueNorth Group";
-        $seoDesc = "Commercial wholesale range of {$catTitle}. High-tolerance precision blow molding, cleanroom production, and worldwide shipping. Request bulk samples & pricing.";
-        $canonicalUrl = $seoBaseUrl . '/products?category=' . urlencode($catParam);
-    } elseif (!empty($qParam)) {
-        $tax = class_exists('ProductModel') ? ProductModel::getSearchTaxonomyMatch($qParam) : null;
-        $categoryLabel = !empty($tax['name']) ? " (" . $tax['name'] . ")" : "";
-        $seoTitle = "Search: " . htmlspecialchars($qParam) . "{$categoryLabel} | Packaging Catalog — TrueNorth";
-        $seoDesc = "Packaging search results for " . htmlspecialchars($qParam) . " across PET bottles, jars, pumps, and closures.";
-        $canonicalUrl = $seoBaseUrl . '/products?q=' . urlencode($qParam);
-    } else {
-        $seoTitle = 'Packaging Catalog & Containers Directory | TrueNorth Group';
-        $seoDesc = 'Browse 295+ PET bottles, agro containers, cosmetic jars, lotion pumps, mist sprayers, and precision closures across 8 specialized categories. ISO certified factory direct.';
-        $canonicalUrl = $seoBaseUrl . '/products';
-    }
-} elseif (($activePage ?? '') === 'about') {
-    // 3. About Page
-    $seoTitle = 'About TrueNorth Group — Hybrid Primary Packaging Specialist & Manufacturer';
-    $seoDesc = 'Learn about TrueNorth Group, our 25+ years heritage, Class 10,000 cleanroom manufacturing hubs, TÜV NORD ISO 9001 certification, and global supply network.';
-    $canonicalUrl = $seoBaseUrl . '/about';
-} elseif (($activePage ?? '') === 'contact') {
-    // 4. Contact & RFQ Page
-    $seoTitle = 'Request a Wholesale Quote & Contact Engineering | TrueNorth Group';
-    $seoDesc = 'Get custom volume pricing, technical CAD drawings, and complimentary sample kits within 24 hours. Contact TrueNorth Group primary packaging specialists.';
-    $canonicalUrl = $seoBaseUrl . '/contact';
-} elseif (($activePage ?? '') === 'custom') {
-    // 5. Custom Solutions
-    $seoTitle = 'Custom Mould Design & Tailored Packaging Engineering | TrueNorth Group';
-    $seoDesc = 'Bespoke container tooling, 3D rapid prototyping, custom neck finishes, and private labelling solutions engineered to your exact product specifications.';
-    $canonicalUrl = $seoBaseUrl . '/custom';
-} elseif (($activePage ?? '') === 'sustainability') {
-    // 6. Sustainability
-    $seoTitle = 'Sustainable Packaging Solutions — PCR-PET & Circular Polymers | TrueNorth';
-    $seoDesc = 'Eco-conscious packaging innovation. 100% Post-Consumer Recycled (PCR) PET bottles, lightweighting engineering, and closed-loop circular packaging solutions.';
-    $canonicalUrl = $seoBaseUrl . '/sustainability';
-} elseif (($activePage ?? '') === 'terms') {
-    // 7. Terms & Conditions
-    $seoTitle = 'General Terms & Conditions of Sale | TrueNorth Group';
-    $seoDesc = 'B2B commercial sales terms, quality standards, order fulfillment, and warranty specifications of TrueNorth Group.';
-    $canonicalUrl = $seoBaseUrl . '/terms';
-} elseif (($activePage ?? '') === 'privacy') {
-    // 8. Privacy Statement
-    $seoTitle = 'Privacy Statement & Data Protection Policy | TrueNorth Group';
-    $seoDesc = 'Information regarding personal and commercial data processing, international trade inquiries, and GDPR/regulatory privacy protections.';
-    $canonicalUrl = $seoBaseUrl . '/privacy';
-} elseif (!empty($post)) {
-    // 9. Single Blog Article (Custom SEO)
-    $seoTitle = !empty($post['meta_title']) ? $post['meta_title'] : ($post['title'] . ' | TrueNorth Group');
-    $seoDesc = !empty($post['meta_description']) ? $post['meta_description'] : ($post['excerpt'] ?: substr(strip_tags($post['content']), 0, 155));
-    $seoKeywords = !empty($post['meta_keywords']) ? $post['meta_keywords'] : 'PET bottles, primary packaging, cleanroom molding, ISO 9001';
-    $canonicalUrl = !empty($post['canonical_url']) ? $post['canonical_url'] : ($seoBaseUrl . '/blog/' . urlencode($post['slug']));
-    $ogType = 'article';
-    $ogTitle = !empty($post['og_title']) ? $post['og_title'] : $seoTitle;
-    $ogDesc = !empty($post['og_description']) ? $post['og_description'] : $seoDesc;
-    $featuredImg = $post['featured_image'] ?? '/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp';
-    $ogImage = (strpos($featuredImg, 'http') === 0) ? $featuredImg : ($seoBaseUrl . '/' . ltrim($featuredImg, '/'));
-    $robotsMeta = !empty($post['robots_meta']) ? $post['robots_meta'] : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
-} elseif (($activePage ?? '') === 'blog') {
-    // 10. Blog Index Page
-    $seoTitle = 'Packaging Industry Insights & Technical Guides | TrueNorth Group';
-    $seoDesc = 'Explore expert engineering insights, sustainable rPET packaging developments, cleanroom compliance guides, and dispensing closure specifications from TrueNorth Group.';
-    $seoKeywords = 'PET bottles blog, sustainable packaging articles, cleanroom bottle molding, cosmetic packaging guide, rPET whitepaper, packaging manufacturer news';
-    $canonicalUrl = $seoBaseUrl . '/blog';
 }
 
-// Global Organization Schema
-$jsonLdList[] = [
-    '@context' => 'https://schema.org',
-    '@type' => 'Organization',
-    'name' => $company['name'] ?? 'TrueNorth Group',
-    'legalName' => ($company['name'] ?? 'TrueNorth Group') . ' Primary Packaging',
-    'url' => $seoBaseUrl,
-    'logo' => $seoBaseUrl . '/logo.webp',
-    'image' => $seoBaseUrl . '/logo.webp',
-    'description' => 'Primary packaging manufacturer and partner producing and distributing high-grade PET bottles, jars, caps, and pumps worldwide.',
-    'email' => $company['email'] ?? 'info@wetruenorthgroup.com',
-    'telephone' => $company['phone'] ?? '+91 9810220761',
-    'address' => [
-        '@type' => 'PostalAddress',
-        'streetAddress' => $company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura',
-        'addressLocality' => 'Delhi',
-        'postalCode' => '110034',
-        'addressRegion' => 'DL',
-        'addressCountry' => 'IN'
-    ],
-    'contactPoint' => [
-        '@type' => 'ContactPoint',
-        'telephone' => $company['phone'] ?? '+91 9810220761',
-        'contactType' => 'Sales & Technical Inquiries',
-        'email' => $company['email'] ?? 'info@wetruenorthgroup.com',
-        'areaServed' => 'Global',
-        'availableLanguage' => ['English', 'Hindi']
-    ]
-];
-
-// Global WebSite Schema with Sitelinks Searchbox
-$jsonLdList[] = [
-    '@context' => 'https://schema.org',
-    '@type' => 'WebSite',
-    'name' => 'TrueNorth Group',
-    'url' => $seoBaseUrl,
-    'potentialAction' => [
-        '@type' => 'SearchAction',
-        'target' => [
-            '@type' => 'EntryPoint',
-            'urlTemplate' => $seoBaseUrl . '/products?q={search_term_string}'
-        ],
-        'query-input' => 'required name=search_term_string'
-    ]
-];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -206,30 +66,7 @@ $jsonLdList[] = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- Primary Meta Tags -->
-  <title><?= htmlspecialchars($seoTitle) ?></title>
-  <meta name="title" content="<?= htmlspecialchars($seoTitle) ?>" />
-  <meta name="description" content="<?= htmlspecialchars($seoDesc) ?>" />
-  <meta name="keywords" content="<?= htmlspecialchars($seoKeywords) ?>" />
-  <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
-  <meta name="robots" content="<?= htmlspecialchars($robotsMeta ?? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1') ?>" />
-
-  <!-- Open Graph / Facebook / LinkedIn -->
-  <meta property="og:type" content="<?= htmlspecialchars($ogType) ?>" />
-  <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl) ?>" />
-  <meta property="og:site_name" content="TrueNorth Group" />
-  <meta property="og:title" content="<?= htmlspecialchars($seoTitle) ?>" />
-  <meta property="og:description" content="<?= htmlspecialchars($seoDesc) ?>" />
-  <meta property="og:image" content="<?= htmlspecialchars($ogImage) ?>" />
-  <meta property="og:image:alt" content="<?= htmlspecialchars($seoTitle) ?>" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="<?= htmlspecialchars($canonicalUrl) ?>" />
-  <meta name="twitter:title" content="<?= htmlspecialchars($seoTitle) ?>" />
-  <meta name="twitter:description" content="<?= htmlspecialchars($seoDesc) ?>" />
-  <meta name="twitter:image" content="<?= htmlspecialchars($ogImage) ?>" />
+  <?= seo_meta($seoContext) ?>
 
   <!-- Mobile & PWA Configuration -->
   <link rel="manifest" href="/site.webmanifest" />
@@ -237,21 +74,25 @@ $jsonLdList[] = [
   <meta name="msapplication-config" content="/browserconfig.xml" />
   <meta name="msapplication-TileColor" content="#16273f" />
   <link rel="author" href="/humans.txt" />
+  <?php
+  // Stable asset version: change only when the file actually changes, so the
+  // 1-year browser cache + edge cache stay effective between deploys.
+  $cssFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 3)) . '/styles.css';
+  $cssVersion = @filemtime($cssFile);
+  ?>
+  <link rel="stylesheet" href="/styles.css?v=<?= $cssVersion ?: 1 ?>" />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="/logo_svg.svg" />
-  <link rel="shortcut icon" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/logo.webp" />
-  <link rel="stylesheet" href="/styles.css?v=<?= time() ?>" />
+  <?php
+  // LCP: preload the homepage hero image (rendered as a CSS background in styles.css)
+  if (($activePage ?? '') === 'home') {
+      echo "  <link rel=\"preload\" as=\"image\" href=\"/hero_bottles_banner.webp\" />\n";
+  }
+  ?>
 
-  <!-- Structured Data (JSON-LD) -->
-  <?php foreach ($jsonLdList as $schemaItem): ?>
-  <script type="application/ld+json">
-  <?= json_encode($schemaItem, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
-  </script>
-  <?php endforeach; ?>
+  <?= seo_schema($seoContext) ?>
 </head>
 <body>
+  <a href="#main-content" style="position: absolute; left: -9999px; top: 0; z-index: 200; background: #16273f; color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font-size: 0.85rem;">Skip to main content</a>
 
   <!-- =========================================================================
        TOP UTILITY BAR (Exact TrueNorth Top Strip)
@@ -385,7 +226,7 @@ $jsonLdList[] = [
       
       <!-- Logo -->
       <a href="/" class="tn-logo">
-        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="tn-logo-img" />
+        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" class="tn-logo-img" width="160" height="40" />
       </a>
 
       <!-- Exact Client Headers: Home - About - Products - Custom Solutions - Contact -->
@@ -424,7 +265,7 @@ $jsonLdList[] = [
   <aside class="tn-mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
     <div class="mobile-nav-header">
       <a href="/" class="mobile-nav-logo" onclick="window.closeMobileMenu();">
-        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" />
+        <img src="/logo_svg.svg" alt="TrueNorth Group Logo" width="140" height="35" />
       </a>
       <button class="mobile-nav-close-btn" onclick="window.closeMobileMenu()" aria-label="Close navigation menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -474,6 +315,10 @@ $jsonLdList[] = [
       </a>
       <a href="/blog" class="mobile-nav-item <?= ($activePage ?? '') === 'blog' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Blog &amp; Insights</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="/faq" class="mobile-nav-item <?= ($activePage ?? '') === 'faq' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
+        <span>FAQ</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
       <a href="/contact" class="mobile-nav-item <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">

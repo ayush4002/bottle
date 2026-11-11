@@ -1,0 +1,22 @@
+{
+    "product": {
+        "page_type": "product",
+        "title_template": "{product_name} - Wholesale High-Tolerance Packaging | {site_name}",
+        "description_template": "Wholesale {product_name} manufactured in ISO certified cleanrooms. Material: {material}, Neck Finish: {neck_finish}. Get instant B2B quotation & free samples."
+    },
+    "category": {
+        "page_type": "category",
+        "title_template": "{category_name} Packaging & Containers Directory | {site_name}",
+        "description_template": "Browse comprehensive range of {category_name} engineered for pharmaceutical, cosmetic, and personal-care applications. Direct manufacturer volume pricing."
+    },
+    "blog": {
+        "page_type": "blog",
+        "title_template": "{article_title} | Technical Packaging Guide | {site_name}",
+        "description_template": "{article_excerpt}"
+    },
+    "static": {
+        "page_type": "static",
+        "title_template": "{page_name} | {site_name}",
+        "description_template": "{site_description}"
+    }
+}

@@ -9,7 +9,20 @@ require_once dirname(__DIR__) . '/Models/InquiryModel.php';
 
 class MailService {
 
+    private static function clean($value, $max = 500) {
+        $value = is_scalar($value) ? (string)$value : '';
+        $value = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value);
+        return mb_substr(trim((string)$value), 0, $max);
+    }
+
+    private static function oneLine($value, $max = 150) {
+        return mb_substr(trim(preg_replace('/[\r\n\t]+/', ' ', (string)$value)), 0, $max);
+    }
+
     public static function sendInquiryEmail($data) {
+        foreach ($data as $k => $v) {
+            $data[$k] = self::clean($v, in_array($k, ['inquiry', 'Inquiry_Details', 'Additional_Requirements', 'message'], true) ? 5000 : 300);
+        }
         $quoteId = 'INQ-' . strtoupper(substr(bin2hex(random_bytes(4)), 0, 8));
 
         $customerName = htmlspecialchars(trim($data['name'] ?? $data['Full_Name'] ?? $data['customer_name'] ?? 'Valued Client'));
@@ -98,23 +111,26 @@ class MailService {
         $sitePhone = !empty($company['phone']) ? $company['phone'] : '+91 9810220761';
         $toAdmin = $cfg['contact_email'];
 
-        $adminSubject = "New Inquiry [{$quoteId}] from {$customerName} ({$customerCompany})";
+        $adminSubject = self::oneLine("New Inquiry [{$quoteId}] from " . html_entity_decode($customerName, ENT_QUOTES) . " (" . html_entity_decode($customerCompany, ENT_QUOTES) . ")", 200);
 
         // 3. Send Staff Notification via Authenticated SMTP Socket
-        $adminSent = self::sendSmtp($toAdmin, $adminSubject, $adminHtml, $customerEmail);
+        $adminSent = ($cfg['mode'] === 'smtp') ? self::sendSmtp($toAdmin, $adminSubject, $adminHtml, $customerEmail) : false;
 
-        if (!$adminSent) {
+        if ($adminSent) {
+            self::logEmailDelivery($quoteId, $toAdmin, 'staff_notification', 'delivered_smtp', 'smtp', '250 OK via SSL socket');
+        } else {
             // Fallback to mail()
             $headers = "MIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n";
             $headers .= "From: " . '=?UTF-8?B?' . base64_encode($siteName) . '?=' . " <" . $cfg['from_email'] . ">\r\n";
             if (!empty($customerEmail)) $headers .= "Reply-To: {$customerEmail}\r\n";
-            @mail($toAdmin, $adminSubject, $adminHtml, $headers, "-f " . $cfg['from_email']);
+            $mailFallback = @mail($toAdmin, $adminSubject, $adminHtml, $headers, "-f " . $cfg['from_email']);
+            self::logEmailDelivery($quoteId, $toAdmin, 'staff_notification', $mailFallback ? 'delivered_mail_fallback' : 'failed', 'php_mail', $mailFallback ? 'Dispatched via host sendmail fallback' : 'Both SMTP and sendmail failed');
         }
 
         // ------------------------------------------------------------------
         // 4. Send Confirmation & Acknowledgement Copy to Client
         // ------------------------------------------------------------------
-        $sendClientCopy = !empty($cfg['send_client_confirmation']);
+        $sendClientCopy = !empty($cfg['send_client_confirmation']) && !empty($customerEmail) && self::allowClientAck($customerEmail);
 
         if ($sendClientCopy && !empty($customerEmail)) {
             $clientSubject = "Inquiry Acknowledgement [{$quoteId}] — " . $siteName;
@@ -169,10 +185,7 @@ class MailService {
                     " . ($quantity ? "<tr><th>Estimated Initial Run (MOQ)</th><td><strong>{$quantity}</strong></td></tr>" : "") . "
                   </table>
 
-                  <h4 style='margin: 18px 0 6px; color: #16273f; font-size: 13px;'>Your Message &amp; Specifications:</h4>
-                  <div class='inquiry-box'>
-                    {$customerInquiry}
-                  </div>
+                  <p style='margin: 18px 0 6px; color: #475569; font-size: 13px;'>Your full message and specifications have been passed to our team.</p>
 
                   <div class='cta-block'>
                     <strong>Need immediate assistance or have CAD / 3D design files to attach?</strong><br>
@@ -188,21 +201,24 @@ class MailService {
             </html>
             ";
 
-            $clientSent = self::sendSmtp($customerEmail, $clientSubject, $clientHtml, $cfg['reply_to']);
-            if (!$clientSent) {
+            $clientSent = ($cfg['mode'] === 'smtp') ? self::sendSmtp($customerEmail, $clientSubject, $clientHtml, $cfg['reply_to']) : false;
+            if ($clientSent) {
+                self::logEmailDelivery($quoteId, $customerEmail, 'client_acknowledgement', 'delivered_smtp', 'smtp', '250 OK via SSL socket');
+            } else {
                 // Fail-safe fallback to mail() if SMTP fails
                 $headers = "MIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n";
                 $headers .= "From: " . '=?UTF-8?B?' . base64_encode($siteName) . '?=' . " <" . $cfg['from_email'] . ">\r\n";
                 $headers .= "Reply-To: " . $cfg['reply_to'] . "\r\n";
                 $headers .= "Message-ID: <" . md5(uniqid(microtime(), true)) . "@wetruenorthgroup.com>\r\n";
                 $headers .= "X-Mailer: TrueNorth-Mailer/2.0\r\n";
-                @mail($customerEmail, $clientSubject, $clientHtml, $headers, "-f " . $cfg['from_email']);
+                $mailClientFallback = @mail($customerEmail, $clientSubject, $clientHtml, $headers, "-f " . $cfg['from_email']);
+                self::logEmailDelivery($quoteId, $customerEmail, 'client_acknowledgement', $mailClientFallback ? 'delivered_mail_fallback' : 'failed', 'php_mail', $mailClientFallback ? 'Dispatched via host sendmail fallback' : 'Both SMTP and sendmail failed');
             }
         }
 
         return [
             'success' => true,
-            'message' => 'Your inquiry has been submitted successfully! An acknowledgement confirmation email has been dispatched to ' . htmlspecialchars($customerEmail) . '.',
+            'message' => 'Your inquiry has been submitted successfully! Our team will be in touch shortly.',
             'quoteId' => $quoteId
         ];
     }
@@ -215,16 +231,26 @@ class MailService {
         $host = $cfg['host'] ?: (defined('SMTP_HOST') ? SMTP_HOST : 'mail.wetruenorthgroup.com');
         $port = (int)($cfg['port'] ?: (defined('SMTP_PORT') ? SMTP_PORT : 465));
         $user = $cfg['user'] ?: (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com');
-        $pass = $cfg['pass'] ?: (defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group');
+        $pass = (string)$cfg['pass'];
+        if ($pass === '') {
+            error_log('MailService: SMTP password is not configured (config/secrets.php or Admin > Settings).');
+            return false;
+        }
+        $to = trim(preg_replace('/[\r\n]+/', '', (string)$to));
+        if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
         $fromName = $cfg['from_name'] ?: 'TrueNorth Group';
         $fromEmail = $cfg['from_email'] ?: $user;
 
         $timeout = 10;
+        $verifySsl = defined('SMTP_VERIFY_SSL') ? (bool)SMTP_VERIFY_SSL : true;
         $ctx = stream_context_create([
             'ssl' => [
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true
+                'verify_peer' => $verifySsl,
+                'verify_peer_name' => $verifySsl,
+                'allow_self_signed' => !$verifySsl,
+                'peer_name' => $host
             ]
         ]);
 
@@ -253,10 +279,24 @@ class MailService {
         $res = $read();
         if (substr($res, 0, 3) !== '220') { fclose($socket); return false; }
 
-        $clientHost = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'wetruenorthgroup.com';
+        $clientHost = 'wetruenorthgroup.com';
         $write('EHLO ' . $clientHost);
         $res = $read();
         if (substr($res, 0, 3) !== '250') { fclose($socket); return false; }
+
+        // Upgrade plain connections (e.g. port 587) with STARTTLS before sending credentials
+        if ($port != 465) {
+            $write('STARTTLS');
+            $res = $read();
+            if (substr($res, 0, 3) !== '220' || !@stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+                error_log('MailService: STARTTLS failed; refusing to send credentials in plain text.');
+                fclose($socket);
+                return false;
+            }
+            $write('EHLO ' . $clientHost);
+            $res = $read();
+            if (substr($res, 0, 3) !== '250') { fclose($socket); return false; }
+        }
 
         $write('AUTH LOGIN');
         $res = $read();
@@ -314,16 +354,62 @@ class MailService {
     /**
      * Get dynamic SMTP and outgoing email settings from site_settings.json or fallback constants
      */
+    private static function smtpSecretFile() {
+        return (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/smtp_secret.json';
+    }
+
+    /** SMTP password: value saved in Admin > Settings (config/smtp_secret.json, git-ignored) or SMTP_PASS from config/secrets.php */
+    public static function getStoredSmtpPassword() {
+        $f = self::smtpSecretFile();
+        if (file_exists($f)) {
+            $j = json_decode((string)file_get_contents($f), true);
+            if (!empty($j['smtp_pass'])) return (string)$j['smtp_pass'];
+        }
+        return defined('SMTP_PASS') ? (string)SMTP_PASS : '';
+    }
+
+    public static function storeSmtpPassword($pass) {
+        return file_put_contents(self::smtpSecretFile(), json_encode(['smtp_pass' => (string)$pass]), LOCK_EX) !== false;
+    }
+
+    /** At most one acknowledgement email per recipient per 24h and 200 per day overall (stops the form being used to spam third parties). */
+    private static function allowClientAck($email) {
+        $dir = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/cache';
+        if (!is_dir($dir)) @mkdir($dir, 0755, true);
+        $fp = @fopen($dir . '/client_ack_throttle.json', 'c+');
+        if (!$fp) return true;
+        flock($fp, LOCK_EX);
+        $data = json_decode(stream_get_contents($fp) ?: '[]', true) ?: [];
+        $now = time();
+        $day = date('Y-m-d');
+        $dayCount = (($data['_day']['d'] ?? '') === $day) ? (int)$data['_day']['n'] : 0;
+        unset($data['_day']);
+        $data = array_filter($data, function ($ts) use ($now) { return ($now - (int)$ts) < 86400; });
+        $key = hash('sha256', strtolower($email));
+        $allowed = !isset($data[$key]) && $dayCount < 200;
+        if ($allowed) {
+            $data[$key] = $now;
+            $dayCount++;
+        }
+        $data['_day'] = ['d' => $day, 'n' => $dayCount];
+        ftruncate($fp, 0);
+        rewind($fp);
+        fwrite($fp, json_encode($data));
+        flock($fp, LOCK_UN);
+        fclose($fp);
+        return $allowed;
+    }
+
     public static function getEmailSettings() {
         $settingsFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/site_settings.json';
         $json = file_exists($settingsFile) ? (json_decode(file_get_contents($settingsFile), true) ?: []) : [];
 
         return [
-            'mode'       => $json['mail_mode'] ?? 'smtp', // 'smtp' or 'mail'
+            'mode'       => (($json['mail_mode'] ?? 'smtp') === 'mail') ? 'mail' : 'smtp', // 'smtp' or 'mail'
             'host'       => $json['smtp_host'] ?? (defined('SMTP_HOST') ? SMTP_HOST : 'mail.wetruenorthgroup.com'),
             'port'       => (int)($json['smtp_port'] ?? (defined('SMTP_PORT') ? SMTP_PORT : 465)),
             'user'       => $json['smtp_user'] ?? (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com'),
-            'pass'       => $json['smtp_pass'] ?? (defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group'),
+            'pass'       => self::getStoredSmtpPassword(),
             'from_name'  => $json['from_name'] ?? ($json['site_name'] ?? 'TrueNorth Group'),
             'from_email' => $json['from_email'] ?? ($json['contact_email'] ?? (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com')),
             'reply_to'   => $json['reply_to'] ?? ($json['contact_email'] ?? 'info@wetruenorthgroup.com'),
@@ -435,6 +521,48 @@ class MailService {
             'success' => $sent,
             'message' => $sent ? 'Email dispatched successfully.' : 'Email delivery failed on server transport.'
         ];
+    }
+
+    /**
+     * M7: Persistent email delivery audit logger
+     * Provides verifiable evidence of SMTP / sendmail transport execution
+     */
+    public static function logEmailDelivery($quoteId, $recipient, $type, $status, $method, $details = '') {
+        $logFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/email_logs.json';
+        $entry = [
+            'id' => 'EML-' . strtoupper(substr(bin2hex(random_bytes(4)), 0, 8)),
+            'quote_id' => $quoteId,
+            'recipient' => $recipient,
+            'type' => $type, // 'staff_notification', 'client_acknowledgement', 'custom_reply'
+            'status' => $status, // 'delivered_smtp', 'delivered_mail_fallback', 'failed'
+            'method' => $method, // 'smtp', 'php_mail'
+            'timestamp' => date('Y-m-d H:i:s'),
+            'details' => $details
+        ];
+
+        $logs = [];
+        if (file_exists($logFile)) {
+            $decoded = json_decode(file_get_contents($logFile), true);
+            if (is_array($decoded)) {
+                $logs = $decoded;
+            }
+        }
+        array_unshift($logs, $entry);
+        if (count($logs) > 500) {
+            $logs = array_slice($logs, 0, 500);
+        }
+        @file_put_contents($logFile, json_encode($logs, JSON_PRETTY_PRINT), LOCK_EX);
+        return $entry;
+    }
+
+    /**
+     * Retrieve recent email delivery logs
+     */
+    public static function getEmailLogs($limit = 100) {
+        $logFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2)) . '/config/email_logs.json';
+        if (!file_exists($logFile)) return [];
+        $logs = json_decode(file_get_contents($logFile), true);
+        return is_array($logs) ? array_slice($logs, 0, $limit) : [];
     }
 }
 

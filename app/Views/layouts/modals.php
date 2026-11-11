@@ -202,9 +202,18 @@
   </div>
 
 
-  <!-- Google Translate Hidden Engine -->
+  <!-- Google Translate Hidden Engine (L3: Gated behind interaction / active translation) -->
   <div id="google_translate_element" style="display:none;position:absolute;top:-9999px;"></div>
   <script type="text/javascript">
+    var gtLoaded = false;
+    function loadGoogleTranslate() {
+      if (gtLoaded) return;
+      gtLoaded = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(s);
+    }
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
@@ -212,8 +221,15 @@
         autoDisplay: false
       }, 'google_translate_element');
     }
+    // Auto-load only if user previously active translation cookie exists
+    if (document.cookie.indexOf('googtrans') !== -1) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGoogleTranslate);
+      } else {
+        loadGoogleTranslate();
+      }
+    }
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
   <script>
     // =========================================================================
@@ -236,6 +252,7 @@
           btn.setAttribute('aria-expanded', 'false');
         }
       } else {
+        if (typeof loadGoogleTranslate === 'function') loadGoogleTranslate();
         // Close mobile dropdown if open
         window.closeMobileLangDropdown();
         menu.classList.add('open');
@@ -271,6 +288,7 @@
         mMenu.style.display = 'none';
         if (mBtn) mBtn.classList.remove('open');
       } else {
+        if (typeof loadGoogleTranslate === 'function') loadGoogleTranslate();
         window.closeLanguageDropdown();
         mMenu.classList.add('open');
         mMenu.style.display = 'block';

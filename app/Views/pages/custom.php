@@ -1,7 +1,8 @@
   <!-- =======================================================================
        VIEW 5: CUSTOM SOLUTIONS (Exact Client Copy)
        ======================================================================= -->
-  <section class="page-view" id="view-custom">
+  <div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
+<section class="page-view" id="view-custom">
     
     <!-- Custom Solutions Hero Banner -->
     <div class="products-page-title-banner cst-hero-banner">
@@ -49,7 +50,7 @@
 
           <div class="cst-editorial-right">
             <div class="cst-img-wrapper">
-              <img src="/branded_bottles.webp" alt="Custom Design Solutions" loading="lazy" />
+              <img src="/branded_bottles.webp" alt="Custom Design Solutions" loading="lazy" width="900" height="900" style="width:100%;height:auto;" />
             </div>
           </div>
         </div>
@@ -134,7 +135,7 @@
           <!-- Card 1 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Square Bottle Mould" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+              <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Square Bottle Mould" loading="lazy" width="392" height="1115" style="max-width:100%;height:auto;" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Custom Geometries</div>
@@ -146,7 +147,7 @@
           <!-- Card 2 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/branded_bottles.webp" alt="Veola Custom Contours" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+              <img src="/branded_bottles.webp" alt="Veola Custom Contours" loading="lazy" width="900" height="900" style="width:100%;height:auto;" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Decoration Tech</div>
@@ -158,7 +159,7 @@
           <!-- Card 3 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp" alt="Metal Unishell Closures" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+              <img src="/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp" alt="Metal Unishell Closures" loading="lazy" width="276" height="280" style="max-width:100%;height:auto;" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Prestige Fitments</div>
@@ -170,7 +171,7 @@
           <!-- Card 4 -->
           <div class="cst-finish-card">
             <div class="cst-finish-img-wrap">
-              <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="Wide Mouth Jars" loading="lazy" />
+              <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="Wide Mouth Jars" loading="lazy" width="665" height="1178" style="max-width:100%;height:auto;" />
             </div>
             <div class="cst-finish-content">
               <div class="cst-finish-cat">Custom Jars</div>

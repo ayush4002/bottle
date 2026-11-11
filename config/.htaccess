@@ -1,0 +1,2 @@
+# Configuration, secrets and data files: never web-accessible
+Require all denied

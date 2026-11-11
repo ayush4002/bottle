@@ -617,7 +617,7 @@ function ajaxProductAction(sku, action, name, btnElem) {
   btnElem.disabled = true;
   btnElem.style.opacity = '0.5';
 
-  fetch('/admin/delete_product?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action) + '&ajax=1', {
+  fetch('/admin/delete_product?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action) + '&ajax=1&csrf_token=' + encodeURIComponent(window.TN_CSRF || ''), {
     headers: { 'X-Requested-With': 'XMLHttpRequest' }
   })
   .then(res => res.json())
@@ -651,7 +651,7 @@ function ajaxProductAction(sku, action, name, btnElem) {
   })
   .catch(err => {
     // Fallback to normal navigation
-    window.location.href = '/admin/delete_product?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action);
+    window.location.href = '/admin/delete_product?id=' + encodeURIComponent(sku) + '&action=' + encodeURIComponent(action) + '&csrf_token=' + encodeURIComponent(window.TN_CSRF || '');
   });
 }
 </script>

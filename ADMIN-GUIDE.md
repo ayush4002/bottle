@@ -25,8 +25,9 @@ Welcome to the **TrueNorth Group Enterprise CMS Dashboard**. This manual provide
    (or short URL: https://yourdomain.com/login)
    ```
 2. Enter your administrator credentials:
-   - **Default Username**: `admin`
-   - **Default Password**: `admin123`
+   - **Username**: the `ADMIN_USER` set in `config/secrets.php` (default `admin`)
+   - **Password**: there is **no default password**. Set one with `php scripts/set-admin-password.php`
+     (it writes a bcrypt hash to `config/secrets.php`), or add users under **Admin Users**.
 3. Click **SECURE SIGN IN**.
 4. *(Note: For security, change your password immediately under **Change Password** after your first login).*
 

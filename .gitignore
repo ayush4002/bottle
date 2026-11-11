@@ -24,3 +24,22 @@ temp_*/
 Thumbs.db
 .vscode/
 .idea/
+styles.css.orig
+scripts/img-backup/
+config/cache/
+
+# Secrets & runtime data (never commit)
+config/secrets.php
+config/smtp_secret.json
+*.local.txt
+config/inquiries.json
+config/email_logs.json
+config/seo_404_log.json
+config/seo_audit_log.json
+config/option_audit_logs.json
+config/admin_users.json
+
+# Leftover drafts / unused files (kept locally, never committed or deployed)
+_archive_unused/
+deploy_wetruenorthgroup.zip
+cpanel_public_html.zip

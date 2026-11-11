@@ -60,6 +60,13 @@ $stockStatus = $product['stockStatus'] ?? ($stockQty > 0 ? 'in_stock' : 'out_of_
 $status = $product['status'] ?? 'published';
 $isFeatured = !empty($product['isFeatured']);
 $gender = $product['gender'] ?? 'Unisex';
+
+require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
+$prodSeo = SeoModel::getPageSeo('/product?id=' . urlencode($product['id']), 'product', $product['id']);
+if (!$prodSeo && !empty($product['slug'])) {
+    $prodSeo = SeoModel::getPageSeo('/product/' . urlencode($product['slug']), 'product', $product['id']);
+}
+$prodFaqs = SeoModel::getFaqs('product', $product['id']);
 ?>
 
 <style>
@@ -268,7 +275,7 @@ $gender = $product['gender'] ?? 'Unisex';
         <strong style="color: #f87171; font-size: 1rem; display: block; margin-bottom: 4px;">Warning: This Product is Currently Archived</strong>
         <p style="margin: 0; font-size: 0.85rem; color: #cbd5e1;">It is completely hidden from the live website catalogue and search. You can restore it to published status at any time.</p>
       </div>
-      <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; padding: 10px 18px; border-radius: 8px; text-decoration: none; color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&csrf_token=<?= urlencode($csrfToken) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; padding: 10px 18px; border-radius: 8px; text-decoration: none; color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
         Restore Product to Active Catalogue
       </a>
@@ -521,6 +528,8 @@ $gender = $product['gender'] ?? 'Unisex';
       </div>
     </div>
 
+    <?php require __DIR__ . '/partials/product_seo_card.php'; ?>
+
     <!-- SUBMIT BAR & ACTION CONTROLS -->
     <div class="form-card" style="border-color: #475569; background: #1e293b; padding: 24px;">
       <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
@@ -530,18 +539,18 @@ $gender = $product['gender'] ?? 'Unisex';
           </a>
 
           <?php if ($status === 'archived'): ?>
-            <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; min-height: 48px; padding: 0 20px; border-radius: 10px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: #fff;">
+            <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&csrf_token=<?= urlencode($csrfToken) ?>&action=restore&return_url=<?= urlencode('/admin/edit_product?id=' . ($product['articleNo'] ?? $product['id'])) ?>" class="btn-action-edit" style="background: #15803d; min-height: 48px; padding: 0 20px; border-radius: 10px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: #fff;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               Restore to Active
             </a>
           <?php else: ?>
-            <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=archive&return_url=<?= urlencode('/admin/products') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Archive this product? It will be hidden from the live website catalogue.');">
+            <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&csrf_token=<?= urlencode($csrfToken) ?>&action=archive&return_url=<?= urlencode('/admin/products') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Archive this product? It will be hidden from the live website catalogue.');">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>
               Archive Product
             </a>
           <?php endif; ?>
 
-          <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&action=permanent&return_url=<?= urlencode('/admin/products') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Are you sure you want to PERMANENTLY delete product \'<?= htmlspecialchars(addslashes($product['name'] ?? 'Product')) ?>\'? This action CANNOT be undone.');">
+          <a href="/admin/delete_product?id=<?= urlencode($product['articleNo'] ?? $product['id']) ?>&csrf_token=<?= urlencode($csrfToken) ?>&action=permanent&return_url=<?= urlencode('/admin/products') ?>" class="btn-action-delete" style="min-height: 48px; padding: 0 20px; background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;" onclick="return confirm('Are you sure you want to PERMANENTLY delete product \'<?= htmlspecialchars(addslashes($product['name'] ?? 'Product')) ?>\'? This action CANNOT be undone.');">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
             Delete Permanently
           </a>

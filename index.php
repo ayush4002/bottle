@@ -24,7 +24,8 @@ $assetMimes = [
     'pdf'   => 'application/pdf',
 ];
 
-if (isset($assetMimes[$ext])) {
+$isPrivateAsset = (bool)preg_match('#(^|/)\.\.(/|$)|^/?(config|app|includes|database|scripts|_archive_unused|admin/partials)(/|$)|(^|/)\.#i', (string)$uriPath);
+if (isset($assetMimes[$ext]) && !$isPrivateAsset) {
     $cleanRel = ltrim($uriPath, '/');
 
     // Check direct file or public/ folder match
@@ -76,8 +77,9 @@ if (isset($assetMimes[$ext])) {
         foreach ($fallbacks as $fb) {
             if (is_file($fb)) {
                 $fbExt = strtolower(pathinfo($fb, PATHINFO_EXTENSION));
+                http_response_code(404);
                 header("Content-Type: " . ($assetMimes[$fbExt] ?? 'image/jpeg'));
-                header("Cache-Control: public, max-age=86400");
+                header("Cache-Control: public, max-age=3600");
                 readfile($fb);
                 exit();
             }
@@ -91,10 +93,23 @@ if (file_exists(__DIR__ . '/config/config.php')) {
     require_once __DIR__ . '/config.php';
 }
 require_once __DIR__ . '/app/Models/ProductModel.php';
+require_once __DIR__ . '/app/Models/SeoModel.php';
+require_once __DIR__ . '/includes/redirect_handler.php';
 require_once __DIR__ . '/app/Controllers/PageController.php';
 require_once __DIR__ . '/app/Controllers/ProductController.php';
 require_once __DIR__ . '/app/Controllers/QuoteController.php';
 require_once __DIR__ . '/app/Controllers/BlogController.php';
+require_once __DIR__ . '/includes/page_cache.php';
+require_once __DIR__ . '/includes/dims.php';
+require_once __DIR__ . '/includes/llms.php';
+
+// Normalise public query params: scalars only, bounded length
+foreach (['category', 'series', 'industry', 'q', 'id', 'page'] as $qp) {
+    if (isset($_GET[$qp])) {
+        $_GET[$qp] = is_scalar($_GET[$qp]) ? mb_substr(trim((string)$_GET[$qp]), 0, 120) : '';
+        if ($_GET[$qp] === '') unset($_GET[$qp]);
+    }
+}
 
 // Parse request path
 $requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
@@ -131,27 +146,33 @@ if ($path === 'admin' || $path === 'admin/' || $path === 'admin/index') {
 }
 if (strpos($path, 'admin/') === 0) {
     $subPath = rtrim(substr($path, 6), '/');
-    if (file_exists(__DIR__ . '/admin/' . $subPath . '.php')) {
+    // Only top-level admin scripts (no sub-directories, no traversal, not auth/header/footer partials)
+    if (preg_match('/^[a-z0-9_-]+$/i', $subPath)
+        && !in_array(strtolower($subPath), ['auth', 'header', 'footer'], true)
+        && is_file(__DIR__ . '/admin/' . $subPath . '.php')) {
         require_once __DIR__ . '/admin/' . $subPath . '.php';
-        exit();
-    }
-    if (file_exists(__DIR__ . '/admin/' . $subPath)) {
-        require_once __DIR__ . '/admin/' . $subPath;
         exit();
     }
 }
 
 // SEO & Crawler Direct Routes
 if ($path === 'sitemap.xml' || $path === 'sitemap') {
-    require_once __DIR__ . '/sitemap.php';
+    header("Content-Type: application/xml; charset=utf-8");
+    header("X-Robots-Tag: noindex");
+    echo SeoModel::generateSitemapXml();
     exit();
 }
 
 if ($path === 'robots.txt') {
     header("Content-Type: text/plain; charset=utf-8");
-    if (file_exists(__DIR__ . '/robots.txt')) {
-        readfile(__DIR__ . '/robots.txt');
-    }
+    echo SeoModel::getRobotsTxt();
+    exit();
+}
+
+if ($path === 'llms.txt') {
+    header("Content-Type: text/plain; charset=utf-8");
+    header("X-Robots-Tag: noindex");
+    echo tn_llms_txt();
     exit();
 }
 
@@ -181,13 +202,29 @@ if ($path === 'api/search') {
 
 // Blog Routes (e.g. /blog, /blog/evolution-rpet-cosmetic-packaging, /insights, /articles)
 if ($path === 'blog' || $path === 'blog/' || $path === 'insights' || $path === 'articles') {
+    $cacheKey = PageCache::keyFor('blog');
+    if ($cached = PageCache::get($cacheKey)) {
+        PageCache::serve($cached);
+    }
+    ob_start();
     BlogController::index();
+    $cachedHtml = ob_get_clean();
+    PageCache::put($cacheKey, $cachedHtml, http_response_code());
+    echo $cachedHtml;
     exit();
 }
 if (strpos($path, 'blog/') === 0) {
     $blogSlug = trim(substr($path, 5), '/');
     if (!empty($blogSlug)) {
+        $cacheKey = PageCache::keyFor('blog-' . $blogSlug);
+        if ($cached = PageCache::get($cacheKey)) {
+            PageCache::serve($cached);
+        }
+        ob_start();
         BlogController::view($blogSlug);
+        $cachedHtml = ob_get_clean();
+        PageCache::put($cacheKey, $cachedHtml, http_response_code());
+        echo $cachedHtml;
         exit();
     }
 }
@@ -200,7 +237,15 @@ if ($path === 'product' || $path === 'product_detail' || strpos($path, 'product/
         $skuId = end($parts);
     }
     if ($skuId) {
+        $cacheKey = PageCache::keyFor('product-' . $skuId);
+        if ($cached = PageCache::get($cacheKey)) {
+            PageCache::serve($cached);
+        }
+        ob_start();
         PageController::renderProductDetail($skuId);
+        $cachedHtml = ob_get_clean();
+        PageCache::put($cacheKey, $cachedHtml, http_response_code());
+        echo $cachedHtml;
         exit();
     }
 }
@@ -228,6 +273,10 @@ if (!empty($path)) {
         case 'custom-solutions':
             $page = 'custom';
             break;
+        case 'faq':
+        case 'frequently-asked-questions':
+            $page = 'faq';
+            break;
         case 'sustainability':
         case 'rpet':
             $page = 'sustainability';
@@ -244,10 +293,20 @@ if (!empty($path)) {
             break;
         default:
             http_response_code(404);
+            SeoModel::log404($requestUri, $_SERVER['HTTP_REFERER'] ?? '');
             $page = '404';
             break;
     }
 }
 
-// Render selected PHP page
+// Render selected PHP page (with full-page output cache)
+$cacheKey = PageCache::keyFor('route-' . $page);
+if ($cached = PageCache::get($cacheKey)) {
+    PageCache::serve($cached);
+}
+ob_start();
 PageController::renderPage($page);
+$cachedHtml = ob_get_clean();
+PageCache::put($cacheKey, $cachedHtml, http_response_code());
+echo $cachedHtml;
+exit();

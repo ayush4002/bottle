@@ -158,8 +158,12 @@ class InquiryModel {
                     }
 
                     if (!empty($searchQuery)) {
-                        $sql .= " AND (`quote_id` LIKE :q OR `name` LIKE :q OR `company` LIKE :q OR `email` LIKE :q OR `product` LIKE :q)";
-                        $params[':q'] = '%' . $searchQuery . '%';
+                        // Native prepares (EMULATE_PREPARES=false) forbid re-using one named placeholder
+                        $sql .= " AND (`quote_id` LIKE :q1 OR `name` LIKE :q2 OR `company` LIKE :q3 OR `email` LIKE :q4 OR `product` LIKE :q5)";
+                        $like = '%' . $searchQuery . '%';
+                        foreach ([':q1', ':q2', ':q3', ':q4', ':q5'] as $ph) {
+                            $params[$ph] = $like;
+                        }
                     }
 
                     $sql .= " ORDER BY `created_at` DESC, `id` DESC";
@@ -173,8 +177,9 @@ class InquiryModel {
             }
         }
 
-        // 2. Fallback to JSON if DB returned empty or wasn't connected
-        if (!$dbLoaded || empty($results)) {
+        // 2. Fallback to JSON only if the DB is unavailable, or the (unfiltered) DB table is still empty
+        $isFiltered = (!empty($statusFilter) && $statusFilter !== 'all') || !empty($searchQuery);
+        if (!$dbLoaded || (empty($results) && !$isFiltered)) {
             $jsonItems = self::getFromJson();
             if (!empty($jsonItems)) {
                 $results = $jsonItems;
@@ -257,7 +262,7 @@ class InquiryModel {
                 $item['status'] = $newStatus;
             }
         }
-        file_put_contents(self::getJsonFile(), json_encode($items, JSON_PRETTY_PRINT));
+        file_put_contents(self::getJsonFile(), json_encode($items, JSON_PRETTY_PRINT), LOCK_EX);
 
         return true;
     }
@@ -300,7 +305,7 @@ class InquiryModel {
             }
         }
         if ($updated) {
-            file_put_contents(self::getJsonFile(), json_encode($items, JSON_PRETTY_PRINT));
+            file_put_contents(self::getJsonFile(), json_encode($items, JSON_PRETTY_PRINT), LOCK_EX);
         }
 
         return $updated;
@@ -324,7 +329,7 @@ class InquiryModel {
         $filtered = array_values(array_filter($items, function($item) use ($idOrQuoteId) {
             return ($item['id'] ?? '') != $idOrQuoteId && ($item['quote_id'] ?? '') !== $idOrQuoteId;
         }));
-        file_put_contents(self::getJsonFile(), json_encode($filtered, JSON_PRETTY_PRINT));
+        file_put_contents(self::getJsonFile(), json_encode($filtered, JSON_PRETTY_PRINT), LOCK_EX);
 
         return true;
     }
@@ -377,6 +382,6 @@ class InquiryModel {
         if (count($items) > 1000) {
             $items = array_slice($items, 0, 1000);
         }
-        @file_put_contents($file, json_encode($items, JSON_PRETTY_PRINT));
+        @file_put_contents($file, json_encode($items, JSON_PRETTY_PRINT), LOCK_EX);
     }
 }

@@ -64,6 +64,7 @@ if ($searchQuery) {
 }
 ?>
 
+<div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
 <section class="page-view" id="view-products">
 
   <!-- =====================================================================
@@ -110,7 +111,7 @@ if ($searchQuery) {
           <?php foreach ($allIndustries as $indSlug => $ind): ?>
             <a href="/products?industry=<?= urlencode($indSlug) ?>" class="tn-market-tile" style="text-decoration: none;">
               <div class="tn-market-img">
-                <img src="<?= htmlspecialchars($ind['image']) ?>" alt="<?= htmlspecialchars($ind['name']) ?>" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+                <img src="<?= htmlspecialchars($ind['image']) ?>" alt="<?= htmlspecialchars($ind['name']) ?>"<?= tn_img_dims($ind['image']) ?> loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
               </div>
               <div class="tn-tile-bar">
                 <span><?= htmlspecialchars($ind['name']) ?></span>
@@ -135,7 +136,7 @@ if ($searchQuery) {
           <?php foreach ($allCategories as $cat): ?>
             <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="tn-tile-card" style="text-decoration: none;">
               <div class="tn-tile-image">
-                <img src="<?= htmlspecialchars($cat['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($cat['name']) ?>" loading="lazy" />
+                <img src="<?= htmlspecialchars($cat['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($cat['name']) ?>"<?= tn_img_dims($cat['image'] ?? '/logo_svg.svg') ?> loading="lazy" />
               </div>
               <div class="tn-tile-bar"><?= htmlspecialchars($cat['name']) ?></div>
             </a>
@@ -389,7 +390,7 @@ if ($searchQuery) {
                    data-volume="<?= htmlspecialchars($s['volumeRange'] ?? '') ?>"
                    style="text-decoration: none;">
                   <div class="tn-tile-image">
-                    <img src="<?= htmlspecialchars($s['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($s['name']) ?>" loading="lazy" />
+                    <img src="<?= htmlspecialchars($s['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($s['name']) ?>"<?= tn_img_dims($s['image'] ?? '/logo_svg.svg') ?> loading="lazy" />
                   </div>
                   <div class="tn-tile-bar"><?= htmlspecialchars($s['name']) ?></div>
                 </a>
@@ -543,7 +544,7 @@ if ($searchQuery) {
 
         <?php if ($currentLevel === 'industry' && !empty($industryInfo['image'])): ?>
           <div style="display: flex; align-items: center; justify-content: center; gap: 20px; max-width: 820px; margin: 18px auto 0; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 12px 18px; border: 1px solid rgba(255,255,255,0.12);">
-            <img src="<?= htmlspecialchars($industryInfo['image']) ?>" alt="<?= htmlspecialchars($industryInfo['name']) ?>" style="height: 60px; width: 90px; object-fit: cover; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.25);" onerror="this.style.display='none';" />
+            <img src="<?= htmlspecialchars($industryInfo['image']) ?>" alt="<?= htmlspecialchars($industryInfo['name']) ?>"<?= tn_img_dims($industryInfo['image']) ?> style="height: 60px; width: 90px; object-fit: cover; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.25);" onerror="this.style.display='none';" />
             <span style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.5; text-align: left;">
               <?= htmlspecialchars($industryInfo['desc']) ?>
             </span>
@@ -835,7 +836,7 @@ if ($searchQuery) {
                      style="text-decoration: none;">
                     
                     <div class="tn-sku-img">
-                      <img src="<?= htmlspecialchars($sku['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($sku['name'] ?? '') ?>" loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+                      <img src="<?= htmlspecialchars($sku['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($sku['name'] ?? '') ?>"<?= tn_img_dims($sku['image'] ?? '/logo_svg.svg') ?> loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
                     </div>
                     <div class="tn-sku-bar"><?= htmlspecialchars($sku['name'] ?? 'Product SKU') ?></div>
 

@@ -55,10 +55,10 @@ This guide walks you step-by-step through uploading and deploying your website a
 
 ---
 
-### Step 4: Configure Database in `config/config.php` (No .env Needed)
+### Step 4: Configure Secrets in `config/secrets.php` (not committed to git)
 
 1. In your cPanel **File Manager**, navigate to the **`config/`** folder.
-2. Right-click **`config.php`** and click **Edit**.
+2. Copy **`secrets.example.php`** to **`secrets.php`**, right-click it and click **Edit**. Fill in DB, SMTP and the admin password hash (`php scripts/set-admin-password.php`). Never put credentials in `config.php`.
 3. Update the 4 database lines near the top with your cPanel database info:
 
 ```php
@@ -99,7 +99,7 @@ Ensure the following directories have write permissions for image uploads and JS
 1. **Visit Live Website**: Open `https://yourdomain.com` in your browser.
    - Verify homepage banners, product categories, and bottle listings display correctly.
 2. **Access Admin Panel**: Go to `https://yourdomain.com/admin/login` (or shortcut `https://yourdomain.com/login`).
-   - Sign in with your `ADMIN_USER` and `ADMIN_PASS`.
+   - Sign in with your `ADMIN_USER` and the password whose hash is stored as `ADMIN_PASS_HASH` in `config/secrets.php`.
 3. **Test Product Editing**:
    - Go to `/admin/products`.
    - Click **Edit** on a product, change a field, and click **Save Changes**.

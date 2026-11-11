@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__, 3) . '/includes/html_sanitizer.php';
 // Single Blog Post View
 $author = $post['author_name'] ?? 'TrueNorth Technical Division';
 $role = $post['author_role'] ?? 'Senior Packaging Engineer';
@@ -6,6 +7,7 @@ $publishedDate = !empty($post['published_at']) ? date('F d, Y', strtotime($post[
 $postTags = !empty($post['tags']) ? array_filter(array_map('trim', explode(',', $post['tags']))) : [];
 $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
+<div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
 
 <div class="tn-blog-detail-page">
   
@@ -86,14 +88,52 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
         <!-- FEATURED HERO IMAGE -->
         <?php if (!empty($post['featured_image'])): ?>
           <div style="margin-bottom: 36px; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0,0,0,0.06);">
-            <img src="<?= htmlspecialchars($post['featured_image']) ?>" alt="<?= htmlspecialchars($post['title']) ?>" style="width: 100%; max-height: 460px; object-fit: cover; display: block;" onerror="this.src='/logo_svg.svg'" />
+            <img src="<?= htmlspecialchars($post['featured_image']) ?>" alt="<?= htmlspecialchars($post['title']) ?>"<?= tn_img_dims($post['featured_image']) ?> style="width: 100%; max-height: 460px; object-fit: cover; display: block;" onerror="this.src='/logo_svg.svg'" />
           </div>
         <?php endif; ?>
 
+        <!-- ON THIS PAGE (auto-generated table of contents) -->
+        <div id="tn-toc-box" style="display:none; border:1px solid #e2e8f0; border-left:3px solid #b8892e; border-radius:10px; background:#f8fafc; padding:18px 20px; margin-bottom:32px; max-width:460px;">
+          <strong style="font-size:0.72rem; letter-spacing:0.08em; color:#b8892e; text-transform:uppercase;">On This Page</strong>
+          <ol id="tn-toc-list" style="margin:10px 0 0; padding-left:18px; color:#334155;"></ol>
+        </div>
+
         <!-- BODY ARTICLE CONTENT -->
         <div class="tn-blog-article-body" style="font-size: 1.05rem; line-height: 1.75; color: #334155;">
-          <?= $post['content'] ?>
+          <?= tn_sanitize_html($post['content'] ?? '') ?>
         </div>
+        <script>
+          // Build a "On this page" table of contents from the article's real headings
+          (function () {
+            var body = document.querySelector('.tn-blog-article-body');
+            if (!body) return;
+            var heads = body.querySelectorAll('h2, h3');
+            if (heads.length < 3) return;
+            var box = document.getElementById('tn-toc-box');
+            var list = document.getElementById('tn-toc-list');
+            if (!box || !list) return;
+            var n = 0;
+            heads.forEach(function (h) {
+              var id = 'tn-h' + (++n);
+              h.id = id;
+              var li = document.createElement('li');
+              li.style.fontSize = '0.9rem';
+              li.style.marginBottom = '4px';
+              if (h.tagName === 'H3') li.style.paddingLeft = '14px';
+              var a = document.createElement('a');
+              a.href = '#' + id;
+              a.textContent = h.textContent;
+              a.style.color = '#334155';
+              a.style.textDecoration = 'none';
+              a.style.borderBottom = '1px solid transparent';
+              a.addEventListener('mouseenter', function () { a.style.borderBottomColor = '#b8892e'; });
+              a.addEventListener('mouseleave', function () { a.style.borderBottomColor = 'transparent'; });
+              li.appendChild(a);
+              list.appendChild(li);
+            });
+            box.style.display = 'block';
+          })();
+        </script>
 
         <!-- TAGS -->
         <?php if (!empty($postTags)): ?>
@@ -122,15 +162,15 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
         </div>
 
         <!-- DIRECT RFQ IN-ARTICLE CTA BANNER -->
-        <div style="margin-top: 44px; padding: 32px; background: linear-gradient(135deg, #0e1b2c 0%, #16273f 55%, #1e3a5f 100%); border-left: 5px solid #b8892e; border-radius: 12px; color: #fff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div class="tn-cta-banner" style="margin-top: 44px; padding: 32px;">
           <div style="flex: 1 1 450px;">
-            <span style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: #d4a754; text-transform: uppercase;">Direct Factory Packaging &amp; Sampling</span>
-            <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 6px 0 8px;">Need Samples or Itemized Technical Quotations?</h3>
-            <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+            <span class="tn-cta-badge">Direct Factory Packaging &amp; Sampling</span>
+            <h2 class="tn-cta-title" style="font-size: 1.35rem; margin: 6px 0 8px;">Need Samples or Itemized Technical Quotations?</h2>
+            <p class="tn-cta-desc" style="font-size: 0.9rem;">
               Speak directly with our packaging engineers. We provide technical 2D/3D CAD drawings, material safety data sheets (MSDS), and physical sample batches.
             </p>
           </div>
-          <div>
+          <div class="tn-cta-action">
             <button type="button" class="tn-btn-gold" onclick="window.openInquiry('Blog Post RFQ: <?= addslashes($post['title']) ?>')" style="padding: 12px 24px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; white-space: nowrap;">
               REQUEST A QUOTE &amp; SAMPLES
             </button>
@@ -151,7 +191,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
             <?php foreach ($recentPosts as $rp): ?>
               <a href="/blog/<?= htmlspecialchars($rp['slug']) ?>" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                <img src="<?= htmlspecialchars($rp['featured_image']) ?>" alt="<?= htmlspecialchars($rp['title']) ?>" style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='/logo_svg.svg'" />
+                <img src="<?= htmlspecialchars($rp['featured_image']) ?>" alt="<?= htmlspecialchars($rp['title']) ?>"<?= tn_img_dims($rp['featured_image']) ?> style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='/logo_svg.svg'" />
                 <div style="padding: 16px; flex: 1; display: flex; flex-direction: column;">
                   <span style="font-size: 0.7rem; font-weight: 700; color: #b8892e; text-transform: uppercase; margin-bottom: 6px;"><?= htmlspecialchars($rp['category']) ?></span>
                   <h4 style="font-size: 0.96rem; font-weight: 700; color: #16273f; line-height: 1.35; margin: 0 0 8px; flex: 1;">

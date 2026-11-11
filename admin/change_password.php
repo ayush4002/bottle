@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Invalid security token. Please try again.";
     } elseif ($newPass !== $confirmPass) {
         $error = "New passwords do not match.";
-    } elseif (strlen($newPass) < 6) {
-        $error = "New password must be at least 6 characters long.";
+    } elseif (strlen($newPass) < 10) {
+        $error = "New password must be at least 10 characters long.";
     } else {
         $username = $_SESSION['admin_user'] ?? 'admin';
         $updated = false;
@@ -42,8 +42,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        if (!$updated && $currentPass === ADMIN_PASS) {
-            $updated = true;
+        // JSON user store (also used for the bootstrap admin from config/secrets.php)
+        if (!$updated) {
+            $usersFile = dirname(__DIR__) . '/config/admin_users.json';
+            $usersList = file_exists($usersFile) ? (json_decode(file_get_contents($usersFile), true) ?: []) : [];
+            $idx = null;
+            foreach ($usersList as $i => $u) {
+                if (strcasecmp($u['username'] ?? '', $username) === 0) { $idx = $i; break; }
+            }
+            $currentOk = false;
+            if ($idx !== null && !empty($usersList[$idx]['password_hash'])) {
+                $currentOk = password_verify($currentPass, $usersList[$idx]['password_hash']);
+            } elseif (strcasecmp($username, ADMIN_USER) === 0 && ADMIN_PASS_HASH !== '') {
+                $currentOk = password_verify($currentPass, ADMIN_PASS_HASH);
+            }
+            if ($currentOk) {
+                $newHash = password_hash($newPass, PASSWORD_DEFAULT);
+                if ($idx === null) {
+                    $usersList[] = [
+                        'id' => count($usersList) + 1,
+                        'username' => $username,
+                        'email' => $_SESSION['admin_email'] ?? '',
+                        'role' => $_SESSION['admin_role'] ?? 'Super Admin',
+                        'status' => 'Active',
+                        'password_hash' => $newHash,
+                        'created_at' => date('Y-m-d H:i:s')
+                    ];
+                } else {
+                    $usersList[$idx]['password_hash'] = $newHash;
+                }
+                $updated = file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT), LOCK_EX) !== false;
+            }
         }
 
         if ($updated) {
@@ -79,12 +108,12 @@ $token = generateCsrfToken();
 
     <div style="margin-bottom: 18px;">
       <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #cbd5e1; margin-bottom: 6px;">New Password *</label>
-      <input type="password" name="new_password" required class="form-input-admin" style="width: 100%; box-sizing: border-box; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" minlength="6" />
+      <input type="password" name="new_password" required class="form-input-admin" style="width: 100%; box-sizing: border-box; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" minlength="10" />
     </div>
 
     <div style="margin-bottom: 24px;">
       <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #cbd5e1; margin-bottom: 6px;">Confirm New Password *</label>
-      <input type="password" name="confirm_password" required class="form-input-admin" style="width: 100%; box-sizing: border-box; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" minlength="6" />
+      <input type="password" name="confirm_password" required class="form-input-admin" style="width: 100%; box-sizing: border-box; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" minlength="10" />
     </div>
 
     <button type="submit" class="tn-btn-gold" style="width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">UPDATE PASSWORD</button>

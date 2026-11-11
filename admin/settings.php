@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/auth.php';
-checkAdminAuth();
+checkRole(['Super Admin']);
 
 require_once dirname(__DIR__) . '/config/config.php';
 require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
@@ -24,7 +24,8 @@ $mailMode = $currentSettings['mail_mode'] ?? 'smtp';
 $smtpHost = $currentSettings['smtp_host'] ?? (defined('SMTP_HOST') ? SMTP_HOST : 'mail.wetruenorthgroup.com');
 $smtpPort = $currentSettings['smtp_port'] ?? (defined('SMTP_PORT') ? SMTP_PORT : 465);
 $smtpUser = $currentSettings['smtp_user'] ?? (defined('SMTP_USER') ? SMTP_USER : 'info@wetruenorthgroup.com');
-$smtpPass = $currentSettings['smtp_pass'] ?? (defined('SMTP_PASS') ? SMTP_PASS : 'TrueNorth2026Group');
+// The SMTP password is kept in config/smtp_secret.json (git-ignored), never in site_settings.json
+$smtpPass = MailService::getStoredSmtpPassword();
 $fromName = $currentSettings['from_name'] ?? 'TrueNorth Group';
 $fromEmail = $currentSettings['from_email'] ?? $contactEmail;
 $replyTo = $currentSettings['reply_to'] ?? $contactEmail;
@@ -66,7 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $smtpHost = trim($_POST['smtp_host'] ?? $smtpHost);
         $smtpPort = (int)($_POST['smtp_port'] ?? $smtpPort);
         $smtpUser = trim($_POST['smtp_user'] ?? $smtpUser);
-        $smtpPass = trim($_POST['smtp_pass'] ?? $smtpPass);
+        $newSmtpPass = trim($_POST['smtp_pass'] ?? '');
+        if ($newSmtpPass !== '') {
+            // Blank field = keep the existing password
+            MailService::storeSmtpPassword($newSmtpPass);
+            $smtpPass = $newSmtpPass;
+        }
         $fromName = trim($_POST['from_name'] ?? $fromName);
         $fromEmail = trim($_POST['from_email'] ?? $fromEmail);
         $replyTo = trim($_POST['reply_to'] ?? $replyTo);
@@ -83,14 +89,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'smtp_host' => $smtpHost,
             'smtp_port' => $smtpPort,
             'smtp_user' => $smtpUser,
-            'smtp_pass' => $smtpPass,
             'from_name' => $fromName,
             'from_email' => $fromEmail,
             'reply_to' => $replyTo,
             'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        file_put_contents($settingsFile, json_encode($savedData, JSON_PRETTY_PRINT));
+        $mailMode = in_array($mailMode, ['smtp', 'mail'], true) ? $mailMode : 'smtp';
+        $savedData['mail_mode'] = $mailMode;
+        foreach (['contact_email', 'from_email', 'reply_to'] as $emailKey) {
+            if (!empty($savedData[$emailKey]) && !filter_var($savedData[$emailKey], FILTER_VALIDATE_EMAIL)) {
+                $savedData[$emailKey] = $currentSettings[$emailKey] ?? '';
+            }
+        }
+        file_put_contents($settingsFile, json_encode($savedData, JSON_PRETTY_PRINT), LOCK_EX);
+        if (class_exists('SeoModel')) { SeoModel::flushCache(); }
         $message = "Website & Outgoing Email settings updated and saved successfully!";
     }
 }
@@ -196,7 +209,7 @@ require_once __DIR__ . '/header.php';
         </div>
         <div>
           <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #cbd5e1; margin-bottom: 6px;">SMTP Password</label>
-          <input type="password" name="smtp_pass" value="<?= htmlspecialchars($smtpPass) ?>" placeholder="********" style="width: 100%; box-sizing: border-box; padding: 11px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" />
+          <input type="password" name="smtp_pass" value="" autocomplete="new-password" placeholder="<?= $smtpPass !== '' ? '•••••••• (saved — leave blank to keep)' : 'Not set' ?>" style="width: 100%; box-sizing: border-box; padding: 11px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" />
         </div>
       </div>
 

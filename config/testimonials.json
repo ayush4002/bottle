@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "client_name": "Category-Management Director",
+        "company": "Global Cosmetics Retailer",
+        "role": "Procurement",
+        "quote": "We moved our entire dropper and serum line to TrueNorth's rPET bottles. Tolerance is consistent across all 10M units and the cleanroom documentation came with every lot.",
+        "rating": 5,
+        "logo_image": "",
+        "is_logo": 0,
+        "status": "published",
+        "sort_order": 1
+    },
+    {
+        "id": 2,
+        "client_name": "Supply-Chain Head",
+        "company": "Pharma Contract Manufacturer",
+        "role": "Operations",
+        "quote": "The 100ml HD dome cap bottles passed our in-house leak trials at first submission. Tooling was delivered on the promised 10-week window.",
+        "rating": 5,
+        "logo_image": "",
+        "is_logo": 0,
+        "status": "published",
+        "sort_order": 2
+    },
+    {
+        "id": 3,
+        "client_name": "Founder",
+        "company": "Nutraceutical Start-up",
+        "role": "Product",
+        "quote": "From first sample to 50,000 units in eight weeks. The 30/410 wide-mouth jars fit our powder formats perfectly and the MOQs were flexible for a launch.",
+        "rating": 5,
+        "logo_image": "",
+        "is_logo": 0,
+        "status": "published",
+        "sort_order": 3
+    },
+    {
+        "id": 4,
+        "client_name": "",
+        "company": "Cosmetics",
+        "role": "",
+        "quote": "",
+        "rating": 0,
+        "logo_image": "/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp",
+        "is_logo": 1,
+        "status": "published",
+        "sort_order": 1
+    },
+    {
+        "id": 5,
+        "client_name": "",
+        "company": "Pharma",
+        "role": "",
+        "quote": "",
+        "rating": 0,
+        "logo_image": "/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp",
+        "is_logo": 1,
+        "status": "published",
+        "sort_order": 2
+    },
+    {
+        "id": 6,
+        "client_name": "",
+        "company": "Agro",
+        "role": "",
+        "quote": "",
+        "rating": 0,
+        "logo_image": "/vikaas_inputs/thumbnails/thumbnail_caps_and_closures.webp",
+        "is_logo": 1,
+        "status": "published",
+        "sort_order": 3
+    }
+]

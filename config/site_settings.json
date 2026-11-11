@@ -10,7 +10,6 @@
     "smtp_host": "mail.wetruenorthgroup.com",
     "smtp_port": 465,
     "smtp_user": "info@wetruenorthgroup.com",
-    "smtp_pass": "TrueNorth2026Group",
     "from_name": "TrueNorth Group",
     "from_email": "info@wetruenorthgroup.com",
     "reply_to": "info@wetruenorthgroup.com",

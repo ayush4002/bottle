@@ -17,7 +17,7 @@ if (empty($usersList)) {
             'created_at' => '2026-01-01 00:00:00'
         ]
     ];
-    file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT));
+    file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT), LOCK_EX);
 }
 
 $message = '';
@@ -32,7 +32,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete') {
         $usersList = array_values(array_filter($usersList, function($u) use ($delUser) {
             return ($u['username'] ?? '') !== $delUser;
         }));
-        file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT));
+        file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT), LOCK_EX);
         $message = "Admin user '{$delUser}' removed successfully.";
     }
 }
@@ -48,8 +48,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = trim($_POST['password'] ?? '');
         $role = trim($_POST['role'] ?? 'Editor');
 
+        if (!in_array($role, ['Super Admin', 'Product Manager', 'Editor'], true)) {
+            $role = 'Editor';
+        }
         if (empty($username) || empty($password)) {
             $error = "Username and password are required.";
+        } elseif (!preg_match('/^[A-Za-z0-9._@-]{3,50}$/', $username)) {
+            $error = "Username may only contain letters, numbers, dot, dash, underscore and @ (3-50 chars).";
+        } elseif (strlen($password) < 10) {
+            $error = "Password must be at least 10 characters long.";
         } else {
             // Check if username exists
             $exists = false;
@@ -73,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'created_at' => date('Y-m-d H:i:s')
                 ];
                 $usersList[] = $newUser;
-                file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT));
+                file_put_contents($usersFile, json_encode($usersList, JSON_PRETTY_PRINT), LOCK_EX);
                 $message = "Admin user '{$username}' created successfully with role '{$role}'!";
             }
         }
@@ -170,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </td>
               <td style="padding: 12px 10px; text-align: right;">
                 <?php if (!$isPrimary): ?>
-                  <a href="/admin/users?action=delete&user=<?= urlencode($uName) ?>" onclick="return confirm('Delete admin user \'<?= htmlspecialchars(addslashes($uName)) ?>\'?');" style="color: #ef4444; font-size: 0.8rem; font-weight: 600; text-decoration: none; padding: 4px 8px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 4px;">
+                  <a href="/admin/users?action=delete&user=<?= urlencode($uName) ?>&csrf_token=<?= urlencode($csrfToken) ?>" onclick="return confirm('Delete admin user \'<?= htmlspecialchars(addslashes($uName)) ?>\'?');" style="color: #ef4444; font-size: 0.8rem; font-weight: 600; text-decoration: none; padding: 4px 8px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 4px;">
                     Delete
                   </a>
                 <?php else: ?>

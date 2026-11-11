@@ -1,0 +1,2 @@
+# Partials are included by admin pages only; never reachable directly
+Require all denied

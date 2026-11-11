@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__) . '/includes/upload_guard.php';
 require_once __DIR__ . '/auth.php';
 checkAdminAuth();
 
@@ -87,20 +88,18 @@ function handleImageSlot($slotKey, $existingKey) {
     if (isset($_FILES[$slotKey]) && $_FILES[$slotKey]['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES[$slotKey]['tmp_name'];
         $fileName = $_FILES[$slotKey]['name'];
-        $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-        $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
+        $fileExtension = tn_upload_safe_image_ext($fileTmpPath, $fileName);
 
-        if (in_array($fileExtension, $allowedExtensions)) {
+        if ($fileExtension !== false) {
             $uploadDir = UPLOAD_DIR;
             if (!file_exists($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
 
-            $newFileName = 'prod_' . time() . '_' . rand(100, 999) . '.' . $fileExtension;
+            $newFileName = 'prod_' . time() . '_' . bin2hex(random_bytes(3)) . '.' . $fileExtension;
             $destPath = $uploadDir . '/' . $newFileName;
 
             if (move_uploaded_file($fileTmpPath, $destPath)) {
-                @copy($destPath, PUBLIC_PATH . '/' . $newFileName);
                 return UPLOAD_URL . '/' . $newFileName;
             }
         }
@@ -187,6 +186,61 @@ $productData = [
 ];
 
 $saved = ProductModel::saveProduct($productData);
+
+if ($saved) {
+    require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
+    $seoSlug = trim($_POST['seo_slug'] ?? '');
+    if (empty($seoSlug)) {
+        $seoSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+    }
+    $oldSlug = trim($_POST['old_seo_slug'] ?? '');
+
+    $seoData = [
+        'page_type' => 'product',
+        'page_ref_id' => $id,
+        'url_slug' => '/product/' . $seoSlug,
+        'old_url_slug' => !empty($oldSlug) ? ('/product/' . $oldSlug) : null,
+        'meta_title' => trim($_POST['meta_title'] ?? $seoTitle),
+        'meta_description' => trim($_POST['meta_description'] ?? $seoDescription),
+        'meta_keywords' => trim($_POST['meta_keywords'] ?? ''),
+        'focus_keyword' => trim($_POST['focus_keyword'] ?? ''),
+        'canonical_url' => trim($_POST['canonical_url'] ?? ''),
+        'robots_index' => isset($_POST['robots_index']) ? (int)$_POST['robots_index'] : 1,
+        'robots_follow' => 1,
+        'og_title' => trim($_POST['og_title'] ?? ''),
+        'og_description' => trim($_POST['og_description'] ?? ''),
+        'og_image' => trim($_POST['og_image'] ?? $img1),
+        'h1_override' => trim($_POST['h1_override'] ?? ''),
+        'schema_type' => trim($_POST['schema_type'] ?? 'Product'),
+        'custom_schema_json' => trim($_POST['custom_schema_json'] ?? ''),
+        'cornerstone_content' => !empty($_POST['cornerstone_content']) ? 1 : 0,
+        'breadcrumbs_title' => trim($_POST['breadcrumbs_title'] ?? ''),
+        'robots_follow' => isset($_POST['robots_follow']) ? (int)$_POST['robots_follow'] : 1,
+        'twitter_title' => trim($_POST['twitter_title'] ?? ''),
+        'twitter_description' => trim($_POST['twitter_description'] ?? ''),
+        'twitter_image' => trim($_POST['twitter_image'] ?? ''),
+        'twitter_card' => trim($_POST['twitter_card'] ?? 'summary_large_image'),
+        'advanced_robots' => trim($_POST['advanced_robots'] ?? '')
+    ];
+    SeoModel::savePageSeo($seoData, $_SESSION['admin_user']['username'] ?? 'admin');
+
+    // Save FAQs repeater
+    $faqQuestions = $_POST['faq_questions'] ?? [];
+    $faqAnswers = $_POST['faq_answers'] ?? [];
+    $faqsToSave = [];
+    if (is_array($faqQuestions)) {
+        foreach ($faqQuestions as $i => $q) {
+            $a = $faqAnswers[$i] ?? '';
+            if (!empty(trim($q)) && !empty(trim($a))) {
+                $faqsToSave[] = [
+                    'question' => trim($q),
+                    'answer' => trim($a)
+                ];
+            }
+        }
+    }
+    SeoModel::saveFaqs('product', $id, $faqsToSave, $_SESSION['admin_user']['username'] ?? 'admin');
+}
 
 $isAjax = !empty($_POST['ajax']) || (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
 

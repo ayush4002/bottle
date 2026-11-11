@@ -50,6 +50,10 @@ if ($isAjax) {
 $parsedUrl = parse_url($returnUrl);
 $rawPath = $parsedUrl['path'] ?? '/admin/products';
 $path = preg_replace('/\.php$/i', '', $rawPath);
+// Only allow redirects back into the admin panel (blocks open redirects like //evil.com or /\evil.com)
+if (!empty($parsedUrl['host']) || !preg_match('#^/admin(/[A-Za-z0-9_-]*)*$#', $path)) {
+    $path = '/admin/products';
+}
 $queryParams = [];
 if (!empty($parsedUrl['query'])) {
     parse_str($parsedUrl['query'], $queryParams);

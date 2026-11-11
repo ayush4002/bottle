@@ -1,7 +1,8 @@
   <!-- =======================================================================
        VIEW: SUSTAINABILITY & CIRCULAR ECONOMY
        ======================================================================= -->
-  <section class="page-view" id="view-sustainability">
+  <div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
+<section class="page-view" id="view-sustainability">
     
     <div class="products-page-title-banner about-hero-banner">
       <div class="tn-container">
@@ -92,23 +93,23 @@
       <div class="tn-container">
         <div class="rpet-layout">
           <div class="rpet-cards-stack">
-            <div class="rpet-card" onclick="window.goToCategory('Bottles PET')">
+            <a href="/products?category=cosmetics-bottles" class="rpet-card" style="text-decoration: none;">
               <div class="tn-tile-image" style="background: #EEF2F6 !important;">
-                <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Sustainable rPET Bottles" loading="lazy" style="filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.12)) !important;" />
+                <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Sustainable rPET Bottles" loading="lazy" width="392" height="1115" style="max-width:100%;height:auto; filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.12)) !important;" />
               </div>
               <div class="rpet-card-bar">Sustainable rPET Bottles</div>
-            </div>
-            <div class="rpet-card" onclick="window.goToCategory('PET Jars')">
+            </a>
+            <a href="/products?category=jars" class="rpet-card" style="text-decoration: none;">
               <div class="tn-tile-image" style="background: #EEF2F6 !important;">
-                <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="Sustainable rPET Jars" loading="lazy" style="filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.12)) !important;" />
+                <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="Sustainable rPET Jars" loading="lazy" width="665" height="1178" style="max-width:100%;height:auto; filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.12)) !important;" />
               </div>
               <div class="rpet-card-bar">Sustainable rPET Jars</div>
-            </div>
+            </a>
           </div>
 
           <div class="rpet-text-content">
             <span style="font-size: 0.8125rem; font-weight: 800; color: #15803d; letter-spacing: 0.05em; text-transform: uppercase;">CIRCULAR INVENTORY &amp; LOW MOQS</span>
-            <h3 style="margin-top: 6px;">Ready-to-Ship Recycled Formats &amp; Custom Runs</h3>
+            <h2 class="tn-section-title" style="text-align: left; margin: 6px 0 14px 0; font-size: clamp(1.25rem, 2vw, 1.6rem);">Ready-to-Ship Recycled Formats &amp; Custom Runs</h2>
             <p class="pcr-summary-lead">
               Transitioning to eco-packaging shouldn't require insurmountable volume barriers. TrueNorth Group bridges high sustainability standards with accessible manufacturing scale.
             </p>
@@ -192,7 +193,7 @@
     <!-- Bottom Action Strip -->
     <section class="tn-section tn-section-grey" style="padding: 36px 0; border-top: 1px solid #E2E8F0;">
       <div class="tn-container" style="text-align: center;">
-        <h3 style="font-size: 1.25rem; font-weight: 800; color: #16273f; margin-bottom: 8px;">Ready to Transition Your Packaging Line to Recycled Materials?</h3>
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #16273f; margin-bottom: 8px;">Ready to Transition Your Packaging Line to Recycled Materials?</h2>
         <p style="font-size: 0.9375rem; color: #64748b; max-width: 600px; margin: 0 auto 20px auto;">
           Our technical engineering team will review your liquid chemistry, dispensing needs, and volume targets to dispatch compliant sample kits.
         </p>

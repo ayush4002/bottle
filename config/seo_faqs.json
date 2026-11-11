@@ -1,0 +1,58 @@
+[
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "What is your minimum order quantity (MOQ)?",
+    "answer": "Standard catalogue bottles, jars, caps and pumps carry MOQs from 5,000 to 30,000 units depending on the item. Custom moulds and fully bespoke containers start from agreed project quantities. Contact our sales team for a per-item MOQ sheet.",
+    "sort_order": 1
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "Do you provide free samples before placing an order?",
+    "answer": "Yes. We dispatch sample batches from stock catalogue items free of charge so you can evaluate finish, dimensions and closure compatibility before committing to a production run.",
+    "sort_order": 2
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "Can you build a custom mould to our exact container design?",
+    "answer": "Yes. Our cleanroom engineering team takes CAD drawings or reference samples and develops injection-blow moulds in-house. Typical mould tooling lead time is 8-12 weeks including first-article trials.",
+    "sort_order": 3
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "Are your containers food-grade and pharma-compliant?",
+    "answer": "We produce in a Class 10,000 cleanroom under TUV NORD ISO 9001 protocols. Materials are suitable for food, cosmetic, pharmaceutical and nutraceutical contact, and we support FDA-compliant documentation on request.",
+    "sort_order": 4
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "What neck finishes and closure systems do you support?",
+    "answer": "The range covers 18/410 through 28/410 neck finishes with compatible caps, flip-tops, lotion pumps, fine-mist sprayers and continuous sprays. Closure compatibility is verified during sample trials.",
+    "sort_order": 5
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "Do you manufacture rPET (recycled PET) packaging?",
+    "answer": "Yes. We offer bottles and jars in 100% post-consumer rPET for sustainability targets, with MOQs from 30,000 units. Conventional virgin PET remains available for immediate stock requirements.",
+    "sort_order": 6
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "How do you pack and ship orders?",
+    "answer": "Products ship in export-grade carton and pallet packaging sized to your lane. We handle global seaport logistics and provide per-container packing lists, plus leak and drop test reports for fragile items.",
+    "sort_order": 7
+  },
+  {
+    "page_type": "page",
+    "page_ref_id": "faq",
+    "question": "What payment and delivery terms do you work with?",
+    "answer": "We support standard international terms including LC and TT with milestone-based production updates. Delivery is quoted lane by lane; urgent programmes can be prioritised on stock-eligible items.",
+    "sort_order": 8
+  }
+]

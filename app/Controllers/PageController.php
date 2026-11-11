@@ -10,7 +10,7 @@ require_once dirname(__DIR__) . '/Models/ProductModel.php';
 class PageController {
 
     public static function renderPage($pageName = 'home', $params = []) {
-        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability', 'terms', 'privacy', '404'];
+        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability', 'faq', 'terms', 'privacy', '404'];
         
         if (!in_array($pageName, $allowedPages)) {
             $pageName = '404';
@@ -45,8 +45,9 @@ class PageController {
     public static function renderProductDetail($skuId) {
         $sku = ProductModel::getSkuById($skuId);
         if (!$sku) {
-            header("Location: /products");
-            exit();
+            http_response_code(404);
+            self::renderPage('404');
+            return;
         }
 
         $seriesSlug = $sku['seriesSlug'] ?? null;
@@ -57,6 +58,17 @@ class PageController {
         $company = ProductModel::getCompanyInfo();
         $categories = ProductModel::getCategories();
         $activePage = 'products';
+
+        // Related products (checklist §5): siblings in the same category, excluding the current SKU
+        $tnCurrentId = (string)($sku['id'] ?? ($sku['sku'] ?? ''));
+        $tnRelated = [];
+        if ($categorySlug) {
+            foreach (ProductModel::getSkusByCategory($categorySlug) as $tnSib) {
+                if ((string)($tnSib['id'] ?? ($tnSib['sku'] ?? '')) === $tnCurrentId) continue;
+                $tnRelated[] = $tnSib;
+                if (count($tnRelated) >= 4) break;
+            }
+        }
 
         require_once APP_PATH . '/Views/layouts/header.php';
         require_once APP_PATH . '/Views/pages/product_detail.php';

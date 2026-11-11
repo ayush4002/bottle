@@ -1,7 +1,8 @@
   <!-- =======================================================================
        VIEW 2: ABOUT PAGE (Comprehensive Brand Heritage & Compliance)
        ======================================================================= -->
-  <section class="page-view" id="view-about">
+  <div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
+<section class="page-view" id="view-about">
     
     <!-- About Hero Title Banner -->
     <div class="products-page-title-banner about-hero-banner">
@@ -213,7 +214,7 @@
             <!-- Manufacturing Image Showcase -->
             <div class="about-gallery-card">
               <div class="about-gallery-stage">
-                <img id="about-main-gallery-img" src="/pet_bottles_manufacturing_facility.webp" alt="PET Bottles Manufacturing Facility" class="about-gallery-main-img" loading="lazy" />
+                <img id="about-main-gallery-img" src="/pet_bottles_manufacturing_facility.webp" alt="PET Bottles Manufacturing Facility" class="about-gallery-main-img" loading="lazy" width="413" height="180" />
                 <div class="about-gallery-caption-bar" id="about-gallery-caption">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                   <span>PET Bottles Manufacturing Facility</span>
@@ -378,7 +379,7 @@
           
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/photo_cleanroom.webp" alt="Cleanroom Production Environment" loading="lazy" />
+              <img src="/photo_cleanroom.webp" alt="Cleanroom Production Environment" loading="lazy" width="1000" height="746" style="width:100%;height:auto;" />
               <span class="about-infra-tag">Cleanroom Class 10k</span>
             </div>
             <div class="about-infra-body">
@@ -389,7 +390,7 @@
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/photo_injection_molding.webp" alt="Injection Blow Moulding" loading="lazy" />
+              <img src="/photo_injection_molding.webp" alt="Injection Blow Moulding" loading="lazy" width="1000" height="746" style="width:100%;height:auto;" />
               <span class="about-infra-tag">Automated Tooling</span>
             </div>
             <div class="about-infra-body">
@@ -400,7 +401,7 @@
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/photo_leak_trials.webp" alt="1,000+ Leak-Free Trials" loading="lazy" />
+              <img src="/photo_leak_trials.webp" alt="1,000+ Leak-Free Trials" loading="lazy" width="1000" height="746" style="width:100%;height:auto;" />
               <span class="about-infra-tag">In-House R&amp;D</span>
             </div>
             <div class="about-infra-body">
@@ -411,7 +412,7 @@
 
           <div class="about-infra-card">
             <div class="about-infra-img-wrap">
-              <img src="/photo_global_supply.webp" alt="Export Packaging &amp; Dispatch" loading="lazy" />
+              <img src="/photo_global_supply.webp" alt="Export Packaging &amp; Dispatch" loading="lazy" width="1000" height="746" style="width:100%;height:auto;" />
               <span class="about-infra-tag">Global Supply</span>
             </div>
             <div class="about-infra-body">

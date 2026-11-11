@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__) . '/includes/upload_guard.php';
 require_once __DIR__ . '/auth.php';
 checkAdminAuth();
 
@@ -29,11 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($action === 'upload_media') {
         if (!empty($_FILES['media_file']['name'])) {
             $fileName = basename($_FILES['media_file']['name']);
-            $ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-            $allowedExts = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
+            $ext = tn_upload_safe_image_ext($_FILES['media_file']['tmp_name'], $fileName, true, ['jpg', 'jpeg', 'png', 'webp']);
 
-            if (!in_array($ext, $allowedExts)) {
-                $error = "Invalid file type. Only JPG, PNG, WEBP, and SVG images are allowed.";
+            if ($ext === false) {
+                $error = "Invalid or unsafe file. Only real JPG, PNG, WEBP and script-free SVG images (max 10 MB) are allowed.";
             } else {
                 $cleanName = preg_replace('/[^a-zA-Z0-9_\.-]/', '_', pathinfo($fileName, PATHINFO_FILENAME));
                 $targetFile = $cleanName . '_' . time() . '.' . $ext;
@@ -65,9 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $error = "A file with name '{$newName}' already exists.";
             } else {
                 if (!empty($_FILES['replace_file']['name'])) {
-                    $repExt = strtolower(pathinfo($_FILES['replace_file']['name'], PATHINFO_EXTENSION));
-                    $allowedExts = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
-                    if (in_array($repExt, $allowedExts)) {
+                    $repExt = tn_upload_safe_image_ext($_FILES['replace_file']['tmp_name'], $_FILES['replace_file']['name'], true, ['jpg', 'jpeg', 'png', 'webp']);
+                    if ($repExt !== false && ($repExt === $ext || ($repExt === 'jpg' && $ext === 'jpeg'))) {
                         @unlink($oldPath);
                         $targetPath = $uploadDir . '/' . $newName;
                         move_uploaded_file($_FILES['replace_file']['tmp_name'], $targetPath);

@@ -189,146 +189,8 @@ $err = $_GET['err'] ?? '';
           <textarea id="postContent" name="content" rows="18" placeholder="Write comprehensive packaging insights, engineering guides, or case studies here..." required style="width: 100%; box-sizing: border-box; padding: 14px 16px; background: #0f172a; border: 1px solid #475569; border-radius: 0 0 8px 8px; color: #fff; font-size: 0.94rem; line-height: 1.6; font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;" oninput="updateContentStats(); checkSeoChecklist();"><?= htmlspecialchars($content) ?></textarea>
         </div>
 
-        <!-- COMPLETE ENTERPRISE SEO SUITE ("ALL SEO THINGS") -->
-        <div style="background: #1e293b; border: 1px solid #0284c7; border-radius: 14px; padding: 24px; margin-bottom: 24px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #334155; padding-bottom: 12px; margin-bottom: 20px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m8 11 2 2 4-4"/></svg>
-              <h3 style="margin: 0; font-size: 1.15rem; color: #38bdf8; font-weight: 800;">
-                Complete SEO Suite &amp; Google Search Optimization
-              </h3>
-            </div>
-            <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 3px 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 700;">
-              Google &amp; Social Meta Ready
-            </span>
-          </div>
-
-          <!-- GOOGLE SERP LIVE PREVIEW -->
-          <div style="margin-bottom: 22px;">
-            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">
-              Live Google Search Result Preview (SERP Snippet)
-            </label>
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 20px; color: #1e293b; font-family: Roboto, Arial, sans-serif;">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-                <img src="/logo_svg.svg" style="width: 16px; height: 16px; border-radius: 50%;" alt="Favicon" />
-                <span style="font-size: 0.8rem; color: #202124;">TrueNorth Group</span>
-                <span style="font-size: 0.72rem; color: #5f6368;" id="serpUrlPreview">https://wetruenorthgroup.com &rsaquo; blog &rsaquo; ...</span>
-              </div>
-              <div id="serpTitlePreview" style="font-size: 1.25rem; color: #1a0dab; font-weight: 400; line-height: 1.3; cursor: pointer; text-decoration: none; margin-bottom: 4px;">
-                Article Title Preview — TrueNorth Packaging
-              </div>
-              <div id="serpDescPreview" style="font-size: 0.86rem; color: #4d5156; line-height: 1.45;">
-                Meta description snippet will render here dynamically as you write...
-              </div>
-            </div>
-          </div>
-
-          <!-- SEO META TITLE -->
-          <div style="margin-bottom: 18px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <label style="font-size: 0.84rem; font-weight: 600; color: #cbd5e1;">
-                Meta Title (Appears in Google search &amp; browser tab)
-              </label>
-              <span id="titleCountBadge" style="font-size: 0.75rem; font-weight: 700; color: #34d399;">0 / 60 chars</span>
-            </div>
-            <input type="text" id="metaTitleInput" name="meta_title" value="<?= htmlspecialchars($metaTitle) ?>" placeholder="Target 50-60 chars including primary keywords" style="width: 100%; box-sizing: border-box; padding: 11px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.9rem;" oninput="syncSeoPreview()" />
-            <div style="height: 4px; background: #334155; border-radius: 2px; margin-top: 6px; overflow: hidden;">
-              <div id="titleBar" style="height: 100%; width: 0%; background: #34d399; transition: width 0.2s, background 0.2s;"></div>
-            </div>
-          </div>
-
-          <!-- SEO META DESCRIPTION -->
-          <div style="margin-bottom: 18px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <label style="font-size: 0.84rem; font-weight: 600; color: #cbd5e1;">
-                Meta Description (Search summary snippet)
-              </label>
-              <span id="descCountBadge" style="font-size: 0.75rem; font-weight: 700; color: #34d399;">0 / 160 chars</span>
-            </div>
-            <textarea id="metaDescInput" name="meta_description" rows="3" placeholder="Target 140-160 chars. Write a persuasive summary incorporating target keywords and value propositions." style="width: 100%; box-sizing: border-box; padding: 11px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.9rem; line-height: 1.45; resize: vertical;" oninput="syncSeoPreview()"><?= htmlspecialchars($metaDescription) ?></textarea>
-            <div style="height: 4px; background: #334155; border-radius: 2px; margin-top: 6px; overflow: hidden;">
-              <div id="descBar" style="height: 100%; width: 0%; background: #34d399; transition: width 0.2s, background 0.2s;"></div>
-            </div>
-          </div>
-
-          <!-- FOCUS KEYWORDS / TAGS -->
-          <div style="margin-bottom: 18px;">
-            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #cbd5e1; margin-bottom: 6px;">
-              Focus Keywords &amp; Search Tags (Comma separated)
-            </label>
-            <input type="text" id="metaKeywordsInput" name="meta_keywords" value="<?= htmlspecialchars($metaKeywords) ?>" placeholder="e.g., rPET bottles, cosmetic packaging, cleanroom molding, wholesale primary packaging" style="width: 100%; box-sizing: border-box; padding: 11px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.9rem;" oninput="checkSeoChecklist()" />
-          </div>
-
-          <!-- CANONICAL URL & ROBOTS DIRECTIVES -->
-          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 18px;">
-            <div>
-              <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #cbd5e1; margin-bottom: 6px;">
-                Canonical URL Override (Optional)
-              </label>
-              <input type="url" name="canonical_url" value="<?= htmlspecialchars($canonicalUrl) ?>" placeholder="Defaults to https://wetruenorthgroup.com/blog/[slug]" style="width: 100%; box-sizing: border-box; padding: 10px 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.85rem;" />
-            </div>
-            <div>
-              <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #cbd5e1; margin-bottom: 6px;">
-                Robots Meta
-              </label>
-              <select name="robots_meta" style="width: 100%; box-sizing: border-box; padding: 10px 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.85rem;">
-                <option value="index, follow" <?= $robotsMeta === 'index, follow' ? 'selected' : '' ?>>index, follow (Standard)</option>
-                <option value="noindex, follow" <?= $robotsMeta === 'noindex, follow' ? 'selected' : '' ?>>noindex, follow</option>
-                <option value="noindex, nofollow" <?= $robotsMeta === 'noindex, nofollow' ? 'selected' : '' ?>>noindex, nofollow</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- OPEN GRAPH & TWITTER CARD CONTROLS -->
-          <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 16px; margin-bottom: 18px;">
-            <div style="font-size: 0.86rem; font-weight: 700; color: #f8fafc; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              Social Media OpenGraph &amp; Twitter Card Preview
-            </div>
-            <p style="font-size: 0.8rem; color: #94a3b8; margin: 0 0 12px 0;">Automatically mirrors your Meta Title, Meta Description, and Featured Image. Custom overrides can be entered below:</p>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;">
-              <div>
-                <label style="display: block; font-size: 0.78rem; color: #cbd5e1; margin-bottom: 4px;">OG Title (LinkedIn, Facebook, WhatsApp)</label>
-                <input type="text" name="og_title" value="<?= htmlspecialchars($ogTitle) ?>" placeholder="Defaults to Meta Title" style="width: 100%; box-sizing: border-box; padding: 8px 10px; background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #fff; font-size: 0.82rem;" />
-              </div>
-              <div>
-                <label style="display: block; font-size: 0.78rem; color: #cbd5e1; margin-bottom: 4px;">Schema.org Type</label>
-                <select name="schema_type" style="width: 100%; box-sizing: border-box; padding: 8px 10px; background: #1e293b; border: 1px solid #475569; border-radius: 6px; color: #fff; font-size: 0.82rem;">
-                  <option value="BlogPosting" <?= $schemaType === 'BlogPosting' ? 'selected' : '' ?>>BlogPosting (Standard)</option>
-                  <option value="Article" <?= $schemaType === 'Article' ? 'selected' : '' ?>>Article</option>
-                  <option value="TechArticle" <?= $schemaType === 'TechArticle' ? 'selected' : '' ?>>TechArticle (Engineering &amp; Specs)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- REAL-TIME SEO AUDIT CHECKLIST -->
-          <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 16px;">
-            <div style="font-size: 0.84rem; font-weight: 700; color: #f8fafc; margin-bottom: 10px;">
-              Real-Time SEO Quality Audit
-            </div>
-            <div id="seoChecklist" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem;">
-              <div id="chkTitle" style="color: #94a3b8; display: flex; align-items: center; gap: 8px;">
-                <span>&bull;</span> <span>Title length (Optimal: 40-65 chars)</span>
-              </div>
-              <div id="chkDesc" style="color: #94a3b8; display: flex; align-items: center; gap: 8px;">
-                <span>&bull;</span> <span>Meta description length (Optimal: 120-160 chars)</span>
-              </div>
-              <div id="chkKeywords" style="color: #94a3b8; display: flex; align-items: center; gap: 8px;">
-                <span>&bull;</span> <span>Target keywords defined</span>
-              </div>
-              <div id="chkImage" style="color: #94a3b8; display: flex; align-items: center; gap: 8px;">
-                <span>&bull;</span> <span>Featured cover image selected</span>
-              </div>
-              <div id="chkWords" style="color: #94a3b8; display: flex; align-items: center; gap: 8px;">
-                <span>&bull;</span> <span>Content depth (&gt; 300 words recommended for B2B search authority)</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+        <!-- WORDPRESS YOAST & RANK MATH 5-TAB SEO SUITE -->
+        <?php include __DIR__ . '/partials/blog_seo_card.php'; ?>
       </div>
 
       <!-- RIGHT COLUMN: PUBLISHING & METADATA -->
@@ -545,8 +407,20 @@ function previewUploadedImage(input) {
   }
 }
 
-// SEO & Google SERP sync
+// SEO & Google SERP sync (Delegates to WordPress SEO Suite)
 function syncSeoPreview() {
+  if (typeof runWpbSeoAnalysis === 'function') {
+    runWpbSeoAnalysis();
+  }
+}
+
+function checkSeoChecklist() {
+  if (typeof runWpbSeoAnalysis === 'function') {
+    runWpbSeoAnalysis();
+  }
+}
+
+function old_unused_syncSeoPreview() {
   const title = document.getElementById('postTitle').value;
   const slug = document.getElementById('postSlug').value;
   const excerpt = document.getElementById('postExcerpt').value;

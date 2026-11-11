@@ -1,6 +1,6 @@
 # ==============================================================================
-# TRUENORTH GROUP — ULTRA-COMPATIBLE CPANEL .HTACCESS
-# Designed specifically to eliminate "HTTP ERROR 500" on cPanel / Shared Hosting
+# TRUENORTH GROUP — ENTERPRISE PRODUCTION .HTACCESS (CPANEL & APACHE)
+# Provides clean URLs, WebP routing, browser caching, compression & security
 # ==============================================================================
 
 DirectoryIndex index.php index.html
@@ -8,11 +8,28 @@ DirectoryIndex index.php index.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # 1. Block direct web access to sensitive files & config directory
+    # 1. Block direct web access to sensitive files, database dumps, source & tooling
     RewriteRule ^config/ - [F,L]
-    RewriteRule \.(sql|log|git|env|json)$ - [F,L]
+    RewriteRule ^(app|includes|database|scripts|_archive_unused|CPANEL_PUBLIC_HTML|admin/partials)(/|$) - [F,L]
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+    RewriteRule \.(sql|log|git|env|json|md|bat|ps1|py|orig|bak|zip|lock|ini|sh)$ - [F,L]
+    RewriteRule \.local\.txt$ - [F,L]
+    RewriteRule ^(adm|adm2|adm3|p1)\.html$ - [F,L]
+    # Never execute scripts from upload folders
+    RewriteRule ^(public/)?uploads/.*\.(php\d?|phtml|phar|pl|py|cgi|sh|shtml|html?|js)$ - [F,L,NC]
 
-    # Automatic WebP delivery for legacy .jpg/.png requests
+    # 2. Canonical Host & HTTPS Enforcement (Single Hop)
+    # Redirect www to non-www (both HTTP and HTTPS) directly to https://wetruenorthgroup.com
+    RewriteCond %{HTTP_HOST} ^www\.wetruenorthgroup\.com$ [NC]
+    RewriteRule ^ https://wetruenorthgroup.com%{REQUEST_URI} [R=301,L]
+
+    # Force HTTPS for non-localhost apex domains
+    RewriteCond %{HTTP_HOST} !^(127\.0\.0\.1|localhost)(:\d+)?$ [NC]
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://wetruenorthgroup.com%{REQUEST_URI} [R=301,L]
+
+    # 3. Automatic WebP delivery for legacy .jpg/.png requests when browser supports it
     RewriteCond %{HTTP_ACCEPT} image/webp
     RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
     RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,L]
@@ -29,23 +46,87 @@ DirectoryIndex index.php index.html
     RewriteCond %{THE_REQUEST} \s/admin/([a-zA-Z0-9_-]+)\.php[?\s] [NC]
     RewriteRule ^admin/([a-zA-Z0-9_-]+)\.php$ /admin/$1 [R=301,L]
 
-    # 2. Do not rewrite existing files, images, or directories
+    # 4. Remove duplicate trailing slashes (except for physical directories)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{THE_REQUEST} \s/+(.+?)/+[?\s]
+    RewriteRule ^(.+?)/$ /$1 [R=301,L]
+
+    # 4b. Legacy /uploads/... links: all media now lives in /public/uploads/
+    RewriteCond %{DOCUMENT_ROOT}/public/uploads/$1 -f
+    RewriteRule ^uploads/(.+)$ public/uploads/$1 [L]
+
+    # 5. Do not rewrite existing physical files or directories
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # 3. Route all other requests through index.php
+    # 6. Route all dynamic requests through front controller index.php
     RewriteRule ^ index.php [L]
 </IfModule>
 
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+# --- BROWSER CACHING (EXPIRES HEADERS) ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType application/manifest+json "access plus 1 week"
 </IfModule>
 
+# --- GZIP / DEFLATE COMPRESSION ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+# --- LITESPEED APP-LEVEL CACHING (AJCC) ---
+# Caches rendered GET responses at the web server so repeat page views skip
+# PHP+MySQL entirely. No-op on plain Apache (module absent), so portable.
+# Edge TTL (60s) is kept short of the PHP full-page cache (300s) so the
+# authoritative cache — which invalidates on admin saves — stays in control.
+# POSTs are never cached by AJCC, and /admin disables this in admin/.htaccess.
+<IfModule LiteSpeed>
+    CacheLookup "public"
+    CacheTime 60
+    CacheIgnoreHeaders "PHPSESSID"
+</IfModule>
+
+# --- SECURITY & PRIVACY HEADERS ---
+<IfModule mod_headers.c>
+    # Defense-in-depth security headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(self)"
+
+    # HSTS (Strict-Transport-Security) — 1 Year + Preload
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Content-Security-Policy (CSP)
+    # NOTE: inline scripts/styles (and eval, needed by Google Tag Manager) are still allowed because the templates use them;
+    # the directives below remove plugin/base-tag/clickjacking/form-hijack vectors.
+    Header always set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' data: https:; font-src 'self' https: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+# --- HIDE DIRECTORY LISTINGS & SERVER DETAILS ---
+Options -Indexes
+ServerSignature Off
+
+# --- MIME TYPES ---
 <IfModule mod_mime.c>
     AddType image/webp .webp
     AddType application/manifest+json .webmanifest
     AddType application/xml .xml
     AddType text/plain .txt
 </IfModule>
-

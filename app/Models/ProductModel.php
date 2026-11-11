@@ -1891,6 +1891,14 @@ class ProductModel {
     /**
      * Get categories (from MySQL if connected, or memory array)
      */
+    public static function getAllCategories() {
+        return self::getCategories();
+    }
+
+    public static function getAllProducts() {
+        return self::getSkus(false);
+    }
+
     public static function getCategories() {
         if (class_exists('Database')) {
             try {
@@ -2924,7 +2932,7 @@ class ProductModel {
         if (!empty($originalSku) && $originalSku !== $articleNo) {
             unset($edited[$originalSku]);
         }
-        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
+        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT), LOCK_EX);
 
         return $updatedRecord;
     }
@@ -2964,7 +2972,7 @@ class ProductModel {
                 $edited[$product['articleNo'] ?? $id] = $product;
             }
         }
-        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
+        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT), LOCK_EX);
 
         return true;
     }
@@ -3000,7 +3008,7 @@ class ProductModel {
                 $edited[$product['articleNo'] ?? $id] = $product;
             }
         }
-        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
+        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT), LOCK_EX);
 
         return true;
     }
@@ -3038,7 +3046,7 @@ class ProductModel {
                 unset($edited[$k]);
             }
         }
-        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT));
+        file_put_contents($editedPath, json_encode($edited, JSON_PRETTY_PRINT), LOCK_EX);
 
         // Also clean up custom products if applicable
         $customPath = defined('CUSTOM_PRODUCTS_FILE') ? CUSTOM_PRODUCTS_FILE : __DIR__ . '/../../config/custom_products.json';
@@ -3047,7 +3055,7 @@ class ProductModel {
             $filteredCustoms = array_values(array_filter($customs, function($c) use ($id) {
                 return ($c['id'] ?? '') !== $id && ($c['articleNo'] ?? '') !== $id;
             }));
-            file_put_contents($customPath, json_encode($filteredCustoms, JSON_PRETTY_PRINT));
+            file_put_contents($customPath, json_encode($filteredCustoms, JSON_PRETTY_PRINT), LOCK_EX);
         }
 
         return true;
@@ -3184,7 +3192,7 @@ class ProductModel {
             $savedItem = $data;
         }
 
-        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT));
+        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT), LOCK_EX);
         
         $action = $isEdit ? 'Updated' : 'Added';
         $logName = $savedItem['name'] ?? ($savedItem['display_label'] ?? "ID {$savedItem['id']}");
@@ -3207,7 +3215,7 @@ class ProductModel {
             }
         }
 
-        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT));
+        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT), LOCK_EX);
         self::logOptionAudit("Toggled Status ({$status})", $groupKey, $targetName, "Status changed to {$status}");
         return true;
     }
@@ -3262,7 +3270,7 @@ class ProductModel {
         }
 
         array_splice($all[$groupKey], $targetIdx, 1);
-        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT));
+        file_put_contents($file, json_encode($all, JSON_PRETTY_PRINT), LOCK_EX);
         self::logOptionAudit("Deleted Option", $groupKey, $name, "Permanently deleted option");
 
         return ['success' => true, 'message' => "Option '{$name}' deleted successfully."];
@@ -3285,7 +3293,7 @@ class ProductModel {
 
         array_unshift($logs, $newLog);
         $logs = array_slice($logs, 0, 100);
-        file_put_contents($file, json_encode($logs, JSON_PRETTY_PRINT));
+        file_put_contents($file, json_encode($logs, JSON_PRETTY_PRINT), LOCK_EX);
     }
 
     public static function getOptionAuditLogs($limit = 50) {

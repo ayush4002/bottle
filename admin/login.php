@@ -4,8 +4,9 @@ require_once __DIR__ . '/auth.php';
 $error = $_SESSION['auth_error'] ?? '';
 unset($_SESSION['auth_error']);
 
-if (isLoginRateLimited()) {
-    $error = "Too many failed login attempts. Account temporarily locked for 15 minutes for security.";
+$lockoutMins = getLoginLockoutRemaining();
+if ($lockoutMins > 0) {
+    $error = "Too many failed login attempts. Account temporarily locked for {$lockoutMins} minute(s) for security.";
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $csrfToken = $_POST['csrf_token'] ?? '';
 
     if (isLoginRateLimited()) {
-        $error = "Too many failed login attempts. Please wait 15 minutes before trying again.";
+        $lockoutMins = getLoginLockoutRemaining();
+        $error = "Too many failed login attempts. Please wait {$lockoutMins} minute(s) before trying again.";
     } elseif (!verifyCsrfToken($csrfToken)) {
         $error = "Invalid security token. Please refresh the page and try again.";
     } elseif (empty($username) || empty($password)) {
@@ -50,31 +52,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // 2. Fallback to Config Default Admin
-        if (!$authenticated) {
-            if ($username === ADMIN_USER && ($password === ADMIN_PASS || password_verify($password, password_hash(ADMIN_PASS, PASSWORD_DEFAULT)))) {
-                $authenticated = true;
-                $userRole = 'Super Admin';
-            }
-        }
-
-        // 3. Fallback to JSON Admin Users
+        // 2. JSON Admin Users (config/admin_users.json)
+        $jsonUserKnown = false;
         if (!$authenticated) {
             $usersFile = defined('ROOT_PATH') ? ROOT_PATH . '/config/admin_users.json' : dirname(__DIR__) . '/config/admin_users.json';
             if (file_exists($usersFile)) {
                 $users = json_decode(file_get_contents($usersFile), true) ?: [];
                 foreach ($users as $u) {
                     if (strcasecmp($u['username'] ?? '', $username) === 0 || strcasecmp($u['email'] ?? '', $username) === 0) {
-                        if (!empty($u['password_hash']) && password_verify($password, $u['password_hash'])) {
-                            $authenticated = true;
-                            $username = $u['username'];
-                            $userRole = $u['role'] ?? 'Editor';
-                            $userEmail = $u['email'] ?? '';
+                        if (!empty($u['password_hash'])) {
+                            $jsonUserKnown = true;
+                            if (strcasecmp($u['status'] ?? 'Active', 'Inactive') !== 0 && password_verify($password, $u['password_hash'])) {
+                                $authenticated = true;
+                                $username = $u['username'];
+                                $userRole = $u['role'] ?? 'Editor';
+                                $userEmail = $u['email'] ?? '';
+                            }
                             break;
                         }
                     }
                 }
             }
+        }
+
+        // 3. Bootstrap admin from config/secrets.php (hash only; no default password).
+        //    Ignored once that user has a password stored in admin_users.json.
+        if (!$authenticated && !$jsonUserKnown && defined('ADMIN_PASS_HASH') && ADMIN_PASS_HASH !== ''
+            && hash_equals(strtolower(ADMIN_USER), strtolower($username))
+            && password_verify($password, ADMIN_PASS_HASH)) {
+            $authenticated = true;
+            $username = ADMIN_USER;
+            $userRole = 'Super Admin';
         }
 
         if ($authenticated) {

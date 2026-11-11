@@ -29,6 +29,12 @@ if (-not $dumpSuccess) {
     }
 }
 
+# Refuse to package without real secrets (no default passwords ship to production)
+if (-not (Test-Path "config\secrets.php")) {
+    Write-Host "[ERROR] config\secrets.php is missing. Copy config\secrets.example.php, fill it in, then re-run." -ForegroundColor Red
+    exit 1
+}
+
 # Package files using tar
 Write-Host "Compressing production files..." -ForegroundColor Yellow
 & tar.exe -a -c -f $zipName `
@@ -50,16 +56,38 @@ Write-Host "Compressing production files..." -ForegroundColor Yellow
   --exclude="new chnages/*" `
   --exclude="*.bak" `
   --exclude="*.log" `
+  --exclude="*.orig" `
   --exclude="diag.php" `
   --exclude="test_server.php" `
-  * .htaccess .env.example
+  --exclude="scripts/img-backup" `
+  --exclude="scripts/img-backup/*" `
+  --exclude="config/cache" `
+  --exclude="config/cache/*" `
+  --exclude="*.local.txt" `
+  --exclude="*.md" `
+  --exclude="*.ps1" `
+  --exclude="*.bat" `
+  --exclude="_archive_unused" `
+  --exclude="_archive_unused/*" `
+  --exclude="scripts" `
+  --exclude="scripts/*" `
+  --exclude="config/smtp_secret.json" `
+  --exclude="config/inquiries.json" `
+  --exclude="config/email_logs.json" `
+  * .htaccess
 
 if (Test-Path $zipName) {
     Copy-Item $zipName "cpanel_public_html.zip" -Force
     $fileItem = Get-Item $zipName
     $sizeMB = [math]::round($fileItem.Length / 1MB, 2)
     Write-Host "[SUCCESS] Created $zipName ($sizeMB megabytes) and cpanel_public_html.zip" -ForegroundColor Green
-    Write-Host "Upload either zip file to cPanel File Manager in public_html and extract it." -ForegroundColor Cyan
+    
+    # Sync to uncompressed CPANEL_PUBLIC_HTML directory
+    Write-Host "Syncing to CPANEL_PUBLIC_HTML folder..." -ForegroundColor Yellow
+    robocopy . CPANEL_PUBLIC_HTML /MIR /XD .git .vercel scratch CPANEL_PUBLIC_HTML "new chnages" dist scripts _archive_unused /XF *.zip *.log *.bak *.local.txt *.md *.ps1 *.bat smtp_secret.json inquiries.json email_logs.json diag.php test_server.php > $null
+    Write-Host "[SUCCESS] Synced CPANEL_PUBLIC_HTML directory." -ForegroundColor Green
+    
+    Write-Host "Upload deploy_wetruenorthgroup.zip or cpanel_public_html.zip to cPanel File Manager in public_html and extract it." -ForegroundColor Cyan
 } else {
     Write-Host "[ERROR] Failed to create zip." -ForegroundColor Red
 }

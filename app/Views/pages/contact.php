@@ -1,7 +1,8 @@
   <!-- =======================================================================
        VIEW 6: CONTACT US PAGE (Exact 6-Field Form)
        ======================================================================= -->
-  <section class="page-view" id="view-contact">
+  <div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
+<section class="page-view" id="view-contact">
     
     <!-- Contact Hero Banner -->
     <div class="products-page-title-banner cnt-hero-banner">
@@ -131,6 +132,28 @@
 
         </div>
 
+      </div>
+    </section>
+
+    <!-- Section: Embedded Google Map (Local SEO — NAP + map, checklist §6/§10) -->
+    <section class="tn-section" style="padding: 24px 0; background: #fff;">
+      <div class="tn-container">
+        <div class="tn-section-title-wrap">
+          <h2 class="tn-section-title">Find Our Head Office</h2>
+        </div>
+        <div style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 7; background: #f1f5f9;">
+          <iframe
+            src="https://www.google.com/maps?q=<?= urlencode('#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi 110034, India') ?>&output=embed"
+            title="TrueNorth Group Head Office — LSC Pitampura, Delhi"
+            style="width: 100%; height: 100%; border: 0; display: block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <p style="color: #475569; font-size: 0.9rem; margin-top: 12px;">
+          <?= htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi 110034, India') ?>
+          &nbsp;•&nbsp; Mon-Fri, 09:00-18:30 IST
+        </p>
       </div>
     </section>
 
