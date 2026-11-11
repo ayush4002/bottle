@@ -499,7 +499,7 @@ require_once __DIR__ . '/header.php';
                   <div style="display: flex; justify-content: flex-end; gap: 6px; align-items: center; flex-wrap: wrap;">
                     
                     <!-- Working Interactive Reply Button -->
-                    <button type="button" class="btn-reply-act" data-quote-id="<?= htmlspecialchars($quoteId) ?>" onclick="openReplyModal(<?= htmlspecialchars(json_encode($row)) ?>)" title="Write and send email reply to client">
+                    <button type="button" class="btn-reply-act" data-quote-id="<?= htmlspecialchars($row['quote_id'] ?? '') ?>" onclick="openReplyModal(<?= htmlspecialchars(json_encode($row)) ?>)" title="Write and send email reply to client">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>
                       Reply
                     </button>

@@ -178,7 +178,7 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
       <h2 style="font-size: 1.5rem; font-weight: 800; color: #16273f; margin: 0 0 6px;">You May Also Explore</h2>
       <p style="color: #475569; font-size: 0.92rem; margin: 0 0 18px;">More <?= htmlspecialchars($catName) ?> from the TrueNorth catalogue.</p>
     </div>
-    <div class="tn-grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+    <div class="tn-grid-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 16px;">
       <?php foreach ($tnRelated as $tnRel): ?>
         <a href="/product?id=<?= urlencode($tnRel['id'] ?? ($tnRel['sku'] ?? '')) ?>" style="display: block; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-decoration: none; background: #fff; transition: box-shadow 0.25s ease;">
           <div style="aspect-ratio: 1; overflow: hidden; background: #f8fafc;">

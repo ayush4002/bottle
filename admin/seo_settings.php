@@ -28,7 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $saveData = [];
         foreach ($fields as $f) {
-            $saveData[$f] = trim($_POST[$f] ?? '');
+            // Only update fields actually submitted, so a partial POST can never wipe settings
+            if (array_key_exists($f, $_POST) && is_scalar($_POST[$f])) {
+                $saveData[$f] = trim((string)$_POST[$f]);
+            }
         }
 
         // Handle Image Uploads (OG Image, Logo, Favicon)
@@ -67,8 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Custom Header & Footer Scripts (Restricted to Super Admin)
         if ($adminRole === 'Super Admin') {
-            $saveData['header_scripts'] = $_POST['header_scripts'] ?? '';
-            $saveData['footer_scripts'] = $_POST['footer_scripts'] ?? '';
+            foreach (['header_scripts', 'footer_scripts'] as $scriptKey) {
+                if (array_key_exists($scriptKey, $_POST) && is_scalar($_POST[$scriptKey])) {
+                    $saveData[$scriptKey] = (string)$_POST[$scriptKey];
+                }
+            }
         }
 
         SeoModel::saveSettings($saveData, $adminUser);

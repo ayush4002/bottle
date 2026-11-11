@@ -425,8 +425,38 @@
       if (!formElement || formElement.dataset.bound === 'true') return;
       formElement.dataset.bound = 'true';
 
+      // Honeypot: invisible to people, bots that fill every field get silently discarded server-side
+      if (!formElement.querySelector('input[name="website_url_hp"]')) {
+        const hp = document.createElement('div');
+        hp.className = 'tn-hp-field';
+        hp.setAttribute('aria-hidden', 'true');
+        hp.innerHTML = '<label>Leave this field empty<input type="text" name="website_url_hp" tabindex="-1" autocomplete="off"></label>';
+        formElement.appendChild(hp);
+      }
+
+      // Inline error area (instead of alert pop-ups)
+      let errorBox = formElement.querySelector('.tn-form-error');
+      if (!errorBox) {
+        errorBox = document.createElement('div');
+        errorBox.className = 'tn-form-error';
+        errorBox.setAttribute('role', 'alert');
+        const submitBtn = formElement.querySelector('button[type="submit"]');
+        if (submitBtn && submitBtn.parentNode) {
+          submitBtn.parentNode.insertBefore(errorBox, submitBtn);
+        } else {
+          formElement.appendChild(errorBox);
+        }
+      }
+      const showFormError = function(msg) {
+        errorBox.textContent = msg;
+        errorBox.classList.add('show');
+        errorBox.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      };
+
       formElement.addEventListener('submit', function(e) {
         e.preventDefault();
+        errorBox.classList.remove('show');
+        errorBox.textContent = '';
         const btn = formElement.querySelector('button[type="submit"]');
         const origText = btn ? btn.innerHTML : 'SEND INQUIRY';
         if (btn) {
@@ -445,10 +475,9 @@
         })
         .then(function(r) { 
           if (!r.ok) {
-            return r.json().then(function(errData) {
-              throw new Error(errData.message || ('Server error: ' + r.status));
-            }).catch(function() {
-              throw new Error('Server returned error status ' + r.status);
+            // Show the server's own message (e.g. rate limit, invalid email) when it sends one
+            return r.json().catch(function() { return {}; }).then(function(errData) {
+              throw new Error((errData && errData.message) || ('The server returned an error (' + r.status + ').'));
             });
           }
           return r.json(); 
@@ -459,7 +488,7 @@
             btn.innerHTML = origText;
           }
           if (!res || !res.success) {
-            alert(res && res.message ? res.message : 'We could not submit your inquiry at this moment. Please try again or email info@wetruenorthgroup.com.');
+            showFormError(res && res.message ? res.message : 'We could not submit your inquiry at this moment. Please try again or email info@wetruenorthgroup.com.');
             return;
           }
           if (isDrawer) {
@@ -502,7 +531,7 @@
             btn.innerHTML = origText;
           }
           // Do not reset form on error so user does not lose their typed message
-          alert('Submission error: ' + (err.message || 'Unable to connect to server') + '. Please try again or email info@wetruenorthgroup.com directly.');
+          showFormError((err && err.message ? err.message : 'Unable to connect to the server.') + ' Please try again or email info@wetruenorthgroup.com directly.');
         });
       });
     }

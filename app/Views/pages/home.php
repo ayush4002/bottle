@@ -248,7 +248,7 @@
         <?php endif; ?>
 
         <?php if (!empty($tnTestimonials)): ?>
-          <div class="tn-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div class="tn-grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px;">
             <?php foreach ($tnTestimonials as $tnT): ?>
               <figure style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin: 0; display: flex; flex-direction: column; gap: 12px;">
                 <?php if (!empty($tnT['rating'])): ?>
@@ -335,7 +335,7 @@
           <span class="home-pre-banner-tag">TECHNICAL GUIDES</span>
           <h2 class="tn-section-title">Latest From The Packaging Blog</h2>
         </div>
-        <div class="tn-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div class="tn-grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 24px;">
           <?php foreach ($tnHomePosts as $tnP): ?>
             <a href="/blog/<?= htmlspecialchars($tnP['slug']) ?>" class="home-blog-card" style="display: block; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff; text-decoration: none; transition: box-shadow 0.25s ease;">
               <?php if (!empty($tnP['featured_image'])): ?>

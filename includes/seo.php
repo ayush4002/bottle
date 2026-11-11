@@ -151,9 +151,16 @@ function seo_meta($context = []) {
         } else {
             $seoTitle = $rawTitle;
         }
-        // Limit to recommended Google SERP length
+        // Limit to recommended Google SERP length: drop the suffix first, then cut on a word boundary
+        if (mb_strlen($seoTitle) > 70 && $seoTitle !== $rawTitle) {
+            $seoTitle = $rawTitle;
+        }
+        if (mb_strlen($seoTitle) > 70 && $siteName !== '') {
+            // Brand already in the title but too long: drop the trailing " — Brand" / " | Brand"
+            $seoTitle = preg_replace('/\s*[—–|-]\s*' . preg_quote($siteName, '/') . '\s*$/u', '', $seoTitle);
+        }
         if (mb_strlen($seoTitle) > 70) {
-            $seoTitle = mb_substr($seoTitle, 0, 68) . '...';
+            $seoTitle = tn_seo_trim_words($seoTitle, 68);
         }
     }
 
@@ -177,7 +184,7 @@ function seo_meta($context = []) {
         ]);
         $seoDesc = $tpl['description'] ?? ($category['desc'] ?? $defaultDesc);
     } elseif ($pageType === 'blog' && !empty($article)) {
-        $seoDesc = !empty($article['meta_description']) ? $article['meta_description'] : ($article['excerpt'] ?? substr(strip_tags($article['content'] ?? ''), 0, 155));
+        $seoDesc = !empty($article['meta_description']) ? $article['meta_description'] : ($article['excerpt'] ?? mb_substr(strip_tags($article['content'] ?? ''), 0, 155));
     } elseif (!empty($context['description'])) {
         $seoDesc = $context['description'];
     } elseif (isset($staticPageMeta[$lookupPath]['desc'])) {
@@ -189,7 +196,7 @@ function seo_meta($context = []) {
     $seoDesc = strip_tags($seoDesc);
     $seoDesc = preg_replace('/\s+/', ' ', trim($seoDesc));
     if (mb_strlen($seoDesc) > 165) {
-        $seoDesc = mb_substr($seoDesc, 0, 162) . '...';
+        $seoDesc = tn_seo_trim_words($seoDesc, 162);
     }
 
     // 3. Keywords
@@ -315,4 +322,19 @@ function seo_meta($context = []) {
     }
 
     return $html;
+}
+
+if (!function_exists('tn_seo_trim_words')) {
+    /** Shorten text to at most $max characters without cutting a word in half. */
+    function tn_seo_trim_words($text, $max)
+    {
+        $text = trim((string)$text);
+        if (mb_strlen($text) <= $max) return $text;
+        $cut = mb_substr($text, 0, $max);
+        $space = mb_strrpos($cut, ' ');
+        if ($space !== false && $space > $max * 0.6) {
+            $cut = mb_substr($cut, 0, $space);
+        }
+        return rtrim($cut, " 	,;:—–-|") . '…';
+    }
 }

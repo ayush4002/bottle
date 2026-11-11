@@ -174,7 +174,7 @@ if (empty($company) && class_exists('ProductModel')) {
 
   <!-- Site JS extracted to a cacheable, deferred file (CWV: removes 27KB of
        render-blocking inline script; parsed once, cached for a year) -->
-    <script src="/js/site-main.js?v=1794384532" defer></script>
+    <script src="/js/site-main.js?v=<?= @filemtime(dirname(__DIR__, 3) . '/public/js/site-main.js') ?: 1 ?>" defer></script>
   <?php if (function_exists('seo_footer_scripts')) { echo seo_footer_scripts(); } ?>
 
   <!-- Sticky Mobile Call / WhatsApp Bar (Mobile UX & conversion) -->

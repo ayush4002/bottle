@@ -64,6 +64,15 @@ $crumbTitle = $breadcrumbs[$currentPage] ?? ucfirst(str_replace('_', ' ', $curre
       } catch (e) { return false; }
     }
     window.tnCsrfUrl = function (url) { return needsToken(url) ? withToken(url) : url; };
+    // After a one-shot action link runs, drop the token/action from the address bar
+    // (keeps it out of history and stops a refresh from repeating the action)
+    try {
+      var cur = new URL(location.href);
+      if (cur.searchParams.has('csrf_token')) {
+        ['csrf_token', 'action', 'user', 'id'].forEach(function (k) { cur.searchParams.delete(k); });
+        history.replaceState(null, '', cur.pathname + (cur.searchParams.toString() ? '?' + cur.searchParams.toString() : '') + cur.hash);
+      }
+    } catch (e) {}
     function addTokenToForm(f) {
       if (!f || (f.getAttribute('method') || '').toLowerCase() !== 'post' || !sameOrigin(f.action || location.href)) return;
       if (!f.querySelector('input[name="csrf_token"]')) {
