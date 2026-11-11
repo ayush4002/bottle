@@ -80,12 +80,15 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
   $cssFile = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 3)) . '/styles.css';
   $cssVersion = @filemtime($cssFile);
   ?>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" />
   <link rel="stylesheet" href="/styles.css?v=<?= $cssVersion ?: 1 ?>" />
 
   <?php
   // LCP: preload the homepage hero image (rendered as a CSS background in styles.css)
   if (($activePage ?? '') === 'home') {
-      echo "  <link rel=\"preload\" as=\"image\" href=\"/hero_bottles_banner.webp\" />\n";
+      echo "  <link rel=\"preload\" as=\"image\" href=\"/hero_bottles_banner.webp\" fetchpriority=\"high\" />\n";
   }
   ?>
 
@@ -102,7 +105,7 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
       
       <!-- Search Input with Live Autocomplete -->
       <form action="/products" method="GET" class="tn-search-box" id="top-search-form" onsubmit="if(!this.q.value.trim()) return false;">
-        <input type="text" name="q" id="top-search-input" placeholder="Search bottles, jars, pumps, caps..." autocomplete="off" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>" />
+        <input type="text" name="q" aria-label="Search products and articles" id="top-search-input" placeholder="Search bottles, jars, pumps, caps..." autocomplete="off" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>" />
         <button type="submit" aria-label="Search">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
@@ -275,7 +278,7 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
     <!-- Mobile Search Box -->
     <div class="mobile-nav-search">
       <form action="/products" method="GET" class="mobile-search-input-wrap" id="mobile-search-form" onsubmit="if(!this.q.value.trim()) return false;">
-        <input type="text" name="q" id="mobile-search-input" placeholder="Search packaging..." autocomplete="off" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>" />
+        <input type="text" name="q" aria-label="Search products and articles" id="mobile-search-input" placeholder="Search packaging..." autocomplete="off" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>" />
         <button type="submit" aria-label="Search">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
@@ -444,39 +447,5 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
     </div>
   </aside>
 
-  <script>
-    // Mobile Drawer Navigation
-    window.toggleMobileMenu = function() {
-      var d = document.getElementById('mobile-nav-drawer');
-      var b = document.getElementById('mobile-nav-backdrop');
-      var btn = document.getElementById('tn-mobile-menu-btn');
-      if (d && b) {
-        var isOpen = d.classList.contains('open') || d.classList.contains('active');
-        if (isOpen) {
-          window.closeMobileMenu();
-        } else {
-          d.classList.add('open', 'active');
-          b.classList.add('open', 'active');
-          if (btn) {
-            btn.classList.add('active');
-            btn.setAttribute('aria-expanded', 'true');
-          }
-          document.body.style.overflow = 'hidden';
-        }
-      }
-    };
-
-    window.closeMobileMenu = function() {
-      var d = document.getElementById('mobile-nav-drawer');
-      var b = document.getElementById('mobile-nav-backdrop');
-      var btn = document.getElementById('tn-mobile-menu-btn');
-      if (d) d.classList.remove('open', 'active');
-      if (b) b.classList.remove('open', 'active');
-      if (btn) {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-      document.body.style.overflow = '';
-    };
-  </script>
+  <!-- Mobile drawer functions (toggleMobileMenu / closeMobileMenu) live in /js/site-main.js -->
 

@@ -24,10 +24,10 @@ if (isset($_GET['action']) && $_GET['action'] === 'export_csv') {
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=truenorth_inquiries_' . date('Ymd_His') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Reference ID', 'Date', 'Status', 'Name', 'Company', 'Email', 'Phone', 'Country', 'Product/Subject', 'Inquiry Message', 'Replies Count']);
+    tn_fputcsv($output, ['Reference ID', 'Date', 'Status', 'Name', 'Company', 'Email', 'Phone', 'Country', 'Product/Subject', 'Inquiry Message', 'Replies Count']);
     foreach ($all as $r) {
         $repliesCount = isset($r['replies']) && is_array($r['replies']) ? count($r['replies']) : 0;
-        fputcsv($output, [
+        tn_fputcsv($output, [
             $r['quote_id'] ?? '',
             $r['created_at'] ?? '',
             $r['status'] ?? 'new',

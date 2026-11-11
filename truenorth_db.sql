@@ -120,7 +120,6 @@ CREATE TABLE `inquiries` (
 
 LOCK TABLES `inquiries` WRITE;
 /*!40000 ALTER TABLE `inquiries` DISABLE KEYS */;
-INSERT INTO `inquiries` VALUES (2,'INQ-E2603915','Ayush Test Client','Acme Packaging Ltd','ayush4002@gmail.com','+91 9999999999','India','100ml Boston Round PET Bottle','This is a test inquiry to verify client confirmation email receipt.','new','2026-09-25 14:55:30');
 /*!40000 ALTER TABLE `inquiries` ENABLE KEYS */;
 UNLOCK TABLES;
 

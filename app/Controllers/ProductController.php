@@ -19,7 +19,7 @@ class ProductController {
         $skuId = $_GET['id'] ?? null;
 
         if ($skuId) {
-            $sku = ProductModel::getSkuById($skuId);
+            $sku = ProductModel::getPublishedSkuById($skuId);
             if ($sku) {
                 echo json_encode(["success" => true, "data" => $sku]);
             } else {

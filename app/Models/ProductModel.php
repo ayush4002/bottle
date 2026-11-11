@@ -2386,6 +2386,16 @@ class ProductModel {
         return $filtered;
     }
 
+    /**
+     * Public lookup: only published products. Archived, draft or deleted products
+     * must not be reachable by direct URL or the public API (admin uses getSkuById).
+     */
+    public static function getPublishedSkuById($id) {
+        $sku = self::getSkuById($id);
+        if (!$sku) return null;
+        return (($sku['status'] ?? 'published') === 'published') ? $sku : null;
+    }
+
     public static function getSkuById($id) {
         if (empty($id)) return null;
 

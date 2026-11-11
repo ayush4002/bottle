@@ -7,6 +7,13 @@ $isHttps = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
     || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
     || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443);
 
+// Never serve the admin panel (or accept passwords) over plain HTTP outside local development
+$tnHostOnly = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? ''));
+if (!$isHttps && PHP_SAPI !== 'cli' && !in_array($tnHostOnly, ['localhost', '127.0.0.1', '[::1]', ''], true)) {
+    header('Location: https://wetruenorthgroup.com' . ($_SERVER['REQUEST_URI'] ?? '/admin'), true, 301);
+    exit();
+}
+
 if (session_status() === PHP_SESSION_NONE) {
     ini_set('session.cookie_httponly', '1');
     ini_set('session.use_only_cookies', '1');
@@ -222,5 +229,39 @@ function tn_csrf_reject() {
         if (!verifyCsrfToken(tn_request_csrf_token())) {
             tn_csrf_reject();
         }
+        // Any admin change: purge page/SEO caches and rebuild sitemap.xml once the request finishes,
+        // so edits (incl. archiving a product) go live immediately and the sitemap never goes stale.
+        if (!preg_match('#/admin/(login|logout)#', $path)) {
+            register_shutdown_function('tn_after_admin_change');
+        }
     }
 })();
+
+function tn_after_admin_change() {
+    try {
+        $root = dirname(__DIR__);
+        require_once $root . '/includes/page_cache.php';
+        require_once $root . '/app/Models/ProductModel.php';
+        require_once $root . '/app/Models/BlogModel.php';
+        require_once $root . '/app/Models/SeoModel.php';
+        SeoModel::flushCache();          // SEO settings cache + full-page cache
+        SeoModel::generateSitemapXml();  // rewrites /sitemap.xml from published content
+    } catch (Throwable $e) {
+        error_log('tn_after_admin_change: ' . $e->getMessage());
+    }
+}
+
+/**
+ * CSV export helper that neutralises spreadsheet formula injection: any cell starting
+ * with = + - @ (or tab/CR) is prefixed with an apostrophe so Excel/Sheets treat it as text.
+ */
+function tn_fputcsv($handle, array $row) {
+    $safe = array_map(function ($v) {
+        $v = is_scalar($v) || $v === null ? (string)$v : json_encode($v);
+        if ($v === '' || strpos("=+-@\t\r", $v[0]) === false) return $v;
+        // Plain phone numbers / negative numbers like "+91 98102 20761" or "-5" are harmless
+        if (preg_match('/^[+-][0-9 ().-]+$/', $v)) return $v;
+        return "'" . $v;
+    }, $row);
+    return fputcsv($handle, $safe);
+}

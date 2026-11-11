@@ -39,12 +39,18 @@ if ($salePrice !== null && $salePrice > $regularPrice && $regularPrice > 0) {
 
 $stockQty = isset($_POST['stockQty']) && $_POST['stockQty'] !== '' ? max(0, (int)$_POST['stockQty']) : 1000;
 $stockStatus = trim($_POST['stockStatus'] ?? ($stockQty > 0 ? 'in_stock' : 'out_of_stock'));
+if (!in_array($stockStatus, ['in_stock', 'out_of_stock', 'backorder', 'low_stock', 'on_backorder', 'preorder'], true)) {
+    $stockStatus = $stockQty > 0 ? 'in_stock' : 'out_of_stock';
+}
 
 // Determine status: if draft button was clicked, force draft; otherwise default to published
 if (isset($_POST['submit_draft'])) {
     $status = 'draft';
 } else {
     $status = !empty($_POST['status']) ? trim($_POST['status']) : 'published';
+}
+if (!in_array($status, ['published', 'draft', 'archived'], true)) {
+    $status = 'draft';
 }
 
 $isFeatured = !empty($_POST['isFeatured']);
@@ -139,12 +145,23 @@ if (empty($seriesSlug)) {
 }
 if (empty($seriesSlug)) $seriesSlug = 'custom-series';
 
+// Auto article numbers must never collide: products are stored keyed by article number,
+// so a duplicate would silently overwrite an existing product.
 if (empty($articleNo)) {
-    $articleNo = 'TN-' . strtoupper(substr($categorySlug, 0, 3)) . '-' . rand(100, 999);
+    $prefix = 'TN-' . strtoupper(substr(preg_replace('/[^a-z]/i', '', $categorySlug) ?: 'GEN', 0, 3)) . '-';
+    $taken = [];
+    foreach (ProductModel::getSkus(true) as $existingSku) {
+        foreach (['articleNo', 'id'] as $k) {
+            if (!empty($existingSku[$k])) $taken[strtoupper($existingSku[$k])] = true;
+        }
+    }
+    do {
+        $articleNo = $prefix . strtoupper(bin2hex(random_bytes(3)));
+    } while (isset($taken[$articleNo]));
 }
 
 if (empty($id)) {
-    $id = 'PROD-' . time() . '-' . rand(100, 999);
+    $id = 'PROD-' . time() . '-' . bin2hex(random_bytes(3));
 }
 
 $originalSku = trim($_POST['original_sku'] ?? ($_POST['id'] ?? ''));
@@ -260,7 +277,9 @@ if ($saved) {
         exit();
     }
 
-    $redirectUrl = !empty($returnUrl) ? preg_replace('/\.php(\?|$)/', '$1', $returnUrl) : "/admin/products";
+    $redirectUrl = (!empty($returnUrl) && preg_match('#^/admin(/|\?|$)#', $returnUrl) && strpos($returnUrl, '//') === false)
+        ? preg_replace('/\.php(\?|$)/', '$1', $returnUrl)
+        : "/admin/products";
     $sep = strpos($redirectUrl, '?') !== false ? '&' : '?';
     header("Location: " . $redirectUrl . $sep . "msg=" . urlencode($successMsg));
     exit();

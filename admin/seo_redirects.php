@@ -1,4 +1,6 @@
 <?php
+// Buffer page output so the CSV export below can discard the admin header HTML
+ob_start();
 require_once __DIR__ . '/header.php';
 require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
 
@@ -52,13 +54,14 @@ if (isset($_GET['action']) && $_GET['action'] === 'dismiss_404' && !empty($_GET[
 
 // Handle Export Redirects CSV
 if (isset($_GET['action']) && $_GET['action'] === 'export_redirects_csv') {
+    while (ob_get_level() > 0) { ob_end_clean(); }
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=redirects_' . date('Y-m-d') . '.csv');
     $out = fopen('php://output', 'w');
-    fputcsv($out, ['Old URL', 'New URL', 'Status Code', 'Hits', 'Active']);
+    tn_fputcsv($out, ['Old URL', 'New URL', 'Status Code', 'Hits', 'Active']);
     $list = SeoModel::getRedirects();
     foreach ($list as $r) {
-        fputcsv($out, [$r['old_url'], $r['new_url'], $r['status_code'], $r['hits'], $r['is_active']]);
+        tn_fputcsv($out, [$r['old_url'], $r['new_url'], $r['status_code'], $r['hits'], $r['is_active']]);
     }
     fclose($out);
     exit();

@@ -13,7 +13,8 @@ Write-Host "Checking database dump truenorth_db.sql..." -ForegroundColor Yellow
 $dumpSuccess = $false
 if (Test-Path "D:\xampp\mysql\bin\mysqldump.exe") {
     $tempDump = "temp_truenorth_dump.sql"
-    & "D:\xampp\mysql\bin\mysqldump.exe" -u root truenorth_db --result-file=$tempDump 2>$null
+    # Customer inquiries (personal data) are never shipped in the deploy dump; the app recreates the table
+    & "D:\xampp\mysql\bin\mysqldump.exe" -u root truenorth_db --ignore-table=truenorth_db.inquiries --result-file=$tempDump 2>$null
     if ($LASTEXITCODE -eq 0 -and (Test-Path $tempDump) -and (Get-Item $tempDump).Length -gt 10000) {
         Move-Item $tempDump "truenorth_db.sql" -Force
         $dumpSuccess = $true
@@ -23,10 +24,7 @@ if (Test-Path "D:\xampp\mysql\bin\mysqldump.exe") {
     }
 }
 if (-not $dumpSuccess) {
-    if (Test-Path "config\truenorth_db.sql") {
-        Copy-Item "config\truenorth_db.sql" "truenorth_db.sql" -Force
-        Write-Host "Used verified production database dump from config\truenorth_db.sql." -ForegroundColor Green
-    }
+    Write-Host "Local MySQL not available; using the committed truenorth_db.sql." -ForegroundColor Yellow
 }
 
 # Refuse to package without real secrets (no default passwords ship to production)

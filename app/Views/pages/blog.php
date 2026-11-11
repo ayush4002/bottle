@@ -47,7 +47,7 @@ $searchQuery = trim($_GET['q'] ?? '');
 
         <form action="/blog" method="GET" style="max-width: 540px; margin: 0 auto; display: flex; gap: 8px;">
 
-          <input type="text" name="q" value="<?= htmlspecialchars($searchQuery) ?>" placeholder="Search packaging articles, materials, or neck finishes..." style="flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); color: #fff; font-size: 0.92rem; outline: none; backdrop-filter: blur(4px);" />
+          <input type="text" name="q" aria-label="Search products and articles" value="<?= htmlspecialchars($searchQuery) ?>" placeholder="Search packaging articles, materials, or neck finishes..." style="flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); color: #fff; font-size: 0.92rem; outline: none; backdrop-filter: blur(4px);" />
 
           <button type="submit" class="tn-btn-gold" style="padding: 12px 22px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; white-space: nowrap;">
 

@@ -43,7 +43,7 @@ class PageController {
     }
 
     public static function renderProductDetail($skuId) {
-        $sku = ProductModel::getSkuById($skuId);
+        $sku = ProductModel::getPublishedSkuById($skuId);
         if (!$sku) {
             http_response_code(404);
             self::renderPage('404');

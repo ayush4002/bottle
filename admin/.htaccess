@@ -9,6 +9,15 @@ DirectoryIndex index.php
     RewriteEngine On
     RewriteBase /admin/
 
+    # Force canonical HTTPS host here too: a sub-directory RewriteEngine stops
+    # the root .htaccess rules from running for /admin and /public
+    RewriteCond %{HTTP_HOST} ^www\.wetruenorthgroup\.com$ [NC]
+    RewriteRule ^ https://wetruenorthgroup.com%{REQUEST_URI} [R=301,L]
+    RewriteCond %{HTTP_HOST} !^(127\.0\.0\.1|localhost)(:\d+)?$ [NC]
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://wetruenorthgroup.com%{REQUEST_URI} [R=301,L]
+
     # 1. 301 Redirect direct requests for index.php to /admin
     RewriteCond %{THE_REQUEST} \s/admin/index\.php[?\s] [NC]
     RewriteRule ^index\.php$ /admin [R=301,L]

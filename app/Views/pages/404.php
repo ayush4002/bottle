@@ -35,7 +35,7 @@ $popularCats = [
 
       <!-- Search bar on 404 -->
       <form action="/products" method="GET" style="display: flex; max-width: 520px; margin: 0 auto 28px; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1;">
-        <input type="text" name="q" placeholder="Search 290+ bottles, jars, pumps, caps..." style="flex: 1; padding: 12px 16px; border: none; font-size: 0.92rem; outline: none;" required />
+        <input type="text" name="q" aria-label="Search products and articles" placeholder="Search 290+ bottles, jars, pumps, caps..." style="flex: 1; padding: 12px 16px; border: none; font-size: 0.92rem; outline: none;" required />
         <button type="submit" style="background: var(--color-navy); color: #fff; border: none; padding: 0 22px; font-weight: 700; font-size: 0.88rem; cursor: pointer;">
           Search
         </button>

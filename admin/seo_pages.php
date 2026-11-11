@@ -1,5 +1,7 @@
 <?php
 require_once dirname(__DIR__) . '/includes/upload_guard.php';
+// Buffer page output so the CSV export below can discard the admin header HTML
+ob_start();
 require_once __DIR__ . '/header.php';
 require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
 require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
@@ -14,14 +16,15 @@ $adminUser = $_SESSION['admin_user'] ?? 'admin';
 
 // Handle CSV Export
 if (isset($_GET['action']) && $_GET['action'] === 'export_csv') {
+    while (ob_get_level() > 0) { ob_end_clean(); }
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=truenorth_seo_metadata_' . date('Y-m-d') . '.csv');
     $out = fopen('php://output', 'w');
-    fputcsv($out, ['URL Slug', 'Page Type', 'Meta Title', 'Meta Description', 'Focus Keyword', 'Robots Index']);
+    tn_fputcsv($out, ['URL Slug', 'Page Type', 'Meta Title', 'Meta Description', 'Focus Keyword', 'Robots Index']);
 
     $res = SeoModel::getAllPagesList('', 'all', 1, 2000);
     foreach ($res['items'] as $row) {
-        fputcsv($out, [
+        tn_fputcsv($out, [
             $row['url_slug'] ?? '',
             $row['page_type'] ?? '',
             $row['meta_title'] ?? '',
