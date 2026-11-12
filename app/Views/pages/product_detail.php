@@ -12,36 +12,21 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
 ?>
 <div id="main-content" tabindex="-1" aria-hidden="true" style="position:absolute; left:0; top:0; width:0; height:0;"></div>
 
-<!-- Product Banner -->
-<div class="products-page-title-banner about-hero-banner" style="padding: 40px 0;">
-  <div class="tn-container">
-    <div class="about-hero-badge">TRUENORTH PRODUCTS</div>
-    <h1 class="about-hero-title"><?= htmlspecialchars($sku['fullTitle'] ?? $sku['name'] ?? 'Product Detail') ?></h1>
-    <p class="about-hero-subtitle">Premium Primary Packaging Solutions</p>
-  </div>
-</div>
-
-<section class="tn-section" style="padding: 32px 0; background: #ffffff;">
+<section class="tn-section" style="padding: 24px 0 32px; background: #ffffff;">
   <div class="tn-container">
 
-    <!-- Top Heading Matching Image 5 -->
-    <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--color-navy); margin-bottom: 12px; line-height: 1.35;">
-      <?= htmlspecialchars($sku['fullTitle'] ?? $sku['name'] ?? 'Product Detail') ?>
-    </h2>
-
-    <!-- Back Button -->
-    <a href="/products?category=<?= urlencode($catSlug) ?>" class="tn-back-btn">
-      Back
-    </a>
-
-    <!-- Breadcrumbs -->
-    <div class="tn-breadcrumbs">
+    <!-- Breadcrumbs (link back to the category) -->
+    <div class="tn-breadcrumbs" style="margin-bottom: 10px;">
       <a href="/products">Products</a>
       <span class="separator">&gt;</span>
       <a href="/products?category=<?= urlencode($catSlug) ?>"><?= htmlspecialchars($catName) ?></a>
       <span class="separator">&gt;</span>
       <span class="current"><?= htmlspecialchars($sku['name'] ?? 'Product') ?></span>
     </div>
+
+    <h1 class="tn-pdp-title" style="font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 800; color: var(--color-navy); margin: 0 0 18px; line-height: 1.3;">
+      <?= htmlspecialchars($sku['fullTitle'] ?? $sku['name'] ?? 'Product Detail') ?>
+    </h1>
 
     <!-- 2-Column Product Detail Layout (Matching Image 5) -->
     <div class="tn-pdp-layout">
@@ -89,10 +74,16 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
               <td>Shape</td>
               <td><?= htmlspecialchars($sku['specs']['shape'] ?? $sku['shape'] ?? 'Cylindrical') ?></td>
             </tr>
+            <?php
+              $rawSize = trim($sku['specs']['capacity'] ?? $sku['volume'] ?? '');
+              $hasSize = $rawSize !== '' && !in_array(strtoupper($rawSize), ['N/A', 'NA', 'STANDARD', 'NONE', '-', 'NULL'], true);
+            ?>
+            <?php if ($hasSize): ?>
             <tr>
               <td>Size</td>
-              <td><?= htmlspecialchars($sku['specs']['capacity'] ?? $sku['volume'] ?? 'Standard') ?></td>
+              <td><?= htmlspecialchars($rawSize) ?></td>
             </tr>
+            <?php endif; ?>
             <?php 
               $rawWeight = trim($sku['specs']['weight'] ?? $sku['weight'] ?? '');
               $hasWeight = !empty($rawWeight) && !in_array(strtoupper($rawWeight), ['N/A', 'NA', 'STANDARD', 'NONE', '-', 'NULL']);
@@ -114,22 +105,29 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
               <td>Colour</td>
               <td><?= htmlspecialchars($displayColor) ?></td>
             </tr>
+            <?php $rawMoq = trim($sku['specs']['moq'] ?? $sku['moq'] ?? ''); ?>
+            <?php if ($rawMoq !== '' && !in_array(strtoupper($rawMoq), ['N/A', 'NA', 'NONE', '-'], true)): ?>
+            <tr>
+              <td>Min. order (MOQ)</td>
+              <td><?= htmlspecialchars($rawMoq) ?></td>
+            </tr>
+            <?php endif; ?>
           </tbody>
         </table>
 
         <!-- Action Buttons -->
         <div class="tn-pdp-cta-wrap">
-          <button class="tn-btn-gold" style="margin: 0; padding: 12px 28px; background: #15803d; border-color: #15803d; color: #fff; font-weight: 700; border-radius: 6px; cursor: pointer;" onclick="window.openInquiry('<?= addslashes($sku['name'] ?? '') ?>')">
+          <button class="tn-btn-gold" style="margin: 0; padding: 12px 28px; background: var(--color-navy, #16273F); border-color: var(--color-navy, #16273F); color: #fff; font-weight: 700; border-radius: 6px; cursor: pointer;" onclick="window.openInquiry(<?= htmlspecialchars(json_encode($sku['name'] ?? ''), ENT_QUOTES) ?>)">
             REQUEST A QUOTE
           </button>
-          <button class="tn-btn-outline" style="margin: 0; padding: 12px 24px; background: #B8892E; border-color: #B8892E; color: #fff; font-weight: 700; border-radius: 6px; cursor: pointer;" onclick="window.openInquiry('Sample Request: <?= addslashes($sku['name'] ?? '') ?>')">
+          <button class="tn-btn-outline" style="margin: 0; padding: 12px 24px; background: #946D1E; border-color: #946D1E; color: #fff; font-weight: 700; border-radius: 6px; cursor: pointer;" onclick="window.openInquiry(<?= htmlspecialchars(json_encode('Sample Request: ' . ($sku['name'] ?? '')), ENT_QUOTES) ?>)">
             REQUEST A SAMPLE
           </button>
         </div>
 
         <!-- Detailed Description & Compatible Closures -->
         <div style="margin-top: 28px; border-top: 1px solid #E5E7EB; padding-top: 20px;">
-          <h4 style="font-size: 0.9375rem; font-weight: 700; color: var(--color-navy); margin-bottom: 6px;">Product Overview</h4>
+          <h2 style="font-size: 0.9375rem; font-weight: 700; color: var(--color-navy); margin-bottom: 6px;">Product Overview</h2>
           <p style="font-size: 0.8125rem; color: #555; line-height: 1.6; margin-bottom: 14px;">
             <?= htmlspecialchars($sku['description'] ?? $sku['shortDescription'] ?? 'High quality primary packaging component manufactured under strict cleanroom conditions.') ?>
           </p>
@@ -186,7 +184,7 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
           </div>
           <div style="padding: 12px 14px;">
             <p style="font-size: 0.85rem; font-weight: 700; color: #16273f; margin: 0; line-height: 1.35;"><?= htmlspecialchars($tnRel['name'] ?? '') ?></p>
-            <p style="font-size: 0.72rem; color: #94a3b8; margin: 6px 0 0;"><?= htmlspecialchars($tnRel['sku'] ?? ($tnRel['id'] ?? '')) ?></p>
+            <p style="font-size: 0.72rem; color: #64748b; margin: 6px 0 0;"><?= htmlspecialchars($tnRel['sku'] ?? ($tnRel['id'] ?? '')) ?></p>
           </div>
         </a>
       <?php endforeach; ?>

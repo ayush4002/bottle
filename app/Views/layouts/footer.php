@@ -94,11 +94,11 @@ if (empty($company) && class_exists('ProductModel')) {
               <?= nl2br(htmlspecialchars($company['hq'] ?? '#201, Vardhaman Trade Towers, Rohit Kunj, LSC Pitampura, Delhi-110034')) ?>
             </p>
             <div class="footer-contact-block">
-              <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" class="footer-phone-link" style="color: var(--color-gold) !important; font-weight: 700;">
+              <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" class="footer-phone-link" style="color: var(--color-gold-text, #8A6516) !important; font-weight: 700;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <?= htmlspecialchars($company['phone'] ?? '+91 98102 20761') ?>
               </a>
-              <a href="https://wa.me/<?= htmlspecialchars($company['whatsapp'] ?? '919810220761') ?>" class="footer-whatsapp-link" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold) !important; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
+              <a href="https://wa.me/<?= htmlspecialchars($company['whatsapp'] ?? '919810220761') ?>" class="footer-whatsapp-link" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold-text, #8A6516) !important; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9 L3 21l1.9-5.7 a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5 a8.48 8.48 0 0 1 8 8v.5z"/>
                   <path d="M9 9a5 5 0 0 0 6 6"/>
@@ -110,14 +110,11 @@ if (empty($company) && class_exists('ProductModel')) {
                 <?= htmlspecialchars($company['email'] ?? 'info@wetruenorthgroup.com') ?>
               </a>
             </div>
-            <p class="footer-closures-line" style="margin-top: 8px; margin-bottom: 0; font-size: 0.8125rem; color: #64748B;">
-              <span>Closures: Ningbo, China</span>
-            </p>
             <?php
             $tnLinkedin = class_exists('SeoModel') ? (SeoModel::getSetting('org_social_linkedin') ?: '') : '';
             if (!empty($tnLinkedin)):
             ?>
-              <a href="<?= htmlspecialchars($tnLinkedin) ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.8125rem; font-weight: 700; color: #94a3b8; text-decoration: none; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
+              <a href="<?= htmlspecialchars($tnLinkedin) ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.8125rem; font-weight: 700; color: #64748b; text-decoration: none; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                 LinkedIn
               </a>
@@ -181,8 +178,13 @@ if (empty($company) && class_exists('ProductModel')) {
   <div class="tn-sticky-mob-bar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: none; background: #16273f; border-top: 1px solid rgba(255,255,255,0.08);">
     <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.82rem;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      CALL US
+      CALL
     </a>
+    <?php $tnQuoteSubject = !empty($sku['name']) ? (string)$sku['name'] : ''; ?>
+    <button type="button" onclick="window.openInquiry(<?= htmlspecialchars(json_encode($tnQuoteSubject), ENT_QUOTES) ?>)" style="flex: 1.2; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 8px; color: #16273f; background: #d4a754; border: 0; font-family: inherit; font-weight: 800; font-size: 0.82rem; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+      GET QUOTE
+    </button>
     <a href="https://wa.me/<?= htmlspecialchars($company['whatsapp'] ?? '919810220761') ?>?text=<?= urlencode('Hi TrueNorth Group — I would like to request a quote & samples.') ?>" target="_blank" rel="noopener noreferrer" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 8px; color: #fff; background: #16a34a; text-decoration: none; font-weight: 700; font-size: 0.82rem;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
       WHATSAPP
@@ -194,7 +196,10 @@ if (empty($company) && class_exists('ProductModel')) {
       var bar = document.querySelector('.tn-sticky-mob-bar');
       if (!bar) return;
       function sync() {
-        bar.style.display = window.innerWidth < 768 ? 'flex' : 'none';
+        var on = window.innerWidth < 768;
+        bar.style.display = on ? 'flex' : 'none';
+        // keep the last bit of the page (footer links) above the fixed bar
+        document.body.style.paddingBottom = on ? (bar.offsetHeight || 48) + 'px' : '';
       }
       window.addEventListener('resize', sync, { passive: true });
       sync();

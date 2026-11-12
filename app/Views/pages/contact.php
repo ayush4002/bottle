@@ -21,6 +21,7 @@
           
           <!-- Left Info Column -->
           <div class="cnt-info-col">
+            <h2 class="sr-only">Contact details</h2>
             
             <!-- 1. HQ Details Card -->
             <div class="cnt-info-card">

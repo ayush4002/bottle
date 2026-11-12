@@ -263,28 +263,28 @@ Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers fr
                 <div class="cst-form-inputs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
                   
                   <div class="tn-form-field">
-                    <label>Full Name *</label>
-                    <input type="text" name="name" required placeholder="e.g. John Doe" autocomplete="name" />
+                    <label for="cq-name">Full Name *</label>
+                    <input id="cq-name" type="text" name="name" required placeholder="e.g. John Doe" autocomplete="name" />
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Company / Brand Name *</label>
-                    <input type="text" name="company" required placeholder="e.g. Acme Pharma / Brand" autocomplete="organization" />
+                    <label for="cq-company">Company / Brand Name *</label>
+                    <input id="cq-company" type="text" name="company" required placeholder="e.g. Acme Pharma / Brand" autocomplete="organization" />
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Business Email *</label>
-                    <input type="email" name="email" required placeholder="name@company.com" autocomplete="email" />
+                    <label for="cq-email">Business Email *</label>
+                    <input id="cq-email" type="email" name="email" required placeholder="name@company.com" autocomplete="email" />
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Phone / WhatsApp Number *</label>
-                    <input type="tel" name="phone" required placeholder="Country code + number" autocomplete="tel" />
+                    <label for="cq-phone">Phone / WhatsApp Number *</label>
+                    <input id="cq-phone" type="tel" name="phone" required placeholder="Country code + number" autocomplete="tel" />
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Country / Delivery Seaport *</label>
-                    <select name="country" class="country-select" required>
+                    <label for="cq-country">Country / Delivery Seaport *</label>
+                    <select id="cq-country" name="country" class="country-select" required>
                       <option value="" disabled selected>Select destination country...</option>
                       <option value="United States">United States</option>
                       <option value="United Kingdom">United Kingdom</option>
@@ -302,8 +302,8 @@ Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers fr
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Target Container Volume</label>
-                    <select name="target_volume">
+                    <label for="cq-target-volume">Target Container Volume</label>
+                    <select id="cq-target-volume" name="target_volume">
                       <option value="Not decided yet / Need advice">Not decided yet / Need advice</option>
                       <option value="15ml - 50ml (Sample / Travel)">15ml - 50ml (Sample / Travel)</option>
                       <option value="60ml - 120ml (Serum / Dropper)">60ml - 120ml (Serum / Dropper)</option>
@@ -315,8 +315,8 @@ Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers fr
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Preferred Polymer / Material</label>
-                    <select name="material">
+                    <label for="cq-material">Preferred Polymer / Material</label>
+                    <select id="cq-material" name="material">
                       <option value="PET (Clear, Amber or Custom Colour)" selected>PET (Clear, Amber, White, or Custom Colour)</option>
                       <option value="HDPE (High-Density Polyethylene)">HDPE (High-Density Polyethylene)</option>
                       <option value="PP (Polypropylene Caps & Closures)">PP (Polypropylene Closures)</option>
@@ -327,8 +327,8 @@ Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers fr
                   </div>
 
                   <div class="tn-form-field">
-                    <label>Estimated Initial Run (MOQ)</label>
-                    <select name="estimated_quantity">
+                    <label for="cq-estimated-quantity">Estimated Initial Run (MOQ)</label>
+                    <select id="cq-estimated-quantity" name="estimated_quantity">
                       <option value="5,000 - 10,000 units (Pilot Trial)">5,000 - 10,000 units (Pilot Trial)</option>
                       <option value="10,000 - 25,000 units" selected>10,000 - 25,000 units</option>
                       <option value="25,000 - 50,000 units">25,000 - 50,000 units</option>
@@ -339,8 +339,8 @@ Nutraceuticles jars and tamper-evident induction sealed nutraceutical packers fr
                 </div>
 
                 <div class="tn-form-field" style="margin-top: 10px;">
-                  <label>Project Specifications, Concept Dimensions, or Closure Needs *</label>
-                  <textarea name="inquiry" required placeholder="Please describe your bottle shape concept, desired neck thread standard (e.g. 24/410, 28/410), target bottle gram weight, closure type (pump, sprayer, flip-top), or project timeline..."></textarea>
+                  <label for="cq-inquiry">Project Specifications, Concept Dimensions, or Closure Needs *</label>
+                  <textarea id="cq-inquiry" name="inquiry" required placeholder="Please describe your bottle shape concept, desired neck thread standard (e.g. 24/410, 28/410), target bottle gram weight, closure type (pump, sprayer, flip-top), or project timeline..."></textarea>
                 </div>
 
                 <!-- Submit Button -->

@@ -133,6 +133,7 @@ $searchQuery = trim($_GET['q'] ?? '');
 
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;">
 
+          <h2 class="sr-only">Latest articles</h2>
           <?php foreach ($posts as $post): ?>
 
             <article style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.04);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 25px -4px rgba(15,27,44,0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.04)';">
@@ -181,7 +182,7 @@ $searchQuery = trim($_GET['q'] ?? '');
 
                   <span style="color: #64748b; font-weight: 600;"><?= htmlspecialchars($post['author_name']) ?></span>
 
-                  <a href="/blog/<?= htmlspecialchars($post['slug']) ?>" style="color: #b8892e; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                  <a href="/blog/<?= htmlspecialchars($post['slug']) ?>" style="color: #8A6516; font-weight: 700; text-decoration: none; display: inline-flex; min-height: 32px; align-items: center; gap: 4px;">
 
                     Read Guide &rarr;
 

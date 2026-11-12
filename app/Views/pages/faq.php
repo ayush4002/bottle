@@ -59,7 +59,7 @@ $pageDesc = 'Answers to the questions procurement teams ask most about PET bottl
           <p style="color:#475569; margin-bottom:14px;">Still have a specification question? Our technical desk replies within one business day.</p>
           <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
             <button type="button" class="tn-btn-gold" onclick="window.openInquiry('FAQ Page &mdash; Technical Question')">SEND AN INQUIRY</button>
-            <a href="/contact" class="tn-btn-outline">CONTACT US</a>
+            <a href="/contact" class="tn-btn-outline tn-btn-outline-dark">CONTACT US</a>
           </div>
         </div>
       </div>

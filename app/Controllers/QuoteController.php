@@ -8,6 +8,13 @@
 require_once dirname(__DIR__, 2) . '/config/config.php';
 require_once dirname(__DIR__) . '/Services/MailService.php';
 
+if (!function_exists('tn_json')) {
+    /** JSON for API responses, with HTML-significant characters escaped. */
+    function tn_json($data) {
+        return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+    }
+}
+
 class QuoteController {
 
     public static function handleInquiry() {
@@ -22,7 +29,7 @@ class QuoteController {
             $allowedHosts = ['wetruenorthgroup.com', 'www.wetruenorthgroup.com', 'localhost', '127.0.0.1'];
             if (!in_array($originHost, $allowedHosts, true)) {
                 http_response_code(403);
-                echo json_encode(["success" => false, "message" => "Cross-origin submissions are not allowed."]);
+                echo tn_json(["success" => false, "message" => "Cross-origin submissions are not allowed."]);
                 exit();
             }
         }
@@ -34,7 +41,7 @@ class QuoteController {
 
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
-            echo json_encode(["success" => false, "message" => "Method Not Allowed"]);
+            echo tn_json(["success" => false, "message" => "Method Not Allowed"]);
             exit();
         }
 
@@ -62,7 +69,7 @@ class QuoteController {
 
         if (($rateData['count'] ?? 0) >= 5) {
             http_response_code(429);
-            echo json_encode([
+            echo tn_json([
                 "success" => false,
                 "message" => "Rate limit exceeded. Maximum 5 quote inquiries allowed per hour. For urgent requests, please contact our commercial division directly at +91 98102 20761 or info@wetruenorthgroup.com."
             ]);
@@ -84,7 +91,7 @@ class QuoteController {
 
         if (empty($data) || !is_array($data)) {
             http_response_code(400);
-            echo json_encode(["success" => false, "message" => "Invalid or empty form submission."]);
+            echo tn_json(["success" => false, "message" => "Invalid or empty form submission."]);
             exit();
         }
 
@@ -92,7 +99,7 @@ class QuoteController {
         if (!empty($data['website_url_hp']) || !empty($data['hp_field']) || !empty($data['comment_hp'])) {
             // Fake success to silently discard bot submissions without logging or email dispatch
             http_response_code(200);
-            echo json_encode([
+            echo tn_json([
                 "success" => true,
                 "message" => "Inquiry received. A TrueNorth commercial specialist will review your requirements."
             ]);
@@ -103,22 +110,22 @@ class QuoteController {
         $email = trim((string)($data['email'] ?? $data['Email'] ?? $data['Email_Address'] ?? ''));
         if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 254) {
             http_response_code(422);
-            echo json_encode(["success" => false, "message" => "A valid email address is required."]);
+            echo tn_json(["success" => false, "message" => "A valid email address is required."]);
             exit();
         }
 
         // Increment rate limit count
         $rateData['count'] = ($rateData['count'] ?? 0) + 1;
-        file_put_contents($rateFile, json_encode($rateData), LOCK_EX);
+        file_put_contents($rateFile, tn_json($rateData), LOCK_EX);
 
         $result = MailService::sendInquiryEmail($data);
 
         if ($result['success']) {
             http_response_code(200);
-            echo json_encode($result);
+            echo tn_json($result);
         } else {
             http_response_code(500);
-            echo json_encode($result);
+            echo tn_json($result);
         }
         exit();
     }

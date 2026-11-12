@@ -2143,9 +2143,12 @@ class ProductModel {
 
         $edited = self::getEditedProducts();
         foreach ($edited as $id => $overrides) {
+            // edited_products.json also stores image alt-text overrides ("img_alt_<hash>");
+            // those are not products and must never be added to the catalogue.
+            if (!is_array($overrides) || strpos((string)$id, 'img_alt_') === 0) continue;
             if (isset($allMap[$id])) {
                 $allMap[$id] = array_merge($allMap[$id], $overrides);
-            } else {
+            } elseif (!empty($overrides['name']) || !empty($overrides['articleNo'])) {
                 $allMap[$id] = $overrides;
             }
         }
@@ -2515,7 +2518,136 @@ class ProductModel {
      * Leverages SearchDictionary taxonomy, singular/plural stemming, category expansion,
      * specification matching (capacity, neck finish, material, shape), and relevance scoring.
      */
+    /**
+     * Buyer-friendly product search.
+     * - every word is matched on its own ("pet bottle 100ml", "jar 250", "pharma 60ml")
+     * - sizes / neck finishes are normalised ("100 ml" = "100ml", "28 410" = "28/410")
+     * - synonyms (amber/brown, cap/closure/lid, spray/mist...) and colour, material, shape
+     * - if no product matches every word, the closest partial matches are returned
+     * Falls back to the legacy taxonomy search only when nothing matches at all.
+     */
     public static function searchProducts($query, $includeArchived = false) {
+        $rawQuery = trim((string)($query ?? ''));
+        $all = self::getSkus($includeArchived);
+        if ($rawQuery === '') return $all;
+
+        $norm = function ($t) {
+            $t = mb_strtolower((string)$t);
+            $t = preg_replace('/(\d+)\s*(ml|cc|ltr|gm|mm|g|l)\b/u', '$1$2', $t);
+            $t = preg_replace('/\b(\d{2})\s*[\s\-\/]\s*(4\d\d)\b/u', '$1/$2', $t);
+            $t = preg_replace('/[^a-z0-9\/\.]+/u', ' ', $t);
+            return trim(preg_replace('/\s+/', ' ', $t));
+        };
+        $stop = ['a', 'an', 'the', 'for', 'with', 'and', 'of', 'in', 'to', 'on', 'by', 'ml', 'cc', 'size', 'type'];
+        $synonyms = [
+            'amber' => ['amber', 'brown'], 'brown' => ['amber', 'brown'],
+            'clear' => ['clear', 'transparent', 'natural'], 'transparent' => ['clear', 'transparent'],
+            'cap' => ['cap', 'closure', 'lid'], 'closure' => ['cap', 'closure', 'lid'], 'lid' => ['lid', 'cap', 'closure'],
+            'spray' => ['spray', 'sprayer', 'mist'], 'sprayer' => ['spray', 'sprayer', 'mist', 'trigger'], 'mist' => ['mist', 'spray'],
+            'pharma' => ['pharma', 'pharmaceutical'], 'pharmaceutical' => ['pharma', 'pharmaceutical'], 'medicine' => ['pharma', 'medicine', 'syrup'],
+            'cosmetic' => ['cosmetic', 'cosmetics'], 'container' => ['jar', 'bottle', 'container'],
+            'liquor' => ['liquor', 'spirit', 'wine', 'whisky'], 'agro' => ['agro', 'agrochemical', 'pesticide'],
+            'flip' => ['flip', 'fliptop'], 'fliptop' => ['flip', 'fliptop'],
+            'shampoo' => ['cosmetic', 'shampoo'], 'lotion' => ['lotion', 'cosmetic'], 'cream' => ['cream', 'jar', 'cosmetic'],
+            'serum' => ['serum', 'cosmetic'], 'perfume' => ['perfume', 'spray'], 'syrup' => ['syrup', 'pharma'],
+            'pesticide' => ['pesticide', 'agro'], 'oil' => ['oil', 'cosmetic'],
+        ];
+        $unoffered = ['glass', 'aluminium', 'aluminum', 'tin', 'metal', 'ceramic'];
+
+        $tokens = [];
+        foreach (explode(' ', $norm($rawQuery)) as $tok) {
+            if ($tok === '' || in_array($tok, $stop, true)) continue;
+            if (strlen($tok) > 3 && substr($tok, -1) === 's' && substr($tok, -2) !== 'ss' && !preg_match('/\d/', $tok)) {
+                $tok = substr($tok, 0, -1); // jars -> jar, pumps -> pump
+            }
+            $tokens[$tok] = true;
+        }
+        $tokens = array_keys($tokens);
+        if (empty($tokens)) return [];
+
+        $taxMatch = SearchDictionary::matchTaxonomy(strtolower($rawQuery));
+        $targetCategories = $taxMatch['categorySlugs'] ?? [];
+
+        $wordHit = function ($needle, $hay) {
+            return $hay !== '' && preg_match('/(?<![a-z0-9])' . preg_quote($needle, '/') . '/u', $hay) === 1;
+        };
+
+        $scored = [];
+        foreach ($all as $sku) {
+            $specs = is_array($sku['specs'] ?? null) ? $sku['specs'] : [];
+            $primary = $norm(implode(' ', [$sku['name'] ?? '', $sku['fullTitle'] ?? '', $sku['articleNo'] ?? '', $sku['id'] ?? '', $sku['series'] ?? ($sku['serie'] ?? '')]));
+            $attrs = $norm(implode(' ', [
+                $sku['categoryName'] ?? '', str_replace('-', ' ', $sku['categorySlug'] ?? ''), $sku['shape'] ?? '', $specs['shape'] ?? '',
+                $sku['color'] ?? '', $specs['color'] ?? '', $specs['material'] ?? ($sku['material'] ?? ''), $specs['neck'] ?? '',
+                $specs['capacity'] ?? ($sku['capacity'] ?? ''), is_array($sku['industries'] ?? null) ? implode(' ', $sku['industries']) : '',
+            ]));
+            $desc = $norm(($sku['shortDescription'] ?? '') . ' ' . ($sku['description'] ?? ''));
+            $capNum = null;
+            if (preg_match('/(\d+(?:\.\d+)?)\s*(ml|cc|ltr|l)\b/i', ($specs['capacity'] ?? '') . ' ' . ($sku['name'] ?? ''), $m)) {
+                $capNum = (float)$m[1] * (in_array(strtolower($m[2]), ['ltr', 'l'], true) ? 1000 : 1);
+            }
+
+            $score = 0;
+            $matched = 0;
+            foreach ($tokens as $tok) {
+                $best = 0;
+                // Capacity: "100ml", "100cc", "1l" or a bare number ("jar 250")
+                if (preg_match('/^(\d+(?:\.\d+)?)(ml|cc|ltr|l)?$/', $tok, $tm) && $capNum !== null) {
+                    $want = (float)$tm[1] * (in_array($tm[2] ?? '', ['ltr', 'l'], true) ? 1000 : 1);
+                    if (abs($want - $capNum) < 0.01) $best = 45;
+                }
+                foreach ($synonyms[$tok] ?? [$tok] as $alt) {
+                    if ($wordHit($alt, $primary)) { $best = max($best, $alt === $tok ? 30 : 24); }
+                    elseif ($wordHit($alt, $attrs)) { $best = max($best, $alt === $tok ? 14 : 11); }
+                }
+                if ($best === 0 && strlen($tok) >= 3 && strpos($primary, $tok) !== false) {
+                    $best = 10; // partial code match, e.g. "nb108"
+                }
+                if ($best > 0) {
+                    $matched++;
+                    $score += $best;
+                } elseif (strlen($tok) >= 4 && $wordHit($tok, $desc)) {
+                    $score += 3; // description only nudges the ranking, it never satisfies a word
+                }
+            }
+            if ($matched === 0) continue;
+            if (!empty($targetCategories) && in_array(strtolower($sku['categorySlug'] ?? ''), $targetCategories, true)) {
+                $score += 20;
+            }
+            $scored[] = ['sku' => $sku, 'score' => $score, 'matched' => $matched, 'cap' => $capNum ?? PHP_INT_MAX];
+        }
+
+        $need = count($tokens);
+        $full = array_values(array_filter($scored, function ($r) use ($need) { return $r['matched'] === $need; }));
+        if (empty($full) && !empty($scored)) {
+            // Closest partial matches: products matching the most words
+            $max = max(array_column($scored, 'matched'));
+            // Asking for a material we do not make (e.g. "glass bottle") -> no misleading PET results
+            if (count(array_intersect($tokens, $unoffered)) > 0) {
+                return [];
+            }
+            if ($max >= 1) {
+                $full = array_values(array_filter($scored, function ($r) use ($max) { return $r['matched'] === $max; }));
+            }
+        }
+
+        if (empty($full)) {
+            if (count(array_intersect($tokens, $unoffered)) === count($tokens)) {
+                return []; // e.g. "glass": we do not sell it, so do not pretend
+            }
+            return self::searchProductsLegacy($rawQuery, $includeArchived);
+        }
+
+        usort($full, function ($a, $b) {
+            if ($a['score'] !== $b['score']) return $b['score'] <=> $a['score'];
+            if ($a['cap'] != $b['cap']) return $a['cap'] <=> $b['cap'];
+            return strcmp($a['sku']['name'] ?? '', $b['sku']['name'] ?? '');
+        });
+        return array_map(function ($r) { return $r['sku']; }, $full);
+    }
+
+    /** Previous taxonomy/stem-based search, kept as a fallback for single generic terms. */
+    public static function searchProductsLegacy($query, $includeArchived = false) {
         $rawQuery = trim($query ?? '');
         $all = self::getSkus($includeArchived);
         if ($rawQuery === '') return $all;

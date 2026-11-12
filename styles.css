@@ -16,3 +16,41 @@
 .tn-hp-field{position:absolute !important;left:-10000px !important;width:1px !important;height:1px !important;overflow:hidden !important}
 /* Visible keyboard focus for links and buttons */
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #B8892E;outline-offset:2px}
+
+/* ===== UX audit: readability & contrast (WCAG 2.2 AA) ===== */
+:root{--color-gold-text:#8A6516;--color-gold-btn:#946D1E;--color-gold-btn-hover:#7E5C18;--color-rpet-bar:#5E7260}
+/* Gold buttons: white text needs a slightly deeper gold (3.2:1 -> 4.7:1) */
+.tn-btn-gold{background:var(--color-gold-btn);border-color:var(--color-gold-btn)}
+.tn-btn-gold:hover{background:var(--color-gold-btn-hover);border-color:var(--color-gold-btn-hover)}
+/* Gold text on light backgrounds */
+.tn-section-eyebrow,.home-pre-banner-tag,.top-bar-phone,.top-bar-phone span,.footer-subheading-btn span,.footer-legal-links a,.footer-view-all-link,.footer-view-all-link span,.footer-phone-link,.footer-whatsapp-link,.mobile-nav-item.active,.mobile-nav-item.active span{color:var(--color-gold-text) !important}
+.pcr-expandable-content a{color:var(--color-gold-text)}
+/* Grey text that was too faint */
+.footer-link-grid a,.footer-link-list a,.footer-link-grid li a,.footer-link-list li a{color:#475569}
+.tn-filter-item .facet-count{color:#64748B}
+.tn-filter-item.is-disabled .facet-count{color:#94A3B8}
+.tn-search-box input::placeholder{color:#64748B}
+/* Header search: a real, comfortable field instead of a 13px strip */
+.tn-search-box{padding:7px 12px 7px 16px;width:300px;flex:0 1 300px}
+.tn-search-box input{font-size:0.9rem;min-height:22px}
+/* Outline buttons placed on LIGHT backgrounds (the default outline style is white-on-dark and was invisible here) */
+.tn-btn-outline.tn-btn-outline-dark{color:var(--color-navy);border-color:var(--color-navy);background:transparent}
+.tn-btn-outline.tn-btn-outline-dark:hover{background:var(--color-navy);color:#fff}
+/* Remaining low-contrast greys */
+.tn-filter-item .facet-count{color:#475569}
+.tn-filter-item.is-disabled .facet-count{color:#94A3B8}
+.footer-contact-block a,.footer-phone-link,.footer-whatsapp-link{color:var(--color-gold-text) !important}
+.tn-footer a[href*="linkedin"]{color:#475569 !important}
+.cnt-card-tag,.cnt-hub-tag,.cnt-faq-tag,.about-intro-tag,.about-subheading-tag,.cst-stage-badge,.cst-finish-cat{color:var(--color-gold-text) !important}
+/* Comfortable touch targets on phones (WCAG 2.2: >= 24px, aiming for 32px+) */
+@media (max-width:768px){
+.footer-legal-links a,.footer-view-all-link,.footer-contact-block a,.footer-email-link,.footer-phone-link,.footer-whatsapp-link,.tn-breadcrumbs a{display:inline-flex;align-items:center;min-height:32px}
+.footer-subheading-btn{min-height:36px}
+button[onclick*="resetCatalogueFilters"]{min-height:32px;padding:6px 10px !important}
+}
+/* Heading-order fixes keep the original look */
+.about-intro-col h2.about-intro-title{font-size:1.05rem;font-weight:800;color:var(--color-navy);margin:0}
+.sr-only{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0,0,0,0) !important;white-space:nowrap !important;border:0 !important}
+@media (max-width:768px){
+nav[aria-label="Breadcrumb"] a,a[href^="tel:"],a[href^="mailto:"]{display:inline-flex;align-items:center;min-height:32px}
+}

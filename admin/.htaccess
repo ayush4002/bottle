@@ -26,6 +26,9 @@ DirectoryIndex index.php
     RewriteCond %{THE_REQUEST} \s/admin/([a-zA-Z0-9_-]+)\.php[?\s] [NC]
     RewriteRule ^([a-zA-Z0-9_-]+)\.php$ /admin/%1 [R=301,L]
 
+    # 2b. Include-only files (auth/header/footer) are never pages of their own
+    RewriteRule ^(auth|header|footer)(\.php)?/?$ - [R=404,L]
+
     # 3. Rewrite extensionless requests /admin/xyz to xyz.php internally
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}.php -f

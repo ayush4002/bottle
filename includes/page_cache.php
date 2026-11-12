@@ -90,7 +90,7 @@ class PageCache
         if ($status === null) $status = self::$status;
         http_response_code($status);
         header('Content-Type: text/html; charset=UTF-8');
-        header('Cache-Control: public, max-age=60');
+        // Browser caching of HTML is governed by .htaccess (max-age=0) so admin edits show immediately
         header('X-Page-Cache: HIT');
         echo $html;
         exit;

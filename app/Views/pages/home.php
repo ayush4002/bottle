@@ -252,7 +252,7 @@
             <?php foreach ($tnTestimonials as $tnT): ?>
               <figure style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin: 0; display: flex; flex-direction: column; gap: 12px;">
                 <?php if (!empty($tnT['rating'])): ?>
-                  <div style="color: #b8892e; font-size: 0.9rem; letter-spacing: 1px;" aria-label="Rated <?= (int)$tnT['rating'] ?> out of 5">
+                  <div style="color: #8A6516; font-size: 0.9rem; letter-spacing: 1px;" aria-label="Rated <?= (int)$tnT['rating'] ?> out of 5">
                     <?= str_repeat('★', (int)$tnT['rating']) . str_repeat('☆', 5 - (int)$tnT['rating']) ?>
                   </div>
                 <?php endif; ?>
@@ -261,7 +261,7 @@
                 </blockquote>
                 <figcaption style="border-top: 1px solid #e2e8f0; padding-top: 12px;">
                   <div style="font-weight: 800; color: #16273f; font-size: 0.92rem;"><?= htmlspecialchars($tnT['client_name'] ?: 'Client') ?></div>
-                  <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 2px;"><?= htmlspecialchars(trim(($tnT['company'] ?? '') . ($tnT['role'] ? ' · ' . $tnT['role'] : ''))) ?></div>
+                  <div style="color: #64748b; font-size: 0.8rem; margin-top: 2px;"><?= htmlspecialchars(trim(($tnT['company'] ?? '') . ($tnT['role'] ? ' · ' . $tnT['role'] : ''))) ?></div>
                 </figcaption>
               </figure>
             <?php endforeach; ?>
@@ -344,7 +344,7 @@
                 </div>
               <?php endif; ?>
               <div style="padding: 18px 18px 20px;">
-                <?php if (!empty($tnP['category'])): ?><span style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; color: #b8892e; text-transform: uppercase;"><?= htmlspecialchars($tnP['category']) ?></span><?php endif; ?>
+                <?php if (!empty($tnP['category'])): ?><span style="font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; color: #8A6516; text-transform: uppercase;"><?= htmlspecialchars($tnP['category']) ?></span><?php endif; ?>
                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #16273f; margin: 8px 0 6px; line-height: 1.35;"><?= htmlspecialchars($tnP['title']) ?></h3>
                 <p style="color: #475569; font-size: 0.87rem; line-height: 1.55; margin: 0 0 10px;"><?= htmlspecialchars(mb_strimwidth($tnP['excerpt'] ?? strip_tags($tnP['content'] ?? ''), 0, 140, '…')) ?></p>
                 <span style="font-size: 0.78rem; font-weight: 700; color: #16273f;">Read Guide →</span>
@@ -353,7 +353,7 @@
           <?php endforeach; ?>
         </div>
         <div style="text-align: center; margin-top: 26px;">
-          <a href="/blog" class="tn-btn-outline">VIEW ALL GUIDES</a>
+          <a href="/blog" class="tn-btn-outline tn-btn-outline-dark">VIEW ALL GUIDES</a>
         </div>
       </div>
     </section>

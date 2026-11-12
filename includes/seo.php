@@ -55,6 +55,8 @@ function seo_meta($context = []) {
     // Static Page Default Meta (prevents duplicate homepage titles on inner pages)
     $staticAliases = [
         '/rpet' => '/sustainability',
+        '/insights' => '/blog',
+        '/articles' => '/blog',
         '/catalogue' => '/products',
         '/locations' => '/contact',
         '/custom-solutions' => '/custom',
@@ -101,6 +103,11 @@ function seo_meta($context = []) {
             'title' => 'Privacy & Data Protection Policy — ' . $siteName,
             'desc'  => 'TrueNorth Group privacy statement outlining our data handling standards, NDA commitments for custom designs, and client information protection.',
             'keywords' => 'privacy policy, NDA packaging designs, data protection'
+        ],
+        '/blog' => [
+            'title' => 'Packaging Insights & Engineering Guides — ' . $siteName,
+            'desc'  => 'Technical guides on PET bottle selection, dispensing pumps and sprayers, cleanroom pharma packaging, and recycled rPET materials from TrueNorth Group engineers.',
+            'keywords' => 'packaging blog, PET bottle guide, dispensing pump guide, rPET packaging, pharma packaging'
         ],
         '/products' => [
             'title' => 'Primary Packaging Catalogue — Bottles, Jars & Closures — ' . $siteName,

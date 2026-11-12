@@ -33,7 +33,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
         
         <!-- META HEADER -->
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
-          <a href="/blog?category=<?= urlencode(strtolower(str_replace(' ', '-', $post['category'] ?? ''))) ?>" style="text-decoration: none; background: rgba(184, 137, 46, 0.12); color: #b8892e; border: 1px solid rgba(184, 137, 46, 0.3); padding: 5px 12px; border-radius: 4px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+          <a href="/blog?category=<?= urlencode(strtolower(str_replace(' ', '-', $post['category'] ?? ''))) ?>" style="text-decoration: none; background: rgba(184, 137, 46, 0.12); color: #8A6516; border: 1px solid rgba(184, 137, 46, 0.3); padding: 5px 12px; border-radius: 4px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
             <?= htmlspecialchars($post['category']) ?>
           </a>
           <span style="font-size: 0.84rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px;">
@@ -94,7 +94,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
 
         <!-- ON THIS PAGE (auto-generated table of contents) -->
         <div id="tn-toc-box" style="display:none; border:1px solid #e2e8f0; border-left:3px solid #b8892e; border-radius:10px; background:#f8fafc; padding:18px 20px; margin-bottom:32px; max-width:460px;">
-          <strong style="font-size:0.72rem; letter-spacing:0.08em; color:#b8892e; text-transform:uppercase;">On This Page</strong>
+          <strong style="font-size:0.72rem; letter-spacing:0.08em; color: #8A6516; text-transform:uppercase;">On This Page</strong>
           <ol id="tn-toc-list" style="margin:10px 0 0; padding-left:18px; color:#334155;"></ol>
         </div>
 
@@ -154,7 +154,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
           </div>
           <div style="flex: 1 1 300px;">
             <div style="font-weight: 800; color: #16273f; font-size: 1.05rem; margin-bottom: 4px;"><?= htmlspecialchars($author) ?></div>
-            <div style="font-size: 0.82rem; color: #b8892e; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;"><?= htmlspecialchars($role) ?> &bull; TrueNorth Packaging Group</div>
+            <div style="font-size: 0.82rem; color: #8A6516; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;"><?= htmlspecialchars($role) ?> &bull; TrueNorth Packaging Group</div>
             <p style="font-size: 0.88rem; color: #64748b; line-height: 1.55; margin: 0;">
               TrueNorth Group is an ISO 9001:2015 certified primary packaging manufacturer operating Class 10,000 cleanrooms. We engineer precision PET bottles, jars, closures, and custom tooling serving pharmaceutical, cosmetic, and personal care brands globally.
             </p>
@@ -171,7 +171,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
             </p>
           </div>
           <div class="tn-cta-action">
-            <button type="button" class="tn-btn-gold" onclick="window.openInquiry('Blog Post RFQ: <?= addslashes($post['title']) ?>')" style="padding: 12px 24px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; white-space: nowrap;">
+            <button type="button" class="tn-btn-gold" onclick="window.openInquiry(<?= htmlspecialchars(json_encode('Blog Post RFQ: ' . ($post['title'] ?? '')), ENT_QUOTES) ?>)" style="padding: 12px 24px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; white-space: nowrap;">
               REQUEST A QUOTE &amp; SAMPLES
             </button>
           </div>
@@ -193,7 +193,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
               <a href="/blog/<?= htmlspecialchars($rp['slug']) ?>" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
                 <img src="<?= htmlspecialchars($rp['featured_image']) ?>" alt="<?= htmlspecialchars($rp['title']) ?>"<?= tn_img_dims($rp['featured_image']) ?> style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='/logo_svg.svg'" />
                 <div style="padding: 16px; flex: 1; display: flex; flex-direction: column;">
-                  <span style="font-size: 0.7rem; font-weight: 700; color: #b8892e; text-transform: uppercase; margin-bottom: 6px;"><?= htmlspecialchars($rp['category']) ?></span>
+                  <span style="font-size: 0.7rem; font-weight: 700; color: #8A6516; text-transform: uppercase; margin-bottom: 6px;"><?= htmlspecialchars($rp['category']) ?></span>
                   <h4 style="font-size: 0.96rem; font-weight: 700; color: #16273f; line-height: 1.35; margin: 0 0 8px; flex: 1;">
                     <?= htmlspecialchars($rp['title']) ?>
                   </h4>

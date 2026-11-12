@@ -96,7 +96,7 @@ if ($searchQuery) {
 
         <!-- Industry Markets Section -->
         <div class="tn-section-title-wrap" style="text-align: center; margin-bottom: 24px;">
-          <div style="display: inline-block; font-size: 0.75rem; font-weight: 800; color: #b8892e; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; background: rgba(184, 137, 46, 0.08); padding: 4px 12px; border-radius: 4px;">
+          <div style="display: inline-block; font-size: 0.75rem; font-weight: 800; color: #8A6516; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; background: rgba(184, 137, 46, 0.08); padding: 4px 12px; border-radius: 4px;">
             TARGET SECTOR SELECTION
           </div>
           <h2 class="tn-section-title" style="font-size: 1.65rem; font-weight: 800; color: var(--color-navy); margin-bottom: 8px;">
@@ -212,24 +212,24 @@ if ($searchQuery) {
 
                 <div class="products-form-grid">
                   <div class="tn-form-field">
-                    <label>1. Full Name *</label>
-                    <input type="text" name="name" required placeholder="Enter your full name" autocomplete="name" />
+                    <label for="pq-name">1. Full Name *</label>
+                    <input id="pq-name" type="text" name="name" required placeholder="Enter your full name" autocomplete="name" />
                   </div>
                   <div class="tn-form-field">
-                    <label>2. Company Name *</label>
-                    <input type="text" name="company" required placeholder="Enter company name" autocomplete="organization" />
+                    <label for="pq-company">2. Company Name *</label>
+                    <input id="pq-company" type="text" name="company" required placeholder="Enter company name" autocomplete="organization" />
                   </div>
                   <div class="tn-form-field">
-                    <label>3. Work Email *</label>
-                    <input type="email" name="email" required placeholder="name@company.com" autocomplete="email" />
+                    <label for="pq-email">3. Work Email *</label>
+                    <input id="pq-email" type="email" name="email" required placeholder="name@company.com" autocomplete="email" />
                   </div>
                   <div class="tn-form-field">
-                    <label>4. Phone Number *</label>
-                    <input type="tel" name="phone" required placeholder="Country code + phone number" autocomplete="tel" />
+                    <label for="pq-phone">4. Phone Number *</label>
+                    <input id="pq-phone" type="tel" name="phone" required placeholder="Country code + phone number" autocomplete="tel" />
                   </div>
                   <div class="tn-form-field">
-                    <label>5. Country *</label>
-                    <select name="country" class="country-select" required>
+                    <label for="pq-country">5. Country *</label>
+                    <select id="pq-country" name="country" class="country-select" required>
                       <option value="" disabled selected>Select country...</option>
                       <option value="United States">United States</option>
                       <option value="United Kingdom">United Kingdom</option>
@@ -258,8 +258,8 @@ if ($searchQuery) {
                     </select>
                   </div>
                   <div class="tn-form-field">
-                    <label>6. Category of Interest *</label>
-                    <select name="category_interest" required>
+                    <label for="pq-category-interest">6. Category of Interest *</label>
+                    <select id="pq-category-interest" name="category_interest" required>
                       <option value="All Categories / Custom Requirement" selected>All Categories / Custom Requirement</option>
                       <option value="Pharma Bottles">Pharma Bottles</option>
                       <option value="Cosmetics Bottles">Cosmetics Bottles</option>
@@ -275,8 +275,8 @@ if ($searchQuery) {
                 </div>
 
                 <div class="tn-form-field" style="margin-top: 12px;">
-                  <label>7. Specifications &amp; Estimated Quantity *</label>
-                  <textarea name="inquiry" required placeholder="Specify your desired volume (e.g. 50,000 units), neck finish (e.g. 28/410), target bottle weight, cap requirements, or sample delivery address..."></textarea>
+                  <label for="pq-inquiry">7. Specifications &amp; Estimated Quantity *</label>
+                  <textarea id="pq-inquiry" name="inquiry" required placeholder="Specify your desired volume (e.g. 50,000 units), neck finish (e.g. 28/410), target bottle weight, cap requirements, or sample delivery address..."></textarea>
                 </div>
 
                 <button type="submit" class="tn-btn-gold products-form-submit-btn">
@@ -338,9 +338,9 @@ if ($searchQuery) {
               <div class="tn-filter-group" style="padding: 12px 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                   <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy); margin: 0;">Filter Series</label>
-                  <button type="button" onclick="window.resetCatalogueFilters()" style="background: none; border: none; color: #b8892e; font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0;">Reset</button>
+                  <button type="button" onclick="window.resetCatalogueFilters()" style="background: none; border: none; color: #8A6516; font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0;">Reset</button>
                 </div>
-                <input type="text" id="catalogue-instant-filter" placeholder="Type name, size, type..." oninput="window.filterCatalogueItems()" style="width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.82rem; outline: none; box-sizing: border-box;" />
+                <input type="text" id="catalogue-instant-filter" aria-label="Filter these products by code, size or type" placeholder="Type name, size, type..." oninput="window.filterCatalogueItems()" style="width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.82rem; outline: none; box-sizing: border-box;" />
               </div>
 
               <!-- Material Filter -->
@@ -362,7 +362,7 @@ if ($searchQuery) {
 
               <!-- Action Button -->
               <div style="margin-top: 10px;">
-                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-outline" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
+                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-outline tn-btn-outline-dark" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
                   Clear Active Filters
                 </button>
               </div>
@@ -590,7 +590,7 @@ if ($searchQuery) {
           <a href="<?= $backUrl ?>" class="tn-back-btn" style="margin: 0;">&larr; <?= $backLabel ?></a>
           
           <?php if ($currentLevel === 'search' || $currentLevel === 'industry'): ?>
-            <a href="/products" style="color: #b8892e; font-weight: 700; text-decoration: none; font-size: 0.85rem;">Clear Active View &times;</a>
+            <a href="/products" style="color: #8A6516; font-weight: 700; text-decoration: none; font-size: 0.85rem;">Clear Active View &times;</a>
           <?php endif; ?>
         </div>
 
@@ -623,9 +623,9 @@ if ($searchQuery) {
               <div class="tn-filter-group" style="padding: 12px 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                   <label style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy); margin: 0;">Quick Search</label>
-                  <button type="button" onclick="window.resetCatalogueFilters()" style="background: none; border: none; color: #b8892e; font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0;">Reset</button>
+                  <button type="button" onclick="window.resetCatalogueFilters()" style="background: none; border: none; color: #8A6516; font-size: 0.75rem; font-weight: 700; cursor: pointer; padding: 0;">Reset</button>
                 </div>
-                <input type="text" id="catalogue-instant-filter" placeholder="Filter code, size, type..." oninput="window.filterCatalogueItems()" style="width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.82rem; outline: none; box-sizing: border-box;" />
+                <input type="text" id="catalogue-instant-filter" aria-label="Filter these products by code, size or type" placeholder="Filter code, size, type..." oninput="window.filterCatalogueItems()" style="width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.82rem; outline: none; box-sizing: border-box;" />
               </div>
 
               <!-- 2. Industry / Market Filter -->
@@ -772,7 +772,7 @@ if ($searchQuery) {
 
               <!-- Reset All Action Button -->
               <div style="margin-top: 6px;">
-                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-outline" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
+                <button type="button" onclick="window.resetCatalogueFilters()" class="tn-btn-outline tn-btn-outline-dark" style="width: 100%; padding: 8px; font-size: 0.82rem; margin: 0; text-align: center;">
                   Clear Active Filters
                 </button>
               </div>
@@ -790,9 +790,20 @@ if ($searchQuery) {
               <h2 style="font-size: 1.55rem; font-weight: 800; color: var(--color-navy); margin: 0;">
                 <?= htmlspecialchars($viewTitle) ?>
               </h2>
-              <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;" id="catalogue-counter">
-                Showing <strong id="catalogue-count-val" style="color: var(--color-navy);"><?= count($skusList) ?></strong> of <?= count($skusList) ?> items
-              </span>
+              <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+                <span style="font-size: 0.85rem; color: #475569; font-weight: 600;" id="catalogue-counter">
+                  Showing <strong id="catalogue-count-val" style="color: var(--color-navy);"><?= count($skusList) ?></strong> of <?= count($skusList) ?> items
+                </span>
+                <label for="catalogue-sort" style="font-size: 0.82rem; color: #475569; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                  Sort
+                  <select id="catalogue-sort" style="padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #fff; color: var(--color-navy);">
+                    <option value="relevance">Recommended</option>
+                    <option value="size-asc">Size: small to large</option>
+                    <option value="size-desc">Size: large to small</option>
+                    <option value="name-asc">Name: A to Z</option>
+                  </select>
+                </label>
+              </div>
             </div>
 
             <!-- Active Filters Chips Bar (Dynamic badges with 1-click 'x') -->
@@ -805,7 +816,7 @@ if ($searchQuery) {
             <?php if (empty($skusList)): ?>
               <div style="text-align: center; padding: 48px 20px; background: #fff; border-radius: 12px; border: 1px dashed #cbd5e1;">
                 <h3 style="color: #64748b; margin-bottom: 8px;">No packaging items found matching "<?= htmlspecialchars($searchQuery ?? '') ?>".</h3>
-                <a href="/products" style="color: var(--color-gold); font-weight: 700; text-decoration: none;">View All Catalogue Categories &rarr;</a>
+                <a href="/products" style="color: var(--color-gold-text, #8A6516); font-weight: 700; text-decoration: none;">View All Catalogue Categories &rarr;</a>
               </div>
             <?php else: ?>
               <div class="tn-skus-grid" id="catalogue-items-grid">

@@ -70,7 +70,7 @@
   <aside class="tn-drawer" id="inquiry-drawer" onclick="event.stopPropagation()">
     <div class="drawer-header" style="background: var(--color-navy); color: #fff; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <h3 style="font-size: 1.15rem; font-weight: 700; margin: 0; color: #fff;">Wholesale Packaging Inquiry</h3>
+        <h2 style="font-size: 1.15rem; font-weight: 700; margin: 0; color: #fff;">Wholesale Packaging Inquiry</h2>
         <p style="font-size: 0.8rem; color: #b8892e; margin: 3px 0 0; font-weight: 600;">Direct Factory RFQ &amp; Sample Request</p>
       </div>
       <button onclick="window.closeInquiry()" style="color: #fff; border: none; background: rgba(255,255,255,0.1); border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0;" aria-label="Close">
@@ -211,7 +211,7 @@
       gtLoaded = true;
       var s = document.createElement('script');
       s.type = 'text/javascript';
-      s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
       document.body.appendChild(s);
     }
     function googleTranslateElementInit() {

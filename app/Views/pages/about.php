@@ -22,17 +22,17 @@
           <div class="about-intro-grid">
             <div class="about-intro-col">
               <span class="about-intro-tag">WHO WE ARE</span>
-              <h4>Integrated Primary Packaging Partner</h4>
+              <h2 class="about-intro-title">Integrated Primary Packaging Partner</h2>
               <p>Over 25 years of domestic and international primary packaging leadership for pharmaceutical, cosmetic, and personal-care brands.</p>
             </div>
             <div class="about-intro-col">
               <span class="about-intro-tag">WHAT WE DO</span>
-              <h4>Engineered PET &amp; Precision Closures</h4>
+              <h2 class="about-intro-title">Engineered PET &amp; Precision Closures</h2>
               <p>Complete bottle, jar, pump, and closure spectrum (10ml–1,000ml) with custom tooling, specialised finishes, and leak-free seals.</p>
             </div>
             <div class="about-intro-col">
               <span class="about-intro-tag">WHY WE ARE TRUSTED</span>
-              <h4>Certified Quality &amp; Cleanroom</h4>
+              <h2 class="about-intro-title">Certified Quality &amp; Cleanroom</h2>
               <p>TÜV NORD ISO 9001 certified manufacturing, Class 10,000 cleanroom moulding, US FDA DMF filings, and 1,000+ cycle leak trials.</p>
             </div>
           </div>
@@ -383,7 +383,7 @@
               <span class="about-infra-tag">Cleanroom Class 10k</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">Cleanroom Production</h4>
+              <h3 class="about-infra-card-title">Cleanroom Production</h3>
               <p class="about-infra-card-desc">Bottles are produced, inspected, and packed in a Class 10K cleanroom by trained staff using strict hygiene controls.</p>
             </div>
           </div>
@@ -394,7 +394,7 @@
               <span class="about-infra-tag">Automated Tooling</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">Injection Blow Moulding</h4>
+              <h3 class="about-infra-card-title">Injection Blow Moulding</h3>
               <p class="about-infra-card-desc">Multi-cavity high-speed European machines ensuring consistent wall thickness and airtight neck thread tolerances.</p>
             </div>
           </div>
@@ -405,7 +405,7 @@
               <span class="about-infra-tag">In-House R&amp;D</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">1,000+ Leak-Free Trials</h4>
+              <h3 class="about-infra-card-title">1,000+ Leak-Free Trials</h3>
               <p class="about-infra-card-desc">Closures, pumps, and neck finishes are evaluated for fit, sealing performance, and application suitability during development.</p>
             </div>
           </div>
@@ -416,7 +416,7 @@
               <span class="about-infra-tag">Global Supply</span>
             </div>
             <div class="about-infra-body">
-              <h4 class="about-infra-card-title">Export Packaging &amp; Dispatch</h4>
+              <h3 class="about-infra-card-title">Export Packaging &amp; Dispatch</h3>
               <p class="about-infra-card-desc">Heavy-duty corrugated shipping cartons, stretch-wrapped pallets, and full batch traceability for maximum transit protection and export durability.</p>
             </div>
           </div>

@@ -35,6 +35,17 @@ $seoContext = [
     ][($activePage ?? '')] ?? null,
     'static_schema_name' => ['about' => 'About Us', 'contact' => 'Contact & Locations', 'custom' => 'Custom & Bespoke Solutions', 'sustainability' => 'Sustainability & rPET', 'faq' => 'Frequently Asked Questions'][($activePage ?? '')] ?? null
 ];
+// Industry landing pages (/products?industry=x) are distinct content: give them their own
+// title, description and a self-referencing canonical instead of pointing at /products.
+if (($activePage ?? '') === 'products' && empty($sku) && !empty($_GET['industry']) && empty($_GET['category']) && class_exists('ProductModel')) {
+    $tnIndustry = ProductModel::getIndustryBySlug((string)$_GET['industry']);
+    if ($tnIndustry) {
+        $seoContext['title'] = ($tnIndustry['headline'] ?? ($tnIndustry['name'] . ' Packaging')) . ' | TrueNorth Group';
+        if (!empty($tnIndustry['desc'])) $seoContext['description'] = $tnIndustry['desc'];
+        $seoContext['canonical'] = $seoBaseUrl . '/products?industry=' . urlencode($tnIndustry['slug'] ?? (string)$_GET['industry']);
+    }
+}
+
 // Product-collection ItemList (checklist §4): fire on category filter / full catalogue
 if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductModel')) {
     $listSkus = (isset($_GET['category']) && !empty($_GET['category']))
@@ -301,7 +312,7 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </a>
       <div style="padding: 6px 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-        <span style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; width: 100%; margin-bottom: 2px; letter-spacing: 0.05em;">Browse by Industry:</span>
+        <span style="font-size: 0.68rem; font-weight: 800; color: #64748b; text-transform: uppercase; width: 100%; margin-bottom: 2px; letter-spacing: 0.05em;">Browse by Industry:</span>
         <a href="/products?industry=cosmetics" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Cosmetics</a>
         <a href="/products?industry=pharma" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Pharma</a>
         <a href="/products?industry=agro" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Agro</a>
@@ -423,7 +434,7 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
         <span>TÜV NORD ISO 9001 • Class 10,000 Cleanroom</span>
       </div>
       <div style="font-size: 0.8rem; font-weight: 600; color: #1e293b; display: flex; flex-direction: column; gap: 6px;">
-        <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" style="color: var(--color-gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <a href="tel:<?= htmlspecialchars($company['phone_tel'] ?? '+919810220761') ?>" style="color: var(--color-gold-text, #8A6516); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span><?= htmlspecialchars($company['phone'] ?? '+91 9810220761') ?></span>
         </a>

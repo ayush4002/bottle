@@ -468,3 +468,101 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateSidebarPosition();
 })();
+
+// =========================================================================
+// SHAREABLE FILTERS (kept in the URL) + SORTING
+// Filters are mirrored into ?f_<group>=value&fq=text so a filtered view can be
+// bookmarked, shared, and survives the Back button.
+// =========================================================================
+(function () {
+  var GROUPS = ['industry', 'category', 'series', 'material', 'volume', 'neck', 'shape'];
+
+  function syncUrl() {
+    try {
+      var u = new URL(location.href);
+      GROUPS.forEach(function (g) { u.searchParams.delete('f_' + g); });
+      u.searchParams.delete('fq');
+      u.searchParams.delete('sort');
+      GROUPS.forEach(function (g) {
+        var seen = {};
+        // the page's own ?industry= / ?category= already selects that facet; don't repeat it
+        var base = (u.searchParams.get(g) || '').toLowerCase();
+        if (base) seen[base] = true;
+        document.querySelectorAll('.tn-filter-sidebar input[name="filter-' + g + '"]:checked').forEach(function (cb) {
+          if (cb.value.toLowerCase() === base) return;
+          if (!seen[cb.value]) { seen[cb.value] = true; u.searchParams.append('f_' + g, cb.value); }
+        });
+      });
+      var qEl = document.getElementById('catalogue-instant-filter');
+      if (qEl && qEl.value.trim()) u.searchParams.set('fq', qEl.value.trim());
+      var sortEl = document.getElementById('catalogue-sort');
+      if (sortEl && sortEl.value !== 'relevance') u.searchParams.set('sort', sortEl.value);
+      history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+    } catch (e) {}
+  }
+
+  function sizeOf(el) {
+    var m = (el.getAttribute('data-volume') || el.getAttribute('data-name') || '').match(/(\d+(?:\.\d+)?)\s*(ml|cc|ltr|l)?/i);
+    if (!m) return Number.MAX_VALUE;
+    var v = parseFloat(m[1]);
+    return (m[2] && /^l/i.test(m[2])) ? v * 1000 : v;
+  }
+
+  function applySort() {
+    var sortEl = document.getElementById('catalogue-sort');
+    var first = document.querySelector('.tn-sku-card.filterable-item');
+    if (!sortEl || !first) return;
+    var grid = first.parentNode;
+    var items = Array.prototype.slice.call(grid.querySelectorAll(':scope > .tn-sku-card.filterable-item'));
+    items.forEach(function (el, i) { if (!el.hasAttribute('data-orig-index')) el.setAttribute('data-orig-index', i); });
+    var mode = sortEl.value;
+    items.sort(function (a, b) {
+      if (mode === 'size-asc') return sizeOf(a) - sizeOf(b);
+      if (mode === 'size-desc') return sizeOf(b) - sizeOf(a);
+      if (mode === 'name-asc') return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '', undefined, { numeric: true });
+      return (+a.getAttribute('data-orig-index')) - (+b.getAttribute('data-orig-index'));
+    });
+    items.forEach(function (el) { grid.appendChild(el); });
+  }
+
+  // Every filter change goes through window.filterCatalogueItems -> keep the URL in step
+  var originalFilter = window.filterCatalogueItems;
+  if (typeof originalFilter === 'function') {
+    window.filterCatalogueItems = function () {
+      var r = originalFilter.apply(this, arguments);
+      syncUrl();
+      return r;
+    };
+  }
+
+  function restore() {
+    var params = new URLSearchParams(location.search);
+    var changed = false;
+    GROUPS.forEach(function (g) {
+      var vals = params.getAll('f_' + g);
+      if (!vals.length) return;
+      document.querySelectorAll('.tn-filter-sidebar input[name="filter-' + g + '"]').forEach(function (cb) {
+        if (vals.indexOf(cb.value) !== -1) { cb.checked = true; changed = true; }
+      });
+    });
+    var fq = params.get('fq');
+    if (fq) {
+      document.querySelectorAll('#catalogue-instant-filter').forEach(function (i) { i.value = fq; });
+      changed = true;
+    }
+    var sortEl = document.getElementById('catalogue-sort');
+    if (sortEl) {
+      var s = params.get('sort');
+      if (s && sortEl.querySelector('option[value="' + s + '"]')) sortEl.value = s;
+      sortEl.addEventListener('change', function () { applySort(); syncUrl(); });
+      if (sortEl.value !== 'relevance') applySort();
+    }
+    if (changed && typeof window.filterCatalogueItems === 'function') window.filterCatalogueItems();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', restore);
+  } else {
+    restore();
+  }
+})();

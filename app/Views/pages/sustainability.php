@@ -41,7 +41,7 @@
 
           <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div style="width: 44px; height: 44px; border-radius: 8px; background: rgba(184, 137, 46, 0.12); color: #B8892E; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <div style="width: 44px; height: 44px; border-radius: 8px; background: rgba(184, 137, 46, 0.12); color: #8A6516; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
               </div>
               <h3 style="font-size: 1.05rem; font-weight: 800; color: #16273f; margin-bottom: 10px;">Precision Lightweighting</h3>
@@ -49,7 +49,7 @@
                 Our advanced blow moulding tooling optimizes resin wall distribution, reducing container weight by 12% to 22% while exceeding top-load compression and drop-test thresholds.
               </p>
             </div>
-            <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-size: 0.8rem; font-weight: 700; color: #B8892E;">
+            <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-size: 0.8rem; font-weight: 700; color: #8A6516;">
               Up to 22% Less Resin Consumption
             </div>
           </div>

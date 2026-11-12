@@ -7,6 +7,13 @@
 require_once dirname(__DIR__, 2) . '/config/config.php';
 require_once dirname(__DIR__) . '/Models/ProductModel.php';
 
+if (!function_exists('tn_json')) {
+    /** JSON for API responses, with HTML-significant characters escaped. */
+    function tn_json($data) {
+        return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+    }
+}
+
 class ProductController {
 
     public static function handleProductsApi() {
@@ -21,10 +28,10 @@ class ProductController {
         if ($skuId) {
             $sku = ProductModel::getPublishedSkuById($skuId);
             if ($sku) {
-                echo json_encode(["success" => true, "data" => $sku]);
+                echo tn_json(["success" => true, "data" => $sku]);
             } else {
                 http_response_code(404);
-                echo json_encode(["success" => false, "message" => "SKU not found"]);
+                echo tn_json(["success" => false, "message" => "SKU not found"]);
             }
             exit();
         }
@@ -32,7 +39,7 @@ class ProductController {
         if ($seriesSlug) {
             $skus = ProductModel::getSkusBySeries($seriesSlug);
             $seriesInfo = ProductModel::getSeriesBySlug($seriesSlug);
-            echo json_encode(["success" => true, "series" => $seriesInfo, "skus" => $skus]);
+            echo tn_json(["success" => true, "series" => $seriesInfo, "skus" => $skus]);
             exit();
         }
 
@@ -40,11 +47,11 @@ class ProductController {
             $seriesList = ProductModel::getSeriesByCategory($categorySlug);
             $skus = ProductModel::getSkusByCategory($categorySlug);
             $categoryInfo = ProductModel::getCategoryBySlug($categorySlug);
-            echo json_encode(["success" => true, "category" => $categoryInfo, "series" => $seriesList, "skus" => $skus]);
+            echo tn_json(["success" => true, "category" => $categoryInfo, "series" => $seriesList, "skus" => $skus]);
             exit();
         }
 
-        echo json_encode([
+        echo tn_json([
             "success" => true,
             "categories" => ProductModel::getCategories(),
             "series" => ProductModel::getSeries(),
@@ -63,7 +70,7 @@ class ProductController {
         $popular = ProductModel::getPopularSearches();
 
         if (empty($query)) {
-            echo json_encode([
+            echo tn_json([
                 "success" => true,
                 "query" => "",
                 "count" => 0,
@@ -75,7 +82,7 @@ class ProductController {
 
         $results = ProductModel::searchProducts($query);
 
-        echo json_encode([
+        echo tn_json([
             "success" => true,
             "query" => $query,
             "taxonomyMatch" => $taxMatch,
