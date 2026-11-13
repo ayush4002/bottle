@@ -16,7 +16,12 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
   <div class="tn-container">
 
     <!-- Breadcrumbs (link back to the category) -->
+    <?php $tnBC = class_exists('SeoModel') ? SeoModel::breadcrumbConfig() : ['show_home'=>true,'home_label'=>'Home']; ?>
     <div class="tn-breadcrumbs" style="margin-bottom: 10px;">
+      <?php if (!empty($tnBC['show_home'])): ?>
+      <a href="/"><?= htmlspecialchars($tnBC['home_label']) ?></a>
+      <span class="separator">&gt;</span>
+      <?php endif; ?>
       <a href="/products">Products</a>
       <span class="separator">&gt;</span>
       <a href="/products?category=<?= urlencode($catSlug) ?>"><?= htmlspecialchars($catName) ?></a>

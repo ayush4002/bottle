@@ -1360,4 +1360,204 @@ class SeoModel {
             PageCache::flush();
         }
     }
+
+    // =========================================================================
+    // 12. UNIFIED SEO HUB - entity enumeration, scoring, internal linking,
+    //     breadcrumb config (powers the dashboard, bulk editor and link tools)
+    // =========================================================================
+
+    /** Hosts treated as internal for link analysis. */
+    public static function siteHosts() {
+        return ['wetruenorthgroup.com', 'localhost', '127.0.0.1'];
+    }
+
+    /** Breadcrumb display settings with sensible defaults. */
+    public static function breadcrumbConfig() {
+        $s = self::getSettings();
+        return [
+            'enabled'    => !isset($s['breadcrumbs_enabled']) || (string)$s['breadcrumbs_enabled'] !== '0',
+            'show_home'  => !isset($s['breadcrumbs_show_home']) || (string)$s['breadcrumbs_show_home'] !== '0',
+            'separator'  => (isset($s['breadcrumbs_separator']) && $s['breadcrumbs_separator'] !== '') ? $s['breadcrumbs_separator'] : '>',
+            'home_label' => (isset($s['breadcrumbs_home_label']) && $s['breadcrumbs_home_label'] !== '') ? $s['breadcrumbs_home_label'] : 'Home',
+        ];
+    }
+
+    /** Build one normalised SEO row (shared by dashboard and bulk editor). */
+    private static function seoEntityRow($type, $refId, $url, $label, $title, $desc, $override = [], $fallbackH1 = '', $content = '') {
+        $focus = $override['focus_keyword'] ?? '';
+        $h1 = $override['h1_override'] ?? $fallbackH1;
+        $sc = self::calculateSeoScore($title, $desc, $h1, $focus, $url, true, !empty($override['canonical_url']));
+        $score = (int)($sc['score'] ?? 0);
+        // "scored" = the admin has actually set SEO fields; otherwise the page uses
+        // the global template/defaults and shows a neutral status (like Yoast's grey).
+        $scored = (trim((string)$title) !== '' || trim((string)$desc) !== '' || trim((string)$focus) !== '');
+        return [
+            'type'        => $type,
+            'ref_id'      => (string)$refId,
+            'url'         => $url,
+            'label'       => $label,
+            'title'       => (string)$title,
+            'desc'        => (string)$desc,
+            'focus'       => (string)$focus,
+            'title_len'   => mb_strlen((string)$title),
+            'desc_len'    => mb_strlen((string)$desc),
+            'score'       => $score,
+            'scored'      => $scored,
+            'status'      => !$scored ? 'none' : ($score >= 80 ? 'good' : ($score >= 50 ? 'ok' : 'poor')),
+            'checks'      => $sc['checks'] ?? [],
+            'noindex'     => isset($override['robots_index']) && (int)$override['robots_index'] === 0,
+            'cornerstone' => !empty($override['cornerstone_content']),
+            'content'     => (string)$content,
+        ];
+    }
+
+    /**
+     * Every indexable entity (static pages, products, published blog posts) with
+     * its effective meta title/description, focus keyword, SEO score and status.
+     */
+    public static function getAllSeoEntities($filterType = 'all', $search = '') {
+        $out = [];
+
+        $staticPages = [
+            ['/', 'home', 'Home'],
+            ['/about', 'about', 'About Us'],
+            ['/products', 'products', 'Products Catalogue'],
+            ['/custom', 'custom', 'Custom Solutions'],
+            ['/sustainability', 'sustainability', 'Sustainability'],
+            ['/faq', 'faq', 'FAQ'],
+            ['/contact', 'contact', 'Contact'],
+            ['/terms', 'terms', 'Terms and Conditions'],
+            ['/privacy', 'privacy', 'Privacy Policy'],
+            ['/blog', 'blog', 'Blog Index'],
+        ];
+        foreach ($staticPages as $sp) {
+            list($url, $ref, $label) = $sp;
+            $o = self::getPageSeo($url, 'page', $ref) ?: [];
+            $out[] = self::seoEntityRow('page', $ref, $url, $label, $o['meta_title'] ?? '', $o['meta_description'] ?? '', $o, $o['h1_override'] ?? $label);
+        }
+
+        if (class_exists('ProductModel')) {
+            foreach (ProductModel::getSkus(false) as $p) {
+                $id = $p['id'] ?? ($p['articleNo'] ?? '');
+                if ($id === '') continue;
+                $url = '/product?id=' . $id;
+                $o = self::getPageSeo($url, 'product', $id) ?: [];
+                $title = $o['meta_title'] ?? ($p['seoTitle'] ?? '');
+                $desc  = $o['meta_description'] ?? ($p['seoDescription'] ?? ($p['shortDescription'] ?? ($p['description'] ?? '')));
+                $out[] = self::seoEntityRow('product', $id, $url, $p['name'] ?? $id, $title, $desc, $o, $p['name'] ?? '', $p['description'] ?? '');
+            }
+        }
+
+        if (class_exists('BlogModel')) {
+            foreach (BlogModel::getAllPosts() as $bp) {
+                if (($bp['status'] ?? 'published') !== 'published') continue;
+                $slug = $bp['slug'] ?? '';
+                if ($slug === '') continue;
+                $url = '/blog/' . $slug;
+                $o = self::getPageSeo($url, 'blog', $slug) ?: [];
+                $title = $o['meta_title'] ?? ($bp['meta_title'] ?? ($bp['title'] ?? ''));
+                $desc  = $o['meta_description'] ?? ($bp['meta_description'] ?? ($bp['excerpt'] ?? ''));
+                $out[] = self::seoEntityRow('blog', $slug, $url, $bp['title'] ?? $slug, $title, $desc, $o, $bp['title'] ?? '', $bp['content'] ?? '');
+            }
+        }
+
+        if ($filterType !== 'all' && $filterType !== '') {
+            $out = array_values(array_filter($out, function ($r) use ($filterType) { return $r['type'] === $filterType; }));
+        }
+        if ($search !== '') {
+            $needle = mb_strtolower($search);
+            $out = array_values(array_filter($out, function ($r) use ($needle) {
+                return mb_strpos(mb_strtolower($r['label'] . ' ' . $r['url'] . ' ' . $r['title'] . ' ' . $r['desc'] . ' ' . $r['focus']), $needle) !== false;
+            }));
+        }
+        return $out;
+    }
+
+    /** Count internal vs outbound <a> links inside an HTML/text body. */
+    public static function analyzeLinks($html) {
+        $internal = 0; $outbound = 0; $targets = [];
+        $hosts = array_map(function ($h) { return strtolower(preg_replace('/^www\./', '', $h)); }, self::siteHosts());
+        if (preg_match_all('/<a\b[^>]*href=(?:"([^"]*)"|\'([^\']*)\')/i', (string)$html, $m, PREG_SET_ORDER)) {
+            foreach ($m as $set) {
+                $href = trim(html_entity_decode($set[1] !== '' ? $set[1] : ($set[2] ?? '')));
+                if ($href === '' || $href[0] === '#') continue;
+                if (preg_match('/^(mailto:|tel:|javascript:|whatsapp:|data:)/i', $href)) continue;
+                $host = parse_url($href, PHP_URL_HOST);
+                if ($host === null || $host === false) {
+                    $internal++; $targets[] = $href;
+                } elseif (in_array(strtolower(preg_replace('/^www\./', '', $host)), $hosts, true)) {
+                    $internal++; $targets[] = $href;
+                } else {
+                    $outbound++;
+                }
+            }
+        }
+        return ['internal' => $internal, 'outbound' => $outbound, 'targets' => $targets];
+    }
+
+    /**
+     * Link report for every blog post and product: outbound internal/external
+     * counts from its own body, plus inbound internal links (orphan detection).
+     */
+    public static function getLinkReport() {
+        $entities = array_values(array_filter(self::getAllSeoEntities(), function ($e) {
+            return in_array($e['type'], ['blog', 'product'], true);
+        }));
+        $inbound = [];
+        foreach ($entities as $e) {
+            $a = self::analyzeLinks($e['content']);
+            foreach ($a['targets'] as $t) {
+                $path = parse_url($t, PHP_URL_PATH) ?: $t;
+                $q = parse_url($t, PHP_URL_QUERY);
+                $key = $path . ($q ? '?' . $q : '');
+                $inbound[$key] = ($inbound[$key] ?? 0) + 1;
+            }
+        }
+        $report = [];
+        foreach ($entities as $e) {
+            $a = self::analyzeLinks($e['content']);
+            $report[] = [
+                'type'     => $e['type'],
+                'ref_id'   => $e['ref_id'],
+                'url'      => $e['url'],
+                'label'    => $e['label'],
+                'internal' => $a['internal'],
+                'outbound' => $a['outbound'],
+                'inbound'  => (int)($inbound[$e['url']] ?? 0),
+                'orphan'   => (int)($inbound[$e['url']] ?? 0) === 0,
+            ];
+        }
+        return $report;
+    }
+
+    /**
+     * Suggest internal links for a block of text: other entities whose focus
+     * keyword or title phrase already appears in the text but is not yet linked.
+     */
+    public static function suggestInternalLinks($text, $excludeUrl = '', $limit = 15) {
+        $plain = ' ' . mb_strtolower(preg_replace('/\s+/', ' ', strip_tags((string)$text))) . ' ';
+        $suggestions = [];
+        foreach (self::getAllSeoEntities() as $e) {
+            if ($e['url'] === $excludeUrl || !in_array($e['type'], ['blog', 'product'], true)) continue;
+            $terms = [];
+            if ($e['focus'] !== '') $terms[] = $e['focus'];
+            $terms[] = $e['label'];
+            foreach (array_unique($terms) as $term) {
+                $t = mb_strtolower(trim($term));
+                if (mb_strlen($t) < 4) continue;
+                if (mb_strpos($plain, ' ' . $t) !== false) {
+                    $suggestions[$e['url']] = [
+                        'url'    => $e['url'],
+                        'label'  => $e['label'],
+                        'term'   => $term,
+                        'type'   => $e['type'],
+                        'linked' => mb_stripos($text, $e['url']) !== false,
+                    ];
+                    break;
+                }
+            }
+            if (count($suggestions) >= $limit) break;
+        }
+        return array_values($suggestions);
+    }
 }

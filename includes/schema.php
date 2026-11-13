@@ -110,8 +110,9 @@ function seo_schema($context = []) {
 
     // 4. BreadcrumbList Schema (Inner Pages)
     if (!empty($settings['schema_breadcrumbs_enabled']) && $reqPath !== '/' && !empty($reqPath)) {
+        $bcHome = (isset($settings['breadcrumbs_home_label']) && $settings['breadcrumbs_home_label'] !== '') ? $settings['breadcrumbs_home_label'] : 'Home';
         $crumbs = [
-            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $baseUrl . '/']
+            ['@type' => 'ListItem', 'position' => 1, 'name' => $bcHome, 'item' => $baseUrl . '/']
         ];
         $pos = 2;
 

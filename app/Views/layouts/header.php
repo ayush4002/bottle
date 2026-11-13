@@ -103,6 +103,16 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
   }
   ?>
 
+  <?php
+    $tnBC = class_exists('SeoModel') ? SeoModel::breadcrumbConfig() : ['enabled'=>true,'separator'=>'>','home_label'=>'Home','show_home'=>true];
+    $tnSepCss = json_encode((string)$tnBC['separator'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+  ?>
+  <style>
+    :root{--tn-crumb-sep:<?= $tnSepCss ?>;}
+    .tn-breadcrumbs .separator,nav[aria-label="Breadcrumb"] .separator{font-size:0 !important;}
+    .tn-breadcrumbs .separator::before,nav[aria-label="Breadcrumb"] .separator::before{content:var(--tn-crumb-sep);font-size:0.86rem;}
+    <?php if (!$tnBC['enabled']): ?>.tn-breadcrumbs,nav[aria-label="Breadcrumb"]{display:none !important;}<?php endif; ?>
+  </style>
   <?= seo_schema($seoContext) ?>
 </head>
 <body>

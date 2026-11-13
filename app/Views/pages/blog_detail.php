@@ -14,13 +14,16 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
   <!-- BREADCRUMBS -->
   <div style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 14px 0;">
     <div class="tn-container">
+      <?php $tnBC = class_exists('SeoModel') ? SeoModel::breadcrumbConfig() : ['show_home'=>true,'home_label'=>'Home']; ?>
       <nav aria-label="Breadcrumb" style="font-size: 0.84rem; color: #64748b; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-        <a href="/" style="color: #64748b; text-decoration: none;">Home</a>
-        <span>/</span>
+        <?php if (!empty($tnBC['show_home'])): ?>
+        <a href="/" style="color: #64748b; text-decoration: none;"><?= htmlspecialchars($tnBC['home_label']) ?></a>
+        <span class="separator">/</span>
+        <?php endif; ?>
         <a href="/blog" style="color: #64748b; text-decoration: none;">Blog &amp; Insights</a>
-        <span>/</span>
+        <span class="separator">/</span>
         <a href="/blog?category=<?= urlencode(strtolower(str_replace(' ', '-', $post['category'] ?? ''))) ?>" style="color: #64748b; text-decoration: none;"><?= htmlspecialchars($post['category'] ?? '') ?></a>
-        <span>/</span>
+        <span class="separator">/</span>
         <span style="color: #1e293b; font-weight: 600;"><?= htmlspecialchars(mb_strimwidth($post['title'], 0, 40, '...')) ?></span>
       </nav>
     </div>

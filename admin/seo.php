@@ -11,6 +11,22 @@ $err = $_GET['err'] ?? '';
 // Run health scan
 $health = SeoModel::getAuditHealth();
 $auditLogs = SeoModel::getAuditLogs(15);
+
+// Unified content-SEO scoring across every page, product and post
+$seoEntities = SeoModel::getAllSeoEntities();
+$seoDist = ['good' => 0, 'ok' => 0, 'poor' => 0, 'none' => 0];
+foreach ($seoEntities as $e) { $seoDist[$e['status']] = ($seoDist[$e['status']] ?? 0) + 1; }
+$seoScored = array_values(array_filter($seoEntities, function ($e) { return !empty($e['scored']); }));
+$avgScore = $seoScored ? (int) round(array_sum(array_column($seoScored, 'score')) / count($seoScored)) : 0;
+$seoNeedsWork = array_values(array_filter($seoScored, function ($e) { return $e['score'] < 80; }));
+usort($seoNeedsWork, function ($a, $b) { return $a['score'] <=> $b['score']; });
+$seoNeedsWork = array_slice($seoNeedsWork, 0, 12);
+$seoStatusColors = ['good' => '#34d399', 'ok' => '#fbbf24', 'poor' => '#f87171', 'none' => '#64748b'];
+function tn_seo_edit_link($e) {
+    if ($e['type'] === 'product') return '/admin/edit_product?id=' . urlencode($e['ref_id']);
+    return '/admin/seo_bulk?type=' . $e['type'] . '&q=' . urlencode($e['label']);
+}
+
 $healthScore = $health['seo_health_score'];
 
 $scoreColor = '#34d399';
@@ -157,6 +173,65 @@ if ($healthScore < 70) {
 
   </div>
 
+  <!-- CONTENT SEO SCORES (all pages/products/posts) -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 22px; margin-bottom: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 16px;">
+      <div>
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #f8fafc; margin: 0 0 4px;">Content SEO Scores</h3>
+        <p style="color: #94a3b8; font-size: 0.82rem; margin: 0;">Average score of pages with SEO set: <strong style="color: #f1f5f9;"><?= $avgScore ?>/100</strong> across <?= count($seoEntities) ?> pages, products &amp; posts.</p>
+      </div>
+      <a href="/admin/seo_bulk" class="tn-btn-gold" style="padding: 9px 18px; border-radius: 8px; font-weight: 700; font-size: 0.84rem; text-decoration: none; box-shadow: 0 4px 14px rgba(184,137,46,0.35);">Open Bulk Editor</a>
+    </div>
+
+    <!-- distribution bar -->
+    <?php $distTotal = max(1, array_sum($seoDist)); ?>
+    <div style="display: flex; height: 12px; border-radius: 6px; overflow: hidden; margin-bottom: 8px;">
+      <?php foreach (['good' => 'Good', 'ok' => 'OK', 'poor' => 'Poor', 'none' => 'No SEO set'] as $k => $lab): if (($seoDist[$k] ?? 0) <= 0) continue; ?>
+        <div title="<?= $lab ?>: <?= (int)$seoDist[$k] ?>" style="width: <?= round($seoDist[$k] / $distTotal * 100, 2) ?>%; background: <?= $seoStatusColors[$k] ?>;"></div>
+      <?php endforeach; ?>
+    </div>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.78rem; color: #94a3b8; margin-bottom: 18px;">
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#34d399;margin-right:5px;"></span>Good <?= (int)$seoDist['good'] ?></span>
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#fbbf24;margin-right:5px;"></span>OK <?= (int)$seoDist['ok'] ?></span>
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#f87171;margin-right:5px;"></span>Needs work <?= (int)$seoDist['poor'] ?></span>
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#64748b;margin-right:5px;"></span>Using template <?= (int)$seoDist['none'] ?></span>
+    </div>
+
+    <?php if (!empty($seoNeedsWork)): ?>
+      <div style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1; margin-bottom: 10px;">Pages to improve first</div>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.84rem;">
+          <thead>
+            <tr style="background: #0f172a; color: #94a3b8; text-align: left;">
+              <th style="padding: 9px 14px; font-weight: 700;">Page</th>
+              <th style="padding: 9px 12px; font-weight: 700; text-align: center;">Type</th>
+              <th style="padding: 9px 12px; font-weight: 700; text-align: center;">Score</th>
+              <th style="padding: 9px 12px; font-weight: 700;">Main issue</th>
+              <th style="padding: 9px 14px; font-weight: 700; text-align: right;">Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($seoNeedsWork as $e):
+              $issue = 'Improve meta content';
+              foreach ($e['checks'] as $c) { if (($c['status'] ?? '') === 'fail') { $issue = $c['label']; break; } }
+              if ($issue === 'Improve meta content') { foreach ($e['checks'] as $c) { if (($c['status'] ?? '') === 'warn') { $issue = $c['label']; break; } } }
+            ?>
+              <tr style="border-top: 1px solid #334155;">
+                <td style="padding: 9px 14px;"><a href="<?= htmlspecialchars($e['url']) ?>" target="_blank" rel="noopener" style="color: #e2e8f0; font-weight: 600; text-decoration: none;"><?= htmlspecialchars(mb_strimwidth($e['label'], 0, 44, '…')) ?></a></td>
+                <td style="padding: 9px 12px; text-align: center; font-size: 0.72rem; text-transform: uppercase; color: #94a3b8;"><?= htmlspecialchars($e['type']) ?></td>
+                <td style="padding: 9px 12px; text-align: center;"><span style="display: inline-block; min-width: 34px; padding: 2px 8px; border-radius: 20px; font-weight: 800; font-size: 0.78rem; color: #0f172a; background: <?= $seoStatusColors[$e['status']] ?>;"><?= (int)$e['score'] ?></span></td>
+                <td style="padding: 9px 12px; color: #cbd5e1;"><?= htmlspecialchars($issue) ?></td>
+                <td style="padding: 9px 14px; text-align: right;"><a href="<?= htmlspecialchars(tn_seo_edit_link($e)) ?>" style="color: #38bdf8; text-decoration: none; font-weight: 600;">Edit →</a></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    <?php else: ?>
+      <p style="color: #6ee7b7; font-size: 0.88rem; margin: 0;">Every page with SEO set scores 80+. Nice work.</p>
+    <?php endif; ?>
+  </div>
+
   <!-- FAST QUICK-LINKS TOOLBAR -->
   <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
     <div style="font-size: 0.92rem; font-weight: 700; color: #f8fafc;">
@@ -169,6 +244,9 @@ if ($healthScore < 70) {
       <a href="/admin/seo_redirects" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Redirects &amp; 404s</a>
       <a href="/admin/seo_sitemap" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Sitemap &amp; Robots</a>
       <a href="/admin/seo_images" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Image Alt Tool</a>
+      <a href="/admin/seo_bulk" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Bulk SEO Editor</a>
+      <a href="/admin/seo_links" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Internal Links</a>
+      <a href="/admin/seo_breadcrumbs" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Breadcrumbs</a>
     </div>
   </div>
 
