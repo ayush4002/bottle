@@ -237,6 +237,47 @@ $csrfToken = generateCsrfToken();
     </div>
   <?php endif; ?>
 
+  <!-- ALL SITE PAGES (Yoast-style SEO for every page) -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; margin-bottom: 22px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px;">
+      <div>
+        <h2 style="font-size: 1.12rem; font-weight: 800; color: #f8fafc; margin: 0 0 4px;">All Site Pages</h2>
+        <p style="color: #94a3b8; font-size: 0.82rem; margin: 0;">Click <strong style="color:#cbd5e1;">Edit SEO</strong> on any page to set its focus keyphrase, Google snippet, title &amp; meta description &mdash; just like WordPress.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px;">
+      <?php foreach (SeoModel::staticPageCatalogue() as $sp):
+        $saved = SeoModel::getPageSeo($sp['url'], $sp['type'], $sp['ref']) ?: [];
+        $hasSeo = trim($saved['meta_title'] ?? '') !== '' || trim($saved['meta_description'] ?? '') !== '' || trim($saved['focus_keyword'] ?? '') !== '';
+        $sc = $hasSeo ? SeoModel::calculateSeoScore($saved['meta_title'] ?? '', $saved['meta_description'] ?? '', $saved['h1_override'] ?? '', $saved['focus_keyword'] ?? '', $sp['url']) : null;
+        $score = $sc['score'] ?? 0;
+        $dot = !$hasSeo ? '#64748b' : ($score >= 80 ? '#34d399' : ($score >= 50 ? '#fbbf24' : '#f87171'));
+        $modalData = array_merge($saved, ['url_slug' => $sp['url'], 'page_type' => $sp['type'], 'page_ref_id' => $sp['ref']]);
+      ?>
+        <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <span title="SEO status" style="width: 10px; height: 10px; border-radius: 50%; background: <?= $dot ?>; margin-top: 5px; flex-shrink: 0;"></span>
+            <div style="min-width: 0; flex: 1;">
+              <div style="font-weight: 700; color: #e2e8f0; font-size: 0.92rem;"><?= htmlspecialchars($sp['label']) ?></div>
+              <a href="<?= htmlspecialchars($sp['url']) ?>" target="_blank" rel="noopener" style="color: #64748b; font-size: 0.78rem; text-decoration: none;"><?= htmlspecialchars($sp['url']) ?></a>
+            </div>
+            <?php if ($hasSeo): ?>
+              <span style="font-size: 0.72rem; font-weight: 800; color: #0f172a; background: <?= $dot ?>; border-radius: 20px; padding: 2px 9px; align-self: flex-start;"><?= (int)$score ?></span>
+            <?php else: ?>
+              <span style="font-size: 0.68rem; font-weight: 700; color: #94a3b8; border: 1px solid #334155; border-radius: 20px; padding: 2px 9px; align-self: flex-start;">Not set</span>
+            <?php endif; ?>
+          </div>
+          <?php if ($hasSeo && !empty($saved['focus_keyword'])): ?>
+            <div style="font-size: 0.76rem; color: #94a3b8;">Keyphrase: <span style="color: #cbd5e1;"><?= htmlspecialchars($saved['focus_keyword']) ?></span></div>
+          <?php endif; ?>
+          <button type="button" onclick="editPageItem(<?= htmlspecialchars(json_encode($modalData, JSON_HEX_APOS | JSON_HEX_QUOT), ENT_QUOTES, 'UTF-8') ?>)" class="tn-btn-gold" style="margin-top: auto; padding: 8px 14px; border: none; border-radius: 7px; font-weight: 700; font-size: 0.82rem; cursor: pointer; align-self: flex-start;">
+            <?= $hasSeo ? 'Edit SEO' : 'Set up SEO' ?> &rarr;
+          </button>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+
   <!-- SEARCH & FILTER TOOLBAR -->
   <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
     <form method="GET" action="/admin/seo_pages" style="display: flex; gap: 10px; flex-wrap: wrap; flex: 1;">

@@ -405,7 +405,7 @@ class SeoModel {
             $record['id'] = count($all) + 1;
             $all[] = $record;
         }
-        @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
 
         self::flushCache();
         self::logAudit('save_page_seo', "Updated SEO metadata for {$slug}", $adminId);
@@ -475,7 +475,7 @@ class SeoModel {
             'title_template' => $titleTpl,
             'description_template' => $descTpl
         ];
-        @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
 
         self::flushCache();
         self::logAudit('update_meta_template', "Updated meta template for {$type}", $adminId);
@@ -618,7 +618,7 @@ class SeoModel {
                 'created_at' => date('Y-m-d H:i:s')
             ];
         }
-        @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
 
         self::flushCache();
         self::logAudit('create_redirect', "Created {$statusCode} redirect from {$oldUrl} to {$newUrl}", $adminId);
@@ -661,7 +661,7 @@ class SeoModel {
                     break;
                 }
             }
-            @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+            @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
         }
         self::flushCache();
         self::logAudit('toggle_redirect', "Toggled redirect ID #{$id}", $adminId);
@@ -698,7 +698,7 @@ class SeoModel {
                     if (!empty($r['is_active']) && ($r['old_url'] === $cleanPath || rtrim($r['old_url'], '/') === rtrim($cleanPath, '/'))) {
                         $match = $r;
                         $r['hits'] = ($r['hits'] ?? 0) + 1;
-                        @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+                        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
                         break;
                     }
                 }
@@ -782,7 +782,7 @@ class SeoModel {
                 'last_seen' => date('Y-m-d H:i:s')
             ];
         }
-        @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
     }
 
     public static function get404Logs($limit = 100) {
@@ -916,7 +916,7 @@ class SeoModel {
         if (count($all) > 500) {
             $all = array_slice($all, 0, 500);
         }
-        @file_put_contents($f, json_encode($all, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
     }
 
     public static function getAuditLogs($limit = 100) {
@@ -1559,5 +1559,35 @@ class SeoModel {
             if (count($suggestions) >= $limit) break;
         }
         return array_values($suggestions);
+    }
+
+    /** Canonical list of built-in site pages (for the Page SEO Manager). */
+    public static function staticPageCatalogue() {
+        return [
+            ['url' => '/',               'type' => 'home', 'ref' => 'home',           'label' => 'Homepage'],
+            ['url' => '/about',          'type' => 'page', 'ref' => 'about',          'label' => 'About Us'],
+            ['url' => '/products',       'type' => 'page', 'ref' => 'products',       'label' => 'Products Catalogue'],
+            ['url' => '/custom',         'type' => 'page', 'ref' => 'custom',         'label' => 'Custom Solutions'],
+            ['url' => '/sustainability', 'type' => 'page', 'ref' => 'sustainability', 'label' => 'Sustainability'],
+            ['url' => '/faq',            'type' => 'page', 'ref' => 'faq',            'label' => 'FAQ'],
+            ['url' => '/contact',        'type' => 'page', 'ref' => 'contact',        'label' => 'Contact'],
+            ['url' => '/blog',           'type' => 'page', 'ref' => 'blog',           'label' => 'Blog Index'],
+            ['url' => '/terms',          'type' => 'page', 'ref' => 'terms',          'label' => 'Terms & Conditions'],
+            ['url' => '/privacy',        'type' => 'page', 'ref' => 'privacy',        'label' => 'Privacy Policy'],
+        ];
+    }
+
+    /**
+     * Safe JSON for data-file writes. Never returns false (which, passed to
+     * file_put_contents, would truncate the file): bad UTF-8 bytes are
+     * substituted so a stray character can never wipe a config file.
+     */
+    private static function jsonEnc($data) {
+        $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
+        $out = json_encode($data, $flags);
+        if ($out === false) {
+            $out = json_encode($data, $flags | JSON_INVALID_UTF8_SUBSTITUTE | JSON_PARTIAL_OUTPUT_ON_ERROR);
+        }
+        return $out === false ? '[]' : $out;
     }
 }
