@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/partials/seo_tabs.php';
 require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
 
 checkAdminAuth();
@@ -232,21 +233,253 @@ if ($healthScore < 70) {
     <?php endif; ?>
   </div>
 
-  <!-- FAST QUICK-LINKS TOOLBAR -->
-  <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
-    <div style="font-size: 0.92rem; font-weight: 700; color: #f8fafc;">
-      Quick Technical SEO Tools:
+  <!-- COMPLETE WEBSITE SEO SUITE — 11-MODULE COMMAND CENTER -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 24px; margin-bottom: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid #334155; padding-bottom: 16px;">
+      <div>
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #f8fafc; margin: 0 0 4px 0;">
+          Complete Website SEO Suite &amp; Technical Modules
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.88rem; margin: 0;">
+          All 11 technical SEO tools, metadata editors, schema builders, and crawl monitors for full website optimization.
+        </p>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; color: #38bdf8; font-size: 0.78rem; font-weight: 700;">
+          11 Core Modules Active
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 6px; color: #34d399; font-size: 0.78rem; font-weight: 700;">
+          311+ URLs Synced
+        </span>
+      </div>
     </div>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-      <a href="/admin/seo_settings" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Global Settings</a>
-      <a href="/admin/seo_pages" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Page SEO Manager</a>
-      <a href="/admin/seo_templates" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Meta Templates</a>
-      <a href="/admin/seo_redirects" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Redirects &amp; 404s</a>
-      <a href="/admin/seo_sitemap" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Sitemap &amp; Robots</a>
-      <a href="/admin/seo_images" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Image Alt Tool</a>
-      <a href="/admin/seo_bulk" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Bulk SEO Editor</a>
-      <a href="/admin/seo_links" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Internal Links</a>
-      <a href="/admin/seo_breadcrumbs" style="padding: 8px 14px; background: #1e293b; border: 1px solid #475569; color: #f8fafc; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">Breadcrumbs</a>
+
+    <!-- 11-MODULE GRID -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px;">
+      
+      <!-- Module 1: Search Appearance -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Search Appearance
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Core Settings</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Webmaster verification (Google, Bing, Baidu, Yandex, Pinterest), Knowledge Graph schema, organization branding, sitename separator, and default robots directives.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Verified &amp; Configured</span>
+          <a href="/admin/seo_settings" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Configure &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 2: Titles & Meta Manager -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Titles &amp; Meta (311 URLs)
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-weight: 700; text-transform: uppercase;">All Pages</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Granular per-URL SEO metadata editor for all 311+ website pages, category archives, blog posts, and catalogue items with full 5-tab Yoast snippet modal.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">311 Live URLs Indexed</span>
+          <a href="/admin/seo_pages" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Manage Titles &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 3: Bulk Editor -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
+              Bulk Meta Editor
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Productivity</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Fast spreadsheet-style multi-row editor to rapidly modify SEO titles, meta descriptions, and keywords across multiple catalog entries without leaving the page.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #fbbf24; font-weight: 600;">Multi-Row Quick Save</span>
+          <a href="/admin/seo_bulk" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Launch Editor &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 4: Meta Templates -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Title &amp; Meta Templates
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Automation</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Define dynamic pattern variables (<code style="color:#38bdf8;">%%title%%</code>, <code style="color:#38bdf8;">%%sitename%%</code>, <code style="color:#38bdf8;">%%category%%</code>, <code style="color:#38bdf8;">%%sep%%</code>) for automated metadata across all items.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Active Variables</span>
+          <a href="/admin/seo_templates" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Edit Templates &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 5: Internal Links -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Internal Links Optimizer
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">PageRank Flow</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Track inbound and outbound internal links, detect orphaned articles and catalogue pages, and improve site crawl architecture and search engine link equity.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">Link Count &amp; Anchors</span>
+          <a href="/admin/seo_links" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Audit Links &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 6: Breadcrumbs -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              Breadcrumbs Architecture
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Structured Data</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Configure breadcrumbs separator, home text prefix, taxonomy nesting, and auto-generated Google BreadcrumbList JSON-LD schema for rich SERP results.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">JSON-LD Schema Active</span>
+          <a href="/admin/seo_breadcrumbs" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Customize &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 7: Redirects Manager -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polyline points="15 14 20 9 15 4"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+              Redirects Manager (301/302)
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Traffic Retention</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Manage permanent 301 and temporary 302 redirects with Regex pattern matching, pass-through query parameters, and prevent 404 dead ends during URL changes.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Regex Engine Active</span>
+          <a href="/admin/seo_redirects" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Manage Redirects &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 8: 404 Monitor -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Real-Time 404 Monitor
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: rgba(248, 113, 113, 0.2); color: #f87171; font-weight: 700; text-transform: uppercase;">Crawl Diagnostics</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Capture broken URL visits, IPs, user agents, and referring sites in real-time. Turn any 404 error into a 301 redirect with a single click.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">1-Click 301 Fix</span>
+          <a href="/admin/seo_404" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">View 404 Logs &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 9: Sitemap & Robots -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              Sitemap &amp; Robots.txt
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Indexation</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Dynamic XML Sitemap partition for pages, products, categories, and blogs with priority scores, search engine pinging, and custom robots.txt editor.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Valid sitemap.xml</span>
+          <a href="/admin/seo_sitemap" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Sitemap &amp; Robots &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 10: Image SEO & Alt Tags -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image SEO &amp; Media Alt
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: #1e293b; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Accessibility</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Audit media uploads for missing image alt text, title tags, captions, and descriptions. Includes WordPress Attachment Details modal and Google Image search audit.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Media Library Scanner</span>
+          <a href="/admin/seo_images" style="color: #38bdf8; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">Audit Images &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Module 11: Content & In-Page SEO Suites -->
+      <div style="background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              In-Editor Yoast SEO Suites
+            </div>
+            <span style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: rgba(52, 211, 153, 0.2); color: #34d399; font-weight: 700; text-transform: uppercase;">5-Tab Metabox</span>
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.45; margin: 0 0 14px 0;">
+            Full 5-tab Yoast/Rank Math metabox integrated inside every Page, Blog post, and Product editor: SEO Analysis, Readability, Schema, Social, and Advanced robots.
+          </p>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <a href="/admin/pages" style="color: #38bdf8; text-decoration: none; font-size: 0.78rem; font-weight: 700;">Pages &rarr;</a>
+          <span style="color: #475569;">|</span>
+          <a href="/admin/blog" style="color: #38bdf8; text-decoration: none; font-size: 0.78rem; font-weight: 700;">Blog &rarr;</a>
+          <span style="color: #475569;">|</span>
+          <a href="/admin/products" style="color: #38bdf8; text-decoration: none; font-size: 0.78rem; font-weight: 700;">Products &rarr;</a>
+        </div>
+      </div>
+
     </div>
   </div>
 

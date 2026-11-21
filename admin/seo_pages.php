@@ -3,6 +3,7 @@ require_once dirname(__DIR__) . '/includes/upload_guard.php';
 // Buffer page output so the CSV export below can discard the admin header HTML
 ob_start();
 require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/partials/seo_tabs.php';
 require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
 require_once dirname(__DIR__) . '/app/Models/ProductModel.php';
 require_once dirname(__DIR__) . '/app/Models/BlogModel.php';
@@ -42,15 +43,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     if (!verifyCsrfToken($_POST['csrf_token'] ?? '')) {
         $err = "Invalid CSRF security token.";
     } elseif (!empty($_FILES['csv_file']['tmp_name'])) {
-        $handle = fopen($_FILES['csv_file']['tmp_name'], 'r');
-        $header = fgetcsv($handle);
-        $count = 0;
-        while (($row = fgetcsv($handle)) !== false) {
-            if (count($row) >= 3 && !empty($row[0])) {
-                $slug = '/' . ltrim(trim($row[0]), '/');
-                $title = trim($row[2] ?? '');
-                $desc = trim($row[3] ?? ($row[1] ?? ''));
-                $kw = trim($row[4] ?? '');
+        $handle = @fopen($_FILES['csv_file']['tmp_name'], 'r');
+        if ($handle === false) {
+            $err = "Could not open the uploaded CSV file. Please try again.";
+        } else {
+            // Layout (same as the CSV Export button): URL Slug, Page Type,
+            // Meta Title, Meta Description, Focus Keyword, Robots Index.
+            // Tolerate an optional header row on the first line.
+            $count = 0;
+            $headerSeen = false;
+            while (($row = fgetcsv($handle)) !== false) {
+                if (!$headerSeen) {
+                    $headerSeen = true;
+                    if (is_array($row) && strcasecmp(trim((string)($row[0] ?? '')), 'url slug') === 0) continue;
+                }
+                // row[0]=slug row[2]=title row[3]=desc row[4]=keyword
+                $slug = '/' . ltrim(trim((string)($row[0] ?? '')), '/');
+                if ($slug === '/' || $slug === '//') continue; // never overwrite Home via import
+                $title = trim((string)($row[2] ?? ''));
+                $desc  = trim((string)($row[3] ?? ''));
+                $kw    = trim((string)($row[4] ?? ''));
+                if ($title === '' && $desc === '' && $kw === '') continue;
                 SeoModel::savePageSeo([
                     'url_slug' => $slug,
                     'meta_title' => $title,
@@ -60,9 +73,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 ], $adminUser);
                 $count++;
             }
+            fclose($handle);
+            $msg = "Successfully imported and updated SEO metadata for {$count} pages.";
         }
-        fclose($handle);
-        $msg = "Successfully imported and updated SEO metadata for {$count} pages.";
     }
 }
 
@@ -96,8 +109,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                     'focus_keyword' => trim($_POST['focus_keyword'] ?? ''),
                     'h1_override' => trim($_POST['h1_override'] ?? ''),
                     'canonical_url' => trim($_POST['canonical_url'] ?? ''),
-                    'robots_index' => isset($_POST['robots_index']) ? 1 : 0,
-                    'robots_follow' => isset($_POST['robots_follow']) ? 1 : 0,
+                    // Selects submit "0"/"1"; only an explicit "1" keeps index/follow on.
+                    'robots_index' => (isset($_POST['robots_index']) && (string)$_POST['robots_index'] === '1') ? 1 : 0,
+                    'robots_follow' => (isset($_POST['robots_follow']) && (string)$_POST['robots_follow'] === '1') ? 1 : 0,
                     'og_title' => trim($_POST['og_title'] ?? ''),
                     'og_description' => trim($_POST['og_description'] ?? ''),
                     'og_image' => trim($_POST['og_image'] ?? ''),
@@ -125,7 +139,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
                 SeoModel::savePageSeo($saveData, $adminUser);
 
-                // Save FAQs if submitted
+                // If page slug changed, synchronize PageModel / pages_content.json
+                $oldSlug = trim($_POST['old_url_slug'] ?? '');
+                if (!empty($oldSlug) && $oldSlug !== $slug) {
+                    require_once dirname(__DIR__) . '/app/Models/PageModel.php';
+                    PageModel::updatePageSlug($oldSlug, $slug, $adminUser);
+                }
+
+                // Save FAQs if submitted.
+                // Key FAQs by the short page ref (e.g. "faq"), not the full URL,
+                // because the frontend renders them via SeoModel::getFaqs('page','faq')
+                // (and includes/schema.php likewise). A slug-keyed save ("/faq")
+                // would never match and the FAQs would silently fail to render.
                 if (isset($_POST['faq_q']) && is_array($_POST['faq_q'])) {
                     $faqs = [];
                     foreach ($_POST['faq_q'] as $idx => $q) {
@@ -134,11 +159,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                             $faqs[] = ['question' => trim($q), 'answer' => trim($a)];
                         }
                     }
-                    SeoModel::saveFaqs($saveData['page_type'], $saveData['url_slug'], $faqs, $adminUser);
+                    $faqRef = trim((string)($saveData['page_ref_id'] ?? ''));
+                    if ($faqRef === '') {
+                        $faqRef = trim($saveData['url_slug'], '/');
+                    }
+                    SeoModel::saveFaqs($saveData['page_type'], $faqRef, $faqs, $adminUser);
                 }
 
                 $msg = "SEO metadata for '{$slug}' successfully saved!";
+                $redir = "/admin/seo_pages?msg=" . urlencode($msg);
+                if (!headers_sent()) {
+                    header("Location: " . $redir);
+                } else {
+                    echo "<script>window.location.href = " . json_encode($redir) . ";</script>";
+                }
+                exit();
             }
+        }
+    }
+}
+
+// Handle Single Page Delete / Reset
+if (($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_page')
+    || (isset($_GET['action']) && $_GET['action'] === 'delete_page')) {
+    $token = $_POST['csrf_token'] ?? ($_GET['csrf_token'] ?? '');
+    if (!verifyCsrfToken($token)) {
+        $err = "Invalid security token.";
+    } else {
+        $delSlug = trim($_POST['url_slug'] ?? ($_GET['slug'] ?? ''));
+        if (!empty($delSlug)) {
+            SeoModel::deletePageSeo($delSlug, $adminUser);
+            $msg = "SEO metadata for '{$delSlug}' deleted and reset to defaults successfully.";
+        } else {
+            $err = "Missing URL slug to delete.";
         }
     }
 }
@@ -155,6 +208,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         } else {
             $count = 0;
             foreach ($selectedSlugs as $sSlug) {
+                if ($bulkAct === 'delete_seo') {
+                    SeoModel::deletePageSeo($sSlug, $adminUser);
+                    $count++;
+                    continue;
+                }
                 $cur = SeoModel::getPageSeo($sSlug) ?: ['url_slug' => $sSlug];
                 if ($bulkAct === 'set_index') {
                     $cur['robots_index'] = 1;
@@ -188,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 $search = trim($_GET['search'] ?? '');
 $typeFilter = $_GET['type'] ?? 'all';
 $page = max(1, (int)($_GET['p'] ?? 1));
-$perPage = 15;
+$perPage = isset($_GET['per_page']) && in_array((int)$_GET['per_page'], [15, 25, 50, 100, 200, 500], true) ? (int)$_GET['per_page'] : 25;
 
 $result = SeoModel::getAllPagesList($search, $typeFilter, $page, $perPage);
 $pagesList = $result['items'];
@@ -270,9 +328,28 @@ $csrfToken = generateCsrfToken();
           <?php if ($hasSeo && !empty($saved['focus_keyword'])): ?>
             <div style="font-size: 0.76rem; color: #94a3b8;">Keyphrase: <span style="color: #cbd5e1;"><?= htmlspecialchars($saved['focus_keyword']) ?></span></div>
           <?php endif; ?>
-          <button type="button" onclick="editPageItem(<?= htmlspecialchars(json_encode($modalData, JSON_HEX_APOS | JSON_HEX_QUOT), ENT_QUOTES, 'UTF-8') ?>)" class="tn-btn-gold" style="margin-top: auto; padding: 8px 14px; border: none; border-radius: 7px; font-weight: 700; font-size: 0.82rem; cursor: pointer; align-self: flex-start;">
-            <?= $hasSeo ? 'Edit SEO' : 'Set up SEO' ?> &rarr;
-          </button>
+          <div style="margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap;">
+            <?php
+              $cardEditUrl = '/admin/edit_page?slug=' . urlencode($sp['url']);
+              if (($sp['type'] ?? '') === 'blog') {
+                  $cardEditUrl = '/admin/blog_editor?id=' . (int)($sp['ref'] ?? 0);
+              } elseif (($sp['type'] ?? '') === 'product') {
+                  $cardEditUrl = '/admin/edit_product?id=' . urlencode($sp['ref'] ?? '');
+              }
+            ?>
+            <?php if (($sp['type'] ?? '') === 'industry' || ($sp['type'] ?? '') === 'category'): ?>
+              <button type="button" onclick="editPageItem(<?= htmlspecialchars(json_encode($modalData, JSON_HEX_APOS | JSON_HEX_QUOT), ENT_QUOTES, 'UTF-8') ?>)" class="tn-btn-gold" style="padding: 7px 12px; border: none; border-radius: 7px; font-weight: 700; font-size: 0.8rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                Edit SEO &rarr;
+              </button>
+            <?php else: ?>
+              <a href="<?= htmlspecialchars($cardEditUrl) ?>" class="tn-btn-gold" style="padding: 7px 12px; border: none; border-radius: 7px; font-weight: 700; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <?= $hasSeo ? 'Edit Page &amp; SEO' : 'Set up SEO' ?> &rarr;
+              </a>
+            <?php endif; ?>
+            <button type="button" onclick="editPageItem(<?= htmlspecialchars(json_encode($modalData, JSON_HEX_APOS | JSON_HEX_QUOT), ENT_QUOTES, 'UTF-8') ?>)" style="padding: 7px 10px; background: #1e293b; color: #cbd5e1; border: 1px solid #475569; border-radius: 7px; font-weight: 600; font-size: 0.78rem; cursor: pointer;">
+              Quick
+            </button>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>
@@ -283,17 +360,24 @@ $csrfToken = generateCsrfToken();
     <form method="GET" action="/admin/seo_pages" style="display: flex; gap: 10px; flex-wrap: wrap; flex: 1;">
       <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search by URL, title, description, or keyword..." style="flex: 1; min-width: 250px; padding: 10px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.88rem;" />
       <select name="type" style="padding: 10px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.88rem;">
-        <option value="all" <?= $typeFilter === 'all' ? 'selected' : '' ?>>All Page Types</option>
+        <option value="all" <?= $typeFilter === 'all' ? 'selected' : '' ?>>All Page Types (<?= $totalItems ?>)</option>
         <option value="home" <?= $typeFilter === 'home' ? 'selected' : '' ?>>Homepage</option>
         <option value="page" <?= $typeFilter === 'page' ? 'selected' : '' ?>>Static Pages</option>
+        <option value="industry" <?= $typeFilter === 'industry' ? 'selected' : '' ?>>Industry Markets</option>
         <option value="category" <?= $typeFilter === 'category' ? 'selected' : '' ?>>Categories</option>
-        <option value="product" <?= $typeFilter === 'product' ? 'selected' : '' ?>>Products</option>
         <option value="blog" <?= $typeFilter === 'blog' ? 'selected' : '' ?>>Blog Posts</option>
+        <option value="product" <?= $typeFilter === 'product' ? 'selected' : '' ?>>Products</option>
+      </select>
+      <select name="per_page" style="padding: 10px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.88rem;">
+        <option value="25" <?= $perPage === 25 ? 'selected' : '' ?>>25 per page</option>
+        <option value="50" <?= $perPage === 50 ? 'selected' : '' ?>>50 per page</option>
+        <option value="100" <?= $perPage === 100 ? 'selected' : '' ?>>100 per page</option>
+        <option value="500" <?= $perPage === 500 ? 'selected' : '' ?>>All (500)</option>
       </select>
       <button type="submit" class="tn-btn-outline" style="padding: 10px 18px; background: #0f172a; color: #38bdf8; border: 1px solid #0284c7; border-radius: 8px; font-weight: 600; cursor: pointer;">
         Filter
       </button>
-      <?php if (!empty($search) || $typeFilter !== 'all'): ?>
+      <?php if (!empty($search) || $typeFilter !== 'all' || $perPage !== 25): ?>
         <a href="/admin/seo_pages" style="padding: 10px 14px; color: #94a3b8; text-decoration: none; font-size: 0.86rem; display: flex; align-items: center;">Clear</a>
       <?php endif; ?>
     </form>
@@ -318,6 +402,7 @@ $csrfToken = generateCsrfToken();
             <option value="set_index">Set to Index (Google Visible)</option>
             <option value="set_noindex">Set to Noindex (Hide from Google)</option>
             <option value="auto_templates">Auto-Fill Empty Titles &amp; Descriptions from Templates</option>
+            <option value="delete_seo" style="color: #f87171;">Delete / Reset Selected Overrides to Defaults</option>
           </select>
           <button type="submit" onclick="return confirm('Apply this bulk action to selected items?');" style="padding: 7px 14px; background: #334155; color: #f8fafc; border: none; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer;">
             Apply
@@ -403,9 +488,26 @@ $csrfToken = generateCsrfToken();
                       <?= $score ?>%
                     </span>
                   </td>
-                  <td style="padding: 12px 16px; text-align: right;">
-                    <button type="button" onclick="editPageItem(<?= htmlspecialchars(json_encode($p), ENT_QUOTES, 'UTF-8') ?>)" style="padding: 6px 12px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
-                      Edit SEO
+                  <td style="padding: 12px 16px; text-align: right; white-space: nowrap;">
+                    <?php
+                      $rowEditUrl = '/admin/edit_page?slug=' . urlencode($p['url_slug']);
+                      $rowEditLabel = 'Edit Page';
+                      if (($p['page_type'] ?? '') === 'blog') {
+                          $rowEditUrl = '/admin/blog_editor?id=' . (int)($p['page_ref_id'] ?? 0);
+                          $rowEditLabel = 'Edit Post';
+                      } elseif (($p['page_type'] ?? '') === 'product') {
+                          $rowEditUrl = '/admin/edit_product?id=' . urlencode($p['page_ref_id'] ?? '');
+                          $rowEditLabel = 'Edit Product';
+                      }
+                    ?>
+                    <a href="<?= htmlspecialchars($rowEditUrl) ?>" style="padding: 6px 10px; background: #0284c7; color: #fff; text-decoration: none; border-radius: 6px; font-size: 0.78rem; font-weight: 600; margin-right: 4px; display: inline-block;">
+                      <?= $rowEditLabel ?>
+                    </a>
+                    <button type="button" onclick="editPageItem(<?= htmlspecialchars(json_encode($p), ENT_QUOTES, 'UTF-8') ?>)" style="padding: 6px 10px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer;">
+                      Quick
+                    </button>
+                    <button type="button" onclick="confirmDeleteSeo('<?= htmlspecialchars(addslashes($p['url_slug'])) ?>')" style="padding: 6px 10px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.35); color: #f87171; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer; margin-left: 4px;" title="Delete SEO override and reset to template defaults">
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -417,16 +519,28 @@ $csrfToken = generateCsrfToken();
 
       <!-- Pagination -->
       <?php if ($totalPages > 1): ?>
-        <div style="padding: 12px 18px; background: #0f172a; border-top: 1px solid #334155; display: flex; justify-content: space-between; align-items: center;">
+        <div style="padding: 12px 18px; background: #0f172a; border-top: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
           <span style="font-size: 0.82rem; color: #94a3b8;">
-            Showing page <?= $page ?> of <?= $totalPages ?> (<?= $totalItems ?> items)
+            Showing page <?= $page ?> of <?= $totalPages ?> (<?= $totalItems ?> items, <?= $perPage ?> per page)
           </span>
-          <div style="display: flex; gap: 6px;">
-            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-              <a href="/admin/seo_pages?p=<?= $i ?>&search=<?= urlencode($search) ?>&type=<?= urlencode($typeFilter) ?>" style="padding: 5px 10px; background: <?= $i === $page ? 'var(--color-gold, #b8892e)' : '#1e293b' ?>; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <?php
+              $startP = max(1, $page - 4);
+              $endP = min($totalPages, $page + 4);
+              if ($startP > 1) {
+                  echo '<a href="/admin/seo_pages?p=1&search=' . urlencode($search) . '&type=' . urlencode($typeFilter) . '&per_page=' . $perPage . '" style="padding: 5px 10px; background: #1e293b; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">1</a>';
+                  if ($startP > 2) echo '<span style="color: #64748b; padding: 5px;">...</span>';
+              }
+              for ($i = $startP; $i <= $endP; $i++):
+            ?>
+              <a href="/admin/seo_pages?p=<?= $i ?>&search=<?= urlencode($search) ?>&type=<?= urlencode($typeFilter) ?>&per_page=<?= $perPage ?>" style="padding: 5px 10px; background: <?= $i === $page ? 'var(--color-gold, #b8892e)' : '#1e293b' ?>; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">
                 <?= $i ?>
               </a>
             <?php endfor; ?>
+            <?php if ($endP < $totalPages): ?>
+              <?php if ($endP < $totalPages - 1) echo '<span style="color: #64748b; padding: 5px;">...</span>'; ?>
+              <a href="/admin/seo_pages?p=<?= $totalPages ?>&search=<?= urlencode($search) ?>&type=<?= urlencode($typeFilter) ?>&per_page=<?= $perPage ?>" style="padding: 5px 10px; background: #1e293b; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.8rem; font-weight: 600;"><?= $totalPages ?></a>
+            <?php endif; ?>
           </div>
         </div>
       <?php endif; ?>
@@ -584,6 +698,7 @@ $csrfToken = generateCsrfToken();
             </label>
             <select id="mPageType" name="page_type" style="width: 100%; box-sizing: border-box; padding: 10px 12px; background: #1e293b; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.88rem;">
               <option value="page">Standard Page</option>
+              <option value="industry">Industry Market</option>
               <option value="product">Product Detail</option>
               <option value="category">Category</option>
               <option value="blog">Blog Post</option>
@@ -885,13 +1000,18 @@ $csrfToken = generateCsrfToken();
       </div>
 
       <!-- MODAL FOOTER -->
-      <div style="display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid #334155; padding-top: 18px; margin-top: 24px;">
-        <button type="button" onclick="closeEditModal()" style="padding: 10px 18px; background: #334155; color: #cbd5e1; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
-          Cancel
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #334155; padding-top: 18px; margin-top: 24px; flex-wrap: wrap; gap: 10px;">
+        <button type="button" id="modalDeleteBtn" onclick="deleteCurrentModalSeo()" style="padding: 10px 18px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #f87171; border-radius: 8px; font-weight: 600; cursor: pointer;" title="Delete SEO override and reset to template defaults">
+          Delete / Reset to Defaults
         </button>
-        <button type="submit" class="tn-btn-gold" style="padding: 10px 26px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">
-          Save Metadata
-        </button>
+        <div style="display: flex; gap: 12px;">
+          <button type="button" onclick="closeEditModal()" style="padding: 10px 18px; background: #334155; color: #cbd5e1; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+            Cancel
+          </button>
+          <button type="submit" class="tn-btn-gold" style="padding: 10px 26px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">
+            Save Metadata
+          </button>
+        </div>
       </div>
 
     </form>
@@ -1283,57 +1403,28 @@ function closeEditModal() {
   document.getElementById('pageEditModal').style.display = 'none';
 }
 
-function openPageEditModal(slug, type, title, desc, kw, h1, canonical, rIndex, rFollow) {
-  document.getElementById('modalHeadingTitle').textContent = slug ? ('Edit SEO: ' + slug) : 'Add New Page SEO Override';
-  document.getElementById('mSlug').value = slug || '';
-  document.getElementById('mOldSlug').value = slug || '';
-  document.getElementById('mPageType').value = type || 'page';
-  document.getElementById('mTitle').value = title || '';
-  document.getElementById('mDesc').value = desc || '';
-  document.getElementById('mFocusKeyword').value = kw || '';
-  document.getElementById('mH1Override').value = h1 || '';
-  document.getElementById('mCanonicalUrl').value = canonical || '';
-  document.getElementById('mRobotsIndex').value = (rIndex !== undefined) ? rIndex : '1';
-  document.getElementById('mRobotsFollow').value = (rFollow !== undefined) ? rFollow : '1';
-  document.getElementById('pageEditModal').style.display = 'flex';
-  updateLiveSerp();
+function confirmDeleteSeo(slug) {
+  if (confirm("Are you sure you want to delete and reset the SEO metadata for '" + slug + "' to defaults?")) {
+    const f = document.createElement('form');
+    f.method = 'POST';
+    f.action = '/admin/seo_pages';
+    f.innerHTML = `
+      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
+      <input type="hidden" name="action" value="delete_page" />
+      <input type="hidden" name="url_slug" value="${slug.replace(/"/g, '&quot;')}" />
+    `;
+    document.body.appendChild(f);
+    f.submit();
+  }
 }
 
-function editPageItem(data) {
-  openPageEditModal(
-    data.url_slug || '',
-    data.page_type || 'page',
-    data.meta_title || '',
-    data.meta_description || '',
-    data.focus_keyword || '',
-    data.h1_override || '',
-    data.canonical_url || '',
-    (data.robots_index !== undefined) ? data.robots_index : 1,
-    (data.robots_follow !== undefined) ? data.robots_follow : 1
-  );
-  document.getElementById('mOgTitle').value = data.og_title || '';
-  document.getElementById('mOgImage').value = data.og_image || '';
-  document.getElementById('mSchemaType').value = data.schema_type || 'WebPage';
-  document.getElementById('mCustomSchema').value = data.custom_schema_json || '';
-  document.getElementById('mPageRefId').value = data.page_ref_id || '';
-}
-
-function updateLiveSerp() {
-  const title = document.getElementById('mTitle').value || 'Packaging Solutions — TrueNorth Group';
-  const desc = document.getElementById('mDesc').value || 'Detailed technical analysis of primary packaging containers and dispensing closure engineering.';
-  const slug = document.getElementById('mSlug').value || '...';
-
-  document.getElementById('liveSerpTitle').textContent = title;
-  document.getElementById('liveSerpDesc').textContent = desc;
-  document.getElementById('liveSerpUrl').textContent = 'https://wetruenorthgroup.com' + (slug.startsWith('/') ? slug : ('/' + slug));
-
-  const tLen = document.getElementById('mTitle').value.length;
-  document.getElementById('titleCounter').textContent = tLen + ' / 60';
-  document.getElementById('titleCounter').style.color = (tLen >= 45 && tLen <= 65) ? '#34d399' : '#fbbf24';
-
-  const dLen = document.getElementById('mDesc').value.length;
-  document.getElementById('descCounter').textContent = dLen + ' / 160';
-  document.getElementById('descCounter').style.color = (dLen >= 120 && dLen <= 165) ? '#34d399' : '#fbbf24';
+function deleteCurrentModalSeo() {
+  const slug = (document.getElementById('mOldSlug').value || document.getElementById('mSlug').value || '').trim();
+  if (!slug) {
+    alert('No URL slug found to delete.');
+    return;
+  }
+  confirmDeleteSeo(slug);
 }
 </script>
 

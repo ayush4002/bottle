@@ -168,8 +168,14 @@ $originalSku = trim($_POST['original_sku'] ?? ($_POST['id'] ?? ''));
 $dbId = !empty($_POST['db_id']) ? (int)$_POST['db_id'] : 0;
 $returnUrl = trim($_POST['return_url'] ?? '');
 
+$seoSlug = trim($_POST['seo_slug'] ?? ($_POST['slug'] ?? ''));
+if (empty($seoSlug)) {
+    $seoSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+}
+
 $productData = [
     'id' => $id,
+    'slug' => $seoSlug,
     'original_sku' => $originalSku,
     'db_id' => $dbId,
     'name' => $name,
@@ -206,10 +212,6 @@ $saved = ProductModel::saveProduct($productData);
 
 if ($saved) {
     require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
-    $seoSlug = trim($_POST['seo_slug'] ?? '');
-    if (empty($seoSlug)) {
-        $seoSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
-    }
     $oldSlug = trim($_POST['old_seo_slug'] ?? '');
 
     $seoData = [

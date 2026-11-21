@@ -45,7 +45,8 @@ function seo_meta($context = []) {
         || ($cleanPath === '/404');
 
     // Check Priority 1: Page-Level Override (seo_pages)
-    $pageOverride = $is404 ? [] : SeoModel::getPageSeo($cleanPath, $pageType, $pageRefId);
+    $cleanUri = parse_url($reqUri, PHP_URL_PATH) . (!empty(parse_url($reqUri, PHP_URL_QUERY)) ? '?' . parse_url($reqUri, PHP_URL_QUERY) : '');
+    $pageOverride = $is404 ? [] : (SeoModel::getPageSeo($cleanUri, $pageType, $pageRefId) ?: SeoModel::getPageSeo($cleanPath, $pageType, $pageRefId));
 
     // Context attributes
     $product = $context['product'] ?? null;
@@ -329,6 +330,20 @@ function seo_meta($context = []) {
     }
 
     return $html;
+}
+
+if (!function_exists('seo_footer_scripts')) {
+    /**
+     * Custom footer-injected scripts (chat widgets, deferred tooling) saved by
+     * Super Admins in Global Settings -> "Footer Scripts". Emitted just before
+     * </body> by app/Views/layouts/footer.php. Intentionally raw, like the
+     * header_scripts counterpart rendered in seo_meta(): admin-only input.
+     */
+    function seo_footer_scripts() {
+        $scripts = trim(SeoModel::getSetting('footer_scripts', ''));
+        if ($scripts === '') return '';
+        return "\n  <!-- Custom Footer Scripts -->\n  " . $scripts . "\n";
+    }
 }
 
 if (!function_exists('tn_seo_trim_words')) {

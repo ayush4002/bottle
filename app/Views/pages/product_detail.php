@@ -24,7 +24,7 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
       <?php endif; ?>
       <a href="/products">Products</a>
       <span class="separator">&gt;</span>
-      <a href="/products?category=<?= urlencode($catSlug) ?>"><?= htmlspecialchars($catName) ?></a>
+      <a href="/products/<?= urlencode($catSlug) ?>"><?= htmlspecialchars($catName) ?></a>
       <span class="separator">&gt;</span>
       <span class="current"><?= htmlspecialchars($sku['name'] ?? 'Product') ?></span>
     </div>
@@ -183,11 +183,11 @@ $seriesSlug = $seriesInfo['slug'] ?? ($sku['seriesSlug'] ?? '');
     </div>
     <div class="tn-grid-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 16px;">
       <?php foreach ($tnRelated as $tnRel): ?>
-        <a href="/product?id=<?= urlencode($tnRel['id'] ?? ($tnRel['sku'] ?? '')) ?>" style="display: block; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-decoration: none; background: #fff; transition: box-shadow 0.25s ease;">
-          <div style="aspect-ratio: 1; overflow: hidden; background: #f8fafc;">
-            <img src="<?= htmlspecialchars($tnRel['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($tnRel['name'] ?? '') ?>"<?= tn_img_dims($tnRel['image'] ?? '/logo_svg.svg') ?> loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
+        <a href="<?= ProductModel::getProductUrl($tnRel) ?>" style="display: flex; flex-direction: column; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; text-decoration: none; background: #fff; transition: all 0.25s ease;" onmouseover="this.style.boxShadow='0 6px 18px rgba(15,23,42,0.08)';this.style.borderColor='#16273f';" onmouseout="this.style.boxShadow='none';this.style.borderColor='#e2e8f0';">
+          <div style="aspect-ratio: 1; overflow: hidden; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 12px; border-bottom: 1px solid #f1f5f9;">
+            <img src="<?= htmlspecialchars($tnRel['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($tnRel['name'] ?? '') ?>"<?= tn_img_dims($tnRel['image'] ?? '/logo_svg.svg') ?> loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: auto; transition: transform 0.25s ease;" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
           </div>
-          <div style="padding: 12px 14px;">
+          <div style="padding: 12px 14px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
             <p style="font-size: 0.85rem; font-weight: 700; color: #16273f; margin: 0; line-height: 1.35;"><?= htmlspecialchars($tnRel['name'] ?? '') ?></p>
             <p style="font-size: 0.72rem; color: #64748b; margin: 6px 0 0;"><?= htmlspecialchars($tnRel['sku'] ?? ($tnRel['id'] ?? '')) ?></p>
           </div>

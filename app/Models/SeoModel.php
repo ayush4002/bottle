@@ -140,7 +140,7 @@ class SeoModel {
         foreach ($files as $name => $defaultData) {
             $f = self::getJsonFile($name);
             if (!file_exists($f)) {
-                @file_put_contents($f, json_encode($defaultData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+                @file_put_contents($f, self::jsonEnc($defaultData), LOCK_EX);
             }
         }
     }
@@ -207,7 +207,7 @@ class SeoModel {
         foreach ($data as $k => $v) {
             $current[$k] = $v;
         }
-        @file_put_contents($f, json_encode($current, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc($current), LOCK_EX);
 
         self::flushCache();
         self::logAudit('update_seo_settings', 'Updated global SEO settings: ' . implode(', ', array_keys($data)), $adminId);
@@ -218,20 +218,24 @@ class SeoModel {
     // 2. PAGE SEO OVERRIDES (seo_pages)
     // =========================================================================
 
+    public static function getPageBySlug($slug) {
+        return self::getPageSeo($slug);
+    }
+
     public static function getPageSeo($slugOrUrl, $type = null, $refId = null) {
         $slug = '/' . ltrim($slugOrUrl, '/');
-        // Strip query string for route lookup
+        // Clean slug without query string for fallback
         $cleanSlug = strtok($slug, '?');
 
         $pdo = self::getPdo();
         if ($pdo) {
             try {
                 if ($type && $refId) {
-                    $stmt = $pdo->prepare("SELECT * FROM seo_pages WHERE (url_slug = :slug OR (page_type = :type AND page_ref_id = :ref)) LIMIT 1");
-                    $stmt->execute([':slug' => $cleanSlug, ':type' => $type, ':ref' => $refId]);
+                    $stmt = $pdo->prepare("SELECT * FROM seo_pages WHERE (url_slug = :exactSlug OR url_slug = :cleanSlug OR (page_type = :type AND page_ref_id = :ref)) ORDER BY (url_slug = :exactSlug) DESC LIMIT 1");
+                    $stmt->execute([':exactSlug' => $slug, ':cleanSlug' => $cleanSlug, ':type' => $type, ':ref' => $refId]);
                 } else {
-                    $stmt = $pdo->prepare("SELECT * FROM seo_pages WHERE url_slug = :slug LIMIT 1");
-                    $stmt->execute([':slug' => $cleanSlug]);
+                    $stmt = $pdo->prepare("SELECT * FROM seo_pages WHERE url_slug = :exactSlug OR url_slug = :cleanSlug ORDER BY (url_slug = :exactSlug) DESC LIMIT 1");
+                    $stmt->execute([':exactSlug' => $slug, ':cleanSlug' => $cleanSlug]);
                 }
                 $res = $stmt->fetch();
                 if ($res) return $res;
@@ -244,8 +248,23 @@ class SeoModel {
         $f = self::getJsonFile('seo_pages');
         if (file_exists($f)) {
             $pages = json_decode(file_get_contents($f), true) ?: [];
+            // 1. Exact slug match has highest precedence
             foreach ($pages as $p) {
-                if ($p['url_slug'] === $cleanSlug || ($type && $refId && ($p['page_type'] ?? '') === $type && ($p['page_ref_id'] ?? '') === $refId)) {
+                if (($p['url_slug'] ?? '') === $slug) {
+                    return $p;
+                }
+            }
+            // 2. Type + Reference ID match
+            if ($type && $refId) {
+                foreach ($pages as $p) {
+                    if (($p['page_type'] ?? '') === $type && (string)($p['page_ref_id'] ?? '') === (string)$refId) {
+                        return $p;
+                    }
+                }
+            }
+            // 3. Clean slug fallback
+            foreach ($pages as $p) {
+                if (($p['url_slug'] ?? '') === $cleanSlug) {
                     return $p;
                 }
             }
@@ -347,6 +366,12 @@ class SeoModel {
         $pdo = self::getPdo();
         if ($pdo) {
             try {
+                // If slug changed, delete the old slug record first so it doesn't leave an orphaned duplicate row
+                if ($oldSlug && $oldSlug !== $slug) {
+                    $delStmt = $pdo->prepare("DELETE FROM seo_pages WHERE url_slug = :old_slug");
+                    $delStmt->execute([':old_slug' => $oldSlug]);
+                }
+
                 $sql = "INSERT INTO seo_pages (
                     page_type, page_ref_id, url_slug, meta_title, meta_description, meta_keywords,
                     focus_keyword, canonical_url, robots_index, robots_follow, og_title, og_description,
@@ -394,13 +419,34 @@ class SeoModel {
         $f = self::getJsonFile('seo_pages');
         $all = file_exists($f) ? (json_decode(file_get_contents($f), true) ?: []) : [];
         $found = false;
-        foreach ($all as &$item) {
-            if ($item['url_slug'] === $slug) {
-                $item = array_merge($item, $record);
-                $found = true;
-                break;
+
+        // If old slug is provided and different, locate the item with old_url_slug and update it
+        if ($oldSlug && $oldSlug !== $slug) {
+            foreach ($all as &$item) {
+                if ($item['url_slug'] === $oldSlug) {
+                    $item = array_merge($item, $record);
+                    $found = true;
+                    break;
+                }
             }
+            unset($item);
+            // Also ensure no other duplicate exists with oldSlug
+            $all = array_values(array_filter($all, function($p) use ($oldSlug, $slug) {
+                return $p['url_slug'] !== $oldSlug;
+            }));
         }
+
+        if (!$found) {
+            foreach ($all as &$item) {
+                if ($item['url_slug'] === $slug) {
+                    $item = array_merge($item, $record);
+                    $found = true;
+                    break;
+                }
+            }
+            unset($item);
+        }
+
         if (!$found) {
             $record['id'] = count($all) + 1;
             $all[] = $record;
@@ -412,26 +458,42 @@ class SeoModel {
         return true;
     }
 
-    public static function deletePageSeo($id, $adminId = 'admin') {
+    public static function deletePageSeo($idOrSlug, $adminId = 'admin') {
         $pdo = self::getPdo();
         if ($pdo) {
             try {
-                $stmt = $pdo->prepare("DELETE FROM seo_pages WHERE id = :id");
-                $stmt->execute([':id' => $id]);
-            } catch (Exception $e) {}
+                if (is_numeric($idOrSlug)) {
+                    $stmt = $pdo->prepare("DELETE FROM seo_pages WHERE id = :id");
+                    $stmt->execute([':id' => (int)$idOrSlug]);
+                } else {
+                    $norm = '/' . ltrim((string)$idOrSlug, '/');
+                    $stmt = $pdo->prepare("DELETE FROM seo_pages WHERE url_slug = :slug OR url_slug = :raw");
+                    $stmt->execute([':slug' => $norm, ':raw' => (string)$idOrSlug]);
+                }
+            } catch (Exception $e) {
+                error_log("DB deletePageSeo Error: " . $e->getMessage());
+            }
         }
 
         $f = self::getJsonFile('seo_pages');
         if (file_exists($f)) {
             $all = json_decode(file_get_contents($f), true) ?: [];
-            $filtered = array_filter($all, function($p) use ($id) {
-                return (int)($p['id'] ?? 0) !== (int)$id;
+            $normSlug = !is_numeric($idOrSlug) ? ('/' . ltrim((string)$idOrSlug, '/')) : null;
+            $filtered = array_filter($all, function($p) use ($idOrSlug, $normSlug) {
+                if (is_numeric($idOrSlug) && isset($p['id'])) {
+                    return (int)$p['id'] !== (int)$idOrSlug;
+                }
+                $pSlug = $p['url_slug'] ?? '';
+                if ($pSlug === $idOrSlug || ($normSlug !== null && $pSlug === $normSlug)) {
+                    return false;
+                }
+                return true;
             });
-            @file_put_contents($f, json_encode(array_values($filtered), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+            @file_put_contents($f, self::jsonEnc(array_values($filtered)), LOCK_EX);
         }
 
         self::flushCache();
-        self::logAudit('delete_page_seo', "Deleted SEO override ID #{$id}", $adminId);
+        self::logAudit('delete_page_seo', "Deleted SEO override for {$idOrSlug}", $adminId);
         return true;
     }
 
@@ -548,6 +610,7 @@ class SeoModel {
 
         // Detect loops and chains
         $urlMap = [];
+        $hasLoops = false;
         foreach ($list as $r) {
             if (!empty($r['is_active'])) {
                 $urlMap[$r['old_url']] = $r['new_url'];
@@ -562,30 +625,233 @@ class SeoModel {
                 $r['has_chain'] = true;
                 if ($urlMap[$target] === $r['old_url']) {
                     $r['has_loop'] = true;
+                    $hasLoops = true;
                 }
             }
         }
+        unset($r);
+
+        // If stale loops were detected, run automated loop healing and reload list
+        if ($hasLoops && empty($search)) {
+            self::cleanRedirectLoopsAndChains();
+            $f = self::getJsonFile('seo_redirects');
+            if (file_exists($f)) {
+                $list = json_decode(file_get_contents($f), true) ?: [];
+            }
+        }
+
         return $list;
     }
 
-    public static function saveRedirect($oldUrl, $newUrl, $statusCode = 301, $isActive = 1, $adminId = 'admin') {
-        $oldUrl = '/' . ltrim(trim($oldUrl), '/');
-        $newUrl = (strpos($newUrl, 'http://') === 0 || strpos($newUrl, 'https://') === 0) ? trim($newUrl) : ('/' . ltrim(trim($newUrl), '/'));
-        $statusCode = in_array((int)$statusCode, [301, 302, 410]) ? (int)$statusCode : 301;
-
-        if ($oldUrl === $newUrl) {
-            return ['success' => false, 'error' => 'Source and destination URLs cannot be identical.'];
-        }
+    /**
+     * Purge any redirect where source URL matches $url
+     */
+    public static function purgeRedirectForUrl($url, $adminId = 'system') {
+        $normUrl = '/' . ltrim(trim($url), '/');
+        $normTrimmed = ($normUrl !== '/') ? rtrim($normUrl, '/') : '/';
 
         $pdo = self::getPdo();
         if ($pdo) {
             try {
+                $stmt = $pdo->prepare("DELETE FROM seo_redirects WHERE old_url = :u1 OR old_url = :u2 OR old_url = :u3");
+                $stmt->execute([':u1' => $normUrl, ':u2' => $normTrimmed, ':u3' => $normTrimmed . '/']);
+            } catch (Exception $e) {
+                error_log("SeoModel::purgeRedirectForUrl DB error: " . $e->getMessage());
+            }
+        }
+
+        $f = self::getJsonFile('seo_redirects');
+        if (file_exists($f)) {
+            $all = json_decode(file_get_contents($f), true) ?: [];
+            $filtered = array_values(array_filter($all, function($r) use ($normUrl, $normTrimmed) {
+                $old = ($r['old_url'] !== '/') ? rtrim($r['old_url'], '/') : '/';
+                return $old !== $normTrimmed && $r['old_url'] !== $normUrl;
+            }));
+            if (count($filtered) !== count($all)) {
+                $idx = 1;
+                foreach ($filtered as &$r) { $r['id'] = $idx++; }
+                unset($r);
+                @file_put_contents($f, self::jsonEnc($filtered), LOCK_EX);
+            }
+        }
+        self::flushCache();
+    }
+
+    /**
+     * Holistic cleaner: removes self-redirects, circular loops, stale redirects on live pages, and flattens multi-hop chains
+     */
+    public static function cleanRedirectLoopsAndChains() {
+        $pdo = self::getPdo();
+        $f = self::getJsonFile('seo_redirects');
+        $all = file_exists($f) ? (json_decode(file_get_contents($f), true) ?: []) : [];
+
+        if (empty($all) && $pdo) {
+            try {
+                $stmt = $pdo->query("SELECT * FROM seo_redirects ORDER BY id ASC");
+                $all = $stmt->fetchAll() ?: [];
+            } catch (Exception $e) {}
+        }
+
+        if (empty($all)) return;
+
+        // Step 1: Normalize all URLs
+        $clean = [];
+        foreach ($all as $r) {
+            $old = '/' . ltrim(trim($r['old_url'] ?? ''), '/');
+            $normOld = ($old !== '/') ? rtrim($old, '/') : '/';
+
+            $new = trim($r['new_url'] ?? '');
+            $isExt = (strpos($new, 'http://') === 0 || strpos($new, 'https://') === 0);
+            $normNew = $isExt ? $new : (('/' . ltrim($new, '/')) !== '/' ? rtrim('/' . ltrim($new, '/'), '/') : '/');
+
+            // Skip self-redirects
+            if ($normOld === $normNew) {
+                continue;
+            }
+
+            // Skip stale redirects where source is a currently active page in PageModel
+            if (class_exists('PageModel') && method_exists('PageModel', 'hasPage')) {
+                $lp = PageModel::hasPage($normOld);
+                if ($lp && ($lp['status'] ?? 'published') === 'published') {
+                    continue;
+                }
+            }
+
+            $r['old_url'] = $normOld;
+            $r['new_url'] = $normNew;
+            $clean[] = $r;
+        }
+
+        // Step 2: Break circular loops & multi-hop cycles (newer rules win over older stale rules)
+        $map = [];
+        $validRules = [];
+        $seenSources = [];
+
+        $reversed = array_reverse($clean);
+        foreach ($reversed as $r) {
+            $src = $r['old_url'];
+            $dst = $r['new_url'];
+
+            if (isset($seenSources[$src])) {
+                continue;
+            }
+
+            // Cycle detection: traverse from $dst to see if it reaches $src
+            $curr = $dst;
+            $hasCycle = false;
+            $visited = [$src => true];
+            for ($hop = 0; $hop < 15; $hop++) {
+                if (isset($visited[$curr])) {
+                    $hasCycle = true;
+                    break;
+                }
+                $visited[$curr] = true;
+                if (!isset($map[$curr])) {
+                    break;
+                }
+                $curr = $map[$curr];
+            }
+
+            if ($hasCycle) {
+                continue;
+            }
+
+            $map[$src] = $dst;
+            $seenSources[$src] = true;
+            $validRules[] = $r;
+        }
+
+        $validRules = array_reverse($validRules);
+
+        // Step 3: Flatten chains (A -> B and B -> C becomes A -> C)
+        foreach ($validRules as &$r) {
+            $dst = $r['new_url'];
+            $hop = 0;
+            while (isset($map[$dst]) && $hop < 10) {
+                $nextDst = $map[$dst];
+                if ($nextDst === $r['old_url']) {
+                    break;
+                }
+                $dst = $nextDst;
+                $hop++;
+            }
+            $r['new_url'] = $dst;
+        }
+        unset($r);
+
+        // Step 4: Re-index IDs
+        $idx = 1;
+        foreach ($validRules as &$r) {
+            $r['id'] = $idx++;
+        }
+        unset($r);
+
+        // Step 5: Save clean rules to JSON and DB
+        @file_put_contents($f, self::jsonEnc($validRules), LOCK_EX);
+
+        if ($pdo) {
+            try {
+                $pdo->exec("TRUNCATE TABLE seo_redirects");
+                $ins = $pdo->prepare("INSERT INTO seo_redirects (id, old_url, new_url, status_code, hits, is_active, created_at)
+                    VALUES (:id, :old_url, :new_url, :status_code, :hits, :is_active, :created_at)");
+                foreach ($validRules as $r) {
+                    $ins->execute([
+                        ':id' => $r['id'],
+                        ':old_url' => $r['old_url'],
+                        ':new_url' => $r['new_url'],
+                        ':status_code' => (int)($r['status_code'] ?? 301),
+                        ':hits' => (int)($r['hits'] ?? 0),
+                        ':is_active' => (int)($r['is_active'] ?? 1),
+                        ':created_at' => $r['created_at'] ?? date('Y-m-d H:i:s')
+                    ]);
+                }
+            } catch (Exception $e) {}
+        }
+        self::flushCache();
+    }
+
+    public static function saveRedirect($oldUrl, $newUrl, $statusCode = 301, $isActive = 1, $adminId = 'admin') {
+        $oldUrl = '/' . ltrim(trim($oldUrl), '/');
+        $isExt = (strpos($newUrl, 'http://') === 0 || strpos($newUrl, 'https://') === 0);
+        $newUrl = $isExt ? trim($newUrl) : ('/' . ltrim(trim($newUrl), '/'));
+        $statusCode = in_array((int)$statusCode, [301, 302, 410]) ? (int)$statusCode : 301;
+
+        $normOld = ($oldUrl !== '/') ? rtrim($oldUrl, '/') : '/';
+        $normNew = (!$isExt && $newUrl !== '/') ? rtrim($newUrl, '/') : $newUrl;
+
+        // If source and destination are identical, any existing redirect on oldUrl is obsolete and should be purged
+        if ($normOld === $normNew) {
+            self::purgeRedirectForUrl($normOld, $adminId);
+            self::cleanRedirectLoopsAndChains();
+            return ['success' => true, 'message' => 'Source and destination URLs are identical; redirect cleared.'];
+        }
+
+        // Purge any existing rule where old_url is $normNew (the new destination is live, so it cannot redirect away!)
+        self::purgeRedirectForUrl($normNew, $adminId);
+
+        $pdo = self::getPdo();
+        if ($pdo) {
+            try {
+                // Delete any rule redirecting FROM the new destination
+                $delStmt = $pdo->prepare("DELETE FROM seo_redirects WHERE old_url = :n1 OR old_url = :n2");
+                $delStmt->execute([':n1' => $normNew, ':n2' => rtrim($normNew, '/')]);
+
+                // Flatten existing chains pointing to $normOld
+                $flatStmt = $pdo->prepare("UPDATE seo_redirects SET new_url = :n WHERE (new_url = :o1 OR new_url = :o2) AND old_url != :n_check");
+                $flatStmt->execute([
+                    ':n' => $normNew,
+                    ':o1' => $normOld,
+                    ':o2' => rtrim($normOld, '/'),
+                    ':n_check' => $normNew
+                ]);
+
+                // Insert / update the new redirect
                 $stmt = $pdo->prepare("INSERT INTO seo_redirects (old_url, new_url, status_code, is_active, created_at)
                     VALUES (:old, :new, :code, :act, NOW())
                     ON DUPLICATE KEY UPDATE new_url = VALUES(new_url), status_code = VALUES(status_code), is_active = VALUES(is_active)");
                 $stmt->execute([
-                    ':old' => $oldUrl,
-                    ':new' => $newUrl,
+                    ':old' => $normOld,
+                    ':new' => $normNew,
                     ':code' => $statusCode,
                     ':act' => (int)$isActive
                 ]);
@@ -594,34 +860,64 @@ class SeoModel {
             }
         }
 
-        // Sync JSON
+        // JSON Fallback
         $f = self::getJsonFile('seo_redirects');
         $all = file_exists($f) ? (json_decode(file_get_contents($f), true) ?: []) : [];
+
+        // Remove any rule redirecting from $normNew or self-redirects
+        $cleanList = [];
+        foreach ($all as $r) {
+            $rOld = ($r['old_url'] !== '/') ? rtrim($r['old_url'], '/') : '/';
+            $rNew = ($r['new_url'] !== '/' && strpos($r['new_url'], 'http') !== 0) ? rtrim($r['new_url'], '/') : $r['new_url'];
+
+            if ($rOld === $normNew || $rOld === $rNew) {
+                continue;
+            }
+            if ($rNew === $normOld) {
+                if ($rOld === $normNew) continue;
+                $r['new_url'] = $normNew;
+            }
+            $cleanList[] = $r;
+        }
+
         $found = false;
-        foreach ($all as &$r) {
-            if ($r['old_url'] === $oldUrl) {
-                $r['new_url'] = $newUrl;
+        foreach ($cleanList as &$r) {
+            $rOld = ($r['old_url'] !== '/') ? rtrim($r['old_url'], '/') : '/';
+            if ($rOld === $normOld) {
+                $r['new_url'] = $normNew;
                 $r['status_code'] = $statusCode;
                 $r['is_active'] = (int)$isActive;
                 $found = true;
                 break;
             }
         }
+        unset($r);
+
         if (!$found) {
-            $all[] = [
-                'id' => count($all) + 1,
-                'old_url' => $oldUrl,
-                'new_url' => $newUrl,
+            $cleanList[] = [
+                'id' => count($cleanList) + 1,
+                'old_url' => $normOld,
+                'new_url' => $normNew,
                 'status_code' => $statusCode,
                 'hits' => 0,
                 'is_active' => (int)$isActive,
                 'created_at' => date('Y-m-d H:i:s')
             ];
         }
-        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
+
+        $idx = 1;
+        foreach ($cleanList as &$r) {
+            $r['id'] = $idx++;
+        }
+        unset($r);
+
+        @file_put_contents($f, self::jsonEnc($cleanList), LOCK_EX);
+
+        // Run holistic loop and cycle cleaner
+        self::cleanRedirectLoopsAndChains();
 
         self::flushCache();
-        self::logAudit('create_redirect', "Created {$statusCode} redirect from {$oldUrl} to {$newUrl}", $adminId);
+        self::logAudit('create_redirect', "Created {$statusCode} redirect from {$normOld} to {$normNew}", $adminId);
         return ['success' => true];
     }
 
@@ -637,7 +933,7 @@ class SeoModel {
         if (file_exists($f)) {
             $all = json_decode(file_get_contents($f), true) ?: [];
             $filtered = array_filter($all, function($r) use ($id) { return (int)($r['id'] ?? 0) !== (int)$id; });
-            @file_put_contents($f, json_encode(array_values($filtered), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+            @file_put_contents($f, self::jsonEnc(array_values($filtered)), LOCK_EX);
         }
         self::flushCache();
         self::logAudit('delete_redirect', "Deleted redirect ID #{$id}", $adminId);
@@ -669,24 +965,60 @@ class SeoModel {
     }
 
     /**
+     * Find active redirect rule matching a path
+     */
+    public static function findRedirectMatch($path) {
+        $clean = ($path !== '/') ? rtrim('/' . ltrim($path, '/'), '/') : '/';
+        $pdo = self::getPdo();
+        if ($pdo) {
+            try {
+                $stmt = $pdo->prepare("SELECT * FROM seo_redirects WHERE (old_url = :p OR old_url = :p2) AND is_active = 1 LIMIT 1");
+                $stmt->execute([':p' => $clean, ':p2' => $clean . '/']);
+                $res = $stmt->fetch();
+                if ($res) return $res;
+            } catch (Exception $e) {}
+        }
+        $f = self::getJsonFile('seo_redirects');
+        if (file_exists($f)) {
+            $all = json_decode(file_get_contents($f), true) ?: [];
+            foreach ($all as $r) {
+                if (!empty($r['is_active'])) {
+                    $rOld = ($r['old_url'] !== '/') ? rtrim($r['old_url'], '/') : '/';
+                    if ($rOld === $clean) return $r;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
      * Check request URI against redirects and execute redirect immediately
      */
     public static function handleEarlyRedirect($requestUri) {
         $path = parse_url($requestUri, PHP_URL_PATH);
         $cleanPath = '/' . trim($path, '/');
-        if ($cleanPath === '/') $cleanPath = '/';
+        if ($cleanPath === '//') $cleanPath = '/';
+        $normPath = ($cleanPath !== '/') ? rtrim($cleanPath, '/') : '/';
 
+        // 1. Live page priority check:
+        // If this URL is a live, published page in PageModel, any redirect rule claiming old_url == $normPath is STALE!
+        // We purge the stale redirect rule immediately and let the live page render without redirecting.
+        if (class_exists('PageModel') && method_exists('PageModel', 'hasPage')) {
+            $livePage = PageModel::hasPage($normPath);
+            if ($livePage && ($livePage['status'] ?? 'published') === 'published') {
+                self::purgeRedirectForUrl($normPath);
+                return;
+            }
+        }
+
+        // 2. Query seo_redirects for an active rule
         $pdo = self::getPdo();
         $match = null;
         if ($pdo) {
             try {
-                $stmt = $pdo->prepare("SELECT * FROM seo_redirects WHERE (old_url = :p OR old_url = :p2) AND is_active = 1 LIMIT 1");
-                $stmt->execute([':p' => $cleanPath, ':p2' => rtrim($cleanPath, '/')]);
+                $stmt = $pdo->prepare("SELECT * FROM seo_redirects WHERE (old_url = :p OR old_url = :p2 OR old_url = :p3) AND is_active = 1 LIMIT 1");
+                $stmt->execute([':p' => $normPath, ':p2' => $cleanPath, ':p3' => $requestUri]);
                 $match = $stmt->fetch();
-                if ($match) {
-                    $stmtUp = $pdo->prepare("UPDATE seo_redirects SET hits = hits + 1 WHERE id = :id");
-                    $stmtUp->execute([':id' => $match['id']]);
-                }
             } catch (Exception $e) {}
         }
 
@@ -694,38 +1026,122 @@ class SeoModel {
             $f = self::getJsonFile('seo_redirects');
             if (file_exists($f)) {
                 $all = json_decode(file_get_contents($f), true) ?: [];
-                foreach ($all as &$r) {
-                    if (!empty($r['is_active']) && ($r['old_url'] === $cleanPath || rtrim($r['old_url'], '/') === rtrim($cleanPath, '/'))) {
-                        $match = $r;
-                        $r['hits'] = ($r['hits'] ?? 0) + 1;
-                        @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
-                        break;
+                foreach ($all as $r) {
+                    if (!empty($r['is_active'])) {
+                        $rOld = ($r['old_url'] !== '/') ? rtrim($r['old_url'], '/') : '/';
+                        if ($rOld === $normPath || $r['old_url'] === $cleanPath || $r['old_url'] === $requestUri) {
+                            $match = $r;
+                            break;
+                        }
                     }
                 }
             }
         }
 
-        if ($match) {
-            $code = (int)($match['status_code'] ?? 301);
-            if ($code === 410) {
-                http_response_code(410);
-                if (file_exists(dirname(__DIR__, 2) . '/app/Views/pages/404.php')) {
-                    $is410 = true;
-                    require_once dirname(__DIR__, 2) . '/app/Views/pages/404.php';
-                } else {
-                    echo "<h1>410 Gone</h1><p>This resource has been permanently removed.</p>";
-                }
-                exit();
-            } else {
-                $qs = parse_url($requestUri, PHP_URL_QUERY);
-                $target = $match['new_url'];
-                if (!empty($qs) && strpos($target, '?') === false) {
-                    $target .= '?' . $qs;
-                }
-                header("Location: " . $target, true, $code);
-                exit();
+        if (!$match) {
+            return; // No redirect rule
+        }
+
+        // 3. Loop Breaker & Self-Redirect Check
+        $target = $match['new_url'];
+        $targetPath = parse_url($target, PHP_URL_PATH) ?: '/';
+        $normTarget = ($targetPath !== '/') ? rtrim($targetPath, '/') : '/';
+
+        // Check self-redirect
+        if ($normTarget === $normPath) {
+            error_log("SeoModel: Suppressed and purged self-redirect on {$normPath}");
+            if (isset($match['id'])) self::deleteRedirect($match['id']);
+            return;
+        }
+
+        // Check 2-way circular redirect (A -> B and B -> A)
+        $targetReverseRule = self::findRedirectMatch($normTarget);
+        if ($targetReverseRule) {
+            $revTarget = parse_url($targetReverseRule['new_url'], PHP_URL_PATH) ?: '/';
+            $normRevTarget = ($revTarget !== '/') ? rtrim($revTarget, '/') : '/';
+            if ($normRevTarget === $normPath) {
+                error_log("SeoModel: Detected circular redirect loop between {$normPath} and {$normTarget}. Breaking loop.");
+                if (isset($match['id'])) self::deleteRedirect($match['id']);
+                if (isset($targetReverseRule['id'])) self::deleteRedirect($targetReverseRule['id']);
+                self::cleanRedirectLoopsAndChains();
+                return;
             }
         }
+
+        // Multi-hop cycle breaker (check up to 10 hops)
+        $visited = [$normPath => true];
+        $hopTarget = $normTarget;
+        $isCyclic = false;
+        for ($h = 0; $h < 10; $h++) {
+            if (isset($visited[$hopTarget])) {
+                $isCyclic = true;
+                break;
+            }
+            $visited[$hopTarget] = true;
+            $nextHop = self::findRedirectMatch($hopTarget);
+            if (!$nextHop) break;
+            $hopTarget = parse_url($nextHop['new_url'], PHP_URL_PATH) ?: '/';
+            $hopTarget = ($hopTarget !== '/') ? rtrim($hopTarget, '/') : '/';
+        }
+
+        if ($isCyclic) {
+            error_log("SeoModel: Detected multi-hop circular redirect cycle originating from {$normPath}. Breaking cycle.");
+            if (isset($match['id'])) self::deleteRedirect($match['id']);
+            self::cleanRedirectLoopsAndChains();
+            return;
+        }
+
+        // Increment hit count
+        if ($pdo && isset($match['id'])) {
+            try {
+                $stmtUp = $pdo->prepare("UPDATE seo_redirects SET hits = hits + 1 WHERE id = :id");
+                $stmtUp->execute([':id' => $match['id']]);
+            } catch (Exception $e) {}
+        } else {
+            $f = self::getJsonFile('seo_redirects');
+            if (file_exists($f)) {
+                $all = json_decode(file_get_contents($f), true) ?: [];
+                foreach ($all as &$r) {
+                    if (($r['id'] ?? null) === $match['id']) {
+                        $r['hits'] = ($r['hits'] ?? 0) + 1;
+                        break;
+                    }
+                }
+                @file_put_contents($f, self::jsonEnc($all), LOCK_EX);
+            }
+        }
+
+        // 4. Execute Redirect
+        $code = (int)($match['status_code'] ?? 301);
+        if ($code === 410) {
+            http_response_code(410);
+            if (file_exists(dirname(__DIR__, 2) . '/app/Views/pages/404.php')) {
+                $is410 = true;
+                require_once dirname(__DIR__, 2) . '/app/Views/pages/404.php';
+            } else {
+                echo "<h1>410 Gone</h1><p>This resource has been permanently removed.</p>";
+            }
+            exit();
+        }
+
+        // Preserve query string only if the matching redirect rule did not explicitly target a query URL
+        if (strpos($match['old_url'] ?? '', '?') === false) {
+            $qs = parse_url($requestUri, PHP_URL_QUERY);
+            if (!empty($qs) && strpos($target, '?') === false) {
+                $targetPath = parse_url($target, PHP_URL_PATH);
+                // Do not append query parameters if redirecting to a clean parameterless path
+                if (strpos($targetPath, '/product/') !== 0 && strpos($targetPath, '/products/') !== 0) {
+                    $target .= '?' . $qs;
+                }
+            }
+        }
+
+        // Prevent permanent browser caching of redirects so admin slug renames take effect immediately
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+        header("Location: " . $target, true, $code);
+        exit();
     }
 
     // =========================================================================
@@ -818,8 +1234,27 @@ class SeoModel {
             $filtered = array_filter($all, function($item) use ($id) {
                 return (int)($item['id'] ?? 0) !== (int)$id;
             });
-            @file_put_contents($f, json_encode(array_values($filtered), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+            @file_put_contents($f, self::jsonEnc(array_values($filtered)), LOCK_EX);
         }
+        return true;
+    }
+
+    /**
+     * Clear every logged 404 entry (both the MySQL table and the JSON fallback).
+     */
+    public static function clearAll404s($adminId = 'admin') {
+        $pdo = self::getPdo();
+        if ($pdo) {
+            try {
+                $pdo->exec("DELETE FROM seo_404_log");
+            } catch (Exception $e) {}
+        }
+
+        $f = self::getJsonFile('seo_404_log');
+        @file_put_contents($f, self::jsonEnc([]), LOCK_EX);
+
+        self::flushCache();
+        self::logAudit('clear_all_404s', 'Cleared all 404 error logs', $adminId);
         return true;
     }
 
@@ -885,7 +1320,7 @@ class SeoModel {
                 ];
             }
         }
-        @file_put_contents($f, json_encode(array_values($filtered), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        @file_put_contents($f, self::jsonEnc(array_values($filtered)), LOCK_EX);
         self::flushCache();
         return true;
     }
@@ -936,8 +1371,196 @@ class SeoModel {
     }
 
     // =========================================================================
-    // 8. IMAGE SEO & ALT TEXT MANAGEMENT
+    // 8. IMAGE SEO & ALT TEXT MANAGEMENT (WORDPRESS ATTACHMENT SUITE)
     // =========================================================================
+
+    public static function getSeoImagesMap() {
+        $f = self::getJsonFile('seo_images');
+        if (file_exists($f)) {
+            $data = json_decode(file_get_contents($f), true);
+            if (is_array($data)) return $data;
+        }
+        return [];
+    }
+
+    public static function getImageSeo($urlOrPath) {
+        $cleanUrl = '/' . ltrim(trim($urlOrPath), '/');
+        $map = self::getSeoImagesMap();
+        
+        $item = $map[$cleanUrl] ?? null;
+        if (!$item) {
+            $base = basename($cleanUrl);
+            foreach ($map as $k => $v) {
+                if (basename($k) === $base) {
+                    $item = $v;
+                    break;
+                }
+            }
+        }
+
+        if (!$item) {
+            $fileName = basename($cleanUrl);
+            $ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+            $item = [
+                'url' => $cleanUrl,
+                'file_name' => $fileName,
+                'file_type' => 'image/' . ($ext === 'jpg' ? 'jpeg' : ($ext ?: 'webp')),
+                'file_size' => '—',
+                'dimensions' => '—',
+                'width' => 0,
+                'height' => 0,
+                'uploaded_by' => 'admin',
+                'uploaded_to' => 'Unattached',
+                'uploaded_to_url' => '',
+                'alt_text' => '',
+                'title_text' => pathinfo($fileName, PATHINFO_FILENAME),
+                'caption' => '',
+                'description' => ''
+            ];
+        }
+
+        // Dynamically enrich file size & dimensions if available
+        $docRoot = defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__, 2);
+        $candidates = [
+            $docRoot . '/public' . $cleanUrl,
+            $docRoot . $cleanUrl,
+            $docRoot . '/public/uploads/' . basename($cleanUrl),
+            $docRoot . '/public/uploads/products/' . basename($cleanUrl)
+        ];
+        foreach ($candidates as $cand) {
+            if (file_exists($cand) && is_file($cand)) {
+                $sz = filesize($cand);
+                if ($sz < 1048576) {
+                    $item['file_size'] = round($sz / 1024, 1) . ' KB';
+                } else {
+                    $item['file_size'] = round($sz / 1048576, 2) . ' MB';
+                }
+                $dims = @getimagesize($cand);
+                if ($dims && !empty($dims[0]) && !empty($dims[1])) {
+                    $item['width'] = $dims[0];
+                    $item['height'] = $dims[1];
+                    $item['dimensions'] = $dims[0] . ' by ' . $dims[1] . ' pixels';
+                }
+                break;
+            }
+        }
+
+        return $item;
+    }
+
+    public static function saveImageSeo($urlOrPath, array $data, $adminId = 'admin') {
+        $cleanUrl = '/' . ltrim(trim($urlOrPath), '/');
+        $map = self::getSeoImagesMap();
+        $existing = self::getImageSeo($cleanUrl);
+
+        $merged = array_merge($existing, [
+            'url' => $cleanUrl,
+            'file_name' => basename($cleanUrl),
+            'alt_text' => trim($data['alt_text'] ?? ($data['alt'] ?? '')),
+            'title_text' => trim($data['title_text'] ?? ($data['title'] ?? '')),
+            'caption' => trim($data['caption'] ?? ''),
+            'description' => trim($data['description'] ?? ''),
+            'uploaded_by' => trim($data['uploaded_by'] ?? ($existing['uploaded_by'] ?? 'admin')),
+            'uploaded_to' => trim($data['uploaded_to'] ?? ($existing['uploaded_to'] ?? 'Unattached')),
+            'uploaded_to_url' => trim($data['uploaded_to_url'] ?? ($existing['uploaded_to_url'] ?? '')),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        $map[$cleanUrl] = $merged;
+
+        $f = self::getJsonFile('seo_images');
+        @file_put_contents($f, self::jsonEnc($map), LOCK_EX);
+
+        // Also update product image if it matches a product
+        self::saveImageAlt($cleanUrl, $merged['alt_text'], $merged['title_text'], $adminId);
+
+        self::flushCache();
+        self::logAudit('update_image_seo', "Updated SEO metadata for '{$cleanUrl}' (Alt: '{$merged['alt_text']}')", $adminId);
+
+        return $merged;
+    }
+
+    public static function deleteImageSeo($urlOrPath, $adminId = 'admin') {
+        $cleanUrl = '/' . ltrim(trim($urlOrPath), '/');
+        $map = self::getSeoImagesMap();
+        $deleted = false;
+
+        if (isset($map[$cleanUrl])) {
+            unset($map[$cleanUrl]);
+            $deleted = true;
+        }
+
+        $base = basename($cleanUrl);
+        foreach ($map as $k => $v) {
+            if ($k === $cleanUrl || basename($k) === $base) {
+                unset($map[$k]);
+                $deleted = true;
+            }
+        }
+
+        if ($deleted) {
+            $f = self::getJsonFile('seo_images');
+            @file_put_contents($f, self::jsonEnc($map), LOCK_EX);
+            self::flushCache();
+            self::logAudit('delete_image_seo', "Deleted SEO metadata for image '{$cleanUrl}'", $adminId);
+        }
+
+        return $deleted;
+    }
+
+    public static function getAllImagesSeo($filter = 'all', $search = '', $page = 1, $perPage = 28) {
+        $map = self::getSeoImagesMap();
+        $list = array_values($map);
+
+        // Filter
+        if ($filter === 'missing') {
+            $list = array_filter($list, function($img) {
+                return empty(trim($img['alt_text'] ?? ''));
+            });
+        } elseif ($filter === 'optimized') {
+            $list = array_filter($list, function($img) {
+                return !empty(trim($img['alt_text'] ?? ''));
+            });
+        }
+
+        // Search
+        if (!empty($search)) {
+            $q = strtolower(trim($search));
+            $list = array_filter($list, function($img) use ($q) {
+                $haystack = strtolower(($img['file_name'] ?? '') . ' ' . ($img['alt_text'] ?? '') . ' ' . ($img['title_text'] ?? '') . ' ' . ($img['uploaded_to'] ?? '') . ' ' . ($img['description'] ?? ''));
+                return strpos($haystack, $q) !== false;
+            });
+        }
+
+        $allUnfiltered = array_values($map);
+        $totalAll = count($allUnfiltered);
+        $missingCount = 0;
+        foreach ($allUnfiltered as $im) {
+            if (empty(trim($im['alt_text'] ?? ''))) $missingCount++;
+        }
+        $optimizedCount = $totalAll - $missingCount;
+        $coveragePercent = $totalAll > 0 ? round(($optimizedCount / $totalAll) * 100) : 100;
+
+        $totalFiltered = count($list);
+        $page = max(1, (int)$page);
+        $perPage = max(1, min(200, (int)$perPage));
+        $offset = ($page - 1) * $perPage;
+        $items = array_slice($list, $offset, $perPage);
+
+        return [
+            'items' => array_values($items),
+            'total' => $totalFiltered,
+            'page' => $page,
+            'perPage' => $perPage,
+            'totalPages' => max(1, ceil($totalFiltered / $perPage)),
+            'stats' => [
+                'total' => $totalAll,
+                'missing' => $missingCount,
+                'optimized' => $optimizedCount,
+                'coverage' => $coveragePercent
+            ]
+        ];
+    }
 
     public static function getImageAltLibrary() {
         $images = [];
@@ -993,7 +1616,7 @@ class SeoModel {
         $edited = file_exists($f) ? (json_decode(file_get_contents($f), true) ?: []) : [];
         if (!is_numeric($imageIdOrUrl)) {
             $edited['img_alt_' . md5($imageIdOrUrl)] = ['alt' => $altText, 'title' => $titleText];
-            @file_put_contents($f, json_encode($edited, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), LOCK_EX);
+            @file_put_contents($f, self::jsonEnc($edited), LOCK_EX);
         }
 
         self::flushCache();
@@ -1044,8 +1667,8 @@ class SeoModel {
             ['loc' => '/faq', 'priority' => '0.7', 'changefreq' => 'monthly'],
             ['loc' => '/blog', 'priority' => '0.8', 'changefreq' => 'daily'],
             ['loc' => '/contact', 'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['loc' => '/terms', 'priority' => '0.3', 'changefreq' => 'yearly'],
-            ['loc' => '/privacy', 'priority' => '0.3', 'changefreq' => 'yearly']
+            ['loc' => '/terms-conditions', 'priority' => '0.3', 'changefreq' => 'yearly'],
+            ['loc' => '/privacy-policy', 'priority' => '0.3', 'changefreq' => 'yearly']
         ];
 
         // Fetch categories
@@ -1071,7 +1694,9 @@ class SeoModel {
         $xml .= "        xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\">\n\n";
 
         // 1. Static Pages
+        $seenLocs = [];
         foreach ($staticPages as $sp) {
+            $seenLocs[$sp['loc']] = true;
             $seo = self::getPageSeo($sp['loc']);
             if ($seo && empty($seo['robots_index'])) continue; // excluded by admin
 
@@ -1083,11 +1708,33 @@ class SeoModel {
             $xml .= "  </url>\n";
         }
 
+        // 1b. Custom CMS pages (created in the Pages editor with custom slugs)
+        if (!class_exists('PageModel')) {
+            require_once dirname(__DIR__, 2) . '/app/Models/PageModel.php';
+        }
+        if (class_exists('PageModel')) {
+            foreach (PageModel::getAllPages() as $cp) {
+                $cpSlug = '/' . ltrim(trim((string)($cp['slug'] ?? '')), '/');
+                if ($cpSlug === '/' || $cpSlug === '//') continue; // home is covered above
+                if (isset($seenLocs[$cpSlug])) continue;          // core page, already listed
+                if ((($cp['status'] ?? 'published') !== 'published')) continue;
+                $cpSeo = self::getPageSeo($cpSlug);
+                if ($cpSeo && empty($cpSeo['robots_index'])) continue; // noindex
+
+                $xml .= "  <url>\n";
+                $xml .= "    <loc>" . htmlspecialchars($baseUrl . $cpSlug) . "</loc>\n";
+                $xml .= "    <lastmod>" . date('Y-m-d', strtotime($cp['updated_at'] ?? 'now')) . "</lastmod>\n";
+                $xml .= "    <changefreq>weekly</changefreq>\n";
+                $xml .= "    <priority>0.6</priority>\n";
+                $xml .= "  </url>\n";
+            }
+        }
+
         // 2. Categories
         foreach ($categories as $cat) {
             $slug = $cat['slug'] ?? '';
             if (empty($slug)) continue;
-            $catUrl = '/products?category=' . urlencode($slug);
+            $catUrl = '/products/' . urlencode($slug);
             $seo = self::getPageSeo($catUrl);
             if ($seo && empty($seo['robots_index'])) continue;
 
@@ -1106,11 +1753,39 @@ class SeoModel {
             $xml .= "  </url>\n";
         }
 
+        // 2b. Industry Market Pages
+        $industries = [];
+        if (class_exists('ProductModel')) {
+            $industries = ProductModel::getIndustries();
+        }
+        $indMap = ['pharma' => 'pharmaceuticals', 'agro' => 'agrochemicals', 'cosmetics' => 'cosmetics', 'nutraceuticals' => 'nutraceuticals', 'liquor' => 'liquor'];
+        foreach ($industries as $indSlug => $ind) {
+            $cleanInd = $indMap[$indSlug] ?? ($ind['slug'] ?? $indSlug);
+            $indUrl = '/products/' . urlencode($cleanInd);
+            $seo = self::getPageSeo($indUrl, 'industry', $indSlug);
+            if ($seo && empty($seo['robots_index'])) continue;
+
+            $xml .= "  <url>\n";
+            $xml .= "    <loc>" . htmlspecialchars($baseUrl . $indUrl) . "</loc>\n";
+            $xml .= "    <lastmod>{$now}</lastmod>\n";
+            $xml .= "    <changefreq>weekly</changefreq>\n";
+            $xml .= "    <priority>0.85</priority>\n";
+            if (!empty($ind['image'])) {
+                $imgSrc = (strpos($ind['image'], 'http') === 0) ? $ind['image'] : ($baseUrl . '/' . ltrim($ind['image'], '/'));
+                $xml .= "    <image:image>\n";
+                $xml .= "      <image:loc>" . htmlspecialchars($imgSrc) . "</image:loc>\n";
+                $xml .= "      <image:title>" . htmlspecialchars($ind['headline'] ?? ($ind['name'] . ' Packaging')) . "</image:title>\n";
+                $xml .= "    </image:image>\n";
+            }
+            $xml .= "  </url>\n";
+        }
+
         // 3. Products
         foreach ($products as $p) {
             $sku = $p['sku'] ?? ($p['id'] ?? '');
             if (empty($sku)) continue;
-            $pUrl = '/product?id=' . urlencode($sku);
+            $slug = !empty($p['slug']) ? $p['slug'] : strtolower(trim(preg_replace('/[^a-z0-9-]+/i', '-', $sku), '-'));
+            $pUrl = '/product/' . urlencode($slug);
             $seo = self::getPageSeo($pUrl, 'product', $sku);
             if ($seo && empty($seo['robots_index'])) continue;
 
@@ -1564,6 +2239,7 @@ class SeoModel {
     /** Canonical list of built-in site pages (for the Page SEO Manager). */
     public static function staticPageCatalogue() {
         return [
+            // Core Pages
             ['url' => '/',               'type' => 'home', 'ref' => 'home',           'label' => 'Homepage'],
             ['url' => '/about',          'type' => 'page', 'ref' => 'about',          'label' => 'About Us'],
             ['url' => '/products',       'type' => 'page', 'ref' => 'products',       'label' => 'Products Catalogue'],
@@ -1572,8 +2248,31 @@ class SeoModel {
             ['url' => '/faq',            'type' => 'page', 'ref' => 'faq',            'label' => 'FAQ'],
             ['url' => '/contact',        'type' => 'page', 'ref' => 'contact',        'label' => 'Contact'],
             ['url' => '/blog',           'type' => 'page', 'ref' => 'blog',           'label' => 'Blog Index'],
-            ['url' => '/terms',          'type' => 'page', 'ref' => 'terms',          'label' => 'Terms & Conditions'],
-            ['url' => '/privacy',        'type' => 'page', 'ref' => 'privacy',        'label' => 'Privacy Policy'],
+            ['url' => '/terms-conditions', 'type' => 'page', 'ref' => 'terms',          'label' => 'Terms & Conditions'],
+            ['url' => '/privacy-policy',   'type' => 'page', 'ref' => 'privacy',        'label' => 'Privacy Policy'],
+
+            // Industry Market Pages
+            ['url' => '/products/cosmetics',       'type' => 'industry', 'ref' => 'cosmetics',      'label' => 'Industry: Cosmetics & Personal Care'],
+            ['url' => '/products/pharmaceuticals', 'type' => 'industry', 'ref' => 'pharma',         'label' => 'Industry: Pharmaceuticals & Healthcare'],
+            ['url' => '/products/agrochemicals',   'type' => 'industry', 'ref' => 'agro',           'label' => 'Industry: Agrochemicals & Pesticides'],
+            ['url' => '/products/nutraceuticals',  'type' => 'industry', 'ref' => 'nutraceuticals', 'label' => 'Industry: Nutraceuticals & Supplements'],
+            ['url' => '/products/liquor',          'type' => 'industry', 'ref' => 'liquor',         'label' => 'Industry: Liquor, Spirits & Beverages'],
+
+            // Category Pages
+            ['url' => '/products/agro-bottles',      'type' => 'category', 'ref' => 'agro-bottles',      'label' => 'Category: Agro Bottles'],
+            ['url' => '/products/caps',              'type' => 'category', 'ref' => 'caps',              'label' => 'Category: Caps & Closures'],
+            ['url' => '/products/cosmetics-bottles', 'type' => 'category', 'ref' => 'cosmetics-bottles', 'label' => 'Category: Cosmetics Bottles'],
+            ['url' => '/products/jars',              'type' => 'category', 'ref' => 'jars',              'label' => 'Category: Jars & Containers'],
+            ['url' => '/products/pharma-bottles',    'type' => 'category', 'ref' => 'pharma-bottles',    'label' => 'Category: Pharma Bottles'],
+            ['url' => '/products/pumps',             'type' => 'category', 'ref' => 'pumps',             'label' => 'Category: Pumps & Dispensers'],
+            ['url' => '/products/sprays',            'type' => 'category', 'ref' => 'sprays',            'label' => 'Category: Fine Mist Sprays'],
+            ['url' => '/products/liquor-bottles',    'type' => 'category', 'ref' => 'liquor-bottles',    'label' => 'Category: Liquor Bottles'],
+
+            // Technical Blog Articles
+            ['url' => '/blog/choosing-the-right-packaging-for-cosmetics-a-comprehensive-guide', 'type' => 'blog', 'ref' => '4', 'label' => 'Blog: Cosmetics Packaging Guide'],
+            ['url' => '/blog/lotion-pumps-vs-fine-mist-sprayers-guide',                          'type' => 'blog', 'ref' => '3', 'label' => 'Blog: Lotion Pumps vs Mist Sprayers'],
+            ['url' => '/blog/cleanroom-manufacturing-pharma-pet-bottles',                        'type' => 'blog', 'ref' => '2', 'label' => 'Blog: Cleanroom Pharma Bottles'],
+            ['url' => '/blog/evolution-rpet-cosmetic-packaging',                                'type' => 'blog', 'ref' => '1', 'label' => 'Blog: 100% rPET Packaging'],
         ];
     }
 
@@ -1582,7 +2281,7 @@ class SeoModel {
      * file_put_contents, would truncate the file): bad UTF-8 bytes are
      * substituted so a stray character can never wipe a config file.
      */
-    private static function jsonEnc($data) {
+    public static function jsonEnc($data) {
         $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
         $out = json_encode($data, $flags);
         if ($out === false) {

@@ -286,7 +286,8 @@ class BlogModel {
         $twitterDesc = trim($data['twitter_description'] ?? $ogDesc);
         $twitterImage = trim($data['twitter_image'] ?? $ogImage);
         $robotsMeta = trim($data['robots_meta'] ?? ($status === 'published' ? 'index, follow' : 'noindex, nofollow'));
-        $schemaType = in_array(trim($data['schema_type'] ?? 'BlogPosting'), ['BlogPosting', 'Article', 'TechArticle']) ? trim($data['schema_type']) : 'BlogPosting';
+        $rawSchema = trim($data['schema_type'] ?? 'BlogPosting');
+        $schemaType = in_array($rawSchema, ['BlogPosting', 'Article', 'TechArticle']) ? $rawSchema : 'BlogPosting';
 
         $publishedAt = !empty($data['published_at']) ? date('Y-m-d H:i:s', strtotime($data['published_at'])) : date('Y-m-d H:i:s');
         $updatedAt = date('Y-m-d H:i:s');

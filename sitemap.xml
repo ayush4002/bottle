@@ -4,67 +4,67 @@
 
   <url>
     <loc>https://wetruenorthgroup.com/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/products</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/about</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/custom</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/sustainability</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/faq</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/blog</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://wetruenorthgroup.com/contact</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/terms</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/terms-conditions</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/privacy</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/privacy-policy</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=agro-bottles</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/agro-bottles</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -73,8 +73,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=caps</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/caps</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -83,8 +83,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=cosmetics-bottles</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/cosmetics-bottles</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -93,8 +93,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=jars</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/jars</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -103,8 +103,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=pharma-bottles</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/pharma-bottles</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -113,8 +113,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=pumps</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/pumps</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -123,8 +123,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=sprays</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/sprays</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -133,8 +133,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/products?category=liquor-bottles</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/liquor-bottles</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -143,8 +143,58 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/products/agrochemicals</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wetruenorthgroup.com/vikaas_inputs/AGRO_PESTICIDES.webp</image:loc>
+      <image:title>Agrochemicals &amp; Pesticides Packaging</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/products/cosmetics</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wetruenorthgroup.com/vikaas_inputs/COSMETICS.webp</image:loc>
+      <image:title>Cosmetics &amp; Personal Care Packaging</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/products/pharmaceuticals</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wetruenorthgroup.com/vikaas_inputs/PHARMA_BOTTLES.webp</image:loc>
+      <image:title>Pharmaceuticals &amp; Healthcare Packaging</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/products/nutraceuticals</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wetruenorthgroup.com/vikaas_inputs/PET_nutraceuticle_jars.webp</image:loc>
+      <image:title>Nutraceuticals &amp; Health Supplements Packaging</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/products/liquor</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://wetruenorthgroup.com/vikaas_inputs/LIQUOR_Bottles.webp</image:loc>
+      <image:title>Liquor, Spirits &amp; Beverages Packaging</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -153,8 +203,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -163,8 +213,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -173,8 +223,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -183,8 +233,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -193,8 +243,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -203,8 +253,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -213,8 +263,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -223,8 +273,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -233,8 +283,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -243,8 +293,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -253,8 +303,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-L</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-l</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -263,8 +313,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-M</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-m</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -273,8 +323,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-N</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-n</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -283,8 +333,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-O</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-o</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -293,8 +343,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-P</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-p</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -303,8 +353,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-Q</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-q</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -313,8 +363,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-R</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-r</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -323,8 +373,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-S</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-s</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -333,8 +383,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=CAP-NB108-T</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cap-nb108-t</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -343,8 +393,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -353,8 +403,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -363,8 +413,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -373,8 +423,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-O</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-o</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -383,8 +433,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -393,8 +443,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -403,8 +453,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -413,8 +463,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -423,8 +473,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -433,8 +483,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -443,8 +493,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -453,8 +503,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-M</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-m</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -463,8 +513,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB101-N</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/lotion-pump-nb101-n</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -473,8 +523,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/outside-spring-switch-lotion-pump-nb102-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -483,8 +533,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/outside-spring-switch-lotion-pump-nb102-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -493,8 +543,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/outside-spring-switch-lotion-pump-nb102-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -503,8 +553,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/outside-spring-switch-lotion-pump-nb102-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -513,8 +563,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/outside-spring-switch-lotion-pump-nb102-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -523,8 +573,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB102-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/outside-spring-switch-lotion-pump-nb102-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -533,8 +583,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -543,8 +593,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -553,8 +603,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -563,8 +613,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -573,8 +623,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -583,8 +633,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -593,8 +643,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB103-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/inside-spring-switch-lotion-pump-nb103-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -603,8 +653,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -613,8 +663,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -623,8 +673,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -633,8 +683,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -643,8 +693,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -653,8 +703,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -663,8 +713,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -673,8 +723,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -683,8 +733,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -693,8 +743,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -703,8 +753,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -713,8 +763,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-L</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-l</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -723,8 +773,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-M</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-m</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -733,8 +783,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-N</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-n</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -743,8 +793,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-O</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-o</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -753,8 +803,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-P</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-p</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -763,8 +813,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-Q</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-q</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -773,8 +823,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-R</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-r</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -783,8 +833,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-S</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-s</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -793,8 +843,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-T</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-t</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -803,8 +853,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-U</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-u</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -813,8 +863,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-V</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-v</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -823,8 +873,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB104-W</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/big-output-lotion-pump-nb104-w</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -833,8 +883,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/clip-pump-essential-oil-pump-nb105-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -843,8 +893,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/clip-pump-essential-oil-pump-nb105-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -853,8 +903,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/clip-pump-essential-oil-pump-nb105-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -863,8 +913,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/clip-pump-essential-oil-pump-nb105-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -873,8 +923,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/clip-pump-essential-oil-pump-nb105-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -883,8 +933,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB105-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/clip-pump-essential-oil-pump-nb105-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -893,8 +943,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -903,8 +953,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -913,8 +963,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -923,8 +973,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -933,8 +983,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -943,8 +993,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -953,8 +1003,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -963,8 +1013,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -973,8 +1023,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -983,8 +1033,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -993,8 +1043,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1003,8 +1053,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-M</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-m</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1013,8 +1063,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB106-N</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/foam-pump-nb106-n</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1023,8 +1073,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1033,8 +1083,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1043,8 +1093,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1053,8 +1103,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1063,8 +1113,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1073,8 +1123,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1083,8 +1133,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1093,8 +1143,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1103,8 +1153,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1113,8 +1163,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB301-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb301-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1123,8 +1173,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1133,8 +1183,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1143,8 +1193,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1153,8 +1203,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1163,8 +1213,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1173,8 +1223,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1183,8 +1233,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1193,8 +1243,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1203,8 +1253,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1213,8 +1263,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1223,8 +1273,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1233,8 +1283,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-L</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-l</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1243,8 +1293,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-M</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-m</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1253,8 +1303,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-N</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-n</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1263,8 +1313,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB302-O</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/treatment-pump-nb302-o</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1273,8 +1323,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/nail-remover-pump-nb303-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1283,8 +1333,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/nail-remover-pump-nb303-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1293,8 +1343,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/nail-remover-pump-nb303-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1303,8 +1353,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/nail-remover-pump-nb303-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1313,8 +1363,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/nail-remover-pump-nb303-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1323,8 +1373,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PUMP-NB303-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/nail-remover-pump-nb303-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1333,8 +1383,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/medical-sprayer-nb107-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1343,8 +1393,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/medical-sprayer-nb107-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1353,8 +1403,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/medical-sprayer-nb107-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1363,8 +1413,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/medical-sprayer-nb107-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1373,8 +1423,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB107-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/medical-sprayer-nb107-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1383,8 +1433,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1393,8 +1443,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1403,8 +1453,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1413,8 +1463,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1423,8 +1473,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1433,8 +1483,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1443,8 +1493,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1453,8 +1503,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-M</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-m</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1463,8 +1513,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-N</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-n</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1473,8 +1523,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB201-O</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb201-o</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1483,8 +1533,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB202-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb202-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1493,8 +1543,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB202-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb202-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1503,8 +1553,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB202-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb202-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1513,8 +1563,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1523,8 +1573,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-B-1</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-b-1</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1533,8 +1583,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-B-2</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-b-2</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1543,8 +1593,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1553,8 +1603,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1563,8 +1613,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1573,8 +1623,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB203-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb203-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1583,8 +1633,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB204-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb204-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1593,8 +1643,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB204-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb204-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1603,8 +1653,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb205-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1613,8 +1663,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb205-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1623,8 +1673,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb205-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1633,8 +1683,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB205-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb205-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1643,8 +1693,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb206-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1653,8 +1703,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb206-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1663,8 +1713,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb206-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1673,8 +1723,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb206-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1683,8 +1733,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB206-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb206-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1693,8 +1743,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB207-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/trigger-sprayer-nb207-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1703,8 +1753,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/fine-mist-perfume-sprayer-nb304-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1713,8 +1763,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/fine-mist-perfume-sprayer-nb304-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1723,8 +1773,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/fine-mist-perfume-sprayer-nb304-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1733,8 +1783,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/fine-mist-perfume-sprayer-nb304-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1743,8 +1793,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB304-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/fine-mist-perfume-sprayer-nb304-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1753,8 +1803,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-sprayer-nb305-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1763,8 +1813,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-sprayer-nb305-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1773,8 +1823,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-sprayer-nb305-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1783,8 +1833,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB305-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-sprayer-nb305-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1793,8 +1843,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB306</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-bottle-spray-pen-nb306</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1803,8 +1853,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB307</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-bottle-roll-mini-atomizer-nb307</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1813,8 +1863,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB308</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/card-sprayer-nb308</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1823,8 +1873,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB309</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/perfume-bottle-mini-spray-pen-nb309</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1833,8 +1883,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-NB310</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/card-sprayer-pouch-nb310</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1843,8 +1893,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1853,8 +1903,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1863,8 +1913,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1873,8 +1923,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1883,8 +1933,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1893,8 +1943,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1903,8 +1953,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1913,8 +1963,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1923,8 +1973,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-I</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-i</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1933,8 +1983,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-J</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-j</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1943,8 +1993,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-K</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-k</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1953,8 +2003,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-ContinuedSpray-L</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/continuous-mist-spray-bottle-continuedspray-l</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1963,8 +2013,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-A</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-a</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1973,8 +2023,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-B</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-b</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1983,8 +2033,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-C</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-c</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -1993,8 +2043,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-D</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-d</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2003,8 +2053,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-E</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-e</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2013,8 +2063,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-F</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-f</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2023,8 +2073,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2033,8 +2083,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=SPRAY-PowderSprayer-H</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/powder-sprayer-powdersprayer-h</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2043,8 +2093,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=AGRO-1000ML-AGRO-SHORT</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/agro-1000ml-agro-short</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2053,8 +2103,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=AGRO-100ML-AGRO-LONG</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/agro-100ml-agro-long</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2063,8 +2113,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=AGRO-100ML-AGRO-SHORT</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/agro-100ml-agro-short</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2073,8 +2123,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=AGRO-250ML-AGRO</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/agro-250ml-agro</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2083,8 +2133,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=AGRO-500ML-AGRO</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/agro-500ml-agro</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2093,8 +2143,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-1000ML-VASA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-1000ml-vasa</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2103,8 +2153,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-BABY-OIL</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-baby-oil</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2113,8 +2163,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-BADAMI</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-badami</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2123,8 +2173,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-CANTHRADINE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-canthradine</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2133,8 +2183,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-ROUND-BOSTON</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-round-boston</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2143,8 +2193,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-SPRAY-ROUND</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-spray-round</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2153,8 +2203,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-SQUARE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-square</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2163,8 +2213,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-TULIP</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-tulip</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2173,8 +2223,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-100ML-VEOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-100ml-veola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2183,8 +2233,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-10ML-COSMETIC</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-10ml-cosmetic</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2193,8 +2243,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-BABY-OIL</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-baby-oil</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2203,8 +2253,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-BADAMI</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-badami</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2213,8 +2263,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-OVAL-RING</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-oval-ring</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2223,8 +2273,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-OVAL</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-oval</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2233,8 +2283,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-ROUND-BOSTON</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-round-boston</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2243,8 +2293,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-VEOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-veola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2253,8 +2303,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-225ML-OVAL-SKINCARE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-225ml-eskinol</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2263,8 +2313,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-25ML-ROMANCE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-25ml-romance</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2273,8 +2323,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-300ML-OVAL</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-300ml-oval</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2283,8 +2333,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-300ML-VASA-NEW</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-300ml-vasa-new</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2293,8 +2343,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-300ML-VEOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-300ml-veola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2303,8 +2353,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-30ML-VEOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-30ml-veola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2313,8 +2363,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-400ML-CANTHRADINE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-400ml-canthradine</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2323,8 +2373,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-480ML-ROUND-BOSTON</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-480ml-round-boston</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2333,8 +2383,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-500ML-VEOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-500ml-veola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2343,8 +2393,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-BABY-OIL</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-50ml-baby-oil</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2353,8 +2403,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-HS-BOTTLE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-50ml-hs-bottle</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2363,8 +2413,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-SPRAY</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-50ml-spray</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2373,8 +2423,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-TULIP</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-50ml-tulip</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2383,8 +2433,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-50ML-VEOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-50ml-veola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2393,8 +2443,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-70ML-CG</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-70ml-cg</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2403,8 +2453,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-85ML-HS-BOTTLE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-85ml-hs-bottle</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2413,8 +2463,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-BOSTON-60ML-8-5GM-REV</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-boston-60ml-8-5gm-rev</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2423,8 +2473,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-120CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-120cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2433,8 +2483,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-150CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-150cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2443,8 +2493,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-175CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-175cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2453,8 +2503,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-175ML-MORINGO</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-175ml-moringo</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2463,8 +2513,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-200CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-200cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2473,8 +2523,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-250CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-250cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2483,8 +2533,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-300CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-300cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2493,8 +2543,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-400CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-400cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2503,8 +2553,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-500CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-500cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2513,8 +2563,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=JAR-75CC-RD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/jar-75cc-rd</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2523,8 +2573,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-1000ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-1000ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2533,8 +2583,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-BRUTE-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-100ml-brute-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2543,8 +2593,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-100ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2553,8 +2603,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-12-5G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-100ml-round-pet-12-5g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2563,8 +2613,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-13G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-100ml-round-pet-13g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2573,8 +2623,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-22MM</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-100ml-round-pet-22mm</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2583,8 +2633,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-100ML-ROUND-PET-RING-MARK</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-100ml-round-pet-ring-mark</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2593,8 +2643,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-10ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-10ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2603,8 +2653,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-120ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-120ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2613,8 +2663,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-125ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-125ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2623,8 +2673,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-125ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-125ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2633,8 +2683,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-150ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-150ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2643,8 +2693,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-15ML-ROUND</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-15ml-round</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2653,8 +2703,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-160ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-160ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2663,8 +2713,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-170ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-170ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2673,8 +2723,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-BRUTE-PET-18G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-brute-pet-18g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2683,8 +2733,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-BRUTE-PET-22G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-brute-pet-22g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2693,8 +2743,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-BRUTE-PET-24G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-brute-pet-24g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2703,8 +2753,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-FLAT-PET-22G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-flat-pet-22g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2713,8 +2763,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-FLAT-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-flat-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2723,8 +2773,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-ROUND-PET-CLASSIC</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-round-pet-charak</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2733,8 +2783,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-200ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-200ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2743,8 +2793,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-20ML-ROUND-PET-7GM</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-20ml-round-pet-7gm</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2753,8 +2803,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-20ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-20ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2763,8 +2813,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-225ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-225ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2773,8 +2823,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-250ML-BRUTE-PET-HD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-250ml-brute-pet-santivani</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2783,8 +2833,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-250ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-250ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2793,8 +2843,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-300ML-BRUTE-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-300ml-brute-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2803,8 +2853,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-300ML-DOME-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-300ml-dome-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2813,8 +2863,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-30ML-ROUND-PET-RING-MARK</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-30ml-round-pet-ring-mark</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2823,8 +2873,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-30ML-ROUND-PET-7-GM</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-30ml-round-pet-7-gm</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2833,8 +2883,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-30ML-ROUND-PET-8-GM</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-30ml-round-pet-8-gm</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2843,8 +2893,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-400ML-BRUTE-37GM-28MM</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-400ml-brute-37gm-28mm</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2853,8 +2903,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-450ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-450ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2863,8 +2913,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-500ML-ROUND-PET-TRIANGULAR</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-500ml-round-pet-triangular</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2873,8 +2923,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-500ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-500ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2883,8 +2933,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-60ML-ROUND-PET-RING-MARK</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-60ml-round-pet-ring-mark</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2893,8 +2943,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-60ML-ROUND-PET-STD</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-60ml-round-pet-macleods</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2903,8 +2953,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-60ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-60ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2913,8 +2963,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-70ML-ROUND-PET</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-70ml-round-pet</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2923,8 +2973,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=AGRO-1000ML-AGRO-LONG</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/agro-1000ml-agro-long</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2933,8 +2983,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=COS-200ML-BHOLA</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/cosmetic-200ml-bhola</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2943,8 +2993,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-1000ML-ROUND-PET-PCO</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-1000ml-round-pet-pco</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2953,8 +3003,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=PHA-250ML-BRUTE-EXPORT</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/pharma-250ml-brute-export</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2963,8 +3013,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-180ML-KIDNEY-10G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-180ml-kidney-10g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2973,8 +3023,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-180ML-KIDNEY-16G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-180ml-kidney-16g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2983,8 +3033,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-375ML-WINE</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-375ml-wine</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -2993,8 +3043,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-750ML-KIDNEY</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-750ml-kidney</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -3003,8 +3053,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-90ML-ROUND-10G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-90ml-round-10g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -3013,8 +3063,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-90ML-RIB-9G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-90ml-rib-9g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -3023,43 +3073,13 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wetruenorthgroup.com/product?id=LIQ-180ML-ROUND-12G</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://wetruenorthgroup.com/product/liq-180ml-round-12g</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://wetruenorthgroup.com/uploads/products/liquor-bottles/liq-180ml-round-12g.webp</image:loc>
       <image:title>180ml Fluted Round Liquor PET Bottle (12.5g)</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://wetruenorthgroup.com/blog/lotion-pumps-vs-fine-mist-sprayers-guide</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://wetruenorthgroup.com/uploads/products/pumps/lotion-pump-nb101-a.webp</image:loc>
-      <image:title>Lotion Pumps vs. Fine-Mist Sprayers: Technical Guide to Dispenser Dosage &amp; Viscosity</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://wetruenorthgroup.com/blog/cleanroom-manufacturing-pharma-pet-bottles</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://wetruenorthgroup.com/uploads/products/pharma-bottles/pharma-100ml-dome-pet.webp</image:loc>
-      <image:title>Class 10,000 Cleanroom Manufacturing: Why It Matters for Pharmaceutical PET Bottles</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://wetruenorthgroup.com/blog/evolution-rpet-cosmetic-packaging</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://wetruenorthgroup.com/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp</image:loc>
-      <image:title>The Evolution of 100% Recycled PET (rPET) in Cosmetic &amp; Personal Care Packaging</image:title>
     </image:image>
   </url>
 </urlset>

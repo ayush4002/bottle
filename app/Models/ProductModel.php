@@ -2390,6 +2390,43 @@ class ProductModel {
     }
 
     /**
+     * Get clean canonical public URL for a product
+     */
+    public static function getProductUrl($skuOrItem) {
+        if (is_array($skuOrItem)) {
+            $slug = !empty($skuOrItem['slug']) ? $skuOrItem['slug'] : strtolower(trim(preg_replace('/[^a-z0-9-]+/i', '-', $skuOrItem['id'] ?? ($skuOrItem['sku'] ?? '')), '-'));
+            return '/product/' . $slug;
+        }
+        $sku = self::getSkuById($skuOrItem);
+        if ($sku && !empty($sku['slug'])) {
+            return '/product/' . $sku['slug'];
+        }
+        return '/product/' . strtolower(trim(preg_replace('/[^a-z0-9-]+/i', '-', (string)$skuOrItem), '-'));
+    }
+
+    /**
+     * Get clean canonical URL for a category
+     */
+    public static function getCategoryUrl($catSlug) {
+        return '/products/' . strtolower(trim($catSlug, '/'));
+    }
+
+    /**
+     * Get clean canonical URL for an industry
+     */
+    public static function getIndustryUrl($indSlug) {
+        $indSlug = strtolower(trim($indSlug, '/'));
+        $map = [
+            'pharma' => 'pharmaceuticals',
+            'agro' => 'agrochemicals',
+            'cosmetics' => 'cosmetics',
+            'nutraceuticals' => 'nutraceuticals',
+            'liquor' => 'liquor'
+        ];
+        return '/products/' . ($map[$indSlug] ?? $indSlug);
+    }
+
+    /**
      * Public lookup: only published products. Archived, draft or deleted products
      * must not be reachable by direct URL or the public API (admin uses getSkuById).
      */
@@ -2408,8 +2445,13 @@ class ProductModel {
             'PHA-250ML-BRUTE-PET-SANTIVANI' => 'PHA-250ML-BRUTE-PET-HD',
             'PHA-60ML-ROUND-PET-MACLEODS' => 'PHA-60ML-ROUND-PET-STD',
         ];
+        // Alias resolution, case-insensitive (URLs arrive in any casing).
         if (isset($idAliases[$id])) {
             $id = $idAliases[$id];
+        } else {
+            foreach ($idAliases as $k => $v) {
+                if (strcasecmp($k, $id) === 0) { $id = $v; break; }
+            }
         }
 
         // 1. Direct MySQL single-row lookup if connected
@@ -2421,7 +2463,7 @@ class ProductModel {
                     $stmt = $pdo->prepare("SELECT p.*, GROUP_CONCAT(pi.image_url ORDER BY pi.sort_order ASC SEPARATOR '|||') as image_list 
                                             FROM products p 
                                             LEFT JOIN product_images pi ON p.id = pi.product_id 
-                                            WHERE p.id = ? OR p.sku = ? OR p.slug = ?
+                                            WHERE p.id = ? OR LOWER(p.sku) = LOWER(?) OR LOWER(p.slug) = LOWER(?)
                                             GROUP BY p.id LIMIT 1");
                     $numId = is_numeric($id) ? (int)$id : 0;
                     $stmt->execute([$numId, (string)$id, (string)$id]);
@@ -2475,13 +2517,14 @@ class ProductModel {
             }
         }
 
-        // 2. Fallback memory / JSON lookup
+        // 2. Fallback memory / JSON lookup (case-insensitive so URL casing never 404s)
         $all = self::getSkus(true);
+        $lcId = strtolower((string)$id);
         foreach ($all as $sku) {
-            if (($sku['id'] ?? '') === $id || 
-                ($sku['articleNo'] ?? '') === $id || 
-                (isset($sku['db_id']) && (string)$sku['db_id'] === (string)$id) ||
-                ($sku['slug'] ?? '') === $id) {
+            if (strtolower((string)($sku['id'] ?? '')) === $lcId ||
+                strtolower((string)($sku['articleNo'] ?? '')) === $lcId ||
+                (isset($sku['db_id']) && strtolower((string)$sku['db_id']) === $lcId) ||
+                strtolower((string)($sku['slug'] ?? '')) === $lcId) {
                 return $sku;
             }
         }
@@ -2841,8 +2884,17 @@ class ProductModel {
         $video = trim($data['video'] ?? ($existing['video'] ?? ''));
         $sizes = $data['sizes'] ?? ($existing['sizes'] ?? []);
 
+        $customSlug = trim($data['slug'] ?? ($data['seo_slug'] ?? ($existing['slug'] ?? '')));
+        if (!empty($customSlug)) {
+            $customSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $customSlug), '-'));
+        }
+        if (empty($customSlug)) {
+            $customSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+        }
+
         $updatedRecord = [
             'id' => $id,
+            'slug' => $customSlug,
             'name' => $name,
             'fullTitle' => $fullTitle,
             'articleNo' => $articleNo,
@@ -2908,9 +2960,18 @@ class ProductModel {
                         $targetDbId = (int)$existingRow['id'];
                         $slug = $existingRow['slug'];
 
-                        // If name changed, compute a unique slug
-                        if (strcasecmp($existingRow['name'], $name) !== 0 || empty($slug)) {
-                            $baseSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+                        // If explicit custom slug passed, use it, or if name changed, compute a unique slug
+                        if (!empty($customSlug) && $customSlug !== ($existingRow['slug'] ?? '')) {
+                            $baseSlug = $customSlug;
+                            $chk = $pdo->prepare("SELECT id FROM products WHERE slug = ? AND id != ? LIMIT 1");
+                            $chk->execute([$baseSlug, $targetDbId]);
+                            if ($chk->fetch()) {
+                                $slug = $baseSlug . '-' . $targetDbId;
+                            } else {
+                                $slug = $baseSlug;
+                            }
+                        } elseif (strcasecmp($existingRow['name'], $name) !== 0 || empty($slug)) {
+                            $baseSlug = !empty($customSlug) ? $customSlug : strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
                             if (empty($baseSlug)) $baseSlug = 'product-' . $targetDbId;
 
                             // Check collision
@@ -2998,7 +3059,7 @@ class ProductModel {
 
                     } else {
                         // INSERT NEW PRODUCT
-                        $baseSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+                        $baseSlug = !empty($customSlug) ? $customSlug : strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
                         if (empty($baseSlug)) $baseSlug = 'product-' . time();
 
                         $chk = $pdo->prepare("SELECT id FROM products WHERE slug = ? LIMIT 1");

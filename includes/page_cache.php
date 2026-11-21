@@ -120,4 +120,9 @@ class PageCache
         }
         @file_put_contents($dir . '/.flushed', (string) time());
     }
+
+    public static function purgeAll()
+    {
+        self::flush();
+    }
 }

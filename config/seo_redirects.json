@@ -7,5 +7,2759 @@
         "hits": 1,
         "is_active": 1,
         "created_at": "2026-11-04 11:38:51"
+    },
+    {
+        "id": 2,
+        "old_url": "/test-temp-slug-1",
+        "new_url": "/test-temp-slug-2",
+        "status_code": 301,
+        "hits": 1,
+        "is_active": 1,
+        "created_at": "2026-11-18 08:19:12"
+    },
+    {
+        "id": 3,
+        "old_url": "/about-2",
+        "new_url": "/about",
+        "status_code": 301,
+        "hits": 28,
+        "is_active": 1,
+        "created_at": "2026-11-18 09:48:11"
+    },
+    {
+        "id": 4,
+        "old_url": "/terms",
+        "new_url": "/terms-conditions",
+        "status_code": 301,
+        "hits": 2,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:33"
+    },
+    {
+        "id": 5,
+        "old_url": "/privacy",
+        "new_url": "/privacy-policy",
+        "status_code": 301,
+        "hits": 2,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:33"
+    },
+    {
+        "id": 6,
+        "old_url": "/products?category=agro-bottles",
+        "new_url": "/products/agro-bottles",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:33"
+    },
+    {
+        "id": 7,
+        "old_url": "/products?category=caps",
+        "new_url": "/products/caps",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:33"
+    },
+    {
+        "id": 8,
+        "old_url": "/products?category=cosmetics-bottles",
+        "new_url": "/products/cosmetics-bottles",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 9,
+        "old_url": "/products?category=jars",
+        "new_url": "/products/jars",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 10,
+        "old_url": "/products?category=pharma-bottles",
+        "new_url": "/products/pharma-bottles",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 11,
+        "old_url": "/products?category=pumps",
+        "new_url": "/products/pumps",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 12,
+        "old_url": "/products?category=sprays",
+        "new_url": "/products/sprays",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 13,
+        "old_url": "/products?category=liquor-bottles",
+        "new_url": "/products/liquor-bottles",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 14,
+        "old_url": "/product?id=CAP-NB108-A",
+        "new_url": "/product/cap-nb108-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 15,
+        "old_url": "/product?id=CAP-NB108-B",
+        "new_url": "/product/cap-nb108-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 16,
+        "old_url": "/product?id=CAP-NB108-C",
+        "new_url": "/product/cap-nb108-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 17,
+        "old_url": "/product?id=CAP-NB108-D",
+        "new_url": "/product/cap-nb108-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 18,
+        "old_url": "/product?id=CAP-NB108-E",
+        "new_url": "/product/cap-nb108-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 19,
+        "old_url": "/product?id=CAP-NB108-F",
+        "new_url": "/product/cap-nb108-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 20,
+        "old_url": "/product?id=CAP-NB108-G",
+        "new_url": "/product/cap-nb108-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 21,
+        "old_url": "/product?id=CAP-NB108-H",
+        "new_url": "/product/cap-nb108-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 22,
+        "old_url": "/product?id=CAP-NB108-I",
+        "new_url": "/product/cap-nb108-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 23,
+        "old_url": "/product?id=CAP-NB108-J",
+        "new_url": "/product/cap-nb108-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 24,
+        "old_url": "/product?id=CAP-NB108-K",
+        "new_url": "/product/cap-nb108-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 25,
+        "old_url": "/product?id=CAP-NB108-L",
+        "new_url": "/product/cap-nb108-l",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 26,
+        "old_url": "/product?id=CAP-NB108-M",
+        "new_url": "/product/cap-nb108-m",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 27,
+        "old_url": "/product?id=CAP-NB108-N",
+        "new_url": "/product/cap-nb108-n",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 28,
+        "old_url": "/product?id=CAP-NB108-O",
+        "new_url": "/product/cap-nb108-o",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 29,
+        "old_url": "/product?id=CAP-NB108-P",
+        "new_url": "/product/cap-nb108-p",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 30,
+        "old_url": "/product?id=CAP-NB108-Q",
+        "new_url": "/product/cap-nb108-q",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 31,
+        "old_url": "/product?id=CAP-NB108-R",
+        "new_url": "/product/cap-nb108-r",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:34"
+    },
+    {
+        "id": 32,
+        "old_url": "/product?id=CAP-NB108-S",
+        "new_url": "/product/cap-nb108-s",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 33,
+        "old_url": "/product?id=CAP-NB108-T",
+        "new_url": "/product/cap-nb108-t",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 34,
+        "old_url": "/product?id=PUMP-NB101-A",
+        "new_url": "/product/pump-nb101-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 35,
+        "old_url": "/product?id=PUMP-NB101-B",
+        "new_url": "/product/pump-nb101-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 36,
+        "old_url": "/product?id=PUMP-NB101-D",
+        "new_url": "/product/pump-nb101-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 37,
+        "old_url": "/product?id=PUMP-NB101-O",
+        "new_url": "/product/pump-nb101-o",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 38,
+        "old_url": "/product?id=PUMP-NB101-E",
+        "new_url": "/product/pump-nb101-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 39,
+        "old_url": "/product?id=PUMP-NB101-F",
+        "new_url": "/product/pump-nb101-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 40,
+        "old_url": "/product?id=PUMP-NB101-G",
+        "new_url": "/product/pump-nb101-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 41,
+        "old_url": "/product?id=PUMP-NB101-H",
+        "new_url": "/product/pump-nb101-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 42,
+        "old_url": "/product?id=PUMP-NB101-I",
+        "new_url": "/product/pump-nb101-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 43,
+        "old_url": "/product?id=PUMP-NB101-J",
+        "new_url": "/product/pump-nb101-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 44,
+        "old_url": "/product?id=PUMP-NB101-K",
+        "new_url": "/product/pump-nb101-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 45,
+        "old_url": "/product?id=PUMP-NB101-M",
+        "new_url": "/product/pump-nb101-m",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 46,
+        "old_url": "/product?id=PUMP-NB101-N",
+        "new_url": "/product/pump-nb101-n",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 47,
+        "old_url": "/product?id=PUMP-NB102-A",
+        "new_url": "/product/pump-nb102-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 48,
+        "old_url": "/product?id=PUMP-NB102-B",
+        "new_url": "/product/pump-nb102-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 49,
+        "old_url": "/product?id=PUMP-NB102-C",
+        "new_url": "/product/pump-nb102-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 50,
+        "old_url": "/product?id=PUMP-NB102-D",
+        "new_url": "/product/pump-nb102-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 51,
+        "old_url": "/product?id=PUMP-NB102-E",
+        "new_url": "/product/pump-nb102-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:35"
+    },
+    {
+        "id": 52,
+        "old_url": "/product?id=PUMP-NB102-F",
+        "new_url": "/product/pump-nb102-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 53,
+        "old_url": "/product?id=PUMP-NB103-A",
+        "new_url": "/product/pump-nb103-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 54,
+        "old_url": "/product?id=PUMP-NB103-C",
+        "new_url": "/product/pump-nb103-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 55,
+        "old_url": "/product?id=PUMP-NB103-D",
+        "new_url": "/product/pump-nb103-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 56,
+        "old_url": "/product?id=PUMP-NB103-E",
+        "new_url": "/product/pump-nb103-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 57,
+        "old_url": "/product?id=PUMP-NB103-F",
+        "new_url": "/product/pump-nb103-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 58,
+        "old_url": "/product?id=PUMP-NB103-G",
+        "new_url": "/product/pump-nb103-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 59,
+        "old_url": "/product?id=PUMP-NB103-H",
+        "new_url": "/product/pump-nb103-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 60,
+        "old_url": "/product?id=PUMP-NB104-A",
+        "new_url": "/product/pump-nb104-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 61,
+        "old_url": "/product?id=PUMP-NB104-B",
+        "new_url": "/product/pump-nb104-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 62,
+        "old_url": "/product?id=PUMP-NB104-C",
+        "new_url": "/product/pump-nb104-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 63,
+        "old_url": "/product?id=PUMP-NB104-D",
+        "new_url": "/product/pump-nb104-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 64,
+        "old_url": "/product?id=PUMP-NB104-E",
+        "new_url": "/product/pump-nb104-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 65,
+        "old_url": "/product?id=PUMP-NB104-F",
+        "new_url": "/product/pump-nb104-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 66,
+        "old_url": "/product?id=PUMP-NB104-G",
+        "new_url": "/product/pump-nb104-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 67,
+        "old_url": "/product?id=PUMP-NB104-H",
+        "new_url": "/product/pump-nb104-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 68,
+        "old_url": "/product?id=PUMP-NB104-I",
+        "new_url": "/product/pump-nb104-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 69,
+        "old_url": "/product?id=PUMP-NB104-J",
+        "new_url": "/product/pump-nb104-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 70,
+        "old_url": "/product?id=PUMP-NB104-K",
+        "new_url": "/product/pump-nb104-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 71,
+        "old_url": "/product?id=PUMP-NB104-L",
+        "new_url": "/product/pump-nb104-l",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:36"
+    },
+    {
+        "id": 72,
+        "old_url": "/product?id=PUMP-NB104-M",
+        "new_url": "/product/pump-nb104-m",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 73,
+        "old_url": "/product?id=PUMP-NB104-N",
+        "new_url": "/product/pump-nb104-n",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 74,
+        "old_url": "/product?id=PUMP-NB104-O",
+        "new_url": "/product/pump-nb104-o",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 75,
+        "old_url": "/product?id=PUMP-NB104-P",
+        "new_url": "/product/pump-nb104-p",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 76,
+        "old_url": "/product?id=PUMP-NB104-Q",
+        "new_url": "/product/pump-nb104-q",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 77,
+        "old_url": "/product?id=PUMP-NB104-R",
+        "new_url": "/product/pump-nb104-r",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 78,
+        "old_url": "/product?id=PUMP-NB104-S",
+        "new_url": "/product/pump-nb104-s",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 79,
+        "old_url": "/product?id=PUMP-NB104-T",
+        "new_url": "/product/pump-nb104-t",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 80,
+        "old_url": "/product?id=PUMP-NB104-U",
+        "new_url": "/product/pump-nb104-u",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 81,
+        "old_url": "/product?id=PUMP-NB104-V",
+        "new_url": "/product/pump-nb104-v",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 82,
+        "old_url": "/product?id=PUMP-NB104-W",
+        "new_url": "/product/pump-nb104-w",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 83,
+        "old_url": "/product?id=PUMP-NB105-A",
+        "new_url": "/product/pump-nb105-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 84,
+        "old_url": "/product?id=PUMP-NB105-B",
+        "new_url": "/product/pump-nb105-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 85,
+        "old_url": "/product?id=PUMP-NB105-C",
+        "new_url": "/product/pump-nb105-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 86,
+        "old_url": "/product?id=PUMP-NB105-D",
+        "new_url": "/product/pump-nb105-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 87,
+        "old_url": "/product?id=PUMP-NB105-E",
+        "new_url": "/product/pump-nb105-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 88,
+        "old_url": "/product?id=PUMP-NB105-F",
+        "new_url": "/product/pump-nb105-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 89,
+        "old_url": "/product?id=PUMP-NB106-A",
+        "new_url": "/product/pump-nb106-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 90,
+        "old_url": "/product?id=PUMP-NB106-B",
+        "new_url": "/product/pump-nb106-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:37"
+    },
+    {
+        "id": 91,
+        "old_url": "/product?id=PUMP-NB106-C",
+        "new_url": "/product/pump-nb106-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 92,
+        "old_url": "/product?id=PUMP-NB106-D",
+        "new_url": "/product/pump-nb106-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 93,
+        "old_url": "/product?id=PUMP-NB106-E",
+        "new_url": "/product/pump-nb106-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 94,
+        "old_url": "/product?id=PUMP-NB106-F",
+        "new_url": "/product/pump-nb106-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 95,
+        "old_url": "/product?id=PUMP-NB106-G",
+        "new_url": "/product/pump-nb106-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 96,
+        "old_url": "/product?id=PUMP-NB106-H",
+        "new_url": "/product/pump-nb106-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 97,
+        "old_url": "/product?id=PUMP-NB106-I",
+        "new_url": "/product/pump-nb106-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 98,
+        "old_url": "/product?id=PUMP-NB106-J",
+        "new_url": "/product/pump-nb106-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 99,
+        "old_url": "/product?id=PUMP-NB106-K",
+        "new_url": "/product/pump-nb106-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 100,
+        "old_url": "/product?id=PUMP-NB106-M",
+        "new_url": "/product/pump-nb106-m",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 101,
+        "old_url": "/product?id=PUMP-NB106-N",
+        "new_url": "/product/pump-nb106-n",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 102,
+        "old_url": "/product?id=PUMP-NB301-A",
+        "new_url": "/product/pump-nb301-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 103,
+        "old_url": "/product?id=PUMP-NB301-B",
+        "new_url": "/product/pump-nb301-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 104,
+        "old_url": "/product?id=PUMP-NB301-C",
+        "new_url": "/product/pump-nb301-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 105,
+        "old_url": "/product?id=PUMP-NB301-D",
+        "new_url": "/product/pump-nb301-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 106,
+        "old_url": "/product?id=PUMP-NB301-E",
+        "new_url": "/product/pump-nb301-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:38"
+    },
+    {
+        "id": 107,
+        "old_url": "/product?id=PUMP-NB301-F",
+        "new_url": "/product/pump-nb301-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 108,
+        "old_url": "/product?id=PUMP-NB301-G",
+        "new_url": "/product/pump-nb301-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 109,
+        "old_url": "/product?id=PUMP-NB301-H",
+        "new_url": "/product/pump-nb301-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 110,
+        "old_url": "/product?id=PUMP-NB301-I",
+        "new_url": "/product/pump-nb301-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 111,
+        "old_url": "/product?id=PUMP-NB301-J",
+        "new_url": "/product/pump-nb301-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 112,
+        "old_url": "/product?id=PUMP-NB302-A",
+        "new_url": "/product/pump-nb302-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 113,
+        "old_url": "/product?id=PUMP-NB302-B",
+        "new_url": "/product/pump-nb302-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 114,
+        "old_url": "/product?id=PUMP-NB302-C",
+        "new_url": "/product/pump-nb302-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 115,
+        "old_url": "/product?id=PUMP-NB302-D",
+        "new_url": "/product/pump-nb302-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 116,
+        "old_url": "/product?id=PUMP-NB302-E",
+        "new_url": "/product/pump-nb302-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 117,
+        "old_url": "/product?id=PUMP-NB302-F",
+        "new_url": "/product/pump-nb302-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 118,
+        "old_url": "/product?id=PUMP-NB302-G",
+        "new_url": "/product/pump-nb302-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 119,
+        "old_url": "/product?id=PUMP-NB302-H",
+        "new_url": "/product/pump-nb302-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 120,
+        "old_url": "/product?id=PUMP-NB302-I",
+        "new_url": "/product/pump-nb302-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 121,
+        "old_url": "/product?id=PUMP-NB302-J",
+        "new_url": "/product/pump-nb302-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 122,
+        "old_url": "/product?id=PUMP-NB302-K",
+        "new_url": "/product/pump-nb302-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:39"
+    },
+    {
+        "id": 123,
+        "old_url": "/product?id=PUMP-NB302-L",
+        "new_url": "/product/pump-nb302-l",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 124,
+        "old_url": "/product?id=PUMP-NB302-M",
+        "new_url": "/product/pump-nb302-m",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 125,
+        "old_url": "/product?id=PUMP-NB302-N",
+        "new_url": "/product/pump-nb302-n",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 126,
+        "old_url": "/product?id=PUMP-NB302-O",
+        "new_url": "/product/pump-nb302-o",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 127,
+        "old_url": "/product?id=PUMP-NB303-A",
+        "new_url": "/product/pump-nb303-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 128,
+        "old_url": "/product?id=PUMP-NB303-B",
+        "new_url": "/product/pump-nb303-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 129,
+        "old_url": "/product?id=PUMP-NB303-C",
+        "new_url": "/product/pump-nb303-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 130,
+        "old_url": "/product?id=PUMP-NB303-D",
+        "new_url": "/product/pump-nb303-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 131,
+        "old_url": "/product?id=PUMP-NB303-E",
+        "new_url": "/product/pump-nb303-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 132,
+        "old_url": "/product?id=PUMP-NB303-F",
+        "new_url": "/product/pump-nb303-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 133,
+        "old_url": "/product?id=SPRAY-NB107-A",
+        "new_url": "/product/spray-nb107-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 134,
+        "old_url": "/product?id=SPRAY-NB107-C",
+        "new_url": "/product/spray-nb107-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 135,
+        "old_url": "/product?id=SPRAY-NB107-B",
+        "new_url": "/product/spray-nb107-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 136,
+        "old_url": "/product?id=SPRAY-NB107-D",
+        "new_url": "/product/spray-nb107-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 137,
+        "old_url": "/product?id=SPRAY-NB107-E",
+        "new_url": "/product/spray-nb107-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:40"
+    },
+    {
+        "id": 138,
+        "old_url": "/product?id=SPRAY-NB201-A",
+        "new_url": "/product/spray-nb201-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 139,
+        "old_url": "/product?id=SPRAY-NB201-C",
+        "new_url": "/product/spray-nb201-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 140,
+        "old_url": "/product?id=SPRAY-NB201-G",
+        "new_url": "/product/spray-nb201-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 141,
+        "old_url": "/product?id=SPRAY-NB201-H",
+        "new_url": "/product/spray-nb201-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 142,
+        "old_url": "/product?id=SPRAY-NB201-I",
+        "new_url": "/product/spray-nb201-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 143,
+        "old_url": "/product?id=SPRAY-NB201-J",
+        "new_url": "/product/spray-nb201-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 144,
+        "old_url": "/product?id=SPRAY-NB201-K",
+        "new_url": "/product/spray-nb201-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 145,
+        "old_url": "/product?id=SPRAY-NB201-M",
+        "new_url": "/product/spray-nb201-m",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 146,
+        "old_url": "/product?id=SPRAY-NB201-N",
+        "new_url": "/product/spray-nb201-n",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 147,
+        "old_url": "/product?id=SPRAY-NB201-O",
+        "new_url": "/product/spray-nb201-o",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 148,
+        "old_url": "/product?id=SPRAY-NB202-A",
+        "new_url": "/product/spray-nb202-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 149,
+        "old_url": "/product?id=SPRAY-NB202-B",
+        "new_url": "/product/spray-nb202-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 150,
+        "old_url": "/product?id=SPRAY-NB202-C",
+        "new_url": "/product/spray-nb202-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 151,
+        "old_url": "/product?id=SPRAY-NB203-A",
+        "new_url": "/product/spray-nb203-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:41"
+    },
+    {
+        "id": 152,
+        "old_url": "/product?id=SPRAY-NB203-B-1",
+        "new_url": "/product/spray-nb203-b-1",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 153,
+        "old_url": "/product?id=SPRAY-NB203-B-2",
+        "new_url": "/product/spray-nb203-b-2",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 154,
+        "old_url": "/product?id=SPRAY-NB203-C",
+        "new_url": "/product/spray-nb203-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 155,
+        "old_url": "/product?id=SPRAY-NB203-D",
+        "new_url": "/product/spray-nb203-d",
+        "status_code": 301,
+        "hits": 1,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 156,
+        "old_url": "/product?id=SPRAY-NB203-E",
+        "new_url": "/product/spray-nb203-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 157,
+        "old_url": "/product?id=SPRAY-NB203-F",
+        "new_url": "/product/spray-nb203-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 158,
+        "old_url": "/product?id=SPRAY-NB204-A",
+        "new_url": "/product/spray-nb204-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 159,
+        "old_url": "/product?id=SPRAY-NB204-B",
+        "new_url": "/product/spray-nb204-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 160,
+        "old_url": "/product?id=SPRAY-NB205-A",
+        "new_url": "/product/spray-nb205-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 161,
+        "old_url": "/product?id=SPRAY-NB205-B",
+        "new_url": "/product/spray-nb205-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 162,
+        "old_url": "/product?id=SPRAY-NB205-C",
+        "new_url": "/product/spray-nb205-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 163,
+        "old_url": "/product?id=SPRAY-NB205-D",
+        "new_url": "/product/spray-nb205-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 164,
+        "old_url": "/product?id=SPRAY-NB206-A",
+        "new_url": "/product/spray-nb206-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 165,
+        "old_url": "/product?id=SPRAY-NB206-B",
+        "new_url": "/product/spray-nb206-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 166,
+        "old_url": "/product?id=SPRAY-NB206-C",
+        "new_url": "/product/spray-nb206-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 167,
+        "old_url": "/product?id=SPRAY-NB206-D",
+        "new_url": "/product/spray-nb206-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:42"
+    },
+    {
+        "id": 168,
+        "old_url": "/product?id=SPRAY-NB206-E",
+        "new_url": "/product/spray-nb206-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 169,
+        "old_url": "/product?id=SPRAY-NB207-A",
+        "new_url": "/product/spray-nb207-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 170,
+        "old_url": "/product?id=SPRAY-NB304-A",
+        "new_url": "/product/spray-nb304-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 171,
+        "old_url": "/product?id=SPRAY-NB304-B",
+        "new_url": "/product/spray-nb304-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 172,
+        "old_url": "/product?id=SPRAY-NB304-C",
+        "new_url": "/product/spray-nb304-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 173,
+        "old_url": "/product?id=SPRAY-NB304-D",
+        "new_url": "/product/spray-nb304-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 174,
+        "old_url": "/product?id=SPRAY-NB304-E",
+        "new_url": "/product/spray-nb304-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 175,
+        "old_url": "/product?id=SPRAY-NB305-A",
+        "new_url": "/product/spray-nb305-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 176,
+        "old_url": "/product?id=SPRAY-NB305-B",
+        "new_url": "/product/spray-nb305-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 177,
+        "old_url": "/product?id=SPRAY-NB305-C",
+        "new_url": "/product/spray-nb305-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 178,
+        "old_url": "/product?id=SPRAY-NB305-D",
+        "new_url": "/product/spray-nb305-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 179,
+        "old_url": "/product?id=SPRAY-NB306",
+        "new_url": "/product/spray-nb306",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 180,
+        "old_url": "/product?id=SPRAY-NB307",
+        "new_url": "/product/spray-nb307",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 181,
+        "old_url": "/product?id=SPRAY-NB308",
+        "new_url": "/product/spray-nb308",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:43"
+    },
+    {
+        "id": 182,
+        "old_url": "/product?id=SPRAY-NB309",
+        "new_url": "/product/spray-nb309",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 183,
+        "old_url": "/product?id=SPRAY-NB310",
+        "new_url": "/product/spray-nb310",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 184,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-A",
+        "new_url": "/product/spray-continuedspray-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 185,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-B",
+        "new_url": "/product/spray-continuedspray-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 186,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-C",
+        "new_url": "/product/spray-continuedspray-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 187,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-D",
+        "new_url": "/product/spray-continuedspray-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 188,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-E",
+        "new_url": "/product/spray-continuedspray-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 189,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-F",
+        "new_url": "/product/spray-continuedspray-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 190,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-G",
+        "new_url": "/product/spray-continuedspray-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 191,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-H",
+        "new_url": "/product/spray-continuedspray-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 192,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-I",
+        "new_url": "/product/spray-continuedspray-i",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 193,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-J",
+        "new_url": "/product/spray-continuedspray-j",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 194,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-K",
+        "new_url": "/product/spray-continuedspray-k",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 195,
+        "old_url": "/product?id=SPRAY-ContinuedSpray-L",
+        "new_url": "/product/spray-continuedspray-l",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:44"
+    },
+    {
+        "id": 196,
+        "old_url": "/product?id=SPRAY-PowderSprayer-A",
+        "new_url": "/product/spray-powdersprayer-a",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 197,
+        "old_url": "/product?id=SPRAY-PowderSprayer-B",
+        "new_url": "/product/spray-powdersprayer-b",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 198,
+        "old_url": "/product?id=SPRAY-PowderSprayer-C",
+        "new_url": "/product/spray-powdersprayer-c",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 199,
+        "old_url": "/product?id=SPRAY-PowderSprayer-D",
+        "new_url": "/product/spray-powdersprayer-d",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 200,
+        "old_url": "/product?id=SPRAY-PowderSprayer-E",
+        "new_url": "/product/spray-powdersprayer-e",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 201,
+        "old_url": "/product?id=SPRAY-PowderSprayer-F",
+        "new_url": "/product/spray-powdersprayer-f",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 202,
+        "old_url": "/product?id=SPRAY-PowderSprayer-G",
+        "new_url": "/product/spray-powdersprayer-g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 203,
+        "old_url": "/product?id=SPRAY-PowderSprayer-H",
+        "new_url": "/product/spray-powdersprayer-h",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 204,
+        "old_url": "/product?id=AGRO-1000ML-AGRO-SHORT",
+        "new_url": "/product/agro-1000ml-agro-short",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 205,
+        "old_url": "/product?id=AGRO-100ML-AGRO-LONG",
+        "new_url": "/product/agro-100ml-agro-long",
+        "status_code": 301,
+        "hits": 2,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 206,
+        "old_url": "/product?id=AGRO-100ML-AGRO-SHORT",
+        "new_url": "/product/agro-100ml-agro-short",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 207,
+        "old_url": "/product?id=AGRO-250ML-AGRO",
+        "new_url": "/product/agro-250ml-agro",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 208,
+        "old_url": "/product?id=AGRO-500ML-AGRO",
+        "new_url": "/product/agro-500ml-agro",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:45"
+    },
+    {
+        "id": 209,
+        "old_url": "/product?id=COS-1000ML-VASA",
+        "new_url": "/product/cos-1000ml-vasa",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 210,
+        "old_url": "/product?id=COS-100ML-BABY-OIL",
+        "new_url": "/product/cos-100ml-baby-oil",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 211,
+        "old_url": "/product?id=COS-100ML-BADAMI",
+        "new_url": "/product/cos-100ml-badami",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 212,
+        "old_url": "/product?id=COS-100ML-CANTHRADINE",
+        "new_url": "/product/cos-100ml-canthradine",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 213,
+        "old_url": "/product?id=COS-100ML-ROUND-BOSTON",
+        "new_url": "/product/cos-100ml-round-boston",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 214,
+        "old_url": "/product?id=COS-100ML-SPRAY-ROUND",
+        "new_url": "/product/cos-100ml-spray-round",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 215,
+        "old_url": "/product?id=COS-100ML-SQUARE",
+        "new_url": "/product/cos-100ml-square",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 216,
+        "old_url": "/product?id=COS-100ML-TULIP",
+        "new_url": "/product/cos-100ml-tulip",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 217,
+        "old_url": "/product?id=COS-100ML-VEOLA",
+        "new_url": "/product/cos-100ml-veola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 218,
+        "old_url": "/product?id=COS-10ML-COSMETIC",
+        "new_url": "/product/cos-10ml-cosmetic",
+        "status_code": 301,
+        "hits": 1,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 219,
+        "old_url": "/product?id=COS-200ML-BABY-OIL",
+        "new_url": "/product/cos-200ml-baby-oil",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 220,
+        "old_url": "/product?id=COS-200ML-BADAMI",
+        "new_url": "/product/cos-200ml-badami",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 221,
+        "old_url": "/product?id=COS-200ML-OVAL-RING",
+        "new_url": "/product/cos-200ml-oval-ring",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 222,
+        "old_url": "/product?id=COS-200ML-OVAL",
+        "new_url": "/product/cos-200ml-oval",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 223,
+        "old_url": "/product?id=COS-200ML-ROUND-BOSTON",
+        "new_url": "/product/cos-200ml-round-boston",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:46"
+    },
+    {
+        "id": 224,
+        "old_url": "/product?id=COS-200ML-VEOLA",
+        "new_url": "/product/cos-200ml-veola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 225,
+        "old_url": "/product?id=COS-225ML-OVAL-SKINCARE",
+        "new_url": "/product/cos-225ml-oval-skincare",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 226,
+        "old_url": "/product?id=COS-25ML-ROMANCE",
+        "new_url": "/product/cos-25ml-romance",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 227,
+        "old_url": "/product?id=COS-300ML-OVAL",
+        "new_url": "/product/cos-300ml-oval",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 228,
+        "old_url": "/product?id=COS-300ML-VASA-NEW",
+        "new_url": "/product/cos-300ml-vasa-new",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 229,
+        "old_url": "/product?id=COS-300ML-VEOLA",
+        "new_url": "/product/cos-300ml-veola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 230,
+        "old_url": "/product?id=COS-30ML-VEOLA",
+        "new_url": "/product/cos-30ml-veola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 231,
+        "old_url": "/product?id=COS-400ML-CANTHRADINE",
+        "new_url": "/product/cos-400ml-canthradine",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 232,
+        "old_url": "/product?id=COS-480ML-ROUND-BOSTON",
+        "new_url": "/product/cos-480ml-round-boston",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 233,
+        "old_url": "/product?id=COS-500ML-VEOLA",
+        "new_url": "/product/cos-500ml-veola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 234,
+        "old_url": "/product?id=COS-50ML-BABY-OIL",
+        "new_url": "/product/cos-50ml-baby-oil",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 235,
+        "old_url": "/product?id=COS-50ML-HS-BOTTLE",
+        "new_url": "/product/cos-50ml-hs-bottle",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 236,
+        "old_url": "/product?id=COS-50ML-SPRAY",
+        "new_url": "/product/cos-50ml-spray",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 237,
+        "old_url": "/product?id=COS-50ML-TULIP",
+        "new_url": "/product/cos-50ml-tulip",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 238,
+        "old_url": "/product?id=COS-50ML-VEOLA",
+        "new_url": "/product/cos-50ml-veola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 239,
+        "old_url": "/product?id=COS-70ML-CG",
+        "new_url": "/product/cos-70ml-cg",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:47"
+    },
+    {
+        "id": 240,
+        "old_url": "/product?id=COS-85ML-HS-BOTTLE",
+        "new_url": "/product/cos-85ml-hs-bottle",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 241,
+        "old_url": "/product?id=COS-BOSTON-60ML-8-5GM-REV",
+        "new_url": "/product/cos-boston-60ml-8-5gm-rev",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 242,
+        "old_url": "/product?id=JAR-120CC-RD",
+        "new_url": "/product/jar-120cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 243,
+        "old_url": "/product?id=JAR-150CC-RD",
+        "new_url": "/product/jar-150cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 244,
+        "old_url": "/product?id=JAR-175CC-RD",
+        "new_url": "/product/jar-175cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 245,
+        "old_url": "/product?id=JAR-175ML-MORINGO",
+        "new_url": "/product/jar-175ml-moringo",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 246,
+        "old_url": "/product?id=JAR-200CC-RD",
+        "new_url": "/product/jar-200cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 247,
+        "old_url": "/product?id=JAR-250CC-RD",
+        "new_url": "/product/jar-250cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 248,
+        "old_url": "/product?id=JAR-300CC-RD",
+        "new_url": "/product/jar-300cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 249,
+        "old_url": "/product?id=JAR-400CC-RD",
+        "new_url": "/product/jar-400cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 250,
+        "old_url": "/product?id=JAR-500CC-RD",
+        "new_url": "/product/jar-500cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 251,
+        "old_url": "/product?id=JAR-75CC-RD",
+        "new_url": "/product/jar-75cc-rd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 252,
+        "old_url": "/product?id=PHA-1000ML-ROUND-PET",
+        "new_url": "/product/pha-1000ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 253,
+        "old_url": "/product?id=PHA-100ML-BRUTE-PET",
+        "new_url": "/product/pha-100ml-brute-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 254,
+        "old_url": "/product?id=PHA-100ML-DOME-PET",
+        "new_url": "/product/pha-100ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:48"
+    },
+    {
+        "id": 255,
+        "old_url": "/product?id=PHA-100ML-ROUND-PET-12-5G",
+        "new_url": "/product/pha-100ml-round-pet-12-5g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 256,
+        "old_url": "/product?id=PHA-100ML-ROUND-PET-13G",
+        "new_url": "/product/pha-100ml-round-pet-13g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 257,
+        "old_url": "/product?id=PHA-100ML-ROUND-PET-22MM",
+        "new_url": "/product/pha-100ml-round-pet-22mm",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 258,
+        "old_url": "/product?id=PHA-100ML-ROUND-PET-RING-MARK",
+        "new_url": "/product/pha-100ml-round-pet-ring-mark",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 259,
+        "old_url": "/product?id=PHA-10ML-ROUND-PET",
+        "new_url": "/product/pha-10ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 260,
+        "old_url": "/product?id=PHA-120ML-ROUND-PET",
+        "new_url": "/product/pha-120ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 261,
+        "old_url": "/product?id=PHA-125ML-DOME-PET",
+        "new_url": "/product/pha-125ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 262,
+        "old_url": "/product?id=PHA-125ML-ROUND-PET",
+        "new_url": "/product/pha-125ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 263,
+        "old_url": "/product?id=PHA-150ML-DOME-PET",
+        "new_url": "/product/pha-150ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 264,
+        "old_url": "/product?id=PHA-15ML-ROUND",
+        "new_url": "/product/pha-15ml-round",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 265,
+        "old_url": "/product?id=PHA-160ML-DOME-PET",
+        "new_url": "/product/pha-160ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 266,
+        "old_url": "/product?id=PHA-170ML-ROUND-PET",
+        "new_url": "/product/pha-170ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 267,
+        "old_url": "/product?id=PHA-200ML-BRUTE-PET-18G",
+        "new_url": "/product/pha-200ml-brute-pet-18g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 268,
+        "old_url": "/product?id=PHA-200ML-BRUTE-PET-22G",
+        "new_url": "/product/pha-200ml-brute-pet-22g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:49"
+    },
+    {
+        "id": 269,
+        "old_url": "/product?id=PHA-200ML-BRUTE-PET-24G",
+        "new_url": "/product/pha-200ml-brute-pet-24g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 270,
+        "old_url": "/product?id=PHA-200ML-FLAT-PET-22G",
+        "new_url": "/product/pha-200ml-flat-pet-22g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 271,
+        "old_url": "/product?id=PHA-200ML-FLAT-PET",
+        "new_url": "/product/pha-200ml-flat-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 272,
+        "old_url": "/product?id=PHA-200ML-ROUND-PET-CLASSIC",
+        "new_url": "/product/pha-200ml-round-pet-classic",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 273,
+        "old_url": "/product?id=PHA-200ML-ROUND-PET",
+        "new_url": "/product/pha-200ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 274,
+        "old_url": "/product?id=PHA-20ML-ROUND-PET-7GM",
+        "new_url": "/product/pha-20ml-round-pet-7gm",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 275,
+        "old_url": "/product?id=PHA-20ML-ROUND-PET",
+        "new_url": "/product/pha-20ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 276,
+        "old_url": "/product?id=PHA-225ML-DOME-PET",
+        "new_url": "/product/pha-225ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 277,
+        "old_url": "/product?id=PHA-250ML-BRUTE-PET-HD",
+        "new_url": "/product/pha-250ml-brute-pet-hd",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 278,
+        "old_url": "/product?id=PHA-250ML-DOME-PET",
+        "new_url": "/product/pha-250ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 279,
+        "old_url": "/product?id=PHA-300ML-BRUTE-PET",
+        "new_url": "/product/pha-300ml-brute-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 280,
+        "old_url": "/product?id=PHA-300ML-DOME-PET",
+        "new_url": "/product/pha-300ml-dome-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 281,
+        "old_url": "/product?id=PHA-30ML-ROUND-PET-RING-MARK",
+        "new_url": "/product/pha-30ml-round-pet-ring-mark",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 282,
+        "old_url": "/product?id=PHA-30ML-ROUND-PET-7-GM",
+        "new_url": "/product/pha-30ml-round-pet-7-gm",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:50"
+    },
+    {
+        "id": 283,
+        "old_url": "/product?id=PHA-30ML-ROUND-PET-8-GM",
+        "new_url": "/product/pha-30ml-round-pet-8-gm",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 284,
+        "old_url": "/product?id=PHA-400ML-BRUTE-37GM-28MM",
+        "new_url": "/product/pha-400ml-brute-37gm-28mm",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 285,
+        "old_url": "/product?id=PHA-450ML-ROUND-PET",
+        "new_url": "/product/pha-450ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 286,
+        "old_url": "/product?id=PHA-500ML-ROUND-PET-TRIANGULAR",
+        "new_url": "/product/pha-500ml-round-pet-triangular",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 287,
+        "old_url": "/product?id=PHA-500ML-ROUND-PET",
+        "new_url": "/product/pha-500ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 288,
+        "old_url": "/product?id=PHA-60ML-ROUND-PET-RING-MARK",
+        "new_url": "/product/pha-60ml-round-pet-ring-mark",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 289,
+        "old_url": "/product?id=PHA-60ML-ROUND-PET-STD",
+        "new_url": "/product/pha-60ml-round-pet-std",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 290,
+        "old_url": "/product?id=PHA-60ML-ROUND-PET",
+        "new_url": "/product/pha-60ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 291,
+        "old_url": "/product?id=PHA-70ML-ROUND-PET",
+        "new_url": "/product/pha-70ml-round-pet",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 292,
+        "old_url": "/product?id=AGRO-1000ML-AGRO-LONG",
+        "new_url": "/product/agro-1000ml-agro-long",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 293,
+        "old_url": "/product?id=COS-200ML-BHOLA",
+        "new_url": "/product/cos-200ml-bhola",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 294,
+        "old_url": "/product?id=PHA-1000ML-ROUND-PET-PCO",
+        "new_url": "/product/pha-1000ml-round-pet-pco",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:51"
+    },
+    {
+        "id": 295,
+        "old_url": "/product?id=PHA-250ML-BRUTE-EXPORT",
+        "new_url": "/product/pha-250ml-brute-export",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 296,
+        "old_url": "/product?id=LIQ-180ML-KIDNEY-10G",
+        "new_url": "/product/liq-180ml-kidney-10g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 297,
+        "old_url": "/product?id=LIQ-180ML-KIDNEY-16G",
+        "new_url": "/product/liq-180ml-kidney-16g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 298,
+        "old_url": "/product?id=LIQ-375ML-WINE",
+        "new_url": "/product/liq-375ml-wine",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 299,
+        "old_url": "/product?id=LIQ-750ML-KIDNEY",
+        "new_url": "/product/liq-750ml-kidney",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 300,
+        "old_url": "/product?id=LIQ-90ML-ROUND-10G",
+        "new_url": "/product/liq-90ml-round-10g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 301,
+        "old_url": "/product?id=LIQ-90ML-RIB-9G",
+        "new_url": "/product/liq-90ml-rib-9g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 302,
+        "old_url": "/product?id=LIQ-180ML-ROUND-12G",
+        "new_url": "/product/liq-180ml-round-12g",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 303,
+        "old_url": "/products?industry=cosmetics",
+        "new_url": "/products/cosmetics",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 304,
+        "old_url": "/products?industry=pharma",
+        "new_url": "/products/pharmaceuticals",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 305,
+        "old_url": "/products?industry=agro",
+        "new_url": "/products/agrochemicals",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 306,
+        "old_url": "/products?industry=nutraceuticals",
+        "new_url": "/products/nutraceuticals",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
+    },
+    {
+        "id": 307,
+        "old_url": "/products?industry=liquor",
+        "new_url": "/products/liquor",
+        "status_code": 301,
+        "hits": 0,
+        "is_active": 1,
+        "created_at": "2026-11-19 17:40:52"
     }
 ]

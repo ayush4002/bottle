@@ -18,8 +18,8 @@ $seoBaseUrl = ($preferredDomain === 'www') ? 'https://www.wetruenorthgroup.com' 
 
 $seoContext = [
     'is_404' => (($activePage ?? '') === '404' || http_response_code() === 404),
-    'page_type' => (($activePage ?? '') === '404' || http_response_code() === 404) ? '404' : (!empty($sku) ? 'product' : (!empty($post) ? 'blog' : (($activePage ?? '') === 'products' ? (isset($_GET['category']) ? 'category' : 'page') : 'page'))),
-    'page_ref_id' => (($activePage ?? '') === '404' || http_response_code() === 404) ? '404' : (!empty($sku) ? ($sku['id'] ?? ($sku['slug'] ?? '')) : (!empty($post) ? ($post['slug'] ?? ($post['id'] ?? '')) : ($_GET['category'] ?? ($activePage ?? 'home')))),
+    'page_type' => (($activePage ?? '') === '404' || http_response_code() === 404) ? '404' : (!empty($sku) ? 'product' : (!empty($post) ? 'blog' : (($activePage ?? '') === 'products' ? (isset($_GET['category']) ? 'category' : (isset($_GET['industry']) ? 'industry' : 'page')) : 'page'))),
+    'page_ref_id' => (($activePage ?? '') === '404' || http_response_code() === 404) ? '404' : (!empty($sku) ? ($sku['id'] ?? ($sku['slug'] ?? '')) : (!empty($post) ? ($post['slug'] ?? ($post['id'] ?? '')) : ($_GET['category'] ?? ($_GET['industry'] ?? ($activePage ?? 'home'))))),
     'product' => $sku ?? null,
     'article' => $post ?? null,
     'category' => isset($_GET['category']) ? ['slug' => $_GET['category'], 'name' => ucwords(str_replace(['-', '_'], ' ', $_GET['category']))] : null,
@@ -42,8 +42,14 @@ if (($activePage ?? '') === 'products' && empty($sku) && !empty($_GET['industry'
     if ($tnIndustry) {
         $seoContext['title'] = ($tnIndustry['headline'] ?? ($tnIndustry['name'] . ' Packaging')) . ' | TrueNorth Group';
         if (!empty($tnIndustry['desc'])) $seoContext['description'] = $tnIndustry['desc'];
-        $seoContext['canonical'] = $seoBaseUrl . '/products?industry=' . urlencode($tnIndustry['slug'] ?? (string)$_GET['industry']);
+        $cleanInd = (string)$_GET['industry'];
+        if ($cleanInd === 'pharma') $cleanInd = 'pharmaceuticals';
+        if ($cleanInd === 'agro') $cleanInd = 'agrochemicals';
+        $seoContext['canonical'] = $seoBaseUrl . '/products/' . urlencode($cleanInd);
     }
+}
+if (($activePage ?? '') === 'products' && empty($sku) && !empty($_GET['category']) && empty($_GET['series']) && empty($_GET['q'])) {
+    $seoContext['canonical'] = $seoBaseUrl . '/products/' . urlencode(strtolower(trim($_GET['category'])));
 }
 
 // Product-collection ItemList (checklist §4): fire on category filter / full catalogue
@@ -59,7 +65,7 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
             $items[] = [
                 'pos' => $i + 1,
                 'name' => $s['name'] ?? ($s['id'] ?? 'Product'),
-                'url' => $seoBaseUrl . '/product?id=' . urlencode($s['id'] ?? ($s['sku'] ?? ''))
+                'url' => $seoBaseUrl . ProductModel::getProductUrl($s)
             ];
         }
         $seoContext['item_list'] = [
@@ -323,11 +329,11 @@ if (($activePage ?? '') === 'products' && empty($sku) && class_exists('ProductMo
       </a>
       <div style="padding: 6px 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
         <span style="font-size: 0.68rem; font-weight: 800; color: #64748b; text-transform: uppercase; width: 100%; margin-bottom: 2px; letter-spacing: 0.05em;">Browse by Industry:</span>
-        <a href="/products?industry=cosmetics" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Cosmetics</a>
-        <a href="/products?industry=pharma" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Pharma</a>
-        <a href="/products?industry=agro" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Agro</a>
-        <a href="/products?industry=nutraceuticals" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Nutraceuticals</a>
-        <a href="/products?industry=liquor" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Liquor</a>
+        <a href="/products/cosmetics" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Cosmetics</a>
+        <a href="/products/pharmaceuticals" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Pharma</a>
+        <a href="/products/agrochemicals" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Agro</a>
+        <a href="/products/nutraceuticals" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Nutraceuticals</a>
+        <a href="/products/liquor" onclick="window.closeMobileMenu();" style="font-size: 0.76rem; color: #1e293b; background: #fff; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Liquor</a>
       </div>
       <a href="/custom" class="mobile-nav-item <?= ($activePage ?? '') === 'custom' ? 'active' : '' ?>" onclick="window.closeMobileMenu();">
         <span>Custom Solutions</span>

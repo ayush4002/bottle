@@ -173,7 +173,7 @@
         <p style="margin-bottom: 12px;">Every production batch undergoes 1,000+ cycle vacuum chamber leak tests and neck-finish torque calibration. Technical samples dispatched for customer testing must be verified before mass production sign-off.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">4. Export Shipping &amp; Delivery Terms</h4>
         <p style="margin-bottom: 12px;">Shipments are packaged in export-grade corrugated cartons, stretch-wrapped pallets, and assigned full batch traceability for maximum transit protection and export durability across domestic and global logistics destinations.</p>
-        <p style="margin-bottom: 0; font-size: 0.82rem; font-weight: 700;"><a href="/terms" style="color: var(--color-navy); text-decoration: underline;">Read Full Terms &amp; Conditions of Sale &rarr;</a></p>
+        <p style="margin-bottom: 0; font-size: 0.82rem; font-weight: 700;"><a href="/terms-conditions" style="color: var(--color-navy); text-decoration: underline;">Read Full Terms &amp; Conditions of Sale &rarr;</a></p>
       </div>
       <button onclick="window.closeTermsModal()" class="tn-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE TERMS</button>
     </div>
@@ -195,7 +195,7 @@
         <p style="margin-bottom: 12px;">Proprietary bottle designs and custom mould specifications remain 100% confidential. We strictly execute Non-Disclosure Agreements (NDAs) for custom tooling and private-label packaging developments.</p>
         <h4 style="font-size: 0.95rem; color: var(--color-navy); margin: 0 0 6px;">3. Information Usage &amp; Communication</h4>
         <p style="margin-bottom: 12px;">Contact details provided during RFQ submissions are exclusively utilized by our engineering team to provide quotations, technical specifications, and shipment status updates. We do not sell or share data with third parties.</p>
-        <p style="margin-bottom: 0; font-size: 0.82rem; font-weight: 700;"><a href="/privacy" style="color: var(--color-navy); text-decoration: underline;">Read Full Privacy &amp; Data Protection Policy &rarr;</a></p>
+        <p style="margin-bottom: 0; font-size: 0.82rem; font-weight: 700;"><a href="/privacy-policy" style="color: var(--color-navy); text-decoration: underline;">Read Full Privacy &amp; Data Protection Policy &rarr;</a></p>
       </div>
       <button onclick="window.closePrivacyModal()" class="tn-btn-gold" style="width: 100%; margin-top: 20px; text-align: center; margin-left: 0;">CLOSE PRIVACY STATEMENT</button>
     </div>

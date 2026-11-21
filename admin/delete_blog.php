@@ -17,9 +17,16 @@ if (!$id) {
     exit();
 }
 
+$post = BlogModel::getPostById($id);
 $deleted = BlogModel::deletePost($id);
 
 if ($deleted) {
+    if (!empty($post['slug'])) {
+        require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
+        SeoModel::init();
+        $adminUser = $_SESSION['admin_user'] ?? 'admin';
+        SeoModel::deletePageSeo('/blog/' . $post['slug'], $adminUser);
+    }
     header("Location: /admin/blog?msg=" . urlencode("Article deleted successfully."));
     exit();
 } else {

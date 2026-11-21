@@ -93,6 +93,7 @@ if (file_exists(__DIR__ . '/config/config.php')) {
     require_once __DIR__ . '/config.php';
 }
 require_once __DIR__ . '/app/Models/ProductModel.php';
+require_once __DIR__ . '/app/Models/PageModel.php';
 require_once __DIR__ . '/app/Models/SeoModel.php';
 require_once __DIR__ . '/includes/redirect_handler.php';
 require_once __DIR__ . '/app/Controllers/PageController.php';
@@ -229,14 +230,35 @@ if (strpos($path, 'blog/') === 0) {
     }
 }
 
-// Product Detail Route (e.g. /product?id=123 or /product_detail?id=123 or /product/123)
+// Product Detail Route (e.g. /product/agro-100ml-agro-long or legacy /product?id=...)
 if ($path === 'product' || $path === 'product_detail' || strpos($path, 'product/') === 0) {
-    $skuId = $_GET['id'] ?? null;
-    if (!$skuId && strpos($path, 'product/') === 0) {
+    // 301 redirect legacy query-param URLs to clean slug URLs
+    if (($path === 'product' || $path === 'product_detail') && !empty($_GET['id'])) {
+        $legacyId = trim($_GET['id']);
+        $p = class_exists('ProductModel') ? ProductModel::getPublishedSkuById($legacyId) : null;
+        $slug = !empty($p['slug']) ? $p['slug'] : strtolower(trim(preg_replace('/[^a-z0-9-]+/i', '-', $legacyId), '-'));
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header("Location: /product/" . urlencode($slug), true, 301);
+        exit();
+    }
+
+    $skuId = null;
+    if (strpos($path, 'product/') === 0) {
         $parts = explode('/', $path);
-        $skuId = end($parts);
+        $skuId = strtolower(trim(end($parts)));
     }
     if ($skuId) {
+        // Canonical redirect: if the segment is a case-variant or non-canonical alias of a
+        // product (e.g. the lowercased-SKU guess "/product/cos-10ml-x" vs the real slug
+        // "/product/cosmetic-10ml-x"), 301 to the canonical slug URL so there is one clean
+        // URL per product. The lookup is case-insensitive (ProductModel::getSkuById).
+        $resolved = class_exists('ProductModel') ? ProductModel::getSkuById($skuId) : null;
+        $canonSlug = !empty($resolved['slug']) ? strtolower($resolved['slug']) : $skuId;
+        if ($canonSlug !== '' && $canonSlug !== $skuId) {
+            header("Cache-Control: no-cache, no-store, must-revalidate");
+            header("Location: /product/" . rawurlencode($canonSlug), true, 301);
+            exit();
+        }
         $cacheKey = PageCache::keyFor('product-' . $skuId);
         if ($cached = PageCache::get($cacheKey)) {
             PageCache::serve($cached);
@@ -250,62 +272,156 @@ if ($path === 'product' || $path === 'product_detail' || strpos($path, 'product/
     }
 }
 
+// Clean Category & Industry Routes: /products/{category-or-industry}
+if (strpos($path, 'products/') === 0) {
+    $subSlug = strtolower(trim(substr($path, 9), '/'));
+
+    // Check Industry Markets
+    $industryMap = [
+        'cosmetics' => 'cosmetics',
+        'pharmaceuticals' => 'pharma',
+        'pharma' => 'pharma',
+        'agrochemicals' => 'agro',
+        'agro' => 'agro',
+        'nutraceuticals' => 'nutraceuticals',
+        'liquor' => 'liquor'
+    ];
+
+    if (isset($industryMap[$subSlug])) {
+        // Enforce canonical names
+        if ($subSlug === 'pharma') {
+            header("Cache-Control: no-cache, no-store, must-revalidate");
+            header("Location: /products/pharmaceuticals", true, 301);
+            exit();
+        }
+        if ($subSlug === 'agro') {
+            header("Cache-Control: no-cache, no-store, must-revalidate");
+            header("Location: /products/agrochemicals", true, 301);
+            exit();
+        }
+        $_GET['industry'] = $industryMap[$subSlug];
+        $cacheKey = PageCache::keyFor('route-products-industry-' . $industryMap[$subSlug]);
+        if ($cached = PageCache::get($cacheKey)) {
+            PageCache::serve($cached);
+        }
+        ob_start();
+        PageController::renderPage('products', []);
+        $cachedHtml = ob_get_clean();
+        PageCache::put($cacheKey, $cachedHtml, http_response_code());
+        echo $cachedHtml;
+        exit();
+    } elseif (class_exists('ProductModel')) {
+        $cat = ProductModel::getCategoryBySlug($subSlug);
+        if ($cat) {
+            $_GET['category'] = $subSlug;
+            $cacheKey = PageCache::keyFor('route-products-category-' . $subSlug);
+            if ($cached = PageCache::get($cacheKey)) {
+                PageCache::serve($cached);
+            }
+            ob_start();
+            PageController::renderPage('products', []);
+            $cachedHtml = ob_get_clean();
+            PageCache::put($cacheKey, $cachedHtml, http_response_code());
+            echo $cachedHtml;
+            exit();
+        }
+    }
+}
+
+// Canonical Query-Param Redirects for /products
+if ($path === 'products') {
+    if (!empty($_GET['category']) && empty($_GET['series']) && empty($_GET['industry']) && empty($_GET['q'])) {
+        $cSlug = strtolower(trim($_GET['category']));
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header("Location: /products/" . urlencode($cSlug), true, 301);
+        exit();
+    }
+    if (!empty($_GET['industry']) && empty($_GET['category']) && empty($_GET['series']) && empty($_GET['q'])) {
+        $iSlug = strtolower(trim($_GET['industry']));
+        $targetInd = ($iSlug === 'pharma') ? 'pharmaceuticals' : (($iSlug === 'agro') ? 'agrochemicals' : $iSlug);
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header("Location: /products/" . urlencode($targetInd), true, 301);
+        exit();
+    }
+}
+
 // Page Routes
 $page = 'home';
 if (!empty($path)) {
-    switch ($path) {
-        case 'about':
-            $page = 'about';
-            break;
-        case 'products':
-        case 'catalogue':
-            $page = 'products';
-            break;
-        case 'product':
-        case 'product_detail':
-            header("Location: /products", true, 301);
-            exit();
-        case 'contact':
-        case 'locations':
-            $page = 'contact';
-            break;
-        case 'custom':
-        case 'custom-solutions':
-            $page = 'custom';
-            break;
-        case 'faq':
-        case 'frequently-asked-questions':
-            $page = 'faq';
-            break;
-        case 'sustainability':
-        case 'rpet':
-            $page = 'sustainability';
-            break;
-        case 'terms':
-        case 'terms-conditions':
-        case 'general-terms':
-            $page = 'terms';
-            break;
-        case 'privacy':
-        case 'privacy-policy':
-        case 'privacy-statement':
-            $page = 'privacy';
-            break;
-        default:
-            http_response_code(404);
-            SeoModel::log404($requestUri, $_SERVER['HTTP_REFERER'] ?? '');
-            $page = '404';
-            break;
+    $reqSlug = '/' . trim($path, '/');
+
+    // 1. Dynamic Page Lookup via PageModel (handles all custom & updated slugs)
+    $matchedPage = PageModel::hasPage($reqSlug);
+    if ($matchedPage) {
+        $page = !empty($matchedPage['template']) ? $matchedPage['template'] : (!empty($matchedPage['id']) ? $matchedPage['id'] : 'home');
+    } else {
+        // 2. Fallback to standard core routes and known aliases
+        switch ($path) {
+            case 'about':
+            case 'about-us':
+            case 'company':
+            case 'our-company':
+                $page = 'about';
+                break;
+            case 'products':
+            case 'catalogue':
+            case 'catalog':
+                $page = 'products';
+                break;
+            case 'product':
+            case 'product_detail':
+                header("Location: /products", true, 301);
+                exit();
+            case 'contact':
+            case 'contact-us':
+            case 'locations':
+                $page = 'contact';
+                break;
+            case 'custom':
+            case 'custom-solutions':
+                $page = 'custom';
+                break;
+            case 'faq':
+            case 'faqs':
+            case 'frequently-asked-questions':
+                $page = 'faq';
+                break;
+            case 'sustainability':
+            case 'rpet':
+                $page = 'sustainability';
+                break;
+            case 'terms':
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Location: /terms-conditions", true, 301);
+                exit();
+            case 'terms-conditions':
+            case 'general-terms':
+                $page = 'terms';
+                break;
+            case 'privacy':
+                header("Cache-Control: no-cache, no-store, must-revalidate");
+                header("Location: /privacy-policy", true, 301);
+                exit();
+            case 'privacy-policy':
+            case 'privacy-statement':
+                $page = 'privacy';
+                break;
+            default:
+                http_response_code(404);
+                SeoModel::log404($requestUri, $_SERVER['HTTP_REFERER'] ?? '');
+                $page = '404';
+                break;
+        }
     }
 }
 
 // Render selected PHP page (with full-page output cache)
-$cacheKey = PageCache::keyFor('route-' . $page);
+$cacheKey = PageCache::keyFor('route-' . $page . '-' . md5($path));
 if ($cached = PageCache::get($cacheKey)) {
     PageCache::serve($cached);
 }
 ob_start();
-PageController::renderPage($page);
+PageController::renderPage($page, ['record' => $matchedPage ?? []]);
 $cachedHtml = ob_get_clean();
 PageCache::put($cacheKey, $cachedHtml, http_response_code());
 echo $cachedHtml;

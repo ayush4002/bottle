@@ -76,7 +76,7 @@
 
         <div class="tn-cat-tiles-grid" id="home-cat-tiles-grid">
           <?php foreach ($categories as $cat): ?>
-            <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="tn-tile-card" style="text-decoration: none;">
+            <a href="/products/<?= urlencode($cat['slug']) ?>" class="tn-tile-card" style="text-decoration: none;">
               <div class="tn-tile-image">
                 <img src="<?= htmlspecialchars($cat['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($cat['name']) ?>" loading="lazy" width="280" height="280" />
               </div>
@@ -103,7 +103,7 @@
         <?php $homeIndustries = class_exists('ProductModel') ? ProductModel::getIndustries(true) : []; ?>
         <div class="tn-markets-grid" id="home-markets-grid">
           <?php foreach ($homeIndustries as $indSlug => $ind): ?>
-            <a href="/products?industry=<?= urlencode($ind['slug'] ?? $indSlug) ?>" class="tn-market-tile" style="text-decoration: none;">
+            <a href="<?= ProductModel::getIndustryUrl($ind['slug'] ?? $indSlug) ?>" class="tn-market-tile" style="text-decoration: none;">
               <div class="tn-market-img">
                 <img src="<?= htmlspecialchars($ind['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($ind['name']) ?>" loading="lazy" width="300" height="200" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
               </div>
@@ -281,13 +281,13 @@
         <div class="rpet-layout">
           <!-- Left 2 Product Tiles -->
           <div class="rpet-cards-stack">
-            <a href="/products?category=cosmetics-bottles" class="rpet-card" style="text-decoration: none;">
+            <a href="/products/cosmetics-bottles" class="rpet-card" style="text-decoration: none;">
               <div class="tn-tile-image">
                 <img src="/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp" alt="rPET bottles" loading="lazy" width="260" height="260" />
               </div>
               <div class="rpet-card-bar">rPET bottles</div>
             </a>
-            <a href="/products?category=jars" class="rpet-card" style="text-decoration: none;">
+            <a href="/products/jars" class="rpet-card" style="text-decoration: none;">
               <div class="tn-tile-image">
                 <img src="/vikaas_inputs/thumbnails/thumbnail_nutraceuticle_jars.webp" alt="rPET jars" loading="lazy" width="260" height="260" />
               </div>
@@ -307,7 +307,7 @@
                 For businesses looking to use recycled plastic, we offer bottles and jars made from 100% recycled PET (rPET), with minimum orders starting at 30,000 units. Standard options are also held in stock for immediate requirements. From selecting a ready-made bottle to developing a customised design, we work with you to find a solution that suits your product and supports your sustainability goals.
               </p>
               <p>
-                We also have <a href="/products?category=cosmetics-bottles">rPET bottles in stock</a> and <a href="/products?category=jars">rPET jars in stock</a>.
+                We also have <a href="/products/cosmetics-bottles">rPET bottles in stock</a> and <a href="/products/jars">rPET jars in stock</a>.
               </p>
             </div>
 

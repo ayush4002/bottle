@@ -224,7 +224,7 @@ function tn_csrf_reject() {
     $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
     $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
     $stateChangingGet = preg_match('#/admin/delete_[a-z_]+#i', $path)
-        || in_array($_GET['action'] ?? '', ['delete', 'toggle', 'dismiss', 'dismiss_404', 'regenerate_sitemap', 'permanent', 'restore', 'archive'], true);
+        || in_array($_GET['action'] ?? '', ['delete', 'toggle', 'dismiss', 'dismiss_404', 'regenerate_sitemap', 'permanent', 'restore', 'archive', 'delete_img', 'auto_fill_all'], true);
     if ($method === 'POST' || ($method === 'GET' && $stateChangingGet)) {
         if (!verifyCsrfToken(tn_request_csrf_token())) {
             tn_csrf_reject();
@@ -264,4 +264,40 @@ function tn_fputcsv($handle, array $row) {
         return "'" . $v;
     }, $row);
     return fputcsv($handle, $safe);
+}
+
+/**
+ * Resolve a user-supplied asset URL to a real, existing file that is guaranteed
+ * to live inside PUBLIC_PATH. Returns the absolute path, or null if the URL is
+ * empty, not an image-extension file, or escapes the public tree via ../ or
+ * absolute paths. Use this for every delete/rename/unlink on admin-supplied
+ * asset names so path traversal can never reach config/, the DB dump, etc.
+ */
+function tn_public_asset_path($url) {
+    $clean = trim((string)$url);
+    if ($clean === '') return null;
+    // Strip any scheme, query or fragment; only the path part is usable.
+    $path = parse_url($clean, PHP_URL_PATH);
+    if ($path === null || $path === false || $path === '') $path = $clean;
+    // Normalise slashes and collapse ".."/"." segments so we test the real target.
+    $segments = [];
+    foreach (explode('/', str_replace('\\', '/', $path)) as $seg) {
+        if ($seg === '' || $seg === '.') continue;
+        if ($seg === '..') { array_pop($segments); continue; }
+        $segments[] = $seg;
+    }
+    $rel = '/' . implode('/', $segments);
+    $publicBase = defined('PUBLIC_PATH') ? PUBLIC_PATH : '';
+    if ($publicBase === '') {
+        $publicBase = (defined('ROOT_PATH') ? ROOT_PATH : dirname(__DIR__)) . '/public';
+    }
+    $base = str_replace('\\', '/', rtrim($publicBase, '/'));
+    $target = $base . $rel;
+    // Containment: the resolved target must remain under the public root.
+    if (strpos($target, $base . '/') !== 0 && $target !== $base) return null;
+    if (!file_exists($target) || !is_file($target)) return null;
+    // Only allow image files to be removed/renamed by name.
+    $ext = strtolower(pathinfo($target, PATHINFO_EXTENSION));
+    if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp', 'svg', 'gif', 'ico'], true)) return null;
+    return $target;
 }

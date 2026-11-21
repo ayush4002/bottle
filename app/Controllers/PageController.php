@@ -10,8 +10,8 @@ require_once dirname(__DIR__) . '/Models/ProductModel.php';
 class PageController {
 
     public static function renderPage($pageName = 'home', $params = []) {
-        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability', 'faq', 'terms', 'privacy', '404'];
-        
+        $allowedPages = ['home', 'products', 'product_detail', 'about', 'contact', 'custom', 'sustainability', 'faq', 'terms', 'privacy', 'default', '404'];
+
         if (!in_array($pageName, $allowedPages)) {
             $pageName = '404';
         }
@@ -23,6 +23,10 @@ class PageController {
         $company = ProductModel::getCompanyInfo();
         $categories = ProductModel::getCategories();
         $series = ProductModel::getSeries();
+
+        // Page record for the generic "default" content view (custom-slug pages
+        // created in the Pages editor). Passed in via $params['record'] by index.php.
+        $pageRecord = (isset($params['record']) && is_array($params['record'])) ? $params['record'] : [];
 
         $activePage = $pageName === 'product_detail' ? 'products' : $pageName;
 

@@ -44,7 +44,7 @@ if (empty($company) && class_exists('ProductModel')) {
                     $footerCategories = !empty($categories) ? $categories : (class_exists('ProductModel') ? ProductModel::getCategories() : []);
                     foreach ($footerCategories as $cat): 
                   ?>
-                    <li><a href="/products?category=<?= urlencode($cat['slug']) ?>"><?= htmlspecialchars($cat['name']) ?></a></li>
+                    <li><a href="/products/<?= urlencode($cat['slug']) ?>"><?= htmlspecialchars($cat['name']) ?></a></li>
                   <?php endforeach; ?>
                 </ul>
               </div>
@@ -58,11 +58,11 @@ if (empty($company) && class_exists('ProductModel')) {
               </button>
               <div class="footer-sub-content">
                 <ul class="footer-link-grid">
-                  <li><a href="/products?industry=cosmetics">Cosmetics &amp; Personal Care</a></li>
-                  <li><a href="/products?industry=pharma">Pharmaceuticals &amp; Healthcare</a></li>
-                  <li><a href="/products?industry=agro">Agrochemicals &amp; Pesticides</a></li>
-                  <li><a href="/products?industry=nutraceuticals">Nutraceuticals &amp; Supplements</a></li>
-                  <li><a href="/products?industry=liquor">Liquor, Spirits &amp; Beverages</a></li>
+                  <li><a href="/products/cosmetics">Cosmetics &amp; Personal Care</a></li>
+                  <li><a href="/products/pharmaceuticals">Pharmaceuticals &amp; Healthcare</a></li>
+                  <li><a href="/products/agrochemicals">Agrochemicals &amp; Pesticides</a></li>
+                  <li><a href="/products/nutraceuticals">Nutraceuticals &amp; Supplements</a></li>
+                  <li><a href="/products/liquor">Liquor, Spirits &amp; Beverages</a></li>
                 </ul>
               </div>
             </div>
@@ -161,9 +161,9 @@ if (empty($company) && class_exists('ProductModel')) {
       <div class="footer-copyright-bar">
         <span>© 2000 - <?= date('Y') ?> <?= htmlspecialchars($company['name'] ?? 'TrueNorth Group') ?>. Over 25 Years of Industry Excellence. All Rights Reserved.</span>
         <span class="footer-legal-links">
-          <a href="/terms">General Terms &amp; Conditions</a>
+          <a href="/terms-conditions">General Terms &amp; Conditions</a>
           <span class="footer-legal-sep">|</span>
-          <a href="/privacy">Privacy Statement</a>
+          <a href="/privacy-policy">Privacy Statement</a>
         </span>
       </div>
     </div>

@@ -109,7 +109,7 @@ if ($searchQuery) {
 
         <div class="tn-markets-grid" style="margin-bottom: 48px;">
           <?php foreach ($allIndustries as $indSlug => $ind): ?>
-            <a href="/products?industry=<?= urlencode($indSlug) ?>" class="tn-market-tile" style="text-decoration: none;">
+            <a href="<?= ProductModel::getIndustryUrl($indSlug) ?>" class="tn-market-tile" style="text-decoration: none;">
               <div class="tn-market-img">
                 <img src="<?= htmlspecialchars($ind['image']) ?>" alt="<?= htmlspecialchars($ind['name']) ?>"<?= tn_img_dims($ind['image']) ?> loading="lazy" onerror="this.onerror=null;this.src='/logo_svg.svg';" />
               </div>
@@ -134,7 +134,7 @@ if ($searchQuery) {
 
         <div class="tn-level1-grid">
           <?php foreach ($allCategories as $cat): ?>
-            <a href="/products?category=<?= urlencode($cat['slug']) ?>" class="tn-tile-card" style="text-decoration: none;">
+            <a href="/products/<?= urlencode($cat['slug']) ?>" class="tn-tile-card" style="text-decoration: none;">
               <div class="tn-tile-image">
                 <img src="<?= htmlspecialchars($cat['image'] ?? '/logo_svg.svg') ?>" alt="<?= htmlspecialchars($cat['name']) ?>"<?= tn_img_dims($cat['image'] ?? '/logo_svg.svg') ?> loading="lazy" />
               </div>
@@ -383,7 +383,7 @@ if ($searchQuery) {
 
             <div class="tn-series-grid" id="catalogue-items-grid">
               <?php foreach ($seriesList as $s): ?>
-                <a href="/products?category=<?= urlencode($selectedCategory) ?>&series=<?= urlencode($s['slug']) ?>" 
+                <a href="/products/<?= urlencode($selectedCategory) ?>?series=<?= urlencode($s['slug']) ?>" 
                    class="tn-tile-card filterable-item"
                    data-name="<?= strtolower(htmlspecialchars($s['name'] ?? '')) ?>"
                    data-material="<?= strtoupper(htmlspecialchars($s['material'] ?? 'PET')) ?>"
@@ -561,7 +561,7 @@ if ($searchQuery) {
           <a href="/products">Products</a>
           <?php if (!empty($categoryInfo)): ?>
             <span class="separator">&gt;</span>
-            <a href="/products?category=<?= urlencode($categoryInfo['slug']) ?>"><?= htmlspecialchars($categoryInfo['name']) ?></a>
+            <a href="/products/<?= urlencode($categoryInfo['slug']) ?>"><?= htmlspecialchars($categoryInfo['name']) ?></a>
           <?php endif; ?>
           <?php if (!empty($seriesInfo)): ?>
             <span class="separator">&gt;</span>
@@ -582,7 +582,7 @@ if ($searchQuery) {
               $backUrl = '/products';
               $backLabel = 'Back to All Products';
           } else {
-              $backUrl = !empty($categoryInfo) ? '/products?category=' . urlencode($categoryInfo['slug']) : '/products';
+              $backUrl = !empty($categoryInfo) ? '/products/' . urlencode($categoryInfo['slug']) : '/products';
               $backLabel = 'Back to ' . (!empty($categoryInfo['name']) ? htmlspecialchars($categoryInfo['name']) : 'Products');
           }
         ?>
@@ -832,7 +832,7 @@ if ($searchQuery) {
                     $colorVal = trim($sku['specs']['color'] ?? $sku['color'] ?? 'White / Natural');
                     $artNo = trim($sku['articleNo'] ?? $sku['code'] ?? 'TN-001');
                   ?>
-                  <a href="/product?id=<?= urlencode($skuId) ?>" 
+                  <a href="<?= ProductModel::getProductUrl($sku) ?>" 
                      class="tn-sku-card filterable-item"
                      data-name="<?= strtolower(htmlspecialchars($sku['name'] ?? '')) ?>"
                      data-code="<?= strtolower(htmlspecialchars($artNo)) ?>"

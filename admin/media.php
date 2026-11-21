@@ -1,11 +1,20 @@
 <?php
+// ==============================================================================
+// TRUENORTH CMS — MEDIA LIBRARY & ASSETS (WORDPRESS ATTACHMENT SUITE)
+// Comprehensive recursive media browser, uploader, replacer & Image SEO manager
+// ==============================================================================
+
 require_once dirname(__DIR__) . '/includes/upload_guard.php';
 require_once __DIR__ . '/auth.php';
-checkAdminAuth();
+require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
 
-$uploadDir = PUBLIC_PATH . '/uploads/products';
-if (!file_exists($uploadDir)) {
-    @mkdir($uploadDir, 0755, true);
+checkAdminAuth();
+SeoModel::init();
+
+$baseUploadDir = PUBLIC_PATH . '/uploads';
+$productsUploadDir = $baseUploadDir . '/products';
+if (!file_exists($productsUploadDir)) {
+    @mkdir($productsUploadDir, 0755, true);
 }
 
 $message = $_GET['msg'] ?? '';
@@ -37,9 +46,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $cleanName = preg_replace('/[^a-zA-Z0-9_\.-]/', '_', pathinfo($fileName, PATHINFO_FILENAME));
                 $targetFile = $cleanName . '_' . time() . '.' . $ext;
-                $targetPath = $uploadDir . '/' . $targetFile;
+                $targetPath = $productsUploadDir . '/' . $targetFile;
 
                 if (move_uploaded_file($_FILES['media_file']['tmp_name'], $targetPath)) {
+                    $url = '/uploads/products/' . $targetFile;
+                    // Register in SeoModel
+                    SeoModel::saveImageSeo($url, [
+                        'alt_text' => ucwords(str_replace(['_', '-'], ' ', $cleanName)),
+                        'title_text' => ucwords(str_replace(['_', '-'], ' ', $cleanName)),
+                        'uploaded_by' => $_SESSION['admin_user'] ?? 'admin'
+                    ]);
                     redirectMedia("/admin/media?msg=" . urlencode("Image '{$targetFile}' uploaded successfully!"));
                 } else {
                     $error = "Failed to upload image file. Please check directory permissions.";
@@ -49,43 +65,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Please select an image file to upload.";
         }
     } elseif ($action === 'rename_media') {
-        $oldName = basename($_POST['old_filename'] ?? '');
+        $oldUrl = trim($_POST['old_filename'] ?? '');
         $newNameRaw = trim($_POST['new_filename'] ?? '');
 
-        if (!empty($oldName) && !empty($newNameRaw)) {
-            $oldPath = $uploadDir . '/' . $oldName;
-            $ext = strtolower(pathinfo($oldName, PATHINFO_EXTENSION));
-            $cleanName = preg_replace('/[^a-zA-Z0-9_\.-]/', '_', pathinfo($newNameRaw, PATHINFO_FILENAME));
-            $newName = $cleanName . '.' . $ext;
-            $newPath = $uploadDir . '/' . $newName;
+        if (!empty($oldUrl) && !empty($newNameRaw)) {
+            $cleanUrl = ltrim($oldUrl, '/');
+            // Resolve the source to a real, PUBLIC_PATH-contained image (blocks ../ traversal).
+            $srcPath = null;
+            foreach (['uploads/' . basename($cleanUrl), 'uploads/products/' . basename($cleanUrl), $cleanUrl] as $src) {
+                $resolved = function_exists('tn_public_asset_path') ? tn_public_asset_path($src) : null;
+                if ($resolved !== null) { $srcPath = $resolved; break; }
+            }
 
-            if (!file_exists($oldPath)) {
-                $error = "Source image file not found.";
-            } elseif (file_exists($newPath) && $oldName !== $newName) {
-                $error = "A file with name '{$newName}' already exists.";
-            } else {
+            if ($srcPath) {
+                $dir = dirname($srcPath);
+                $ext = strtolower(pathinfo($srcPath, PATHINFO_EXTENSION));
+                $cleanName = preg_replace('/[^a-zA-Z0-9_\.-]/', '_', pathinfo($newNameRaw, PATHINFO_FILENAME));
+                $newFilename = $cleanName . '.' . $ext;
+                $destPath = $dir . '/' . $newFilename;
+
                 if (!empty($_FILES['replace_file']['name'])) {
                     $repExt = tn_upload_safe_image_ext($_FILES['replace_file']['tmp_name'], $_FILES['replace_file']['name'], true, ['jpg', 'jpeg', 'png', 'webp']);
                     if ($repExt !== false && ($repExt === $ext || ($repExt === 'jpg' && $ext === 'jpeg'))) {
-                        @unlink($oldPath);
-                        $targetPath = $uploadDir . '/' . $newName;
-                        move_uploaded_file($_FILES['replace_file']['tmp_name'], $targetPath);
+                        @unlink($srcPath);
+                        move_uploaded_file($_FILES['replace_file']['tmp_name'], $destPath);
                     }
                 } else {
-                    rename($oldPath, $newPath);
+                    rename($srcPath, $destPath);
                 }
-                redirectMedia("/admin/media?msg=" . urlencode("Image updated successfully to '{$newName}'!"));
+                redirectMedia("/admin/media?msg=" . urlencode("Image updated successfully!"));
+            } else {
+                $error = "Source image file not found.";
             }
         }
     } elseif ($action === 'delete_media') {
-        $targetFile = basename($_POST['filename'] ?? '');
+        $targetFile = trim($_POST['filename'] ?? ($_POST['url'] ?? ''));
         if (!empty($targetFile)) {
-            $filePath = $uploadDir . '/' . $targetFile;
-            if (file_exists($filePath)) {
-                @unlink($filePath);
-                redirectMedia("/admin/media?msg=" . urlencode("Image '{$targetFile}' deleted successfully."));
+            $cleanUrl = ltrim($targetFile, '/');
+            // Resolve to a PUBLIC_PATH-contained image file; traversal is rejected.
+            $deleted = false;
+            foreach (['uploads/' . basename($cleanUrl), 'uploads/products/' . basename($cleanUrl), $cleanUrl] as $src) {
+                $cand = function_exists('tn_public_asset_path') ? tn_public_asset_path($src) : null;
+                if ($cand !== null) {
+                    @unlink($cand);
+                    $deleted = true;
+                    break;
+                }
+            }
+            if ($deleted) {
+                redirectMedia("/admin/media?msg=" . urlencode("Image deleted successfully."));
             } else {
-                $error = "File '{$targetFile}' not found or already deleted.";
+                $error = "File not found or already deleted.";
             }
         }
     }
@@ -94,22 +124,98 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // NOW Include Header & Render Page
 require_once __DIR__ . '/header.php';
 
-// Fetch images list
-$images = [];
-if (file_exists($uploadDir)) {
-    $files = scandir($uploadDir);
-    foreach ($files as $file) {
-        if ($file !== '.' && $file !== '..' && preg_match('/\.(jpg|jpeg|png|webp|svg)$/i', $file)) {
-            $filePath = $uploadDir . '/' . $file;
-            $images[] = [
-                'filename' => $file,
-                'url' => '/public/uploads/products/' . $file,
-                'size' => round(filesize($filePath) / 1024, 1) . ' KB',
-                'date' => date('M d, Y H:i', filemtime($filePath))
+// 1. RECURSIVELY FETCH ALL MEDIA ASSETS FROM PUBLIC/UPLOADS
+$allFiles = [];
+$foldersList = [];
+
+if (file_exists($baseUploadDir)) {
+    $rdi = new RecursiveDirectoryIterator($baseUploadDir, RecursiveDirectoryIterator::SKIP_DOTS);
+    $rii = new RecursiveIteratorIterator($rdi, RecursiveIteratorIterator::SELF_FIRST);
+
+    foreach ($rii as $file) {
+        if ($file->isFile() && preg_match('/\.(jpg|jpeg|png|webp|svg|gif)$/i', $file->getFilename())) {
+            $fullPath = str_replace('\\', '/', $file->getPathname());
+            $relPath = str_replace(str_replace('\\', '/', PUBLIC_PATH), '', $fullPath);
+            $parentFolder = basename(dirname($fullPath));
+            if ($parentFolder && !in_array($parentFolder, $foldersList) && $parentFolder !== 'uploads') {
+                $foldersList[] = $parentFolder;
+            }
+
+            $allFiles[] = [
+                'filename' => $file->getFilename(),
+                'url' => $relPath,
+                'path' => $fullPath,
+                'folder' => $parentFolder,
+                'size' => round($file->getSize() / 1024, 1) . ' KB',
+                'raw_size' => $file->getSize(),
+                'mtime' => $file->getMTime(),
+                'date' => date('M d, Y', $file->getMTime())
             ];
         }
     }
 }
+
+// Include seeded root banners
+$rootAssets = ['/hero_bottles_banner.webp', '/logo.webp', '/factory.webp', '/manufacturing.webp'];
+foreach ($rootAssets as $ra) {
+    $p = PUBLIC_PATH . $ra;
+    if (file_exists($p) && is_file($p)) {
+        $allFiles[] = [
+            'filename' => basename($ra),
+            'url' => $ra,
+            'path' => str_replace('\\', '/', $p),
+            'folder' => 'site-assets',
+            'size' => round(filesize($p) / 1024, 1) . ' KB',
+            'raw_size' => filesize($p),
+            'mtime' => filemtime($p),
+            'date' => date('M d, Y', filemtime($p))
+        ];
+    }
+}
+
+// Sort by newest first
+usort($allFiles, function($a, $b) {
+    return ($b['mtime'] ?? 0) <=> ($a['mtime'] ?? 0);
+});
+
+// Filters: Search & Folder
+$search = strtolower(trim($_GET['q'] ?? ''));
+$folderFilter = trim($_GET['folder'] ?? 'all');
+
+$filtered = $allFiles;
+if (!empty($search)) {
+    $filtered = array_filter($filtered, function($f) use ($search) {
+        return strpos(strtolower($f['filename'] . ' ' . $f['folder']), $search) !== false;
+    });
+}
+if ($folderFilter !== 'all' && !empty($folderFilter)) {
+    $filtered = array_filter($filtered, function($f) use ($folderFilter) {
+        return ($f['folder'] ?? '') === $folderFilter;
+    });
+}
+$filtered = array_values($filtered);
+
+// Pagination
+$perPage = 36;
+$totalItems = count($filtered);
+$totalPages = max(1, ceil($totalItems / $perPage));
+$page = max(1, min($totalPages, (int)($_GET['p'] ?? 1)));
+$offset = ($page - 1) * $perPage;
+$displayImages = array_slice($filtered, $offset, $perPage);
+
+// Enrich display images with SEO metadata
+$enrichedList = [];
+foreach ($displayImages as $item) {
+    $seo = SeoModel::getImageSeo($item['url']);
+    $enrichedList[] = array_merge($item, $seo, [
+        'url' => $item['url'],
+        'file_name' => $item['filename'],
+        'file_size' => $item['size'],
+        'date' => $item['date']
+    ]);
+}
+
+$csrfToken = generateCsrfToken();
 ?>
 
 <style>
@@ -117,15 +223,15 @@ if (file_exists($uploadDir)) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
   }
   .media-card {
     background: #1e293b;
     border: 1px solid #334155;
     border-radius: 12px;
-    padding: 14px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -133,37 +239,40 @@ if (file_exists($uploadDir)) {
   }
   .media-card:hover {
     border-color: #38bdf8;
+    transform: translateY(-2px);
   }
   .media-preview-box {
-    background: #0f172a;
+    background: #090e1a;
     border-radius: 8px;
     padding: 10px;
     height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     position: relative;
     overflow: hidden;
   }
   .media-preview-img {
     max-width: 100%;
-    max-height: 120px;
+    max-height: 125px;
     object-fit: contain;
   }
   .media-title {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 700;
     color: #e2e8f0;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .media-meta {
-    font-size: 0.75rem;
+    font-size: 0.73rem;
     color: #64748b;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
   }
   .media-actions {
     display: flex;
@@ -171,10 +280,10 @@ if (file_exists($uploadDir)) {
   }
   .btn-media-act {
     flex: 1;
-    min-height: 38px;
-    padding: 6px 8px;
+    min-height: 34px;
+    padding: 5px 8px;
     border-radius: 6px;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 700;
     border: 1px solid #475569;
     background: #0f172a;
@@ -227,76 +336,140 @@ if (file_exists($uploadDir)) {
   }
 </style>
 
-<div class="media-header">
-  <div>
-    <h1 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: #f8fafc;">Media Library &amp; Assets</h1>
-    <p style="color: #94a3b8; margin: 4px 0 0 0; font-size: 0.88rem;">
-      Upload, view, edit, replace, and delete product image assets (Total: <?= count($images) ?> files)
-    </p>
-  </div>
-  <button onclick="openUploadModal()" class="tn-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; background: #0284c7; color: #fff; cursor: pointer; min-height: 46px;">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    Upload New Image
-  </button>
-</div>
+<div style="max-width: 1360px; margin: 0 auto;">
 
-<?php if (!empty($message)): ?>
-  <div style="background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.4); color: #6ee7b7; padding: 14px 18px; border-radius: 10px; font-size: 0.9rem; margin-bottom: 24px;">
-    <?= htmlspecialchars($message) ?>
-  </div>
-<?php endif; ?>
-
-<?php if (!empty($error)): ?>
-  <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; padding: 14px 18px; border-radius: 10px; font-size: 0.9rem; margin-bottom: 24px;">
-    <?= htmlspecialchars($error) ?>
-  </div>
-<?php endif; ?>
-
-<?php if (empty($images)): ?>
-  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 48px; text-align: center; color: #64748b;">
-    <p style="margin: 0 0 16px 0; font-size: 1rem;">No custom media assets uploaded yet.</p>
-    <button onclick="openUploadModal()" style="background: #0284c7; color: #fff; border: none; padding: 12px 22px; border-radius: 8px; font-weight: 700; cursor: pointer;">
-      Upload First Image Asset &rarr;
-    </button>
-  </div>
-<?php else: ?>
-  <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
-    <?php foreach ($images as $img): ?>
-      <div class="media-card">
-        <div>
-          <div class="media-preview-box">
-            <img src="<?= htmlspecialchars($img['url']) ?>" class="media-preview-img" alt="Asset" />
-          </div>
-          <div class="media-title" title="<?= htmlspecialchars($img['filename']) ?>">
-            <?= htmlspecialchars($img['filename']) ?>
-          </div>
-          <div class="media-meta"><?= $img['size'] ?> • <?= $img['date'] ?></div>
-        </div>
-
-        <div class="media-actions">
-          <button type="button" class="btn-media-act" title="Copy relative URL" onclick="copyMediaUrl('<?= htmlspecialchars(addslashes($img['url'])) ?>', this)">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span>Copy</span>
-          </button>
-          <button type="button" class="btn-media-act" onclick="openEditModal('<?= htmlspecialchars(addslashes($img['filename'])) ?>', '<?= htmlspecialchars(addslashes($img['url'])) ?>')">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            <span>Edit</span>
-          </button>
-
-          <form method="POST" action="/admin/media" style="flex: 1;" onsubmit="return confirm('Are you sure you want to permanently delete \'<?= htmlspecialchars(addslashes($img['filename'])) ?>\'?');">
-            <input type="hidden" name="action" value="delete_media" />
-            <input type="hidden" name="filename" value="<?= htmlspecialchars($img['filename']) ?>" />
-            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
-            <button type="submit" class="btn-media-act btn-media-danger" style="width: 100%;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-              Delete
-            </button>
-          </form>
-        </div>
+  <!-- PAGE HEADER -->
+  <div class="media-header">
+    <div>
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 0.88rem; color: #94a3b8;">
+        <a href="/admin" style="color: #94a3b8; text-decoration: none;">Dashboard</a>
+        <span>/</span>
+        <span style="color: #38bdf8; font-weight: 600;">Media Library</span>
       </div>
-    <?php endforeach; ?>
+      <h1 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: #f8fafc;">
+        Media Library &amp; Assets
+      </h1>
+      <p style="color: #94a3b8; margin: 4px 0 0 0; font-size: 0.88rem;">
+        Browsing <?= number_format($totalItems) ?> image assets across product catalog and content directories.
+      </p>
+    </div>
+    
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <a href="/admin/seo_images" class="tn-btn-outline" style="padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.86rem; background: #1e293b; color: #38bdf8; border: 1px solid #334155; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m8 11 2 2 4-4"/></svg>
+        Image SEO &amp; Alt Tags
+      </a>
+      <button onclick="openUploadModal()" class="tn-btn-gold" style="display: inline-flex; align-items: center; gap: 8px; border: none; padding: 11px 20px; border-radius: 8px; font-weight: 700; background: #0284c7; color: #fff; cursor: pointer; min-height: 44px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Upload New Image
+      </button>
+    </div>
   </div>
-<?php endif; ?>
+
+  <?php if (!empty($message)): ?>
+    <div style="background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.4); color: #6ee7b7; padding: 14px 18px; border-radius: 10px; font-size: 0.9rem; margin-bottom: 22px;">
+      <?= htmlspecialchars($message) ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if (!empty($error)): ?>
+    <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; padding: 14px 18px; border-radius: 10px; font-size: 0.9rem; margin-bottom: 22px;">
+      <?= htmlspecialchars($error) ?>
+    </div>
+  <?php endif; ?>
+
+  <!-- SEARCH & FOLDER FILTER STRIP -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+    
+    <!-- Folder Filter Dropdown -->
+    <form method="GET" action="/admin/media" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <select name="folder" onchange="this.form.submit()" style="padding: 8px 12px; background: #0f172a; border: 1px solid #475569; border-radius: 6px; color: #fff; font-size: 0.84rem;">
+        <option value="all">All Folders (<?= count($allFiles) ?>)</option>
+        <?php foreach ($foldersList as $fld): ?>
+          <option value="<?= htmlspecialchars($fld) ?>" <?= $folderFilter === $fld ? 'selected' : '' ?>>
+            <?= htmlspecialchars(ucwords(str_replace('-', ' ', $fld))) ?>
+          </option>
+        <?php endforeach; ?>
+      </select>
+
+      <input type="text" name="q" value="<?= htmlspecialchars($search) ?>" placeholder="Filter by image name..." style="padding: 8px 14px; background: #0f172a; border: 1px solid #475569; border-radius: 6px; color: #fff; font-size: 0.84rem; min-width: 200px;" />
+      <button type="submit" style="padding: 8px 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer;">
+        Filter
+      </button>
+      <?php if (!empty($search) || $folderFilter !== 'all'): ?>
+        <a href="/admin/media" style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; margin-left: 4px;">Reset</a>
+      <?php endif; ?>
+    </form>
+
+    <div style="font-size: 0.82rem; color: #94a3b8;">
+      Showing <?= count($enrichedList) ?> of <?= number_format($totalItems) ?> images &bull; Click any image for <strong style="color: #38bdf8;">WordPress Attachment Details</strong>
+    </div>
+
+  </div>
+
+  <!-- MEDIA GRID -->
+  <?php if (empty($enrichedList)): ?>
+    <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 48px; text-align: center; color: #64748b;">
+      <p style="margin: 0 0 16px 0; font-size: 1rem; color: #94a3b8;">No media assets found matching your criteria.</p>
+      <button onclick="openUploadModal()" style="background: #0284c7; color: #fff; border: none; padding: 12px 22px; border-radius: 8px; font-weight: 700; cursor: pointer;">
+        Upload Image Asset &rarr;
+      </button>
+    </div>
+  <?php else: ?>
+    <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 30px;">
+      <?php foreach ($enrichedList as $idx => $img): ?>
+        <div class="media-card">
+          <div>
+            <div class="media-preview-box" onclick="openAttachmentModalByIndex(<?= $idx ?>)" style="cursor: pointer;" title="Click to view WordPress Attachment Details">
+              <img src="<?= htmlspecialchars($img['url']) ?>" class="media-preview-img" alt="<?= htmlspecialchars($img['alt_text'] ?? 'Asset') ?>" onerror="this.src='/logo_svg.svg';" />
+            </div>
+            <div class="media-title" title="<?= htmlspecialchars($img['filename']) ?>" onclick="openAttachmentModalByIndex(<?= $idx ?>)" style="cursor: pointer;">
+              <?= htmlspecialchars($img['filename']) ?>
+            </div>
+            <div class="media-meta">
+              <span><?= htmlspecialchars($img['folder'] ?? 'uploads') ?></span>
+              <span><?= htmlspecialchars($img['size']) ?></span>
+            </div>
+          </div>
+
+          <div class="media-actions">
+            <button type="button" class="btn-media-act" title="Copy relative URL" onclick="copyMediaUrl('<?= htmlspecialchars(addslashes($img['url'])) ?>', this)">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <button type="button" class="btn-media-act" onclick="openAttachmentModalByIndex(<?= $idx ?>)" title="Edit Alt Text, Title, Caption and SEO Details">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              <span>Details</span>
+            </button>
+
+            <form method="POST" action="/admin/media" style="flex: 1;" onsubmit="return confirm('Are you sure you want to permanently delete \'<?= htmlspecialchars(addslashes($img['filename'])) ?>\'?');">
+              <input type="hidden" name="action" value="delete_media" />
+              <input type="hidden" name="filename" value="<?= htmlspecialchars($img['url']) ?>" />
+              <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
+              <button type="submit" class="btn-media-act btn-media-danger" style="width: 100%;" title="Delete permanently">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                <span>Delete</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- PAGINATION -->
+    <?php if ($totalPages > 1): ?>
+      <div style="display: flex; justify-content: center; gap: 6px; margin-bottom: 40px;">
+        <?php for ($i = 1; $i <= min(10, $totalPages); $i++): ?>
+          <a href="/admin/media?folder=<?= htmlspecialchars($folderFilter) ?>&p=<?= $i ?>&q=<?= urlencode($search) ?>" style="padding: 7px 12px; border-radius: 6px; font-size: 0.84rem; font-weight: 700; text-decoration: none; <?= $page === $i ? 'background: #0284c7; color: #fff;' : 'background: #1e293b; color: #94a3b8; border: 1px solid #334155;' ?>">
+            <?= $i ?>
+          </a>
+        <?php endfor; ?>
+      </div>
+    <?php endif; ?>
+
+  <?php endif; ?>
+
+</div>
 
 <!-- UPLOAD MEDIA MODAL -->
 <div class="media-modal-overlay" id="uploadModal">
@@ -324,42 +497,6 @@ if (file_exists($uploadDir)) {
   </div>
 </div>
 
-<!-- EDIT / RENAME / REPLACE MEDIA MODAL -->
-<div class="media-modal-overlay" id="editModal">
-  <div class="media-modal-box">
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 12px;">
-      <h3 style="margin: 0; font-size: 1.2rem; color: #f8fafc;">Edit Image Asset</h3>
-      <button onclick="closeEditModal()" style="background: transparent; border: none; color: #94a3b8; font-size: 1.6rem; cursor: pointer;">&times;</button>
-    </div>
-
-    <form method="POST" action="/admin/media" enctype="multipart/form-data">
-      <input type="hidden" name="action" value="rename_media" />
-      <input type="hidden" name="old_filename" id="modalOldFilename" value="" />
-      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>" />
-
-      <div style="text-align: center; background: #0f172a; border-radius: 8px; padding: 12px; margin-bottom: 18px;">
-        <img id="modalPreviewImg" src="" style="max-width: 100%; max-height: 120px; object-fit: contain;" alt="Preview" />
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #cbd5e1; margin-bottom: 6px;">Filename *</label>
-        <input type="text" name="new_filename" id="modalNewFilename" required class="form-control-smart" style="width: 100%; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.9rem;" />
-      </div>
-
-      <div style="margin-bottom: 20px;">
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #cbd5e1; margin-bottom: 6px;">Replace Image File (Optional)</label>
-        <input type="file" name="replace_file" accept="image/*" style="width: 100%; padding: 10px; background: #0f172a; border: 1px solid #475569; border-radius: 8px; color: #fff;" />
-        <span style="font-size: 0.75rem; color: #64748b; margin-top: 4px; display: block;">Select new image file to replace existing artwork</span>
-      </div>
-
-      <div style="display: flex; justify-content: flex-end; gap: 10px;">
-        <button type="button" onclick="closeEditModal()" style="background: transparent; border: 1px solid #475569; color: #cbd5e1; padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; min-height: 44px;">Cancel</button>
-        <button type="submit" style="background: #0284c7; color: #fff; border: none; padding: 10px 22px; border-radius: 8px; font-weight: 700; cursor: pointer; min-height: 44px;">Save Changes &rarr;</button>
-      </div>
-    </form>
-  </div>
-</div>
-
 <script>
 function openUploadModal() {
   document.getElementById('uploadModal').classList.add('open');
@@ -368,19 +505,10 @@ function closeUploadModal() {
   document.getElementById('uploadModal').classList.remove('open');
 }
 
-function openEditModal(filename, url) {
-  document.getElementById('modalOldFilename').value = filename;
-  document.getElementById('modalNewFilename').value = filename;
-  document.getElementById('modalPreviewImg').src = url;
-  document.getElementById('editModal').classList.add('open');
-}
-function closeEditModal() {
-  document.getElementById('editModal').classList.remove('open');
-}
-
 function copyMediaUrl(url, btn) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(function() {
+    const fullUrl = url.startsWith('http') ? url : (window.location.origin + (url.startsWith('/') ? '' : '/') + url);
+    navigator.clipboard.writeText(fullUrl).then(function() {
       showCopiedFeedback(btn);
     }).catch(function() {
       promptFallback(url);
@@ -401,7 +529,15 @@ function showCopiedFeedback(btn) {
 function promptFallback(url) {
   window.prompt('Copy Asset URL:', url);
 }
+
+// Initialize dataset for WordPress Attachment Details modal
+document.addEventListener('DOMContentLoaded', function() {
+  const mediaData = <?= json_encode($enrichedList, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?>;
+  setAttachmentDataset(mediaData);
+});
 </script>
 
-<?php require_once __DIR__ . '/footer.php'; ?>
+<!-- WORDPRESS ATTACHMENT DETAILS MODAL -->
+<?php include __DIR__ . '/partials/attachment_details_modal.php'; ?>
 
+<?php require_once __DIR__ . '/footer.php'; ?>

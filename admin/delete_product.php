@@ -25,6 +25,13 @@ $prodName = $product['name'] ?? $id;
 
 if ($action === 'permanent') {
     ProductModel::permanentDeleteProduct($id);
+    require_once dirname(__DIR__) . '/app/Models/SeoModel.php';
+    SeoModel::init();
+    $adminUser = $_SESSION['admin_user'] ?? 'admin';
+    SeoModel::deletePageSeo('/product?id=' . urlencode($id), $adminUser);
+    if (!empty($product['slug'])) {
+        SeoModel::deletePageSeo('/product/' . urlencode($product['slug']), $adminUser);
+    }
     $msg = "Product '{$prodName}' permanently deleted from database.";
 } elseif ($action === 'restore') {
     ProductModel::restoreProduct($id);

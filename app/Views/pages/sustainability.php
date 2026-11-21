@@ -93,13 +93,13 @@
       <div class="tn-container">
         <div class="rpet-layout">
           <div class="rpet-cards-stack">
-            <a href="/products?category=cosmetics-bottles" class="rpet-card" style="text-decoration: none;">
+            <a href="/products/cosmetics-bottles" class="rpet-card" style="text-decoration: none;">
               <div class="tn-tile-image" style="background: #EEF2F6 !important;">
                 <img src="/vikaas_inputs/thumbnails/THUMBNAIL_PET_BOTTLES.webp" alt="Sustainable rPET Bottles" loading="lazy" width="392" height="1115" style="max-width:100%;height:auto; filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.12)) !important;" />
               </div>
               <div class="rpet-card-bar">Sustainable rPET Bottles</div>
             </a>
-            <a href="/products?category=jars" class="rpet-card" style="text-decoration: none;">
+            <a href="/products/jars" class="rpet-card" style="text-decoration: none;">
               <div class="tn-tile-image" style="background: #EEF2F6 !important;">
                 <img src="/vikaas_inputs/thumbnails/thumbnail_NUTRACEUTICLE_JARS.webp" alt="Sustainable rPET Jars" loading="lazy" width="665" height="1178" style="max-width:100%;height:auto; filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.12)) !important;" />
               </div>

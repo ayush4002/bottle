@@ -46,7 +46,7 @@ $popularCats = [
         <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; display: block; margin-bottom: 10px;">Popular Catalogue Categories:</span>
         <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
           <?php foreach ($popularCats as $cat): ?>
-            <a href="/products?category=<?= urlencode($cat['slug']) ?>" style="display: inline-block; padding: 6px 14px; background: #f1f5f9; color: var(--color-navy); border: 1px solid #e2e8f0; border-radius: 20px; font-size: 0.84rem; font-weight: 600; text-decoration: none;">
+            <a href="/products/<?= urlencode($cat['slug']) ?>" style="display: inline-block; padding: 6px 14px; background: #f1f5f9; color: var(--color-navy); border: 1px solid #e2e8f0; border-radius: 20px; font-size: 0.84rem; font-weight: 600; text-decoration: none;">
               <?= htmlspecialchars($cat['name']) ?>
             </a>
           <?php endforeach; ?>

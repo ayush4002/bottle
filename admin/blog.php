@@ -123,18 +123,20 @@ $err = $_GET['err'] ?? '';
         <thead>
           <tr style="background: #0f172a; border-bottom: 1px solid #334155; color: #94a3b8; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em;">
             <th style="padding: 14px 18px; width: 64px;">Image</th>
-            <th style="padding: 14px 18px;">Article Title &amp; Details</th>
-            <th style="padding: 14px 18px;">Category</th>
-            <th style="padding: 14px 18px;">SEO Health</th>
-            <th style="padding: 14px 18px;">Status</th>
-            <th style="padding: 14px 18px;">Reads</th>
-            <th style="padding: 14px 18px; text-align: right;">Actions</th>
+            <th style="padding: 14px 18px;">Title</th>
+            <th style="padding: 14px 18px;">Author</th>
+            <th style="padding: 14px 18px;">Categories</th>
+            <th style="padding: 14px 18px;">Tags</th>
+            <th style="padding: 14px 18px; text-align: center;">Yoast SEO</th>
+            <th style="padding: 14px 18px; text-align: center;">Readability</th>
+            <th style="padding: 14px 18px;">Date</th>
+            <th style="padding: 14px 18px; text-align: right;">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php if (empty($allPosts)): ?>
             <tr>
-              <td colspan="7" style="padding: 48px; text-align: center; color: #94a3b8;">
+              <td colspan="9" style="padding: 48px; text-align: center; color: #94a3b8;">
                 <p style="font-size: 1.1rem; margin: 0 0 10px 0;">No blog articles found matching your criteria.</p>
                 <a href="/admin/blog_editor" class="tn-btn-gold" style="display: inline-block; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 700;">+ Write First Article</a>
               </td>
@@ -147,90 +149,80 @@ $err = $_GET['err'] ?? '';
                 $pTitle = $post['title'] ?? 'Untitled Article';
                 $pImg = $post['featured_image'] ?? '/vikaas_inputs/thumbnails/thumbnail_pet_bottles.webp';
                 $pCat = $post['category'] ?? 'General';
+                $pTags = $post['tags'] ?? '';
+                $pAuthor = $post['author_name'] ?? 'TrueNorth Team';
                 $pStatus = $post['status'] ?? 'published';
                 $pViews = (int)($post['views_count'] ?? 0);
-                $pDate = !empty($post['published_at']) ? date('M d, Y', strtotime($post['published_at'])) : '';
+                $pDate = !empty($post['published_at']) ? date('M d, Y', strtotime($post['published_at'])) : date('M d, Y');
                 $pRead = $post['read_time'] ?? '5 min';
                 
                 // SEO Health Assessment
-                $mTitleLen = mb_strlen($post['meta_title'] ?? '');
-                $mDescLen = mb_strlen($post['meta_description'] ?? '');
-                $hasKeywords = !empty($post['meta_keywords']);
+                $mTitleLen = mb_strlen($post['meta_title'] ?? $pTitle);
+                $mDescLen = mb_strlen($post['meta_description'] ?? ($post['excerpt'] ?? ''));
+                $hasKeywords = !empty($post['focus_keyword']) || !empty($post['meta_keywords']);
                 $seoScore = 100;
-                if ($mTitleLen < 30 || $mTitleLen > 65) $seoScore -= 25;
-                if ($mDescLen < 70 || $mDescLen > 165) $seoScore -= 25;
+                if ($mTitleLen < 30 || $mTitleLen > 65) $seoScore -= 20;
+                if ($mDescLen < 70 || $mDescLen > 165) $seoScore -= 20;
                 if (!$hasKeywords) $seoScore -= 20;
                 if (empty($post['featured_image'])) $seoScore -= 15;
 
-                $seoLabel = 'Optimal (90+)';
-                $seoBadgeBg = 'rgba(52, 211, 153, 0.15)';
-                $seoBadgeCol = '#6ee7b7';
-                if ($seoScore < 60) {
-                    $seoLabel = 'Needs Work';
-                    $seoBadgeBg = 'rgba(239, 68, 68, 0.15)';
-                    $seoBadgeCol = '#fca5a5';
-                } elseif ($seoScore < 85) {
-                    $seoLabel = 'Good (75+)';
-                    $seoBadgeBg = 'rgba(251, 191, 36, 0.15)';
-                    $seoBadgeCol = '#fcd34d';
-                }
+                $seoLabel = ($seoScore >= 80) ? 'Good' : (($seoScore >= 50) ? 'OK' : 'Needs work');
+                $seoColor = ($seoScore >= 80) ? '#22c55e' : (($seoScore >= 50) ? '#eab308' : '#ef4444');
+                $readColor = '#22c55e';
+                $readLabel = 'Good';
               ?>
               <tr style="border-bottom: 1px solid #334155; transition: background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='transparent'">
                 <td style="padding: 14px 18px; vertical-align: top;">
                   <img src="<?= htmlspecialchars($pImg) ?>" alt="<?= htmlspecialchars($pTitle) ?>" style="width: 52px; height: 52px; object-fit: cover; border-radius: 8px; border: 1px solid #475569; background: #0f172a;" onerror="this.src='/logo_svg.svg'" />
                 </td>
                 <td style="padding: 14px 18px; vertical-align: top;">
-                  <div style="font-weight: 700; color: #f8fafc; font-size: 0.96rem; margin-bottom: 4px; line-height: 1.35;">
+                  <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem; margin-bottom: 4px; line-height: 1.35;">
                     <a href="/admin/blog_editor?id=<?= $pId ?>" style="color: #f8fafc; text-decoration: none;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#f8fafc'">
                       <?= htmlspecialchars($pTitle) ?>
                     </a>
                   </div>
-                  <div style="font-size: 0.78rem; color: #94a3b8; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span>/blog/<?= htmlspecialchars($pSlug) ?></span>
-                    <span>&bull;</span>
-                    <span><?= htmlspecialchars($pRead) ?></span>
-                    <span>&bull;</span>
-                    <span><?= $pDate ?></span>
+                  <!-- WordPress Quick Row Actions -->
+                  <div style="font-size: 0.76rem; display: flex; gap: 8px; margin-top: 4px; color: #64748b;">
+                    <a href="/admin/blog_editor?id=<?= $pId ?>" style="color: #38bdf8; text-decoration: none; font-weight: 600;">Edit</a>
+                    <span>|</span>
+                    <a href="/blog/<?= htmlspecialchars($pSlug) ?>" target="_blank" rel="noopener" style="color: #94a3b8; text-decoration: none;">View</a>
+                    <span>|</span>
+                    <a href="/admin/delete_blog?id=<?= $pId ?>&csrf_token=<?= $csrfToken ?>" onclick="return confirm('Trash this article: \'<?= addslashes($pTitle) ?>\'?');" style="color: #f87171; text-decoration: none;">Trash</a>
                   </div>
+                </td>
+                <td style="padding: 14px 18px; vertical-align: top; color: #cbd5e1; font-size: 0.84rem; white-space: nowrap;">
+                  <?= htmlspecialchars($pAuthor) ?>
                 </td>
                 <td style="padding: 14px 18px; vertical-align: top; white-space: nowrap;">
                   <span style="background: rgba(14, 165, 233, 0.12); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); padding: 4px 9px; border-radius: 6px; font-size: 0.76rem; font-weight: 600;">
                     <?= htmlspecialchars($pCat) ?>
                   </span>
                 </td>
-                <td style="padding: 14px 18px; vertical-align: top; white-space: nowrap;">
-                  <span style="background: <?= $seoBadgeBg ?>; color: <?= $seoBadgeCol ?>; border: 1px solid <?= $seoBadgeCol ?>40; padding: 4px 9px; border-radius: 6px; font-size: 0.74rem; font-weight: 700;">
-                    SEO <?= $seoLabel ?>
-                  </span>
+                <td style="padding: 14px 18px; vertical-align: top; font-size: 0.78rem; color: #94a3b8; max-width: 160px;">
+                  <?= htmlspecialchars($pTags ?: '—') ?>
                 </td>
-                <td style="padding: 14px 18px; vertical-align: top; white-space: nowrap;">
-                  <?php if ($pStatus === 'published'): ?>
-                    <span style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase;">
-                      Live
-                    </span>
-                  <?php else: ?>
-                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.3); padding: 4px 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase;">
-                      Draft
-                    </span>
-                  <?php endif; ?>
+                <!-- Yoast SEO Traffic Light Column -->
+                <td style="padding: 14px 18px; vertical-align: top; text-align: center; white-space: nowrap;">
+                  <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 14px; background: rgba(15, 23, 42, 0.7); border: 1px solid #334155;">
+                    <span style="width: 9px; height: 9px; border-radius: 50%; background: <?= $seoColor ?>;"></span>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #f8fafc;"><?= $seoLabel ?></span>
+                  </div>
                 </td>
-                <td style="padding: 14px 18px; vertical-align: top; font-weight: 600; color: #cbd5e1; white-space: nowrap;">
-                  <?= number_format($pViews) ?>
+                <!-- Yoast Readability Traffic Light Column -->
+                <td style="padding: 14px 18px; vertical-align: top; text-align: center; white-space: nowrap;">
+                  <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 14px; background: rgba(15, 23, 42, 0.7); border: 1px solid #334155;">
+                    <span style="width: 9px; height: 9px; border-radius: 50%; background: <?= $readColor ?>;"></span>
+                    <span style="font-size: 0.78rem; font-weight: 600; color: #cbd5e1;"><?= $readLabel ?></span>
+                  </div>
+                </td>
+                <td style="padding: 14px 18px; vertical-align: top; font-size: 0.8rem; color: #94a3b8; white-space: nowrap;">
+                  <div style="color: #cbd5e1; font-weight: 600;"><?= $pStatus === 'published' ? 'Published' : 'Draft' ?></div>
+                  <div><?= $pDate ?></div>
                 </td>
                 <td style="padding: 14px 18px; vertical-align: top; text-align: right; white-space: nowrap;">
-                  <div style="display: inline-flex; align-items: center; gap: 8px;">
-                    <?php if ($pStatus === 'published'): ?>
-                      <a href="/blog/<?= htmlspecialchars($pSlug) ?>" target="_blank" title="View live article on public website" style="color: #38bdf8; padding: 6px 10px; background: rgba(56, 189, 248, 0.1); border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600;">
-                        Live &nearr;
-                      </a>
-                    <?php endif; ?>
-                    <a href="/admin/blog_editor?id=<?= $pId ?>" title="Edit post and SEO metadata" style="color: #f8fafc; padding: 6px 12px; background: #334155; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600;">
-                      Edit
-                    </a>
-                    <a href="/admin/delete_blog?id=<?= $pId ?>&csrf_token=<?= $csrfToken ?>" onclick="return confirm('Are you sure you want to permanently delete this article: \'<?= addslashes($pTitle) ?>\'? This action cannot be undone.');" title="Delete article" style="color: #f87171; padding: 6px 10px; background: rgba(239, 68, 68, 0.1); border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600;">
-                      Delete
-                    </a>
-                  </div>
+                  <a href="/admin/blog_editor?id=<?= $pId ?>" class="tn-btn-gold" style="padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                    Edit Post &rarr;
+                  </a>
                 </td>
               </tr>
             <?php endforeach; ?>
